@@ -180,6 +180,6 @@ Progetto didattico - Eventuale licenza da definire.
 
 ## Note
 
-- La documentazione progettuale completa è disponibile in  `C:\Users\pasqu\OneDrive\Documenti\Uno\docs\doxygen\html\index.html` 
+- La documentazione progettuale completa è disponibile in  `docs/doxygen/html/index.html` 
 - Nel branch corrente sono presenti funzionalità di gestione avanzata del database (marcature per eliminazione, ricostruzione BST, cifratura)
 - Le texture delle carte sono caricate dinamicamente dalla cartella `assets/card/`
