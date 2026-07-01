@@ -1,0 +1,8 @@
+var group__server__manager__struttura =
+[
+    [ "ServerManager", "struct_server_manager.html", [
+      [ "frameTime", "struct_server_manager.html#ae9cdf3989e25fc31144d06c041bb9894", null ],
+      [ "num_active_sessions", "struct_server_manager.html#ab5f50b15bc491ca74ca76de739227d7c", null ],
+      [ "sessions", "struct_server_manager.html#a4306718f5b0dd6e1a8b501ced2561024", null ]
+    ] ]
+];

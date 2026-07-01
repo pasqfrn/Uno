@@ -1,0 +1,39 @@
+\doxysection{auth.\+h}
+\hypertarget{auth_8h_source}{}\label{auth_8h_source}\index{lib/auth.h@{lib/auth.h}}
+\mbox{\hyperlink{auth_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ AUTH\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ AUTH\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{data__structures_8h}{data\_structures.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_database_utenti}{DatabaseUtenti}}\ \mbox{\hyperlink{group__auth__impl_gabbde975af8fe0d5e3c20e0fd862186b6}{dbUtenti}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__auth__impl_ga9ecbbe659dbada66e149c73cefb83815}{id\_utente\_corrente}},\ \mbox{\hyperlink{auth__screen_8c_abc565e2ba6cc88b20dded8d5345e869e}{nuovo\_utente}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__auth__impl_ga80d354a96271494c85654ea411ddac01}{inputEmail}}[100],\ \mbox{\hyperlink{group__auth__impl_ga2b0e8ee2101796cab35e2f6d2f932993}{inputNome}}[30],\ \mbox{\hyperlink{group__auth__impl_gabdb70a410ac6fd790650381b7fb858b1}{inputCognome}}[30];}
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__auth__impl_ga726a429817c84dacd48cce82b3c91003}{inputUsername}}[30],\ \mbox{\hyperlink{group__auth__impl_ga716f9307558976d3a4c67840b2ceb8ac}{inputPassword}}[30],\ \mbox{\hyperlink{group__auth__impl_gafb61cbc7b14899011261458eb60e240a}{inputPin}}[7];}
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__auth__impl_ga3876b1cc4b483062056d9cf261ec4654}{emailCount}},\ \mbox{\hyperlink{group__auth__impl_ga8576d027f30608a7448b5e4a6887f2e2}{nomeCount}},\ \mbox{\hyperlink{group__auth__impl_ga880fe550552161100d934bf21de27f90}{cognomeCount}};}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__auth__impl_gabd5ade42baf19a2a2ffa715960842dfd}{usernameCount}},\ \mbox{\hyperlink{group__auth__impl_ga415b2b418d3a90a6e1da72992e7577aa}{passCount}},\ \mbox{\hyperlink{group__auth__impl_ga5058e2763f324b4146cfa8af36168478}{pinCount}},\ \mbox{\hyperlink{group__auth__impl_ga5e67fb6826c236d3ff5d0ec98cd9c582}{id\_temp\_login}};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__auth__impl_ga1e9668bc833c732fa8a038ec007c4ee9}{errore\_password}},\ \mbox{\hyperlink{group__auth__impl_gae7b050dfa0f4d9bfdfb41c1746d8e055}{errore\_registrazione\_pass}};}
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__auth__impl_gab2b3b778484eb9c5f529be0c2f9c10d3}{errore\_registrazione\_email}},\ \mbox{\hyperlink{group__auth__impl_gab25b9978d929d16da0918ad72bed9812}{errore\_registrazione\_username}};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__auth__impl_ga2cf3aff3d88a04ea9b72ef90df54142c}{campo\_focusato}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ MAX\_PENDING\_DELETIONS\ 64}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__lazy__deletion_gaa103fe9f0b4ddf468b2d7ee6f6b28bba}{Auth\_MarkForDeletion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ email);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__lazy__deletion_gae8af680dcc7f7dcc3b73cff9ce19d89c}{Auth\_IsMarkedForDeletion}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ email);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__lazy__deletion_ga76017eead600b6ea252edb0e00c8758b}{Auth\_ProcessPendingDeletions}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ email);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__database__api_gab5d6680f3c3fd1d4690f635d9a10a172}{DB\_Alloca}}(\textcolor{keywordtype}{int}\ min\_slot);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__database__api_gae268c79271c4ee59ba3a082ebd80e0a9}{SalvaDB}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__database__api_ga92a8b147f7f309caeaba6776d16a4204}{AuthBST\_Ricostruisci}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__database__api_ga780f5d85ee36704ef8c39e58d6d24ba3}{CaricaDB}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__database__api_gaca7ac3087dce186468964882201c904b}{Auth\_RegistraUtente}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*,\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*,\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*,\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*,\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__database__api_ga8477b8acaa3d9d97cdb06846bdaff9c0}{Auth\_RimuoviUtente}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ email);}
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__database__api_ga8ca75be3b7e67f16f1544e9fc6eb9279}{AuthBST\_CercaIndicePerEmail}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__database__api_gaee07663d2c32dd38c1a79b994383a7b6}{AuthBST\_Altezza}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__database__api_ga4b6f9cad580a7fa31e55093db0e732ce}{AuthBST\_ContaNodi}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00094\ }
+
+\end{DoxyCode}

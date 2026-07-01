@@ -1,0 +1,212 @@
+\doxysection{Logica di Gioco}
+\hypertarget{group__game__logic}{}\label{group__game__logic}\index{Logica di Gioco@{Logica di Gioco}}
+
+
+Gestisce le regole del gioco UNO, validazione mosse, effetti carte, salvataggio/caricamento partite e manipolazione ADT (mazzo, scarti, mani).  
+
+
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{deck_8c}{deck.\+c}}
+\begin{DoxyCompactList}\small\item\em Gestione mazzo di pesca e operazioni sulle carte. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{game__flow_8c}{game\+\_\+flow.\+c}}
+\begin{DoxyCompactList}\small\item\em Gestione flusso di gioco\+: inizializzazione, fine partita, ricostruzione ADT. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{save__manager_8c}{save\+\_\+manager.\+c}}
+\begin{DoxyCompactList}\small\item\em Gestione salvataggi partite su file binario. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{game__logic_8c}{game\+\_\+logic.\+c}}
+\begin{DoxyCompactList}\small\item\em Implementazione logica di gioco UNO\+: regole, effetti carte, validazione mosse e gestione ADT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__game__logic_ga2be362fe392971bbe8008aa9266cf539}{Inizializza\+Mazzo}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Inizializza il mazzo di 108 carte UNO standard e le mescola (Fisher-\/\+Yates). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__game__logic_ga6fc614aadf58fe03606063067a2ad233}{Rimescola\+Scarti\+Nel\+Mazzo}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Ricarica il mazzo dalla pila scarti (mazzo esaurito). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__game__logic_gad1b01bee170bfe43e167097d8fa75b3c}{Pesca}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, int id\+\_\+giocatore, int quantita)
+\begin{DoxyCompactList}\small\item\em Fa pescare un numero di carte a un giocatore. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__game__logic_ga171821f60641393ff220f91b26e0325f}{Get\+Lunghezza\+Mano}} (\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di carte nella mano di un giocatore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nodo_carta}{Nodo\+Carta}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__game__logic_ga5a26039c72d695715eb46d1dbe0f91ff}{Get\+Nodo\+Carta\+Giocatore}} (\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g, int indice)
+\begin{DoxyCompactList}\small\item\em Restituisce il nodo carta per indice. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_carta}{Carta}} \mbox{\hyperlink{group__game__logic_ga911f218567f81d8d4d6eec5c1c12b543}{Get\+Carta\+Giocatore}} (\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g, int indice)
+\begin{DoxyCompactList}\small\item\em Restituisce una carta dalla mano per indice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__game__logic_gac60c0e57c8c2a799f008d302bbaaa5fd}{Rimuovi\+Carta\+Giocatore}} (\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}g, int indice)
+\begin{DoxyCompactList}\small\item\em Rimuove una carta dalla mano per indice. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestisce le regole del gioco UNO, validazione mosse, effetti carte, salvataggio/caricamento partite e manipolazione ADT (mazzo, scarti, mani). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__game__logic_ga911f218567f81d8d4d6eec5c1c12b543}\index{Logica di Gioco@{Logica di Gioco}!GetCartaGiocatore@{GetCartaGiocatore}}
+\index{GetCartaGiocatore@{GetCartaGiocatore}!Logica di Gioco@{Logica di Gioco}}
+\doxysubsubsection{\texorpdfstring{GetCartaGiocatore()}{GetCartaGiocatore()}}
+{\footnotesize\ttfamily \label{group__game__logic_ga911f218567f81d8d4d6eec5c1c12b543} 
+\mbox{\hyperlink{struct_carta}{Carta}} Get\+Carta\+Giocatore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{indice}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce una carta dalla mano per indice. 
+
+Restituisce una carta dalla mano di un giocatore per indice.
+
+\begin{DoxyPrecond}{Precondition}
+g != NULL; indice valido. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_carta}{Carta}, o carta vuota. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \doxylink{struct_giocatore}{Giocatore}. \\
+\hline
+{\em indice} & Indice (0-\/based). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__game__logic_ga171821f60641393ff220f91b26e0325f}\index{Logica di Gioco@{Logica di Gioco}!GetLunghezzaMano@{GetLunghezzaMano}}
+\index{GetLunghezzaMano@{GetLunghezzaMano}!Logica di Gioco@{Logica di Gioco}}
+\doxysubsubsection{\texorpdfstring{GetLunghezzaMano()}{GetLunghezzaMano()}}
+{\footnotesize\ttfamily \label{group__game__logic_ga171821f60641393ff220f91b26e0325f} 
+int Get\+Lunghezza\+Mano (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce il numero di carte nella mano di un giocatore. 
+
+\begin{DoxyPrecond}{Precondition}
+g != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Numero di carte. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \doxylink{struct_giocatore}{Giocatore}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__game__logic_ga5a26039c72d695715eb46d1dbe0f91ff}\index{Logica di Gioco@{Logica di Gioco}!GetNodoCartaGiocatore@{GetNodoCartaGiocatore}}
+\index{GetNodoCartaGiocatore@{GetNodoCartaGiocatore}!Logica di Gioco@{Logica di Gioco}}
+\doxysubsubsection{\texorpdfstring{GetNodoCartaGiocatore()}{GetNodoCartaGiocatore()}}
+{\footnotesize\ttfamily \label{group__game__logic_ga5a26039c72d695715eb46d1dbe0f91ff} 
+\mbox{\hyperlink{struct_nodo_carta}{Nodo\+Carta}} \texorpdfstring{$\ast$}{*} Get\+Nodo\+Carta\+Giocatore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{indice}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce il nodo carta per indice. 
+
+Restituisce il puntatore al nodo di una carta per indice.
+
+\begin{DoxyPrecond}{Precondition}
+g != NULL; indice valido. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_nodo_carta}{Nodo\+Carta}, o NULL. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \doxylink{struct_giocatore}{Giocatore}. \\
+\hline
+{\em indice} & Indice (0-\/based). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__game__logic_ga2be362fe392971bbe8008aa9266cf539}\index{Logica di Gioco@{Logica di Gioco}!InizializzaMazzo@{InizializzaMazzo}}
+\index{InizializzaMazzo@{InizializzaMazzo}!Logica di Gioco@{Logica di Gioco}}
+\doxysubsubsection{\texorpdfstring{InizializzaMazzo()}{InizializzaMazzo()}}
+{\footnotesize\ttfamily \label{group__game__logic_ga2be362fe392971bbe8008aa9266cf539} 
+void Inizializza\+Mazzo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Inizializza il mazzo di 108 carte UNO standard e le mescola (Fisher-\/\+Yates). 
+
+Inizializza il mazzo di pesca con 108 carte UNO standard.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Mazzo creato, mescolato, caricato in mazzo\+\_\+pila. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__game__logic_gad1b01bee170bfe43e167097d8fa75b3c}\index{Logica di Gioco@{Logica di Gioco}!Pesca@{Pesca}}
+\index{Pesca@{Pesca}!Logica di Gioco@{Logica di Gioco}}
+\doxysubsubsection{\texorpdfstring{Pesca()}{Pesca()}}
+{\footnotesize\ttfamily \label{group__game__logic_gad1b01bee170bfe43e167097d8fa75b3c} 
+void Pesca (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{int}]{id\+\_\+giocatore}{, }\item[{int}]{quantita}{}\end{DoxyParamCaption})}
+
+
+
+Fa pescare un numero di carte a un giocatore. 
+
+Fa pescare un certo numero di carte a un giocatore.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; id\+\_\+giocatore valido; quantita \texorpdfstring{$>$}{>} 0. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Carte pescate nella mano del giocatore. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco. \\
+\hline
+{\em id\+\_\+giocatore} & Indice giocatore. \\
+\hline
+{\em quantita} & Numero carte. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__game__logic_ga6fc614aadf58fe03606063067a2ad233}\index{Logica di Gioco@{Logica di Gioco}!RimescolaScartiNelMazzo@{RimescolaScartiNelMazzo}}
+\index{RimescolaScartiNelMazzo@{RimescolaScartiNelMazzo}!Logica di Gioco@{Logica di Gioco}}
+\doxysubsubsection{\texorpdfstring{RimescolaScartiNelMazzo()}{RimescolaScartiNelMazzo()}}
+{\footnotesize\ttfamily \label{group__game__logic_ga6fc614aadf58fe03606063067a2ad233} 
+void Rimescola\+Scarti\+Nel\+Mazzo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Ricarica il mazzo dalla pila scarti (mazzo esaurito). 
+
+Rimescola le carte dalla pila degli scarti nel mazzo di pesca.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; num\+\_\+carte\+\_\+scarti \texorpdfstring{$>$}{>} 1. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Mazzo ricaricato e rimescolato; notifica mostrata. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__game__logic_gac60c0e57c8c2a799f008d302bbaaa5fd}\index{Logica di Gioco@{Logica di Gioco}!RimuoviCartaGiocatore@{RimuoviCartaGiocatore}}
+\index{RimuoviCartaGiocatore@{RimuoviCartaGiocatore}!Logica di Gioco@{Logica di Gioco}}
+\doxysubsubsection{\texorpdfstring{RimuoviCartaGiocatore()}{RimuoviCartaGiocatore()}}
+{\footnotesize\ttfamily \label{group__game__logic_gac60c0e57c8c2a799f008d302bbaaa5fd} 
+void Rimuovi\+Carta\+Giocatore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{indice}{}\end{DoxyParamCaption})}
+
+
+
+Rimuove una carta dalla mano per indice. 
+
+Rimuove una carta dalla mano di un giocatore per indice.
+
+\begin{DoxyPrecond}{Precondition}
+g != NULL; indice valido. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_carta}{Carta} rimossa; num\+\_\+carte\+\_\+mano aggiornato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & \doxylink{struct_giocatore}{Giocatore}. \\
+\hline
+{\em indice} & Indice (0-\/based). \\
+\hline
+\end{DoxyParams}

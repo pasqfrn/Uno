@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Tipi di Pacchetto</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__network__packet.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Tipi di Pacchetto </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Enumerazione di tutti i tipi di pacchetti scambiati in rete.  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Tipi enumerati (enum)</h2></td></tr>
+<tr class="memitem:ga0a80a7bc045affcf10846075b88cbca0" id="r_ga0a80a7bc045affcf10846075b88cbca0"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#ga0a80a7bc045affcf10846075b88cbca0">PacketType</a> { <br />
+&#160;&#160;<a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0acd0833298bdffab1351471c009443720">PACKET_JOIN</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a457d5055f4e24cf4f6f423c1f77c4316">PACKET_START_GAME</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0af0b1d88ad6aa7984300753c22c26fcf7">PACKET_GAME_STATE</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0aa3d97e3aef38924330aef8676c3b3777">PACKET_MOVE</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a9b9271f113a3b97745416482211c76c5">PACKET_DRAW</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0ae1b441b9abefe018206c3d9486b8b24c">PACKET_CHAT</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0ac71adcd308057d916ed8fec10e696dfd">PACKET_DISCONNECT</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a29d378a2b7936c8eafd7bbe593498ef3">PACKET_JOIN_GAME</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0ab5b0533954a11babf74970449c41a56b">PACKET_PLAYER_HAND</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a6f6729e8049097c9b5b4a2712120ea92">PACKET_COLOR_CHOICE</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a5e612732b5253ec9025464ae5cf85a0f">PACKET_CREATE_SESSION</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0acbed8b71369c3aa9f38931185fa72f3f">PACKET_JOIN_SESSION</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a7a99db687e4e9e8fce2aecf6eff6ddaf">PACKET_SESSION_LIST</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a97b2792404ed7b3425fe5af6af270c03">PACKET_SESSION_STATE</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a5c17a8acf9faa476b348746280cbd91e">PACKET_HEARTBEAT</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0aba3a4d2e729e19bf67dbe1cf9a914689">PACKET_PLAYER_READY</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0afbeaea9f079e833ca7e5b1c562f786bd">PACKET_GAME_FINISHED</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a33a0eb4a7808de54940444de66c16951">PACKET_ADMIN_USER_SYNC</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0aeea01617a728c8f0a876d015cb0b6d3d">PACKET_ADMIN_DB_SYNC</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a369caf3cda4e9f3a194f4fdb7c5c8a33">PACKET_ADMIN_DB_SYNC_DONE</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a3bc8179a72fc6531f101ee91c7c06e64">PACKET_HOST_DISCONNECT</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a36dc33c6a50583de36785c5ff8ae833a">PACKET_STATS_SYNC</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0af7779c84104cc6fdd6e2ebeee0f21c28">PACKET_JOIN_REJECTED</a>
+, <a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a69dd215185c5665c706d516184eb3c5b">PACKET_PLAY_AGAIN</a>
+, <br />
+&#160;&#160;<a class="el" href="#gga0a80a7bc045affcf10846075b88cbca0a25bac22c1665f903ed544ec35aa33f89">PACKET_HOST_RETURN_LOBBY</a>
+<br />
+ }</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Enumerazione di tutti i tipi di pacchetti scambiati in rete. </p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentazione dei tipi enumerati</h2>
+<a id="ga0a80a7bc045affcf10846075b88cbca0" name="ga0a80a7bc045affcf10846075b88cbca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a80a7bc045affcf10846075b88cbca0">&#9670;&#160;</a></span>PacketType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ga0a80a7bc045affcf10846075b88cbca0">PacketType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Valori del tipo enumerato</th></tr><tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0acd0833298bdffab1351471c009443720" name="gga0a80a7bc045affcf10846075b88cbca0acd0833298bdffab1351471c009443720"></a>PACKET_JOIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a457d5055f4e24cf4f6f423c1f77c4316" name="gga0a80a7bc045affcf10846075b88cbca0a457d5055f4e24cf4f6f423c1f77c4316"></a>PACKET_START_GAME&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0af0b1d88ad6aa7984300753c22c26fcf7" name="gga0a80a7bc045affcf10846075b88cbca0af0b1d88ad6aa7984300753c22c26fcf7"></a>PACKET_GAME_STATE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0aa3d97e3aef38924330aef8676c3b3777" name="gga0a80a7bc045affcf10846075b88cbca0aa3d97e3aef38924330aef8676c3b3777"></a>PACKET_MOVE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a9b9271f113a3b97745416482211c76c5" name="gga0a80a7bc045affcf10846075b88cbca0a9b9271f113a3b97745416482211c76c5"></a>PACKET_DRAW&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0ae1b441b9abefe018206c3d9486b8b24c" name="gga0a80a7bc045affcf10846075b88cbca0ae1b441b9abefe018206c3d9486b8b24c"></a>PACKET_CHAT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0ac71adcd308057d916ed8fec10e696dfd" name="gga0a80a7bc045affcf10846075b88cbca0ac71adcd308057d916ed8fec10e696dfd"></a>PACKET_DISCONNECT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a29d378a2b7936c8eafd7bbe593498ef3" name="gga0a80a7bc045affcf10846075b88cbca0a29d378a2b7936c8eafd7bbe593498ef3"></a>PACKET_JOIN_GAME&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0ab5b0533954a11babf74970449c41a56b" name="gga0a80a7bc045affcf10846075b88cbca0ab5b0533954a11babf74970449c41a56b"></a>PACKET_PLAYER_HAND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a6f6729e8049097c9b5b4a2712120ea92" name="gga0a80a7bc045affcf10846075b88cbca0a6f6729e8049097c9b5b4a2712120ea92"></a>PACKET_COLOR_CHOICE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a5e612732b5253ec9025464ae5cf85a0f" name="gga0a80a7bc045affcf10846075b88cbca0a5e612732b5253ec9025464ae5cf85a0f"></a>PACKET_CREATE_SESSION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0acbed8b71369c3aa9f38931185fa72f3f" name="gga0a80a7bc045affcf10846075b88cbca0acbed8b71369c3aa9f38931185fa72f3f"></a>PACKET_JOIN_SESSION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a7a99db687e4e9e8fce2aecf6eff6ddaf" name="gga0a80a7bc045affcf10846075b88cbca0a7a99db687e4e9e8fce2aecf6eff6ddaf"></a>PACKET_SESSION_LIST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a97b2792404ed7b3425fe5af6af270c03" name="gga0a80a7bc045affcf10846075b88cbca0a97b2792404ed7b3425fe5af6af270c03"></a>PACKET_SESSION_STATE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a5c17a8acf9faa476b348746280cbd91e" name="gga0a80a7bc045affcf10846075b88cbca0a5c17a8acf9faa476b348746280cbd91e"></a>PACKET_HEARTBEAT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0aba3a4d2e729e19bf67dbe1cf9a914689" name="gga0a80a7bc045affcf10846075b88cbca0aba3a4d2e729e19bf67dbe1cf9a914689"></a>PACKET_PLAYER_READY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0afbeaea9f079e833ca7e5b1c562f786bd" name="gga0a80a7bc045affcf10846075b88cbca0afbeaea9f079e833ca7e5b1c562f786bd"></a>PACKET_GAME_FINISHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a33a0eb4a7808de54940444de66c16951" name="gga0a80a7bc045affcf10846075b88cbca0a33a0eb4a7808de54940444de66c16951"></a>PACKET_ADMIN_USER_SYNC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0aeea01617a728c8f0a876d015cb0b6d3d" name="gga0a80a7bc045affcf10846075b88cbca0aeea01617a728c8f0a876d015cb0b6d3d"></a>PACKET_ADMIN_DB_SYNC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a369caf3cda4e9f3a194f4fdb7c5c8a33" name="gga0a80a7bc045affcf10846075b88cbca0a369caf3cda4e9f3a194f4fdb7c5c8a33"></a>PACKET_ADMIN_DB_SYNC_DONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a3bc8179a72fc6531f101ee91c7c06e64" name="gga0a80a7bc045affcf10846075b88cbca0a3bc8179a72fc6531f101ee91c7c06e64"></a>PACKET_HOST_DISCONNECT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a36dc33c6a50583de36785c5ff8ae833a" name="gga0a80a7bc045affcf10846075b88cbca0a36dc33c6a50583de36785c5ff8ae833a"></a>PACKET_STATS_SYNC&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0af7779c84104cc6fdd6e2ebeee0f21c28" name="gga0a80a7bc045affcf10846075b88cbca0af7779c84104cc6fdd6e2ebeee0f21c28"></a>PACKET_JOIN_REJECTED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a69dd215185c5665c706d516184eb3c5b" name="gga0a80a7bc045affcf10846075b88cbca0a69dd215185c5665c706d516184eb3c5b"></a>PACKET_PLAY_AGAIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="gga0a80a7bc045affcf10846075b88cbca0a25bac22c1665f903ed544ec35aa33f89" name="gga0a80a7bc045affcf10846075b88cbca0a25bac22c1665f903ed544ec35aa33f89"></a>PACKET_HOST_RETURN_LOBBY&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

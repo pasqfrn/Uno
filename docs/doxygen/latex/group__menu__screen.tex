@@ -1,0 +1,50 @@
+\doxysection{Menu Screen}
+\hypertarget{group__menu__screen}{}\label{group__menu__screen}\index{Menu Screen@{Menu Screen}}
+
+
+Disegna il menu principale e le schermate annesse (statistiche).  
+
+
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{menu__screen_8c}{menu\+\_\+screen.\+c}}
+\begin{DoxyCompactList}\small\item\em Implementazione schermata menu principale. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{stats__screen_8c}{stats\+\_\+screen.\+c}}
+\begin{DoxyCompactList}\small\item\em Implementazione schermata statistiche utente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__menu__screen_gabcd5b2d3a314cbe39cf3837035d668d3}{Disegna\+Statistiche}} (\mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}fase)
+\begin{DoxyCompactList}\small\item\em Disegna la schermata statistiche dell\textquotesingle{}utente loggato. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Disegna il menu principale e le schermate annesse (statistiche). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__menu__screen_gabcd5b2d3a314cbe39cf3837035d668d3}\index{Menu Screen@{Menu Screen}!DisegnaStatistiche@{DisegnaStatistiche}}
+\index{DisegnaStatistiche@{DisegnaStatistiche}!Menu Screen@{Menu Screen}}
+\doxysubsubsection{\texorpdfstring{DisegnaStatistiche()}{DisegnaStatistiche()}}
+{\footnotesize\ttfamily \label{group__menu__screen_gabcd5b2d3a314cbe39cf3837035d668d3} 
+void Disegna\+Statistiche (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}}]{fase}{}\end{DoxyParamCaption})}
+
+
+
+Disegna la schermata statistiche dell\textquotesingle{}utente loggato. 
+
+Disegna la schermata delle statistiche.
+
+\begin{DoxyPrecond}{Precondition}
+fase != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_statistiche}{Statistiche} renderizzate; navigazione gestita. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em fase} & Fase corrente. \\
+\hline
+\end{DoxyParams}

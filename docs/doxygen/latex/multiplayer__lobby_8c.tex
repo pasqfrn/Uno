@@ -1,0 +1,102 @@
+\doxysection{src/screens/multiplayer/multiplayer\+\_\+lobby.c File Reference}
+\hypertarget{multiplayer__lobby_8c}{}\label{multiplayer__lobby_8c}\index{src/screens/multiplayer/multiplayer\_lobby.c@{src/screens/multiplayer/multiplayer\_lobby.c}}
+
+
+Schermata della lobby multiplayer (host e client).  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/multiplayer/multiplayer\+\_\+lobby.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/multiplayer/multiplayer\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network\+\_\+send.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/server/server\+\_\+manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/ui.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/list.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/menu/string\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{multiplayer__lobby_8c_accf70613e15dd3bcc231017b8f814c80}{LARGHEZZA}}~1280
+\item 
+\#define \mbox{\hyperlink{multiplayer__lobby_8c_a737f1e0014465787871b62d0e61129d8}{ALTEZZA}}~720
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{multiplayer__lobby_8c_a67402a351b27f2a8bd596a27d53a5017}{Disegna\+Multiplayer\+Lobby}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}fase)
+\begin{DoxyCompactList}\small\item\em Disegna la lobby multiplayer (schermata host). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{multiplayer__lobby_8c_aefc394c91e82f5a50913acf46635f420}{Reset\+Timer\+Errore\+Avvio}} (void)
+\begin{DoxyCompactList}\small\item\em Resetta il timer di errore avvio partita. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__multiplayer__lobby_ga13505e75b399adba90515ff9e17d097a}{Disegna\+Waiting\+Room}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}fase, \mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Disegna la waiting room multiplayer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Schermata della lobby multiplayer (host e client). 
+
+Gestisce il rendering e la logica della sala d\textquotesingle{}attesa multiplayer, inclusi l\textquotesingle{}aggiunta/rimozione di bot, l\textquotesingle{}avvio della partita (host) e l\textquotesingle{}attesa dell\textquotesingle{}avvio (client).
+
+NOTA\+: L\textquotesingle{}ordine di avvio partita e\textquotesingle{} ora corretto\+:
+\begin{DoxyEnumerate}
+\item Inizializza\+Mazzo + distribuisci carte
+\item Broadcast\+Game\+State + Broadcast\+Player\+Hands (invia stato ai client)
+\item Send\+Start\+Game (segnala ai client di iniziare la partita) Questo garantisce che i client ricevano lo stato di gioco PRIMA del segnale di avvio. 
+\end{DoxyEnumerate}
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{multiplayer__lobby_8c_a737f1e0014465787871b62d0e61129d8}\index{multiplayer\_lobby.c@{multiplayer\_lobby.c}!ALTEZZA@{ALTEZZA}}
+\index{ALTEZZA@{ALTEZZA}!multiplayer\_lobby.c@{multiplayer\_lobby.c}}
+\doxysubsubsection{\texorpdfstring{ALTEZZA}{ALTEZZA}}
+{\footnotesize\ttfamily \label{multiplayer__lobby_8c_a737f1e0014465787871b62d0e61129d8} 
+\#define ALTEZZA~720}
+
+\Hypertarget{multiplayer__lobby_8c_accf70613e15dd3bcc231017b8f814c80}\index{multiplayer\_lobby.c@{multiplayer\_lobby.c}!LARGHEZZA@{LARGHEZZA}}
+\index{LARGHEZZA@{LARGHEZZA}!multiplayer\_lobby.c@{multiplayer\_lobby.c}}
+\doxysubsubsection{\texorpdfstring{LARGHEZZA}{LARGHEZZA}}
+{\footnotesize\ttfamily \label{multiplayer__lobby_8c_accf70613e15dd3bcc231017b8f814c80} 
+\#define LARGHEZZA~1280}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{multiplayer__lobby_8c_a67402a351b27f2a8bd596a27d53a5017}\index{multiplayer\_lobby.c@{multiplayer\_lobby.c}!DisegnaMultiplayerLobby@{DisegnaMultiplayerLobby}}
+\index{DisegnaMultiplayerLobby@{DisegnaMultiplayerLobby}!multiplayer\_lobby.c@{multiplayer\_lobby.c}}
+\doxysubsubsection{\texorpdfstring{DisegnaMultiplayerLobby()}{DisegnaMultiplayerLobby()}}
+{\footnotesize\ttfamily \label{multiplayer__lobby_8c_a67402a351b27f2a8bd596a27d53a5017} 
+void Disegna\+Multiplayer\+Lobby (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{, }\item[{\mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}}]{fase}{}\end{DoxyParamCaption})}
+
+
+
+Disegna la lobby multiplayer (schermata host). 
+
+\begin{DoxyPrecond}{Precondition}
+session != NULL; fase != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Lobby host renderizzata con giocatori in attesa. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione di gioco. \\
+\hline
+{\em fase} & Fase corrente. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{multiplayer__lobby_8c_aefc394c91e82f5a50913acf46635f420}\index{multiplayer\_lobby.c@{multiplayer\_lobby.c}!ResetTimerErroreAvvio@{ResetTimerErroreAvvio}}
+\index{ResetTimerErroreAvvio@{ResetTimerErroreAvvio}!multiplayer\_lobby.c@{multiplayer\_lobby.c}}
+\doxysubsubsection{\texorpdfstring{ResetTimerErroreAvvio()}{ResetTimerErroreAvvio()}}
+{\footnotesize\ttfamily \label{multiplayer__lobby_8c_aefc394c91e82f5a50913acf46635f420} 
+void Reset\+Timer\+Errore\+Avvio (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Resetta il timer di errore avvio partita. 
+
+\begin{DoxyPostcond}{Postcondition}
+Timer di errore resettato. 
+\end{DoxyPostcond}

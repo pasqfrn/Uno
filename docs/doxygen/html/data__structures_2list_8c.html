@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/data_structures/list.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('data__structures_2list_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file list.c<div class="ingroups"><a class="el" href="group__list.html">Lista (Lista Concatenata)</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementazione lista doppiamente concatenata (funzioni specifiche).  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_2list_8h_source.html">../../lib/data_structures/list.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:ga088820569fa2805555cdf3fbe0b2283c" id="r_ga088820569fa2805555cdf3fbe0b2283c"><td class="memItemLeft"><a class="el" href="struct_nodo_carta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga088820569fa2805555cdf3fbe0b2283c">Lista_InserisciDopo</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista, <a class="el" href="struct_nodo_carta.html">NodoCarta</a> *nodo, <a class="el" href="struct_carta.html">Carta</a> c)</td></tr>
+<tr class="memdesc:ga088820569fa2805555cdf3fbe0b2283c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce una carta dopo un nodo specifico (o in testa se nodo==NULL).  <br /></td></tr>
+<tr class="memitem:ga9de40d1e818238d37c0f07b3bee18734" id="r_ga9de40d1e818238d37c0f07b3bee18734"><td class="memItemLeft"><a class="el" href="struct_nodo_carta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga9de40d1e818238d37c0f07b3bee18734">Lista_Precedente</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista, <a class="el" href="struct_nodo_carta.html">NodoCarta</a> *nodo)</td></tr>
+<tr class="memdesc:ga9de40d1e818238d37c0f07b3bee18734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nodo precedente a quello dato.  <br /></td></tr>
+<tr class="memitem:gae3b26d3b03d49fcd37187be9b4cfded5" id="r_gae3b26d3b03d49fcd37187be9b4cfded5"><td class="memItemLeft"><a class="el" href="struct_nodo_carta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#gae3b26d3b03d49fcd37187be9b4cfded5">Lista_Ultimo</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista)</td></tr>
+<tr class="memdesc:gae3b26d3b03d49fcd37187be9b4cfded5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce l'ultimo nodo della lista (coda).  <br /></td></tr>
+<tr class="memitem:gacc099b32c3eec87dd70207099d538236" id="r_gacc099b32c3eec87dd70207099d538236"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#gacc099b32c3eec87dd70207099d538236">Lista_RimuoviNodoBidirezionale</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista, <a class="el" href="struct_nodo_carta.html">NodoCarta</a> *nodo)</td></tr>
+<tr class="memdesc:gacc099b32c3eec87dd70207099d538236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un nodo dalla lista gestendo correttamente prev/next.  <br /></td></tr>
+<tr class="memitem:ga9dc1fa933bb0dd65a60aa13f5a6d63d7" id="r_ga9dc1fa933bb0dd65a60aa13f5a6d63d7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga9dc1fa933bb0dd65a60aa13f5a6d63d7">Lista_VerificaBidirezionale</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista)</td></tr>
+<tr class="memdesc:ga9dc1fa933bb0dd65a60aa13f5a6d63d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica l'integrita' dei puntatori prev/next (debug).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Implementazione lista doppiamente concatenata (funzioni specifiche). </p>
+<p>ADT: ListaDoppia (doubly-linked list) per la mano dei giocatori. Funzioni: Lista_InserisciDopo, Lista_Precedente, Lista_Ultimo, Lista_RimuoviNodoBidirezionale, Lista_VerificaBidirezionale. </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_e0e4df1b297a9f377abb7b27124b1ce7.html">data_structures</a></li><li class="navelem"><a href="data__structures_2list_8c.html">list.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

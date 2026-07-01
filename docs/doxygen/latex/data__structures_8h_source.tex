@@ -1,0 +1,267 @@
+\doxysection{data\+\_\+structures.\+h}
+\hypertarget{data__structures_8h_source}{}\label{data__structures_8h_source}\index{lib/data\_structures.h@{lib/data\_structures.h}}
+\mbox{\hyperlink{data__structures_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ DATA\_STRUCTURES\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ DATA\_STRUCTURES\_H}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{raylib_8h}{raylib.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stddef.h>}\ \ \textcolor{comment}{/*\ per\ size\_t\ */}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <string.h>}\ \ \textcolor{comment}{/*\ per\ strncpy\ usato\ nelle\ inline\ functions\ */}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <stdio.h>}\ \ \ \textcolor{comment}{/*\ per\ snprintf\ in\ Giocatore\_NomeBot\ */}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ DB\_CAPACITA\_INIZIALE\ 64}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ MAX\_PARTITE\_STORICO\ 100}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ *\ \ COLORI\ DELLE\ CARTE\ (Enum)}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ *\ \ Riferimento:\ Documentazione\ CdS\ -\/\ "{}Gestione\ carta"{}}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27caf31d451540fbe9019951dc44d57cada9}{ROSSO}},\ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27cab43fc5129914206a77c76e0cffd20df2}{GIALLO}},\ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27caf9efd9e6bd17c0580d8a0432ba1b04a2}{VERDE}},\ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27ca26d3f814fefb4d00336affb21a2f55b9}{BLU}},\ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27ca40019d0f9c04951a840bde24c579e876}{NERO}}\ \}\ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ \ TIPI\ DI\ CARTA\ (Enum)}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ \ Riferimento:\ Documentazione\ CdS\ -\/\ "{}Gestione\ carta"{}}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6da13dc9a8037f05fe9347ef38d219cebf7}{NUM\_0}},\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6dafb96732a6380755dfb3aea484ea984fe}{NUM\_1}},\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6da23d36623278d6c9f44c0d3d51cbe60e9}{NUM\_2}},\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6dadcb22d4c698b5a12cafe28e9b16d95f3}{NUM\_3}},\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6da310815251cae925041a7d7943c419f17}{NUM\_4}},\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6dab308ccbaba17c6da62aa6af500f163aa}{NUM\_5}},\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6da447f60bc3ead3701531dccdef66c0c15}{NUM\_6}},\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6daeaeaa109f538b75f8da00759e95a9b94}{NUM\_7}},\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6dad402062cc9c7407039fd7ca32ab4ec83}{NUM\_8}},\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6daa5a8533deb5dc4cfb8d0dabf659599f5}{NUM\_9}},}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6da150773ba1df9e1914be905e7fcd09a4b}{SALTA}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Salta\ il\ prossimo\ giocatore\ */}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6da14de110867291a9eb45ba51dae011528}{CAMBIA\_GIRO}},\ \ \ \ \ \textcolor{comment}{/*\ Inverte\ la\ direzione\ del\ turno\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6daabe13e7547c113d19798dba060c09c38}{PESCA\_DUE}},\ \ \ \ \ \ \ \textcolor{comment}{/*\ Il\ prossimo\ giocatore\ pesca\ 2\ carte\ */}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6da9590144117e6dd29fa7c7702a4ec2b06}{CAMBIO\_COLORE}},\ \ \ \textcolor{comment}{/*\ Jolly:\ scegli\ un\ colore\ */}}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6da450a026bfeea80d8e313e676328347aa}{PESCA\_QUATTRO}}\ \ \ \ \textcolor{comment}{/*\ Jolly\ +4:\ il\ prossimo\ pesca\ 4\ carte\ e\ scegli\ un\ colore\ */}}
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6d}{TipoCarta}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *\ \ CARTA\ -\/\ Entita'\ di\ dominio\ fondamentale}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ \ Riferimento:\ Documentazione\ CdS\ -\/\ "{}Gestione\ carta"{}}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}\ \mbox{\hyperlink{struct_carta_a8b69cbbcb6093494dc470c9e34cd5691}{colore}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Colore\ della\ carta\ (ROSSO,\ GIALLO,\ VERDE,\ BLU,\ NERO)\ */}}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_ae6987de74ad65e6ea8b577c57f950d6d}{TipoCarta}}\ \mbox{\hyperlink{struct_carta_ae488767adc6386b868c262ba100b4762}{tipo}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Tipo\ della\ carta\ (NUM\_0-\/NUM\_9,\ SALTA,\ CAMBIA\_GIRO,\ ecc.)\ */}}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{struct_rectangle}{Rectangle}}\ \mbox{\hyperlink{struct_carta_a321de95c83b77542773e361c0fc42c61}{area}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Rettangolo\ di\ rendering\ per\ Raylib\ */}}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{struct_vector2}{Vector2}}\ \mbox{\hyperlink{struct_carta_af2ba5c3d53a4af20c84bfa8e87a11003}{posOriginale}};\ \ \ \ \ \ \ \textcolor{comment}{/*\ Posizione\ originale\ prima\ del\ trascinamento\ */}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_carta_a54af4043346725181d409aa88c41243b}{isTrascinata}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ se\ la\ carta\ e'\ in\ fase\ di\ trascinamento,\ 0\ altrimenti\ */}}
+\DoxyCodeLine{00072\ \}\ \mbox{\hyperlink{struct_carta}{Carta}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ *\ \ NODO\ CARTA\ -\/\ Lista\ DOPPIAMENTE\ concatenata\ -\/\ ADT\ 1/4}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ *\ \ Riferimento:\ Documentazione\ CdS\ -\/\ "{}NodoMano"{}}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ *\ \ "{}Gestione\ nodo\ per\ la\ mano\ del\ giocatore\ (lista\ doppiamente\ concatenata)"{}}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nodo_carta}{NodoCarta}}\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{struct_carta}{Carta}}\ \mbox{\hyperlink{struct_nodo_carta_aeebf8d75d3ea1e1c167344b5c4d98e4e}{carta}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ La\ carta\ contenuta\ nel\ nodo\ */}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nodo_carta}{NodoCarta}}*\ \mbox{\hyperlink{struct_nodo_carta_a38a4756098b91f388f6b762034cea50b}{prossimo}};\ \ \ \ \ \textcolor{comment}{/*\ Puntatore\ al\ nodo\ successivo\ (next)\ */}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nodo_carta}{NodoCarta}}*\ \mbox{\hyperlink{struct_nodo_carta_a79d379018c2987198cab3d3e198b6d67}{prev}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Puntatore\ al\ nodo\ precedente\ (prev)\ */}}
+\DoxyCodeLine{00091\ \}\ \mbox{\hyperlink{struct_nodo_carta}{NodoCarta}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_nodo_carta}{NodoCarta}}\ \mbox{\hyperlink{data__structures_8h_a4c21bead0a069a63c668c59b159c829c}{NodoMano}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{struct_nodo_carta}{NodoCarta}}*\ \mbox{\hyperlink{struct_lista_carte_a2af0aa0daab6080813b843eaa6feaff4}{testa}};\ \ \ \ \ \ \ \textcolor{comment}{/*\ Primo\ nodo\ della\ lista\ */}}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{struct_nodo_carta}{NodoCarta}}*\ \mbox{\hyperlink{struct_lista_carte_af15cb66c2fd993a220e65b5602711d36}{coda}};\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Ultimo\ nodo\ della\ lista\ */}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_lista_carte_ab4710d62e8351a06557c98ed3820ea9b}{lunghezza}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Numero\ totale\ di\ carte\ nella\ lista\ */}}
+\DoxyCodeLine{00106\ \}\ \mbox{\hyperlink{struct_lista_carte}{ListaCarte}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ *\ \ UTENTE\ -\/\ Entita'\ di\ dominio}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ \ Riferimento:\ Documentazione\ CdS\ -\/\ "{}Gestione\ utente"{}}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_utente_a5386484fba15cc3d430200eb9a59f537}{nome}}[50];\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Nome\ dell'utente\ */}}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_utente_ad74a026ae8e36891b418f01f63245059}{cognome}}[50];\ \ \ \ \ \ \ \textcolor{comment}{/*\ Cognome\ dell'utente\ */}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_utente_a73a466191d8b4bd5d219006221f345de}{username}}[30];\ \ \ \ \ \ \textcolor{comment}{/*\ Username\ univoco\ per\ il\ login\ */}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_utente_a02d9a09cf571cc8eb9c46a2b61acf5f0}{email}}[100];\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Email\ (chiave\ primaria\ per\ il\ database)\ */}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_utente_af0a5d28aaf3a93d2e5a82e57f4a04286}{password}}[50];\ \ \ \ \ \ \textcolor{comment}{/*\ Password\ (eventualmente\ cifrata\ con\ XOR)\ */}}
+\DoxyCodeLine{00125\ \}\ \mbox{\hyperlink{struct_utente}{Utente}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ *\ \ GIOCATORE\ -\/\ Entita'\ di\ flusso/stato}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ *\ \ Riferimento:\ Documentazione\ CdS\ -\/\ "{}Gestione\ giocatore"{}}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{struct_utente}{Utente}}\ \mbox{\hyperlink{struct_giocatore_a97a5b3f0e45d9683593e48f6db7a0601}{info}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Dati\ anagrafici\ completi\ dell'utente\ */}}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_giocatore_aa8b88e8a08536e3c100fbf59c7d78e07}{nome}}[30];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Nome\ breve\ (alias\ per\ retrocompatibilita')\ */}}
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{struct_lista_carte}{ListaCarte}}*\ \mbox{\hyperlink{struct_giocatore_aab65ac6221a68b57f58fd999ca83e2fc}{mano}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Puntatore\ alla\ lista\ delle\ carte\ in\ mano\ (ADT\ Lista)\ */}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_giocatore_af56fe97526640596e0355d93bba7ae40}{is\_bot}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ se\ controllato\ dall'IA,\ 0\ se\ umano\ */}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_giocatore_a695e0e071b32d40dc65f89ddd797a9cb}{stato\_pronto}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ =\ Pronto\ nella\ lobby,\ 0\ =\ In\ attesa\ */}}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_giocatore_a9d76ac262a02f151ffc152f4dcce7084}{num\_carte\_mano}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Numero\ di\ carte\ (usato\ a\ fine\ partita\ per\ classifica)\ */}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_giocatore_a28bb66e168b98599388e7d222ddb3b13}{socket\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ ID\ socket\ del\ giocatore\ (-\/1\ se\ bot\ o\ locale)\ */}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_giocatore_aa0aa176d8cd9eb4401a1fc78b14132a5}{era\_in\_prelobby}};\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ se\ il\ giocatore\ era\ presente\ in\ prelobby\ prima\ di\ iniziare\ (per\ riconnessione)\ */}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{/*\ Campi\ per\ serializzazione:\ backup\ flat\ delle\ carte\ mano\ */}}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{struct_carta}{Carta}}\ \mbox{\hyperlink{struct_giocatore_a0f7d0bea7c55b337d14a2729f6a0b290}{mano\_backup}}[108];\ \ \ \ \ \textcolor{comment}{/*\ Backup\ flat\ delle\ carte\ mano\ per\ salvataggio\ su\ file\ */}}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_giocatore_a01acc01640c84626f9d623f901bfa5c7}{num\_carte\_backup}};\ \ \ \ \ \ \ \textcolor{comment}{/*\ Numero\ di\ carte\ valide\ in\ mano\_backup\ */}}
+\DoxyCodeLine{00156\ \}\ \mbox{\hyperlink{struct_giocatore}{Giocatore}};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00159\ \textcolor{comment}{\ *\ \ HELPER\ INLINE\ PER\ GIOCATORE}}
+\DoxyCodeLine{00160\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00167\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Giocatore\_Nome(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_giocatore}{Giocatore}}*\ g)\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{return}\ g-\/>\mbox{\hyperlink{struct_giocatore_aa8b88e8a08536e3c100fbf59c7d78e07}{nome}}[0]\ ?\ g-\/>\mbox{\hyperlink{struct_giocatore_aa8b88e8a08536e3c100fbf59c7d78e07}{nome}}\ :\ \textcolor{stringliteral}{"{}Sconosciuto"{}};}
+\DoxyCodeLine{00169\ \}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ GIOCATORE\_NOME\_BUF\ 60}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Giocatore\_NomeBot(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_giocatore}{Giocatore}}*\ g)\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ buf[\mbox{\hyperlink{data__structures_8h_ad122d7c5cf74ad68b85d6f22321a1f14}{GIOCATORE\_NOME\_BUF}}];}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{if}\ (g-\/>\mbox{\hyperlink{struct_giocatore_af56fe97526640596e0355d93bba7ae40}{is\_bot}})\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ snprintf(buf,\ \mbox{\hyperlink{data__structures_8h_ad122d7c5cf74ad68b85d6f22321a1f14}{GIOCATORE\_NOME\_BUF}},\ \textcolor{stringliteral}{"{}\%s\ (Bot)"{}},\ Giocatore\_Nome(g));}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ buf;}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{return}\ Giocatore\_Nome(g);}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Giocatore\_SetNome(\mbox{\hyperlink{struct_giocatore}{Giocatore}}*\ g,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)\ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordflow}{if}\ (g\ \&\&\ nome)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ strncpy(g-\/>\mbox{\hyperlink{struct_giocatore_aa8b88e8a08536e3c100fbf59c7d78e07}{nome}},\ nome,\ \textcolor{keyword}{sizeof}(g-\/>\mbox{\hyperlink{struct_giocatore_aa8b88e8a08536e3c100fbf59c7d78e07}{nome}})\ -\/\ 1);}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ strncpy(g-\/>\mbox{\hyperlink{struct_giocatore_a97a5b3f0e45d9683593e48f6db7a0601}{info}}.\mbox{\hyperlink{struct_utente_a5386484fba15cc3d430200eb9a59f537}{nome}},\ nome,\ \textcolor{keyword}{sizeof}(g-\/>\mbox{\hyperlink{struct_giocatore_a97a5b3f0e45d9683593e48f6db7a0601}{info}}.\mbox{\hyperlink{struct_utente_a5386484fba15cc3d430200eb9a59f537}{nome}})\ -\/\ 1);}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ strncpy(g-\/>\mbox{\hyperlink{struct_giocatore_a97a5b3f0e45d9683593e48f6db7a0601}{info}}.\mbox{\hyperlink{struct_utente_a73a466191d8b4bd5d219006221f345de}{username}},\ nome,\ \textcolor{keyword}{sizeof}(g-\/>\mbox{\hyperlink{struct_giocatore_a97a5b3f0e45d9683593e48f6db7a0601}{info}}.\mbox{\hyperlink{struct_utente_a73a466191d8b4bd5d219006221f345de}{username}})\ -\/\ 1);}
+\DoxyCodeLine{00201\ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00205\ \textcolor{comment}{\ *\ \ STATO\ GIOCO\ -\/\ Stato\ completo\ della\ partita\ in\ corso}}
+\DoxyCodeLine{00206\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00216\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{struct_giocatore}{Giocatore}}\ \mbox{\hyperlink{struct_stato_gioco_afc9fe2cc95071032381b5fee85bc7b4d}{giocatori}}[4];\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Array\ dei\ giocatori\ (max\ 4)\ */}}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a58b8ca98ddd90508c9d31a3d518f30fa}{num\_giocatori}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Numero\ effettivo\ di\ giocatori\ nella\ partita\ */}}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{struct_carta}{Carta}}\ \mbox{\hyperlink{struct_stato_gioco_a67281efcd0e938ffbe135f1812a6abe3}{mazzo}}[108];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Mazzo\ di\ pesca\ (max\ 108\ carte\ UNO\ standard)\ */}}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a88ef8d87de962aa187c874b95a787da1}{num\_carte\_mazzo}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Carte\ rimanenti\ nel\ mazzo\ di\ pesca\ */}}
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{struct_carta}{Carta}}\ \mbox{\hyperlink{struct_stato_gioco_a4bdf593bc582e401fd9ed967c2026853}{scarti}}[108];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Pila\ degli\ scarti\ (max\ 108)\ */}}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a407cd9244913d7524fb090b77a989780}{num\_carte\_scarti}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Carte\ nella\ pila\ degli\ scarti\ */}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a8f1416d2f035e301ec99b2c21a697f47}{turno\_corrente}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Indice\ del\ giocatore\ di\ turno\ */}}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_acceb5d9f4390a7a89d73962eaeb100aa}{direzione}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ =\ orario,\ -\/1\ =\ antiorario\ (CambioGiro)\ */}}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}\ \mbox{\hyperlink{struct_stato_gioco_a74d7aa15f671b9bfefa18ac1cf0c84ea}{colore\_attivo}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Colore\ attualmente\ valido\ per\ giocare\ */}}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a03439e6c9077fa496b326a68b1793619}{id\_carta\_in\_trascinamento}};\ \ \textcolor{comment}{/*\ Indice\ della\ carta\ trascinata\ (-\/1\ =\ nessuna)\ */}}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{struct_nodo_carta}{NodoCarta}}*\ \mbox{\hyperlink{struct_stato_gioco_a6beedf5acfde19afffa91dcbff8dcf65}{nodo\_carta\_trascinata}};\ \textcolor{comment}{/*\ Puntatore\ al\ nodo\ della\ carta\ trascinata\ */}}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a4d59c8b2f015e4359516cb476320255b}{gioco\_finito}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ se\ la\ partita\ e'\ terminata\ */}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_stato_gioco_aeff81de05b55c2247deb3b3665d4de9d}{messaggio}}[100];\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Messaggio\ da\ mostrare\ (es.\ "{}HA\ VINTO\ X!"{})\ */}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/\ Stato\ animazioni\ -\/-\/-\/\ */}}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a00d3dedc6f537629b77b442bd2443ff9}{anim\_attiva}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ se\ un'animazione\ e'\ in\ corso\ */}}
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{struct_carta}{Carta}}\ \mbox{\hyperlink{struct_stato_gioco_a6b04e0d2301980012941acd88b45e2e1}{anim\_carta}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Carta\ coinvolta\ nell'animazione\ */}}
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{struct_vector2}{Vector2}}\ \mbox{\hyperlink{struct_stato_gioco_a10f72a052336fefa168cd2c5948026eb}{anim\_start}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Punto\ di\ partenza\ dell'animazione\ */}}
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{struct_vector2}{Vector2}}\ \mbox{\hyperlink{struct_stato_gioco_a90bae182b30c7b621624dc3af746ee80}{anim\_end}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Punto\ di\ arrivo\ dell'animazione\ */}}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_stato_gioco_a819b745b3c098cea5a3f846ea68fe4c2}{anim\_t}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Progresso\ animazione\ (0.0\ -\/\ 1.0)\ */}}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a3bc5fbe76d9d128bcc952ed57d0dca26}{tipo\_animazione}};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 0\ =\ normale,\ 1\ =\ animazione\ speciale\ */}}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/\ Stato\ scelta\ colore\ e\ UNO\ -\/-\/-\/\ */}}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_aeb67d15003bf5a99247679660daf8eb4}{in\_scelta\_colore}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ se\ il\ giocatore\ deve\ scegliere\ un\ colore\ */}}
+\DoxyCodeLine{00241\ \ \ \ \ \mbox{\hyperlink{struct_carta}{Carta}}\ \mbox{\hyperlink{struct_stato_gioco_adcd01ff65081a7d26ec7a893552872a5}{carta\_pendente}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Carta\ giocata\ in\ attesa\ della\ scelta\ del\ colore\ */}}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a7893a4cbfd40913396a71c865f75e105}{deve\_chiamare\_uno}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ ID+1\ del\ giocatore\ che\ deve\ premere\ UNO\ */}}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_stato_gioco_a69a7cf4db8b6ce8d66750a3e06d403a2}{timer\_uno}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Timer\ countdown\ per\ il\ pulsante\ UNO\ */}}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_stato_gioco_a4cce055221d6d802a3e7cb9f22e4260a}{notifica}}[128];\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Testo\ della\ notifica\ temporanea\ (aumentato\ da\ 50\ a\ 128\ per\ evitare\ overflow\ con\ nomi\ lunghi)\ */}}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_stato_gioco_a89df943210c791c241cd5cfdc6da5661}{timer\_notifica}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Timer\ di\ visualizzazione\ della\ notifica\ */}}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_aebcae6307fff59f7a86f8f25ca42e5c3}{autore\_animazione}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ ID\ del\ giocatore\ che\ ha\ scatenato\ l'animazione\ */}}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a6df6ba1c119c0b940ab582e0b5288553}{anim\_pesca\_count}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Quante\ carte\ pescare\ quando\ animazione\ DRAW\ termina\ */}}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_aa2828dc9d8268df45ffb15eaa61fda5e}{anim\_gia\_applicata}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ =\ stato\ gia'\ applicato\ dal\ packet\_handler\ */}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/\ Stato\ chat\ -\/-\/-\/\ */}}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_stato_gioco_a096a6b669ea4b3eaeb7671683656385e}{chat\_buffer}}[256];\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Buffer\ per\ il\ messaggio\ chat\ in\ scrittura\ */}}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{comment}{/*\ -\/-\/-\/\ Informazioni\ partita\ -\/-\/-\/\ */}}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_stato_gioco_a6fd1ed705d6ebec5dc51363b3fbe7adb}{durata\_partita}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Durata\ in\ secondi\ della\ partita\ in\ corso\ */}}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_stato_gioco_a33592b7050a50332a06e5bbddce422c1}{chat\_history}}[15][128];\ \ \ \ \ \textcolor{comment}{/*\ Cronologia\ ultimi\ 15\ messaggi\ chat\ */}}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a8f7a93125fe682a80d2e0c586084c5ab}{num\_chat\_msg}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Numero\ di\ messaggi\ nella\ cronologia\ */}}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_ad453ebf03c18ede0c53087d20bb2db48}{chat\_aperta}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ se\ il\ pannello\ chat\ e'\ visibile\ */}}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_a98fd0157d290ee7f5f77a90b612c9254}{slot\_salvataggio}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Slot\ di\ salvataggio\ corrente\ */}}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_stato_gioco_a7b1d2fdd92ac7429cc9d00be4dc7e237}{data\_salvataggio}}[30];\ \ \ \ \ \ \textcolor{comment}{/*\ Data/ora\ del\ salvataggio\ */}}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_stato_gioco_adb8540aebbc52c3f5751d9dbcbf331d4}{statistiche\_gia\_salvate}};\ \ \ \ \textcolor{comment}{/*\ 1\ se\ le\ statistiche\ fine-\/partita\ sono\ gia'\ state\ salvate\ */}}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_stato_gioco_a753e93c4f222fb894447df926ec85209}{modalita}}[20];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ BUG\ 3\ FIX:\ Modalita'\ di\ gioco\ salvata\ (es.\ "{}1\ vs\ 3"{},\ "{}Online"{})}}
+\DoxyCodeLine{00262\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ per\ ripristino\ corretto\ al\ caricamento\ della\ partita.\ */}}
+\DoxyCodeLine{00263\ \}\ \mbox{\hyperlink{struct_stato_gioco}{StatoGioco}};}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00266\ \textcolor{comment}{\ *\ \ PARTITA\ REGISTRATA\ -\/\ Storico\ di\ una\ singola\ partita}}
+\DoxyCodeLine{00267\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00274\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_partita_registrata_accf574d47a18cbafeee56335ea642d4b}{modalita}}[20];\ \ \ \ \ \ \textcolor{comment}{/*\ Modalita'\ di\ gioco\ (es.\ "{}1\ vs\ 2"{},\ "{}Online"{})\ */}}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_partita_registrata_af4902d963981362da3bd5654678845d5}{esito}}[15];\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Esito\ della\ partita\ (es.\ "{}Vittoria"{},\ "{}Sconfitta"{})\ */}}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_partita_registrata_a8586dc245db3869622726b5aac060bf8}{durata\_secondi}};\ \ \ \ \ \textcolor{comment}{/*\ Durata\ della\ partita\ in\ secondi\ */}}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_partita_registrata_a5fdaa75d7f3fb26e701da9e04fbe7bdb}{posizione}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Piazzamento\ finale\ (1\ =\ vincitore,\ 2+\ =\ perdenti)\ */}}
+\DoxyCodeLine{00279\ \}\ \mbox{\hyperlink{struct_partita_registrata}{PartitaRegistrata}};}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00282\ \textcolor{comment}{\ *\ \ STATISTICHE\ -\/\ Dati\ anagrafici\ +\ cronologia\ partite}}
+\DoxyCodeLine{00283\ \textcolor{comment}{\ *\ \ Riferimento:\ Documentazione\ CdS\ -\/\ "{}Gestione\ statistiche"{}}}
+\DoxyCodeLine{00284\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00293\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_statistiche_a9fb6dd7b2cc238215c1da4c0fb82614b}{email}}[100];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Email\ dell'utente\ (chiave\ primaria)\ */}}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_statistiche_abf5e584d568e2477f4134df2c2bfac28}{nome}}[30];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Nome\ dell'utente\ */}}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_statistiche_a39dd208dd127f972c279dca2b518af71}{cognome}}[30];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Cognome\ dell'utente\ */}}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_statistiche_a7f6e2544c74da107cdd3c3cf0873a076}{username}}[30];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Username\ univoco\ */}}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_statistiche_a1acca010d53d5beb01cbd476c309d535}{password}}[30];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Password\ (cifrata)\ */}}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_statistiche_a8c5f5abec231bae7ccef86f41d8fb08d}{pin\_recupero}}[7];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ PIN\ di\ 6\ cifre\ per\ recupero\ password\ */}}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_statistiche_a59f4d1460def17b90f9f3672e1477aba}{partite\_giocate}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Contatore\ totale\ partite\ giocate\ */}}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_statistiche_afef7f7718bce3755fbb9cf7857df69a3}{vittorie\_giocatore}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Contatore\ vittorie\ */}}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_statistiche_a7f9b7cbdd29b5901426140450912eef3}{vittorie\_bot}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Contatore\ sconfitte\ (perdite\ contro\ bot)\ */}}
+\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{struct_partita_registrata}{PartitaRegistrata}}\ \mbox{\hyperlink{struct_statistiche_a7ea360b79730a39a3619f97e5a60ca65}{storico\_partite}}[\mbox{\hyperlink{data__structures_8h_a5026ff5f759c4fa9a23782d0303b2ef8}{MAX\_PARTITE\_STORICO}}];\ \textcolor{comment}{/*\ Cronologia\ partite\ */}}
+\DoxyCodeLine{00304\ \}\ \mbox{\hyperlink{struct_statistiche}{Statistiche}};}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00314\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00315\ \ \ \ \ \mbox{\hyperlink{struct_statistiche}{Statistiche}}*\ \mbox{\hyperlink{struct_database_utenti_a1e6283b0977951b6856b4a28cb134d30}{lista}};\ \ \ \ \ \textcolor{comment}{/*\ Array\ DINAMICO\ degli\ utenti\ registrati\ (malloc/realloc)\ */}}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_database_utenti_aed8ec5c0dc95c17502edfce9a1cd347c}{num\_utenti}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Numero\ effettivo\ di\ utenti\ nel\ database\ */}}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_database_utenti_a6ab3fc08590c143549e4e2e5d1453fe4}{capacita}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Capacita'\ corrente\ dell'array\ allocato\ */}}
+\DoxyCodeLine{00318\ \}\ \mbox{\hyperlink{struct_database_utenti}{DatabaseUtenti}};}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00321\ \textcolor{comment}{\ *\ \ MESSAGGIO\ CHAT\ -\/\ Entita'\ di\ flusso\ multiplayer}}
+\DoxyCodeLine{00322\ \textcolor{comment}{\ *\ \ Riferimento:\ Documentazione\ CdS\ -\/\ "{}Gestione\ interazioni\ multiplayer"{}}}
+\DoxyCodeLine{00323\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00330\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00331\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_messaggio_chat_accaf91b73064ebf2e4dbce1a75a7007a}{mittente}}[30];\ \ \textcolor{comment}{/*\ Username\ di\ chi\ ha\ inviato\ il\ messaggio\ */}}
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_messaggio_chat_a89d166dd900996334b700f2c81fcc2f9}{testo}}[256];\ \ \ \ \textcolor{comment}{/*\ Contenuto\ del\ messaggio\ */}}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_messaggio_chat_a0999aecce48d71a5ea2cdf7755906b4f}{orario}}[10];\ \ \ \ \textcolor{comment}{/*\ Timestamp\ (es.\ "{}14:35"{})\ */}}
+\DoxyCodeLine{00334\ \}\ \mbox{\hyperlink{struct_messaggio_chat}{MessaggioChat}};}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00337\ \textcolor{comment}{\ *\ \ CLASSIFICA\ RECORD\ -\/\ Record\ per\ la\ classifica\ fine\ partita}}
+\DoxyCodeLine{00338\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00346\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_classifica_record_ae3f319ff6b7d9f1c2409f6ff227e6981}{nome}}[30];\ \ \ \ \ \ \textcolor{comment}{/*\ Nome\ del\ giocatore\ */}}
+\DoxyCodeLine{00348\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_classifica_record_a7afcacf1a667ce4ad1b5baa4daa2a30c}{num\_carte}};\ \ \ \ \ \ \textcolor{comment}{/*\ Numero\ di\ carte\ rimaste\ in\ mano\ */}}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_classifica_record_a66203cea3f610966b073a091c7f9dfff}{posizione}};\ \ \ \ \ \ \textcolor{comment}{/*\ Posizione\ finale\ (1\ =\ vincitore)\ */}}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_classifica_record_ac0567a89feacf4cc7ee009563dc4bd2c}{is\_bot}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1\ se\ e'\ un\ bot,\ 0\ se\ umano\ */}}
+\DoxyCodeLine{00351\ \}\ \mbox{\hyperlink{struct_classifica_record}{ClassificaRecord}};}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00354\ \textcolor{comment}{\ *\ \ FASE\ APPLICAZIONE\ -\/\ Enum\ per\ lo\ stato\ macchina}}
+\DoxyCodeLine{00355\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00363\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4ad6e31f361c575129ccff5e1330973935}{FASE\_SCELTA\_ACCESSO}},\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Schermata\ iniziale:\ Login\ /\ Registrazione\ /\ Esci\ */}}
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4adacd438199948c23cb204dc28adcce08}{FASE\_REGISTRAZIONE}},\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Form\ di\ registrazione\ nuovo\ utente\ */}}
+\DoxyCodeLine{00366\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4acbbb76ee66b50e70a7c18b1c715f1494}{FASE\_LOGIN}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Form\ di\ login\ */}}
+\DoxyCodeLine{00367\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a8539df50489c7a30ff7107007e93994e}{FASE\_RECUPERO\_PASSWORD}},\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Recupero\ password\ tramite\ PIN\ */}}
+\DoxyCodeLine{00368\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a1079c6e5bfd989925b7e1826028e32e9}{FASE\_PROFILO\_VISUALIZZA}},\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Visualizzazione\ profilo\ utente\ */}}
+\DoxyCodeLine{00369\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a930ae839589c287b460135cbe6b12b48}{FASE\_PROFILO\_MODIFICA}},\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Modifica\ profilo\ utente\ */}}
+\DoxyCodeLine{00370\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4ab089bb955890a5abb503d66c54f43c84}{FASE\_ADMIN\_PANEL}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Pannello\ di\ controllo\ admin\ */}}
+\DoxyCodeLine{00371\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a5b672297493e5a4db190d0c68508d835}{FASE\_ADMIN\_MODIFICA\_UTENTE}},\ \ \ \ \ \textcolor{comment}{/*\ Modifica/crea\ utente\ da\ admin\ */}}
+\DoxyCodeLine{00372\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a67bca53836937ab56d15a6807f194147}{FASE\_MENU}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Menu\ principale\ dopo\ il\ login\ */}}
+\DoxyCodeLine{00373\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a2dcbf54ba35b01b7e8f7dead719007b1}{FASE\_GIOCO}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Gameplay\ loop\ (tavolo\ verde)\ */}}
+\DoxyCodeLine{00374\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a82e71c7714cd66e542bb96e61f0c93a7}{FASE\_FINE\_PARTITA}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Schermata\ di\ fine\ partita\ con\ classifica\ */}}
+\DoxyCodeLine{00375\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a6f1a8394c957e91787eb398052844fbf}{FASE\_STATISTICHE}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Schermata\ statistiche\ e\ storico\ */}}
+\DoxyCodeLine{00376\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a0a1d5af5494cf42c5ada9bea597051f1}{FASE\_MULTIPLAYER\_SCELTA}},\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Scelta\ modalita'\ multiplayer\ (host/client)\ */}}
+\DoxyCodeLine{00377\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4ae1bc0f40721df6b6117a75749a93b1e4}{FASE\_HOST\_LOBBY}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Lobby\ come\ host\ (in\ attesa\ di\ giocatori)\ */}}
+\DoxyCodeLine{00378\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a7e046a29f088b32590eea2d23bd1f872}{FASE\_CLIENT\_JOIN}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Join\ a\ una\ stanza\ multiplayer\ */}}
+\DoxyCodeLine{00379\ \ \ \ \ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4a83f103725ed15dc489b929c39ba4f9a9}{FASE\_CLIENT\_LOBBY}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Lobby\ come\ client\ (in\ attesa\ di\ avvio)\ */}}
+\DoxyCodeLine{00380\ \}\ \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{FaseApplicazione}};}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

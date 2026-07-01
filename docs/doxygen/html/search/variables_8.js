@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['id_0',['id',['../struct_texture.html#aed42161a5c00b6020c85833401da6da6',1,'Texture::id'],['../struct_render_texture.html#afff7311503809d95f59b28a1458f8481',1,'RenderTexture::id'],['../struct_shader.html#af3eee7628d291077cfa66dcc83df83a2',1,'Shader::id']]],
+  ['id_5fcarta_5fin_5ftrascinamento_1',['id_carta_in_trascinamento',['../struct_stato_gioco.html#a03439e6c9077fa496b326a68b1793619',1,'StatoGioco']]],
+  ['id_5ftemp_5flogin_2',['id_temp_login',['../group__auth__impl.html#ga5e67fb6826c236d3ff5d0ec98cd9c582',1,'id_temp_login:&#160;auth.c'],['../auth_8h.html#a5e67fb6826c236d3ff5d0ec98cd9c582',1,'id_temp_login:&#160;auth.h']]],
+  ['id_5futente_5fcorrente_3',['id_utente_corrente',['../group__auth__impl.html#ga9ecbbe659dbada66e149c73cefb83815',1,'id_utente_corrente:&#160;auth.c'],['../group__auth__impl.html#ga9ecbbe659dbada66e149c73cefb83815',1,'id_utente_corrente:&#160;auth.c']]],
+  ['idletime_4',['idleTime',['../struct_game_session.html#a9088938158952033e865dd94aba1bfbe',1,'GameSession']]],
+  ['image_5',['image',['../struct_glyph_info.html#a0a8a4bef3704cb993031bdc6af527cf7',1,'GlyphInfo']]],
+  ['in_5fscelta_5fcolore_6',['in_scelta_colore',['../struct_stato_gioco.html#aeb67d15003bf5a99247679660daf8eb4',1,'StatoGioco']]],
+  ['indices_7',['indices',['../struct_mesh.html#a89fd56bfc17e9ce12e1829c113231d11',1,'Mesh::indices'],['../structrl_vertex_buffer.html#a43f24384fd977ce40ab36d7d39537d40',1,'rlVertexBuffer::indices']]],
+  ['info_8',['info',['../struct_giocatore.html#a97a5b3f0e45d9683593e48f6db7a0601',1,'Giocatore']]],
+  ['inputchat_9',['inputChat',['../chat__render_8c.html#a20d7f38f3172dfe2ed4c5819e84c78ed',1,'inputChat:&#160;gameplay_screen.c'],['../gameplay__draw_8c.html#a20d7f38f3172dfe2ed4c5819e84c78ed',1,'inputChat:&#160;gameplay_screen.c'],['../gameplay__screen_8c.html#a20d7f38f3172dfe2ed4c5819e84c78ed',1,'inputChat:&#160;gameplay_screen.c'],['../gameplay__update_8c.html#a20d7f38f3172dfe2ed4c5819e84c78ed',1,'inputChat:&#160;gameplay_screen.c'],['../gameplay__chat_8h.html#a47807e52ded0ff6f35a6aa8a5e956b73',1,'inputChat:&#160;gameplay_screen.c'],['../gameplay__shared_8h.html#a20d7f38f3172dfe2ed4c5819e84c78ed',1,'inputChat:&#160;gameplay_screen.c']]],
+  ['inputcognome_10',['inputCognome',['../group__auth__impl.html#gabdb70a410ac6fd790650381b7fb858b1',1,'inputCognome:&#160;auth.c'],['../auth_8h.html#abdb70a410ac6fd790650381b7fb858b1',1,'inputCognome:&#160;auth.h']]],
+  ['inputemail_11',['inputEmail',['../group__auth__impl.html#ga80d354a96271494c85654ea411ddac01',1,'inputEmail:&#160;auth.c'],['../group__auth__impl.html#ga80d354a96271494c85654ea411ddac01',1,'inputEmail:&#160;auth.c']]],
+  ['inputnome_12',['inputNome',['../group__auth__impl.html#ga2b0e8ee2101796cab35e2f6d2f932993',1,'inputNome:&#160;auth.c'],['../auth_8h.html#a2b0e8ee2101796cab35e2f6d2f932993',1,'inputNome:&#160;auth.h']]],
+  ['inputpassword_13',['inputPassword',['../group__auth__impl.html#ga716f9307558976d3a4c67840b2ceb8ac',1,'inputPassword:&#160;auth.c'],['../auth_8h.html#a716f9307558976d3a4c67840b2ceb8ac',1,'inputPassword:&#160;auth.h']]],
+  ['inputpin_14',['inputPin',['../group__auth__impl.html#gafb61cbc7b14899011261458eb60e240a',1,'inputPin:&#160;auth.c'],['../auth_8h.html#afb61cbc7b14899011261458eb60e240a',1,'inputPin:&#160;auth.h']]],
+  ['inputusername_15',['inputUsername',['../group__auth__impl.html#ga726a429817c84dacd48cce82b3c91003',1,'inputUsername:&#160;auth.c'],['../group__auth__impl.html#ga726a429817c84dacd48cce82b3c91003',1,'inputUsername:&#160;auth.c']]],
+  ['interpupillarydistance_16',['interpupillaryDistance',['../struct_vr_device_info.html#a77b059fa8caea38dd7690c53f34042c9',1,'VrDeviceInfo']]],
+  ['is_5fbot_17',['is_bot',['../struct_giocatore.html#af56fe97526640596e0355d93bba7ae40',1,'Giocatore::is_bot'],['../struct_classifica_record.html#ac0567a89feacf4cc7ee009563dc4bd2c',1,'ClassificaRecord::is_bot'],['../struct_session_player.html#af53c71074b17b3e19d048c9954408655',1,'SessionPlayer::is_bot']]],
+  ['is_5fconnected_18',['is_connected',['../struct_session_player.html#a1550d8e967e52dae51afb25037593b51',1,'SessionPlayer']]],
+  ['is_5fready_19',['is_ready',['../group__network__packet__strutture.html#gad4d1f6a7b22f4c2f2e5a244718194383',1,'PacketPlayerReady']]],
+  ['isconnected_20',['isConnected',['../group__network__packet__strutture.html#gaa358768cbc9b8ed27055d5b41726d79a',1,'isConnected:&#160;network.c'],['../group__network__packet__strutture.html#gaa358768cbc9b8ed27055d5b41726d79a',1,'isConnected:&#160;network.c']]],
+  ['istrascinata_21',['isTrascinata',['../struct_carta.html#a54af4043346725181d409aa88c41243b',1,'Carta']]],
+  ['istyping_22',['isTyping',['../chat__render_8c.html#a5c0b78531197553de40e19f2afd95ff4',1,'isTyping:&#160;gameplay_screen.c'],['../gameplay__draw_8c.html#a5c0b78531197553de40e19f2afd95ff4',1,'isTyping:&#160;gameplay_screen.c'],['../gameplay__screen_8c.html#a5c0b78531197553de40e19f2afd95ff4',1,'isTyping:&#160;gameplay_screen.c'],['../gameplay__update_8c.html#a5c0b78531197553de40e19f2afd95ff4',1,'isTyping:&#160;gameplay_screen.c'],['../gameplay__chat_8h.html#a5c0b78531197553de40e19f2afd95ff4',1,'isTyping:&#160;gameplay_screen.c'],['../gameplay__shared_8h.html#a5c0b78531197553de40e19f2afd95ff4',1,'isTyping:&#160;gameplay_screen.c']]]
+];

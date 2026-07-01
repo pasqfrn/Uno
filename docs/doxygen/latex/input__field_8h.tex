@@ -1,0 +1,38 @@
+\doxysection{lib/screens/auth/input\+\_\+field.h File Reference}
+\hypertarget{input__field_8h}{}\label{input__field_8h}\index{lib/screens/auth/input\_field.h@{lib/screens/auth/input\_field.h}}
+
+
+Helper per la gestione dei campi di input nelle schermate auth.  
+
+
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__input__field_gab7226869f631c265b54f1fae9728d74c}{Aggiorna\+Input\+Campo}} (char \texorpdfstring{$\ast$}{*}buffer, int \texorpdfstring{$\ast$}{*}count, int max\+Length)
+\begin{DoxyCompactList}\small\item\em Aggiorna lo stato di un campo input (carattere premuto, backspace). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__input__field_ga6f6580f15be4386f8868a87e3dbbe8ce}{Disegna\+Input\+Field}} (\mbox{\hyperlink{struct_rectangle}{Rectangle}} area, const char \texorpdfstring{$\ast$}{*}label, const char \texorpdfstring{$\ast$}{*}text, int count, int is\+Focused, int is\+Password, \mbox{\hyperlink{struct_color}{Color}} label\+Color)
+\begin{DoxyCompactList}\small\item\em Disegna un campo input su schermo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{input__field_8h_ab9dd35db58fce3c897b9a9e5a8ebc8a7}{submit\+\_\+richiesto}}
+\begin{DoxyCompactList}\small\item\em Flag globale per richiedere il submit del form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper per la gestione dei campi di input nelle schermate auth. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{input__field_8h_ab9dd35db58fce3c897b9a9e5a8ebc8a7}\index{input\_field.h@{input\_field.h}!submit\_richiesto@{submit\_richiesto}}
+\index{submit\_richiesto@{submit\_richiesto}!input\_field.h@{input\_field.h}}
+\doxysubsubsection{\texorpdfstring{submit\_richiesto}{submit\_richiesto}}
+{\footnotesize\ttfamily \label{input__field_8h_ab9dd35db58fce3c897b9a9e5a8ebc8a7} 
+int submit\+\_\+richiesto\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Flag globale per richiedere il submit del form. 
+

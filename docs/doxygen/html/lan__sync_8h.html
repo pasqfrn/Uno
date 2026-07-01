@@ -1,0 +1,795 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file lib/socket/lan/lan_sync.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__sync_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file lan_sync.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Sincronizzazione LAN del database utenti via UDP broadcast.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lan__protocol_8h_source.html">lan_protocol.h</a>&quot;</code><br />
+</div>
+<p><a href="lan__sync_8h_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:ac994a8ec1622c6847ed9098bed849d10" id="r_ac994a8ec1622c6847ed9098bed849d10"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ac994a8ec1622c6847ed9098bed849d10">LAN_SYNC_PORT</a>&#160;&#160;&#160;27017</td></tr>
+<tr class="memdesc:ac994a8ec1622c6847ed9098bed849d10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Porta UDP dedicata alla sincronizzazione LAN (diversa da game 27015).  <br /></td></tr>
+<tr class="memitem:a8983866c48fd15e74690a796df115a73" id="r_a8983866c48fd15e74690a796df115a73"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a8983866c48fd15e74690a796df115a73">LAN_SYNC_INTERVAL</a>&#160;&#160;&#160;1.0f</td></tr>
+<tr class="memdesc:a8983866c48fd15e74690a796df115a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intervallo in secondi tra broadcast LAN successivi.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a3f8f65e7d6582283510158e54c4928fe" id="r_a3f8f65e7d6582283510158e54c4928fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3f8f65e7d6582283510158e54c4928fe">SerializzaDB</a> (char *buf, int buf_size)</td></tr>
+<tr class="memdesc:a3f8f65e7d6582283510158e54c4928fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializza il database utenti in un buffer JSON.  <br /></td></tr>
+<tr class="memitem:a88d0b5ae2f24ad06c318deb550373b1e" id="r_a88d0b5ae2f24ad06c318deb550373b1e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a88d0b5ae2f24ad06c318deb550373b1e">LAN_Init</a> (void)</td></tr>
+<tr class="memdesc:a88d0b5ae2f24ad06c318deb550373b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza il modulo LAN (socket UDP, thread di ascolto).  <br /></td></tr>
+<tr class="memitem:ab0b625c0463cad457894bf91847319c5" id="r_ab0b625c0463cad457894bf91847319c5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab0b625c0463cad457894bf91847319c5">LAN_Update</a> (float dt)</td></tr>
+<tr class="memdesc:ab0b625c0463cad457894bf91847319c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout).  <br /></td></tr>
+<tr class="memitem:aa5723e8d507407a08a3bac33e39ee03f" id="r_aa5723e8d507407a08a3bac33e39ee03f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa5723e8d507407a08a3bac33e39ee03f">LAN_Close</a> (void)</td></tr>
+<tr class="memdesc:aa5723e8d507407a08a3bac33e39ee03f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chiude il modulo LAN e libera risorse.  <br /></td></tr>
+<tr class="memitem:ae3fd9a777cc1edf5a29495a455d0edd3" id="r_ae3fd9a777cc1edf5a29495a455d0edd3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae3fd9a777cc1edf5a29495a455d0edd3">LAN_UsernameEsiste</a> (const char *username, int skip_index)</td></tr>
+<tr class="memdesc:ae3fd9a777cc1edf5a29495a455d0edd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se uno username esiste nel database LAN-synced.  <br /></td></tr>
+<tr class="memitem:a4ac5aeca9a0bc4c628f3c377b007a990" id="r_a4ac5aeca9a0bc4c628f3c377b007a990"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a4ac5aeca9a0bc4c628f3c377b007a990">LAN_EmailEsiste</a> (const char *email)</td></tr>
+<tr class="memdesc:a4ac5aeca9a0bc4c628f3c377b007a990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un'email esiste nel database LAN-synced.  <br /></td></tr>
+<tr class="memitem:ae1b4876757ac2d2fbb965c0dfc1a1c4c" id="r_ae1b4876757ac2d2fbb965c0dfc1a1c4c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae1b4876757ac2d2fbb965c0dfc1a1c4c">LAN_BroadcastNow</a> (void)</td></tr>
+<tr class="memdesc:ae1b4876757ac2d2fbb965c0dfc1a1c4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forza un broadcast immediato del database LAN.  <br /></td></tr>
+<tr class="memitem:ad742056d7d001bc371900404f780fdb5" id="r_ad742056d7d001bc371900404f780fdb5"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ad742056d7d001bc371900404f780fdb5">LAN_GetUtentiCount</a> (void)</td></tr>
+<tr class="memdesc:ad742056d7d001bc371900404f780fdb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di utenti nel database LAN.  <br /></td></tr>
+<tr class="memitem:a54bcee66d466e24ce98a66159c9b0d5a" id="r_a54bcee66d466e24ce98a66159c9b0d5a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a54bcee66d466e24ce98a66159c9b0d5a">LAN_BroadcastSavesNow</a> (void)</td></tr>
+<tr class="memdesc:a54bcee66d466e24ce98a66159c9b0d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forza un broadcast immediato dei salvataggi.  <br /></td></tr>
+<tr class="memitem:a75f095ec4db72f1eaaf97fb8ae78b304" id="r_a75f095ec4db72f1eaaf97fb8ae78b304"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a75f095ec4db72f1eaaf97fb8ae78b304">LAN_BroadcastDeleteSave</a> (const char *owner_username, const char *data_salvataggio)</td></tr>
+<tr class="memdesc:a75f095ec4db72f1eaaf97fb8ae78b304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcasta una richiesta di eliminazione di un salvataggio.  <br /></td></tr>
+<tr class="memitem:afb110e20ad8f620b196145ddcb970c21" id="r_afb110e20ad8f620b196145ddcb970c21"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afb110e20ad8f620b196145ddcb970c21">LAN_ProcessDBPacket</a> (const char *buf, int bytes, int offset)</td></tr>
+<tr class="memdesc:afb110e20ad8f620b196145ddcb970c21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processa un pacchetto DB ricevuto (merge utenti).  <br /></td></tr>
+<tr class="memitem:a27e09f286eb4eba5a8589e9818346a2d" id="r_a27e09f286eb4eba5a8589e9818346a2d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a27e09f286eb4eba5a8589e9818346a2d">LAN_ProcessSaveChunk</a> (const <a class="el" href="lan__protocol_8h.html#a5f5183faad8f417a84fda8b24a245a5e">LanSaveChunkPacket</a> *chunk)</td></tr>
+<tr class="memdesc:a27e09f286eb4eba5a8589e9818346a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processa un chunk di salvataggio ricevuto via LAN.  <br /></td></tr>
+<tr class="memitem:a3d1549737db701594d58097588c08c36" id="r_a3d1549737db701594d58097588c08c36"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3d1549737db701594d58097588c08c36">LAN_UpdateSaves</a> (float dt)</td></tr>
+<tr class="memdesc:a3d1549737db701594d58097588c08c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna lo stato dei salvataggi (scadenza, pulizia).  <br /></td></tr>
+<tr class="memitem:a38ae2de109b22ba34b6ebc58870676fd" id="r_a38ae2de109b22ba34b6ebc58870676fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a38ae2de109b22ba34b6ebc58870676fd">CompattaSavesUtenteCorrente</a> (void)</td></tr>
+<tr class="memdesc:a38ae2de109b22ba34b6ebc58870676fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compatta i salvataggi dell'utente corrente (rimuove duplicati).  <br /></td></tr>
+<tr class="memitem:a041d8356ae80ac806101042d00ba50ce" id="r_a041d8356ae80ac806101042d00ba50ce"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a041d8356ae80ac806101042d00ba50ce">LAN_BroadcastDeleteUser</a> (const char *username)</td></tr>
+<tr class="memdesc:a041d8356ae80ac806101042d00ba50ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcasta una richiesta di eliminazione utente su LAN.  <br /></td></tr>
+<tr class="memitem:a388834167710eff0f7c4c0253f90eea2" id="r_a388834167710eff0f7c4c0253f90eea2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a388834167710eff0f7c4c0253f90eea2">LAN_BroadcastStatsSync</a> (const char *username)</td></tr>
+<tr class="memdesc:a388834167710eff0f7c4c0253f90eea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcasta un pacchetto di sincronizzazione completa delle statistiche.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:a35d530456749dea612236ad880c703d5" id="r_a35d530456749dea612236ad880c703d5"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a35d530456749dea612236ad880c703d5">dentroSalvaDB</a></td></tr>
+<tr class="memdesc:a35d530456749dea612236ad880c703d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag per evitare broadcast ricorsivi durante SalvaDB.  <br /></td></tr>
+<tr class="memitem:a83d2b69124592dbd8092ed4214b3f35e" id="r_a83d2b69124592dbd8092ed4214b3f35e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a83d2b69124592dbd8092ed4214b3f35e">numDeletedUsers</a></td></tr>
+<tr class="memdesc:a83d2b69124592dbd8092ed4214b3f35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contatore utenti eliminati.  <br /></td></tr>
+<tr class="memitem:aa8b1b6c8ce6cf65c18ad02977e47f98f" id="r_aa8b1b6c8ce6cf65c18ad02977e47f98f"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#aa8b1b6c8ce6cf65c18ad02977e47f98f">deletedUsers</a> [512][30]</td></tr>
+<tr class="memdesc:aa8b1b6c8ce6cf65c18ad02977e47f98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer di username eliminati (per compatibilita' screens).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Sincronizzazione LAN del database utenti via UDP broadcast. </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
+<a id="a8983866c48fd15e74690a796df115a73" name="a8983866c48fd15e74690a796df115a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8983866c48fd15e74690a796df115a73">&#9670;&#160;</a></span>LAN_SYNC_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LAN_SYNC_INTERVAL&#160;&#160;&#160;1.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Intervallo in secondi tra broadcast LAN successivi. </p>
+
+</div>
+</div>
+<a id="ac994a8ec1622c6847ed9098bed849d10" name="ac994a8ec1622c6847ed9098bed849d10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac994a8ec1622c6847ed9098bed849d10">&#9670;&#160;</a></span>LAN_SYNC_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LAN_SYNC_PORT&#160;&#160;&#160;27017</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Porta UDP dedicata alla sincronizzazione LAN (diversa da game 27015). </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a38ae2de109b22ba34b6ebc58870676fd" name="a38ae2de109b22ba34b6ebc58870676fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ae2de109b22ba34b6ebc58870676fd">&#9670;&#160;</a></span>CompattaSavesUtenteCorrente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CompattaSavesUtenteCorrente </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compatta i salvataggi dell'utente corrente (rimuove duplicati). </p>
+<p>Compatta i salvataggi dell'utente corrente in ordine cronologico.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd><a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> loggato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Salvati solo gli slot non vuoti e piu' recenti.</dd></dl>
+<p>Compatta i salvataggi dell'utente corrente (rimuove duplicati).</p>
+<p>Procedura:</p><ol type="1">
+<li>Raccoglie tutti i salvataggi dell'utente (formato nuovo e vecchio)</li>
+<li>Ordina per data crescente (bubble sort)</li>
+<li>Rinnomina i file in formato temporaneo</li>
+<li>Riscrive negli slot 1-100 in ordine cronologico</li>
+<li>Rimuove i file temporanei</li>
+</ol>
+<p>Usa il nuovo formato save_user{ID}_slot_{N}.dat con fallback al vecchio save_slot_N.dat per retrocompatibilita'. </p>
+
+</div>
+</div>
+<a id="a75f095ec4db72f1eaaf97fb8ae78b304" name="a75f095ec4db72f1eaaf97fb8ae78b304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f095ec4db72f1eaaf97fb8ae78b304">&#9670;&#160;</a></span>LAN_BroadcastDeleteSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_BroadcastDeleteSave </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>owner_username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>data_salvataggio</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Broadcasta una richiesta di eliminazione di un salvataggio. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">owner_username</td><td>Proprietario del salvataggio. </td></tr>
+    <tr><td class="paramname">data_salvataggio</td><td>Data del salvataggio da eliminare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a041d8356ae80ac806101042d00ba50ce" name="a041d8356ae80ac806101042d00ba50ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a041d8356ae80ac806101042d00ba50ce">&#9670;&#160;</a></span>LAN_BroadcastDeleteUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_BroadcastDeleteUser </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Broadcasta una richiesta di eliminazione utente su LAN. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata; username != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username dell'utente eliminato. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae1b4876757ac2d2fbb965c0dfc1a1c4c" name="ae1b4876757ac2d2fbb965c0dfc1a1c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1b4876757ac2d2fbb965c0dfc1a1c4c">&#9670;&#160;</a></span>LAN_BroadcastNow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_BroadcastNow </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Forza un broadcast immediato del database LAN. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata e dbUtenti valido. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Pacchetto UDP broadcast inviato. </dd></dl>
+
+</div>
+</div>
+<a id="a54bcee66d466e24ce98a66159c9b0d5a" name="a54bcee66d466e24ce98a66159c9b0d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54bcee66d466e24ce98a66159c9b0d5a">&#9670;&#160;</a></span>LAN_BroadcastSavesNow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_BroadcastSavesNow </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Forza un broadcast immediato dei salvataggi. </p>
+<p>Forza broadcast immediato di tutti i salvataggi dell'utente corrente.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Salvataggi broadcastati.</dd></dl>
+<p>Forza un broadcast immediato dei salvataggi.</p>
+<p>Chiama SerializzaESpedisciSalvataggi() per inviare tutti gli slot dell'utente loggato ai dispositivi sulla LAN. </p>
+
+</div>
+</div>
+<a id="a388834167710eff0f7c4c0253f90eea2" name="a388834167710eff0f7c4c0253f90eea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a388834167710eff0f7c4c0253f90eea2">&#9670;&#160;</a></span>LAN_BroadcastStatsSync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_BroadcastStatsSync </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Broadcasta un pacchetto di sincronizzazione completa delle statistiche. </p>
+<p>Invia a tutti i dispositivi LAN il pacchetto <a class="el" href="struct_stats_sync_packet.html" title="StatsSyncPacket - Sincronizzazione live statistiche dopo una partita.">StatsSyncPacket</a> contenente contatori e storico partite recenti.</p>
+<p>BUG FIX 5: Garantisce che i profili utente siano sincronizzati tra dispositivi dopo ogni partita, preservando lo storico partite (non solo i contatori).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata; username != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username del giocatore di cui sincronizzare i dati. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa5723e8d507407a08a3bac33e39ee03f" name="aa5723e8d507407a08a3bac33e39ee03f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5723e8d507407a08a3bac33e39ee03f">&#9670;&#160;</a></span>LAN_Close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_Close </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Chiude il modulo LAN e libera risorse. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Socket chiuso; thread terminato; risorse liberate. </dd></dl>
+
+</div>
+</div>
+<a id="a4ac5aeca9a0bc4c628f3c377b007a990" name="a4ac5aeca9a0bc4c628f3c377b007a990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ac5aeca9a0bc4c628f3c377b007a990">&#9670;&#160;</a></span>LAN_EmailEsiste()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LAN_EmailEsiste </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se un'email esiste nel database LAN-synced. </p>
+<p>Verifica se una email esiste gia' nel DB locale o remoto (LAN).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>dbUtenti inizializzato. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se esiste, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email da verificare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Verifica se un'email esiste nel database LAN-synced.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email da verificare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se esiste, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="ad742056d7d001bc371900404f780fdb5" name="ad742056d7d001bc371900404f780fdb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad742056d7d001bc371900404f780fdb5">&#9670;&#160;</a></span>LAN_GetUtentiCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LAN_GetUtentiCount </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il numero di utenti nel database LAN. </p>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di utenti. </dd></dl>
+
+</div>
+</div>
+<a id="a88d0b5ae2f24ad06c318deb550373b1e" name="a88d0b5ae2f24ad06c318deb550373b1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d0b5ae2f24ad06c318deb550373b1e">&#9670;&#160;</a></span>LAN_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LAN_Init </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inizializza il modulo LAN (socket UDP, thread di ascolto). </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>Nessuna. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Socket UDP aperto; thread di ascolto avviato. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se inizializzato con successo, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="afb110e20ad8f620b196145ddcb970c21" name="afb110e20ad8f620b196145ddcb970c21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb110e20ad8f620b196145ddcb970c21">&#9670;&#160;</a></span>LAN_ProcessDBPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_ProcessDBPacket </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bytes</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processa un pacchetto DB ricevuto (merge utenti). </p>
+<p>Entry point pubblico per processare un pacchetto DB LAN ricevuto.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>buf contiene un JSON valido. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>Buffer con i dati ricevuti. </td></tr>
+    <tr><td class="paramname">bytes</td><td>Numero di bytes nel pacchetto. </td></tr>
+    <tr><td class="paramname">offset</td><td>Offset nel buffer (per logging).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Processa un pacchetto DB ricevuto (merge utenti).</p>
+<p>Chiamato da <a class="el" href="#ab0b625c0463cad457894bf91847319c5" title="Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout).">LAN_Update()</a> in <a class="el" href="lan__broadcast_8c.html" title="Gestione broadcast LAN: inizializzazione, chiusura e smistamento pacchetti.">lan_broadcast.c</a>. </p>
+
+</div>
+</div>
+<a id="a27e09f286eb4eba5a8589e9818346a2d" name="a27e09f286eb4eba5a8589e9818346a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e09f286eb4eba5a8589e9818346a2d">&#9670;&#160;</a></span>LAN_ProcessSaveChunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_ProcessSaveChunk </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lan__protocol_8h.html#a5f5183faad8f417a84fda8b24a245a5e">LanSaveChunkPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>chunk</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processa un chunk di salvataggio ricevuto via LAN. </p>
+<p>Entry point pubblico per processare un chunk di salvataggio ricevuto.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>chunk != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chunk</td><td>Pacchetto chunk di salvataggio.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Processa un chunk di salvataggio ricevuto via LAN.</p>
+<p>Chiamato da <a class="el" href="#ab0b625c0463cad457894bf91847319c5" title="Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout).">LAN_Update()</a> in <a class="el" href="lan__broadcast_8c.html" title="Gestione broadcast LAN: inizializzazione, chiusura e smistamento pacchetti.">lan_broadcast.c</a> quando arriva un pacchetto LAN_PACKET_SAVE.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chunk</td><td>Puntatore al pacchetto chunk ricevuto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab0b625c0463cad457894bf91847319c5" name="ab0b625c0463cad457894bf91847319c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0b625c0463cad457894bf91847319c5">&#9670;&#160;</a></span>LAN_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_Update </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout). </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Pacchetti ricevuti processati; broadcast inviati se scaduto intervallo. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Delta time dal frame precedente. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Sincronizza le statistiche di un utente ricevute da un dispositivo remoto. La sincronizzazione avviene in modo incrementale:</p><ul>
+<li>I contatori (partite_giocate, vittorie_giocatore, vittorie_bot) vengono aggiornati solo se il valore remoto e' maggiore di quello locale (crescita monotona).</li>
+<li>Lo storico partite viene sempre mergiato, indipendentemente dai contatori. Le partite remote vengono aggiunte solo se non gia' presenti (deduplica per durata+esito+modalita+posizione).</li>
+</ul>
+<p>Questo approccio garantisce che entrambi i PC abbiano la stessa vista dello storico partite, anche se i contatori numerici sono identici. Garantisce inoltre che le statistiche non vengano mai sovrascritte ma solo estese con nuove partite.</p>
+<p>Ricezione pacchetto sincronizzazione statistiche (LAN_PACKET_STATS_SYNC).</p>
+<p>BUG FIX 1 (Double Counting): La logica di merge e' stata corretta per evitare che le partite storiche vengano contate due volte.</p>
+<p>Strategia:</p><ol type="1">
+<li>Se il remoto ha contatori PIU' ALTI del locale (crescita monotona), COPIA i contatori e NON mergiare lo storico (le partite sono gia' in quei numeri).</li>
+<li>Se i contatori sono UGUALI ma ci sono partite storiche NON PRESENTI in locale (deduplica per durata+esito+modalita+posizione), aggiungile a storico_partite[] SENZA incrementare partite_giocate (la partita e' gia' contata).</li>
+<li>Se i contatori sono UGUALI e lo storico e' gia' presente, non fare nulla.</li>
+</ol>
+<p>Ricezione notifica di eliminazione salvataggio. Cerca il file nel nuovo formato save_user{ID}_slot_{N}.dat, con fallback al vecchio formato save_slot_N.dat per retrocompatibilita'.</p>
+
+</div>
+</div>
+<a id="a3d1549737db701594d58097588c08c36" name="a3d1549737db701594d58097588c08c36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d1549737db701594d58097588c08c36">&#9670;&#160;</a></span>LAN_UpdateSaves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_UpdateSaves </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aggiorna lo stato dei salvataggi (scadenza, pulizia). </p>
+<p>Aggiorna i timer dei ricevitori di chunk salvataggi.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Delta time.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Aggiorna lo stato dei salvataggi (scadenza, pulizia).</p>
+<p>Chiamata ogni frame da <a class="el" href="#ab0b625c0463cad457894bf91847319c5" title="Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout).">LAN_Update()</a>. Gestisce:</p><ul>
+<li>Timeout 30s: se un ricevitore non completa il file entro 30s, viene rilasciato</li>
+<li>Cleanup automatico: se tutti i chunk sono arrivati, rilascia il buffer</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Delta time dall'ultimo frame (per aggiornamento timer). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae3fd9a777cc1edf5a29495a455d0edd3" name="ae3fd9a777cc1edf5a29495a455d0edd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3fd9a777cc1edf5a29495a455d0edd3">&#9670;&#160;</a></span>LAN_UsernameEsiste()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LAN_UsernameEsiste </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>skip</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se uno username esiste nel database LAN-synced. </p>
+<p>Verifica se uno username esiste gia' nel DB locale.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>dbUtenti inizializzato. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se esiste, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username da verificare. </td></tr>
+    <tr><td class="paramname">skip_index</td><td>Indice da ignorare (-1 per controllare tutti).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Verifica se uno username esiste nel database LAN-synced.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td>Username da verificare. </td></tr>
+    <tr><td class="paramname">skip</td><td>Indice da saltare (-1 per nessuno). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se esiste, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="a3f8f65e7d6582283510158e54c4928fe" name="a3f8f65e7d6582283510158e54c4928fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f8f65e7d6582283510158e54c4928fe">&#9670;&#160;</a></span>SerializzaDB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SerializzaDB </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>buf_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serializza il database utenti in un buffer JSON. </p>
+<p>Serializza il database utenti in un buffer per broadcast UDP.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>dbUtenti.num_utenti &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Buffer riempito con stringa JSON; restituisce bytes scritti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>Buffer di output. </td></tr>
+    <tr><td class="paramname">buf_size</td><td>Dimensione massima del buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Bytes scritti, o -1 se errore.</dd></dl>
+<p>Serializza il database utenti in un buffer JSON.</p>
+<p>Formato: header + int(num_utenti) + <a class="el" href="struct_lan_compact_user.html">LanCompactUser</a>[N].</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>Buffer di destinazione. </td></tr>
+    <tr><td class="paramname">buf_size</td><td>Dimensione buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di byte scritti, 0 se errore. </dd></dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="aa8b1b6c8ce6cf65c18ad02977e47f98f" name="aa8b1b6c8ce6cf65c18ad02977e47f98f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b1b6c8ce6cf65c18ad02977e47f98f">&#9670;&#160;</a></span>deletedUsers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char deletedUsers[512][30]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer di username eliminati (per compatibilita' screens). </p>
+<p>Cache degli utenti eliminati (per non riaggiungerli da remoto). </p>
+
+</div>
+</div>
+<a id="a35d530456749dea612236ad880c703d5" name="a35d530456749dea612236ad880c703d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d530456749dea612236ad880c703d5">&#9670;&#160;</a></span>dentroSalvaDB</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dentroSalvaDB</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag per evitare broadcast ricorsivi durante SalvaDB. </p>
+<p>Flag: 1 se siamo all'interno di una chiamata a <a class="el" href="group__lazy__deletion__impl.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario (data/users/users.dat).">SalvaDB()</a> (per evitare ricorsione LAN).</p>
+<p>Flag per evitare broadcast ricorsivi durante SalvaDB. </p>
+
+</div>
+</div>
+<a id="a83d2b69124592dbd8092ed4214b3f35e" name="a83d2b69124592dbd8092ed4214b3f35e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d2b69124592dbd8092ed4214b3f35e">&#9670;&#160;</a></span>numDeletedUsers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int numDeletedUsers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contatore utenti eliminati. </p>
+<p>Numero di utenti nella cache delle eliminazioni. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e17dec1d132ad7ed461be9444000b405.html">socket</a></li><li class="navelem"><a href="dir_eafa113c866c19c3f812b2f973b25251.html">lan</a></li><li class="navelem"><a href="lan__sync_8h.html">lan_sync.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

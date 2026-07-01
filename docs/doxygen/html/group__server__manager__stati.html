@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Stati Sessione</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__server__manager__stati.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Stati Sessione </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Enumerazione degli stati possibili di una sessione.  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Tipi enumerati (enum)</h2></td></tr>
+<tr class="memitem:gac82c179a797c0d7c249d1b98a8e3aa8f" id="r_gac82c179a797c0d7c249d1b98a8e3aa8f"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#gac82c179a797c0d7c249d1b98a8e3aa8f">SessionState</a> { <br />
+&#160;&#160;<a class="el" href="#ggac82c179a797c0d7c249d1b98a8e3aa8fa5964dfc2fd0e3a409c22e68564320d15">SESSION_WAITING</a>
+, <a class="el" href="#ggac82c179a797c0d7c249d1b98a8e3aa8faba27760d1c9400680479f5bd304ce305">SESSION_STARTING</a>
+, <a class="el" href="#ggac82c179a797c0d7c249d1b98a8e3aa8fa3831d35afa06c0bc305ec523a2f9c87a">SESSION_IN_PROGRESS</a>
+, <a class="el" href="#ggac82c179a797c0d7c249d1b98a8e3aa8fad90ef073bffc0892df8168ac75d2179c">SESSION_FINISHED</a>
+, <br />
+&#160;&#160;<a class="el" href="#ggac82c179a797c0d7c249d1b98a8e3aa8fa4617fc679cfb70fe09c81309b63ee2cd">SESSION_CLOSED</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gac82c179a797c0d7c249d1b98a8e3aa8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sessione in attesa di giocatori.  <a href="#gac82c179a797c0d7c249d1b98a8e3aa8f">Continua...</a><br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Enumerazione degli stati possibili di una sessione. </p>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentazione dei tipi enumerati</h2>
+<a id="gac82c179a797c0d7c249d1b98a8e3aa8f" name="gac82c179a797c0d7c249d1b98a8e3aa8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac82c179a797c0d7c249d1b98a8e3aa8f">&#9670;&#160;</a></span>SessionState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#gac82c179a797c0d7c249d1b98a8e3aa8f">SessionState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sessione in attesa di giocatori. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valori del tipo enumerato</th></tr><tr><td class="fieldname"><a id="ggac82c179a797c0d7c249d1b98a8e3aa8fa5964dfc2fd0e3a409c22e68564320d15" name="ggac82c179a797c0d7c249d1b98a8e3aa8fa5964dfc2fd0e3a409c22e68564320d15"></a>SESSION_WAITING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggac82c179a797c0d7c249d1b98a8e3aa8faba27760d1c9400680479f5bd304ce305" name="ggac82c179a797c0d7c249d1b98a8e3aa8faba27760d1c9400680479f5bd304ce305"></a>SESSION_STARTING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggac82c179a797c0d7c249d1b98a8e3aa8fa3831d35afa06c0bc305ec523a2f9c87a" name="ggac82c179a797c0d7c249d1b98a8e3aa8fa3831d35afa06c0bc305ec523a2f9c87a"></a>SESSION_IN_PROGRESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggac82c179a797c0d7c249d1b98a8e3aa8fad90ef073bffc0892df8168ac75d2179c" name="ggac82c179a797c0d7c249d1b98a8e3aa8fad90ef073bffc0892df8168ac75d2179c"></a>SESSION_FINISHED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggac82c179a797c0d7c249d1b98a8e3aa8fa4617fc679cfb70fe09c81309b63ee2cd" name="ggac82c179a797c0d7c249d1b98a8e3aa8fa4617fc679cfb70fe09c81309b63ee2cd"></a>SESSION_CLOSED&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

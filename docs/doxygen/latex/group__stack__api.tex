@@ -1,0 +1,313 @@
+\doxysection{API Stack}
+\hypertarget{group__stack__api}{}\label{group__stack__api}\index{API Stack@{API Stack}}
+
+
+Funzioni per la gestione della pila (push, pop, top, distruzione).  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__stack__api_gae2580d2cd99d4bbccf2d97f0e7505986}{Pila\+\_\+\+Crea}} (void)
+\begin{DoxyCompactList}\small\item\em Crea una pila vuota. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stack__api_ga263f40cb0178a91e84a55530b759de12}{Pila\+\_\+\+Distruggi}} (\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Distruttore\+: libera tutti i nodi e la struttura \doxylink{struct_pila}{Pila}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_gab82fab8722fd6967c4eb8df559bd54a0}{Pila\+\_\+\+Push}} (\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p, \mbox{\hyperlink{struct_carta}{Carta}} c)
+\begin{DoxyCompactList}\small\item\em Inserisce una carta in cima alla pila. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_ga5bdd368203194d752ff33dbb1cac1c63}{Pila\+\_\+\+Pop}} (\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p, \mbox{\hyperlink{struct_carta}{Carta}} \texorpdfstring{$\ast$}{*}out)
+\begin{DoxyCompactList}\small\item\em Rimuove la carta in cima alla pila. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_gac59443252a5933aafadbe3a44baaac7b}{Pila\+\_\+\+Top}} (const \mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p, \mbox{\hyperlink{struct_carta}{Carta}} \texorpdfstring{$\ast$}{*}out)
+\begin{DoxyCompactList}\small\item\em Restituisce la carta in cima SENZA rimuoverla. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_ga70ddd166cfe7b417c89adcd326423cf7}{Pila\+\_\+\+Vuota}} (const \mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Verifica se la pila è vuota. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_ga10a5907e144119205466751dc42045b3}{Pila\+\_\+\+Dimensione}} (const \mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Restituisce la dimensione corrente della pila. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stack__api_ga0e02cb5e94d45aafbf07b62fcea1061f}{Pila\+\_\+\+Svuota}} (\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Svuota la pila lasciando la struttura allocata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funzioni per la gestione della pila (push, pop, top, distruzione). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__stack__api_gae2580d2cd99d4bbccf2d97f0e7505986}\index{API Stack@{API Stack}!Pila\_Crea@{Pila\_Crea}}
+\index{Pila\_Crea@{Pila\_Crea}!API Stack@{API Stack}}
+\doxysubsubsection{\texorpdfstring{Pila\_Crea()}{Pila\_Crea()}}
+{\footnotesize\ttfamily \label{group__stack__api_gae2580d2cd99d4bbccf2d97f0e7505986} 
+\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*} Pila\+\_\+\+Crea (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Crea una pila vuota. 
+
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_pila}{Pila} allocata e inizializzata (size=0). 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+Puntatore a \doxylink{struct_pila}{Pila}, o NULL se out-\/of-\/memory.
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_pila}{Pila} allocata; top=NULL; size=0. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+Puntatore a \doxylink{struct_pila}{Pila}, o NULL. 
+\end{DoxyReturn}
+\Hypertarget{group__stack__api_ga10a5907e144119205466751dc42045b3}\index{API Stack@{API Stack}!Pila\_Dimensione@{Pila\_Dimensione}}
+\index{Pila\_Dimensione@{Pila\_Dimensione}!API Stack@{API Stack}}
+\doxysubsubsection{\texorpdfstring{Pila\_Dimensione()}{Pila\_Dimensione()}}
+{\footnotesize\ttfamily \label{group__stack__api_ga10a5907e144119205466751dc42045b3} 
+int Pila\+\_\+\+Dimensione (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce la dimensione corrente della pila. 
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Numero di elementi nella pila. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Puntatore a \doxylink{struct_pila}{Pila}.\\
+\hline
+\end{DoxyParams}
+Restituisce la dimensione corrente della pila.
+
+\begin{DoxyReturn}{Returns}
+Dimensione, 0 se NULL. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{struct_pila}{Pila}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__stack__api_ga263f40cb0178a91e84a55530b759de12}\index{API Stack@{API Stack}!Pila\_Distruggi@{Pila\_Distruggi}}
+\index{Pila\_Distruggi@{Pila\_Distruggi}!API Stack@{API Stack}}
+\doxysubsubsection{\texorpdfstring{Pila\_Distruggi()}{Pila\_Distruggi()}}
+{\footnotesize\ttfamily \label{group__stack__api_ga263f40cb0178a91e84a55530b759de12} 
+void Pila\+\_\+\+Distruggi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Distruttore\+: libera tutti i nodi e la struttura \doxylink{struct_pila}{Pila}. 
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Tutta la memoria della pila liberata. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Puntatore a \doxylink{struct_pila}{Pila}.\\
+\hline
+\end{DoxyParams}
+Distruttore\+: libera tutti i nodi e la struttura \doxylink{struct_pila}{Pila}.
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Memoria liberata. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{struct_pila}{Pila}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__stack__api_ga5bdd368203194d752ff33dbb1cac1c63}\index{API Stack@{API Stack}!Pila\_Pop@{Pila\_Pop}}
+\index{Pila\_Pop@{Pila\_Pop}!API Stack@{API Stack}}
+\doxysubsubsection{\texorpdfstring{Pila\_Pop()}{Pila\_Pop()}}
+{\footnotesize\ttfamily \label{group__stack__api_ga5bdd368203194d752ff33dbb1cac1c63} 
+int Pila\+\_\+\+Pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}}]{p}{, }\item[{\mbox{\hyperlink{struct_carta}{Carta}} \texorpdfstring{$\ast$}{*}}]{out}{}\end{DoxyParamCaption})}
+
+
+
+Rimuove la carta in cima alla pila. 
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+top aggiornato; size decrementato; carta rimossa scritta in out (se non NULL). 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Puntatore a \doxylink{struct_pila}{Pila}. \\
+\hline
+{\em out} & Puntatore a \doxylink{struct_carta}{Carta} per ricevere l\textquotesingle{}elemento rimosso (può essere NULL). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se successo, 0 se pila vuota.
+\end{DoxyReturn}
+Rimuove la carta in cima alla pila.
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_carta}{Carta} rimossa; size decrementato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{struct_pila}{Pila}. \\
+\hline
+{\em out} & Puntatore output (puo\textquotesingle{} essere NULL). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se successo, 0 se vuota. 
+\end{DoxyReturn}
+\Hypertarget{group__stack__api_gab82fab8722fd6967c4eb8df559bd54a0}\index{API Stack@{API Stack}!Pila\_Push@{Pila\_Push}}
+\index{Pila\_Push@{Pila\_Push}!API Stack@{API Stack}}
+\doxysubsubsection{\texorpdfstring{Pila\_Push()}{Pila\_Push()}}
+{\footnotesize\ttfamily \label{group__stack__api_gab82fab8722fd6967c4eb8df559bd54a0} 
+int Pila\+\_\+\+Push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}}]{p}{, }\item[{\mbox{\hyperlink{struct_carta}{Carta}}}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Inserisce una carta in cima alla pila. 
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+top aggiornato; size incrementato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Puntatore a \doxylink{struct_pila}{Pila}. \\
+\hline
+{\em c} & \doxylink{struct_carta}{Carta} da inserire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se successo, 0 altrimenti.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_carta}{Carta} in cima; size incrementato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{struct_pila}{Pila}. \\
+\hline
+{\em c} & \doxylink{struct_carta}{Carta}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se successo, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__stack__api_ga0e02cb5e94d45aafbf07b62fcea1061f}\index{API Stack@{API Stack}!Pila\_Svuota@{Pila\_Svuota}}
+\index{Pila\_Svuota@{Pila\_Svuota}!API Stack@{API Stack}}
+\doxysubsubsection{\texorpdfstring{Pila\_Svuota()}{Pila\_Svuota()}}
+{\footnotesize\ttfamily \label{group__stack__api_ga0e02cb5e94d45aafbf07b62fcea1061f} 
+void Pila\+\_\+\+Svuota (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Svuota la pila lasciando la struttura allocata. 
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+top=NULL, size=0, tutti i nodi liberati. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Puntatore a \doxylink{struct_pila}{Pila}.\\
+\hline
+\end{DoxyParams}
+Svuota la pila lasciando la struttura allocata.
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+top=NULL; size=0. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{struct_pila}{Pila}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__stack__api_gac59443252a5933aafadbe3a44baaac7b}\index{API Stack@{API Stack}!Pila\_Top@{Pila\_Top}}
+\index{Pila\_Top@{Pila\_Top}!API Stack@{API Stack}}
+\doxysubsubsection{\texorpdfstring{Pila\_Top()}{Pila\_Top()}}
+{\footnotesize\ttfamily \label{group__stack__api_gac59443252a5933aafadbe3a44baaac7b} 
+int Pila\+\_\+\+Top (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}}]{p}{, }\item[{\mbox{\hyperlink{struct_carta}{Carta}} \texorpdfstring{$\ast$}{*}}]{out}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce la carta in cima SENZA rimuoverla. 
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_carta}{Carta} in top scritta in out. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Puntatore a \doxylink{struct_pila}{Pila}. \\
+\hline
+{\em out} & Puntatore a \doxylink{struct_carta}{Carta} per ricevere l\textquotesingle{}elemento in cima. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se successo, 0 se pila vuota.
+\end{DoxyReturn}
+Restituisce la carta in cima SENZA rimuoverla.
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+1 se successo, 0 se vuota. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{struct_pila}{Pila}. \\
+\hline
+{\em out} & Puntatore output. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__stack__api_ga70ddd166cfe7b417c89adcd326423cf7}\index{API Stack@{API Stack}!Pila\_Vuota@{Pila\_Vuota}}
+\index{Pila\_Vuota@{Pila\_Vuota}!API Stack@{API Stack}}
+\doxysubsubsection{\texorpdfstring{Pila\_Vuota()}{Pila\_Vuota()}}
+{\footnotesize\ttfamily \label{group__stack__api_ga70ddd166cfe7b417c89adcd326423cf7} 
+int Pila\+\_\+\+Vuota (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se la pila è vuota. 
+
+\begin{DoxyPrecond}{Precondition}
+p != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+1 se vuota, 0 altrimenti. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Puntatore a \doxylink{struct_pila}{Pila}.\\
+\hline
+\end{DoxyParams}
+Verifica se la pila è vuota.
+
+\begin{DoxyReturn}{Returns}
+1 se vuota, 0 altrimenti. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{struct_pila}{Pila}. \\
+\hline
+\end{DoxyParams}

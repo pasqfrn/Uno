@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/socket/network/network_send.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('network__send_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file network_send.c<div class="ingroups"><a class="el" href="group__network.html">Rete Multiplayer</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funzioni di invio pacchetti per il multiplayer online.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="socket__compat_8h_source.html">../../../lib/socket/network/socket_compat.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network__send_8h_source.html">../../../lib/socket/network/network_send.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network_8h_source.html">../../../lib/socket/network/network.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a0554cb970fa4a11e12b77295592a1f4a" id="r_a0554cb970fa4a11e12b77295592a1f4a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0554cb970fa4a11e12b77295592a1f4a">SendStartGame</a> (void)</td></tr>
+<tr class="memdesc:a0554cb970fa4a11e12b77295592a1f4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia pacchetto di inizio partita a tutti i client.  <br /></td></tr>
+<tr class="memitem:a32427ed924559d92e996e42316d323f6" id="r_a32427ed924559d92e996e42316d323f6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a32427ed924559d92e996e42316d323f6">SendGameState</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:a32427ed924559d92e996e42316d323f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia lo stato di gioco completo all'host.  <br /></td></tr>
+<tr class="memitem:a05bff45fa180f48a80bcdf6e10611fc8" id="r_a05bff45fa180f48a80bcdf6e10611fc8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a05bff45fa180f48a80bcdf6e10611fc8">SendChat</a> (const char *message)</td></tr>
+<tr class="memdesc:a05bff45fa180f48a80bcdf6e10611fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un messaggio chat in broadcast.  <br /></td></tr>
+<tr class="memitem:a7965e8e2c7ed1e4ef9e71d3974ad1199" id="r_a7965e8e2c7ed1e4ef9e71d3974ad1199"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7965e8e2c7ed1e4ef9e71d3974ad1199">SendMove</a> (int card_index, <a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> colore)</td></tr>
+<tr class="memdesc:a7965e8e2c7ed1e4ef9e71d3974ad1199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia una mossa (carta giocata + colore).  <br /></td></tr>
+<tr class="memitem:ad4c4757d74c717f8cbaa6c81e833f2d4" id="r_ad4c4757d74c717f8cbaa6c81e833f2d4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad4c4757d74c717f8cbaa6c81e833f2d4">SendDraw</a> (int count)</td></tr>
+<tr class="memdesc:ad4c4757d74c717f8cbaa6c81e833f2d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia una richiesta di pescata.  <br /></td></tr>
+<tr class="memitem:ab18571a6ad86877cbe01c9a589be4ea0" id="r_ab18571a6ad86877cbe01c9a589be4ea0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab18571a6ad86877cbe01c9a589be4ea0">SendColorChoice</a> (<a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> colore)</td></tr>
+<tr class="memdesc:ab18571a6ad86877cbe01c9a589be4ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia una scelta colore.  <br /></td></tr>
+<tr class="memitem:a33f5e952ff406b092bd8e51a98c736bc" id="r_a33f5e952ff406b092bd8e51a98c736bc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a33f5e952ff406b092bd8e51a98c736bc">SendJoinGame</a> (const char *nome)</td></tr>
+<tr class="memdesc:a33f5e952ff406b092bd8e51a98c736bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia richiesta di join game.  <br /></td></tr>
+<tr class="memitem:a55a6eadffdfbe2d43ed94c51e6f5ffb3" id="r_a55a6eadffdfbe2d43ed94c51e6f5ffb3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a55a6eadffdfbe2d43ed94c51e6f5ffb3">SendPlayerHand</a> (int target_socket, int data_player_id, <a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:a55a6eadffdfbe2d43ed94c51e6f5ffb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia la mano di un giocatore a un socket specifico.  <br /></td></tr>
+<tr class="memitem:a8b66f3de67a48ce04af83a3d9ec26476" id="r_a8b66f3de67a48ce04af83a3d9ec26476"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8b66f3de67a48ce04af83a3d9ec26476">BroadcastGameState</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:a8b66f3de67a48ce04af83a3d9ec26476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcasta lo stato di gioco a tutti i client.  <br /></td></tr>
+<tr class="memitem:ae2ba7d25b79aac7673fae23cf316bce5" id="r_ae2ba7d25b79aac7673fae23cf316bce5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae2ba7d25b79aac7673fae23cf316bce5">BroadcastPlayerHands</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:ae2ba7d25b79aac7673fae23cf316bce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcasta la mano di tutti i giocatori.  <br /></td></tr>
+<tr class="memitem:a04736d06c71f2196b586fae3bd7a4dbb" id="r_a04736d06c71f2196b586fae3bd7a4dbb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a04736d06c71f2196b586fae3bd7a4dbb">BroadcastChat</a> (const char *message)</td></tr>
+<tr class="memdesc:a04736d06c71f2196b586fae3bd7a4dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcasta un messaggio chat a tutti.  <br /></td></tr>
+<tr class="memitem:a5200e7a90babbead97641938606e28a9" id="r_a5200e7a90babbead97641938606e28a9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5200e7a90babbead97641938606e28a9">SendCreateSession</a> (const char *host_name)</td></tr>
+<tr class="memdesc:a5200e7a90babbead97641938606e28a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia richiesta di creazione sessione.  <br /></td></tr>
+<tr class="memitem:a506aaa42c1f375d99a5e0f28d784d075" id="r_a506aaa42c1f375d99a5e0f28d784d075"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a506aaa42c1f375d99a5e0f28d784d075">SendJoinSession</a> (const char *sess_id, const char *player_name)</td></tr>
+<tr class="memdesc:a506aaa42c1f375d99a5e0f28d784d075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia richiesta di join a una sessione.  <br /></td></tr>
+<tr class="memitem:ga981d40762c9af84bf5f4d5d24a024c04" id="r_ga981d40762c9af84bf5f4d5d24a024c04"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga981d40762c9af84bf5f4d5d24a024c04">SendPlayerReady</a> (int ready)</td></tr>
+<tr class="memitem:af775bba86070a2ddf470f66ff759cdfa" id="r_af775bba86070a2ddf470f66ff759cdfa"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af775bba86070a2ddf470f66ff759cdfa">SendHeartbeat</a> (void)</td></tr>
+<tr class="memdesc:af775bba86070a2ddf470f66ff759cdfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia heartbeat (keep-alive).  <br /></td></tr>
+<tr class="memitem:ga76952802b05b5b11a933c2db18ede658" id="r_ga76952802b05b5b11a933c2db18ede658"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga76952802b05b5b11a933c2db18ede658">SendPlayAgain</a> (void)</td></tr>
+<tr class="memdesc:ga76952802b05b5b11a933c2db18ede658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un pacchetto PACKET_PLAY_AGAIN all'host.  <br /></td></tr>
+<tr class="memitem:gab5854145185d5f1e6a08d5a51022dd34" id="r_gab5854145185d5f1e6a08d5a51022dd34"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#gab5854145185d5f1e6a08d5a51022dd34">BroadcastHostReturnLobby</a> (void)</td></tr>
+<tr class="memdesc:gab5854145185d5f1e6a08d5a51022dd34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcasta PACKET_HOST_RETURN_LOBBY a tutti i client.  <br /></td></tr>
+<tr class="memitem:ga4f474be2ec77d5945531b038049e70ba" id="r_ga4f474be2ec77d5945531b038049e70ba"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__send__admin.html#ga4f474be2ec77d5945531b038049e70ba">SendAdminUserSync</a> (const <a class="el" href="struct_admin_user_sync_data.html">AdminUserSyncData</a> *userData)</td></tr>
+<tr class="memdesc:ga4f474be2ec77d5945531b038049e70ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">SendAdminUserSync - Invia i dati utente del client all'host.  <br /></td></tr>
+<tr class="memitem:ga36f8175c516021b1213c76ae7dbbc51e" id="r_ga36f8175c516021b1213c76ae7dbbc51e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__send__admin.html#ga36f8175c516021b1213c76ae7dbbc51e">SendAdminUserAction</a> (const <a class="el" href="struct_admin_user_action.html">AdminUserAction</a> *action)</td></tr>
+<tr class="memdesc:ga36f8175c516021b1213c76ae7dbbc51e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un'azione admin all'host TCP.  <br /></td></tr>
+<tr class="memitem:ga9d7cd15c8ce0029e9f3efd947125a391" id="r_ga9d7cd15c8ce0029e9f3efd947125a391"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__send__admin.html#ga9d7cd15c8ce0029e9f3efd947125a391">BroadcastAdminUserAction</a> (const <a class="el" href="struct_admin_user_action.html">AdminUserAction</a> *action)</td></tr>
+<tr class="memdesc:ga9d7cd15c8ce0029e9f3efd947125a391"><td class="mdescLeft">&#160;</td><td class="mdescRight">BroadcastAdminUserAction - Invia un'azione admin (modifica/elimina/crea) a tutti i client connessi.  <br /></td></tr>
+<tr class="memitem:ga740ef7a56f894d2149113373ed7c9601" id="r_ga740ef7a56f894d2149113373ed7c9601"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga740ef7a56f894d2149113373ed7c9601">BroadcastHostDisconnect</a> (void)</td></tr>
+<tr class="memdesc:ga740ef7a56f894d2149113373ed7c9601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un pacchetto di notifica disconnessione host a tutti i client.  <br /></td></tr>
+<tr class="memitem:gad24cb48d88d5827fff0faf81ae1fc05b" id="r_gad24cb48d88d5827fff0faf81ae1fc05b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#gad24cb48d88d5827fff0faf81ae1fc05b">BroadcastStatsSync</a> (const <a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a> *stats)</td></tr>
+<tr class="memdesc:gad24cb48d88d5827fff0faf81ae1fc05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un pacchetto di sincronizzazione statistiche COMPLETA a tutti i client.  <br /></td></tr>
+<tr class="memitem:ga36fc11ee8fde125894663e2c2ca2aa32" id="r_ga36fc11ee8fde125894663e2c2ca2aa32"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga36fc11ee8fde125894663e2c2ca2aa32">SendStatsSync</a> (const <a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a> *stats)</td></tr>
+<tr class="memdesc:ga36fc11ee8fde125894663e2c2ca2aa32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un pacchetto di sincronizzazione statistiche COMPLETA all'host (client).  <br /></td></tr>
+<tr class="memitem:gac3bad81dd1e885fdb5fe711a2cc7902a" id="r_gac3bad81dd1e885fdb5fe711a2cc7902a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__send__admin.html#gac3bad81dd1e885fdb5fe711a2cc7902a">BroadcastAdminDB</a> (void)</td></tr>
+<tr class="memdesc:gac3bad81dd1e885fdb5fe711a2cc7902a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia il <a class="el" href="struct_database_utenti.html" title="Database degli utenti in memoria (allocazione DINAMICA).">DatabaseUtenti</a> aggiornato a tutti i client.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:a4fdb1b96f709fc5cdd1d013c1703e484" id="r_a4fdb1b96f709fc5cdd1d013c1703e484"><td class="memItemLeft"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4fdb1b96f709fc5cdd1d013c1703e484">remoteSocket</a></td></tr>
+<tr class="memdesc:a4fdb1b96f709fc5cdd1d013c1703e484"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket remoto (solo client: connessione all'host).  <br /></td></tr>
+<tr class="memitem:acf235198fdda36e8980bbf0ead99f61f" id="r_acf235198fdda36e8980bbf0ead99f61f"><td class="memItemLeft"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>&#160;</td><td class="memItemRight"><a class="el" href="#acf235198fdda36e8980bbf0ead99f61f">clientSockets</a> [4]</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Funzioni di invio pacchetti per il multiplayer online. </p>
+<p>Contiene le funzioni per l'invio di pacchetti TCP/UDP:</p><ul>
+<li>SendGameState: invia stato completo all'host (client)</li>
+<li>BroadcastGameState: invia stato a tutti i client (host)</li>
+<li>SendMove/SendDraw: invia mossa/pescata all'host (client)</li>
+<li>SendChat/SendColorChoice: invia chat/scelta colore</li>
+<li>SendCreateSession/SendJoinSession: gestione sessioni</li>
+<li>SendAdminUserSync/BroadcastAdminDB: sincronizzazione admin</li>
+<li>SendPlayAgain/BroadcastHostReturnLobby: gestione "Gioca Ancora"</li>
+</ul>
+<p>Architettura:</p><ul>
+<li>Host usa Broadcast*() per inviare a tutti i client</li>
+<li>Client usa Send*() per inviare all'host </li>
+</ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a04736d06c71f2196b586fae3bd7a4dbb" name="a04736d06c71f2196b586fae3bd7a4dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04736d06c71f2196b586fae3bd7a4dbb">&#9670;&#160;</a></span>BroadcastChat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BroadcastChat </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Broadcasta un messaggio chat a tutti. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>message != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Testo del messaggio. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8b66f3de67a48ce04af83a3d9ec26476" name="a8b66f3de67a48ce04af83a3d9ec26476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b66f3de67a48ce04af83a3d9ec26476">&#9670;&#160;</a></span>BroadcastGameState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BroadcastGameState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Broadcasta lo stato di gioco a tutti i client. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae2ba7d25b79aac7673fae23cf316bce5" name="ae2ba7d25b79aac7673fae23cf316bce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ba7d25b79aac7673fae23cf316bce5">&#9670;&#160;</a></span>BroadcastPlayerHands()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BroadcastPlayerHands </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Broadcasta la mano di tutti i giocatori. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a05bff45fa180f48a80bcdf6e10611fc8" name="a05bff45fa180f48a80bcdf6e10611fc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05bff45fa180f48a80bcdf6e10611fc8">&#9670;&#160;</a></span>SendChat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendChat </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia un messaggio chat in broadcast. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>message != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Testo del messaggio. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab18571a6ad86877cbe01c9a589be4ea0" name="ab18571a6ad86877cbe01c9a589be4ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab18571a6ad86877cbe01c9a589be4ea0">&#9670;&#160;</a></span>SendColorChoice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendColorChoice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a></td>          <td class="paramname"><span class="paramname"><em>colore</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia una scelta colore. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">colore</td><td><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c" title="Colori disponibili per le carte UNO.">Colore</a> scelto. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5200e7a90babbead97641938606e28a9" name="a5200e7a90babbead97641938606e28a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5200e7a90babbead97641938606e28a9">&#9670;&#160;</a></span>SendCreateSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendCreateSession </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>host_name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia richiesta di creazione sessione. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>host_name != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host_name</td><td>Nome dell'host. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad4c4757d74c717f8cbaa6c81e833f2d4" name="ad4c4757d74c717f8cbaa6c81e833f2d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c4757d74c717f8cbaa6c81e833f2d4">&#9670;&#160;</a></span>SendDraw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendDraw </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia una richiesta di pescata. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>count &gt; 0. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>Numero di carte da pescare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a32427ed924559d92e996e42316d323f6" name="a32427ed924559d92e996e42316d323f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32427ed924559d92e996e42316d323f6">&#9670;&#160;</a></span>SendGameState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendGameState </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia lo stato di gioco completo all'host. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af775bba86070a2ddf470f66ff759cdfa" name="af775bba86070a2ddf470f66ff759cdfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af775bba86070a2ddf470f66ff759cdfa">&#9670;&#160;</a></span>SendHeartbeat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendHeartbeat </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia heartbeat (keep-alive). </p>
+
+</div>
+</div>
+<a id="a33f5e952ff406b092bd8e51a98c736bc" name="a33f5e952ff406b092bd8e51a98c736bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33f5e952ff406b092bd8e51a98c736bc">&#9670;&#160;</a></span>SendJoinGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendJoinGame </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>nome</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia richiesta di join game. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>nome != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nome</td><td>Nome del giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a506aaa42c1f375d99a5e0f28d784d075" name="a506aaa42c1f375d99a5e0f28d784d075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a506aaa42c1f375d99a5e0f28d784d075">&#9670;&#160;</a></span>SendJoinSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendJoinSession </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>sess_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>player_name</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia richiesta di join a una sessione. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>sess_id != NULL; player_name != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sess_id</td><td>ID della sessione. </td></tr>
+    <tr><td class="paramname">player_name</td><td>Nome del giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7965e8e2c7ed1e4ef9e71d3974ad1199" name="a7965e8e2c7ed1e4ef9e71d3974ad1199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7965e8e2c7ed1e4ef9e71d3974ad1199">&#9670;&#160;</a></span>SendMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendMove </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>card_index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a></td>          <td class="paramname"><span class="paramname"><em>colore</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia una mossa (carta giocata + colore). </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>card_index valido; colore valido. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">card_index</td><td>Indice della carta. </td></tr>
+    <tr><td class="paramname">colore</td><td><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c" title="Colori disponibili per le carte UNO.">Colore</a> scelto (per jolly). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a55a6eadffdfbe2d43ed94c51e6f5ffb3" name="a55a6eadffdfbe2d43ed94c51e6f5ffb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a6eadffdfbe2d43ed94c51e6f5ffb3">&#9670;&#160;</a></span>SendPlayerHand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendPlayerHand </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>target_socket</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>data_player_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia la mano di un giocatore a un socket specifico. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target_socket</td><td>Socket destinatario. </td></tr>
+    <tr><td class="paramname">data_player_id</td><td>ID del giocatore. </td></tr>
+    <tr><td class="paramname">gioco</td><td>Stato di gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0554cb970fa4a11e12b77295592a1f4a" name="a0554cb970fa4a11e12b77295592a1f4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0554cb970fa4a11e12b77295592a1f4a">&#9670;&#160;</a></span>SendStartGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendStartGame </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia pacchetto di inizio partita a tutti i client. </p>
+<dl class="section post"><dt>Postcondizione</dt><dd>PACKET_START_GAME broadcastato. </dd></dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="acf235198fdda36e8980bbf0ead99f61f" name="acf235198fdda36e8980bbf0ead99f61f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf235198fdda36e8980bbf0ead99f61f">&#9670;&#160;</a></span>clientSockets</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a> clientSockets[4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fdb1b96f709fc5cdd1d013c1703e484" name="a4fdb1b96f709fc5cdd1d013c1703e484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fdb1b96f709fc5cdd1d013c1703e484">&#9670;&#160;</a></span>remoteSocket</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a> remoteSocket</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Socket remoto (solo client: connessione all'host). </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_858915971c8656b65d461b873c3b3855.html">network</a></li><li class="navelem"><a href="network__send_8c.html">network_send.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

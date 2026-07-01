@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file lib/socket/server/server_manager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('server__manager_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file server_manager.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestione delle sessioni di gioco lato server/host.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../data_structures.h</a>&quot;</code><br />
+</div>
+<p><a href="server__manager_8h_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Strutture dati</h2></td></tr>
+<tr class="memitem:SessionPlayer" id="r_SessionPlayer"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_session_player.html">SessionPlayer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informazioni giocatore nella sessione.  <a href="struct_session_player.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:GameSession" id="r_GameSession"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_game_session.html">GameSession</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sessione di gioco multiplayer.  <a href="struct_game_session.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:ServerManager" id="r_ServerManager"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_server_manager.html">ServerManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestore di tutte le sessioni di gioco attive.  <a href="struct_server_manager.html#details">Continua...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:a59177ab48229893d0eb334aecb316840" id="r_a59177ab48229893d0eb334aecb316840"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a59177ab48229893d0eb334aecb316840">MAX_GAME_SESSIONS</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a59177ab48229893d0eb334aecb316840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero massimo di sessioni di gioco contemporanee.  <br /></td></tr>
+<tr class="memitem:aedc8c1a22b7965c1e61fc1f065c287ee" id="r_aedc8c1a22b7965c1e61fc1f065c287ee"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aedc8c1a22b7965c1e61fc1f065c287ee">MAX_PLAYERS_PER_SESSION</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:aedc8c1a22b7965c1e61fc1f065c287ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero massimo di giocatori per sessione.  <br /></td></tr>
+<tr class="memitem:a053b7859476cc9867ec62c49e68d3fa1" id="r_a053b7859476cc9867ec62c49e68d3fa1"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a053b7859476cc9867ec62c49e68d3fa1">MAX_CONNECTIONS</a>&#160;&#160;&#160;40</td></tr>
+<tr class="memdesc:a053b7859476cc9867ec62c49e68d3fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero massimo di connessioni totali.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Tipi enumerati (enum)</h2></td></tr>
+<tr class="memitem:gac82c179a797c0d7c249d1b98a8e3aa8f" id="r_gac82c179a797c0d7c249d1b98a8e3aa8f"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__stati.html#gac82c179a797c0d7c249d1b98a8e3aa8f">SessionState</a> { <br />
+&#160;&#160;<a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fa5964dfc2fd0e3a409c22e68564320d15">SESSION_WAITING</a>
+, <a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8faba27760d1c9400680479f5bd304ce305">SESSION_STARTING</a>
+, <a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fa3831d35afa06c0bc305ec523a2f9c87a">SESSION_IN_PROGRESS</a>
+, <a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fad90ef073bffc0892df8168ac75d2179c">SESSION_FINISHED</a>
+, <br />
+&#160;&#160;<a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fa4617fc679cfb70fe09c81309b63ee2cd">SESSION_CLOSED</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gac82c179a797c0d7c249d1b98a8e3aa8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sessione in attesa di giocatori.  <a href="group__server__manager__stati.html#gac82c179a797c0d7c249d1b98a8e3aa8f">Continua...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:gad49f47a1e9318a8183e7c4269c8c437b" id="r_gad49f47a1e9318a8183e7c4269c8c437b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#gad49f47a1e9318a8183e7c4269c8c437b">InitServerManager</a> (void)</td></tr>
+<tr class="memdesc:gad49f47a1e9318a8183e7c4269c8c437b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza il server manager.  <br /></td></tr>
+<tr class="memitem:ga77098e4298a4acac07490885d068e0f7" id="r_ga77098e4298a4acac07490885d068e0f7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga77098e4298a4acac07490885d068e0f7">UpdateServerManager</a> (float dt)</td></tr>
+<tr class="memdesc:ga77098e4298a4acac07490885d068e0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna lo stato di tutte le sessioni.  <br /></td></tr>
+<tr class="memitem:ga0bb6b95401b7b67589bc7213e9f47ee9" id="r_ga0bb6b95401b7b67589bc7213e9f47ee9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga0bb6b95401b7b67589bc7213e9f47ee9">ShutdownServerManager</a> (void)</td></tr>
+<tr class="memdesc:ga0bb6b95401b7b67589bc7213e9f47ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chiude il server manager e libera risorse.  <br /></td></tr>
+<tr class="memitem:ga16fd52dac20f4320260b28846fbddd9e" id="r_ga16fd52dac20f4320260b28846fbddd9e"><td class="memItemLeft"><a class="el" href="struct_game_session.html">GameSession</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga16fd52dac20f4320260b28846fbddd9e">CreateSession</a> (const char *host_name, int host_id)</td></tr>
+<tr class="memdesc:ga16fd52dac20f4320260b28846fbddd9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una nuova sessione di gioco.  <br /></td></tr>
+<tr class="memitem:ga2e85aecf5499dd7a2ce0190099dc5822" id="r_ga2e85aecf5499dd7a2ce0190099dc5822"><td class="memItemLeft"><a class="el" href="struct_game_session.html">GameSession</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga2e85aecf5499dd7a2ce0190099dc5822">GetSession</a> (const char *sess_id)</td></tr>
+<tr class="memdesc:ga2e85aecf5499dd7a2ce0190099dc5822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca una sessione per ID.  <br /></td></tr>
+<tr class="memitem:ga3a6f3c2c7a63d479ce25d78410b20f7b" id="r_ga3a6f3c2c7a63d479ce25d78410b20f7b"><td class="memItemLeft"><a class="el" href="struct_game_session.html">GameSession</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga3a6f3c2c7a63d479ce25d78410b20f7b">GetSessionByPlayerId</a> (int player_id)</td></tr>
+<tr class="memdesc:ga3a6f3c2c7a63d479ce25d78410b20f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca una sessione contenente un giocatore specifico.  <br /></td></tr>
+<tr class="memitem:ga9c4e3c22ad94a695a648da6957a7cc11" id="r_ga9c4e3c22ad94a695a648da6957a7cc11"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga9c4e3c22ad94a695a648da6957a7cc11">AddPlayerToSession</a> (<a class="el" href="struct_game_session.html">GameSession</a> *session, int player_id, const char *player_name, int is_bot)</td></tr>
+<tr class="memdesc:ga9c4e3c22ad94a695a648da6957a7cc11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un giocatore a una sessione.  <br /></td></tr>
+<tr class="memitem:ga80c5b6914b694d9fdfdf7d583a801911" id="r_ga80c5b6914b694d9fdfdf7d583a801911"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga80c5b6914b694d9fdfdf7d583a801911">RemovePlayerFromSession</a> (<a class="el" href="struct_game_session.html">GameSession</a> *session, int player_id)</td></tr>
+<tr class="memdesc:ga80c5b6914b694d9fdfdf7d583a801911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un giocatore da una sessione.  <br /></td></tr>
+<tr class="memitem:ga323407153355eb9a4348f5e2bdffb699" id="r_ga323407153355eb9a4348f5e2bdffb699"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga323407153355eb9a4348f5e2bdffb699">StartSession</a> (<a class="el" href="struct_game_session.html">GameSession</a> *session)</td></tr>
+<tr class="memdesc:ga323407153355eb9a4348f5e2bdffb699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avvia il conteggio per l'inizio della partita.  <br /></td></tr>
+<tr class="memitem:ga8927513d3fed56e3104fb092d4ee5a3d" id="r_ga8927513d3fed56e3104fb092d4ee5a3d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga8927513d3fed56e3104fb092d4ee5a3d">UpdateSessionLogic</a> (<a class="el" href="struct_game_session.html">GameSession</a> *session, float dt)</td></tr>
+<tr class="memdesc:ga8927513d3fed56e3104fb092d4ee5a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna la logica di una sessione (bot AI, timer).  <br /></td></tr>
+<tr class="memitem:gae47b83053dd03f75306d6b4428ec4f61" id="r_gae47b83053dd03f75306d6b4428ec4f61"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#gae47b83053dd03f75306d6b4428ec4f61">CloseSession</a> (<a class="el" href="struct_game_session.html">GameSession</a> *session)</td></tr>
+<tr class="memdesc:gae47b83053dd03f75306d6b4428ec4f61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chiude una sessione.  <br /></td></tr>
+<tr class="memitem:ga3b360a917a8a8e088fb7601541d7fb27" id="r_ga3b360a917a8a8e088fb7601541d7fb27"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga3b360a917a8a8e088fb7601541d7fb27">IsValidMove</a> (<a class="el" href="struct_game_session.html">GameSession</a> *session, int player_id, int card_index)</td></tr>
+<tr class="memdesc:ga3b360a917a8a8e088fb7601541d7fb27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se una mossa e' valida (lato server).  <br /></td></tr>
+<tr class="memitem:ga95d41e70918a635e3d32b6035c2e3fe0" id="r_ga95d41e70918a635e3d32b6035c2e3fe0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga95d41e70918a635e3d32b6035c2e3fe0">ProcessMove</a> (<a class="el" href="struct_game_session.html">GameSession</a> *session, int player_id, int card_index, <a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> color_choice)</td></tr>
+<tr class="memdesc:ga95d41e70918a635e3d32b6035c2e3fe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processa una mossa (lato server).  <br /></td></tr>
+<tr class="memitem:gaa855d2809b0d5c648293f8c6af3369df" id="r_gaa855d2809b0d5c648293f8c6af3369df"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#gaa855d2809b0d5c648293f8c6af3369df">ProcessDraw</a> (<a class="el" href="struct_game_session.html">GameSession</a> *session, int player_id, int draw_count)</td></tr>
+<tr class="memdesc:gaa855d2809b0d5c648293f8c6af3369df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processa una pescata (lato server).  <br /></td></tr>
+<tr class="memitem:ga98b8f5a55cc13c86013e2a7d49ff36e2" id="r_ga98b8f5a55cc13c86013e2a7d49ff36e2"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga98b8f5a55cc13c86013e2a7d49ff36e2">ProcessColorChoice</a> (<a class="el" href="struct_game_session.html">GameSession</a> *session, int player_id, <a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> color)</td></tr>
+<tr class="memdesc:ga98b8f5a55cc13c86013e2a7d49ff36e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processa una scelta colore (lato server).  <br /></td></tr>
+<tr class="memitem:ga727dc1bbb1c4967c2aa8235d081ceb79" id="r_ga727dc1bbb1c4967c2aa8235d081ceb79"><td class="memItemLeft">char *&#160;</td><td class="memItemRight"><a class="el" href="group__server__manager__api.html#ga727dc1bbb1c4967c2aa8235d081ceb79">GenerateSessionId</a> (void)</td></tr>
+<tr class="memdesc:ga727dc1bbb1c4967c2aa8235d081ceb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un ID di sessione univoco (stringa casuale).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:ab5c207ae2247c6972e361d9c19dbd477" id="r_ab5c207ae2247c6972e361d9c19dbd477"><td class="memItemLeft"><a class="el" href="struct_server_manager.html">ServerManager</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab5c207ae2247c6972e361d9c19dbd477">serverManager</a></td></tr>
+<tr class="memdesc:ab5c207ae2247c6972e361d9c19dbd477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Istanza globale del server manager (lato host).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Gestione delle sessioni di gioco lato server/host. </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
+<a id="a053b7859476cc9867ec62c49e68d3fa1" name="a053b7859476cc9867ec62c49e68d3fa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a053b7859476cc9867ec62c49e68d3fa1">&#9670;&#160;</a></span>MAX_CONNECTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_CONNECTIONS&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Numero massimo di connessioni totali. </p>
+
+</div>
+</div>
+<a id="a59177ab48229893d0eb334aecb316840" name="a59177ab48229893d0eb334aecb316840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59177ab48229893d0eb334aecb316840">&#9670;&#160;</a></span>MAX_GAME_SESSIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_GAME_SESSIONS&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Numero massimo di sessioni di gioco contemporanee. </p>
+
+</div>
+</div>
+<a id="aedc8c1a22b7965c1e61fc1f065c287ee" name="aedc8c1a22b7965c1e61fc1f065c287ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc8c1a22b7965c1e61fc1f065c287ee">&#9670;&#160;</a></span>MAX_PLAYERS_PER_SESSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_PLAYERS_PER_SESSION&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Numero massimo di giocatori per sessione. </p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="ab5c207ae2247c6972e361d9c19dbd477" name="ab5c207ae2247c6972e361d9c19dbd477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c207ae2247c6972e361d9c19dbd477">&#9670;&#160;</a></span>serverManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_server_manager.html">ServerManager</a> serverManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Istanza globale del server manager (lato host). </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e17dec1d132ad7ed461be9444000b405.html">socket</a></li><li class="navelem"><a href="dir_f0c0e87129cc99adbfb71a619dac0947.html">server</a></li><li class="navelem"><a href="server__manager_8h.html">server_manager.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

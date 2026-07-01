@@ -1,0 +1,198 @@
+\doxysection{network.\+h}
+\hypertarget{network_8h_source}{}\label{network_8h_source}\index{lib/socket/network/network.h@{lib/socket/network/network.h}}
+\mbox{\hyperlink{network_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ NETWORK\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ NETWORK\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{data__structures_8h}{../../data\_structures.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lan__protocol_8h}{../lan/lan\_protocol.h}}"{}}\ \textcolor{comment}{/*\ Per\ STORICO\_SYNC\_COUNT\ usato\ in\ StatsSyncPacket\ */}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \#define\ NOGDI}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \#define\ NOUSER}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \#define\ WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \#include\ <winsock2.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ws2tcpip.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{group__network__ruoli_gga53e7e36fa630cf0cbd59d8ac87393100ae7ea65b33b650c9855f1bc1cc32e6138}{NET\_OFFLINE}},\ \mbox{\hyperlink{group__network__ruoli_gga53e7e36fa630cf0cbd59d8ac87393100ac960304caae0d6a977448898c7775009}{NET\_HOST}},\ \mbox{\hyperlink{group__network__ruoli_gga53e7e36fa630cf0cbd59d8ac87393100ac0e26a27bc6a21634f0dcfd08b5d1e4b}{NET\_CLIENT}}\ \}\ \mbox{\hyperlink{group__network__ruoli_ga53e7e36fa630cf0cbd59d8ac87393100}{NetworkRole}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0acd0833298bdffab1351471c009443720}{PACKET\_JOIN}},}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a457d5055f4e24cf4f6f423c1f77c4316}{PACKET\_START\_GAME}},}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0af0b1d88ad6aa7984300753c22c26fcf7}{PACKET\_GAME\_STATE}},}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0aa3d97e3aef38924330aef8676c3b3777}{PACKET\_MOVE}},}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a9b9271f113a3b97745416482211c76c5}{PACKET\_DRAW}},}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0ae1b441b9abefe018206c3d9486b8b24c}{PACKET\_CHAT}},}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0ac71adcd308057d916ed8fec10e696dfd}{PACKET\_DISCONNECT}},}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a29d378a2b7936c8eafd7bbe593498ef3}{PACKET\_JOIN\_GAME}},}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0ab5b0533954a11babf74970449c41a56b}{PACKET\_PLAYER\_HAND}},}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a6f6729e8049097c9b5b4a2712120ea92}{PACKET\_COLOR\_CHOICE}},}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a5e612732b5253ec9025464ae5cf85a0f}{PACKET\_CREATE\_SESSION}},}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0acbed8b71369c3aa9f38931185fa72f3f}{PACKET\_JOIN\_SESSION}},}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a7a99db687e4e9e8fce2aecf6eff6ddaf}{PACKET\_SESSION\_LIST}},}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a97b2792404ed7b3425fe5af6af270c03}{PACKET\_SESSION\_STATE}},}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a5c17a8acf9faa476b348746280cbd91e}{PACKET\_HEARTBEAT}},}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0aba3a4d2e729e19bf67dbe1cf9a914689}{PACKET\_PLAYER\_READY}},}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0afbeaea9f079e833ca7e5b1c562f786bd}{PACKET\_GAME\_FINISHED}},}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a33a0eb4a7808de54940444de66c16951}{PACKET\_ADMIN\_USER\_SYNC}},}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0aeea01617a728c8f0a876d015cb0b6d3d}{PACKET\_ADMIN\_DB\_SYNC}},}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a369caf3cda4e9f3a194f4fdb7c5c8a33}{PACKET\_ADMIN\_DB\_SYNC\_DONE}},}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a3bc8179a72fc6531f101ee91c7c06e64}{PACKET\_HOST\_DISCONNECT}},}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a36dc33c6a50583de36785c5ff8ae833a}{PACKET\_STATS\_SYNC}},}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0af7779c84104cc6fdd6e2ebeee0f21c28}{PACKET\_JOIN\_REJECTED}},}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a69dd215185c5665c706d516184eb3c5b}{PACKET\_PLAY\_AGAIN}},}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{group__network__packet_gga0a80a7bc045affcf10846075b88cbca0a25bac22c1665f903ed544ec35aa33f89}{PACKET\_HOST\_RETURN\_LOBBY}}}
+\DoxyCodeLine{00062\ \}\ \mbox{\hyperlink{group__network__packet_ga0a80a7bc045affcf10846075b88cbca0}{PacketType}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga48dff0aed0d8c66bd700afea6aad9b38}{player\_id}};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga26fb77aeafc9420f593477868c2e67e9}{card\_index}};\ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}\ \mbox{\hyperlink{group__network__packet__strutture_ga2fd6703e904f8518191e4de979f69189}{colore\_scelto}};\ \}\ \mbox{\hyperlink{struct_packet_move}{PacketMove}};}
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga7d75ebf8c21ea768951f8e26dbd16884}{player\_id}};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gaf95b16aff38590d53d8f52227a73bfa3}{count}};\ \}\ \mbox{\hyperlink{struct_packet_draw}{PacketDraw}};}
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ \mbox{\hyperlink{group__network__packet__strutture_ga20f3500f9a6688a3d4c16b56f76ac007}{stato\_gioco}};\ \}\ \mbox{\hyperlink{struct_packet_game_state}{PacketGameState}};}
+\DoxyCodeLine{00077\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gae9866ba217c36a39ba4073858855caa6}{player\_id}};\ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}\ \mbox{\hyperlink{group__network__packet__strutture_ga82c3f2c0248a3b52fb91dc65edbe78d3}{colore}};\ \}\ \mbox{\hyperlink{struct_packet_color_choice}{PacketColorChoice}};}
+\DoxyCodeLine{00079\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga60f45f1c8c69bb485dedd5040b62b2b7}{player\_id}};\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gaf43ad9dadb972307b3c58edc0c45198b}{message}}[128];\ \}\ \mbox{\hyperlink{struct_packet_chat}{PacketChat}};}
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gaaa1d3eeeb44c69e71bd1afd6be1ee3e7}{nome}}[50];\ \}\ \mbox{\hyperlink{struct_packet_join_game}{PacketJoinGame}};}
+\DoxyCodeLine{00083\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gaa001f2ef2a04583f55f8aed0afb6753b}{motivo}}[100];\ \}\ \mbox{\hyperlink{struct_packet_join_rejected}{PacketJoinRejected}};}
+\DoxyCodeLine{00085\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gaca097944b71b7a8406b93e4b3ed2db4f}{player\_id}};\ \mbox{\hyperlink{struct_carta}{Carta}}\ \mbox{\hyperlink{group__network__packet__strutture_ga9b8ad66e75056db4f244268e512e2050}{carte}}[108];\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga027930ddbd1fdca4574393b25c6729b4}{num\_carte}};\ \}\ \mbox{\hyperlink{struct_packet_player_hand}{PacketPlayerHand}};}
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga0b43b7c02501c9cd6bfefeae2f0d5ad6}{session\_id}}[16];\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga8409bc6d5b36268bdacb03e5ce7e9780}{host\_name}}[30];\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gab6419268cbf6e2c93cb228256f7effb0}{num\_players}};\ \}\ \mbox{\hyperlink{struct_packet_create_session}{PacketCreateSession}};}
+\DoxyCodeLine{00089\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga98298829b528d7a7a0e6bafb5d39c46e}{session\_id}}[16];\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga6912d90f8d9510ad4cf57b0fcab88420}{player\_name}}[30];\ \}\ \mbox{\hyperlink{struct_packet_join_session}{PacketJoinSession}};}
+\DoxyCodeLine{00091\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga528efbe1f2a92c5853dccc8ed2c67e93}{session\_count}};\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gaf70a7913010e764d81f58e2ca1b96ff1}{sessions}}[10][16];\ \}\ \mbox{\hyperlink{struct_packet_session_list}{PacketSessionList}};}
+\DoxyCodeLine{00095\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga8874b2989efd13fdfbe481350cc963db}{session\_id}}[16];\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga71586935479cf2643e01bbfa671b7273}{num\_players}};}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga0def821662805847be2754df1a8d20e8}{player\_names}}[4][30];\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga6085b0d4fafdb89b59b149d6968b4b69}{player\_ready}}[4];}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga596b1cabfc224d016498711229f02d4b}{game\_started}};}
+\DoxyCodeLine{00101\ \}\ \mbox{\hyperlink{struct_packet_session_state}{PacketSessionState}};}
+\DoxyCodeLine{00103\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gad64175c30986eb4c8a88b0c49817bdbc}{player\_id}};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gad4d1f6a7b22f4c2f2e5a244718194383}{is\_ready}};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga8da9cba434f640515d782706341ebc04}{want\_play\_again}};\ \}\ \mbox{\hyperlink{struct_packet_player_ready}{PacketPlayerReady}};}
+\DoxyCodeLine{00105\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga2802060d7734564283278ffb5148e4a0}{winning\_player\_id}};\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga1ff4264371887f1373f376828d6a7c3f}{winner\_name}}[30];\ \}\ \mbox{\hyperlink{struct_packet_game_finished}{PacketGameFinished}};}
+\DoxyCodeLine{00109\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gafb6a63ee6a6c7a4499d44aaebaf475e2}{player\_id}};\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{group__network__packet__strutture_ga9f34dff657b264545e7f38767a4e2f9b}{timestamp}};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga454d43cfb2e2f467f504863d363ca274}{play\_again}};\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gad0e5cb99e6d44afb1297610a71ff0839}{player\_name}}[30];\ \}\ \mbox{\hyperlink{struct_packet_play_again}{PacketPlayAgain}};}
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga0e2259a91f1626c4c9f20d490768de33}{player\_id}};\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{group__network__packet__strutture_ga3a36376352934fafde900b15b51bf29d}{timestamp}};\ \}\ \mbox{\hyperlink{struct_packet_heartbeat}{PacketHeartbeat}};}
+\DoxyCodeLine{00113\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga21afc5dc63a86a4ff6a055486fad6441}{host\_ready}};\ \}\ \mbox{\hyperlink{struct_packet_host_return_lobby}{PacketHostReturnLobby}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ -\/-\/-\/\ Strutture\ per\ la\ sincronizzazione\ Admin\ -\/-\/-\/}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ Contiene\ i\ dati\ completi\ di\ un\ singolo\ utente\ (Statistiche)\ SENZA\ storico\ partite}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ per\ mantenere\ i\ pacchetti\ di\ rete\ piccoli.}}
+\DoxyCodeLine{00118\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gabafab5e79d5298dbbe81ce0cd201902d}{email}}[100];\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gac81f1b89327c6f3a128761e702db16cc}{nome}}[30];\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga406392fbcc5b9a327521a12b68f9d378}{cognome}}[30];\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gadfa347ab441903e6a5d51933d5ef0069}{username}}[30];\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga1b78f9830a1a67d47bc8825c8f73d801}{password}}[30];\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga02026535119c49cc438aaf35e09b14c4}{pin\_recupero}}[7];\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gad64d5575b39ad5dc8f2462b8ead65941}{partite\_giocate}};\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga4541673e51582113e53ab1d31d626c35}{vittorie\_giocatore}};\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga4eee1d90a8f2a55a4966d22f532c7b5e}{vittorie\_bot}};\ }
+\DoxyCodeLine{00128\ \}\ \mbox{\hyperlink{struct_admin_user_sync_data}{AdminUserSyncData}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{comment}{//\ Contiene\ l'azione\ admin\ (modifica/elimina/crea)}}
+\DoxyCodeLine{00131\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \mbox{\hyperlink{struct_admin_user_sync_data}{AdminUserSyncData}}\ \mbox{\hyperlink{group__network__packet__strutture_gaa6cfd2ff64ab1d9d1a36d96e5438a4c7}{user}};\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga3d07f0b9de209d0f402a844b8efa2a8b}{action}};\ \textcolor{comment}{/*\ 0=sync,\ 1=update,\ 2=delete,\ 3=create\ */}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gaba3e8369946d0bcbe4912985202712dd}{target\_id}};\ \}\ \mbox{\hyperlink{struct_admin_user_action}{AdminUserAction}};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{comment}{//\ Struttura\ per\ la\ sincronizzazione\ DB\ completa:\ invia\ un\ singolo\ utente\ per\ pacchetto}}
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ con\ indice\ progressivo\ e\ flag\ di\ completamento}}
+\DoxyCodeLine{00135\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga3f8f3d3fd45f75d501e186908fc26ad1}{user\_index}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Indice\ progressivo\ di\ questo\ utente\ nella\ sequenza}}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gac6a474ddf16d9f20937f0edf4b45ba06}{total\_users}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Numero\ totale\ di\ utenti\ da\ sincronizzare}}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{struct_admin_user_sync_data}{AdminUserSyncData}}\ \mbox{\hyperlink{group__network__packet__strutture_gaa990cfef6a092ea75e646d4666758175}{user}};\ \ \ \ \ \ \textcolor{comment}{//\ Dati\ dell'utente\ (senza\ storico\ partite)}}
+\DoxyCodeLine{00139\ \}\ \mbox{\hyperlink{struct_admin_d_b_sync_packet}{AdminDBSyncPacket}};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gadabe23799491f084a28d537187fedbdf}{username}}[30];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Username\ del\ giocatore\ a\ cui\ appartengono\ le\ statistiche}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gabcb39d60ae8573ad6547aa17daf77872}{partite\_giocate}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Totale\ partite\ giocate}}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gad656264fcdf2079c7252dfc7a497dce4}{vittorie\_giocatore}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Totale\ vittorie}}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga60b4c234ff6dd8561d9f264fb37b68cf}{vittorie\_bot}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Totale\ sconfitte}}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{group__network__packet__strutture_ga757032a40e11dad5f12d2c2f6afd0cc8}{durata\_ultima\_partita}};\ \ \ \ \ \ \textcolor{comment}{//\ Durata\ in\ secondi\ (singola\ partita\ per\ retrocompatibilità)}}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga2efc2fc797cb131c559f930e646b21ef}{modalita\_ultima}}[20];\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}Online"{}\ o\ "{}1\ vs\ X"{}\ (singola\ partita\ per\ retrocompatibilità)}}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga2a09d71c4e7daed0a74edd976d9597cb}{esito\_ultima}}[15];\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ "{}Vittoria"{}\ o\ "{}Sconfitta"{}\ (singola\ partita\ per\ retrocompatibilità)}}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gad5ea8e8bdf83a475ded43b43b7613670}{posizione\_ultima}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Posizione\ finale\ 1-\/4\ (singola\ partita\ per\ retrocompatibilità)}}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{comment}{/*\ BUG\ 3\ FIX:\ Piccolo\ storico\ partite\ (ultime\ STORICO\_SYNC\_COUNT\ partite)}}
+\DoxyCodeLine{00167\ \textcolor{comment}{\ \ \ \ \ *\ per\ sincronizzazione\ TCP.\ Viene\ popolato\ in\ BroadcastStatsSync/SendStatsSync}}
+\DoxyCodeLine{00168\ \textcolor{comment}{\ \ \ \ \ *\ e\ mergiato\ in\ PACKET\_STATS\_SYNC.\ storico\_count\ indica\ quante\ partite\ valide.\ */}}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{struct_partita_registrata}{PartitaRegistrata}}\ \mbox{\hyperlink{group__network__packet__strutture_ga0534e53e5caf2dd07dcf142cd6faa332}{storico\_partite}}[\mbox{\hyperlink{lan__protocol_8h_a9805d8d568aa10ad776d8b121a8367e4}{STORICO\_SYNC\_COUNT}}];\ \textcolor{comment}{/*\ Ultime\ N\ partite\ */}}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga0072a9f95163dfc459a5f0343416eec4}{storico\_count}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Numero\ di\ partite\ valide\ in\ storico\_partite[]\ */}}
+\DoxyCodeLine{00171\ \}\ \mbox{\hyperlink{struct_stats_sync_packet}{StatsSyncPacket}};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{comment}{//\ Struttura\ generica\ per\ i\ pacchetti\ di\ rete}}
+\DoxyCodeLine{00174\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{group__network__packet_ga0a80a7bc045affcf10846075b88cbca0}{PacketType}}\ \mbox{\hyperlink{group__network__packet__strutture_ga3bf9ba4b94cb8068a261bd07e01b0fc0}{type}};}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga171e8b116595940c618270d21fe9787b}{sender\_id}};}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_move}{PacketMove}}\ \mbox{\hyperlink{group__network__packet__strutture_ga132cc701b1cebecfb8f8992565f6bcc6}{move}};}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_draw}{PacketDraw}}\ \mbox{\hyperlink{group__network__packet__strutture_gab4d8deeb5c19963d6e1d692ce5b01776}{draw}};}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_game_state}{PacketGameState}}\ \mbox{\hyperlink{group__network__packet__strutture_gae1da5a64d081035f4af93792ff771050}{game\_state}};}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_color_choice}{PacketColorChoice}}\ \mbox{\hyperlink{group__network__packet__strutture_ga5a7420a732e939ca23615c9b7b686b49}{color\_choice}};}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_chat}{PacketChat}}\ \mbox{\hyperlink{group__network__packet__strutture_gaee3e8eefd8701d9bd41cd426cfe941ec}{chat}};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_join_game}{PacketJoinGame}}\ \mbox{\hyperlink{group__network__packet__strutture_ga49d7d44bd4df64c5ba30b1c04bfafa02}{join\_game}};}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_join_rejected}{PacketJoinRejected}}\ \mbox{\hyperlink{group__network__packet__strutture_ga57e287d2946e56eba5a2d2ec0b01c40d}{join\_rejected}};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_player_hand}{PacketPlayerHand}}\ \mbox{\hyperlink{group__network__packet__strutture_gafae35b798ce130ffa2a4db68d44ebb40}{player\_hand}};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_create_session}{PacketCreateSession}}\ \mbox{\hyperlink{group__network__packet__strutture_gae9d31a94b42b77f7f74d93d09cd3dae0}{create\_session}};}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_join_session}{PacketJoinSession}}\ \mbox{\hyperlink{group__network__packet__strutture_gacc8d068dd0266c0c8c9b20e37583a585}{join\_session}};}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_session_list}{PacketSessionList}}\ \mbox{\hyperlink{group__network__packet__strutture_gaf2b36da7b084e54a381de21e667ecf01}{session\_list}};}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_session_state}{PacketSessionState}}\ \mbox{\hyperlink{group__network__packet__strutture_ga4640495cc1b36655b7a0a8850d422384}{session\_state}};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_player_ready}{PacketPlayerReady}}\ \mbox{\hyperlink{group__network__packet__strutture_gacb05063e5d95dfe6ca677bc01d137d91}{player\_ready}};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_game_finished}{PacketGameFinished}}\ \mbox{\hyperlink{group__network__packet__strutture_ga2f05176c025e583a0b0ff862d3723c75}{game\_finished}};}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_play_again}{PacketPlayAgain}}\ \mbox{\hyperlink{group__network__packet__strutture_gaa00db0a05b0d2dcb217cd435b8c84ede}{play\_again}};}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_host_return_lobby}{PacketHostReturnLobby}}\ \mbox{\hyperlink{group__network__packet__strutture_ga5bb950cf458b01e517c357691bb6e416}{host\_return\_lobby}};}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_packet_heartbeat}{PacketHeartbeat}}\ \mbox{\hyperlink{group__network__packet__strutture_ga180be1c20dcb535e60e3803941b5d07f}{heartbeat}};}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_admin_user_action}{AdminUserAction}}\ \mbox{\hyperlink{group__network__packet__strutture_ga73a0ded76fc6e6d72987c55bb16e2adf}{admin\_action}};}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_admin_d_b_sync_packet}{AdminDBSyncPacket}}\ \mbox{\hyperlink{group__network__packet__strutture_ga740b8f9c2a02ecfa8de301efa16a6087}{admin\_db\_packet}};\ \ \textcolor{comment}{//\ Sostituisce\ il\ vecchio\ AdminDBSyncData}}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_stats_sync_packet}{StatsSyncPacket}}\ \mbox{\hyperlink{group__network__packet__strutture_ga85e03ec5f7b0d5f8c9304564241a29ee}{stats\_sync}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sincronizzazione\ live\ statistiche}}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga27a03e277b8bf17777c34d7d7c39a8ac}{raw}}[512];}
+\DoxyCodeLine{00199\ \ \ \ \ \}\ data;}
+\DoxyCodeLine{00200\ \}\ \mbox{\hyperlink{struct_net_packet}{NetPacket}};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \textcolor{comment}{//\ Massimo\ numero\ di\ client\ gestibili\ dall'host\ (incluso\ lo\ slot\ 0\ riservato)}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ MAX\_SERVER\_CLIENTS\ 4}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{comment}{//\ -\/-\/-\/\ Funzioni\ e\ Variabili\ Globali\ -\/-\/-\/}}
+\DoxyCodeLine{00206\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga73bc5aa44ad9b3c3ca01c28252b93a56}{network\_start\_game\_flag}};}
+\DoxyCodeLine{00207\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{group__network__ruoli_ga53e7e36fa630cf0cbd59d8ac87393100}{NetworkRole}}\ \mbox{\hyperlink{auth__update_8c_a16acec73ed8b5b9262d15211bedb6479}{currentRole}};}
+\DoxyCodeLine{00208\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga0936e5fbf6f65df58464ed83a3272430}{join\_rejected}};}
+\DoxyCodeLine{00209\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_gac04d7d998bff797c954bba3776ba0c55}{reject\_message}}[100];}
+\DoxyCodeLine{00210\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gaa358768cbc9b8ed27055d5b41726d79a}{isConnected}};}
+\DoxyCodeLine{00211\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga011bfc7156351cec76e4a4b1e38c3169}{network\_pending}};}
+\DoxyCodeLine{00212\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga7fbc791dd298a446c201d280dd8c1c3d}{network\_game\_initialized}};}
+\DoxyCodeLine{00213\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga64831cef2cdeba3a0f16d745b3ecf4fc}{network\_client\_joined}};}
+\DoxyCodeLine{00214\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ID\ del\ giocatore\ locale}}
+\DoxyCodeLine{00215\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga5cad9e8eeb56c51e52badb34a5910fbe}{current\_session\_id}}[16];\ \ \ \ \ \ \textcolor{comment}{//\ ID\ della\ sessione\ corrente}}
+\DoxyCodeLine{00216\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{group__network__packet__strutture_ga3ceeb52643564997e64ac776a8f0fc9a}{session\_id}}[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ID\ della\ sessione\ (alias\ per\ compatibilità)}}
+\DoxyCodeLine{00217\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga3437dc7e27766145ab5c8d9a605083cd}{local\_player\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ID\ del\ giocatore\ locale\ nella\ sessione}}
+\DoxyCodeLine{00218\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gae06ac14e3f4d5998b855e2ffbc411341}{host\_in\_prelobby}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1\ se\ l'host\ e'\ gia'\ tornato\ in\ pre-\/lobby\ (per\ i\ client)}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{comment}{//\ Socket\ dei\ client\ connessi\ (visibile\ a\ network\_utils.c)}}
+\DoxyCodeLine{00221\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}}\ \mbox{\hyperlink{admin__draw_8c_acf235198fdda36e8980bbf0ead99f61f}{clientSockets}}[\mbox{\hyperlink{group__network__packet__strutture_gac7e4a6221f79e37a20003c8c18e4ae62}{MAX\_SERVER\_CLIENTS}}];}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \textcolor{comment}{//\ Username\ dei\ client\ TCP\ connessi\ all'host\ (per\ admin\ panel\ -\/\ visibile\ ad\ admin\_draw.c)}}
+\DoxyCodeLine{00224\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{admin__draw_8c_a80ac1ee1e5dc6a14be8c487f06ab9192}{connectedClientUsernames}}[4][30];}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga7b140306c116ba0e29a99eb0415fbe36}{GetLocalIPAddress}}(\textcolor{keywordtype}{char}*\ outbuf,\ \textcolor{keywordtype}{int}\ buflen);}
+\DoxyCodeLine{00227\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gabc45bc454fab5dc2d69faf90e742d4e1}{IsPlayerConnected}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\_id}});}
+\DoxyCodeLine{00228\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_ga613b435b1d6ffb50b4255ceaa0bc6696}{RiassegnaSocket}}(\textcolor{keywordtype}{int}\ old\_id,\ \textcolor{keywordtype}{int}\ new\_id,\ \textcolor{keywordtype}{int}\ is\_reconnect,\ \textcolor{keywordtype}{int}\ partita\_iniziata);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \textcolor{comment}{//\ Funzioni\ di\ invio\ (dichiarate\ in\ network\_send.c,\ usate\ da\ piu'\ moduli)}}
+\DoxyCodeLine{00231\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_ga740ef7a56f894d2149113373ed7c9601}{BroadcastHostDisconnect}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00232\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_ga981d40762c9af84bf5f4d5d24a024c04}{SendPlayerReady}}(\textcolor{keywordtype}{int}\ ready);}
+\DoxyCodeLine{00233\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_ga76952802b05b5b11a933c2db18ede658}{SendPlayAgain}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00234\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_gab5854145185d5f1e6a08d5a51022dd34}{BroadcastHostReturnLobby}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga1bc4af3da71346cdc346fd17ff078426}{ConnettiTramiteCodiceStanza}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ codice,\ \textcolor{keywordtype}{int}\ portaBase);}
+\DoxyCodeLine{00237\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga8ec5ddc728bd3aeff602ed6c2c103615}{InitNetwork}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00238\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_ga76a4e1704f09ea2ce18348e9add659d4}{ShiftNetworkSockets}}(\textcolor{keywordtype}{int}\ removed\_index,\ \textcolor{keywordtype}{int}\ num\_players);}
+\DoxyCodeLine{00239\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_ga9b41cc6afd8c747b00cde5ae23849aec}{CloseNetwork}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00240\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga4afd449b11f70e41fcfdf4df80a916ad}{HostGame}}(\textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{00241\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_gaa2baa82ea8ed3d587c950ca832d9bd2e}{JoinGame}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ip\_address,\ \textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{00242\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_ga6b2d507a3b3bf210f28c0eedacd885a4}{UpdateNetwork}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}*\ gioco);}
+\DoxyCodeLine{00243\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_gad3c903fa215cfb2106e60c84065a37cd}{HandleReceivedPacket}}(\mbox{\hyperlink{struct_net_packet}{NetPacket}}*\ packet,\ \mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}*\ gioco);}
+\DoxyCodeLine{00244\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_ga5549082d80aa9bc430343ffed1f25c11}{GestisciDisconnessione}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}*\ gioco);}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_gaa3f0c68189cf8f6f045919dc6ac02a35}{IpToCode}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ip,\ \textcolor{keywordtype}{char}*\ code);}
+\DoxyCodeLine{00247\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__network__packet__strutture_ga1b8014223ec4e2f55bf50ed4f0956f29}{CodeToIp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ code,\ \textcolor{keywordtype}{char}*\ ip);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \textcolor{comment}{//\ Sincronizzazione\ live\ statistiche}}
+\DoxyCodeLine{00250\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_gad24cb48d88d5827fff0faf81ae1fc05b}{BroadcastStatsSync}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_stats_sync_packet}{StatsSyncPacket}}*\ stats);}
+\DoxyCodeLine{00251\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__network__packet__strutture_ga36fc11ee8fde125894663e2c2ca2aa32}{SendStatsSync}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_stats_sync_packet}{StatsSyncPacket}}*\ stats);}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

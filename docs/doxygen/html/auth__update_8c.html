@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/screens/auth/auth_update.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('auth__update_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file auth_update.c<div class="ingroups"><a class="el" href="group__auth__update.html">Auth Update</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Logica di aggiornamento delle schermate di autenticazione.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth__shared_8h_source.html">../../../lib/screens/auth/auth_shared.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth__update_8h_source.html">../../../lib/screens/auth/auth_update.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="input__field_8h_source.html">../../../lib/screens/auth/input_field.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth__validation_8h_source.html">../../../lib/auth_validation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network__send_8h_source.html">../../../lib/socket/network/network_send.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../../../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_2string__utils_8h_source.html">../../../lib/screens/menu/string_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bst_8h_source.html">../../../lib/data_structures/bst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ui_8h_source.html">../../../lib/ui.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a63cd56c684cf39398eda9013a4ab4b32" id="r_a63cd56c684cf39398eda9013a4ab4b32"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a63cd56c684cf39398eda9013a4ab4b32">AggiornaAuth</a> (<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase)</td></tr>
+<tr class="memdesc:a63cd56c684cf39398eda9013a4ab4b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestisce l'input e la logica delle schermate di autenticazione.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:a1d9b0cdaeafdd3ec4a2bbfa622f5b013" id="r_a1d9b0cdaeafdd3ec4a2bbfa622f5b013"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a1d9b0cdaeafdd3ec4a2bbfa622f5b013">recPassword</a> [30]</td></tr>
+<tr class="memdesc:a1d9b0cdaeafdd3ec4a2bbfa622f5b013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer per la password di recupero (usato nel flusso recupero credenziali).  <br /></td></tr>
+<tr class="memitem:a7a0e39594508daffab34dcba41448e96" id="r_a7a0e39594508daffab34dcba41448e96"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a7a0e39594508daffab34dcba41448e96">recUsername</a> [30]</td></tr>
+<tr class="memdesc:a7a0e39594508daffab34dcba41448e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer per lo username di recupero (usato nel flusso recupero credenziali).  <br /></td></tr>
+<tr class="memitem:a6809f1d9991efcbc14616f46ea893c16" id="r_a6809f1d9991efcbc14616f46ea893c16"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a6809f1d9991efcbc14616f46ea893c16">recupero_completato</a></td></tr>
+<tr class="memdesc:a6809f1d9991efcbc14616f46ea893c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stato recupero password: 0 = in attesa di inserimento email/PIN, 2 = PIN verificato, in attesa nuova password, 3 = password reimpostata con successo.  <br /></td></tr>
+<tr class="memitem:a7d41f73b4aaf323dd4a42e616750f1a3" id="r_a7d41f73b4aaf323dd4a42e616750f1a3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a7d41f73b4aaf323dd4a42e616750f1a3">errore_recupero</a></td></tr>
+<tr class="memdesc:a7d41f73b4aaf323dd4a42e616750f1a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag errore recupero password: 0 = nessun errore, 1 = email obbligatoria, 2 = PIN obbligatorio, 3 = email non valida (manca ), 4 = email o PIN errati.  <br /></td></tr>
+<tr class="memitem:a95046ad749acf7f370a5864feea4a2db" id="r_a95046ad749acf7f370a5864feea4a2db"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a95046ad749acf7f370a5864feea4a2db">utente_modifica_admin</a></td></tr>
+<tr class="memdesc:a95046ad749acf7f370a5864feea4a2db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indice dell'utente in modifica nel pannello admin (-1 = nessuno).  <br /></td></tr>
+<tr class="memitem:ae71cbf05374b49c2a9136899bd39b04b" id="r_ae71cbf05374b49c2a9136899bd39b04b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae71cbf05374b49c2a9136899bd39b04b">mostra_popup_uscita_auth</a></td></tr>
+<tr class="memdesc:ae71cbf05374b49c2a9136899bd39b04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag: 1 se il popup di conferma uscita e' visibile nella schermata auth.  <br /></td></tr>
+<tr class="memitem:a16acec73ed8b5b9262d15211bedb6479" id="r_a16acec73ed8b5b9262d15211bedb6479"><td class="memItemLeft"><a class="el" href="group__network__ruoli.html#ga53e7e36fa630cf0cbd59d8ac87393100">NetworkRole</a>&#160;</td><td class="memItemRight"><a class="el" href="#a16acec73ed8b5b9262d15211bedb6479">currentRole</a></td></tr>
+<tr class="memitem:a65bd7a3a024eeecda356b3898743189e" id="r_a65bd7a3a024eeecda356b3898743189e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a65bd7a3a024eeecda356b3898743189e">admin_scroll_reset</a></td></tr>
+<tr class="memdesc:a65bd7a3a024eeecda356b3898743189e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag per resettare lo scroll del pannello admin.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Logica di aggiornamento delle schermate di autenticazione. </p>
+<p>Modulo separato che contiene la funzione AggiornaAuth. Gestisce l'input utente e la logica di transizione tra gli stati di autenticazione: login, registrazione, recupero password, modifica profilo e pannello admin.</p>
+<p>Fattorizzato da <a class="el" href="auth__screen_8c.html" title="Definizioni delle variabili di stato condivise per le schermate auth.">auth_screen.c</a> (769 righe) per ridurre la complessita'.</p>
+<p>NOTA: Il database utenti e' ora DINAMICO (MAX_UTENTI rimosso, allocazione tramite DB_Alloca/realloc). La registrazione di nuovi utenti non ha piu' limite fisso superiore. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a63cd56c684cf39398eda9013a4ab4b32" name="a63cd56c684cf39398eda9013a4ab4b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63cd56c684cf39398eda9013a4ab4b32">&#9670;&#160;</a></span>AggiornaAuth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AggiornaAuth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *</td>          <td class="paramname"><span class="paramname"><em>fase</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gestisce l'input e la logica delle schermate di autenticazione. </p>
+<p>Gestisce l'input e la logica delle schermate auth.</p>
+<p>Viene chiamata nel loop principale quando la fase corrente richiede gestione auth (login, registrazione, ecc.).</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fase</td><td>Puntatore alla fase applicazione corrente.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Gestisce l'input e la logica delle schermate di autenticazione.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>fase != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Fase aggiornata in base all'input; eventi di autenticazione processati. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fase</td><td>Puntatore alla fase corrente dell'applicazione. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="a65bd7a3a024eeecda356b3898743189e" name="a65bd7a3a024eeecda356b3898743189e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65bd7a3a024eeecda356b3898743189e">&#9670;&#160;</a></span>admin_scroll_reset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int admin_scroll_reset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag per resettare lo scroll del pannello admin. </p>
+
+</div>
+</div>
+<a id="a16acec73ed8b5b9262d15211bedb6479" name="a16acec73ed8b5b9262d15211bedb6479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16acec73ed8b5b9262d15211bedb6479">&#9670;&#160;</a></span>currentRole</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__network__ruoli.html#ga53e7e36fa630cf0cbd59d8ac87393100">NetworkRole</a> currentRole</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d41f73b4aaf323dd4a42e616750f1a3" name="a7d41f73b4aaf323dd4a42e616750f1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d41f73b4aaf323dd4a42e616750f1a3">&#9670;&#160;</a></span>errore_recupero</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int errore_recupero</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag errore recupero password: 0 = nessun errore, 1 = email obbligatoria, 2 = PIN obbligatorio, 3 = email non valida (manca ), 4 = email o PIN errati. </p>
+
+</div>
+</div>
+<a id="ae71cbf05374b49c2a9136899bd39b04b" name="ae71cbf05374b49c2a9136899bd39b04b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71cbf05374b49c2a9136899bd39b04b">&#9670;&#160;</a></span>mostra_popup_uscita_auth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mostra_popup_uscita_auth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag: 1 se il popup di conferma uscita e' visibile nella schermata auth. </p>
+
+</div>
+</div>
+<a id="a1d9b0cdaeafdd3ec4a2bbfa622f5b013" name="a1d9b0cdaeafdd3ec4a2bbfa622f5b013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d9b0cdaeafdd3ec4a2bbfa622f5b013">&#9670;&#160;</a></span>recPassword</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char recPassword[30]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer per la password di recupero (usato nel flusso recupero credenziali). </p>
+
+</div>
+</div>
+<a id="a6809f1d9991efcbc14616f46ea893c16" name="a6809f1d9991efcbc14616f46ea893c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6809f1d9991efcbc14616f46ea893c16">&#9670;&#160;</a></span>recupero_completato</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int recupero_completato</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stato recupero password: 0 = in attesa di inserimento email/PIN, 2 = PIN verificato, in attesa nuova password, 3 = password reimpostata con successo. </p>
+
+</div>
+</div>
+<a id="a7a0e39594508daffab34dcba41448e96" name="a7a0e39594508daffab34dcba41448e96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a0e39594508daffab34dcba41448e96">&#9670;&#160;</a></span>recUsername</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char recUsername[30]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer per lo username di recupero (usato nel flusso recupero credenziali). </p>
+
+</div>
+</div>
+<a id="a95046ad749acf7f370a5864feea4a2db" name="a95046ad749acf7f370a5864feea4a2db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95046ad749acf7f370a5864feea4a2db">&#9670;&#160;</a></span>utente_modifica_admin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int utente_modifica_admin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indice dell'utente in modifica nel pannello admin (-1 = nessuno). </p>
+<p>Se == dbUtenti.num_utenti, indica che si sta CREANDO un nuovo utente (valore sentinella). </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_8790123cd27986151acde1ce1c3bab17.html">screens</a></li><li class="navelem"><a href="dir_a4a06e4766a213248381a7e786f6d909.html">auth</a></li><li class="navelem"><a href="auth__update_8c.html">auth_update.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

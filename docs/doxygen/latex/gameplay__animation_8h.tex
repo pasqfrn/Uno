@@ -1,0 +1,67 @@
+\doxysection{lib/screens/game/gameplay\+\_\+animation.h File Reference}
+\hypertarget{gameplay__animation_8h}{}\label{gameplay__animation_8h}\index{lib/screens/game/gameplay\_animation.h@{lib/screens/game/gameplay\_animation.h}}
+
+
+Gestione delle animazioni di gioco.  
+
+
+{\ttfamily \#include "{}../../data\+\_\+structures.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gameplay__animation_8h_af744d2952272ae276b215ab237284686}{Aggiorna\+Animazioni}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna lo stato delle animazioni in corso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gameplay__animation_8h_aee4ac9a29cb96b4823b97a1c84f363e7}{Disegna\+Animazioni}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Disegna le animazioni attive sullo schermo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestione delle animazioni di gioco. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gameplay__animation_8h_af744d2952272ae276b215ab237284686}\index{gameplay\_animation.h@{gameplay\_animation.h}!AggiornaAnimazioni@{AggiornaAnimazioni}}
+\index{AggiornaAnimazioni@{AggiornaAnimazioni}!gameplay\_animation.h@{gameplay\_animation.h}}
+\doxysubsubsection{\texorpdfstring{AggiornaAnimazioni()}{AggiornaAnimazioni()}}
+{\footnotesize\ttfamily \label{gameplay__animation_8h_af744d2952272ae276b215ab237284686} 
+void Aggiorna\+Animazioni (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{float}]{dt}{}\end{DoxyParamCaption})}
+
+
+
+Aggiorna lo stato delle animazioni in corso. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Animazioni avanzate nel tempo. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato del gioco. \\
+\hline
+{\em dt} & Delta time. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameplay__animation_8h_aee4ac9a29cb96b4823b97a1c84f363e7}\index{gameplay\_animation.h@{gameplay\_animation.h}!DisegnaAnimazioni@{DisegnaAnimazioni}}
+\index{DisegnaAnimazioni@{DisegnaAnimazioni}!gameplay\_animation.h@{gameplay\_animation.h}}
+\doxysubsubsection{\texorpdfstring{DisegnaAnimazioni()}{DisegnaAnimazioni()}}
+{\footnotesize\ttfamily \label{gameplay__animation_8h_aee4ac9a29cb96b4823b97a1c84f363e7} 
+void Disegna\+Animazioni (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Disegna le animazioni attive sullo schermo. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Animazioni renderizzate. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato del gioco. \\
+\hline
+\end{DoxyParams}

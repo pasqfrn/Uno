@@ -1,0 +1,104 @@
+\doxysection{src/screens/menu/menu\+\_\+screen.c File Reference}
+\hypertarget{menu__screen_8c}{}\label{menu__screen_8c}\index{src/screens/menu/menu\_screen.c@{src/screens/menu/menu\_screen.c}}
+
+
+Implementazione schermata menu principale.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/menu/menu\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/ui.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{menu__screen_8c_accf70613e15dd3bcc231017b8f814c80}{LARGHEZZA}}~1280
+\item 
+\#define \mbox{\hyperlink{menu__screen_8c_a737f1e0014465787871b62d0e61129d8}{ALTEZZA}}~720
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu__screen_8c_a827138ed6d0747443f0e3eba3e0dc162}{Disegna\+Menu}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}fase)
+\begin{DoxyCompactList}\small\item\em Disegna la schermata del menu principale post-\/login. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{menu__screen_8c_a108288d745ff0ba8f835f169d0e9b1c7}{esc\+\_\+consumato}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementazione schermata menu principale. 
+
+Gestisce il menu principale con\+:
+\begin{DoxyItemize}
+\item Navigazione tra profili utente
+\item Accesso alle funzionalita\textquotesingle{} admin
+\item Avvio partite offline (vs bot)
+\item Accesso alle statistiche
+\item Gestione modalita\textquotesingle{} multiplayer
+\end{DoxyItemize}
+
+Stati gestiti\+: FASE\+\_\+\+SCELTA\+\_\+\+ACCESSO, FASE\+\_\+\+MENU 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{menu__screen_8c_a737f1e0014465787871b62d0e61129d8}\index{menu\_screen.c@{menu\_screen.c}!ALTEZZA@{ALTEZZA}}
+\index{ALTEZZA@{ALTEZZA}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ALTEZZA}{ALTEZZA}}
+{\footnotesize\ttfamily \label{menu__screen_8c_a737f1e0014465787871b62d0e61129d8} 
+\#define ALTEZZA~720}
+
+\Hypertarget{menu__screen_8c_accf70613e15dd3bcc231017b8f814c80}\index{menu\_screen.c@{menu\_screen.c}!LARGHEZZA@{LARGHEZZA}}
+\index{LARGHEZZA@{LARGHEZZA}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{LARGHEZZA}{LARGHEZZA}}
+{\footnotesize\ttfamily \label{menu__screen_8c_accf70613e15dd3bcc231017b8f814c80} 
+\#define LARGHEZZA~1280}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu__screen_8c_a827138ed6d0747443f0e3eba3e0dc162}\index{menu\_screen.c@{menu\_screen.c}!DisegnaMenu@{DisegnaMenu}}
+\index{DisegnaMenu@{DisegnaMenu}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{DisegnaMenu()}{DisegnaMenu()}}
+{\footnotesize\ttfamily \label{menu__screen_8c_a827138ed6d0747443f0e3eba3e0dc162} 
+void Disegna\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{\mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}}]{fase}{}\end{DoxyParamCaption})}
+
+
+
+Disegna la schermata del menu principale post-\/login. 
+
+Disegna il menu principale e gestisce la navigazione.
+
+Gestisce tutti i bottoni e sottomenu\+:
+\begin{DoxyItemize}
+\item Avvio partita 1v1, 1v2, 1v3
+\item Accesso multiplayer (lobby)
+\item Caricamento partita (sottomenu salvataggi)
+\item Visualizzazione profilo e statistiche
+\item Admin Panel (solo per utente "{}\+Admin"{})
+\item Logout con conferma
+\end{DoxyItemize}
+
+Gestisce anche le notifiche di sistema (es. host disconnesso).
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco corrente. \\
+\hline
+{\em fase} & Puntatore alla fase applicazione corrente. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{menu__screen_8c_a108288d745ff0ba8f835f169d0e9b1c7}\index{menu\_screen.c@{menu\_screen.c}!esc\_consumato@{esc\_consumato}}
+\index{esc\_consumato@{esc\_consumato}!menu\_screen.c@{menu\_screen.c}}
+\doxysubsubsection{\texorpdfstring{esc\_consumato}{esc\_consumato}}
+{\footnotesize\ttfamily \label{menu__screen_8c_a108288d745ff0ba8f835f169d0e9b1c7} 
+int esc\+\_\+consumato\hspace{0.3cm}{\ttfamily [extern]}}
+

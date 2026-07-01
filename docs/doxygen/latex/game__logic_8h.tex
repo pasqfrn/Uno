@@ -1,0 +1,543 @@
+\doxysection{lib/game\+\_\+logic.h File Reference}
+\hypertarget{game__logic_8h}{}\label{game__logic_8h}\index{lib/game\_logic.h@{lib/game\_logic.h}}
+
+
+Modulo di logica di gioco UNO.  
+
+
+{\ttfamily \#include "{}data\+\_\+structures.\+h"{}}\newline
+{\ttfamily \#include "{}data\+\_\+structures/stack.\+h"{}}\newline
+{\ttfamily \#include "{}data\+\_\+structures/queue.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game__logic_8h_a1f3105448b986dc3c5fd8ef93e948fdf}{Carica\+Partita\+Da\+Slot}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, int slot)
+\begin{DoxyCompactList}\small\item\em Carica una partita da un file di salvataggio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_ac36d5d7fc58d57d5333d9de89432acb1}{Ricostruisci\+Stato\+ADT}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Ricostruisce le strutture ADT statiche (mazzo\+\_\+pila, scarti\+\_\+pila, coda\+\_\+turni) e le mani dei giocatori dopo un caricamento da file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a8b2e4cdd665a790268c297e793abc369}{Elimina\+Salvataggio}} (int slot)
+\begin{DoxyCompactList}\small\item\em Elimina un file di salvataggio esistente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_ab6d8a480978f155fe71df7ce72d2d67e}{Salva\+Partita}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Salva lo stato corrente della partita su file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a4af9aa327b760e4e4ff4c861879608d6}{Compatta\+Salvataggi\+Utente}} (void)
+\begin{DoxyCompactList}\small\item\em Compatta i salvataggi dell\textquotesingle{}utente loggato in ordine cronologico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_abef09d90f8a1244e64b884e89814cd9d}{Elimina\+Tutti\+Salvataggi\+Utente}} (const char \texorpdfstring{$\ast$}{*}username)
+\begin{DoxyCompactList}\small\item\em Elimina TUTTI i salvataggi di un utente specifico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a56d174d587ba4d54b02fa4f18c6d5279}{Get\+Save\+File\+Path}} (int user\+\_\+index, int slot, char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t bufsize)
+\begin{DoxyCompactList}\small\item\em Restituisce il path del file di salvataggio per un dato utente e slot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__game__logic_ga2be362fe392971bbe8008aa9266cf539}{Inizializza\+Mazzo}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Inizializza il mazzo di pesca con 108 carte UNO standard. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_aa30d6c36fd5e60362e9863466f754b38}{Ricarca\+Mazzo}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Ricarica il mazzo di pesca dagli scarti. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game__logic_8h_a331462bb54826e9e9d477625d83dd9d5}{Mossa\+Valida}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, \mbox{\hyperlink{struct_carta}{Carta}} c)
+\begin{DoxyCompactList}\small\item\em Verifica se una carta puo\textquotesingle{} essere giocata legalmente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a588fc681a6842fa5688ec1331484fe1b}{Applica\+Effetto}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, \mbox{\hyperlink{struct_carta}{Carta}} c, \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} colore\+\_\+scelto)
+\begin{DoxyCompactList}\small\item\em Applica l\textquotesingle{}effetto speciale di una carta giocata. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a6f74b381349465d305eabe85f8b02a95}{Nuova\+Partita}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, int num\+\_\+avversari)
+\begin{DoxyCompactList}\small\item\em Inizializza una nuova partita con il numero di avversari specificato. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a3446c1c30033cc8030a98d3e41399365}{Elimina\+Partita}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Libera tutte le risorse allocate per una partita. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_ab202f15176056f42ac78bd55f0ef400e}{Mostra\+Notifica}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, const char \texorpdfstring{$\ast$}{*}msg)
+\begin{DoxyCompactList}\small\item\em Mostra una notifica temporanea a schermo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__game__logic_ga171821f60641393ff220f91b26e0325f}{Get\+Lunghezza\+Mano}} (\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore)
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di carte nella mano di un giocatore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_carta}{Carta}} \mbox{\hyperlink{group__game__logic_ga911f218567f81d8d4d6eec5c1c12b543}{Get\+Carta\+Giocatore}} (\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore, int indice)
+\begin{DoxyCompactList}\small\item\em Restituisce una carta dalla mano di un giocatore per indice. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nodo_carta}{Nodo\+Carta}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__game__logic_ga5a26039c72d695715eb46d1dbe0f91ff}{Get\+Nodo\+Carta\+Giocatore}} (\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore, int indice)
+\begin{DoxyCompactList}\small\item\em Restituisce il puntatore al nodo di una carta per indice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__game__logic_gac60c0e57c8c2a799f008d302bbaaa5fd}{Rimuovi\+Carta\+Giocatore}} (\mbox{\hyperlink{struct_giocatore}{Giocatore}} \texorpdfstring{$\ast$}{*}giocatore, int indice)
+\begin{DoxyCompactList}\small\item\em Rimuove una carta dalla mano di un giocatore per indice. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__game__logic_ga6fc614aadf58fe03606063067a2ad233}{Rimescola\+Scarti\+Nel\+Mazzo}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Rimescola le carte dalla pila degli scarti nel mazzo di pesca. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__game__logic_gad1b01bee170bfe43e167097d8fa75b3c}{Pesca}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, int id\+\_\+giocatore, int quantita)
+\begin{DoxyCompactList}\small\item\em Fa pescare un certo numero di carte a un giocatore. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{game__logic_8h_afefe37ecc9aba9febda10fedc4dfa743}{mazzo\+\_\+pila}}
+\begin{DoxyCompactList}\small\item\em ADT globali del gioco\+: pila mazzo pesca, pila scarti, coda turni. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{game__logic_8h_ae43a4528acce4bced75b0d843415956f}{scarti\+\_\+pila}}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_pila}{Pila} globale degli scarti. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_coda_turni}{Coda\+Turni}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{game__logic_8h_ad1902a2e7f88106585a3606741e4ba34}{coda\+\_\+turni}}
+\begin{DoxyCompactList}\small\item\em Coda globale dei turni. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Modulo di logica di gioco UNO. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{game__logic_8h_a588fc681a6842fa5688ec1331484fe1b}\index{game\_logic.h@{game\_logic.h}!ApplicaEffetto@{ApplicaEffetto}}
+\index{ApplicaEffetto@{ApplicaEffetto}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{ApplicaEffetto()}{ApplicaEffetto()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a588fc681a6842fa5688ec1331484fe1b} 
+void Applica\+Effetto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{\mbox{\hyperlink{struct_carta}{Carta}}}]{c}{, }\item[{\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}}]{colore\+\_\+scelto}{}\end{DoxyParamCaption})}
+
+
+
+Applica l\textquotesingle{}effetto speciale di una carta giocata. 
+
+Gestisce gli effetti di tutte le carte speciali\+:
+\begin{DoxyItemize}
+\item CAMBIA\+\_\+\+GIRO\+: Inverte la direzione del turno.
+\item SALTA\+: Salta il giocatore successivo.
+\item PIU\+\_\+2\+: Il giocatore successivo pesca 2 carte.
+\item JOLLY\+: Il giocatore sceglie un colore.
+\item JOLLY\+\_\+\+PIU\+\_\+4\+: Il giocatore successivo pesca 4 carte e si sceglie un colore.
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; carta valida e giocabile. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Stato gioco aggiornato con effetto applicato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco. \\
+\hline
+{\em c} & La carta giocata con effetto speciale. \\
+\hline
+{\em colore\+\_\+scelto} & Il colore scelto dal giocatore (per Jolly/\+Jolly\+Più4).\\
+\hline
+\end{DoxyParams}
+Applica l\textquotesingle{}effetto speciale di una carta giocata.
+
+Gestisce\+: cambio colore, cambio giro, salta turno, pesca carte, aggiornamento colore attivo e rotazione coda turni.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; carta valida. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Stato aggiornato con effetto applicato; notifica mostrata. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco. \\
+\hline
+{\em c} & \doxylink{struct_carta}{Carta} giocata. \\
+\hline
+{\em colore\+\_\+scelto} & \doxylink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore} scelto dal giocatore (per jolly). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_a1f3105448b986dc3c5fd8ef93e948fdf}\index{game\_logic.h@{game\_logic.h}!CaricaPartitaDaSlot@{CaricaPartitaDaSlot}}
+\index{CaricaPartitaDaSlot@{CaricaPartitaDaSlot}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{CaricaPartitaDaSlot()}{CaricaPartitaDaSlot()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a1f3105448b986dc3c5fd8ef93e948fdf} 
+int Carica\+Partita\+Da\+Slot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{int}]{slot}{}\end{DoxyParamCaption})}
+
+
+
+Carica una partita da un file di salvataggio. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; slot nel range valido. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Stato partita ricaricato; ADT ricostruiti se necessario. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da popolare. \\
+\hline
+{\em slot} & Indice dello slot di salvataggio (1-\/5). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se il caricamento e\textquotesingle{} riuscito, 0 altrimenti.
+\end{DoxyReturn}
+Carica una partita da un file di salvataggio.
+
+Cerca prima nel formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat. Fallback\+: se non trova, controlla nel vecchio formato save\+\_\+slot\+\_\+\+N.\+dat per retrocompatibilità con salvataggi preesistenti.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da popolare. \\
+\hline
+{\em slot} & Indice dello slot (1-\/100). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se caricamento riuscito, 0 se slot vuoto o errore. 
+\end{DoxyReturn}
+\Hypertarget{game__logic_8h_a4af9aa327b760e4e4ff4c861879608d6}\index{game\_logic.h@{game\_logic.h}!CompattaSalvataggiUtente@{CompattaSalvataggiUtente}}
+\index{CompattaSalvataggiUtente@{CompattaSalvataggiUtente}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{CompattaSalvataggiUtente()}{CompattaSalvataggiUtente()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a4af9aa327b760e4e4ff4c861879608d6} 
+void Compatta\+Salvataggi\+Utente (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Compatta i salvataggi dell\textquotesingle{}utente loggato in ordine cronologico. 
+
+Raccoglie tutti i salvataggi dell\textquotesingle{}utente (cerca sia formato nuovo save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat che vecchio save\+\_\+slot\+\_\+\+N.\+dat), li ordina per data crescente (bubble sort) e li riscrive nei primi slot liberi con il nuovo formato. \Hypertarget{game__logic_8h_a3446c1c30033cc8030a98d3e41399365}\index{game\_logic.h@{game\_logic.h}!EliminaPartita@{EliminaPartita}}
+\index{EliminaPartita@{EliminaPartita}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{EliminaPartita()}{EliminaPartita()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a3446c1c30033cc8030a98d3e41399365} 
+void Elimina\+Partita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Libera tutte le risorse allocate per una partita. 
+
+Distrugge la mano di ogni giocatore (liste collegate), svuota le pile di pesca e scarti, libera l\textquotesingle{}albero BST.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Tutte le risorse liberate; ADT resettate. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da deallocare.\\
+\hline
+\end{DoxyParams}
+Libera tutte le risorse allocate per una partita.
+
+Distrugge\+: mani giocatori (liste), mazzo\+\_\+pila, scarti\+\_\+pila, coda\+\_\+turni. Resetta num\+\_\+giocatori, num\+\_\+carte\+\_\+mazzo, num\+\_\+carte\+\_\+scarti a 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da deallocare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_a8b2e4cdd665a790268c297e793abc369}\index{game\_logic.h@{game\_logic.h}!EliminaSalvataggio@{EliminaSalvataggio}}
+\index{EliminaSalvataggio@{EliminaSalvataggio}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{EliminaSalvataggio()}{EliminaSalvataggio()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a8b2e4cdd665a790268c297e793abc369} 
+void Elimina\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{slot}{}\end{DoxyParamCaption})}
+
+
+
+Elimina un file di salvataggio esistente. 
+
+\begin{DoxyPrecond}{Precondition}
+slot nel range valido. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+File di salvataggio rimosso. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & Indice dello slot di salvataggio da eliminare.\\
+\hline
+\end{DoxyParams}
+Elimina un file di salvataggio esistente.
+
+Legge i metadati (owner, data) prima di eliminare, poi\+: rimuove il file, compatta, notifica altri dispositivi LAN. Cerca nel formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & Indice dello slot da eliminare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_abef09d90f8a1244e64b884e89814cd9d}\index{game\_logic.h@{game\_logic.h}!EliminaTuttiSalvataggiUtente@{EliminaTuttiSalvataggiUtente}}
+\index{EliminaTuttiSalvataggiUtente@{EliminaTuttiSalvataggiUtente}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{EliminaTuttiSalvataggiUtente()}{EliminaTuttiSalvataggiUtente()}}
+{\footnotesize\ttfamily \label{game__logic_8h_abef09d90f8a1244e64b884e89814cd9d} 
+void Elimina\+Tutti\+Salvataggi\+Utente (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{}\end{DoxyParamCaption})}
+
+
+
+Elimina TUTTI i salvataggi di un utente specifico. 
+
+Scandisce tutti gli slot 1-\/100 e rimuove i file .dat il cui proprietario corrisponde allo username specificato. Controlla sia il formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat che il vecchio save\+\_\+slot\+\_\+\+N.\+dat.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Username dell\textquotesingle{}utente i cui salvataggi vanno eliminati. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_a56d174d587ba4d54b02fa4f18c6d5279}\index{game\_logic.h@{game\_logic.h}!GetSaveFilePath@{GetSaveFilePath}}
+\index{GetSaveFilePath@{GetSaveFilePath}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{GetSaveFilePath()}{GetSaveFilePath()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a56d174d587ba4d54b02fa4f18c6d5279} 
+void Get\+Save\+File\+Path (\begin{DoxyParamCaption}\item[{int}]{user\+\_\+index}{, }\item[{int}]{slot}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{bufsize}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce il path del file di salvataggio per un dato utente e slot. 
+
+Implementazione della funzione dichiarata in \doxylink{game__logic_8h}{game\+\_\+logic.\+h} per compatibilità. Formato\+: data/games/save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+index} & Indice dell\textquotesingle{}utente nel db (non usato, si usa id\+\_\+utente\+\_\+corrente). \\
+\hline
+{\em slot} & Indice dello slot (1-\/100). \\
+\hline
+{\em buffer} & Buffer di destinazione. \\
+\hline
+{\em bufsize} & Dimensione del buffer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_a331462bb54826e9e9d477625d83dd9d5}\index{game\_logic.h@{game\_logic.h}!MossaValida@{MossaValida}}
+\index{MossaValida@{MossaValida}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{MossaValida()}{MossaValida()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a331462bb54826e9e9d477625d83dd9d5} 
+int Mossa\+Valida (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{\mbox{\hyperlink{struct_carta}{Carta}}}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se una carta puo\textquotesingle{} essere giocata legalmente. 
+
+Controlla se il colore o il valore della carta corrisponde alla carta in cima alla pila degli scarti, oppure se e\textquotesingle{} un Jolly.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; gioco-\/\texorpdfstring{$>$}{>}num\+\_\+carte\+\_\+scarti \texorpdfstring{$>$}{>} 0. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Restituisce 1 se mossa valida, 0 altrimenti. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco corrente. \\
+\hline
+{\em c} & La carta che si vuole giocare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se la mossa e\textquotesingle{} valida, 0 altrimenti.
+\end{DoxyReturn}
+Verifica se una carta puo\textquotesingle{} essere giocata legalmente.
+
+Regole UNO\+:
+\begin{DoxyItemize}
+\item Jolly (cambiocolore/\+Pesca\+Quattro)\+: sempre validi
+\item Altrimenti\+: match colore attivo OPPURE match tipo/valore
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; gioco-\/\texorpdfstring{$>$}{>}num\+\_\+carte\+\_\+scarti \texorpdfstring{$>$}{>} 0. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Restituisce 1 se corrispondenza colore/tipo o carta nera. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco corrente. \\
+\hline
+{\em c} & \doxylink{struct_carta}{Carta} da giocare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se mossa valida, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{game__logic_8h_ab202f15176056f42ac78bd55f0ef400e}\index{game\_logic.h@{game\_logic.h}!MostraNotifica@{MostraNotifica}}
+\index{MostraNotifica@{MostraNotifica}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{MostraNotifica()}{MostraNotifica()}}
+{\footnotesize\ttfamily \label{game__logic_8h_ab202f15176056f42ac78bd55f0ef400e} 
+void Mostra\+Notifica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+Mostra una notifica temporanea a schermo. 
+
+Imposta il testo della notifica e un timer di visualizzazione. La notifica viene disegnata in Disegna\+Gameplay.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; msg != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Notifica attiva per 3 secondi. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco. \\
+\hline
+{\em msg} & Testo della notifica da mostrare.\\
+\hline
+\end{DoxyParams}
+Sostituisce eventuale notifica precedente. Si auto-\/cancella dopo un certo tempo gestito dal loop di gioco.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; msg != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Notifica visibile per 3 secondi. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco. \\
+\hline
+{\em msg} & Testo della notifica. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_a6f74b381349465d305eabe85f8b02a95}\index{game\_logic.h@{game\_logic.h}!NuovaPartita@{NuovaPartita}}
+\index{NuovaPartita@{NuovaPartita}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{NuovaPartita()}{NuovaPartita()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a6f74b381349465d305eabe85f8b02a95} 
+void Nuova\+Partita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{int}]{num\+\_\+avversari}{}\end{DoxyParamCaption})}
+
+
+
+Inizializza una nuova partita con il numero di avversari specificato. 
+
+Crea il mazzo, distribuisce 7 carte a ogni giocatore, pesca la prima carta dagli scarti e gestisce le eventuali carte speciali iniziali.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; num\+\_\+avversari in range 1-\/3. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Stato partita inizializzato e pronto per il gioco. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da inizializzare. \\
+\hline
+{\em num\+\_\+avversari} & Numero di avversari (bot).\\
+\hline
+\end{DoxyParams}
+Inizializza una nuova partita con il numero di avversari specificato.
+
+Procedura\+:
+\begin{DoxyEnumerate}
+\item Azzera lo \doxylink{struct_stato_gioco}{Stato\+Gioco}
+\item Imposta il giocatore umano (slot 0) e i bot (1..N)
+\item Crea il mazzo standard UNO (108 carte)
+\item Distribuisce 7 carte per giocatore
+\item Pesca la prima carta scarto (evitando jolly)
+\item Inizializza la coda turni
+\item Trova il primo slot di salvataggio libero
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da inizializzare. \\
+\hline
+{\em num\+\_\+avversari} & Numero di avversari bot (1..3). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_aa30d6c36fd5e60362e9863466f754b38}\index{game\_logic.h@{game\_logic.h}!RicarcaMazzo@{RicarcaMazzo}}
+\index{RicarcaMazzo@{RicarcaMazzo}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{RicarcaMazzo()}{RicarcaMazzo()}}
+{\footnotesize\ttfamily \label{game__logic_8h_aa30d6c36fd5e60362e9863466f754b38} 
+void Ricarca\+Mazzo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Ricarica il mazzo di pesca dagli scarti. 
+
+Quando il mazzo di pesca e\textquotesingle{} vuoto, prende tutte le carte dalla pila degli scarti (tranne l\textquotesingle{}ultima in cima) e le rimette nel mazzo di pesca dopo averle rimescolate con Fisher-\/\+Yates.
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; scarti\+\_\+pila non vuota. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+mazzo\+\_\+pila ricaricata e rimescolata. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_ac36d5d7fc58d57d5333d9de89432acb1}\index{game\_logic.h@{game\_logic.h}!RicostruisciStatoADT@{RicostruisciStatoADT}}
+\index{RicostruisciStatoADT@{RicostruisciStatoADT}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{RicostruisciStatoADT()}{RicostruisciStatoADT()}}
+{\footnotesize\ttfamily \label{game__logic_8h_ac36d5d7fc58d57d5333d9de89432acb1} 
+void Ricostruisci\+Stato\+ADT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Ricostruisce le strutture ADT statiche (mazzo\+\_\+pila, scarti\+\_\+pila, coda\+\_\+turni) e le mani dei giocatori dopo un caricamento da file. 
+
+Deve essere chiamata SUBITO DOPO \doxylink{game__logic_8h_a1f3105448b986dc3c5fd8ef93e948fdf}{Carica\+Partita\+Da\+Slot()} per rendere consistente lo stato interno con quello caricato dal file. \begin{DoxyPrecond}{Precondition}
+gioco caricato con dati consistenti. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+ADT ricostruiti e mani ricreate. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco appena caricato.\\
+\hline
+\end{DoxyParams}
+Ricostruisce le strutture ADT statiche (mazzo\+\_\+pila, scarti\+\_\+pila, coda\+\_\+turni) e le mani dei giocatori dopo un caricamento da file.
+
+Dopo \doxylink{game__logic_8h_a1f3105448b986dc3c5fd8ef93e948fdf}{Carica\+Partita\+Da\+Slot()}, le strutture ADT dinamiche (pile, code, liste) sono NULL. Questa funzione ricrea tutto partendo dai dati serializzati\+:
+\begin{DoxyItemize}
+\item Ricrea mazzo\+\_\+pila da gioco-\/\texorpdfstring{$>$}{>}mazzo\mbox{[}\mbox{]}
+\item Ricrea scarti\+\_\+pila da gioco-\/\texorpdfstring{$>$}{>}scarti\mbox{[}\mbox{]}
+\item Ricrea coda\+\_\+turni da gioco-\/\texorpdfstring{$>$}{>}giocatori\mbox{[}\mbox{]}
+\item Ricrea la mano di ogni giocatore da gioco-\/\texorpdfstring{$>$}{>}mano\+\_\+backup\mbox{[}\mbox{]}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco appena caricato. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_ab6d8a480978f155fe71df7ce72d2d67e}\index{game\_logic.h@{game\_logic.h}!SalvaPartita@{SalvaPartita}}
+\index{SalvaPartita@{SalvaPartita}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{SalvaPartita()}{SalvaPartita()}}
+{\footnotesize\ttfamily \label{game__logic_8h_ab6d8a480978f155fe71df7ce72d2d67e} 
+void Salva\+Partita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Salva lo stato corrente della partita su file. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; partita inizializzata. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+File di salvataggio aggiornato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da salvare.\\
+\hline
+\end{DoxyParams}
+Salva lo stato corrente della partita su file.
+
+Procedura\+:
+\begin{DoxyEnumerate}
+\item Compatta i salvataggi esistenti dell\textquotesingle{}utente
+\item Genera il timestamp corrente
+\item Trova il primo slot libero
+\item Serializza le mani su array di backup
+\item Scrive lo \doxylink{struct_stato_gioco}{Stato\+Gioco} su file .dat
+\item Ricostruisce gli ADT
+\item Broadcast LAN dei nuovi salvataggi
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da salvare. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{game__logic_8h_ad1902a2e7f88106585a3606741e4ba34}\index{game\_logic.h@{game\_logic.h}!coda\_turni@{coda\_turni}}
+\index{coda\_turni@{coda\_turni}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{coda\_turni}{coda\_turni}}
+{\footnotesize\ttfamily \label{game__logic_8h_ad1902a2e7f88106585a3606741e4ba34} 
+\mbox{\hyperlink{struct_coda_turni}{Coda\+Turni}}\texorpdfstring{$\ast$}{*} coda\+\_\+turni\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Coda globale dei turni. 
+
+\Hypertarget{game__logic_8h_afefe37ecc9aba9febda10fedc4dfa743}\index{game\_logic.h@{game\_logic.h}!mazzo\_pila@{mazzo\_pila}}
+\index{mazzo\_pila@{mazzo\_pila}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{mazzo\_pila}{mazzo\_pila}}
+{\footnotesize\ttfamily \label{game__logic_8h_afefe37ecc9aba9febda10fedc4dfa743} 
+\mbox{\hyperlink{struct_pila}{Pila}}\texorpdfstring{$\ast$}{*} mazzo\+\_\+pila\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+ADT globali del gioco\+: pila mazzo pesca, pila scarti, coda turni. 
+
+ADT globali del gioco\+: pila mazzo pesca, pila scarti, coda turni. \Hypertarget{game__logic_8h_ae43a4528acce4bced75b0d843415956f}\index{game\_logic.h@{game\_logic.h}!scarti\_pila@{scarti\_pila}}
+\index{scarti\_pila@{scarti\_pila}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{scarti\_pila}{scarti\_pila}}
+{\footnotesize\ttfamily \label{game__logic_8h_ae43a4528acce4bced75b0d843415956f} 
+\mbox{\hyperlink{struct_pila}{Pila}}\texorpdfstring{$\ast$}{*} scarti\+\_\+pila\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+\doxylink{struct_pila}{Pila} globale degli scarti. 
+

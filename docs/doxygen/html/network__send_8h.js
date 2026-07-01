@@ -1,0 +1,26 @@
+var network__send_8h =
+[
+    [ "BroadcastAdminDB", "group__network__send__admin.html#gac3bad81dd1e885fdb5fe711a2cc7902a", null ],
+    [ "BroadcastAdminUserAction", "group__network__send__admin.html#ga9d7cd15c8ce0029e9f3efd947125a391", null ],
+    [ "BroadcastChat", "network__send_8h.html#a04736d06c71f2196b586fae3bd7a4dbb", null ],
+    [ "BroadcastGameState", "network__send_8h.html#a8b66f3de67a48ce04af83a3d9ec26476", null ],
+    [ "BroadcastHostReturnLobby", "group__network__packet__strutture.html#gab5854145185d5f1e6a08d5a51022dd34", null ],
+    [ "BroadcastPlayerHands", "network__send_8h.html#ae2ba7d25b79aac7673fae23cf316bce5", null ],
+    [ "BroadcastStatsSync", "group__network__packet__strutture.html#gad24cb48d88d5827fff0faf81ae1fc05b", null ],
+    [ "SendAdminUserAction", "group__network__send__admin.html#ga36f8175c516021b1213c76ae7dbbc51e", null ],
+    [ "SendAdminUserSync", "group__network__send__admin.html#ga4f474be2ec77d5945531b038049e70ba", null ],
+    [ "SendChat", "network__send_8h.html#a05bff45fa180f48a80bcdf6e10611fc8", null ],
+    [ "SendColorChoice", "network__send_8h.html#ab18571a6ad86877cbe01c9a589be4ea0", null ],
+    [ "SendCreateSession", "network__send_8h.html#a5200e7a90babbead97641938606e28a9", null ],
+    [ "SendDraw", "network__send_8h.html#ad4c4757d74c717f8cbaa6c81e833f2d4", null ],
+    [ "SendGameState", "network__send_8h.html#a32427ed924559d92e996e42316d323f6", null ],
+    [ "SendHeartbeat", "network__send_8h.html#af775bba86070a2ddf470f66ff759cdfa", null ],
+    [ "SendJoinGame", "network__send_8h.html#a33f5e952ff406b092bd8e51a98c736bc", null ],
+    [ "SendJoinSession", "network__send_8h.html#a506aaa42c1f375d99a5e0f28d784d075", null ],
+    [ "SendMove", "network__send_8h.html#a7965e8e2c7ed1e4ef9e71d3974ad1199", null ],
+    [ "SendPlayAgain", "group__network__packet__strutture.html#ga76952802b05b5b11a933c2db18ede658", null ],
+    [ "SendPlayerHand", "network__send_8h.html#a55a6eadffdfbe2d43ed94c51e6f5ffb3", null ],
+    [ "SendPlayerReady", "group__network__packet__strutture.html#ga981d40762c9af84bf5f4d5d24a024c04", null ],
+    [ "SendStartGame", "network__send_8h.html#a0554cb970fa4a11e12b77295592a1f4a", null ],
+    [ "SendStatsSync", "group__network__packet__strutture.html#ga36fc11ee8fde125894663e2c2ca2aa32", null ]
+];

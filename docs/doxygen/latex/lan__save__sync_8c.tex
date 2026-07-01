@@ -1,0 +1,147 @@
+\doxysection{src/socket/lan/lan\+\_\+save\+\_\+sync.c File Reference}
+\hypertarget{lan__save__sync_8c}{}\label{lan__save__sync_8c}\index{src/socket/lan/lan\_save\_sync.c@{src/socket/lan/lan\_save\_sync.c}}
+
+
+Sincronizzazione salvataggi partite via LAN (chunk UDP).  
+
+
+{\ttfamily \#include "{}../../../lib/socket/network/socket\+\_\+compat.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}../../../lib/socket/lan/lan\+\_\+sync.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/lan/lan\+\_\+protocol.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/fs/fs.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lan__save__sync_8c_ae2c377a9138eb6905d9e09edf7c70f95}{MAX\+\_\+\+RECV}}~10
+\item 
+\#define \mbox{\hyperlink{lan__save__sync_8c_a60e6f3f21fe1c47c07282c8e8c2e75da}{LAN\+\_\+\+SAVE\+\_\+\+PATH\+\_\+\+BUF}}~70
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lan__save__sync_8c_a3d1549737db701594d58097588c08c36}{LAN\+\_\+\+Update\+Saves}} (float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna i timer dei ricevitori di chunk salvataggi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__save__sync_8c_a54bcee66d466e24ce98a66159c9b0d5a}{LAN\+\_\+\+Broadcast\+Saves\+Now}} (void)
+\begin{DoxyCompactList}\small\item\em Forza broadcast immediato di tutti i salvataggi dell\textquotesingle{}utente corrente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__save__sync_8c_a27e09f286eb4eba5a8589e9818346a2d}{LAN\+\_\+\+Process\+Save\+Chunk}} (const \mbox{\hyperlink{lan__protocol_8h_a5f5183faad8f417a84fda8b24a245a5e}{Lan\+Save\+Chunk\+Packet}} \texorpdfstring{$\ast$}{*}chunk)
+\begin{DoxyCompactList}\small\item\em Entry point pubblico per processare un chunk di salvataggio ricevuto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__save__sync_8c_a38ae2de109b22ba34b6ebc58870676fd}{Compatta\+Saves\+Utente\+Corrente}} (void)
+\begin{DoxyCompactList}\small\item\em Compatta i salvataggi dell\textquotesingle{}utente corrente in ordine cronologico. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sincronizzazione salvataggi partite via LAN (chunk UDP). 
+
+Gestisce l\textquotesingle{}invio e la ricezione di file di salvataggio partita in chunk UDP da 1024 byte, con ricostruzione, deduplicazione e compattazione automatica.
+
+Funzioni principali\+:
+\begin{DoxyItemize}
+\item Get\+Slot\+Path/\+Get\+Slot\+Path\+For\+User/\+Get\+Slot\+Path\+For\+Username\+: path helper
+\item Trova\+Recv\+: cerca o alloca ricevitore di chunk
+\item Invia\+Salvataggio\+Chunked\+: invia file .dat in chunk multipli
+\item Ricevi\+Chunk\+: accumula chunk e ricostruisce file completo
+\item Serializza\+ESpedisci\+Salvataggi\+: scandisce slot e invia tutti
+\item Compatta\+Saves\+Utente\+Corrente\+: ordina cronologicamente salvataggi
+\item LAN\+\_\+\+Process\+Save\+Chunk\+: entry point per packet handler
+\item LAN\+\_\+\+Broadcast\+Saves\+Now\+: forza broadcast salvataggi
+\item LAN\+\_\+\+Update\+Saves\+: timeout e cleanup ricevitori
+\end{DoxyItemize}
+
+ADT utilizzato\+: \doxylink{struct_save_receiver}{Save\+Receiver}\mbox{[}MAX\+\_\+\+RECV\mbox{]} per accumulo chunk. Inoltre ogni \doxylink{struct_save_receiver}{Save\+Receiver} gestisce il proprio timer (timeout 30s, reset ad ogni chunk). 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{lan__save__sync_8c_a60e6f3f21fe1c47c07282c8e8c2e75da}\index{lan\_save\_sync.c@{lan\_save\_sync.c}!LAN\_SAVE\_PATH\_BUF@{LAN\_SAVE\_PATH\_BUF}}
+\index{LAN\_SAVE\_PATH\_BUF@{LAN\_SAVE\_PATH\_BUF}!lan\_save\_sync.c@{lan\_save\_sync.c}}
+\doxysubsubsection{\texorpdfstring{LAN\_SAVE\_PATH\_BUF}{LAN\_SAVE\_PATH\_BUF}}
+{\footnotesize\ttfamily \label{lan__save__sync_8c_a60e6f3f21fe1c47c07282c8e8c2e75da} 
+\#define LAN\+\_\+\+SAVE\+\_\+\+PATH\+\_\+\+BUF~70}
+
+\Hypertarget{lan__save__sync_8c_ae2c377a9138eb6905d9e09edf7c70f95}\index{lan\_save\_sync.c@{lan\_save\_sync.c}!MAX\_RECV@{MAX\_RECV}}
+\index{MAX\_RECV@{MAX\_RECV}!lan\_save\_sync.c@{lan\_save\_sync.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_RECV}{MAX\_RECV}}
+{\footnotesize\ttfamily \label{lan__save__sync_8c_ae2c377a9138eb6905d9e09edf7c70f95} 
+\#define MAX\+\_\+\+RECV~10}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lan__save__sync_8c_a38ae2de109b22ba34b6ebc58870676fd}\index{lan\_save\_sync.c@{lan\_save\_sync.c}!CompattaSavesUtenteCorrente@{CompattaSavesUtenteCorrente}}
+\index{CompattaSavesUtenteCorrente@{CompattaSavesUtenteCorrente}!lan\_save\_sync.c@{lan\_save\_sync.c}}
+\doxysubsubsection{\texorpdfstring{CompattaSavesUtenteCorrente()}{CompattaSavesUtenteCorrente()}}
+{\footnotesize\ttfamily \label{lan__save__sync_8c_a38ae2de109b22ba34b6ebc58870676fd} 
+void Compatta\+Saves\+Utente\+Corrente (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Compatta i salvataggi dell\textquotesingle{}utente corrente in ordine cronologico. 
+
+Compatta i salvataggi dell\textquotesingle{}utente corrente (rimuove duplicati).
+
+Procedura\+:
+\begin{DoxyEnumerate}
+\item Raccoglie tutti i salvataggi dell\textquotesingle{}utente (formato nuovo e vecchio)
+\item Ordina per data crescente (bubble sort)
+\item Rinnomina i file in formato temporaneo
+\item Riscrive negli slot 1-\/100 in ordine cronologico
+\item Rimuove i file temporanei
+\end{DoxyEnumerate}
+
+Usa il nuovo formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat con fallback al vecchio save\+\_\+slot\+\_\+\+N.\+dat per retrocompatibilita\textquotesingle{}. \Hypertarget{lan__save__sync_8c_a54bcee66d466e24ce98a66159c9b0d5a}\index{lan\_save\_sync.c@{lan\_save\_sync.c}!LAN\_BroadcastSavesNow@{LAN\_BroadcastSavesNow}}
+\index{LAN\_BroadcastSavesNow@{LAN\_BroadcastSavesNow}!lan\_save\_sync.c@{lan\_save\_sync.c}}
+\doxysubsubsection{\texorpdfstring{LAN\_BroadcastSavesNow()}{LAN\_BroadcastSavesNow()}}
+{\footnotesize\ttfamily \label{lan__save__sync_8c_a54bcee66d466e24ce98a66159c9b0d5a} 
+void LAN\+\_\+\+Broadcast\+Saves\+Now (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Forza broadcast immediato di tutti i salvataggi dell\textquotesingle{}utente corrente. 
+
+Forza un broadcast immediato dei salvataggi.
+
+Chiama Serializza\+ESpedisci\+Salvataggi() per inviare tutti gli slot dell\textquotesingle{}utente loggato ai dispositivi sulla LAN. \Hypertarget{lan__save__sync_8c_a27e09f286eb4eba5a8589e9818346a2d}\index{lan\_save\_sync.c@{lan\_save\_sync.c}!LAN\_ProcessSaveChunk@{LAN\_ProcessSaveChunk}}
+\index{LAN\_ProcessSaveChunk@{LAN\_ProcessSaveChunk}!lan\_save\_sync.c@{lan\_save\_sync.c}}
+\doxysubsubsection{\texorpdfstring{LAN\_ProcessSaveChunk()}{LAN\_ProcessSaveChunk()}}
+{\footnotesize\ttfamily \label{lan__save__sync_8c_a27e09f286eb4eba5a8589e9818346a2d} 
+void LAN\+\_\+\+Process\+Save\+Chunk (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{lan__protocol_8h_a5f5183faad8f417a84fda8b24a245a5e}{Lan\+Save\+Chunk\+Packet}} \texorpdfstring{$\ast$}{*}}]{chunk}{}\end{DoxyParamCaption})}
+
+
+
+Entry point pubblico per processare un chunk di salvataggio ricevuto. 
+
+Processa un chunk di salvataggio ricevuto via LAN.
+
+Chiamato da \doxylink{lan__sync_8h_ab0b625c0463cad457894bf91847319c5}{LAN\+\_\+\+Update()} in \doxylink{lan__broadcast_8c}{lan\+\_\+broadcast.\+c} quando arriva un pacchetto LAN\+\_\+\+PACKET\+\_\+\+SAVE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em chunk} & Puntatore al pacchetto chunk ricevuto. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lan__save__sync_8c_a3d1549737db701594d58097588c08c36}\index{lan\_save\_sync.c@{lan\_save\_sync.c}!LAN\_UpdateSaves@{LAN\_UpdateSaves}}
+\index{LAN\_UpdateSaves@{LAN\_UpdateSaves}!lan\_save\_sync.c@{lan\_save\_sync.c}}
+\doxysubsubsection{\texorpdfstring{LAN\_UpdateSaves()}{LAN\_UpdateSaves()}}
+{\footnotesize\ttfamily \label{lan__save__sync_8c_a3d1549737db701594d58097588c08c36} 
+void LAN\+\_\+\+Update\+Saves (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})}
+
+
+
+Aggiorna i timer dei ricevitori di chunk salvataggi. 
+
+Aggiorna lo stato dei salvataggi (scadenza, pulizia).
+
+Chiamata ogni frame da \doxylink{lan__sync_8h_ab0b625c0463cad457894bf91847319c5}{LAN\+\_\+\+Update()}. Gestisce\+:
+\begin{DoxyItemize}
+\item Timeout 30s\+: se un ricevitore non completa il file entro 30s, viene rilasciato
+\item Cleanup automatico\+: se tutti i chunk sono arrivati, rilascia il buffer
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time dall\textquotesingle{}ultimo frame (per aggiornamento timer). \\
+\hline
+\end{DoxyParams}

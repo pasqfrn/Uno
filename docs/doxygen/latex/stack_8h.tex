@@ -1,0 +1,46 @@
+\doxysection{lib/data\+\_\+structures/stack.h File Reference}
+\hypertarget{stack_8h}{}\label{stack_8h}\index{lib/data\_structures/stack.h@{lib/data\_structures/stack.h}}
+
+
+ADT \doxylink{struct_pila}{Pila} (Stack LIFO) per gestione mazzo di pesca e scarti.  
+
+
+{\ttfamily \#include "{}../data\+\_\+structures.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_nodo_pila}{Nodo\+Pila}}
+\begin{DoxyCompactList}\small\item\em Nodo della pila\+: contiene una carta e puntatore al next. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_pila}{Pila}}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_pila}{Pila} LIFO\+: top punta all\textquotesingle{}ultimo inserito, size è la cardinalità. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct Nodo\+Pila \mbox{\hyperlink{group__stack__nodi_ga8330fe274cc05faa43085fe3a259d046}{Nodo\+Pila}}
+\begin{DoxyCompactList}\small\item\em Nodo della pila\+: contiene una carta e puntatore al next. \end{DoxyCompactList}\item 
+typedef struct Pila \mbox{\hyperlink{group__stack__struttura_ga6b296460996e4bf880d4dab13fab46a6}{Pila}}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_pila}{Pila} LIFO\+: top punta all\textquotesingle{}ultimo inserito, size è la cardinalità. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__stack__api_gae2580d2cd99d4bbccf2d97f0e7505986}{Pila\+\_\+\+Crea}} (void)
+\begin{DoxyCompactList}\small\item\em Crea una pila vuota. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stack__api_ga263f40cb0178a91e84a55530b759de12}{Pila\+\_\+\+Distruggi}} (\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Distruttore\+: libera tutti i nodi e la struttura \doxylink{struct_pila}{Pila}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_gab82fab8722fd6967c4eb8df559bd54a0}{Pila\+\_\+\+Push}} (\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p, \mbox{\hyperlink{struct_carta}{Carta}} c)
+\begin{DoxyCompactList}\small\item\em Inserisce una carta in cima alla pila. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_ga5bdd368203194d752ff33dbb1cac1c63}{Pila\+\_\+\+Pop}} (\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p, \mbox{\hyperlink{struct_carta}{Carta}} \texorpdfstring{$\ast$}{*}out)
+\begin{DoxyCompactList}\small\item\em Rimuove la carta in cima alla pila. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_gac59443252a5933aafadbe3a44baaac7b}{Pila\+\_\+\+Top}} (const \mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p, \mbox{\hyperlink{struct_carta}{Carta}} \texorpdfstring{$\ast$}{*}out)
+\begin{DoxyCompactList}\small\item\em Restituisce la carta in cima SENZA rimuoverla. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_ga70ddd166cfe7b417c89adcd326423cf7}{Pila\+\_\+\+Vuota}} (const \mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Verifica se la pila è vuota. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__stack__api_ga10a5907e144119205466751dc42045b3}{Pila\+\_\+\+Dimensione}} (const \mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Restituisce la dimensione corrente della pila. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__stack__api_ga0e02cb5e94d45aafbf07b62fcea1061f}{Pila\+\_\+\+Svuota}} (\mbox{\hyperlink{struct_pila}{Pila}} \texorpdfstring{$\ast$}{*}p)
+\begin{DoxyCompactList}\small\item\em Svuota la pila lasciando la struttura allocata. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ADT \doxylink{struct_pila}{Pila} (Stack LIFO) per gestione mazzo di pesca e scarti. 
+

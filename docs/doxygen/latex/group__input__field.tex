@@ -1,0 +1,87 @@
+\doxysection{Input Field}
+\hypertarget{group__input__field}{}\label{group__input__field}\index{Input Field@{Input Field}}
+
+
+Funzioni per aggiornare e disegnare campi di input di testo (login, registrazione, recupero password).  
+
+
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{input__field_8c}{input\+\_\+field.\+c}}
+\begin{DoxyCompactList}\small\item\em Implementazione del campo di input interattivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__input__field_gab7226869f631c265b54f1fae9728d74c}{Aggiorna\+Input\+Campo}} (char \texorpdfstring{$\ast$}{*}buffer, int \texorpdfstring{$\ast$}{*}count, int max\+Length)
+\begin{DoxyCompactList}\small\item\em Aggiorna lo stato di un campo input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__input__field_ga6f6580f15be4386f8868a87e3dbbe8ce}{Disegna\+Input\+Field}} (\mbox{\hyperlink{struct_rectangle}{Rectangle}} area, const char \texorpdfstring{$\ast$}{*}label, const char \texorpdfstring{$\ast$}{*}text, int count, int is\+Focused, int is\+Password, \mbox{\hyperlink{struct_color}{Color}} label\+Color)
+\begin{DoxyCompactList}\small\item\em Disegna un campo input su schermo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funzioni per aggiornare e disegnare campi di input di testo (login, registrazione, recupero password). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__input__field_gab7226869f631c265b54f1fae9728d74c}\index{Input Field@{Input Field}!AggiornaInputCampo@{AggiornaInputCampo}}
+\index{AggiornaInputCampo@{AggiornaInputCampo}!Input Field@{Input Field}}
+\doxysubsubsection{\texorpdfstring{AggiornaInputCampo()}{AggiornaInputCampo()}}
+{\footnotesize\ttfamily \label{group__input__field_gab7226869f631c265b54f1fae9728d74c} 
+void Aggiorna\+Input\+Campo (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{count}{, }\item[{int}]{max\+Length}{}\end{DoxyParamCaption})}
+
+
+
+Aggiorna lo stato di un campo input. 
+
+Aggiorna lo stato di un campo input (carattere premuto, backspace).
+
+\begin{DoxyPrecond}{Precondition}
+buffer != NULL; count != NULL; max\+Length \texorpdfstring{$>$}{>} 0. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+buffer e count aggiornati. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Buffer campo. \\
+\hline
+{\em count} & Contatore caratteri. \\
+\hline
+{\em max\+Length} & Lunghezza massima. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__input__field_ga6f6580f15be4386f8868a87e3dbbe8ce}\index{Input Field@{Input Field}!DisegnaInputField@{DisegnaInputField}}
+\index{DisegnaInputField@{DisegnaInputField}!Input Field@{Input Field}}
+\doxysubsubsection{\texorpdfstring{DisegnaInputField()}{DisegnaInputField()}}
+{\footnotesize\ttfamily \label{group__input__field_ga6f6580f15be4386f8868a87e3dbbe8ce} 
+void Disegna\+Input\+Field (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_rectangle}{Rectangle}}}]{area}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{label}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{text}{, }\item[{int}]{count}{, }\item[{int}]{is\+Focused}{, }\item[{int}]{is\+Password}{, }\item[{\mbox{\hyperlink{struct_color}{Color}}}]{label\+Color}{}\end{DoxyParamCaption})}
+
+
+
+Disegna un campo input su schermo. 
+
+\begin{DoxyPrecond}{Precondition}
+text != NULL; label != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Campo renderizzato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em area} & Rettangolo. \\
+\hline
+{\em label} & Etichetta. \\
+\hline
+{\em text} & Testo. \\
+\hline
+{\em count} & Lunghezza testo. \\
+\hline
+{\em is\+Focused} & Focus. \\
+\hline
+{\em is\+Password} & Password mode. \\
+\hline
+{\em label\+Color} & \doxylink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore} label. \\
+\hline
+\end{DoxyParams}

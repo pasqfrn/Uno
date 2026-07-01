@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file lib/socket/lan/lan_save_helpers.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__save__helpers_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file lan_save_helpers.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Header per gli helper di sincronizzazione salvataggi LAN.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+</div>
+<p><a href="lan__save__helpers_8h_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:ab2dedfd0382e39a090544904af65e3fc" id="r_ab2dedfd0382e39a090544904af65e3fc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab2dedfd0382e39a090544904af65e3fc">GetSlotPath</a> (char *buffer, size_t bufsize, int slot)</td></tr>
+<tr class="memdesc:ab2dedfd0382e39a090544904af65e3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruisce il path del file di salvataggio nel nuovo formato "save_user{ID}_slot_{N}.dat" (coerente con <a class="el" href="save__manager_8c.html" title="Gestione salvataggi partite su file binario.">save_manager.c</a>).  <br /></td></tr>
+<tr class="memitem:ad45135b07dc8a3f36b5e7a99ee728e6c" id="r_ad45135b07dc8a3f36b5e7a99ee728e6c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad45135b07dc8a3f36b5e7a99ee728e6c">GetSlotPathForUser</a> (char *buffer, size_t bufsize, int uid, int slot)</td></tr>
+<tr class="memdesc:ad45135b07dc8a3f36b5e7a99ee728e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente.  <br /></td></tr>
+<tr class="memitem:a634183521fafd79ce08e2cba8d07d2ae" id="r_a634183521fafd79ce08e2cba8d07d2ae"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a634183521fafd79ce08e2cba8d07d2ae">GetSlotPathForUsername</a> (char *buffer, size_t bufsize, const char *username, int slot)</td></tr>
+<tr class="memdesc:a634183521fafd79ce08e2cba8d07d2ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruisce il path del file di salvataggio per username.  <br /></td></tr>
+<tr class="memitem:a2be1321ebd26526dd8e93c9312b068dc" id="r_a2be1321ebd26526dd8e93c9312b068dc"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2be1321ebd26526dd8e93c9312b068dc">TrovaRecv</a> (const char *owner, const char *data)</td></tr>
+<tr class="memdesc:a2be1321ebd26526dd8e93c9312b068dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca o alloca un ricevitore per owner/data.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Header per gli helper di sincronizzazione salvataggi LAN. </p>
+<p>Dichiara le funzioni helper fattorizzate da <a class="el" href="lan__save__sync_8c.html" title="Sincronizzazione salvataggi partite via LAN (chunk UDP).">lan_save_sync.c</a>:</p><ul>
+<li>GetSlotPath: costruisce path file nel formato save_user{ID}_slot_{N}.dat</li>
+<li>GetSlotPathForUser: path per un dato ID utente</li>
+<li>GetSlotPathForUsername: path per dato username (scansiona ID)</li>
+<li>TrovaRecv: cerca o alloca un ricevitore di chunk</li>
+</ul>
+<p>Fattorizzato per ridurre la complessita' di <a class="el" href="lan__save__sync_8c.html" title="Sincronizzazione salvataggi partite via LAN (chunk UDP).">lan_save_sync.c</a> (&gt;450 righe). </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="ab2dedfd0382e39a090544904af65e3fc" name="ab2dedfd0382e39a090544904af65e3fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2dedfd0382e39a090544904af65e3fc">&#9670;&#160;</a></span>GetSlotPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetSlotPath </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>bufsize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slot</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Costruisce il path del file di salvataggio nel nuovo formato "save_user{ID}_slot_{N}.dat" (coerente con <a class="el" href="save__manager_8c.html" title="Gestione salvataggi partite su file binario.">save_manager.c</a>). </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Buffer di destinazione. </td></tr>
+    <tr><td class="paramname">bufsize</td><td>Dimensione del buffer. </td></tr>
+    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad45135b07dc8a3f36b5e7a99ee728e6c" name="ad45135b07dc8a3f36b5e7a99ee728e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad45135b07dc8a3f36b5e7a99ee728e6c">&#9670;&#160;</a></span>GetSlotPathForUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetSlotPathForUser </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>bufsize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>uid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slot</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente. </p>
+<p>Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente (usato per compatibilita' con salvataggi di altri utenti ricevuti via LAN).</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Buffer di destinazione. </td></tr>
+    <tr><td class="paramname">bufsize</td><td>Dimensione del buffer. </td></tr>
+    <tr><td class="paramname">uid</td><td>ID dell'utente nel database. </td></tr>
+    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Buffer di destinazione. </td></tr>
+    <tr><td class="paramname">bufsize</td><td>Dimensione del buffer. </td></tr>
+    <tr><td class="paramname">uid</td><td>ID dell'utente nel database. </td></tr>
+    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a634183521fafd79ce08e2cba8d07d2ae" name="a634183521fafd79ce08e2cba8d07d2ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634183521fafd79ce08e2cba8d07d2ae">&#9670;&#160;</a></span>GetSlotPathForUsername()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetSlotPathForUsername </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>bufsize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slot</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Costruisce il path del file di salvataggio per username. </p>
+<p>Costruisce il path del file di salvataggio per username (scansiona tutti gli ID utente per trovare quello corrispondente).</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Buffer di destinazione. </td></tr>
+    <tr><td class="paramname">bufsize</td><td>Dimensione del buffer. </td></tr>
+    <tr><td class="paramname">username</td><td>Username del proprietario del salvataggio. </td></tr>
+    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se trovato, 0 altrimenti.</dd></dl>
+<p>Costruisce il path del file di salvataggio per username.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Buffer di destinazione. </td></tr>
+    <tr><td class="paramname">bufsize</td><td>Dimensione del buffer. </td></tr>
+    <tr><td class="paramname">username</td><td>Username del proprietario del salvataggio. </td></tr>
+    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se trovato, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="a2be1321ebd26526dd8e93c9312b068dc" name="a2be1321ebd26526dd8e93c9312b068dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be1321ebd26526dd8e93c9312b068dc">&#9670;&#160;</a></span>TrovaRecv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TrovaRecv </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cerca o alloca un ricevitore per owner/data. </p>
+<dl class="section return"><dt>Restituisce</dt><dd>Indice nell'array recvs, -1 se pieno. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e17dec1d132ad7ed461be9444000b405.html">socket</a></li><li class="navelem"><a href="dir_eafa113c866c19c3f812b2f973b25251.html">lan</a></li><li class="navelem"><a href="lan__save__helpers_8h.html">lan_save_helpers.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

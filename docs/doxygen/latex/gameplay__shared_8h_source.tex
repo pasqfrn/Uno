@@ -1,0 +1,36 @@
+\doxysection{gameplay\+\_\+shared.\+h}
+\hypertarget{gameplay__shared_8h_source}{}\label{gameplay__shared_8h_source}\index{lib/screens/game/gameplay\_shared.h@{lib/screens/game/gameplay\_shared.h}}
+\mbox{\hyperlink{gameplay__shared_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ GAMEPLAY\_SHARED\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ GAMEPLAY\_SHARED\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{data__structures_8h}{../../data\_structures.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{raylib_8h}{raylib.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*\ Timer\ per\ il\ ritardo\ delle\ mosse\ dei\ bot\ */}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{gameplay__draw_8c_a18a9f5f86df9a58978f182d8fd52df03}{botTimer}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{/*\ Offset\ del\ mouse\ per\ il\ trascinamento\ carte\ */}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_vector2}{Vector2}}\ \mbox{\hyperlink{gameplay__draw_8c_ad8b3a8467b3594717ccba6dd579808a7}{offsetMouse}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ Area\ del\ tavolo\ centrale\ per\ il\ drop\ delle\ carte\ */}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_rectangle}{Rectangle}}\ \mbox{\hyperlink{gameplay__draw_8c_a95d4008478c2502c125a4aebe7ce23d8}{areaTavoloCentro}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Indice\ della\ mossa\ in\ sospeso\ (per\ scelta\ colore)\ */}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{gameplay__draw_8c_a93efbaccb6b2b71185696da5e7d319a4}{pending\_move\_index}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/*\ Buffer\ chat\ e\ stato\ di\ digitazione\ */}}
+\DoxyCodeLine{00027\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{chat__render_8c_a20d7f38f3172dfe2ed4c5819e84c78ed}{inputChat}}[128];}
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{chat__render_8c_a5c0b78531197553de40e19f2afd95ff4}{isTyping}};}
+\DoxyCodeLine{00029\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{chat__render_8c_a0841fa17b3362cfad64d784cf9a0b5e3}{popup\_uscita\_attivo}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{gameplay__shared_8h_a1b5dfa99b81aaf484e299e268b30ba2a}{StartsWithIgnoreCase}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ prefix);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gameplay__shared_8h_adf67a511d7c4de12e19cb511e6a07a1f}{DrawChatMsgSegmentato}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ msg,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ fontSize,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}*\ gioco,\ \textcolor{keywordtype}{int}\ mio\_id);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

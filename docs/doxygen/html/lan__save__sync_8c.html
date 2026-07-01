@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/socket/lan/lan_save_sync.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__save__sync_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file lan_save_sync.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Sincronizzazione salvataggi partite via LAN (chunk UDP).  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="socket__compat_8h_source.html">../../../lib/socket/network/socket_compat.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../../../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lan__protocol_8h_source.html">../../../lib/socket/lan/lan_protocol.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fs_8h_source.html">../../../lib/fs/fs.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:ae2c377a9138eb6905d9e09edf7c70f95" id="r_ae2c377a9138eb6905d9e09edf7c70f95"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ae2c377a9138eb6905d9e09edf7c70f95">MAX_RECV</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:a60e6f3f21fe1c47c07282c8e8c2e75da" id="r_a60e6f3f21fe1c47c07282c8e8c2e75da"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a60e6f3f21fe1c47c07282c8e8c2e75da">LAN_SAVE_PATH_BUF</a>&#160;&#160;&#160;70</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a3d1549737db701594d58097588c08c36" id="r_a3d1549737db701594d58097588c08c36"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3d1549737db701594d58097588c08c36">LAN_UpdateSaves</a> (float dt)</td></tr>
+<tr class="memdesc:a3d1549737db701594d58097588c08c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna i timer dei ricevitori di chunk salvataggi.  <br /></td></tr>
+<tr class="memitem:a54bcee66d466e24ce98a66159c9b0d5a" id="r_a54bcee66d466e24ce98a66159c9b0d5a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a54bcee66d466e24ce98a66159c9b0d5a">LAN_BroadcastSavesNow</a> (void)</td></tr>
+<tr class="memdesc:a54bcee66d466e24ce98a66159c9b0d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forza broadcast immediato di tutti i salvataggi dell'utente corrente.  <br /></td></tr>
+<tr class="memitem:a27e09f286eb4eba5a8589e9818346a2d" id="r_a27e09f286eb4eba5a8589e9818346a2d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a27e09f286eb4eba5a8589e9818346a2d">LAN_ProcessSaveChunk</a> (const <a class="el" href="lan__protocol_8h.html#a5f5183faad8f417a84fda8b24a245a5e">LanSaveChunkPacket</a> *chunk)</td></tr>
+<tr class="memdesc:a27e09f286eb4eba5a8589e9818346a2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entry point pubblico per processare un chunk di salvataggio ricevuto.  <br /></td></tr>
+<tr class="memitem:a38ae2de109b22ba34b6ebc58870676fd" id="r_a38ae2de109b22ba34b6ebc58870676fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a38ae2de109b22ba34b6ebc58870676fd">CompattaSavesUtenteCorrente</a> (void)</td></tr>
+<tr class="memdesc:a38ae2de109b22ba34b6ebc58870676fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compatta i salvataggi dell'utente corrente in ordine cronologico.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Sincronizzazione salvataggi partite via LAN (chunk UDP). </p>
+<p>Gestisce l'invio e la ricezione di file di salvataggio partita in chunk UDP da 1024 byte, con ricostruzione, deduplicazione e compattazione automatica.</p>
+<p>Funzioni principali:</p><ul>
+<li>GetSlotPath/GetSlotPathForUser/GetSlotPathForUsername: path helper</li>
+<li>TrovaRecv: cerca o alloca ricevitore di chunk</li>
+<li>InviaSalvataggioChunked: invia file .dat in chunk multipli</li>
+<li>RiceviChunk: accumula chunk e ricostruisce file completo</li>
+<li>SerializzaESpedisciSalvataggi: scandisce slot e invia tutti</li>
+<li>CompattaSavesUtenteCorrente: ordina cronologicamente salvataggi</li>
+<li>LAN_ProcessSaveChunk: entry point per packet handler</li>
+<li>LAN_BroadcastSavesNow: forza broadcast salvataggi</li>
+<li>LAN_UpdateSaves: timeout e cleanup ricevitori</li>
+</ul>
+<p>ADT utilizzato: <a class="el" href="struct_save_receiver.html" title="Struttura per ricezione chunk di salvataggio.">SaveReceiver</a>[MAX_RECV] per accumulo chunk. Inoltre ogni <a class="el" href="struct_save_receiver.html" title="Struttura per ricezione chunk di salvataggio.">SaveReceiver</a> gestisce il proprio timer (timeout 30s, reset ad ogni chunk). </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
+<a id="a60e6f3f21fe1c47c07282c8e8c2e75da" name="a60e6f3f21fe1c47c07282c8e8c2e75da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60e6f3f21fe1c47c07282c8e8c2e75da">&#9670;&#160;</a></span>LAN_SAVE_PATH_BUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LAN_SAVE_PATH_BUF&#160;&#160;&#160;70</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2c377a9138eb6905d9e09edf7c70f95" name="ae2c377a9138eb6905d9e09edf7c70f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2c377a9138eb6905d9e09edf7c70f95">&#9670;&#160;</a></span>MAX_RECV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_RECV&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a38ae2de109b22ba34b6ebc58870676fd" name="a38ae2de109b22ba34b6ebc58870676fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ae2de109b22ba34b6ebc58870676fd">&#9670;&#160;</a></span>CompattaSavesUtenteCorrente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CompattaSavesUtenteCorrente </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compatta i salvataggi dell'utente corrente in ordine cronologico. </p>
+<p>Compatta i salvataggi dell'utente corrente (rimuove duplicati).</p>
+<p>Procedura:</p><ol type="1">
+<li>Raccoglie tutti i salvataggi dell'utente (formato nuovo e vecchio)</li>
+<li>Ordina per data crescente (bubble sort)</li>
+<li>Rinnomina i file in formato temporaneo</li>
+<li>Riscrive negli slot 1-100 in ordine cronologico</li>
+<li>Rimuove i file temporanei</li>
+</ol>
+<p>Usa il nuovo formato save_user{ID}_slot_{N}.dat con fallback al vecchio save_slot_N.dat per retrocompatibilita'.</p>
+<p>Compatta i salvataggi dell'utente corrente in ordine cronologico.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd><a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> loggato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Salvati solo gli slot non vuoti e piu' recenti. </dd></dl>
+
+</div>
+</div>
+<a id="a54bcee66d466e24ce98a66159c9b0d5a" name="a54bcee66d466e24ce98a66159c9b0d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54bcee66d466e24ce98a66159c9b0d5a">&#9670;&#160;</a></span>LAN_BroadcastSavesNow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_BroadcastSavesNow </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Forza broadcast immediato di tutti i salvataggi dell'utente corrente. </p>
+<p>Forza un broadcast immediato dei salvataggi.</p>
+<p>Chiama SerializzaESpedisciSalvataggi() per inviare tutti gli slot dell'utente loggato ai dispositivi sulla LAN.</p>
+<p>Forza broadcast immediato di tutti i salvataggi dell'utente corrente.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Salvataggi broadcastati. </dd></dl>
+
+</div>
+</div>
+<a id="a27e09f286eb4eba5a8589e9818346a2d" name="a27e09f286eb4eba5a8589e9818346a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e09f286eb4eba5a8589e9818346a2d">&#9670;&#160;</a></span>LAN_ProcessSaveChunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_ProcessSaveChunk </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="lan__protocol_8h.html#a5f5183faad8f417a84fda8b24a245a5e">LanSaveChunkPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>chunk</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entry point pubblico per processare un chunk di salvataggio ricevuto. </p>
+<p>Processa un chunk di salvataggio ricevuto via LAN.</p>
+<p>Chiamato da <a class="el" href="lan__broadcast_8c.html#ab0b625c0463cad457894bf91847319c5" title="Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout).">LAN_Update()</a> in <a class="el" href="lan__broadcast_8c.html" title="Gestione broadcast LAN: inizializzazione, chiusura e smistamento pacchetti.">lan_broadcast.c</a> quando arriva un pacchetto LAN_PACKET_SAVE.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chunk</td><td>Puntatore al pacchetto chunk ricevuto.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Entry point pubblico per processare un chunk di salvataggio ricevuto.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>chunk != NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chunk</td><td>Pacchetto chunk di salvataggio. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3d1549737db701594d58097588c08c36" name="a3d1549737db701594d58097588c08c36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d1549737db701594d58097588c08c36">&#9670;&#160;</a></span>LAN_UpdateSaves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LAN_UpdateSaves </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>dt</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aggiorna i timer dei ricevitori di chunk salvataggi. </p>
+<p>Aggiorna lo stato dei salvataggi (scadenza, pulizia).</p>
+<p>Chiamata ogni frame da <a class="el" href="lan__broadcast_8c.html#ab0b625c0463cad457894bf91847319c5" title="Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout).">LAN_Update()</a>. Gestisce:</p><ul>
+<li>Timeout 30s: se un ricevitore non completa il file entro 30s, viene rilasciato</li>
+<li>Cleanup automatico: se tutti i chunk sono arrivati, rilascia il buffer</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Delta time dall'ultimo frame (per aggiornamento timer).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Aggiorna i timer dei ricevitori di chunk salvataggi.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dt</td><td>Delta time. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_4a9058f586c45bd4458c3b7f033b4dec.html">lan</a></li><li class="navelem"><a href="lan__save__sync_8c.html">lan_save_sync.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

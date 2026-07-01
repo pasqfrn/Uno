@@ -1,0 +1,42 @@
+\doxysection{lib/data\+\_\+structures/bst.h File Reference}
+\hypertarget{bst_8h}{}\label{bst_8h}\index{lib/data\_structures/bst.h@{lib/data\_structures/bst.h}}
+
+
+Albero Binario di Ricerca (BST) per ricerca utenti per email O(log n).  
+
+
+{\ttfamily \#include "{}../data\+\_\+structures.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}}
+\begin{DoxyCompactList}\small\item\em Nodo dell\textquotesingle{}albero BST\+: contiene un \doxylink{struct_utente}{Utente} e puntatori ai figli. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct Nodo\+Albero \mbox{\hyperlink{group__bst__nodi_ga9774705f78f091c0ffa84bbfc0108be0}{Nodo\+Albero}}
+\begin{DoxyCompactList}\small\item\em Nodo dell\textquotesingle{}albero BST\+: contiene un \doxylink{struct_utente}{Utente} e puntatori ai figli. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__bst__operazioni_ga62e40793a2003872c369acb82e6af431}{BST\+\_\+\+Crea\+Nodo}} (\mbox{\hyperlink{struct_utente}{Utente}} u)
+\begin{DoxyCompactList}\small\item\em Crea un nuovo nodo BST a partire da un \doxylink{struct_utente}{Utente}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__bst__operazioni_gacacb3b4a6ddbd736f5b58735895adfd9}{BST\+\_\+\+Inserisci}} (\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*}radice, \mbox{\hyperlink{struct_utente}{Utente}} u, int \texorpdfstring{$\ast$}{*}duplicato)
+\begin{DoxyCompactList}\small\item\em Inserisce un utente nell\textquotesingle{}albero. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__bst__operazioni_ga79a477b261bbda20446e0f5df2faae46}{BST\+\_\+\+Ricerca\+Email}} (\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*}radice, const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Ricerca un utente per email. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__bst__operazioni_ga225db238626a3343a76ff1db348bdc76}{BST\+\_\+\+Rimuovi\+Email}} (\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*}radice, const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Rimuove il nodo con l\textquotesingle{}email specificata. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__bst__operazioni_ga9316a904ece8260cbe1018b94d2888a0}{BST\+\_\+\+Distruggi}} (\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*}radice)
+\begin{DoxyCompactList}\small\item\em Libera ricorsivamente tutta la memoria dell\textquotesingle{}albero. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__bst__operazioni_ga192fed6e7b936d4348b504e1069e3e03}{BST\+\_\+\+Inordina}} (\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*}radice, \mbox{\hyperlink{struct_utente}{Utente}} \texorpdfstring{$\ast$}{*}out, int max)
+\begin{DoxyCompactList}\small\item\em Visita in-\/order e copia i puntatori agli Utenti in un array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__bst__operazioni_ga5635ff2d752c8c11d78e1d00915e2a1e}{BST\+\_\+\+Altezza}} (\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*}radice)
+\begin{DoxyCompactList}\small\item\em Restituisce l\textquotesingle{}altezza dell\textquotesingle{}albero. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__bst__operazioni_ga6f4d3c31a29be5dff40bfe065fe08ce1}{BST\+\_\+\+Conta\+Nodi}} (\mbox{\hyperlink{struct_nodo_albero}{Nodo\+Albero}} \texorpdfstring{$\ast$}{*}radice)
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di nodi nell\textquotesingle{}albero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Albero Binario di Ricerca (BST) per ricerca utenti per email O(log n). 
+

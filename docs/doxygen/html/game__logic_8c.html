@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/game_logic.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('game__logic_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file game_logic.c<div class="ingroups"><a class="el" href="group__game__logic.html">Logica di Gioco</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementazione logica di gioco UNO: regole, effetti carte, validazione mosse e gestione ADT.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../lib/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">../lib/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stack_8h_source.html">../lib/data_structures/stack.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="queue_8h_source.html">../lib/data_structures/queue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network_8h_source.html">../lib/socket/network/network.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a331462bb54826e9e9d477625d83dd9d5" id="r_a331462bb54826e9e9d477625d83dd9d5"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a331462bb54826e9e9d477625d83dd9d5">MossaValida</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="struct_carta.html">Carta</a> c)</td></tr>
+<tr class="memdesc:a331462bb54826e9e9d477625d83dd9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se una carta e' legalmente giocabile.  <br /></td></tr>
+<tr class="memitem:a588fc681a6842fa5688ec1331484fe1b" id="r_a588fc681a6842fa5688ec1331484fe1b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a588fc681a6842fa5688ec1331484fe1b">ApplicaEffetto</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="struct_carta.html">Carta</a> c, <a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> colore_scelto)</td></tr>
+<tr class="memdesc:a588fc681a6842fa5688ec1331484fe1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applica l'effetto di una carta giocata allo stato di gioco.  <br /></td></tr>
+<tr class="memitem:ab202f15176056f42ac78bd55f0ef400e" id="r_ab202f15176056f42ac78bd55f0ef400e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab202f15176056f42ac78bd55f0ef400e">MostraNotifica</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, const char *msg)</td></tr>
+<tr class="memdesc:ab202f15176056f42ac78bd55f0ef400e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra una notifica temporanea a schermo.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:afefe37ecc9aba9febda10fedc4dfa743" id="r_afefe37ecc9aba9febda10fedc4dfa743"><td class="memItemLeft"><a class="el" href="struct_pila.html">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="#afefe37ecc9aba9febda10fedc4dfa743">mazzo_pila</a> = NULL</td></tr>
+<tr class="memdesc:afefe37ecc9aba9febda10fedc4dfa743"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale del mazzo di pesca.  <br /></td></tr>
+<tr class="memitem:ae43a4528acce4bced75b0d843415956f" id="r_ae43a4528acce4bced75b0d843415956f"><td class="memItemLeft"><a class="el" href="struct_pila.html">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ae43a4528acce4bced75b0d843415956f">scarti_pila</a> = NULL</td></tr>
+<tr class="memdesc:ae43a4528acce4bced75b0d843415956f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale degli scarti.  <br /></td></tr>
+<tr class="memitem:ad1902a2e7f88106585a3606741e4ba34" id="r_ad1902a2e7f88106585a3606741e4ba34"><td class="memItemLeft"><a class="el" href="struct_coda_turni.html">CodaTurni</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad1902a2e7f88106585a3606741e4ba34">coda_turni</a> = NULL</td></tr>
+<tr class="memdesc:ad1902a2e7f88106585a3606741e4ba34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coda globale dei turni.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Implementazione logica di gioco UNO: regole, effetti carte, validazione mosse e gestione ADT. </p>
+<p>Contiene:</p><ul>
+<li>MossaValida, ApplicaEffetto (validazione/applicazione effetti carte)</li>
+<li>MostraNotifica</li>
+<li>Variabili ADT globali (mazzo_pila, scarti_pila, coda_turni) </li>
+</ul>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a588fc681a6842fa5688ec1331484fe1b" name="a588fc681a6842fa5688ec1331484fe1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588fc681a6842fa5688ec1331484fe1b">&#9670;&#160;</a></span>ApplicaEffetto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ApplicaEffetto </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_carta.html">Carta</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a></td>          <td class="paramname"><span class="paramname"><em>colore_scelto</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applica l'effetto di una carta giocata allo stato di gioco. </p>
+<p>Applica l'effetto speciale di una carta giocata.</p>
+<p>Gestisce: cambio colore, cambio giro, salta turno, pesca carte, aggiornamento colore attivo e rotazione coda turni.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; carta valida. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Stato aggiornato con effetto applicato; notifica mostrata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco. </td></tr>
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a> giocata. </td></tr>
+    <tr><td class="paramname">colore_scelto</td><td><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c" title="Colori disponibili per le carte UNO.">Colore</a> scelto dal giocatore (per jolly).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Applica l'effetto di una carta giocata allo stato di gioco.</p>
+<p>Gestisce gli effetti di tutte le carte speciali:</p><ul>
+<li>CAMBIA_GIRO: Inverte la direzione del turno.</li>
+<li>SALTA: Salta il giocatore successivo.</li>
+<li>PIU_2: Il giocatore successivo pesca 2 carte.</li>
+<li>JOLLY: Il giocatore sceglie un colore.</li>
+<li>JOLLY_PIU_4: Il giocatore successivo pesca 4 carte e si sceglie un colore.</li>
+</ul>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; carta valida e giocabile. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Stato gioco aggiornato con effetto applicato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+    <tr><td class="paramname">c</td><td>La carta giocata con effetto speciale. </td></tr>
+    <tr><td class="paramname">colore_scelto</td><td>Il colore scelto dal giocatore (per Jolly/JollyPiù4). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a331462bb54826e9e9d477625d83dd9d5" name="a331462bb54826e9e9d477625d83dd9d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331462bb54826e9e9d477625d83dd9d5">&#9670;&#160;</a></span>MossaValida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MossaValida </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_carta.html">Carta</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se una carta e' legalmente giocabile. </p>
+<p>Verifica se una carta puo' essere giocata legalmente.</p>
+<p>Regole UNO:</p><ul>
+<li>Jolly (cambiocolore/PescaQuattro): sempre validi</li>
+<li>Altrimenti: match colore attivo OPPURE match tipo/valore</li>
+</ul>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; gioco-&gt;num_carte_scarti &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se corrispondenza colore/tipo o carta nera. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco corrente. </td></tr>
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a> da giocare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se mossa valida, 0 altrimenti.</dd></dl>
+<p>Verifica se una carta e' legalmente giocabile.</p>
+<p>Controlla se il colore o il valore della carta corrisponde alla carta in cima alla pila degli scarti, oppure se e' un Jolly.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; gioco-&gt;num_carte_scarti &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se mossa valida, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco corrente. </td></tr>
+    <tr><td class="paramname">c</td><td>La carta che si vuole giocare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se la mossa e' valida, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="ab202f15176056f42ac78bd55f0ef400e" name="ab202f15176056f42ac78bd55f0ef400e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab202f15176056f42ac78bd55f0ef400e">&#9670;&#160;</a></span>MostraNotifica()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MostraNotifica </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mostra una notifica temporanea a schermo. </p>
+<p>Sostituisce eventuale notifica precedente. Si auto-cancella dopo un certo tempo gestito dal loop di gioco.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; msg != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Notifica visibile per 3 secondi. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco. </td></tr>
+    <tr><td class="paramname">msg</td><td>Testo della notifica.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Imposta il testo della notifica e un timer di visualizzazione. La notifica viene disegnata in DisegnaGameplay.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; msg != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Notifica attiva per 3 secondi. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+    <tr><td class="paramname">msg</td><td>Testo della notifica da mostrare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="ad1902a2e7f88106585a3606741e4ba34" name="ad1902a2e7f88106585a3606741e4ba34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1902a2e7f88106585a3606741e4ba34">&#9670;&#160;</a></span>coda_turni</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_coda_turni.html">CodaTurni</a>* coda_turni = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Coda globale dei turni. </p>
+
+</div>
+</div>
+<a id="afefe37ecc9aba9febda10fedc4dfa743" name="afefe37ecc9aba9febda10fedc4dfa743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefe37ecc9aba9febda10fedc4dfa743">&#9670;&#160;</a></span>mazzo_pila</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_pila.html">Pila</a>* mazzo_pila = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale del mazzo di pesca. </p>
+<p>ADT globali del gioco: pila mazzo pesca, pila scarti, coda turni.</p>
+<p><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale del mazzo di pesca. </p>
+
+</div>
+</div>
+<a id="ae43a4528acce4bced75b0d843415956f" name="ae43a4528acce4bced75b0d843415956f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae43a4528acce4bced75b0d843415956f">&#9670;&#160;</a></span>scarti_pila</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_pila.html">Pila</a>* scarti_pila = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale degli scarti. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="game__logic_8c.html">game_logic.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/game/game_flow.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('game__flow_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file game_flow.c<div class="ingroups"><a class="el" href="group__game__logic.html">Logica di Gioco</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestione flusso di gioco: inizializzazione, fine partita, ricostruzione ADT.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stack_8h_source.html">../../lib/data_structures/stack.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="queue_8h_source.html">../../lib/data_structures/queue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">../../lib/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../lib/auth.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:ac36d5d7fc58d57d5333d9de89432acb1" id="r_ac36d5d7fc58d57d5333d9de89432acb1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac36d5d7fc58d57d5333d9de89432acb1">RicostruisciStatoADT</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:ac36d5d7fc58d57d5333d9de89432acb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricostruisce TUTTE le strutture ADT statiche dopo il caricamento da file.  <br /></td></tr>
+<tr class="memitem:a6f74b381349465d305eabe85f8b02a95" id="r_a6f74b381349465d305eabe85f8b02a95"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6f74b381349465d305eabe85f8b02a95">NuovaPartita</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, int num_avversari)</td></tr>
+<tr class="memdesc:a6f74b381349465d305eabe85f8b02a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza una nuova partita offline contro bot.  <br /></td></tr>
+<tr class="memitem:a3446c1c30033cc8030a98d3e41399365" id="r_a3446c1c30033cc8030a98d3e41399365"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3446c1c30033cc8030a98d3e41399365">EliminaPartita</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:a3446c1c30033cc8030a98d3e41399365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera tutte le risorse di una partita terminata.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Gestione flusso di gioco: inizializzazione, fine partita, ricostruzione ADT. </p>
+<p>Modulo specializzato per il ciclo di vita di una partita: NuovaPartita, EliminaPartita, RicostruisciStatoADT. Estratto da <a class="el" href="game__logic_8c.html" title="Implementazione logica di gioco UNO: regole, effetti carte, validazione mosse e gestione ADT.">game_logic.c</a> per modularizzazione. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a3446c1c30033cc8030a98d3e41399365" name="a3446c1c30033cc8030a98d3e41399365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3446c1c30033cc8030a98d3e41399365">&#9670;&#160;</a></span>EliminaPartita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EliminaPartita </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libera tutte le risorse di una partita terminata. </p>
+<p>Libera tutte le risorse allocate per una partita.</p>
+<p>Distrugge: mani giocatori (liste), mazzo_pila, scarti_pila, coda_turni. Resetta num_giocatori, num_carte_mazzo, num_carte_scarti a 0.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da deallocare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Libera tutte le risorse di una partita terminata.</p>
+<p>Distrugge la mano di ogni giocatore (liste collegate), svuota le pile di pesca e scarti, libera l'albero BST.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Tutte le risorse liberate; ADT resettate. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da deallocare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6f74b381349465d305eabe85f8b02a95" name="a6f74b381349465d305eabe85f8b02a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f74b381349465d305eabe85f8b02a95">&#9670;&#160;</a></span>NuovaPartita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NuovaPartita </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num_avversari</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inizializza una nuova partita offline contro bot. </p>
+<p>Inizializza una nuova partita con il numero di avversari specificato.</p>
+<p>Procedura:</p><ol type="1">
+<li>Azzera lo <a class="el" href="struct_stato_gioco.html" title="Stato completo di una partita in corso.">StatoGioco</a></li>
+<li>Imposta il giocatore umano (slot 0) e i bot (1..N)</li>
+<li>Crea il mazzo standard UNO (108 carte)</li>
+<li>Distribuisce 7 carte per giocatore</li>
+<li>Pesca la prima carta scarto (evitando jolly)</li>
+<li>Inizializza la coda turni</li>
+<li>Trova il primo slot di salvataggio libero</li>
+</ol>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da inizializzare. </td></tr>
+    <tr><td class="paramname">num_avversari</td><td>Numero di avversari bot (1..3).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Inizializza una nuova partita offline contro bot.</p>
+<p>Crea il mazzo, distribuisce 7 carte a ogni giocatore, pesca la prima carta dagli scarti e gestisce le eventuali carte speciali iniziali.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; num_avversari in range 1-3. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Stato partita inizializzato e pronto per il gioco. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da inizializzare. </td></tr>
+    <tr><td class="paramname">num_avversari</td><td>Numero di avversari (bot). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac36d5d7fc58d57d5333d9de89432acb1" name="ac36d5d7fc58d57d5333d9de89432acb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36d5d7fc58d57d5333d9de89432acb1">&#9670;&#160;</a></span>RicostruisciStatoADT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RicostruisciStatoADT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ricostruisce TUTTE le strutture ADT statiche dopo il caricamento da file. </p>
+<p>Ricostruisce le strutture ADT statiche (mazzo_pila, scarti_pila, coda_turni) e le mani dei giocatori dopo un caricamento da file.</p>
+<p>Dopo <a class="el" href="save__manager_8c.html#a1f3105448b986dc3c5fd8ef93e948fdf" title="Carica una partita da uno slot di salvataggio specifico.">CaricaPartitaDaSlot()</a>, le strutture ADT dinamiche (pile, code, liste) sono NULL. Questa funzione ricrea tutto partendo dai dati serializzati:</p><ul>
+<li>Ricrea mazzo_pila da gioco-&gt;mazzo[]</li>
+<li>Ricrea scarti_pila da gioco-&gt;scarti[]</li>
+<li>Ricrea coda_turni da gioco-&gt;giocatori[]</li>
+<li>Ricrea la mano di ogni giocatore da gioco-&gt;mano_backup[]</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco appena caricato.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Ricostruisce TUTTE le strutture ADT statiche dopo il caricamento da file.</p>
+<p>Deve essere chiamata SUBITO DOPO <a class="el" href="save__manager_8c.html#a1f3105448b986dc3c5fd8ef93e948fdf" title="Carica una partita da uno slot di salvataggio specifico.">CaricaPartitaDaSlot()</a> per rendere consistente lo stato interno con quello caricato dal file. </p><dl class="section pre"><dt>Precondizione</dt><dd>gioco caricato con dati consistenti. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>ADT ricostruiti e mani ricreate. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco appena caricato. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li><li class="navelem"><a href="game__flow_8c.html">game_flow.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,2702 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Strutture Pacchetti</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__network__packet__strutture.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Strutture Pacchetti </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Strutture dati per ogni tipo di pacchetto multiplayer.  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Strutture dati</h2></td></tr>
+<tr class="memitem:PacketMove" id="r_PacketMove"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_move.html">PacketMove</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto mossa: giocatore, indice carta, colore scelto.  <a href="struct_packet_move.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketDraw" id="r_PacketDraw"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_draw.html">PacketDraw</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto pesca: giocatore e quantità.  <a href="struct_packet_draw.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketGameState" id="r_PacketGameState"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_game_state.html">PacketGameState</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto stato di gioco completo.  <a href="struct_packet_game_state.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketColorChoice" id="r_PacketColorChoice"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_color_choice.html">PacketColorChoice</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto scelta colore.  <a href="struct_packet_color_choice.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketChat" id="r_PacketChat"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_chat.html">PacketChat</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto chat.  <a href="struct_packet_chat.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketJoinGame" id="r_PacketJoinGame"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_join_game.html">PacketJoinGame</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto join game.  <a href="struct_packet_join_game.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketJoinRejected" id="r_PacketJoinRejected"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_join_rejected.html">PacketJoinRejected</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto join rifiutato.  <a href="struct_packet_join_rejected.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketPlayerHand" id="r_PacketPlayerHand"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_player_hand.html">PacketPlayerHand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto mano giocatore.  <a href="struct_packet_player_hand.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketCreateSession" id="r_PacketCreateSession"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_create_session.html">PacketCreateSession</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto creazione sessione.  <a href="struct_packet_create_session.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketJoinSession" id="r_PacketJoinSession"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_join_session.html">PacketJoinSession</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto join sessione.  <a href="struct_packet_join_session.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketSessionList" id="r_PacketSessionList"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_session_list.html">PacketSessionList</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto lista sessioni.  <a href="struct_packet_session_list.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketSessionState" id="r_PacketSessionState"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_session_state.html">PacketSessionState</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto stato sessione multiplayer.  <a href="struct_packet_session_state.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketPlayerReady" id="r_PacketPlayerReady"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_player_ready.html">PacketPlayerReady</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto ready/play again.  <a href="struct_packet_player_ready.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketGameFinished" id="r_PacketGameFinished"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_game_finished.html">PacketGameFinished</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto fine partita.  <a href="struct_packet_game_finished.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketPlayAgain" id="r_PacketPlayAgain"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_play_again.html">PacketPlayAgain</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto play again (con nome giocatore per fix bug).  <a href="struct_packet_play_again.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketHeartbeat" id="r_PacketHeartbeat"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_heartbeat.html">PacketHeartbeat</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto heartbeat per keep-alive.  <a href="struct_packet_heartbeat.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PacketHostReturnLobby" id="r_PacketHostReturnLobby"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_packet_host_return_lobby.html">PacketHostReturnLobby</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pacchetto host return lobby.  <a href="struct_packet_host_return_lobby.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:AdminUserSyncData" id="r_AdminUserSyncData"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_admin_user_sync_data.html">AdminUserSyncData</a></td></tr>
+<tr class="memitem:AdminUserAction" id="r_AdminUserAction"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_admin_user_action.html">AdminUserAction</a></td></tr>
+<tr class="memitem:AdminDBSyncPacket" id="r_AdminDBSyncPacket"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_admin_d_b_sync_packet.html">AdminDBSyncPacket</a></td></tr>
+<tr class="memitem:StatsSyncPacket" id="r_StatsSyncPacket"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_stats_sync_packet.html" title="StatsSyncPacket - Sincronizzazione live statistiche dopo una partita.">StatsSyncPacket</a> - Sincronizzazione live statistiche dopo una partita.  <a href="struct_stats_sync_packet.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:NetPacket" id="r_NetPacket"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_net_packet.html">NetPacket</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:gac7e4a6221f79e37a20003c8c18e4ae62" id="r_gac7e4a6221f79e37a20003c8c18e4ae62"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#gac7e4a6221f79e37a20003c8c18e4ae62">MAX_SERVER_CLIENTS</a>&#160;&#160;&#160;4</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:ga7b140306c116ba0e29a99eb0415fbe36" id="r_ga7b140306c116ba0e29a99eb0415fbe36"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga7b140306c116ba0e29a99eb0415fbe36">GetLocalIPAddress</a> (char *outbuf, int buflen)</td></tr>
+<tr class="memdesc:ga7b140306c116ba0e29a99eb0415fbe36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ottiene l'indirizzo IP locale del dispositivo.  <br /></td></tr>
+<tr class="memitem:gabc45bc454fab5dc2d69faf90e742d4e1" id="r_gabc45bc454fab5dc2d69faf90e742d4e1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gabc45bc454fab5dc2d69faf90e742d4e1">IsPlayerConnected</a> (int player_id)</td></tr>
+<tr class="memitem:ga613b435b1d6ffb50b4255ceaa0bc6696" id="r_ga613b435b1d6ffb50b4255ceaa0bc6696"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga613b435b1d6ffb50b4255ceaa0bc6696">RiassegnaSocket</a> (int old_id, int new_id, int is_reconnect, int partita_iniziata)</td></tr>
+<tr class="memitem:ga740ef7a56f894d2149113373ed7c9601" id="r_ga740ef7a56f894d2149113373ed7c9601"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga740ef7a56f894d2149113373ed7c9601">BroadcastHostDisconnect</a> (void)</td></tr>
+<tr class="memdesc:ga740ef7a56f894d2149113373ed7c9601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un pacchetto di notifica disconnessione host a tutti i client.  <br /></td></tr>
+<tr class="memitem:ga981d40762c9af84bf5f4d5d24a024c04" id="r_ga981d40762c9af84bf5f4d5d24a024c04"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga981d40762c9af84bf5f4d5d24a024c04">SendPlayerReady</a> (int ready)</td></tr>
+<tr class="memitem:ga76952802b05b5b11a933c2db18ede658" id="r_ga76952802b05b5b11a933c2db18ede658"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga76952802b05b5b11a933c2db18ede658">SendPlayAgain</a> (void)</td></tr>
+<tr class="memdesc:ga76952802b05b5b11a933c2db18ede658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un pacchetto PACKET_PLAY_AGAIN all'host.  <br /></td></tr>
+<tr class="memitem:gab5854145185d5f1e6a08d5a51022dd34" id="r_gab5854145185d5f1e6a08d5a51022dd34"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gab5854145185d5f1e6a08d5a51022dd34">BroadcastHostReturnLobby</a> (void)</td></tr>
+<tr class="memdesc:gab5854145185d5f1e6a08d5a51022dd34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broadcasta PACKET_HOST_RETURN_LOBBY a tutti i client.  <br /></td></tr>
+<tr class="memitem:ga1bc4af3da71346cdc346fd17ff078426" id="r_ga1bc4af3da71346cdc346fd17ff078426"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga1bc4af3da71346cdc346fd17ff078426">ConnettiTramiteCodiceStanza</a> (const char *codice, int portaBase)</td></tr>
+<tr class="memdesc:ga1bc4af3da71346cdc346fd17ff078426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connette a una stanza tramite codice stanza (UDP discovery).  <br /></td></tr>
+<tr class="memitem:ga8ec5ddc728bd3aeff602ed6c2c103615" id="r_ga8ec5ddc728bd3aeff602ed6c2c103615"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga8ec5ddc728bd3aeff602ed6c2c103615">InitNetwork</a> (void)</td></tr>
+<tr class="memitem:ga76a4e1704f09ea2ce18348e9add659d4" id="r_ga76a4e1704f09ea2ce18348e9add659d4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga76a4e1704f09ea2ce18348e9add659d4">ShiftNetworkSockets</a> (int removed_index, int num_players)</td></tr>
+<tr class="memdesc:ga76a4e1704f09ea2ce18348e9add659d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricompatta l'array di socket client dopo una disconnessione.  <br /></td></tr>
+<tr class="memitem:ga9b41cc6afd8c747b00cde5ae23849aec" id="r_ga9b41cc6afd8c747b00cde5ae23849aec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga9b41cc6afd8c747b00cde5ae23849aec">CloseNetwork</a> (void)</td></tr>
+<tr class="memitem:ga4afd449b11f70e41fcfdf4df80a916ad" id="r_ga4afd449b11f70e41fcfdf4df80a916ad"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga4afd449b11f70e41fcfdf4df80a916ad">HostGame</a> (int port)</td></tr>
+<tr class="memitem:gaa2baa82ea8ed3d587c950ca832d9bd2e" id="r_gaa2baa82ea8ed3d587c950ca832d9bd2e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaa2baa82ea8ed3d587c950ca832d9bd2e">JoinGame</a> (const char *ip_address, int port)</td></tr>
+<tr class="memitem:ga6b2d507a3b3bf210f28c0eedacd885a4" id="r_ga6b2d507a3b3bf210f28c0eedacd885a4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6b2d507a3b3bf210f28c0eedacd885a4">UpdateNetwork</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memitem:gad3c903fa215cfb2106e60c84065a37cd" id="r_gad3c903fa215cfb2106e60c84065a37cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gad3c903fa215cfb2106e60c84065a37cd">HandleReceivedPacket</a> (<a class="el" href="struct_net_packet.html">NetPacket</a> *packet, <a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:gad3c903fa215cfb2106e60c84065a37cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">HandleReceivedPacket - Dispatcher principale dei pacchetti.  <br /></td></tr>
+<tr class="memitem:ga5549082d80aa9bc430343ffed1f25c11" id="r_ga5549082d80aa9bc430343ffed1f25c11"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga5549082d80aa9bc430343ffed1f25c11">GestisciDisconnessione</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:ga5549082d80aa9bc430343ffed1f25c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestisce la disconnessione di un giocatore (host o client).  <br /></td></tr>
+<tr class="memitem:gaa3f0c68189cf8f6f045919dc6ac02a35" id="r_gaa3f0c68189cf8f6f045919dc6ac02a35"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaa3f0c68189cf8f6f045919dc6ac02a35">IpToCode</a> (const char *ip, char *code)</td></tr>
+<tr class="memdesc:gaa3f0c68189cf8f6f045919dc6ac02a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converte un indirizzo IP in codice esadecimale.  <br /></td></tr>
+<tr class="memitem:ga1b8014223ec4e2f55bf50ed4f0956f29" id="r_ga1b8014223ec4e2f55bf50ed4f0956f29"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga1b8014223ec4e2f55bf50ed4f0956f29">CodeToIp</a> (const char *code, char *ip)</td></tr>
+<tr class="memdesc:ga1b8014223ec4e2f55bf50ed4f0956f29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converte un codice esadecimale in indirizzo IP.  <br /></td></tr>
+<tr class="memitem:gad24cb48d88d5827fff0faf81ae1fc05b" id="r_gad24cb48d88d5827fff0faf81ae1fc05b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gad24cb48d88d5827fff0faf81ae1fc05b">BroadcastStatsSync</a> (const <a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a> *stats)</td></tr>
+<tr class="memdesc:gad24cb48d88d5827fff0faf81ae1fc05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un pacchetto di sincronizzazione statistiche COMPLETA a tutti i client.  <br /></td></tr>
+<tr class="memitem:ga36fc11ee8fde125894663e2c2ca2aa32" id="r_ga36fc11ee8fde125894663e2c2ca2aa32"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga36fc11ee8fde125894663e2c2ca2aa32">SendStatsSync</a> (const <a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a> *stats)</td></tr>
+<tr class="memdesc:ga36fc11ee8fde125894663e2c2ca2aa32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invia un pacchetto di sincronizzazione statistiche COMPLETA all'host (client).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:ga48dff0aed0d8c66bd700afea6aad9b38" id="r_ga48dff0aed0d8c66bd700afea6aad9b38"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga48dff0aed0d8c66bd700afea6aad9b38">PacketMove::player_id</a></td></tr>
+<tr class="memitem:ga26fb77aeafc9420f593477868c2e67e9" id="r_ga26fb77aeafc9420f593477868c2e67e9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga26fb77aeafc9420f593477868c2e67e9">PacketMove::card_index</a></td></tr>
+<tr class="memitem:ga2fd6703e904f8518191e4de979f69189" id="r_ga2fd6703e904f8518191e4de979f69189"><td class="memItemLeft"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga2fd6703e904f8518191e4de979f69189">PacketMove::colore_scelto</a></td></tr>
+<tr class="memitem:ga7d75ebf8c21ea768951f8e26dbd16884" id="r_ga7d75ebf8c21ea768951f8e26dbd16884"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga7d75ebf8c21ea768951f8e26dbd16884">PacketDraw::player_id</a></td></tr>
+<tr class="memitem:gaf95b16aff38590d53d8f52227a73bfa3" id="r_gaf95b16aff38590d53d8f52227a73bfa3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaf95b16aff38590d53d8f52227a73bfa3">PacketDraw::count</a></td></tr>
+<tr class="memitem:ga20f3500f9a6688a3d4c16b56f76ac007" id="r_ga20f3500f9a6688a3d4c16b56f76ac007"><td class="memItemLeft"><a class="el" href="struct_stato_gioco.html">StatoGioco</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga20f3500f9a6688a3d4c16b56f76ac007">PacketGameState::stato_gioco</a></td></tr>
+<tr class="memitem:gae9866ba217c36a39ba4073858855caa6" id="r_gae9866ba217c36a39ba4073858855caa6"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gae9866ba217c36a39ba4073858855caa6">PacketColorChoice::player_id</a></td></tr>
+<tr class="memitem:ga82c3f2c0248a3b52fb91dc65edbe78d3" id="r_ga82c3f2c0248a3b52fb91dc65edbe78d3"><td class="memItemLeft"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga82c3f2c0248a3b52fb91dc65edbe78d3">PacketColorChoice::colore</a></td></tr>
+<tr class="memitem:ga60f45f1c8c69bb485dedd5040b62b2b7" id="r_ga60f45f1c8c69bb485dedd5040b62b2b7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga60f45f1c8c69bb485dedd5040b62b2b7">PacketChat::player_id</a></td></tr>
+<tr class="memitem:gaf43ad9dadb972307b3c58edc0c45198b" id="r_gaf43ad9dadb972307b3c58edc0c45198b"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gaf43ad9dadb972307b3c58edc0c45198b">PacketChat::message</a> [128]</td></tr>
+<tr class="memitem:gaaa1d3eeeb44c69e71bd1afd6be1ee3e7" id="r_gaaa1d3eeeb44c69e71bd1afd6be1ee3e7"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gaaa1d3eeeb44c69e71bd1afd6be1ee3e7">PacketJoinGame::nome</a> [50]</td></tr>
+<tr class="memitem:gaa001f2ef2a04583f55f8aed0afb6753b" id="r_gaa001f2ef2a04583f55f8aed0afb6753b"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gaa001f2ef2a04583f55f8aed0afb6753b">PacketJoinRejected::motivo</a> [100]</td></tr>
+<tr class="memitem:gaca097944b71b7a8406b93e4b3ed2db4f" id="r_gaca097944b71b7a8406b93e4b3ed2db4f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaca097944b71b7a8406b93e4b3ed2db4f">PacketPlayerHand::player_id</a></td></tr>
+<tr class="memitem:ga9b8ad66e75056db4f244268e512e2050" id="r_ga9b8ad66e75056db4f244268e512e2050"><td class="memItemLeft"><a class="el" href="struct_carta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga9b8ad66e75056db4f244268e512e2050">PacketPlayerHand::carte</a> [108]</td></tr>
+<tr class="memitem:ga027930ddbd1fdca4574393b25c6729b4" id="r_ga027930ddbd1fdca4574393b25c6729b4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga027930ddbd1fdca4574393b25c6729b4">PacketPlayerHand::num_carte</a></td></tr>
+<tr class="memitem:ga0b43b7c02501c9cd6bfefeae2f0d5ad6" id="r_ga0b43b7c02501c9cd6bfefeae2f0d5ad6"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga0b43b7c02501c9cd6bfefeae2f0d5ad6">PacketCreateSession::session_id</a> [16]</td></tr>
+<tr class="memitem:ga8409bc6d5b36268bdacb03e5ce7e9780" id="r_ga8409bc6d5b36268bdacb03e5ce7e9780"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga8409bc6d5b36268bdacb03e5ce7e9780">PacketCreateSession::host_name</a> [30]</td></tr>
+<tr class="memitem:gab6419268cbf6e2c93cb228256f7effb0" id="r_gab6419268cbf6e2c93cb228256f7effb0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gab6419268cbf6e2c93cb228256f7effb0">PacketCreateSession::num_players</a></td></tr>
+<tr class="memitem:ga98298829b528d7a7a0e6bafb5d39c46e" id="r_ga98298829b528d7a7a0e6bafb5d39c46e"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga98298829b528d7a7a0e6bafb5d39c46e">PacketJoinSession::session_id</a> [16]</td></tr>
+<tr class="memitem:ga6912d90f8d9510ad4cf57b0fcab88420" id="r_ga6912d90f8d9510ad4cf57b0fcab88420"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga6912d90f8d9510ad4cf57b0fcab88420">PacketJoinSession::player_name</a> [30]</td></tr>
+<tr class="memitem:ga528efbe1f2a92c5853dccc8ed2c67e93" id="r_ga528efbe1f2a92c5853dccc8ed2c67e93"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga528efbe1f2a92c5853dccc8ed2c67e93">PacketSessionList::session_count</a></td></tr>
+<tr class="memitem:gaf70a7913010e764d81f58e2ca1b96ff1" id="r_gaf70a7913010e764d81f58e2ca1b96ff1"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gaf70a7913010e764d81f58e2ca1b96ff1">PacketSessionList::sessions</a> [10][16]</td></tr>
+<tr class="memitem:ga8874b2989efd13fdfbe481350cc963db" id="r_ga8874b2989efd13fdfbe481350cc963db"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga8874b2989efd13fdfbe481350cc963db">PacketSessionState::session_id</a> [16]</td></tr>
+<tr class="memitem:ga71586935479cf2643e01bbfa671b7273" id="r_ga71586935479cf2643e01bbfa671b7273"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga71586935479cf2643e01bbfa671b7273">PacketSessionState::num_players</a></td></tr>
+<tr class="memitem:ga0def821662805847be2754df1a8d20e8" id="r_ga0def821662805847be2754df1a8d20e8"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga0def821662805847be2754df1a8d20e8">PacketSessionState::player_names</a> [4][30]</td></tr>
+<tr class="memitem:ga6085b0d4fafdb89b59b149d6968b4b69" id="r_ga6085b0d4fafdb89b59b149d6968b4b69"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga6085b0d4fafdb89b59b149d6968b4b69">PacketSessionState::player_ready</a> [4]</td></tr>
+<tr class="memitem:ga596b1cabfc224d016498711229f02d4b" id="r_ga596b1cabfc224d016498711229f02d4b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga596b1cabfc224d016498711229f02d4b">PacketSessionState::game_started</a></td></tr>
+<tr class="memitem:gad64175c30986eb4c8a88b0c49817bdbc" id="r_gad64175c30986eb4c8a88b0c49817bdbc"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gad64175c30986eb4c8a88b0c49817bdbc">PacketPlayerReady::player_id</a></td></tr>
+<tr class="memitem:gad4d1f6a7b22f4c2f2e5a244718194383" id="r_gad4d1f6a7b22f4c2f2e5a244718194383"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gad4d1f6a7b22f4c2f2e5a244718194383">PacketPlayerReady::is_ready</a></td></tr>
+<tr class="memitem:ga8da9cba434f640515d782706341ebc04" id="r_ga8da9cba434f640515d782706341ebc04"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga8da9cba434f640515d782706341ebc04">PacketPlayerReady::want_play_again</a></td></tr>
+<tr class="memitem:ga2802060d7734564283278ffb5148e4a0" id="r_ga2802060d7734564283278ffb5148e4a0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga2802060d7734564283278ffb5148e4a0">PacketGameFinished::winning_player_id</a></td></tr>
+<tr class="memitem:ga1ff4264371887f1373f376828d6a7c3f" id="r_ga1ff4264371887f1373f376828d6a7c3f"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga1ff4264371887f1373f376828d6a7c3f">PacketGameFinished::winner_name</a> [30]</td></tr>
+<tr class="memitem:gafb6a63ee6a6c7a4499d44aaebaf475e2" id="r_gafb6a63ee6a6c7a4499d44aaebaf475e2"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gafb6a63ee6a6c7a4499d44aaebaf475e2">PacketPlayAgain::player_id</a></td></tr>
+<tr class="memitem:ga9f34dff657b264545e7f38767a4e2f9b" id="r_ga9f34dff657b264545e7f38767a4e2f9b"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ga9f34dff657b264545e7f38767a4e2f9b">PacketPlayAgain::timestamp</a></td></tr>
+<tr class="memitem:ga454d43cfb2e2f467f504863d363ca274" id="r_ga454d43cfb2e2f467f504863d363ca274"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga454d43cfb2e2f467f504863d363ca274">PacketPlayAgain::play_again</a></td></tr>
+<tr class="memitem:gad0e5cb99e6d44afb1297610a71ff0839" id="r_gad0e5cb99e6d44afb1297610a71ff0839"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gad0e5cb99e6d44afb1297610a71ff0839">PacketPlayAgain::player_name</a> [30]</td></tr>
+<tr class="memitem:ga0e2259a91f1626c4c9f20d490768de33" id="r_ga0e2259a91f1626c4c9f20d490768de33"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga0e2259a91f1626c4c9f20d490768de33">PacketHeartbeat::player_id</a></td></tr>
+<tr class="memitem:ga3a36376352934fafde900b15b51bf29d" id="r_ga3a36376352934fafde900b15b51bf29d"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ga3a36376352934fafde900b15b51bf29d">PacketHeartbeat::timestamp</a></td></tr>
+<tr class="memitem:ga21afc5dc63a86a4ff6a055486fad6441" id="r_ga21afc5dc63a86a4ff6a055486fad6441"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga21afc5dc63a86a4ff6a055486fad6441">PacketHostReturnLobby::host_ready</a></td></tr>
+<tr class="memitem:gabafab5e79d5298dbbe81ce0cd201902d" id="r_gabafab5e79d5298dbbe81ce0cd201902d"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gabafab5e79d5298dbbe81ce0cd201902d">AdminUserSyncData::email</a> [100]</td></tr>
+<tr class="memitem:gac81f1b89327c6f3a128761e702db16cc" id="r_gac81f1b89327c6f3a128761e702db16cc"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gac81f1b89327c6f3a128761e702db16cc">AdminUserSyncData::nome</a> [30]</td></tr>
+<tr class="memitem:ga406392fbcc5b9a327521a12b68f9d378" id="r_ga406392fbcc5b9a327521a12b68f9d378"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga406392fbcc5b9a327521a12b68f9d378">AdminUserSyncData::cognome</a> [30]</td></tr>
+<tr class="memitem:gadfa347ab441903e6a5d51933d5ef0069" id="r_gadfa347ab441903e6a5d51933d5ef0069"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gadfa347ab441903e6a5d51933d5ef0069">AdminUserSyncData::username</a> [30]</td></tr>
+<tr class="memitem:ga1b78f9830a1a67d47bc8825c8f73d801" id="r_ga1b78f9830a1a67d47bc8825c8f73d801"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga1b78f9830a1a67d47bc8825c8f73d801">AdminUserSyncData::password</a> [30]</td></tr>
+<tr class="memitem:ga02026535119c49cc438aaf35e09b14c4" id="r_ga02026535119c49cc438aaf35e09b14c4"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga02026535119c49cc438aaf35e09b14c4">AdminUserSyncData::pin_recupero</a> [7]</td></tr>
+<tr class="memitem:gad64d5575b39ad5dc8f2462b8ead65941" id="r_gad64d5575b39ad5dc8f2462b8ead65941"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gad64d5575b39ad5dc8f2462b8ead65941">AdminUserSyncData::partite_giocate</a></td></tr>
+<tr class="memitem:ga4541673e51582113e53ab1d31d626c35" id="r_ga4541673e51582113e53ab1d31d626c35"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga4541673e51582113e53ab1d31d626c35">AdminUserSyncData::vittorie_giocatore</a></td></tr>
+<tr class="memitem:ga4eee1d90a8f2a55a4966d22f532c7b5e" id="r_ga4eee1d90a8f2a55a4966d22f532c7b5e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga4eee1d90a8f2a55a4966d22f532c7b5e">AdminUserSyncData::vittorie_bot</a></td></tr>
+<tr class="memitem:gaa6cfd2ff64ab1d9d1a36d96e5438a4c7" id="r_gaa6cfd2ff64ab1d9d1a36d96e5438a4c7"><td class="memItemLeft"><a class="el" href="struct_admin_user_sync_data.html">AdminUserSyncData</a>&#160;</td><td class="memItemRight"><a class="el" href="#gaa6cfd2ff64ab1d9d1a36d96e5438a4c7">AdminUserAction::user</a></td></tr>
+<tr class="memitem:ga3d07f0b9de209d0f402a844b8efa2a8b" id="r_ga3d07f0b9de209d0f402a844b8efa2a8b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga3d07f0b9de209d0f402a844b8efa2a8b">AdminUserAction::action</a></td></tr>
+<tr class="memitem:gaba3e8369946d0bcbe4912985202712dd" id="r_gaba3e8369946d0bcbe4912985202712dd"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaba3e8369946d0bcbe4912985202712dd">AdminUserAction::target_id</a></td></tr>
+<tr class="memitem:ga3f8f3d3fd45f75d501e186908fc26ad1" id="r_ga3f8f3d3fd45f75d501e186908fc26ad1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga3f8f3d3fd45f75d501e186908fc26ad1">AdminDBSyncPacket::user_index</a></td></tr>
+<tr class="memitem:gac6a474ddf16d9f20937f0edf4b45ba06" id="r_gac6a474ddf16d9f20937f0edf4b45ba06"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gac6a474ddf16d9f20937f0edf4b45ba06">AdminDBSyncPacket::total_users</a></td></tr>
+<tr class="memitem:gaa990cfef6a092ea75e646d4666758175" id="r_gaa990cfef6a092ea75e646d4666758175"><td class="memItemLeft"><a class="el" href="struct_admin_user_sync_data.html">AdminUserSyncData</a>&#160;</td><td class="memItemRight"><a class="el" href="#gaa990cfef6a092ea75e646d4666758175">AdminDBSyncPacket::user</a></td></tr>
+<tr class="memitem:gadabe23799491f084a28d537187fedbdf" id="r_gadabe23799491f084a28d537187fedbdf"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gadabe23799491f084a28d537187fedbdf">StatsSyncPacket::username</a> [30]</td></tr>
+<tr class="memitem:gabcb39d60ae8573ad6547aa17daf77872" id="r_gabcb39d60ae8573ad6547aa17daf77872"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gabcb39d60ae8573ad6547aa17daf77872">StatsSyncPacket::partite_giocate</a></td></tr>
+<tr class="memitem:gad656264fcdf2079c7252dfc7a497dce4" id="r_gad656264fcdf2079c7252dfc7a497dce4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gad656264fcdf2079c7252dfc7a497dce4">StatsSyncPacket::vittorie_giocatore</a></td></tr>
+<tr class="memitem:ga60b4c234ff6dd8561d9f264fb37b68cf" id="r_ga60b4c234ff6dd8561d9f264fb37b68cf"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga60b4c234ff6dd8561d9f264fb37b68cf">StatsSyncPacket::vittorie_bot</a></td></tr>
+<tr class="memitem:ga757032a40e11dad5f12d2c2f6afd0cc8" id="r_ga757032a40e11dad5f12d2c2f6afd0cc8"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ga757032a40e11dad5f12d2c2f6afd0cc8">StatsSyncPacket::durata_ultima_partita</a></td></tr>
+<tr class="memitem:ga2efc2fc797cb131c559f930e646b21ef" id="r_ga2efc2fc797cb131c559f930e646b21ef"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga2efc2fc797cb131c559f930e646b21ef">StatsSyncPacket::modalita_ultima</a> [20]</td></tr>
+<tr class="memitem:ga2a09d71c4e7daed0a74edd976d9597cb" id="r_ga2a09d71c4e7daed0a74edd976d9597cb"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga2a09d71c4e7daed0a74edd976d9597cb">StatsSyncPacket::esito_ultima</a> [15]</td></tr>
+<tr class="memitem:gad5ea8e8bdf83a475ded43b43b7613670" id="r_gad5ea8e8bdf83a475ded43b43b7613670"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gad5ea8e8bdf83a475ded43b43b7613670">StatsSyncPacket::posizione_ultima</a></td></tr>
+<tr class="memitem:ga0534e53e5caf2dd07dcf142cd6faa332" id="r_ga0534e53e5caf2dd07dcf142cd6faa332"><td class="memItemLeft"><a class="el" href="struct_partita_registrata.html">PartitaRegistrata</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga0534e53e5caf2dd07dcf142cd6faa332">StatsSyncPacket::storico_partite</a> [<a class="el" href="lan__protocol_8h.html#a9805d8d568aa10ad776d8b121a8367e4">STORICO_SYNC_COUNT</a>]</td></tr>
+<tr class="memitem:ga0072a9f95163dfc459a5f0343416eec4" id="r_ga0072a9f95163dfc459a5f0343416eec4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga0072a9f95163dfc459a5f0343416eec4">StatsSyncPacket::storico_count</a></td></tr>
+<tr class="memitem:ga3bf9ba4b94cb8068a261bd07e01b0fc0" id="r_ga3bf9ba4b94cb8068a261bd07e01b0fc0"><td class="memItemLeft"><a class="el" href="group__network__packet.html#ga0a80a7bc045affcf10846075b88cbca0">PacketType</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga3bf9ba4b94cb8068a261bd07e01b0fc0">NetPacket::type</a></td></tr>
+<tr class="memitem:ga171e8b116595940c618270d21fe9787b" id="r_ga171e8b116595940c618270d21fe9787b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga171e8b116595940c618270d21fe9787b">NetPacket::sender_id</a></td></tr>
+<tr class="memitem:gab72d1fd0a869874805c1aeabfbad97a4" id="r_gab72d1fd0a869874805c1aeabfbad97a4"><td class="memItemLeft anon"><a class="el" href="struct_packet_move.html">PacketMove</a>&#160;&#160;&#160;<a class="el" href="#ga132cc701b1cebecfb8f8992565f6bcc6">NetPacket::move</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga9334aa06f6610990b64dc1f418c97339" id="r_ga9334aa06f6610990b64dc1f418c97339"><td class="memItemLeft anon"><a class="el" href="struct_packet_draw.html">PacketDraw</a>&#160;&#160;&#160;<a class="el" href="#gab4d8deeb5c19963d6e1d692ce5b01776">NetPacket::draw</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga17a833a0ed338f4f8bda0f67969bfe05" id="r_ga17a833a0ed338f4f8bda0f67969bfe05"><td class="memItemLeft anon"><a class="el" href="struct_packet_game_state.html">PacketGameState</a>&#160;&#160;&#160;<a class="el" href="#gae1da5a64d081035f4af93792ff771050">NetPacket::game_state</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga32df771a08a39231e11c8dfd5bdf83e0" id="r_ga32df771a08a39231e11c8dfd5bdf83e0"><td class="memItemLeft anon"><a class="el" href="struct_packet_color_choice.html">PacketColorChoice</a>&#160;&#160;&#160;<a class="el" href="#ga5a7420a732e939ca23615c9b7b686b49">NetPacket::color_choice</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gabf2048c359de3eb2d8f90a63358ea33c" id="r_gabf2048c359de3eb2d8f90a63358ea33c"><td class="memItemLeft anon"><a class="el" href="struct_packet_chat.html">PacketChat</a>&#160;&#160;&#160;<a class="el" href="#gaee3e8eefd8701d9bd41cd426cfe941ec">NetPacket::chat</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga64d4c0f84b1529829b89eab858897b1f" id="r_ga64d4c0f84b1529829b89eab858897b1f"><td class="memItemLeft anon"><a class="el" href="struct_packet_join_game.html">PacketJoinGame</a>&#160;&#160;&#160;<a class="el" href="#ga49d7d44bd4df64c5ba30b1c04bfafa02">NetPacket::join_game</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gae555ea6e8bab49b93446614e49f21874" id="r_gae555ea6e8bab49b93446614e49f21874"><td class="memItemLeft anon"><a class="el" href="struct_packet_join_rejected.html">PacketJoinRejected</a>&#160;&#160;&#160;<a class="el" href="#ga57e287d2946e56eba5a2d2ec0b01c40d">NetPacket::join_rejected</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga6f55f2df7e1f3157fe34cb757b1d7e56" id="r_ga6f55f2df7e1f3157fe34cb757b1d7e56"><td class="memItemLeft anon"><a class="el" href="struct_packet_player_hand.html">PacketPlayerHand</a>&#160;&#160;&#160;<a class="el" href="#gafae35b798ce130ffa2a4db68d44ebb40">NetPacket::player_hand</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga314222760ce29bd0dfaaf64c86e6216f" id="r_ga314222760ce29bd0dfaaf64c86e6216f"><td class="memItemLeft anon"><a class="el" href="struct_packet_create_session.html">PacketCreateSession</a>&#160;&#160;&#160;<a class="el" href="#gae9d31a94b42b77f7f74d93d09cd3dae0">NetPacket::create_session</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gaa9c03f3f99a3e717bdaf5a04a230c7bc" id="r_gaa9c03f3f99a3e717bdaf5a04a230c7bc"><td class="memItemLeft anon"><a class="el" href="struct_packet_join_session.html">PacketJoinSession</a>&#160;&#160;&#160;<a class="el" href="#gacc8d068dd0266c0c8c9b20e37583a585">NetPacket::join_session</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga64f59a011eada605cdf9be9bfd6b12f6" id="r_ga64f59a011eada605cdf9be9bfd6b12f6"><td class="memItemLeft anon"><a class="el" href="struct_packet_session_list.html">PacketSessionList</a>&#160;&#160;&#160;<a class="el" href="#gaf2b36da7b084e54a381de21e667ecf01">NetPacket::session_list</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga6f23b5915de11f5d58e4ebcbe9c92772" id="r_ga6f23b5915de11f5d58e4ebcbe9c92772"><td class="memItemLeft anon"><a class="el" href="struct_packet_session_state.html">PacketSessionState</a>&#160;&#160;&#160;<a class="el" href="#ga4640495cc1b36655b7a0a8850d422384">NetPacket::session_state</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga8df08272219148fca0f5615923e84675" id="r_ga8df08272219148fca0f5615923e84675"><td class="memItemLeft anon"><a class="el" href="struct_packet_player_ready.html">PacketPlayerReady</a>&#160;&#160;&#160;<a class="el" href="#gacb05063e5d95dfe6ca677bc01d137d91">NetPacket::player_ready</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gaa4ba951ba12c61b3cc6ace81e706b32b" id="r_gaa4ba951ba12c61b3cc6ace81e706b32b"><td class="memItemLeft anon"><a class="el" href="struct_packet_game_finished.html">PacketGameFinished</a>&#160;&#160;&#160;<a class="el" href="#ga2f05176c025e583a0b0ff862d3723c75">NetPacket::game_finished</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga5214bcde5a96baab2032d034c07a280d" id="r_ga5214bcde5a96baab2032d034c07a280d"><td class="memItemLeft anon"><a class="el" href="struct_packet_play_again.html">PacketPlayAgain</a>&#160;&#160;&#160;<a class="el" href="#gaa00db0a05b0d2dcb217cd435b8c84ede">NetPacket::play_again</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga1cc64144d2ea3170bb1f2cf5440e185d" id="r_ga1cc64144d2ea3170bb1f2cf5440e185d"><td class="memItemLeft anon"><a class="el" href="struct_packet_host_return_lobby.html">PacketHostReturnLobby</a>&#160;&#160;&#160;<a class="el" href="#ga5bb950cf458b01e517c357691bb6e416">NetPacket::host_return_lobby</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gad19d3935c177c2bf5cb284c7d413ebde" id="r_gad19d3935c177c2bf5cb284c7d413ebde"><td class="memItemLeft anon"><a class="el" href="struct_packet_heartbeat.html">PacketHeartbeat</a>&#160;&#160;&#160;<a class="el" href="#ga180be1c20dcb535e60e3803941b5d07f">NetPacket::heartbeat</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga0a43ca38274c6e7a8529c3dd9ed77091" id="r_ga0a43ca38274c6e7a8529c3dd9ed77091"><td class="memItemLeft anon"><a class="el" href="struct_admin_user_action.html">AdminUserAction</a>&#160;&#160;&#160;<a class="el" href="#ga73a0ded76fc6e6d72987c55bb16e2adf">NetPacket::admin_action</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga682a96f866794284e226ab4b853fedae" id="r_ga682a96f866794284e226ab4b853fedae"><td class="memItemLeft anon"><a class="el" href="struct_admin_d_b_sync_packet.html">AdminDBSyncPacket</a>&#160;&#160;&#160;<a class="el" href="#ga740b8f9c2a02ecfa8de301efa16a6087">NetPacket::admin_db_packet</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga20b8068a242a74f11ed928e9afd6423b" id="r_ga20b8068a242a74f11ed928e9afd6423b"><td class="memItemLeft anon"><a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a>&#160;&#160;&#160;<a class="el" href="#ga85e03ec5f7b0d5f8c9304564241a29ee">NetPacket::stats_sync</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga5f514b76caf042b0eeb9755d7c8ebe03" id="r_ga5f514b76caf042b0eeb9755d7c8ebe03"><td class="memItemLeft anon">char&#160;&#160;&#160;<a class="el" href="#ga27a03e277b8bf17777c34d7d7c39a8ac">NetPacket::raw</a> [512]&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:"><td class="memItemLeft anon">union {&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gab72d1fd0a869874805c1aeabfbad97a4" id="r_gab72d1fd0a869874805c1aeabfbad97a4"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_move.html">PacketMove</a>&#160;&#160;&#160;<a class="el" href="#ga132cc701b1cebecfb8f8992565f6bcc6">NetPacket::move</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga9334aa06f6610990b64dc1f418c97339" id="r_ga9334aa06f6610990b64dc1f418c97339"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_draw.html">PacketDraw</a>&#160;&#160;&#160;<a class="el" href="#gab4d8deeb5c19963d6e1d692ce5b01776">NetPacket::draw</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga17a833a0ed338f4f8bda0f67969bfe05" id="r_ga17a833a0ed338f4f8bda0f67969bfe05"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_game_state.html">PacketGameState</a>&#160;&#160;&#160;<a class="el" href="#gae1da5a64d081035f4af93792ff771050">NetPacket::game_state</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga32df771a08a39231e11c8dfd5bdf83e0" id="r_ga32df771a08a39231e11c8dfd5bdf83e0"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_color_choice.html">PacketColorChoice</a>&#160;&#160;&#160;<a class="el" href="#ga5a7420a732e939ca23615c9b7b686b49">NetPacket::color_choice</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gabf2048c359de3eb2d8f90a63358ea33c" id="r_gabf2048c359de3eb2d8f90a63358ea33c"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_chat.html">PacketChat</a>&#160;&#160;&#160;<a class="el" href="#gaee3e8eefd8701d9bd41cd426cfe941ec">NetPacket::chat</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga64d4c0f84b1529829b89eab858897b1f" id="r_ga64d4c0f84b1529829b89eab858897b1f"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_join_game.html">PacketJoinGame</a>&#160;&#160;&#160;<a class="el" href="#ga49d7d44bd4df64c5ba30b1c04bfafa02">NetPacket::join_game</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gae555ea6e8bab49b93446614e49f21874" id="r_gae555ea6e8bab49b93446614e49f21874"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_join_rejected.html">PacketJoinRejected</a>&#160;&#160;&#160;<a class="el" href="#ga57e287d2946e56eba5a2d2ec0b01c40d">NetPacket::join_rejected</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga6f55f2df7e1f3157fe34cb757b1d7e56" id="r_ga6f55f2df7e1f3157fe34cb757b1d7e56"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_player_hand.html">PacketPlayerHand</a>&#160;&#160;&#160;<a class="el" href="#gafae35b798ce130ffa2a4db68d44ebb40">NetPacket::player_hand</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga314222760ce29bd0dfaaf64c86e6216f" id="r_ga314222760ce29bd0dfaaf64c86e6216f"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_create_session.html">PacketCreateSession</a>&#160;&#160;&#160;<a class="el" href="#gae9d31a94b42b77f7f74d93d09cd3dae0">NetPacket::create_session</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gaa9c03f3f99a3e717bdaf5a04a230c7bc" id="r_gaa9c03f3f99a3e717bdaf5a04a230c7bc"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_join_session.html">PacketJoinSession</a>&#160;&#160;&#160;<a class="el" href="#gacc8d068dd0266c0c8c9b20e37583a585">NetPacket::join_session</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga64f59a011eada605cdf9be9bfd6b12f6" id="r_ga64f59a011eada605cdf9be9bfd6b12f6"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_session_list.html">PacketSessionList</a>&#160;&#160;&#160;<a class="el" href="#gaf2b36da7b084e54a381de21e667ecf01">NetPacket::session_list</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga6f23b5915de11f5d58e4ebcbe9c92772" id="r_ga6f23b5915de11f5d58e4ebcbe9c92772"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_session_state.html">PacketSessionState</a>&#160;&#160;&#160;<a class="el" href="#ga4640495cc1b36655b7a0a8850d422384">NetPacket::session_state</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga8df08272219148fca0f5615923e84675" id="r_ga8df08272219148fca0f5615923e84675"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_player_ready.html">PacketPlayerReady</a>&#160;&#160;&#160;<a class="el" href="#gacb05063e5d95dfe6ca677bc01d137d91">NetPacket::player_ready</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gaa4ba951ba12c61b3cc6ace81e706b32b" id="r_gaa4ba951ba12c61b3cc6ace81e706b32b"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_game_finished.html">PacketGameFinished</a>&#160;&#160;&#160;<a class="el" href="#ga2f05176c025e583a0b0ff862d3723c75">NetPacket::game_finished</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga5214bcde5a96baab2032d034c07a280d" id="r_ga5214bcde5a96baab2032d034c07a280d"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_play_again.html">PacketPlayAgain</a>&#160;&#160;&#160;<a class="el" href="#gaa00db0a05b0d2dcb217cd435b8c84ede">NetPacket::play_again</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga1cc64144d2ea3170bb1f2cf5440e185d" id="r_ga1cc64144d2ea3170bb1f2cf5440e185d"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_host_return_lobby.html">PacketHostReturnLobby</a>&#160;&#160;&#160;<a class="el" href="#ga5bb950cf458b01e517c357691bb6e416">NetPacket::host_return_lobby</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:gad19d3935c177c2bf5cb284c7d413ebde" id="r_gad19d3935c177c2bf5cb284c7d413ebde"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_packet_heartbeat.html">PacketHeartbeat</a>&#160;&#160;&#160;<a class="el" href="#ga180be1c20dcb535e60e3803941b5d07f">NetPacket::heartbeat</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga0a43ca38274c6e7a8529c3dd9ed77091" id="r_ga0a43ca38274c6e7a8529c3dd9ed77091"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_admin_user_action.html">AdminUserAction</a>&#160;&#160;&#160;<a class="el" href="#ga73a0ded76fc6e6d72987c55bb16e2adf">NetPacket::admin_action</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga682a96f866794284e226ab4b853fedae" id="r_ga682a96f866794284e226ab4b853fedae"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_admin_d_b_sync_packet.html">AdminDBSyncPacket</a>&#160;&#160;&#160;<a class="el" href="#ga740b8f9c2a02ecfa8de301efa16a6087">NetPacket::admin_db_packet</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga20b8068a242a74f11ed928e9afd6423b" id="r_ga20b8068a242a74f11ed928e9afd6423b"><td class="memItemLeft anon">&#160;&#160;&#160;<a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a>&#160;&#160;&#160;<a class="el" href="#ga85e03ec5f7b0d5f8c9304564241a29ee">NetPacket::stats_sync</a>&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga5f514b76caf042b0eeb9755d7c8ebe03" id="r_ga5f514b76caf042b0eeb9755d7c8ebe03"><td class="memItemLeft anon">&#160;&#160;&#160;char&#160;&#160;&#160;<a class="el" href="#ga27a03e277b8bf17777c34d7d7c39a8ac">NetPacket::raw</a> [512]&#160;</td><td class="memItemRight"></td></tr>
+<tr class="memitem:ga6d1829320713144288aa563464cfbf41" id="r_ga6d1829320713144288aa563464cfbf41"><td class="memItemLeft anonEnd">}&#160;</td><td class="memItemRight"><a class="el" href="#ga6d1829320713144288aa563464cfbf41">NetPacket::data</a></td></tr>
+<tr class="memitem:ga73bc5aa44ad9b3c3ca01c28252b93a56" id="r_ga73bc5aa44ad9b3c3ca01c28252b93a56"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga73bc5aa44ad9b3c3ca01c28252b93a56">network_start_game_flag</a></td></tr>
+<tr class="memitem:ga16acec73ed8b5b9262d15211bedb6479" id="r_ga16acec73ed8b5b9262d15211bedb6479"><td class="memItemLeft"><a class="el" href="group__network__ruoli.html#ga53e7e36fa630cf0cbd59d8ac87393100">NetworkRole</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga16acec73ed8b5b9262d15211bedb6479">currentRole</a></td></tr>
+<tr class="memitem:ga0936e5fbf6f65df58464ed83a3272430" id="r_ga0936e5fbf6f65df58464ed83a3272430"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga0936e5fbf6f65df58464ed83a3272430">join_rejected</a></td></tr>
+<tr class="memitem:gac04d7d998bff797c954bba3776ba0c55" id="r_gac04d7d998bff797c954bba3776ba0c55"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gac04d7d998bff797c954bba3776ba0c55">reject_message</a> [100]</td></tr>
+<tr class="memitem:gaa358768cbc9b8ed27055d5b41726d79a" id="r_gaa358768cbc9b8ed27055d5b41726d79a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaa358768cbc9b8ed27055d5b41726d79a">isConnected</a></td></tr>
+<tr class="memitem:ga011bfc7156351cec76e4a4b1e38c3169" id="r_ga011bfc7156351cec76e4a4b1e38c3169"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga011bfc7156351cec76e4a4b1e38c3169">network_pending</a></td></tr>
+<tr class="memitem:ga7fbc791dd298a446c201d280dd8c1c3d" id="r_ga7fbc791dd298a446c201d280dd8c1c3d"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga7fbc791dd298a446c201d280dd8c1c3d">network_game_initialized</a></td></tr>
+<tr class="memitem:ga64831cef2cdeba3a0f16d745b3ecf4fc" id="r_ga64831cef2cdeba3a0f16d745b3ecf4fc"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga64831cef2cdeba3a0f16d745b3ecf4fc">network_client_joined</a></td></tr>
+<tr class="memitem:gae801f06b6cb8328022fb0756915d0b54" id="r_gae801f06b6cb8328022fb0756915d0b54"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gae801f06b6cb8328022fb0756915d0b54">player_id</a></td></tr>
+<tr class="memitem:ga5cad9e8eeb56c51e52badb34a5910fbe" id="r_ga5cad9e8eeb56c51e52badb34a5910fbe"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga5cad9e8eeb56c51e52badb34a5910fbe">current_session_id</a> [16]</td></tr>
+<tr class="memitem:ga3ceeb52643564997e64ac776a8f0fc9a" id="r_ga3ceeb52643564997e64ac776a8f0fc9a"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga3ceeb52643564997e64ac776a8f0fc9a">session_id</a> [16]</td></tr>
+<tr class="memitem:ga3437dc7e27766145ab5c8d9a605083cd" id="r_ga3437dc7e27766145ab5c8d9a605083cd"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga3437dc7e27766145ab5c8d9a605083cd">local_player_id</a></td></tr>
+<tr class="memitem:gae06ac14e3f4d5998b855e2ffbc411341" id="r_gae06ac14e3f4d5998b855e2ffbc411341"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gae06ac14e3f4d5998b855e2ffbc411341">host_in_prelobby</a></td></tr>
+<tr class="memitem:gae1406de9f7c29f2553e952e0d5a0532c" id="r_gae1406de9f7c29f2553e952e0d5a0532c"><td class="memItemLeft"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>&#160;</td><td class="memItemRight"><a class="el" href="#gae1406de9f7c29f2553e952e0d5a0532c">clientSockets</a> [<a class="el" href="#gac7e4a6221f79e37a20003c8c18e4ae62">MAX_SERVER_CLIENTS</a>]</td></tr>
+<tr class="memitem:ga80ac1ee1e5dc6a14be8c487f06ab9192" id="r_ga80ac1ee1e5dc6a14be8c487f06ab9192"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga80ac1ee1e5dc6a14be8c487f06ab9192">connectedClientUsernames</a> [4][30]</td></tr>
+<tr class="memdesc:ga80ac1ee1e5dc6a14be8c487f06ab9192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Username dei client TCP connessi all'host (per admin panel).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Strutture dati per ogni tipo di pacchetto multiplayer. </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
+<a id="gac7e4a6221f79e37a20003c8c18e4ae62" name="gac7e4a6221f79e37a20003c8c18e4ae62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac7e4a6221f79e37a20003c8c18e4ae62">&#9670;&#160;</a></span>MAX_SERVER_CLIENTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_SERVER_CLIENTS&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="ga740ef7a56f894d2149113373ed7c9601" name="ga740ef7a56f894d2149113373ed7c9601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga740ef7a56f894d2149113373ed7c9601">&#9670;&#160;</a></span>BroadcastHostDisconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BroadcastHostDisconnect </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia un pacchetto di notifica disconnessione host a tutti i client. </p>
+<p>Usato quando l'host chiude la stanza (lobby o fine partita). I client ricevono l'avviso e vengono reindirizzati al menu principale. </p>
+
+</div>
+</div>
+<a id="gab5854145185d5f1e6a08d5a51022dd34" name="gab5854145185d5f1e6a08d5a51022dd34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5854145185d5f1e6a08d5a51022dd34">&#9670;&#160;</a></span>BroadcastHostReturnLobby()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BroadcastHostReturnLobby </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Broadcasta PACKET_HOST_RETURN_LOBBY a tutti i client. </p>
+<p>L'host segnala che e' tornato in pre-lobby dopo aver premuto "Gioca Ancora". I client possono cosi' decidere se unirsi o andarsene. </p>
+
+</div>
+</div>
+<a id="gad24cb48d88d5827fff0faf81ae1fc05b" name="gad24cb48d88d5827fff0faf81ae1fc05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad24cb48d88d5827fff0faf81ae1fc05b">&#9670;&#160;</a></span>BroadcastStatsSync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BroadcastStatsSync </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>stats</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia un pacchetto di sincronizzazione statistiche COMPLETA a tutti i client. </p>
+<p>Usato dopo ogni partita per aggiornare le statistiche di tutti i giocatori.</p>
+<p>Garantisce che i client connessi via TCP vedano TUTTI i dettagli delle partite storiche, non solo i contatori numerici. Popola l'intero array storico_partite[] nel pacchetto StatsSync.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stats</td><td>Puntatore al pacchetto StatsSync (gia' compilato con username e contatori). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9b41cc6afd8c747b00cde5ae23849aec" name="ga9b41cc6afd8c747b00cde5ae23849aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b41cc6afd8c747b00cde5ae23849aec">&#9670;&#160;</a></span>CloseNetwork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CloseNetwork </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1b8014223ec4e2f55bf50ed4f0956f29" name="ga1b8014223ec4e2f55bf50ed4f0956f29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b8014223ec4e2f55bf50ed4f0956f29">&#9670;&#160;</a></span>CodeToIp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CodeToIp </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>ip</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converte un codice esadecimale in indirizzo IP. </p>
+<p>Formato: "C0A80164" -&gt; "192.168.1.100"</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>Codice esadecimale (8 caratteri). </td></tr>
+    <tr><td class="paramname">ip</td><td>Buffer di output per l'IP. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se conversione riuscita, 0 se formato non valido. </dd></dl>
+
+</div>
+</div>
+<a id="ga1bc4af3da71346cdc346fd17ff078426" name="ga1bc4af3da71346cdc346fd17ff078426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bc4af3da71346cdc346fd17ff078426">&#9670;&#160;</a></span>ConnettiTramiteCodiceStanza()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ConnettiTramiteCodiceStanza </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>codice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>portaBase</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connette a una stanza tramite codice stanza (UDP discovery). </p>
+<p>Procedura:</p><ol type="1">
+<li>Crea socket UDP broadcast</li>
+<li>Invia "REQ_CODE:&lt;codice&gt;" in broadcast sulla porta base+1</li>
+<li>Attende risposta "CODE_FOUND" con timeout 1 secondo</li>
+<li>Se risposta ricevuta: chiama <a class="el" href="#gaa2baa82ea8ed3d587c950ca832d9bd2e">JoinGame()</a> con IP del server</li>
+</ol>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">codice</td><td>Codice stanza da cercare (8 caratteri hex). </td></tr>
+    <tr><td class="paramname">portaBase</td><td>Porta TCP del gioco (27015). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se connessione riuscita, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="ga5549082d80aa9bc430343ffed1f25c11" name="ga5549082d80aa9bc430343ffed1f25c11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5549082d80aa9bc430343ffed1f25c11">&#9670;&#160;</a></span>GestisciDisconnessione()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GestisciDisconnessione </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gestisce la disconnessione di un giocatore (host o client). </p>
+<p>Comportamento:</p><ul>
+<li>HOST: Sostituisce il giocatore disconnesso con un BOT, notifica tutti, broadcasta nuovo stato.</li>
+<li>CLIENT: Imposta stato "__HOST_DISCONNECT__", salva statistiche solo se partita non era finita (evita duplicati).</li>
+</ul>
+<p>Bug fissati:</p><ul>
+<li>Bug 1: NON salva statistiche se partita gia' finita (duplicati)</li>
+<li>Bug 4: Partita interrotta non registra in classifica</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7b140306c116ba0e29a99eb0415fbe36" name="ga7b140306c116ba0e29a99eb0415fbe36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b140306c116ba0e29a99eb0415fbe36">&#9670;&#160;</a></span>GetLocalIPAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GetLocalIPAddress </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>outbuf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>buflen</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ottiene l'indirizzo IP locale del dispositivo. </p>
+<p>Utilizza metodo multiplo per robustezza:</p><ol type="1">
+<li>gethostname + gethostbyname (scorre TUTTI gli indirizzi) Filtra: loopback (127.0.0.1), APIPA (169.254.x.x), VirtualBox (10.0.2.x), VPN (tunnel interfaces). Accetta: 192.168.x.x, 10.x.x.x, 172.16-31.x.x</li>
+<li>Fallback: UDP connect a 8.8.8.8:53 (Google DNS) Non richiede header speciali, usa getsockname() per IP.</li>
+</ol>
+<p>Bug fissato: prendeva solo h_addr_list[0] che su Windows spesso e' 127.0.0.1. Ora scorre tutta la lista.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outbuf</td><td>Buffer di output per l'IP trovato. </td></tr>
+    <tr><td class="paramname">buflen</td><td>Dimensione del buffer output. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se trovato IP valido, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="gad3c903fa215cfb2106e60c84065a37cd" name="gad3c903fa215cfb2106e60c84065a37cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3c903fa215cfb2106e60c84065a37cd">&#9670;&#160;</a></span>HandleReceivedPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HandleReceivedPacket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_net_packet.html">NetPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>HandleReceivedPacket - Dispatcher principale dei pacchetti. </p>
+<p>Classifica il tipo di pacchetto e delega la gestione al modulo specializzato appropriato. </p>
+
+</div>
+</div>
+<a id="ga4afd449b11f70e41fcfdf4df80a916ad" name="ga4afd449b11f70e41fcfdf4df80a916ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4afd449b11f70e41fcfdf4df80a916ad">&#9670;&#160;</a></span>HostGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int HostGame </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>port</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8ec5ddc728bd3aeff602ed6c2c103615" name="ga8ec5ddc728bd3aeff602ed6c2c103615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ec5ddc728bd3aeff602ed6c2c103615">&#9670;&#160;</a></span>InitNetwork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int InitNetwork </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa3f0c68189cf8f6f045919dc6ac02a35" name="gaa3f0c68189cf8f6f045919dc6ac02a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3f0c68189cf8f6f045919dc6ac02a35">&#9670;&#160;</a></span>IpToCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IpToCode </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>ip</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converte un indirizzo IP in codice esadecimale. </p>
+<p>Formato: "192.168.1.100" -&gt; "C0A80164" Usato per generare codici stanza leggibili dai client.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip</td><td>Indirizzo IP in formato stringa. </td></tr>
+    <tr><td class="paramname">code</td><td>Buffer di output per il codice (min 9 byte). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gabc45bc454fab5dc2d69faf90e742d4e1" name="gabc45bc454fab5dc2d69faf90e742d4e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabc45bc454fab5dc2d69faf90e742d4e1">&#9670;&#160;</a></span>IsPlayerConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IsPlayerConnected </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>player_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa2baa82ea8ed3d587c950ca832d9bd2e" name="gaa2baa82ea8ed3d587c950ca832d9bd2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa2baa82ea8ed3d587c950ca832d9bd2e">&#9670;&#160;</a></span>JoinGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JoinGame </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>ip_address</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga613b435b1d6ffb50b4255ceaa0bc6696" name="ga613b435b1d6ffb50b4255ceaa0bc6696"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga613b435b1d6ffb50b4255ceaa0bc6696">&#9670;&#160;</a></span>RiassegnaSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RiassegnaSocket </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>old_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>new_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>is_reconnect</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>partita_iniziata</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga76952802b05b5b11a933c2db18ede658" name="ga76952802b05b5b11a933c2db18ede658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76952802b05b5b11a933c2db18ede658">&#9670;&#160;</a></span>SendPlayAgain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendPlayAgain </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia un pacchetto PACKET_PLAY_AGAIN all'host. </p>
+<p>Il client segnala all'host che vuole giocare ancora (tornare in pre-lobby). Invia anche il nome del giocatore nel campo player_name[] per permettere all'host di ricreare lo slot correttamente dopo aver pulito la lobby. </p>
+
+</div>
+</div>
+<a id="ga981d40762c9af84bf5f4d5d24a024c04" name="ga981d40762c9af84bf5f4d5d24a024c04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga981d40762c9af84bf5f4d5d24a024c04">&#9670;&#160;</a></span>SendPlayerReady()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendPlayerReady </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ready</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga36fc11ee8fde125894663e2c2ca2aa32" name="ga36fc11ee8fde125894663e2c2ca2aa32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga36fc11ee8fde125894663e2c2ca2aa32">&#9670;&#160;</a></span>SendStatsSync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendStatsSync </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>stats</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Invia un pacchetto di sincronizzazione statistiche COMPLETA all'host (client). </p>
+<p>Usato quando il client salva le proprie statistiche dopo una partita.</p>
+<p>Garantisce che l'host (e tutti gli altri client tramite broadcast) ricevano TUTTI i dettagli delle partite, non solo i contatori numerici.</p>
+<p>Popola l'intero array storico_partite[] nel pacchetto StatsSync. </p>
+
+</div>
+</div>
+<a id="ga76a4e1704f09ea2ce18348e9add659d4" name="ga76a4e1704f09ea2ce18348e9add659d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76a4e1704f09ea2ce18348e9add659d4">&#9670;&#160;</a></span>ShiftNetworkSockets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ShiftNetworkSockets </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>removed_index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num_players</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ricompatta l'array di socket client dopo una disconnessione. </p>
+<p>Sposta tutti gli socket dopo l'indice rimosso di una posizione indietro per mantenere gli slot contigui.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">removed_index</td><td>Indice dello slot rimosso. </td></tr>
+    <tr><td class="paramname">num_players</td><td>Numero totale giocatori (dopo rimozione). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6b2d507a3b3bf210f28c0eedacd885a4" name="ga6b2d507a3b3bf210f28c0eedacd885a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b2d507a3b3bf210f28c0eedacd885a4">&#9670;&#160;</a></span>UpdateNetwork()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UpdateNetwork </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="ga3d07f0b9de209d0f402a844b8efa2a8b" name="ga3d07f0b9de209d0f402a844b8efa2a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d07f0b9de209d0f402a844b8efa2a8b">&#9670;&#160;</a></span>action</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AdminUserAction::action</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0a43ca38274c6e7a8529c3dd9ed77091" name="ga0a43ca38274c6e7a8529c3dd9ed77091"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0a43ca38274c6e7a8529c3dd9ed77091">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AdminUserAction  { ... } ::admin_action</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga73a0ded76fc6e6d72987c55bb16e2adf" name="ga73a0ded76fc6e6d72987c55bb16e2adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73a0ded76fc6e6d72987c55bb16e2adf">&#9670;&#160;</a></span>admin_action <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_admin_user_action.html">AdminUserAction</a> NetPacket::admin_action</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga682a96f866794284e226ab4b853fedae" name="ga682a96f866794284e226ab4b853fedae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga682a96f866794284e226ab4b853fedae">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AdminDBSyncPacket  { ... } ::admin_db_packet</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga740b8f9c2a02ecfa8de301efa16a6087" name="ga740b8f9c2a02ecfa8de301efa16a6087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga740b8f9c2a02ecfa8de301efa16a6087">&#9670;&#160;</a></span>admin_db_packet <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_admin_d_b_sync_packet.html">AdminDBSyncPacket</a> NetPacket::admin_db_packet</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga26fb77aeafc9420f593477868c2e67e9" name="ga26fb77aeafc9420f593477868c2e67e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26fb77aeafc9420f593477868c2e67e9">&#9670;&#160;</a></span>card_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketMove::card_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga9b8ad66e75056db4f244268e512e2050" name="ga9b8ad66e75056db4f244268e512e2050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b8ad66e75056db4f244268e512e2050">&#9670;&#160;</a></span>carte</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_carta.html">Carta</a> PacketPlayerHand::carte[108]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabf2048c359de3eb2d8f90a63358ea33c" name="gabf2048c359de3eb2d8f90a63358ea33c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf2048c359de3eb2d8f90a63358ea33c">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketChat  { ... } ::chat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaee3e8eefd8701d9bd41cd426cfe941ec" name="gaee3e8eefd8701d9bd41cd426cfe941ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaee3e8eefd8701d9bd41cd426cfe941ec">&#9670;&#160;</a></span>chat <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_chat.html">PacketChat</a> NetPacket::chat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae1406de9f7c29f2553e952e0d5a0532c" name="gae1406de9f7c29f2553e952e0d5a0532c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1406de9f7c29f2553e952e0d5a0532c">&#9670;&#160;</a></span>clientSockets</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a> clientSockets[<a class="el" href="#gac7e4a6221f79e37a20003c8c18e4ae62">MAX_SERVER_CLIENTS</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga406392fbcc5b9a327521a12b68f9d378" name="ga406392fbcc5b9a327521a12b68f9d378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga406392fbcc5b9a327521a12b68f9d378">&#9670;&#160;</a></span>cognome</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char AdminUserSyncData::cognome[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga32df771a08a39231e11c8dfd5bdf83e0" name="ga32df771a08a39231e11c8dfd5bdf83e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga32df771a08a39231e11c8dfd5bdf83e0">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketColorChoice  { ... } ::color_choice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5a7420a732e939ca23615c9b7b686b49" name="ga5a7420a732e939ca23615c9b7b686b49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a7420a732e939ca23615c9b7b686b49">&#9670;&#160;</a></span>color_choice <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_color_choice.html">PacketColorChoice</a> NetPacket::color_choice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga82c3f2c0248a3b52fb91dc65edbe78d3" name="ga82c3f2c0248a3b52fb91dc65edbe78d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga82c3f2c0248a3b52fb91dc65edbe78d3">&#9670;&#160;</a></span>colore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> PacketColorChoice::colore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga2fd6703e904f8518191e4de979f69189" name="ga2fd6703e904f8518191e4de979f69189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2fd6703e904f8518191e4de979f69189">&#9670;&#160;</a></span>colore_scelto</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> PacketMove::colore_scelto</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga80ac1ee1e5dc6a14be8c487f06ab9192" name="ga80ac1ee1e5dc6a14be8c487f06ab9192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga80ac1ee1e5dc6a14be8c487f06ab9192">&#9670;&#160;</a></span>connectedClientUsernames</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char connectedClientUsernames[4][30]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Username dei client TCP connessi all'host (per admin panel). </p>
+<p>NOTA: Indice 0 corrisponde allo slot 1 del client. </p>
+
+</div>
+</div>
+<a id="gaf95b16aff38590d53d8f52227a73bfa3" name="gaf95b16aff38590d53d8f52227a73bfa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf95b16aff38590d53d8f52227a73bfa3">&#9670;&#160;</a></span>count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketDraw::count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga314222760ce29bd0dfaaf64c86e6216f" name="ga314222760ce29bd0dfaaf64c86e6216f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga314222760ce29bd0dfaaf64c86e6216f">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketCreateSession  { ... } ::create_session</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae9d31a94b42b77f7f74d93d09cd3dae0" name="gae9d31a94b42b77f7f74d93d09cd3dae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9d31a94b42b77f7f74d93d09cd3dae0">&#9670;&#160;</a></span>create_session <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_create_session.html">PacketCreateSession</a> NetPacket::create_session</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5cad9e8eeb56c51e52badb34a5910fbe" name="ga5cad9e8eeb56c51e52badb34a5910fbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5cad9e8eeb56c51e52badb34a5910fbe">&#9670;&#160;</a></span>current_session_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char current_session_id[16]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga16acec73ed8b5b9262d15211bedb6479" name="ga16acec73ed8b5b9262d15211bedb6479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16acec73ed8b5b9262d15211bedb6479">&#9670;&#160;</a></span>currentRole</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__network__ruoli.html#ga53e7e36fa630cf0cbd59d8ac87393100">NetworkRole</a> currentRole</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga6d1829320713144288aa563464cfbf41" name="ga6d1829320713144288aa563464cfbf41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d1829320713144288aa563464cfbf41">&#9670;&#160;</a></span>[union]</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union  { ... }  NetPacket::data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga9334aa06f6610990b64dc1f418c97339" name="ga9334aa06f6610990b64dc1f418c97339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9334aa06f6610990b64dc1f418c97339">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketDraw  { ... } ::draw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab4d8deeb5c19963d6e1d692ce5b01776" name="gab4d8deeb5c19963d6e1d692ce5b01776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab4d8deeb5c19963d6e1d692ce5b01776">&#9670;&#160;</a></span>draw <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_draw.html">PacketDraw</a> NetPacket::draw</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga757032a40e11dad5f12d2c2f6afd0cc8" name="ga757032a40e11dad5f12d2c2f6afd0cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga757032a40e11dad5f12d2c2f6afd0cc8">&#9670;&#160;</a></span>durata_ultima_partita</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float StatsSyncPacket::durata_ultima_partita</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabafab5e79d5298dbbe81ce0cd201902d" name="gabafab5e79d5298dbbe81ce0cd201902d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabafab5e79d5298dbbe81ce0cd201902d">&#9670;&#160;</a></span>email</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char AdminUserSyncData::email[100]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga2a09d71c4e7daed0a74edd976d9597cb" name="ga2a09d71c4e7daed0a74edd976d9597cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2a09d71c4e7daed0a74edd976d9597cb">&#9670;&#160;</a></span>esito_ultima</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char StatsSyncPacket::esito_ultima[15]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa4ba951ba12c61b3cc6ace81e706b32b" name="gaa4ba951ba12c61b3cc6ace81e706b32b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4ba951ba12c61b3cc6ace81e706b32b">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketGameFinished  { ... } ::game_finished</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga2f05176c025e583a0b0ff862d3723c75" name="ga2f05176c025e583a0b0ff862d3723c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f05176c025e583a0b0ff862d3723c75">&#9670;&#160;</a></span>game_finished <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_game_finished.html">PacketGameFinished</a> NetPacket::game_finished</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga596b1cabfc224d016498711229f02d4b" name="ga596b1cabfc224d016498711229f02d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga596b1cabfc224d016498711229f02d4b">&#9670;&#160;</a></span>game_started</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketSessionState::game_started</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga17a833a0ed338f4f8bda0f67969bfe05" name="ga17a833a0ed338f4f8bda0f67969bfe05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17a833a0ed338f4f8bda0f67969bfe05">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketGameState  { ... } ::game_state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae1da5a64d081035f4af93792ff771050" name="gae1da5a64d081035f4af93792ff771050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1da5a64d081035f4af93792ff771050">&#9670;&#160;</a></span>game_state <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_game_state.html">PacketGameState</a> NetPacket::game_state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad19d3935c177c2bf5cb284c7d413ebde" name="gad19d3935c177c2bf5cb284c7d413ebde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad19d3935c177c2bf5cb284c7d413ebde">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketHeartbeat  { ... } ::heartbeat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga180be1c20dcb535e60e3803941b5d07f" name="ga180be1c20dcb535e60e3803941b5d07f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga180be1c20dcb535e60e3803941b5d07f">&#9670;&#160;</a></span>heartbeat <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_heartbeat.html">PacketHeartbeat</a> NetPacket::heartbeat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae06ac14e3f4d5998b855e2ffbc411341" name="gae06ac14e3f4d5998b855e2ffbc411341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae06ac14e3f4d5998b855e2ffbc411341">&#9670;&#160;</a></span>host_in_prelobby</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int host_in_prelobby</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8409bc6d5b36268bdacb03e5ce7e9780" name="ga8409bc6d5b36268bdacb03e5ce7e9780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8409bc6d5b36268bdacb03e5ce7e9780">&#9670;&#160;</a></span>host_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketCreateSession::host_name[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga21afc5dc63a86a4ff6a055486fad6441" name="ga21afc5dc63a86a4ff6a055486fad6441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21afc5dc63a86a4ff6a055486fad6441">&#9670;&#160;</a></span>host_ready</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketHostReturnLobby::host_ready</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1cc64144d2ea3170bb1f2cf5440e185d" name="ga1cc64144d2ea3170bb1f2cf5440e185d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1cc64144d2ea3170bb1f2cf5440e185d">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketHostReturnLobby  { ... } ::host_return_lobby</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5bb950cf458b01e517c357691bb6e416" name="ga5bb950cf458b01e517c357691bb6e416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5bb950cf458b01e517c357691bb6e416">&#9670;&#160;</a></span>host_return_lobby <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_host_return_lobby.html">PacketHostReturnLobby</a> NetPacket::host_return_lobby</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad4d1f6a7b22f4c2f2e5a244718194383" name="gad4d1f6a7b22f4c2f2e5a244718194383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4d1f6a7b22f4c2f2e5a244718194383">&#9670;&#160;</a></span>is_ready</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketPlayerReady::is_ready</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa358768cbc9b8ed27055d5b41726d79a" name="gaa358768cbc9b8ed27055d5b41726d79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa358768cbc9b8ed27055d5b41726d79a">&#9670;&#160;</a></span>isConnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isConnected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga64d4c0f84b1529829b89eab858897b1f" name="ga64d4c0f84b1529829b89eab858897b1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64d4c0f84b1529829b89eab858897b1f">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketJoinGame  { ... } ::join_game</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga49d7d44bd4df64c5ba30b1c04bfafa02" name="ga49d7d44bd4df64c5ba30b1c04bfafa02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga49d7d44bd4df64c5ba30b1c04bfafa02">&#9670;&#160;</a></span>join_game <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_join_game.html">PacketJoinGame</a> NetPacket::join_game</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0936e5fbf6f65df58464ed83a3272430" name="ga0936e5fbf6f65df58464ed83a3272430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0936e5fbf6f65df58464ed83a3272430">&#9670;&#160;</a></span>join_rejected <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int join_rejected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae555ea6e8bab49b93446614e49f21874" name="gae555ea6e8bab49b93446614e49f21874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae555ea6e8bab49b93446614e49f21874">&#9670;&#160;</a></span>[] <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketJoinRejected  { ... } ::join_rejected</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga57e287d2946e56eba5a2d2ec0b01c40d" name="ga57e287d2946e56eba5a2d2ec0b01c40d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga57e287d2946e56eba5a2d2ec0b01c40d">&#9670;&#160;</a></span>join_rejected <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_join_rejected.html">PacketJoinRejected</a> NetPacket::join_rejected</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa9c03f3f99a3e717bdaf5a04a230c7bc" name="gaa9c03f3f99a3e717bdaf5a04a230c7bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa9c03f3f99a3e717bdaf5a04a230c7bc">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketJoinSession  { ... } ::join_session</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gacc8d068dd0266c0c8c9b20e37583a585" name="gacc8d068dd0266c0c8c9b20e37583a585"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacc8d068dd0266c0c8c9b20e37583a585">&#9670;&#160;</a></span>join_session <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_join_session.html">PacketJoinSession</a> NetPacket::join_session</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3437dc7e27766145ab5c8d9a605083cd" name="ga3437dc7e27766145ab5c8d9a605083cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3437dc7e27766145ab5c8d9a605083cd">&#9670;&#160;</a></span>local_player_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int local_player_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf43ad9dadb972307b3c58edc0c45198b" name="gaf43ad9dadb972307b3c58edc0c45198b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf43ad9dadb972307b3c58edc0c45198b">&#9670;&#160;</a></span>message</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketChat::message[128]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga2efc2fc797cb131c559f930e646b21ef" name="ga2efc2fc797cb131c559f930e646b21ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2efc2fc797cb131c559f930e646b21ef">&#9670;&#160;</a></span>modalita_ultima</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char StatsSyncPacket::modalita_ultima[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa001f2ef2a04583f55f8aed0afb6753b" name="gaa001f2ef2a04583f55f8aed0afb6753b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa001f2ef2a04583f55f8aed0afb6753b">&#9670;&#160;</a></span>motivo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketJoinRejected::motivo[100]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab72d1fd0a869874805c1aeabfbad97a4" name="gab72d1fd0a869874805c1aeabfbad97a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab72d1fd0a869874805c1aeabfbad97a4">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketMove  { ... } ::move</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga132cc701b1cebecfb8f8992565f6bcc6" name="ga132cc701b1cebecfb8f8992565f6bcc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga132cc701b1cebecfb8f8992565f6bcc6">&#9670;&#160;</a></span>move <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_move.html">PacketMove</a> NetPacket::move</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga64831cef2cdeba3a0f16d745b3ecf4fc" name="ga64831cef2cdeba3a0f16d745b3ecf4fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64831cef2cdeba3a0f16d745b3ecf4fc">&#9670;&#160;</a></span>network_client_joined</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int network_client_joined</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga7fbc791dd298a446c201d280dd8c1c3d" name="ga7fbc791dd298a446c201d280dd8c1c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7fbc791dd298a446c201d280dd8c1c3d">&#9670;&#160;</a></span>network_game_initialized</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int network_game_initialized</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga011bfc7156351cec76e4a4b1e38c3169" name="ga011bfc7156351cec76e4a4b1e38c3169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga011bfc7156351cec76e4a4b1e38c3169">&#9670;&#160;</a></span>network_pending</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int network_pending</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga73bc5aa44ad9b3c3ca01c28252b93a56" name="ga73bc5aa44ad9b3c3ca01c28252b93a56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga73bc5aa44ad9b3c3ca01c28252b93a56">&#9670;&#160;</a></span>network_start_game_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int network_start_game_flag</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac81f1b89327c6f3a128761e702db16cc" name="gac81f1b89327c6f3a128761e702db16cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac81f1b89327c6f3a128761e702db16cc">&#9670;&#160;</a></span>nome <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char AdminUserSyncData::nome[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaaa1d3eeeb44c69e71bd1afd6be1ee3e7" name="gaaa1d3eeeb44c69e71bd1afd6be1ee3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaa1d3eeeb44c69e71bd1afd6be1ee3e7">&#9670;&#160;</a></span>nome <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketJoinGame::nome[50]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga027930ddbd1fdca4574393b25c6729b4" name="ga027930ddbd1fdca4574393b25c6729b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga027930ddbd1fdca4574393b25c6729b4">&#9670;&#160;</a></span>num_carte</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketPlayerHand::num_carte</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab6419268cbf6e2c93cb228256f7effb0" name="gab6419268cbf6e2c93cb228256f7effb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab6419268cbf6e2c93cb228256f7effb0">&#9670;&#160;</a></span>num_players <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketCreateSession::num_players</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga71586935479cf2643e01bbfa671b7273" name="ga71586935479cf2643e01bbfa671b7273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga71586935479cf2643e01bbfa671b7273">&#9670;&#160;</a></span>num_players <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketSessionState::num_players</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad64d5575b39ad5dc8f2462b8ead65941" name="gad64d5575b39ad5dc8f2462b8ead65941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad64d5575b39ad5dc8f2462b8ead65941">&#9670;&#160;</a></span>partite_giocate <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AdminUserSyncData::partite_giocate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabcb39d60ae8573ad6547aa17daf77872" name="gabcb39d60ae8573ad6547aa17daf77872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabcb39d60ae8573ad6547aa17daf77872">&#9670;&#160;</a></span>partite_giocate <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatsSyncPacket::partite_giocate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1b78f9830a1a67d47bc8825c8f73d801" name="ga1b78f9830a1a67d47bc8825c8f73d801"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b78f9830a1a67d47bc8825c8f73d801">&#9670;&#160;</a></span>password</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char AdminUserSyncData::password[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga02026535119c49cc438aaf35e09b14c4" name="ga02026535119c49cc438aaf35e09b14c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02026535119c49cc438aaf35e09b14c4">&#9670;&#160;</a></span>pin_recupero</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char AdminUserSyncData::pin_recupero[7]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5214bcde5a96baab2032d034c07a280d" name="ga5214bcde5a96baab2032d034c07a280d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5214bcde5a96baab2032d034c07a280d">&#9670;&#160;</a></span>[] <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketPlayAgain  { ... } ::play_again</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa00db0a05b0d2dcb217cd435b8c84ede" name="gaa00db0a05b0d2dcb217cd435b8c84ede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa00db0a05b0d2dcb217cd435b8c84ede">&#9670;&#160;</a></span>play_again <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_play_again.html">PacketPlayAgain</a> NetPacket::play_again</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga454d43cfb2e2f467f504863d363ca274" name="ga454d43cfb2e2f467f504863d363ca274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga454d43cfb2e2f467f504863d363ca274">&#9670;&#160;</a></span>play_again <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketPlayAgain::play_again</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga6f55f2df7e1f3157fe34cb757b1d7e56" name="ga6f55f2df7e1f3157fe34cb757b1d7e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f55f2df7e1f3157fe34cb757b1d7e56">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketPlayerHand  { ... } ::player_hand</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gafae35b798ce130ffa2a4db68d44ebb40" name="gafae35b798ce130ffa2a4db68d44ebb40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafae35b798ce130ffa2a4db68d44ebb40">&#9670;&#160;</a></span>player_hand <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_player_hand.html">PacketPlayerHand</a> NetPacket::player_hand</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga60f45f1c8c69bb485dedd5040b62b2b7" name="ga60f45f1c8c69bb485dedd5040b62b2b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga60f45f1c8c69bb485dedd5040b62b2b7">&#9670;&#160;</a></span>player_id <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketChat::player_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae9866ba217c36a39ba4073858855caa6" name="gae9866ba217c36a39ba4073858855caa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9866ba217c36a39ba4073858855caa6">&#9670;&#160;</a></span>player_id <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketColorChoice::player_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga7d75ebf8c21ea768951f8e26dbd16884" name="ga7d75ebf8c21ea768951f8e26dbd16884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7d75ebf8c21ea768951f8e26dbd16884">&#9670;&#160;</a></span>player_id <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketDraw::player_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0e2259a91f1626c4c9f20d490768de33" name="ga0e2259a91f1626c4c9f20d490768de33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e2259a91f1626c4c9f20d490768de33">&#9670;&#160;</a></span>player_id <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketHeartbeat::player_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga48dff0aed0d8c66bd700afea6aad9b38" name="ga48dff0aed0d8c66bd700afea6aad9b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48dff0aed0d8c66bd700afea6aad9b38">&#9670;&#160;</a></span>player_id <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketMove::player_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gafb6a63ee6a6c7a4499d44aaebaf475e2" name="gafb6a63ee6a6c7a4499d44aaebaf475e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafb6a63ee6a6c7a4499d44aaebaf475e2">&#9670;&#160;</a></span>player_id <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketPlayAgain::player_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaca097944b71b7a8406b93e4b3ed2db4f" name="gaca097944b71b7a8406b93e4b3ed2db4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca097944b71b7a8406b93e4b3ed2db4f">&#9670;&#160;</a></span>player_id <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketPlayerHand::player_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad64175c30986eb4c8a88b0c49817bdbc" name="gad64175c30986eb4c8a88b0c49817bdbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad64175c30986eb4c8a88b0c49817bdbc">&#9670;&#160;</a></span>player_id <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketPlayerReady::player_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae801f06b6cb8328022fb0756915d0b54" name="gae801f06b6cb8328022fb0756915d0b54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae801f06b6cb8328022fb0756915d0b54">&#9670;&#160;</a></span>player_id <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int player_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga6912d90f8d9510ad4cf57b0fcab88420" name="ga6912d90f8d9510ad4cf57b0fcab88420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6912d90f8d9510ad4cf57b0fcab88420">&#9670;&#160;</a></span>player_name <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketJoinSession::player_name[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad0e5cb99e6d44afb1297610a71ff0839" name="gad0e5cb99e6d44afb1297610a71ff0839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad0e5cb99e6d44afb1297610a71ff0839">&#9670;&#160;</a></span>player_name <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketPlayAgain::player_name[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0def821662805847be2754df1a8d20e8" name="ga0def821662805847be2754df1a8d20e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0def821662805847be2754df1a8d20e8">&#9670;&#160;</a></span>player_names</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketSessionState::player_names[4][30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8df08272219148fca0f5615923e84675" name="ga8df08272219148fca0f5615923e84675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8df08272219148fca0f5615923e84675">&#9670;&#160;</a></span>[] <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketPlayerReady  { ... } ::player_ready</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gacb05063e5d95dfe6ca677bc01d137d91" name="gacb05063e5d95dfe6ca677bc01d137d91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb05063e5d95dfe6ca677bc01d137d91">&#9670;&#160;</a></span>player_ready <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_player_ready.html">PacketPlayerReady</a> NetPacket::player_ready</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga6085b0d4fafdb89b59b149d6968b4b69" name="ga6085b0d4fafdb89b59b149d6968b4b69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6085b0d4fafdb89b59b149d6968b4b69">&#9670;&#160;</a></span>player_ready <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketSessionState::player_ready[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad5ea8e8bdf83a475ded43b43b7613670" name="gad5ea8e8bdf83a475ded43b43b7613670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad5ea8e8bdf83a475ded43b43b7613670">&#9670;&#160;</a></span>posizione_ultima</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatsSyncPacket::posizione_ultima</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5f514b76caf042b0eeb9755d7c8ebe03" name="ga5f514b76caf042b0eeb9755d7c8ebe03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f514b76caf042b0eeb9755d7c8ebe03">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char  { ... } ::raw[512]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga27a03e277b8bf17777c34d7d7c39a8ac" name="ga27a03e277b8bf17777c34d7d7c39a8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga27a03e277b8bf17777c34d7d7c39a8ac">&#9670;&#160;</a></span>raw <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char NetPacket::raw[512]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac04d7d998bff797c954bba3776ba0c55" name="gac04d7d998bff797c954bba3776ba0c55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac04d7d998bff797c954bba3776ba0c55">&#9670;&#160;</a></span>reject_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char reject_message[100]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga171e8b116595940c618270d21fe9787b" name="ga171e8b116595940c618270d21fe9787b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga171e8b116595940c618270d21fe9787b">&#9670;&#160;</a></span>sender_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NetPacket::sender_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga528efbe1f2a92c5853dccc8ed2c67e93" name="ga528efbe1f2a92c5853dccc8ed2c67e93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga528efbe1f2a92c5853dccc8ed2c67e93">&#9670;&#160;</a></span>session_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketSessionList::session_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0b43b7c02501c9cd6bfefeae2f0d5ad6" name="ga0b43b7c02501c9cd6bfefeae2f0d5ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0b43b7c02501c9cd6bfefeae2f0d5ad6">&#9670;&#160;</a></span>session_id <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketCreateSession::session_id[16]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga98298829b528d7a7a0e6bafb5d39c46e" name="ga98298829b528d7a7a0e6bafb5d39c46e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga98298829b528d7a7a0e6bafb5d39c46e">&#9670;&#160;</a></span>session_id <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketJoinSession::session_id[16]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8874b2989efd13fdfbe481350cc963db" name="ga8874b2989efd13fdfbe481350cc963db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8874b2989efd13fdfbe481350cc963db">&#9670;&#160;</a></span>session_id <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketSessionState::session_id[16]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3ceeb52643564997e64ac776a8f0fc9a" name="ga3ceeb52643564997e64ac776a8f0fc9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ceeb52643564997e64ac776a8f0fc9a">&#9670;&#160;</a></span>session_id <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char session_id[16]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga64f59a011eada605cdf9be9bfd6b12f6" name="ga64f59a011eada605cdf9be9bfd6b12f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64f59a011eada605cdf9be9bfd6b12f6">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketSessionList  { ... } ::session_list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf2b36da7b084e54a381de21e667ecf01" name="gaf2b36da7b084e54a381de21e667ecf01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf2b36da7b084e54a381de21e667ecf01">&#9670;&#160;</a></span>session_list <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_session_list.html">PacketSessionList</a> NetPacket::session_list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga6f23b5915de11f5d58e4ebcbe9c92772" name="ga6f23b5915de11f5d58e4ebcbe9c92772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f23b5915de11f5d58e4ebcbe9c92772">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PacketSessionState  { ... } ::session_state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga4640495cc1b36655b7a0a8850d422384" name="ga4640495cc1b36655b7a0a8850d422384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4640495cc1b36655b7a0a8850d422384">&#9670;&#160;</a></span>session_state <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_packet_session_state.html">PacketSessionState</a> NetPacket::session_state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaf70a7913010e764d81f58e2ca1b96ff1" name="gaf70a7913010e764d81f58e2ca1b96ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf70a7913010e764d81f58e2ca1b96ff1">&#9670;&#160;</a></span>sessions</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketSessionList::sessions[10][16]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga20f3500f9a6688a3d4c16b56f76ac007" name="ga20f3500f9a6688a3d4c16b56f76ac007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga20f3500f9a6688a3d4c16b56f76ac007">&#9670;&#160;</a></span>stato_gioco</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> PacketGameState::stato_gioco</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga20b8068a242a74f11ed928e9afd6423b" name="ga20b8068a242a74f11ed928e9afd6423b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga20b8068a242a74f11ed928e9afd6423b">&#9670;&#160;</a></span>[] <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">StatsSyncPacket  { ... } ::stats_sync</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga85e03ec5f7b0d5f8c9304564241a29ee" name="ga85e03ec5f7b0d5f8c9304564241a29ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85e03ec5f7b0d5f8c9304564241a29ee">&#9670;&#160;</a></span>stats_sync <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_stats_sync_packet.html">StatsSyncPacket</a> NetPacket::stats_sync</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0072a9f95163dfc459a5f0343416eec4" name="ga0072a9f95163dfc459a5f0343416eec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0072a9f95163dfc459a5f0343416eec4">&#9670;&#160;</a></span>storico_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatsSyncPacket::storico_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga0534e53e5caf2dd07dcf142cd6faa332" name="ga0534e53e5caf2dd07dcf142cd6faa332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0534e53e5caf2dd07dcf142cd6faa332">&#9670;&#160;</a></span>storico_partite</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_partita_registrata.html">PartitaRegistrata</a> StatsSyncPacket::storico_partite[<a class="el" href="lan__protocol_8h.html#a9805d8d568aa10ad776d8b121a8367e4">STORICO_SYNC_COUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaba3e8369946d0bcbe4912985202712dd" name="gaba3e8369946d0bcbe4912985202712dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaba3e8369946d0bcbe4912985202712dd">&#9670;&#160;</a></span>target_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AdminUserAction::target_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3a36376352934fafde900b15b51bf29d" name="ga3a36376352934fafde900b15b51bf29d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3a36376352934fafde900b15b51bf29d">&#9670;&#160;</a></span>timestamp <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PacketHeartbeat::timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga9f34dff657b264545e7f38767a4e2f9b" name="ga9f34dff657b264545e7f38767a4e2f9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f34dff657b264545e7f38767a4e2f9b">&#9670;&#160;</a></span>timestamp <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float PacketPlayAgain::timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac6a474ddf16d9f20937f0edf4b45ba06" name="gac6a474ddf16d9f20937f0edf4b45ba06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac6a474ddf16d9f20937f0edf4b45ba06">&#9670;&#160;</a></span>total_users</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AdminDBSyncPacket::total_users</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3bf9ba4b94cb8068a261bd07e01b0fc0" name="ga3bf9ba4b94cb8068a261bd07e01b0fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3bf9ba4b94cb8068a261bd07e01b0fc0">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__network__packet.html#ga0a80a7bc045affcf10846075b88cbca0">PacketType</a> NetPacket::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa990cfef6a092ea75e646d4666758175" name="gaa990cfef6a092ea75e646d4666758175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa990cfef6a092ea75e646d4666758175">&#9670;&#160;</a></span>user <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_admin_user_sync_data.html">AdminUserSyncData</a> AdminDBSyncPacket::user</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa6cfd2ff64ab1d9d1a36d96e5438a4c7" name="gaa6cfd2ff64ab1d9d1a36d96e5438a4c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6cfd2ff64ab1d9d1a36d96e5438a4c7">&#9670;&#160;</a></span>user <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_admin_user_sync_data.html">AdminUserSyncData</a> AdminUserAction::user</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga3f8f3d3fd45f75d501e186908fc26ad1" name="ga3f8f3d3fd45f75d501e186908fc26ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f8f3d3fd45f75d501e186908fc26ad1">&#9670;&#160;</a></span>user_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AdminDBSyncPacket::user_index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gadfa347ab441903e6a5d51933d5ef0069" name="gadfa347ab441903e6a5d51933d5ef0069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadfa347ab441903e6a5d51933d5ef0069">&#9670;&#160;</a></span>username <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char AdminUserSyncData::username[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gadabe23799491f084a28d537187fedbdf" name="gadabe23799491f084a28d537187fedbdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadabe23799491f084a28d537187fedbdf">&#9670;&#160;</a></span>username <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char StatsSyncPacket::username[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga4eee1d90a8f2a55a4966d22f532c7b5e" name="ga4eee1d90a8f2a55a4966d22f532c7b5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4eee1d90a8f2a55a4966d22f532c7b5e">&#9670;&#160;</a></span>vittorie_bot <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AdminUserSyncData::vittorie_bot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga60b4c234ff6dd8561d9f264fb37b68cf" name="ga60b4c234ff6dd8561d9f264fb37b68cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga60b4c234ff6dd8561d9f264fb37b68cf">&#9670;&#160;</a></span>vittorie_bot <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatsSyncPacket::vittorie_bot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga4541673e51582113e53ab1d31d626c35" name="ga4541673e51582113e53ab1d31d626c35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4541673e51582113e53ab1d31d626c35">&#9670;&#160;</a></span>vittorie_giocatore <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AdminUserSyncData::vittorie_giocatore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad656264fcdf2079c7252dfc7a497dce4" name="gad656264fcdf2079c7252dfc7a497dce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad656264fcdf2079c7252dfc7a497dce4">&#9670;&#160;</a></span>vittorie_giocatore <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatsSyncPacket::vittorie_giocatore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8da9cba434f640515d782706341ebc04" name="ga8da9cba434f640515d782706341ebc04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8da9cba434f640515d782706341ebc04">&#9670;&#160;</a></span>want_play_again</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketPlayerReady::want_play_again</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1ff4264371887f1373f376828d6a7c3f" name="ga1ff4264371887f1373f376828d6a7c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ff4264371887f1373f376828d6a7c3f">&#9670;&#160;</a></span>winner_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char PacketGameFinished::winner_name[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga2802060d7734564283278ffb5148e4a0" name="ga2802060d7734564283278ffb5148e4a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2802060d7734564283278ffb5148e4a0">&#9670;&#160;</a></span>winning_player_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int PacketGameFinished::winning_player_id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

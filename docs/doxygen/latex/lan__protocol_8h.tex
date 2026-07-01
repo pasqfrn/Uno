@@ -1,0 +1,177 @@
+\doxysection{lib/socket/lan/lan\+\_\+protocol.h File Reference}
+\hypertarget{lan__protocol_8h}{}\label{lan__protocol_8h}\index{lib/socket/lan/lan\_protocol.h@{lib/socket/lan/lan\_protocol.h}}
+
+
+Protocollo UDP per sincronizzazione LAN.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}../../data\+\_\+structures.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_lan_compact_user}{Lan\+Compact\+User}}
+\item 
+struct \mbox{\hyperlink{struct_lan_stats_sync_packet}{Lan\+Stats\+Sync\+Packet}}
+\item 
+struct \mbox{\hyperlink{struct_lan_packet_header}{Lan\+Packet\+Header}}
+\begin{DoxyCompactList}\small\item\em Header comune a tutti i pacchetti database LAN. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_lan_delete_save_packet}{Lan\+Delete\+Save\+Packet}}
+\begin{DoxyCompactList}\small\item\em Pacchetto per segnalazione eliminazione salvataggio. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_save_receiver}{Save\+Receiver}}
+\begin{DoxyCompactList}\small\item\em Struttura per ricezione chunk di salvataggio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lan__protocol_8h_af209f894092f0198fedf3793b1b08e78}{LAN\+\_\+\+PACKET\+\_\+\+DB}}~0x4\+C414\+E01
+\begin{DoxyCompactList}\small\item\em Magic number per pacchetti database utenti. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lan__protocol_8h_afea9f0c9285ce89f0ee243ad34ce4880}{LAN\+\_\+\+PACKET\+\_\+\+SAVE}}~0x4\+C414\+E02
+\begin{DoxyCompactList}\small\item\em Magic number per pacchetti di salvataggio partita. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lan__protocol_8h_adfd1cd8824de1aadfbf6ab88dd5e6403}{LAN\+\_\+\+PACKET\+\_\+\+DEL\+\_\+\+SAVE}}~0x4\+C414\+E03
+\begin{DoxyCompactList}\small\item\em Magic number per segnalazione eliminazione salvataggio. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lan__protocol_8h_a7ad00aea5b79d92f29677091873e0ac6}{LAN\+\_\+\+PACKET\+\_\+\+DEL\+\_\+\+USER}}~0x4\+C414\+E04
+\begin{DoxyCompactList}\small\item\em Magic number per segnalazione eliminazione utente da admin. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lan__protocol_8h_ab2be085f840e4ca5ca4f0734c1116c5d}{LAN\+\_\+\+PACKET\+\_\+\+STATS\+\_\+\+SYNC}}~0x4\+C414\+E05
+\begin{DoxyCompactList}\small\item\em Magic number per sincronizzazione completa statistiche (incluso storico partite). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lan__protocol_8h_af67105a8fc2f258530cc7d7e66768701}{SAVE\+\_\+\+CHUNK\+\_\+\+SIZE}}~1024
+\begin{DoxyCompactList}\small\item\em Dimensione di ogni chunk di salvataggio in byte. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lan__protocol_8h_ae2c377a9138eb6905d9e09edf7c70f95}{MAX\+\_\+\+RECV}}~10
+\begin{DoxyCompactList}\small\item\em Numero massimo di ricevitori contemporanei. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lan__protocol_8h_a9805d8d568aa10ad776d8b121a8367e4}{STORICO\+\_\+\+SYNC\+\_\+\+COUNT}}~10
+\begin{DoxyCompactList}\small\item\em Numero di partite storiche trasmesse via sync LAN (ultime N per compattezza). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{lan__protocol_8h_ab898071398b359603a35c202e9c65f3b}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((packed))
+\begin{DoxyCompactList}\small\item\em Pacchetto per invio salvataggio in chunk multipli. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lan__protocol_8h_a5f5183faad8f417a84fda8b24a245a5e}{Lan\+Save\+Chunk\+Packet}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Protocollo UDP per sincronizzazione LAN. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{lan__protocol_8h_af209f894092f0198fedf3793b1b08e78}\index{lan\_protocol.h@{lan\_protocol.h}!LAN\_PACKET\_DB@{LAN\_PACKET\_DB}}
+\index{LAN\_PACKET\_DB@{LAN\_PACKET\_DB}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_PACKET\_DB}{LAN\_PACKET\_DB}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_af209f894092f0198fedf3793b1b08e78} 
+\#define LAN\+\_\+\+PACKET\+\_\+\+DB~0x4\+C414\+E01}
+
+
+
+Magic number per pacchetti database utenti. 
+
+\Hypertarget{lan__protocol_8h_adfd1cd8824de1aadfbf6ab88dd5e6403}\index{lan\_protocol.h@{lan\_protocol.h}!LAN\_PACKET\_DEL\_SAVE@{LAN\_PACKET\_DEL\_SAVE}}
+\index{LAN\_PACKET\_DEL\_SAVE@{LAN\_PACKET\_DEL\_SAVE}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_PACKET\_DEL\_SAVE}{LAN\_PACKET\_DEL\_SAVE}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_adfd1cd8824de1aadfbf6ab88dd5e6403} 
+\#define LAN\+\_\+\+PACKET\+\_\+\+DEL\+\_\+\+SAVE~0x4\+C414\+E03}
+
+
+
+Magic number per segnalazione eliminazione salvataggio. 
+
+\Hypertarget{lan__protocol_8h_a7ad00aea5b79d92f29677091873e0ac6}\index{lan\_protocol.h@{lan\_protocol.h}!LAN\_PACKET\_DEL\_USER@{LAN\_PACKET\_DEL\_USER}}
+\index{LAN\_PACKET\_DEL\_USER@{LAN\_PACKET\_DEL\_USER}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_PACKET\_DEL\_USER}{LAN\_PACKET\_DEL\_USER}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_a7ad00aea5b79d92f29677091873e0ac6} 
+\#define LAN\+\_\+\+PACKET\+\_\+\+DEL\+\_\+\+USER~0x4\+C414\+E04}
+
+
+
+Magic number per segnalazione eliminazione utente da admin. 
+
+\Hypertarget{lan__protocol_8h_afea9f0c9285ce89f0ee243ad34ce4880}\index{lan\_protocol.h@{lan\_protocol.h}!LAN\_PACKET\_SAVE@{LAN\_PACKET\_SAVE}}
+\index{LAN\_PACKET\_SAVE@{LAN\_PACKET\_SAVE}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_PACKET\_SAVE}{LAN\_PACKET\_SAVE}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_afea9f0c9285ce89f0ee243ad34ce4880} 
+\#define LAN\+\_\+\+PACKET\+\_\+\+SAVE~0x4\+C414\+E02}
+
+
+
+Magic number per pacchetti di salvataggio partita. 
+
+\Hypertarget{lan__protocol_8h_ab2be085f840e4ca5ca4f0734c1116c5d}\index{lan\_protocol.h@{lan\_protocol.h}!LAN\_PACKET\_STATS\_SYNC@{LAN\_PACKET\_STATS\_SYNC}}
+\index{LAN\_PACKET\_STATS\_SYNC@{LAN\_PACKET\_STATS\_SYNC}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_PACKET\_STATS\_SYNC}{LAN\_PACKET\_STATS\_SYNC}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_ab2be085f840e4ca5ca4f0734c1116c5d} 
+\#define LAN\+\_\+\+PACKET\+\_\+\+STATS\+\_\+\+SYNC~0x4\+C414\+E05}
+
+
+
+Magic number per sincronizzazione completa statistiche (incluso storico partite). 
+
+\Hypertarget{lan__protocol_8h_ae2c377a9138eb6905d9e09edf7c70f95}\index{lan\_protocol.h@{lan\_protocol.h}!MAX\_RECV@{MAX\_RECV}}
+\index{MAX\_RECV@{MAX\_RECV}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_RECV}{MAX\_RECV}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_ae2c377a9138eb6905d9e09edf7c70f95} 
+\#define MAX\+\_\+\+RECV~10}
+
+
+
+Numero massimo di ricevitori contemporanei. 
+
+\Hypertarget{lan__protocol_8h_af67105a8fc2f258530cc7d7e66768701}\index{lan\_protocol.h@{lan\_protocol.h}!SAVE\_CHUNK\_SIZE@{SAVE\_CHUNK\_SIZE}}
+\index{SAVE\_CHUNK\_SIZE@{SAVE\_CHUNK\_SIZE}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{SAVE\_CHUNK\_SIZE}{SAVE\_CHUNK\_SIZE}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_af67105a8fc2f258530cc7d7e66768701} 
+\#define SAVE\+\_\+\+CHUNK\+\_\+\+SIZE~1024}
+
+
+
+Dimensione di ogni chunk di salvataggio in byte. 
+
+\Hypertarget{lan__protocol_8h_a9805d8d568aa10ad776d8b121a8367e4}\index{lan\_protocol.h@{lan\_protocol.h}!STORICO\_SYNC\_COUNT@{STORICO\_SYNC\_COUNT}}
+\index{STORICO\_SYNC\_COUNT@{STORICO\_SYNC\_COUNT}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{STORICO\_SYNC\_COUNT}{STORICO\_SYNC\_COUNT}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_a9805d8d568aa10ad776d8b121a8367e4} 
+\#define STORICO\+\_\+\+SYNC\+\_\+\+COUNT~10}
+
+
+
+Numero di partite storiche trasmesse via sync LAN (ultime N per compattezza). 
+
+Definito PRIMA di \doxylink{struct_lan_compact_user}{Lan\+Compact\+User} perche\textquotesingle{} usato nel campo storico\+\_\+partite\mbox{[}\mbox{]}. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lan__protocol_8h_ab898071398b359603a35c202e9c65f3b}\index{lan\_protocol.h@{lan\_protocol.h}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_ab898071398b359603a35c202e9c65f3b} 
+struct \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{}{}\end{DoxyParamCaption})}
+
+
+
+Pacchetto per invio salvataggio in chunk multipli. 
+
+Magic number.
+
+Username del proprietario.
+
+Data del salvataggio.
+
+Slot di salvataggio.
+
+Numero di giocatori nella partita.
+
+Numero totale di chunk.
+
+Indice di questo chunk.
+
+Dimensione totale del file.
+
+Dati del chunk (SAVE\+\_\+\+CHUNK\+\_\+\+SIZE byte).
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{lan__protocol_8h_a5f5183faad8f417a84fda8b24a245a5e}\index{lan\_protocol.h@{lan\_protocol.h}!LanSaveChunkPacket@{LanSaveChunkPacket}}
+\index{LanSaveChunkPacket@{LanSaveChunkPacket}!lan\_protocol.h@{lan\_protocol.h}}
+\doxysubsubsection{\texorpdfstring{LanSaveChunkPacket}{LanSaveChunkPacket}}
+{\footnotesize\ttfamily \label{lan__protocol_8h_a5f5183faad8f417a84fda8b24a245a5e} 
+Lan\+Save\+Chunk\+Packet}
+

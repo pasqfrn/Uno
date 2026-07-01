@@ -1,0 +1,153 @@
+\doxysection{src/screens/game/gameplay\+\_\+screen.c File Reference}
+\hypertarget{gameplay__screen_8c}{}\label{gameplay__screen_8c}\index{src/screens/game/gameplay\_screen.c@{src/screens/game/gameplay\_screen.c}}
+
+
+Definizioni variabili di stato condivise del gameplay.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/game/gameplay\+\_\+shared.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/game/gameplay\+\_\+update.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/game/gameplay\+\_\+draw.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/menu/string\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/ui.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network\+\_\+send.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gameplay__screen_8c_accf70613e15dd3bcc231017b8f814c80}{LARGHEZZA}}~1280
+\item 
+\#define \mbox{\hyperlink{gameplay__screen_8c_a737f1e0014465787871b62d0e61129d8}{ALTEZZA}}~720
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{gameplay__screen_8c_a18a9f5f86df9a58978f182d8fd52df03}{bot\+Timer}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Timer per il ritardo delle mosse dei bot (in secondi). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_vector2}{Vector2}} \mbox{\hyperlink{gameplay__screen_8c_ad8b3a8467b3594717ccba6dd579808a7}{offset\+Mouse}} = \{0\}
+\begin{DoxyCompactList}\small\item\em Offset del mouse per il trascinamento delle carte (differenza tra posizione mouse e angolo superiore sinistro della carta). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_rectangle}{Rectangle}} \mbox{\hyperlink{gameplay__screen_8c_a95d4008478c2502c125a4aebe7ce23d8}{area\+Tavolo\+Centro}} = \{ \mbox{\hyperlink{admin__draw_8c_accf70613e15dd3bcc231017b8f814c80}{LARGHEZZA}}/2.\+0f -\/ 110, \mbox{\hyperlink{admin__draw_8c_a737f1e0014465787871b62d0e61129d8}{ALTEZZA}}/2.\+0f -\/ 110, 220, 220 \}
+\begin{DoxyCompactList}\small\item\em Area del tavolo centrale per il drop delle carte (centro schermo). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gameplay__screen_8c_a93efbaccb6b2b71185696da5e7d319a4}{pending\+\_\+move\+\_\+index}} = -\/1
+\begin{DoxyCompactList}\small\item\em Indice della mossa in sospeso (per scelta colore dopo jolly). \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{gameplay__screen_8c_a20d7f38f3172dfe2ed4c5819e84c78ed}{input\+Chat}} \mbox{[}128\mbox{]} = "{}\textbackslash{}0"{}
+\begin{DoxyCompactList}\small\item\em Buffer per il messaggio chat in digitazione. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gameplay__screen_8c_a5c0b78531197553de40e19f2afd95ff4}{is\+Typing}} = 0
+\begin{DoxyCompactList}\small\item\em Flag\+: 1 se l\textquotesingle{}utente sta digitando nella chat. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gameplay__screen_8c_a0841fa17b3362cfad64d784cf9a0b5e3}{popup\+\_\+uscita\+\_\+attivo}} = 0
+\begin{DoxyCompactList}\small\item\em Flag\+: 1 se il popup di conferma uscita e\textquotesingle{} visibile durante il gioco. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gameplay__screen_8c_a108288d745ff0ba8f835f169d0e9b1c7}{esc\+\_\+consumato}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definizioni variabili di stato condivise del gameplay. 
+
+Contiene le definizioni (non le dichiarazioni) delle variabili globali usate da \doxylink{gameplay__update_8c}{gameplay\+\_\+update.\+c} e \doxylink{gameplay__draw_8c}{gameplay\+\_\+draw.\+c}.
+
+Fattorizzato da \doxylink{gameplay__screen_8c}{gameplay\+\_\+screen.\+c} (659 righe) in\+:
+\begin{DoxyItemize}
+\item \doxylink{gameplay__shared_8h}{gameplay\+\_\+shared.\+h} \+: dichiarazioni extern
+\item \doxylink{gameplay__update_8c}{gameplay\+\_\+update.\+c} \+: logica aggiornamento
+\item \doxylink{gameplay__draw_8c}{gameplay\+\_\+draw.\+c} \+: rendering
+\item \doxylink{gameplay__screen_8c}{gameplay\+\_\+screen.\+c} \+: questo file (definizioni variabili) 
+\end{DoxyItemize}
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gameplay__screen_8c_a737f1e0014465787871b62d0e61129d8}\index{gameplay\_screen.c@{gameplay\_screen.c}!ALTEZZA@{ALTEZZA}}
+\index{ALTEZZA@{ALTEZZA}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{ALTEZZA}{ALTEZZA}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_a737f1e0014465787871b62d0e61129d8} 
+\#define ALTEZZA~720}
+
+\Hypertarget{gameplay__screen_8c_accf70613e15dd3bcc231017b8f814c80}\index{gameplay\_screen.c@{gameplay\_screen.c}!LARGHEZZA@{LARGHEZZA}}
+\index{LARGHEZZA@{LARGHEZZA}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{LARGHEZZA}{LARGHEZZA}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_accf70613e15dd3bcc231017b8f814c80} 
+\#define LARGHEZZA~1280}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{gameplay__screen_8c_a95d4008478c2502c125a4aebe7ce23d8}\index{gameplay\_screen.c@{gameplay\_screen.c}!areaTavoloCentro@{areaTavoloCentro}}
+\index{areaTavoloCentro@{areaTavoloCentro}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{areaTavoloCentro}{areaTavoloCentro}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_a95d4008478c2502c125a4aebe7ce23d8} 
+\mbox{\hyperlink{struct_rectangle}{Rectangle}} area\+Tavolo\+Centro = \{ \mbox{\hyperlink{admin__draw_8c_accf70613e15dd3bcc231017b8f814c80}{LARGHEZZA}}/2.\+0f -\/ 110, \mbox{\hyperlink{admin__draw_8c_a737f1e0014465787871b62d0e61129d8}{ALTEZZA}}/2.\+0f -\/ 110, 220, 220 \}}
+
+
+
+Area del tavolo centrale per il drop delle carte (centro schermo). 
+
+\Hypertarget{gameplay__screen_8c_a18a9f5f86df9a58978f182d8fd52df03}\index{gameplay\_screen.c@{gameplay\_screen.c}!botTimer@{botTimer}}
+\index{botTimer@{botTimer}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{botTimer}{botTimer}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_a18a9f5f86df9a58978f182d8fd52df03} 
+float bot\+Timer = 0.\+0f}
+
+
+
+Timer per il ritardo delle mosse dei bot (in secondi). 
+
+\Hypertarget{gameplay__screen_8c_a108288d745ff0ba8f835f169d0e9b1c7}\index{gameplay\_screen.c@{gameplay\_screen.c}!esc\_consumato@{esc\_consumato}}
+\index{esc\_consumato@{esc\_consumato}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{esc\_consumato}{esc\_consumato}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_a108288d745ff0ba8f835f169d0e9b1c7} 
+int esc\+\_\+consumato\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{gameplay__screen_8c_a20d7f38f3172dfe2ed4c5819e84c78ed}\index{gameplay\_screen.c@{gameplay\_screen.c}!inputChat@{inputChat}}
+\index{inputChat@{inputChat}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{inputChat}{inputChat}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_a20d7f38f3172dfe2ed4c5819e84c78ed} 
+char input\+Chat\mbox{[}128\mbox{]} = "{}\textbackslash{}0"{}}
+
+
+
+Buffer per il messaggio chat in digitazione. 
+
+Buffer per input chat. \Hypertarget{gameplay__screen_8c_a5c0b78531197553de40e19f2afd95ff4}\index{gameplay\_screen.c@{gameplay\_screen.c}!isTyping@{isTyping}}
+\index{isTyping@{isTyping}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{isTyping}{isTyping}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_a5c0b78531197553de40e19f2afd95ff4} 
+int is\+Typing = 0}
+
+
+
+Flag\+: 1 se l\textquotesingle{}utente sta digitando nella chat. 
+
+Flag stato digitazione (1 se l\textquotesingle{}utente sta scrivendo). \Hypertarget{gameplay__screen_8c_ad8b3a8467b3594717ccba6dd579808a7}\index{gameplay\_screen.c@{gameplay\_screen.c}!offsetMouse@{offsetMouse}}
+\index{offsetMouse@{offsetMouse}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{offsetMouse}{offsetMouse}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_ad8b3a8467b3594717ccba6dd579808a7} 
+\mbox{\hyperlink{struct_vector2}{Vector2}} offset\+Mouse = \{0\}}
+
+
+
+Offset del mouse per il trascinamento delle carte (differenza tra posizione mouse e angolo superiore sinistro della carta). 
+
+\Hypertarget{gameplay__screen_8c_a93efbaccb6b2b71185696da5e7d319a4}\index{gameplay\_screen.c@{gameplay\_screen.c}!pending\_move\_index@{pending\_move\_index}}
+\index{pending\_move\_index@{pending\_move\_index}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{pending\_move\_index}{pending\_move\_index}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_a93efbaccb6b2b71185696da5e7d319a4} 
+int pending\+\_\+move\+\_\+index = -\/1}
+
+
+
+Indice della mossa in sospeso (per scelta colore dopo jolly). 
+
+-\/1 = nessuna mossa in sospeso, altrimenti indice della carta. \Hypertarget{gameplay__screen_8c_a0841fa17b3362cfad64d784cf9a0b5e3}\index{gameplay\_screen.c@{gameplay\_screen.c}!popup\_uscita\_attivo@{popup\_uscita\_attivo}}
+\index{popup\_uscita\_attivo@{popup\_uscita\_attivo}!gameplay\_screen.c@{gameplay\_screen.c}}
+\doxysubsubsection{\texorpdfstring{popup\_uscita\_attivo}{popup\_uscita\_attivo}}
+{\footnotesize\ttfamily \label{gameplay__screen_8c_a0841fa17b3362cfad64d784cf9a0b5e3} 
+int popup\+\_\+uscita\+\_\+attivo = 0}
+
+
+
+Flag\+: 1 se il popup di conferma uscita e\textquotesingle{} visibile durante il gioco. 
+

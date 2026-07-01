@@ -1,0 +1,192 @@
+\doxysection{Implementazioni Auth}
+\hypertarget{group__auth__impl}{}\label{group__auth__impl}\index{Implementazioni Auth@{Implementazioni Auth}}
+
+
+Implementazioni delle funzionalità di autenticazione e database.  
+
+
+\doxysubsubsection*{Topics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__lazy__deletion__impl}{Lazy Deletion Implementazione}}
+\begin{DoxyCompactList}\small\item\em Strutture e funzioni per eliminazione differita utenti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_database_utenti}{Database\+Utenti}} \mbox{\hyperlink{group__auth__impl_gabbde975af8fe0d5e3c20e0fd862186b6}{db\+Utenti}} = \{0\}
+\begin{DoxyCompactList}\small\item\em Database utenti globale in memoria (allocazione dinamica). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__auth__impl_ga9ecbbe659dbada66e149c73cefb83815}{id\+\_\+utente\+\_\+corrente}} = -\/1
+\begin{DoxyCompactList}\small\item\em Indice dell\textquotesingle{}utente correntemente loggato (-\/1 se nessuno). \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{group__auth__impl_ga80d354a96271494c85654ea411ddac01}{input\+Email}} \mbox{[}100\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga3876b1cc4b483062056d9cf261ec4654}{email\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_ga2b0e8ee2101796cab35e2f6d2f932993}{input\+Nome}} \mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga8576d027f30608a7448b5e4a6887f2e2}{nome\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_gabdb70a410ac6fd790650381b7fb858b1}{input\+Cognome}} \mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga880fe550552161100d934bf21de27f90}{cognome\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_ga726a429817c84dacd48cce82b3c91003}{input\+Username}} \mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_gabd5ade42baf19a2a2ffa715960842dfd}{username\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_ga716f9307558976d3a4c67840b2ceb8ac}{input\+Password}} \mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga415b2b418d3a90a6e1da72992e7577aa}{pass\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_gafb61cbc7b14899011261458eb60e240a}{input\+Pin}} \mbox{[}7\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga5058e2763f324b4146cfa8af36168478}{pin\+Count}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga5e67fb6826c236d3ff5d0ec98cd9c582}{id\+\_\+temp\+\_\+login}} = -\/1
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga1e9668bc833c732fa8a038ec007c4ee9}{errore\+\_\+password}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_gae7b050dfa0f4d9bfdfb41c1746d8e055}{errore\+\_\+registrazione\+\_\+pass}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_gab2b3b778484eb9c5f529be0c2f9c10d3}{errore\+\_\+registrazione\+\_\+email}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_gab25b9978d929d16da0918ad72bed9812}{errore\+\_\+registrazione\+\_\+username}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga2cf3aff3d88a04ea9b72ef90df54142c}{campo\+\_\+focusato}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementazioni delle funzionalità di autenticazione e database. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{group__auth__impl_ga2cf3aff3d88a04ea9b72ef90df54142c}\index{Implementazioni Auth@{Implementazioni Auth}!campo\_focusato@{campo\_focusato}}
+\index{campo\_focusato@{campo\_focusato}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{campo\_focusato}{campo\_focusato}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga2cf3aff3d88a04ea9b72ef90df54142c} 
+int campo\+\_\+focusato = 0}
+
+\Hypertarget{group__auth__impl_ga880fe550552161100d934bf21de27f90}\index{Implementazioni Auth@{Implementazioni Auth}!cognomeCount@{cognomeCount}}
+\index{cognomeCount@{cognomeCount}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{cognomeCount}{cognomeCount}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga880fe550552161100d934bf21de27f90} 
+int cognome\+Count = 0}
+
+\Hypertarget{group__auth__impl_gabbde975af8fe0d5e3c20e0fd862186b6}\index{Implementazioni Auth@{Implementazioni Auth}!dbUtenti@{dbUtenti}}
+\index{dbUtenti@{dbUtenti}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{dbUtenti}{dbUtenti}}
+{\footnotesize\ttfamily \label{group__auth__impl_gabbde975af8fe0d5e3c20e0fd862186b6} 
+\mbox{\hyperlink{struct_database_utenti}{Database\+Utenti}} db\+Utenti = \{0\}}
+
+
+
+Database utenti globale in memoria (allocazione dinamica). 
+
+\Hypertarget{group__auth__impl_ga3876b1cc4b483062056d9cf261ec4654}\index{Implementazioni Auth@{Implementazioni Auth}!emailCount@{emailCount}}
+\index{emailCount@{emailCount}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{emailCount}{emailCount}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga3876b1cc4b483062056d9cf261ec4654} 
+int email\+Count = 0}
+
+\Hypertarget{group__auth__impl_ga1e9668bc833c732fa8a038ec007c4ee9}\index{Implementazioni Auth@{Implementazioni Auth}!errore\_password@{errore\_password}}
+\index{errore\_password@{errore\_password}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{errore\_password}{errore\_password}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga1e9668bc833c732fa8a038ec007c4ee9} 
+int errore\+\_\+password = 0}
+
+\Hypertarget{group__auth__impl_gab2b3b778484eb9c5f529be0c2f9c10d3}\index{Implementazioni Auth@{Implementazioni Auth}!errore\_registrazione\_email@{errore\_registrazione\_email}}
+\index{errore\_registrazione\_email@{errore\_registrazione\_email}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{errore\_registrazione\_email}{errore\_registrazione\_email}}
+{\footnotesize\ttfamily \label{group__auth__impl_gab2b3b778484eb9c5f529be0c2f9c10d3} 
+int errore\+\_\+registrazione\+\_\+email = 0}
+
+\Hypertarget{group__auth__impl_gae7b050dfa0f4d9bfdfb41c1746d8e055}\index{Implementazioni Auth@{Implementazioni Auth}!errore\_registrazione\_pass@{errore\_registrazione\_pass}}
+\index{errore\_registrazione\_pass@{errore\_registrazione\_pass}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{errore\_registrazione\_pass}{errore\_registrazione\_pass}}
+{\footnotesize\ttfamily \label{group__auth__impl_gae7b050dfa0f4d9bfdfb41c1746d8e055} 
+int errore\+\_\+registrazione\+\_\+pass = 0}
+
+\Hypertarget{group__auth__impl_gab25b9978d929d16da0918ad72bed9812}\index{Implementazioni Auth@{Implementazioni Auth}!errore\_registrazione\_username@{errore\_registrazione\_username}}
+\index{errore\_registrazione\_username@{errore\_registrazione\_username}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{errore\_registrazione\_username}{errore\_registrazione\_username}}
+{\footnotesize\ttfamily \label{group__auth__impl_gab25b9978d929d16da0918ad72bed9812} 
+int errore\+\_\+registrazione\+\_\+username = 0}
+
+\Hypertarget{group__auth__impl_ga5e67fb6826c236d3ff5d0ec98cd9c582}\index{Implementazioni Auth@{Implementazioni Auth}!id\_temp\_login@{id\_temp\_login}}
+\index{id\_temp\_login@{id\_temp\_login}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{id\_temp\_login}{id\_temp\_login}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga5e67fb6826c236d3ff5d0ec98cd9c582} 
+int id\+\_\+temp\+\_\+login = -\/1}
+
+\Hypertarget{group__auth__impl_ga9ecbbe659dbada66e149c73cefb83815}\index{Implementazioni Auth@{Implementazioni Auth}!id\_utente\_corrente@{id\_utente\_corrente}}
+\index{id\_utente\_corrente@{id\_utente\_corrente}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{id\_utente\_corrente}{id\_utente\_corrente}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga9ecbbe659dbada66e149c73cefb83815} 
+int id\+\_\+utente\+\_\+corrente = -\/1}
+
+
+
+Indice dell\textquotesingle{}utente correntemente loggato (-\/1 se nessuno). 
+
+\Hypertarget{group__auth__impl_gabdb70a410ac6fd790650381b7fb858b1}\index{Implementazioni Auth@{Implementazioni Auth}!inputCognome@{inputCognome}}
+\index{inputCognome@{inputCognome}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{inputCognome}{inputCognome}}
+{\footnotesize\ttfamily \label{group__auth__impl_gabdb70a410ac6fd790650381b7fb858b1} 
+char input\+Cognome\mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}}
+
+\Hypertarget{group__auth__impl_ga80d354a96271494c85654ea411ddac01}\index{Implementazioni Auth@{Implementazioni Auth}!inputEmail@{inputEmail}}
+\index{inputEmail@{inputEmail}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{inputEmail}{inputEmail}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga80d354a96271494c85654ea411ddac01} 
+char input\+Email\mbox{[}100\mbox{]} = "{}\textbackslash{}0"{}}
+
+\Hypertarget{group__auth__impl_ga2b0e8ee2101796cab35e2f6d2f932993}\index{Implementazioni Auth@{Implementazioni Auth}!inputNome@{inputNome}}
+\index{inputNome@{inputNome}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{inputNome}{inputNome}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga2b0e8ee2101796cab35e2f6d2f932993} 
+char input\+Nome\mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}}
+
+\Hypertarget{group__auth__impl_ga716f9307558976d3a4c67840b2ceb8ac}\index{Implementazioni Auth@{Implementazioni Auth}!inputPassword@{inputPassword}}
+\index{inputPassword@{inputPassword}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{inputPassword}{inputPassword}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga716f9307558976d3a4c67840b2ceb8ac} 
+char input\+Password\mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}}
+
+\Hypertarget{group__auth__impl_gafb61cbc7b14899011261458eb60e240a}\index{Implementazioni Auth@{Implementazioni Auth}!inputPin@{inputPin}}
+\index{inputPin@{inputPin}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{inputPin}{inputPin}}
+{\footnotesize\ttfamily \label{group__auth__impl_gafb61cbc7b14899011261458eb60e240a} 
+char input\+Pin\mbox{[}7\mbox{]} = "{}\textbackslash{}0"{}}
+
+\Hypertarget{group__auth__impl_ga726a429817c84dacd48cce82b3c91003}\index{Implementazioni Auth@{Implementazioni Auth}!inputUsername@{inputUsername}}
+\index{inputUsername@{inputUsername}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{inputUsername}{inputUsername}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga726a429817c84dacd48cce82b3c91003} 
+char input\+Username\mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}}
+
+\Hypertarget{group__auth__impl_ga8576d027f30608a7448b5e4a6887f2e2}\index{Implementazioni Auth@{Implementazioni Auth}!nomeCount@{nomeCount}}
+\index{nomeCount@{nomeCount}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{nomeCount}{nomeCount}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga8576d027f30608a7448b5e4a6887f2e2} 
+int nome\+Count = 0}
+
+\Hypertarget{group__auth__impl_ga415b2b418d3a90a6e1da72992e7577aa}\index{Implementazioni Auth@{Implementazioni Auth}!passCount@{passCount}}
+\index{passCount@{passCount}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{passCount}{passCount}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga415b2b418d3a90a6e1da72992e7577aa} 
+int pass\+Count = 0}
+
+\Hypertarget{group__auth__impl_ga5058e2763f324b4146cfa8af36168478}\index{Implementazioni Auth@{Implementazioni Auth}!pinCount@{pinCount}}
+\index{pinCount@{pinCount}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{pinCount}{pinCount}}
+{\footnotesize\ttfamily \label{group__auth__impl_ga5058e2763f324b4146cfa8af36168478} 
+int pin\+Count = 0}
+
+\Hypertarget{group__auth__impl_gabd5ade42baf19a2a2ffa715960842dfd}\index{Implementazioni Auth@{Implementazioni Auth}!usernameCount@{usernameCount}}
+\index{usernameCount@{usernameCount}!Implementazioni Auth@{Implementazioni Auth}}
+\doxysubsubsection{\texorpdfstring{usernameCount}{usernameCount}}
+{\footnotesize\ttfamily \label{group__auth__impl_gabd5ade42baf19a2a2ffa715960842dfd} 
+int username\+Count = 0}
+
+\input{group__lazy__deletion__impl}

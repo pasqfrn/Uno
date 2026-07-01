@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno:  File sorgente lib/ui.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('ui_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ui.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ui_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef UI_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define UI_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">data_structures.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">extern</span> <a class="code hl_typedef" href="raylib_8h.html#a0f74897272c4257b58656025d91a16ed">Texture2D</a> <a class="code hl_variable" href="group__ui__texture.html#ga8ac64cad02704cae0cb4af6f96d92767">textureCarte</a>[5][15];</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">extern</span> <a class="code hl_typedef" href="raylib_8h.html#a0f74897272c4257b58656025d91a16ed">Texture2D</a> <a class="code hl_variable" href="group__ui__texture.html#ga876b5c791744657fa724c81445ce9e8b">textureDorso</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">extern</span> <a class="code hl_typedef" href="raylib_8h.html#a0f74897272c4257b58656025d91a16ed">Texture2D</a> <a class="code hl_variable" href="group__ui__texture.html#gaf27071339f699f36aff91ba414cd50d8">textureSfondo</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_struct" href="struct_color.html">Color</a> <a class="code hl_variable" href="group__ui__texture.html#ga82e1b2777891ad1a9b469a6e02915d3a">coloriRaylib</a>[];</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="group__ui__texture.html#ga3ad028ed1f516f621880dbf04b68201c">nomiColori</a>[];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> *  FUNZIONI DI RENDERING</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * ============================================================ */</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_function" href="ui_8h.html#a8b6843013da01feaa0c418592c2fdbe3">CaricaTextureReali</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">void</span> <a class="code hl_function" href="ui_8h.html#ac8993e016550851622a8f275d4c4cf1c">ScaricaTextureReali</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">void</span> <a class="code hl_function" href="ui_8h.html#a0c51f7d6a3bf4a1debe77da34839f18c">DisegnaCartaRealistica</a>(<a class="code hl_struct" href="struct_carta.html">Carta</a> *c, <a class="code hl_struct" href="struct_rectangle.html">Rectangle</a> r, <span class="keywordtype">int</span> coperta);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">int</span> <a class="code hl_function" href="ui_8h.html#a93cf3d6c0a2a0ce832f80d2ac7dcad30">DisegnaBottoneMenuAnimato</a>(<a class="code hl_struct" href="struct_rectangle.html">Rectangle</a> rect, <span class="keyword">const</span> <span class="keywordtype">char</span>* testo);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
+<div class="ttc" id="agroup__ui__texture_html_ga3ad028ed1f516f621880dbf04b68201c"><div class="ttname"><a href="group__ui__texture.html#ga3ad028ed1f516f621880dbf04b68201c">nomiColori</a></div><div class="ttdeci">const char * nomiColori[]</div><div class="ttdoc">Nomi descrittivi dei colori UNO (per debug/UI).</div><div class="ttdef"><b>Definition</b> ui.c:39</div></div>
+<div class="ttc" id="agroup__ui__texture_html_ga82e1b2777891ad1a9b469a6e02915d3a"><div class="ttname"><a href="group__ui__texture.html#ga82e1b2777891ad1a9b469a6e02915d3a">coloriRaylib</a></div><div class="ttdeci">const Color coloriRaylib[]</div><div class="ttdoc">Colori Raylib associati ai colori UNO (ROSSO, GIALLO, VERDE, BLU, NERO).</div><div class="ttdef"><b>Definition</b> ui.c:31</div></div>
+<div class="ttc" id="agroup__ui__texture_html_ga876b5c791744657fa724c81445ce9e8b"><div class="ttname"><a href="group__ui__texture.html#ga876b5c791744657fa724c81445ce9e8b">textureDorso</a></div><div class="ttdeci">Texture2D textureDorso</div><div class="ttdoc">Texture del dorso delle carte (per carte coperte).</div><div class="ttdef"><b>Definition</b> ui.c:26</div></div>
+<div class="ttc" id="agroup__ui__texture_html_ga8ac64cad02704cae0cb4af6f96d92767"><div class="ttname"><a href="group__ui__texture.html#ga8ac64cad02704cae0cb4af6f96d92767">textureCarte</a></div><div class="ttdeci">Texture2D textureCarte[5][15]</div><div class="ttdoc">Texture delle carte UNO: textureCarte[colore][tipo].</div><div class="ttdef"><b>Definition</b> ui.c:24</div></div>
+<div class="ttc" id="agroup__ui__texture_html_gaf27071339f699f36aff91ba414cd50d8"><div class="ttname"><a href="group__ui__texture.html#gaf27071339f699f36aff91ba414cd50d8">textureSfondo</a></div><div class="ttdeci">Texture2D textureSfondo</div><div class="ttdoc">Texture dello sfondo del gioco.</div><div class="ttdef"><b>Definition</b> ui.c:28</div></div>
+<div class="ttc" id="araylib_8h_html_a0f74897272c4257b58656025d91a16ed"><div class="ttname"><a href="raylib_8h.html#a0f74897272c4257b58656025d91a16ed">Texture2D</a></div><div class="ttdeci">Texture Texture2D</div><div class="ttdef"><b>Definition</b> raylib.h:280</div></div>
+<div class="ttc" id="astruct_carta_html"><div class="ttname"><a href="struct_carta.html">Carta</a></div><div class="ttdoc">Rappresenta una singola carta UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:66</div></div>
+<div class="ttc" id="astruct_color_html"><div class="ttname"><a href="struct_color.html">Color</a></div><div class="ttdef"><b>Definition</b> raylib.h:246</div></div>
+<div class="ttc" id="astruct_rectangle_html"><div class="ttname"><a href="struct_rectangle.html">Rectangle</a></div><div class="ttdef"><b>Definition</b> raylib.h:254</div></div>
+<div class="ttc" id="aui_8h_html_a0c51f7d6a3bf4a1debe77da34839f18c"><div class="ttname"><a href="ui_8h.html#a0c51f7d6a3bf4a1debe77da34839f18c">DisegnaCartaRealistica</a></div><div class="ttdeci">void DisegnaCartaRealistica(Carta *c, Rectangle r, int coperta)</div><div class="ttdoc">Disegna una carta UNO con texture realistica e ombra.</div><div class="ttdef"><b>Definition</b> ui.c:118</div></div>
+<div class="ttc" id="aui_8h_html_a8b6843013da01feaa0c418592c2fdbe3"><div class="ttname"><a href="ui_8h.html#a8b6843013da01feaa0c418592c2fdbe3">CaricaTextureReali</a></div><div class="ttdeci">void CaricaTextureReali(void)</div><div class="ttdoc">Carica tutte le texture delle carte e lo sfondo da file PNG.</div><div class="ttdef"><b>Definition</b> ui.c:55</div></div>
+<div class="ttc" id="aui_8h_html_a93cf3d6c0a2a0ce832f80d2ac7dcad30"><div class="ttname"><a href="ui_8h.html#a93cf3d6c0a2a0ce832f80d2ac7dcad30">DisegnaBottoneMenuAnimato</a></div><div class="ttdeci">int DisegnaBottoneMenuAnimato(Rectangle rect, const char *testo)</div><div class="ttdoc">Disegna un bottone animato per il menu con effetto hover/press.</div><div class="ttdef"><b>Definition</b> ui.c:150</div></div>
+<div class="ttc" id="aui_8h_html_ac8993e016550851622a8f275d4c4cf1c"><div class="ttname"><a href="ui_8h.html#ac8993e016550851622a8f275d4c4cf1c">ScaricaTextureReali</a></div><div class="ttdeci">void ScaricaTextureReali(void)</div><div class="ttdoc">Libera dalla RAM tutte le texture caricate.</div><div class="ttdef"><b>Definition</b> ui.c:96</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="ui_8h.html">ui.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/auth_validation.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('auth__validation_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file auth_validation.c<div class="ingroups"><a class="el" href="group__auth.html">Autenticazione e Database Utenti</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funzioni di validazione per autenticazione e gestione utenti.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../lib/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_2string__utils_8h_source.html">../lib/screens/menu/string_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth__validation_8h_source.html">../lib/auth_validation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="string__utils_8h_source.html">../lib/screens/string_utils.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a0959d2b8a823c24f6cf9e7cc624a2da8" id="r_a0959d2b8a823c24f6cf9e7cc624a2da8"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0959d2b8a823c24f6cf9e7cc624a2da8">Auth_EmailFormalmenteValida</a> (const char *email)</td></tr>
+<tr class="memdesc:a0959d2b8a823c24f6cf9e7cc624a2da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un'email e' formalmente valida.  <br /></td></tr>
+<tr class="memitem:a8c2896ffd0bd8e925dd6ff0abdb5632b" id="r_a8c2896ffd0bd8e925dd6ff0abdb5632b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a8c2896ffd0bd8e925dd6ff0abdb5632b">Auth_PasswordValida</a> (const char *password, int len)</td></tr>
+<tr class="memdesc:a8c2896ffd0bd8e925dd6ff0abdb5632b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se una password soddisfa i requisiti minimi.  <br /></td></tr>
+<tr class="memitem:aa1e0c29da409c33f5c90ae8781813b52" id="r_aa1e0c29da409c33f5c90ae8781813b52"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aa1e0c29da409c33f5c90ae8781813b52">Auth_PINValido</a> (const char *pin, int len)</td></tr>
+<tr class="memdesc:aa1e0c29da409c33f5c90ae8781813b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un PIN di recupero e' valido.  <br /></td></tr>
+<tr class="memitem:a582c2dd0feb8bfb2dfed93f53de56ac9" id="r_a582c2dd0feb8bfb2dfed93f53de56ac9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a582c2dd0feb8bfb2dfed93f53de56ac9">Auth_UsernameNonVuoto</a> (const char *username, int len)</td></tr>
+<tr class="memdesc:a582c2dd0feb8bfb2dfed93f53de56ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se uno username non e' vuoto.  <br /></td></tr>
+<tr class="memitem:af98da30c95224517aee816c9402d8a8c" id="r_af98da30c95224517aee816c9402d8a8c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af98da30c95224517aee816c9402d8a8c">Auth_UsernameGiaUsato</a> (const char *username)</td></tr>
+<tr class="memdesc:af98da30c95224517aee816c9402d8a8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se uno username e' gia' in uso nel database.  <br /></td></tr>
+<tr class="memitem:a6059e6ad0ef9d8973620d6877f0688ad" id="r_a6059e6ad0ef9d8973620d6877f0688ad"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a6059e6ad0ef9d8973620d6877f0688ad">Auth_VerificaCredenziali</a> (const char *username, const char *password)</td></tr>
+<tr class="memdesc:a6059e6ad0ef9d8973620d6877f0688ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca un utente nel database per username e password.  <br /></td></tr>
+<tr class="memitem:aabb0472ff0f5ec0167d6b3346c8462da" id="r_aabb0472ff0f5ec0167d6b3346c8462da"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aabb0472ff0f5ec0167d6b3346c8462da">Auth_EmailGiaUsata</a> (const char *email, int ignora_indice)</td></tr>
+<tr class="memdesc:aabb0472ff0f5ec0167d6b3346c8462da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un'email e' gia' in uso nel database.  <br /></td></tr>
+<tr class="memitem:a785518b8228af0439552afcb650cc131" id="r_a785518b8228af0439552afcb650cc131"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a785518b8228af0439552afcb650cc131">Auth_VerificaEmailPIN</a> (const char *email, const char *pin)</td></tr>
+<tr class="memdesc:a785518b8228af0439552afcb650cc131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca un utente nel database per email e PIN.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Funzioni di validazione per autenticazione e gestione utenti. </p>
+<p>Contiene le funzioni di validazione per:</p><ul>
+<li>Email: controllo formato base (presenza di )</li>
+<li>Password: controllo lunghezza minima (8 char) e presenza maiuscolo</li>
+<li>PIN: controllo lunghezza minima (6 char)</li>
+<li>Username: controllo non vuoto e unicita' nel database</li>
+<li>Credenziali: verifica login (username + password)</li>
+<li>Recupero password: verifica email + PIN</li>
+</ul>
+<p>Tutte le funzioni lavorano sul database utenti DINAMICO (dbUtenti). </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a0959d2b8a823c24f6cf9e7cc624a2da8" name="a0959d2b8a823c24f6cf9e7cc624a2da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0959d2b8a823c24f6cf9e7cc624a2da8">&#9670;&#160;</a></span>Auth_EmailFormalmenteValida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_EmailFormalmenteValida </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se un'email e' formalmente valida. </p>
+<p>Controlla che la stringa contenga almeno un carattere '@'.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>email != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se contiene '@', 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Stringa email da validare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se valida, 0 altrimenti.</dd></dl>
+<p>Contiene almeno un carattere prima della '@' e almeno uno dopo.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>email != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se valida, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Stringa email da validare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se valida, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="aabb0472ff0f5ec0167d6b3346c8462da" name="aabb0472ff0f5ec0167d6b3346c8462da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb0472ff0f5ec0167d6b3346c8462da">&#9670;&#160;</a></span>Auth_EmailGiaUsata()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_EmailGiaUsata </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ignora_indice</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se un'email e' gia' in uso nel database. </p>
+<p>Scansiona dbUtenti.lista[] alla ricerca di un'email duplicata (case-insensitive). Il parametro ignora_indice permette di escludere un utente dal controllo (utile nella modifica profilo per non bloccare il proprio indirizzo email).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>dbUtenti inizializzato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se duplicata, 0 se disponibile. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email da verificare. </td></tr>
+    <tr><td class="paramname">ignora_indice</td><td>Indice dell'utente da ignorare (-1 per controllare tutti). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se gia' in uso, 0 se disponibile. </dd></dl>
+
+</div>
+</div>
+<a id="a8c2896ffd0bd8e925dd6ff0abdb5632b" name="a8c2896ffd0bd8e925dd6ff0abdb5632b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c2896ffd0bd8e925dd6ff0abdb5632b">&#9670;&#160;</a></span>Auth_PasswordValida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_PasswordValida </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>password</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se una password soddisfa i requisiti minimi. </p>
+<p>Controlla lunghezza &gt;= 8 caratteri e presenza di almeno una lettera maiuscola.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>password != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se lunghezza &gt;= 8 e contiene almeno una maiuscola. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">password</td><td>Stringa password da validare. </td></tr>
+    <tr><td class="paramname">len</td><td>Lunghezza della password. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se valida, 0 altrimenti.</dd></dl>
+<p>Requisiti: almeno 8 caratteri, almeno una lettera maiuscola.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>password != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se valida, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">password</td><td>Stringa password da validare. </td></tr>
+    <tr><td class="paramname">len</td><td>Lunghezza della password. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se valida, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="aa1e0c29da409c33f5c90ae8781813b52" name="aa1e0c29da409c33f5c90ae8781813b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e0c29da409c33f5c90ae8781813b52">&#9670;&#160;</a></span>Auth_PINValido()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_PINValido </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se un PIN di recupero e' valido. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>pin != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se len &gt;= 6, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Stringa PIN da validare. </td></tr>
+    <tr><td class="paramname">len</td><td>Lunghezza del PIN. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se valido, 0 altrimenti.</dd></dl>
+<p>Deve essere esattamente 6 cifre.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>pin != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se len &gt;= 6, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>Stringa PIN da validare. </td></tr>
+    <tr><td class="paramname">len</td><td>Lunghezza del PIN. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se valido, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="af98da30c95224517aee816c9402d8a8c" name="af98da30c95224517aee816c9402d8a8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af98da30c95224517aee816c9402d8a8c">&#9670;&#160;</a></span>Auth_UsernameGiaUsato()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_UsernameGiaUsato </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se uno username e' gia' in uso nel database. </p>
+<p>Scansiona dbUtenti.lista[] alla ricerca di un username duplicato.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>dbUtenti inizializzato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se trovato, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Stringa username da verificare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se gia' in uso, 0 se disponibile. </dd></dl>
+
+</div>
+</div>
+<a id="a582c2dd0feb8bfb2dfed93f53de56ac9" name="a582c2dd0feb8bfb2dfed93f53de56ac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a582c2dd0feb8bfb2dfed93f53de56ac9">&#9670;&#160;</a></span>Auth_UsernameNonVuoto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_UsernameNonVuoto </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se uno username non e' vuoto. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>username != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se len &gt; 0, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Stringa username da verificare. </td></tr>
+    <tr><td class="paramname">len</td><td>Lunghezza dello username. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se non vuoto, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="a6059e6ad0ef9d8973620d6877f0688ad" name="a6059e6ad0ef9d8973620d6877f0688ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6059e6ad0ef9d8973620d6877f0688ad">&#9670;&#160;</a></span>Auth_VerificaCredenziali()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_VerificaCredenziali </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cerca un utente nel database per username e password. </p>
+<p>Scansiona dbUtenti.lista[] alla ricerca di una corrispondenza. La password viene confrontata in chiaro (eventuale decifratura XOR gestita esternamente).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>dbUtenti inizializzato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce indice, -1 o -2 in base al risultato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username inserito dall'utente. </td></tr>
+    <tr><td class="paramname">password</td><td>Password inserita dall'utente. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Indice dell'utente trovato, -1 se non trovato, -2 se password errata.</dd></dl>
+<p>Scansiona dbUtenti.lista[] alla ricerca di una corrispondenza. La password viene confrontata dopo eventuale decifratura XOR.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>dbUtenti inizializzato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce indice, -1 o -2 in base al risultato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username inserito dall'utente. </td></tr>
+    <tr><td class="paramname">password</td><td>Password inserita dall'utente. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Indice dell'utente trovato, o -1 se non trovato, -2 se password errata. </dd></dl>
+
+</div>
+</div>
+<a id="a785518b8228af0439552afcb650cc131" name="a785518b8228af0439552afcb650cc131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a785518b8228af0439552afcb650cc131">&#9670;&#160;</a></span>Auth_VerificaEmailPIN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_VerificaEmailPIN </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cerca un utente nel database per email e PIN. </p>
+<p>Usato per il recupero password. Confronta email (case-insensitive) e PIN.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>dbUtenti inizializzato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce indice se trovato, -1 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email inserita dall'utente. </td></tr>
+    <tr><td class="paramname">pin</td><td>PIN di recupero inserito. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Indice dell'utente trovato, o -1 se non trovato.</dd></dl>
+<p>Usato per il recupero password. Confronta email e PIN di recupero.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>dbUtenti inizializzato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce indice se trovato, -1 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email inserita dall'utente. </td></tr>
+    <tr><td class="paramname">pin</td><td>PIN di recupero inserito. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Indice dell'utente trovato, o -1 se non trovato. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="auth__validation_8c.html">auth_validation.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

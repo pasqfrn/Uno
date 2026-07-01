@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Input Field</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__input__field.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Input Field </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funzioni per aggiornare e disegnare campi di input di testo (login, registrazione, recupero password).  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-files" class="groupheader"><a id="files" name="files"></a>
+File</h2></td></tr>
+<tr class="memitem:src_2Fscreens_2Fauth_2Finput_5Ffield_2Ec" id="r_src_2Fscreens_2Fauth_2Finput_5Ffield_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="input__field_8c.html">src/screens/auth/input_field.c</a></td></tr>
+<tr class="memdesc:input__field_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementazione del campo di input interattivo. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:gab7226869f631c265b54f1fae9728d74c" id="r_gab7226869f631c265b54f1fae9728d74c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gab7226869f631c265b54f1fae9728d74c">AggiornaInputCampo</a> (char *buffer, int *count, int maxLength)</td></tr>
+<tr class="memdesc:gab7226869f631c265b54f1fae9728d74c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna lo stato di un campo input.  <br /></td></tr>
+<tr class="memitem:ga6f6580f15be4386f8868a87e3dbbe8ce" id="r_ga6f6580f15be4386f8868a87e3dbbe8ce"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6f6580f15be4386f8868a87e3dbbe8ce">DisegnaInputField</a> (<a class="el" href="struct_rectangle.html">Rectangle</a> area, const char *label, const char *text, int count, int isFocused, int isPassword, <a class="el" href="struct_color.html">Color</a> labelColor)</td></tr>
+<tr class="memdesc:ga6f6580f15be4386f8868a87e3dbbe8ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna un campo input su schermo con gestione overflow.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Funzioni per aggiornare e disegnare campi di input di testo (login, registrazione, recupero password). </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="gab7226869f631c265b54f1fae9728d74c" name="gab7226869f631c265b54f1fae9728d74c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab7226869f631c265b54f1fae9728d74c">&#9670;&#160;</a></span>AggiornaInputCampo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AggiornaInputCampo </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>maxLength</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aggiorna lo stato di un campo input. </p>
+<p>Aggiorna lo stato di un campo input (carattere premuto, backspace).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>buffer != NULL; count != NULL; maxLength &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>buffer e count aggiornati. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Buffer campo. </td></tr>
+    <tr><td class="paramname">count</td><td>Contatore caratteri. </td></tr>
+    <tr><td class="paramname">maxLength</td><td>Lunghezza massima.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Aggiorna lo stato di un campo input.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>buffer != NULL; count != NULL; maxLength &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>buffer e count aggiornati in base al tasto premuto. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Buffer del campo input. </td></tr>
+    <tr><td class="paramname">count</td><td>Puntatore al contatore di caratteri. </td></tr>
+    <tr><td class="paramname">maxLength</td><td>Lunghezza massima del buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6f6580f15be4386f8868a87e3dbbe8ce" name="ga6f6580f15be4386f8868a87e3dbbe8ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f6580f15be4386f8868a87e3dbbe8ce">&#9670;&#160;</a></span>DisegnaInputField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisegnaInputField </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_rectangle.html">Rectangle</a></td>          <td class="paramname"><span class="paramname"><em>area</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>label</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>isFocused</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>isPassword</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_color.html">Color</a></td>          <td class="paramname"><span class="paramname"><em>labelColor</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disegna un campo input su schermo con gestione overflow. </p>
+<p>Disegna un campo input su schermo.</p>
+<p>BUG 3 FIX: Il testo viene ora troncato se supera la larghezza disponibile della cella. Viene calcolato un offset di scroll per mostrare sempre gli ultimi caratteri inseriti (utile per password lunghe). Se il testo troncato, vengono aggiunti ".." alla fine per indicare che c'e' altro contenuto.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>text != NULL; label != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Campo renderizzato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">area</td><td>Rettangolo. </td></tr>
+    <tr><td class="paramname">label</td><td>Etichetta. </td></tr>
+    <tr><td class="paramname">text</td><td>Testo. </td></tr>
+    <tr><td class="paramname">count</td><td>Lunghezza testo. </td></tr>
+    <tr><td class="paramname">isFocused</td><td>Focus. </td></tr>
+    <tr><td class="paramname">isPassword</td><td>Password mode. </td></tr>
+    <tr><td class="paramname">labelColor</td><td><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c" title="Colori disponibili per le carte UNO.">Colore</a> label.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Disegna un campo input su schermo con gestione overflow.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>text != NULL; label != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Campo renderizzato con label e contorno. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">area</td><td>Rettangolo di posizione/dimensioni. </td></tr>
+    <tr><td class="paramname">label</td><td>Etichetta del campo. </td></tr>
+    <tr><td class="paramname">text</td><td>Testo corrente inserito. </td></tr>
+    <tr><td class="paramname">count</td><td>Numero di caratteri inseriti. </td></tr>
+    <tr><td class="paramname">isFocused</td><td>1 se il campo ha il focus. </td></tr>
+    <tr><td class="paramname">isPassword</td><td>1 se campo password (caratteri nascosti). </td></tr>
+    <tr><td class="paramname">labelColor</td><td><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c" title="Colori disponibili per le carte UNO.">Colore</a> della label. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

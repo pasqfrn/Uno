@@ -1,0 +1,72 @@
+\doxysection{src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{src/main.c@{src/main.c}}
+
+
+Punto di ingresso dell\textquotesingle{}applicazione UNO Multiplayer.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/data\+\_\+structures.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/ui.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/socket/lan/lan\+\_\+sync.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/screens/auth/auth\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/screens/menu/menu\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/screens/game/gameplay\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/screens/game/end\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/screens/multiplayer/multiplayer\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/screens/menu/stats\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/screens/multiplayer/multiplayer\+\_\+lobby.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Punto di ingresso dell\textquotesingle{}applicazione. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a108288d745ff0ba8f835f169d0e9b1c7}{esc\+\_\+consumato}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Punto di ingresso dell\textquotesingle{}applicazione UNO Multiplayer. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Punto di ingresso dell\textquotesingle{}applicazione. 
+
+Inizializza Raylib, carica texture e database, avvia rete e sincronizzazione LAN, poi entra nel loop principale.
+
+\begin{DoxyPrecond}{Precondition}
+Nessuna. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Inizializzazione completata; loop principale avviato. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+Codice di uscita (0 = successo). 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_a108288d745ff0ba8f835f169d0e9b1c7}\index{main.c@{main.c}!esc\_consumato@{esc\_consumato}}
+\index{esc\_consumato@{esc\_consumato}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{esc\_consumato}{esc\_consumato}}
+{\footnotesize\ttfamily \label{main_8c_a108288d745ff0ba8f835f169d0e9b1c7} 
+int esc\+\_\+consumato = 0}
+

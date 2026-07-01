@@ -1,0 +1,53 @@
+\doxysection{src/socket/network/state\+\_\+sync.c File Reference}
+\hypertarget{state__sync_8c}{}\label{state__sync_8c}\index{src/socket/network/state\_sync.c@{src/socket/network/state\_sync.c}}
+
+
+Sincronizzazione dello stato di gioco da remoto a locale.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/state\+\_\+sync.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/game/gameplay\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/game/end\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/lan/lan\+\_\+sync.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{state__sync_8c_a45154749b04291f242d09ad3d57341aa}{Sync\+Game\+State\+From\+Network}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}local, const \mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}remote)
+\begin{DoxyCompactList}\small\item\em Applica lo stato ricevuto da remoto (host/server) al client locale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sincronizzazione dello stato di gioco da remoto a locale. 
+
+Questo modulo gestisce la ricezione dello \doxylink{struct_stato_gioco}{Stato\+Gioco} dal server/host e lo applica al client locale, preservando lo stato UI transiente (trascinamento carte, animazioni, chat, classifica fine partita).
+
+ADT utilizzati\+: \doxylink{struct_stato_gioco}{Stato\+Gioco} (struct), \doxylink{struct_statistiche}{Statistiche} (DB utenti) Moduli collegati\+: \doxylink{network_8h}{network.\+h}, \doxylink{auth_8h}{auth.\+h}, \doxylink{end__screen_8h}{end\+\_\+screen.\+h}, \doxylink{gameplay__screen_8h}{gameplay\+\_\+screen.\+h}, \doxylink{lan__sync_8h}{lan\+\_\+sync.\+h} 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{state__sync_8c_a45154749b04291f242d09ad3d57341aa}\index{state\_sync.c@{state\_sync.c}!SyncGameStateFromNetwork@{SyncGameStateFromNetwork}}
+\index{SyncGameStateFromNetwork@{SyncGameStateFromNetwork}!state\_sync.c@{state\_sync.c}}
+\doxysubsubsection{\texorpdfstring{SyncGameStateFromNetwork()}{SyncGameStateFromNetwork()}}
+{\footnotesize\ttfamily \label{state__sync_8c_a45154749b04291f242d09ad3d57341aa} 
+void Sync\+Game\+State\+From\+Network (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{local}{, }\item[{const \mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{remote}{}\end{DoxyParamCaption})}
+
+
+
+Applica lo stato ricevuto da remoto (host/server) al client locale. 
+
+Sincronizza lo stato di gioco locale con quello remoto.
+
+Sincronizza\+: stato principale, animazioni, notifiche, chat, giocatori, scarti. Per il client, calcola anche la classifica finale e salva le statistiche nel DB locale con la posizione reale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em local} & Puntatore allo stato di gioco locale da aggiornare. \\
+\hline
+{\em remote} & Puntatore allo stato di gioco ricevuto dalla rete. \\
+\hline
+\end{DoxyParams}

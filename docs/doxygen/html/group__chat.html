@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Chat</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__chat.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Chat </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Fornisce l'ADT <a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a> (cronologia circolare FIFO) per memorizzare e formattare i messaggi della chat di gioco.  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-files" class="groupheader"><a id="files" name="files"></a>
+File</h2></td></tr>
+<tr class="memitem:src_2Fdata_5Fstructures_2Fchat_2Ec" id="r_src_2Fdata_5Fstructures_2Fchat_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="chat_8c.html">src/data_structures/chat.c</a></td></tr>
+<tr class="memdesc:chat_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementazione ADT <a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a> per la chat di gioco. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:ga5742cf207ce2ffec75d4b46ecdd330df" id="r_ga5742cf207ce2ffec75d4b46ecdd330df"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga5742cf207ce2ffec75d4b46ecdd330df">Chat_Crea</a> (<a class="el" href="struct_chat_storico.html">ChatStorico</a> *c)</td></tr>
+<tr class="memdesc:ga5742cf207ce2ffec75d4b46ecdd330df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea uno storico chat vuoto.  <br /></td></tr>
+<tr class="memitem:ga45a2d902c345306574b0fbabe549d92c" id="r_ga45a2d902c345306574b0fbabe549d92c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga45a2d902c345306574b0fbabe549d92c">Chat_Aggiungi</a> (<a class="el" href="struct_chat_storico.html">ChatStorico</a> *c, const char *mittente, const char *testo)</td></tr>
+<tr class="memdesc:ga45a2d902c345306574b0fbabe549d92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un messaggio in coda (FIFO).  <br /></td></tr>
+<tr class="memitem:gac08be014c8c4eeb26931b5c64091df90" id="r_gac08be014c8c4eeb26931b5c64091df90"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gac08be014c8c4eeb26931b5c64091df90">Chat_OraCorrente</a> (char *out, size_t out_size)</td></tr>
+<tr class="memdesc:gac08be014c8c4eeb26931b5c64091df90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera timestamp "HH:MM".  <br /></td></tr>
+<tr class="memitem:gae1848e211b111491db167b98c47922d5" id="r_gae1848e211b111491db167b98c47922d5"><td class="memItemLeft">const <a class="el" href="struct_messaggio_chat.html">MessaggioChat</a> *&#160;</td><td class="memItemRight"><a class="el" href="#gae1848e211b111491db167b98c47922d5">Chat_Ottieni</a> (const <a class="el" href="struct_chat_storico.html">ChatStorico</a> *c, int i)</td></tr>
+<tr class="memdesc:gae1848e211b111491db167b98c47922d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ottiene messaggio per indice (0 = piu' vecchio).  <br /></td></tr>
+<tr class="memitem:ga28daec16e4d8d5e35ed61e2410b0975c" id="r_ga28daec16e4d8d5e35ed61e2410b0975c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga28daec16e4d8d5e35ed61e2410b0975c">Chat_Svuota</a> (<a class="el" href="struct_chat_storico.html">ChatStorico</a> *c)</td></tr>
+<tr class="memdesc:ga28daec16e4d8d5e35ed61e2410b0975c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Svuota la cronologia chat.  <br /></td></tr>
+<tr class="memitem:gacd2c9941c4a7d8770c1981797586e025" id="r_gacd2c9941c4a7d8770c1981797586e025"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gacd2c9941c4a7d8770c1981797586e025">Chat_FormattaRiga</a> (const <a class="el" href="struct_messaggio_chat.html">MessaggioChat</a> *m, char *out, size_t out_size)</td></tr>
+<tr class="memdesc:gacd2c9941c4a7d8770c1981797586e025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatta messaggio in riga "HH:MM @Mittente: testo".  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Fornisce l'ADT <a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a> (cronologia circolare FIFO) per memorizzare e formattare i messaggi della chat di gioco. </p>
+<p>La struttura <a class="el" href="struct_messaggio_chat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a> è definita in <span class="tt"><a class="el" href="data__structures_8h.html" title="Header principale del progetto UNO - Definizione di tutti i tipi di dato.">data_structures.h</a></span>. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="ga45a2d902c345306574b0fbabe549d92c" name="ga45a2d902c345306574b0fbabe549d92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga45a2d902c345306574b0fbabe549d92c">&#9670;&#160;</a></span>Chat_Aggiungi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Chat_Aggiungi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chat_storico.html">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>mittente</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>testo</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Aggiunge un messaggio in coda (FIFO). </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; mittente != NULL; testo != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Messaggio aggiunto; count aggiornato; head ruotato se pieno. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+    <tr><td class="paramname">mittente</td><td>Mittente. </td></tr>
+    <tr><td class="paramname">testo</td><td>Testo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Se la cronologia è piena, sovrascrive il messaggio più vecchio.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; mittente != NULL; testo != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>count aggiornato; head avanzato se pieno. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+    <tr><td class="paramname">mittente</td><td>Username del mittente. </td></tr>
+    <tr><td class="paramname">testo</td><td>Testo del messaggio. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5742cf207ce2ffec75d4b46ecdd330df" name="ga5742cf207ce2ffec75d4b46ecdd330df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5742cf207ce2ffec75d4b46ecdd330df">&#9670;&#160;</a></span>Chat_Crea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Chat_Crea </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chat_storico.html">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crea uno storico chat vuoto. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>count=0, head=0, buffer azzerato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Storico inizializzato (count=0, head=0). </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a> da inizializzare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gacd2c9941c4a7d8770c1981797586e025" name="gacd2c9941c4a7d8770c1981797586e025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacd2c9941c4a7d8770c1981797586e025">&#9670;&#160;</a></span>Chat_FormattaRiga()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Chat_FormattaRiga </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_messaggio_chat.html">MessaggioChat</a> *</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>out_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Formatta messaggio in riga "HH:MM @Mittente: testo". </p>
+<p>Formatta un <a class="el" href="struct_messaggio_chat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a> in una riga "HH:MM @Mittente: testo".</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>m != NULL; out != NULL; out_size &gt;= 320. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Riga formattata in out. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td><a class="el" href="struct_messaggio_chat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a>. </td></tr>
+    <tr><td class="paramname">out</td><td>Buffer output. </td></tr>
+    <tr><td class="paramname">out_size</td><td>Dimensione buffer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Formatta messaggio in riga "HH:MM @Mittente: testo".</p>
+<p>Helper per il rendering delle schermate.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>m != NULL; out != NULL; out_size &gt;= 320. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Riga formattata scritta in out. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Puntatore a <a class="el" href="struct_messaggio_chat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a>. </td></tr>
+    <tr><td class="paramname">out</td><td>Buffer di output (almeno 320 byte). </td></tr>
+    <tr><td class="paramname">out_size</td><td>Dimensione del buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac08be014c8c4eeb26931b5c64091df90" name="gac08be014c8c4eeb26931b5c64091df90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac08be014c8c4eeb26931b5c64091df90">&#9670;&#160;</a></span>Chat_OraCorrente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Chat_OraCorrente </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>out_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Genera timestamp "HH:MM". </p>
+<p>Genera un timestamp "HH:MM" nel buffer fornito.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>out != NULL; out_size &gt;= 6. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Stringa "HH:MM" in out. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Buffer output. </td></tr>
+    <tr><td class="paramname">out_size</td><td>Dimensione buffer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Genera timestamp "HH:MM".</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>out != NULL; out_size &gt;= 6. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Stringa "HH:MM" scritta in out. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Buffer di output (almeno 6 byte). </td></tr>
+    <tr><td class="paramname">out_size</td><td>Dimensione del buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae1848e211b111491db167b98c47922d5" name="gae1848e211b111491db167b98c47922d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1848e211b111491db167b98c47922d5">&#9670;&#160;</a></span>Chat_Ottieni()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="struct_messaggio_chat.html">MessaggioChat</a> * Chat_Ottieni </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_chat_storico.html">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>i</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ottiene messaggio per indice (0 = piu' vecchio). </p>
+<p>Restituisce il messaggio in posizione i della cronologia.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; 0 &lt;= i &lt; c-&gt;count. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore a <a class="el" href="struct_messaggio_chat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a>, o NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+    <tr><td class="paramname">i</td><td>Indice.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Ottiene messaggio per indice (0 = piu' vecchio).</p>
+<p>Ordine: 0 = più vecchio, count-1 = più recente.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; 0 &lt;= i &lt; c-&gt;count. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore a <a class="el" href="struct_messaggio_chat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a>, o NULL se indice non valido. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+    <tr><td class="paramname">i</td><td>Indice del messaggio (0-based). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga28daec16e4d8d5e35ed61e2410b0975c" name="ga28daec16e4d8d5e35ed61e2410b0975c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga28daec16e4d8d5e35ed61e2410b0975c">&#9670;&#160;</a></span>Chat_Svuota()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Chat_Svuota </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chat_storico.html">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Svuota la cronologia chat. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>count=0, head=0. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>count=0, head=0. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_chat_storico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+\doxysection{game\+\_\+logic.\+h}
+\hypertarget{game__logic_8h_source}{}\label{game__logic_8h_source}\index{lib/game\_logic.h@{lib/game\_logic.h}}
+\mbox{\hyperlink{game__logic_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ GAME\_LOGIC\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ GAME\_LOGIC\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{data__structures_8h}{data\_structures.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stack_8h}{data\_structures/stack.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{queue_8h}{data\_structures/queue.h}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_pila}{Pila}}*\ \mbox{\hyperlink{game__logic_8c_afefe37ecc9aba9febda10fedc4dfa743}{mazzo\_pila}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_pila}{Pila}}*\ \mbox{\hyperlink{game__logic_8c_ae43a4528acce4bced75b0d843415956f}{scarti\_pila}};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ \mbox{\hyperlink{game__logic_8c_ad1902a2e7f88106585a3606741e4ba34}{coda\_turni}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ \ GESTIONE\ PARTITE\ (Salvataggio\ /\ Caricamento)}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game__logic_8h_a1f3105448b986dc3c5fd8ef93e948fdf}{CaricaPartitaDaSlot}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco,\ \textcolor{keywordtype}{int}\ slot);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_ac36d5d7fc58d57d5333d9de89432acb1}{RicostruisciStatoADT}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_a8b2e4cdd665a790268c297e793abc369}{EliminaSalvataggio}}(\textcolor{keywordtype}{int}\ slot);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_ab6d8a480978f155fe71df7ce72d2d67e}{SalvaPartita}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco);}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_a4af9aa327b760e4e4ff4c861879608d6}{CompattaSalvataggiUtente}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_abef09d90f8a1244e64b884e89814cd9d}{EliminaTuttiSalvataggiUtente}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ username);}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_a56d174d587ba4d54b02fa4f18c6d5279}{GetSaveFilePath}}(\textcolor{keywordtype}{int}\ user\_index,\ \textcolor{keywordtype}{int}\ slot,\ \textcolor{keywordtype}{char}*\ buffer,\ \textcolor{keywordtype}{size\_t}\ bufsize);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ *\ \ GESTIONE\ MAZZO\ E\ PESCA}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__game__logic_ga2be362fe392971bbe8008aa9266cf539}{InizializzaMazzo}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_aa30d6c36fd5e60362e9863466f754b38}{RicarcaMazzo}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ *\ \ VALIDAZIONE\ E\ APPLICAZIONE\ MOSSE}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00113\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game__logic_8h_a331462bb54826e9e9d477625d83dd9d5}{MossaValida}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco,\ \mbox{\hyperlink{struct_carta}{Carta}}\ c);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_a588fc681a6842fa5688ec1331484fe1b}{ApplicaEffetto}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco,\ \mbox{\hyperlink{struct_carta}{Carta}}\ c,\ \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}\ colore\_scelto);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ *\ \ INIZIALIZZAZIONE\ E\ FINE\ PARTITA}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00148\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_a6f74b381349465d305eabe85f8b02a95}{NuovaPartita}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco,\ \textcolor{keywordtype}{int}\ num\_avversari);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00160\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_a3446c1c30033cc8030a98d3e41399365}{EliminaPartita}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00173\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game__logic_8h_ab202f15176056f42ac78bd55f0ef400e}{MostraNotifica}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ msg);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{comment}{/*\ ============================================================}}
+\DoxyCodeLine{00176\ \textcolor{comment}{\ *\ \ FUNZIONI\ HELPER\ PER\ ACCESSO\ ALLE\ MANI\ (Liste\ collegate)}}
+\DoxyCodeLine{00177\ \textcolor{comment}{\ *\ ============================================================\ */}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00185\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__game__logic_ga171821f60641393ff220f91b26e0325f}{GetLunghezzaMano}}(\mbox{\hyperlink{struct_giocatore}{Giocatore}}\ *giocatore);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00194\ \mbox{\hyperlink{struct_carta}{Carta}}\ \mbox{\hyperlink{group__game__logic_ga911f218567f81d8d4d6eec5c1c12b543}{GetCartaGiocatore}}(\mbox{\hyperlink{struct_giocatore}{Giocatore}}\ *giocatore,\ \textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00203\ \mbox{\hyperlink{struct_nodo_carta}{NodoCarta}}*\ \mbox{\hyperlink{group__game__logic_ga5a26039c72d695715eb46d1dbe0f91ff}{GetNodoCartaGiocatore}}(\mbox{\hyperlink{struct_giocatore}{Giocatore}}\ *giocatore,\ \textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00212\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__game__logic_gac60c0e57c8c2a799f008d302bbaaa5fd}{RimuoviCartaGiocatore}}(\mbox{\hyperlink{struct_giocatore}{Giocatore}}\ *giocatore,\ \textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00225\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__game__logic_ga6fc614aadf58fe03606063067a2ad233}{RimescolaScartiNelMazzo}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco);}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00239\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__game__logic_gad1b01bee170bfe43e167097d8fa75b3c}{Pesca}}(\mbox{\hyperlink{struct_stato_gioco}{StatoGioco}}\ *gioco,\ \textcolor{keywordtype}{int}\ id\_giocatore,\ \textcolor{keywordtype}{int}\ quantita);}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

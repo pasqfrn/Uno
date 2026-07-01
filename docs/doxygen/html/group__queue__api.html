@@ -1,0 +1,641 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: API Queue</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__queue__api.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">API Queue </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funzioni per la gestione della coda dei turni.  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:gab11ca930d6fab622f49e830d54ee2599" id="r_gab11ca930d6fab622f49e830d54ee2599"><td class="memItemLeft"><a class="el" href="struct_coda_turni.html">CodaTurni</a> *&#160;</td><td class="memItemRight"><a class="el" href="#gab11ca930d6fab622f49e830d54ee2599">Coda_Crea</a> (void)</td></tr>
+<tr class="memdesc:gab11ca930d6fab622f49e830d54ee2599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una coda vuota.  <br /></td></tr>
+<tr class="memitem:ga3ab0b2cbc6c5a60be1d892fb511e2684" id="r_ga3ab0b2cbc6c5a60be1d892fb511e2684"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga3ab0b2cbc6c5a60be1d892fb511e2684">Coda_Distruggi</a> (<a class="el" href="struct_coda_turni.html">CodaTurni</a> *c)</td></tr>
+<tr class="memdesc:ga3ab0b2cbc6c5a60be1d892fb511e2684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distruttore: libera tutti i nodi e la struttura <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>.  <br /></td></tr>
+<tr class="memitem:ga7e0da971008ab4c258d57d5bc3f53e54" id="r_ga7e0da971008ab4c258d57d5bc3f53e54"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga7e0da971008ab4c258d57d5bc3f53e54">Coda_Enqueue</a> (<a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_giocatore.html">Giocatore</a> g)</td></tr>
+<tr class="memdesc:ga7e0da971008ab4c258d57d5bc3f53e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce un giocatore in coda (rear).  <br /></td></tr>
+<tr class="memitem:ga1c3d994f3790ec934fc95d9d853931c9" id="r_ga1c3d994f3790ec934fc95d9d853931c9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga1c3d994f3790ec934fc95d9d853931c9">Coda_Dequeue</a> (<a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_giocatore.html">Giocatore</a> *out)</td></tr>
+<tr class="memdesc:ga1c3d994f3790ec934fc95d9d853931c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove il giocatore in testa (front).  <br /></td></tr>
+<tr class="memitem:ga9f9d5b9d69e9482f994b36b39b642259" id="r_ga9f9d5b9d69e9482f994b36b39b642259"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga9f9d5b9d69e9482f994b36b39b642259">Coda_Front</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_giocatore.html">Giocatore</a> *out)</td></tr>
+<tr class="memdesc:ga9f9d5b9d69e9482f994b36b39b642259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il giocatore in testa SENZA rimuoverlo.  <br /></td></tr>
+<tr class="memitem:ga4f1de642a8dfccfbc0bd40a390446a1a" id="r_ga4f1de642a8dfccfbc0bd40a390446a1a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga4f1de642a8dfccfbc0bd40a390446a1a">Coda_Rear</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_giocatore.html">Giocatore</a> *out)</td></tr>
+<tr class="memdesc:ga4f1de642a8dfccfbc0bd40a390446a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il giocatore in fondo (rear) SENZA rimuoverlo.  <br /></td></tr>
+<tr class="memitem:gaa3e062ece5c53fa71fe3f38a40af9f8b" id="r_gaa3e062ece5c53fa71fe3f38a40af9f8b"><td class="memItemLeft"><a class="el" href="struct_nodo_coda.html">NodoCoda</a> *&#160;</td><td class="memItemRight"><a class="el" href="#gaa3e062ece5c53fa71fe3f38a40af9f8b">Coda_ProxNodo</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_nodo_coda.html">NodoCoda</a> *n)</td></tr>
+<tr class="memdesc:gaa3e062ece5c53fa71fe3f38a40af9f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nodo che segue <span class="tt">n</span> nella direzione corrente.  <br /></td></tr>
+<tr class="memitem:gafe5e85ee83772d0ce66f79eb6fb070d7" id="r_gafe5e85ee83772d0ce66f79eb6fb070d7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gafe5e85ee83772d0ce66f79eb6fb070d7">Coda_Vuota</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c)</td></tr>
+<tr class="memdesc:gafe5e85ee83772d0ce66f79eb6fb070d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se la coda è vuota.  <br /></td></tr>
+<tr class="memitem:ga79afb3f7bc3b06d5b1376e85963b32da" id="r_ga79afb3f7bc3b06d5b1376e85963b32da"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga79afb3f7bc3b06d5b1376e85963b32da">Coda_Dimensione</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c)</td></tr>
+<tr class="memdesc:ga79afb3f7bc3b06d5b1376e85963b32da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di giocatori in coda.  <br /></td></tr>
+<tr class="memitem:gac73bc0051abe5c075e61b613ca8217ec" id="r_gac73bc0051abe5c075e61b613ca8217ec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gac73bc0051abe5c075e61b613ca8217ec">Coda_InvertiVerso</a> (<a class="el" href="struct_coda_turni.html">CodaTurni</a> *c)</td></tr>
+<tr class="memdesc:gac73bc0051abe5c075e61b613ca8217ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverte il verso di scorrimento (carta Cambio Giro).  <br /></td></tr>
+<tr class="memitem:ga2ef4fc1bffec7bb1dbef333edee72d8f" id="r_ga2ef4fc1bffec7bb1dbef333edee72d8f"><td class="memItemLeft"><a class="el" href="struct_nodo_coda.html">NodoCoda</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ga2ef4fc1bffec7bb1dbef333edee72d8f">Coda_CercaPerIndice</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, int indice)</td></tr>
+<tr class="memdesc:ga2ef4fc1bffec7bb1dbef333edee72d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca il nodo all'indice specificato (0 = front).  <br /></td></tr>
+<tr class="memitem:ga124235163883b905dcea984a8384ee16" id="r_ga124235163883b905dcea984a8384ee16"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga124235163883b905dcea984a8384ee16">Coda_CopiaPerIndice</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, int indice, <a class="el" href="struct_giocatore.html">Giocatore</a> *out)</td></tr>
+<tr class="memdesc:ga124235163883b905dcea984a8384ee16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia l'i-esimo giocatore in out (0 = front).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Funzioni per la gestione della coda dei turni. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="ga2ef4fc1bffec7bb1dbef333edee72d8f" name="ga2ef4fc1bffec7bb1dbef333edee72d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ef4fc1bffec7bb1dbef333edee72d8f">&#9670;&#160;</a></span>Coda_CercaPerIndice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_nodo_coda.html">NodoCoda</a> * Coda_CercaPerIndice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>indice</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cerca il nodo all'indice specificato (0 = front). </p>
+<p>Cerca un nodo per indice (0 = front).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; indice nel range [0, size-1]. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore a <a class="el" href="struct_nodo_coda.html" title="Nodo della coda: contiene un Giocatore e puntatori next/prev.">NodoCoda</a>, o NULL se fuori range. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">indice</td><td>Indice del nodo (0-based).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Cerca il nodo all'indice specificato (0 = front).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; indice valido. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd><a class="el" href="struct_nodo_coda.html" title="Nodo della coda: contiene un Giocatore e puntatori next/prev.">NodoCoda</a>, o NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">indice</td><td>Indice (0-based). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga124235163883b905dcea984a8384ee16" name="ga124235163883b905dcea984a8384ee16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga124235163883b905dcea984a8384ee16">&#9670;&#160;</a></span>Coda_CopiaPerIndice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Coda_CopiaPerIndice </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>indice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copia l'i-esimo giocatore in out (0 = front). </p>
+<p>Copia il giocatore all'indice in out.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; indice nel range [0, size-1]; out != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> copiato in out. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">indice</td><td>Indice del giocatore (0-based). </td></tr>
+    <tr><td class="paramname">out</td><td>Puntatore a <a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> per il risultato. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 altrimenti.</dd></dl>
+<p>Copia l'i-esimo giocatore in out (0 = front).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; out != NULL; indice valido. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> copiato. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">indice</td><td>Indice (0-based). </td></tr>
+    <tr><td class="paramname">out</td><td>Puntatore output. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab11ca930d6fab622f49e830d54ee2599" name="gab11ca930d6fab622f49e830d54ee2599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab11ca930d6fab622f49e830d54ee2599">&#9670;&#160;</a></span>Coda_Crea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_coda_turni.html">CodaTurni</a> * Coda_Crea </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crea una coda vuota. </p>
+<dl class="section post"><dt>Postcondizione</dt><dd>Coda allocata e inizializzata (size=0, verso=1). </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>, o NULL se out-of-memory.</dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Coda allocata; verso=1 (orario); size=0. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>, o NULL. </dd></dl>
+
+</div>
+</div>
+<a id="ga1c3d994f3790ec934fc95d9d853931c9" name="ga1c3d994f3790ec934fc95d9d853931c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c3d994f3790ec934fc95d9d853931c9">&#9670;&#160;</a></span>Coda_Dequeue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Coda_Dequeue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rimuove il giocatore in testa (front). </p>
+<p>Rimuove il giocatore in testa.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> rimosso; size decrementato; dati scritti in out (se non NULL). </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">out</td><td>Puntatore a <a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> per ricevere l'elemento rimosso (può essere NULL). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 se coda vuota.</dd></dl>
+<p>Rimuove il giocatore in testa (front).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> rimosso; size decrementato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">out</td><td>Puntatore output (puo' essere NULL). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 se vuota. </dd></dl>
+
+</div>
+</div>
+<a id="ga79afb3f7bc3b06d5b1376e85963b32da" name="ga79afb3f7bc3b06d5b1376e85963b32da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79afb3f7bc3b06d5b1376e85963b32da">&#9670;&#160;</a></span>Coda_Dimensione()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Coda_Dimensione </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il numero di giocatori in coda. </p>
+<p>Restituisce il numero di giocatori.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di elementi. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Restituisce il numero di giocatori in coda.</p>
+<dl class="section return"><dt>Restituisce</dt><dd>Dimensione, 0 se NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga3ab0b2cbc6c5a60be1d892fb511e2684" name="ga3ab0b2cbc6c5a60be1d892fb511e2684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ab0b2cbc6c5a60be1d892fb511e2684">&#9670;&#160;</a></span>Coda_Distruggi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Coda_Distruggi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Distruttore: libera tutti i nodi e la struttura <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </p>
+<p>Distrugge la coda e libera la memoria.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Memoria della coda completamente liberata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Distruttore: libera tutti i nodi e la struttura <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Memoria liberata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7e0da971008ab4c258d57d5bc3f53e54" name="ga7e0da971008ab4c258d57d5bc3f53e54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e0da971008ab4c258d57d5bc3f53e54">&#9670;&#160;</a></span>Coda_Enqueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Coda_Enqueue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a></td>          <td class="paramname"><span class="paramname"><em>g</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserisce un giocatore in coda (rear). </p>
+<p>Inserisce un giocatore in coda.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> aggiunto in coda; size incrementato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">g</td><td><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> da inserire. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 altrimenti.</dd></dl>
+<p>Inserisce un giocatore in coda (rear).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> aggiunto; size incrementato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">g</td><td><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="ga9f9d5b9d69e9482f994b36b39b642259" name="ga9f9d5b9d69e9482f994b36b39b642259"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f9d5b9d69e9482f994b36b39b642259">&#9670;&#160;</a></span>Coda_Front()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Coda_Front </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il giocatore in testa SENZA rimuoverlo. </p>
+<p>Restituisce il giocatore in testa (senza rimuovere).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL e coda non vuota. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> in front scritto in out. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">out</td><td>Puntatore a <a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> per ricevere l'elemento in testa. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 se coda vuota.</dd></dl>
+<p>Restituisce il giocatore in testa SENZA rimuoverlo.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 se vuota. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">out</td><td>Puntatore output. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac73bc0051abe5c075e61b613ca8217ec" name="gac73bc0051abe5c075e61b613ca8217ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac73bc0051abe5c075e61b613ca8217ec">&#9670;&#160;</a></span>Coda_InvertiVerso()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Coda_InvertiVerso </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inverte il verso di scorrimento (carta Cambio Giro). </p>
+<p>Operazione O(1): inverte il segno di <span class="tt">verso</span>.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>verso *= -1. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>verso invertito; front/rear scambiati. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa3e062ece5c53fa71fe3f38a40af9f8b" name="gaa3e062ece5c53fa71fe3f38a40af9f8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3e062ece5c53fa71fe3f38a40af9f8b">&#9670;&#160;</a></span>Coda_ProxNodo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_nodo_coda.html">NodoCoda</a> * Coda_ProxNodo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_nodo_coda.html">NodoCoda</a> *</td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il nodo che segue <span class="tt">n</span> nella direzione corrente. </p>
+<p>Restituisce il prossimo nodo nella direzione corrente.</p>
+<p>Utilizza <span class="tt">verso</span> e i puntatori prev/next per determinare il prossimo turno in O(1).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; n != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al <a class="el" href="struct_nodo_coda.html" title="Nodo della coda: contiene un Giocatore e puntatori next/prev.">NodoCoda</a> successivo, o NULL se non trovato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">n</td><td>Nodo corrente.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Restituisce il nodo che segue <span class="tt">n</span> nella direzione corrente.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; n != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Prossimo nodo (con wrap-around), o NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">n</td><td>Nodo corrente. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4f1de642a8dfccfbc0bd40a390446a1a" name="ga4f1de642a8dfccfbc0bd40a390446a1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f1de642a8dfccfbc0bd40a390446a1a">&#9670;&#160;</a></span>Coda_Rear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Coda_Rear </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il giocatore in fondo (rear) SENZA rimuoverlo. </p>
+<p>Restituisce il giocatore in fondo.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL e coda non vuota. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> in rear scritto in out. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">out</td><td>Puntatore a <a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 se coda vuota.</dd></dl>
+<p>Restituisce il giocatore in fondo (rear) SENZA rimuoverlo.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se successo, 0 se vuota. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+    <tr><td class="paramname">out</td><td>Puntatore output. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gafe5e85ee83772d0ce66f79eb6fb070d7" name="gafe5e85ee83772d0ce66f79eb6fb070d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe5e85ee83772d0ce66f79eb6fb070d7">&#9670;&#160;</a></span>Coda_Vuota()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Coda_Vuota </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se la coda è vuota. </p>
+<p>Verifica se la coda e' vuota.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se vuota, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Verifica se la coda è vuota.</p>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se vuota, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

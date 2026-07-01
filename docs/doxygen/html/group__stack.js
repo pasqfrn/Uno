@@ -1,0 +1,12 @@
+var group__stack =
+[
+    [ "stack.c", "stack_8c.html", null ],
+    [ "Pila_Crea", "group__stack.html#gae2580d2cd99d4bbccf2d97f0e7505986", null ],
+    [ "Pila_Dimensione", "group__stack.html#ga10a5907e144119205466751dc42045b3", null ],
+    [ "Pila_Distruggi", "group__stack.html#ga263f40cb0178a91e84a55530b759de12", null ],
+    [ "Pila_Pop", "group__stack.html#ga5bdd368203194d752ff33dbb1cac1c63", null ],
+    [ "Pila_Push", "group__stack.html#gab82fab8722fd6967c4eb8df559bd54a0", null ],
+    [ "Pila_Svuota", "group__stack.html#ga0e02cb5e94d45aafbf07b62fcea1061f", null ],
+    [ "Pila_Top", "group__stack.html#gac59443252a5933aafadbe3a44baaac7b", null ],
+    [ "Pila_Vuota", "group__stack.html#ga70ddd166cfe7b417c89adcd326423cf7", null ]
+];

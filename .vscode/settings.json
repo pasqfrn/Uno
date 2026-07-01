@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "Makefile": "makefile",
+        "*.mk": "makefile"
+    },
+    "doxygen.enabled": true,
+    "doxygen.supportMakefile": true,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "comment.block.documentation",
+                "settings": {
+                    "foreground": "#6A9955",
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "string.other.link.description",
+                "settings": {
+                    "foreground": "#CE9178"
+                }
+            }
+        ]
+    }
+}

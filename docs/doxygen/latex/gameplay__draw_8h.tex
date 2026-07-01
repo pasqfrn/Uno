@@ -1,0 +1,74 @@
+\doxysection{lib/screens/game/gameplay\+\_\+draw.h File Reference}
+\hypertarget{gameplay__draw_8h}{}\label{gameplay__draw_8h}\index{lib/screens/game/gameplay\_draw.h@{lib/screens/game/gameplay\_draw.h}}
+
+
+Rendering della schermata di gioco.  
+
+
+{\ttfamily \#include "{}../../data\+\_\+structures.\+h"{}}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gameplay__draw_8h_a53fde902dd9e69aebb214c550e9751d9}{Disegna\+Gameplay}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}fase, \mbox{\hyperlink{struct_vector2}{Vector2}} mouse\+Pos)
+\begin{DoxyCompactList}\small\item\em Disegna la schermata di gioco completa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Rendering della schermata di gioco. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gameplay__draw_8h_a53fde902dd9e69aebb214c550e9751d9}\index{gameplay\_draw.h@{gameplay\_draw.h}!DisegnaGameplay@{DisegnaGameplay}}
+\index{DisegnaGameplay@{DisegnaGameplay}!gameplay\_draw.h@{gameplay\_draw.h}}
+\doxysubsubsection{\texorpdfstring{DisegnaGameplay()}{DisegnaGameplay()}}
+{\footnotesize\ttfamily \label{gameplay__draw_8h_a53fde902dd9e69aebb214c550e9751d9} 
+void Disegna\+Gameplay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{\mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}}]{fase}{, }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{mouse\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Disegna la schermata di gioco completa. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; fase != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Scena di gioco renderizzata. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato del gioco. \\
+\hline
+{\em fase} & Fase corrente. \\
+\hline
+{\em mouse\+Pos} & Posizione del mouse.\\
+\hline
+\end{DoxyParams}
+Disegna la schermata di gioco completa.
+
+Rendering ordinato (dallo sfondo al primo piano)\+:
+\begin{DoxyEnumerate}
+\item Timer partita (angolo superiore destro)
+\item Info turno e colore attivo (bordo inferiore)
+\item Info giocatori avversari (mano, nome, numero carte)
+\item Tavolo centrale con carta scarto
+\item \doxylink{struct_pila}{Pila} pesca (centro-\/sinistra)
+\item Mano del giocatore umano (con hover effect)
+\item \doxylink{struct_carta}{Carta} in trascinamento (effetto ombra)
+\item Scelta colore (overlay per jolly)
+\item Pulsante UNO (se il giocatore deve chiamare)
+\item Notifiche temporanee
+\item Chat (se aperta)
+\item Popup uscita (sempre in primo piano)
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco corrente. \\
+\hline
+{\em fase} & Puntatore alla fase applicazione (puo\textquotesingle{} cambiare a FASE\+\_\+\+FINE\+\_\+\+PARTITA). \\
+\hline
+{\em mouse\+Pos} & Posizione corrente del mouse. \\
+\hline
+\end{DoxyParams}

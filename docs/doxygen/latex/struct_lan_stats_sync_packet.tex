@@ -1,0 +1,101 @@
+\doxysection{Lan\+Stats\+Sync\+Packet Struct Reference}
+\hypertarget{struct_lan_stats_sync_packet}{}\label{struct_lan_stats_sync_packet}\index{LanStatsSyncPacket@{LanStatsSyncPacket}}
+
+
+{\ttfamily \#include $<$lan\+\_\+protocol.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_lan_stats_sync_packet_adbe178e781460dfa8339e5520df9b787}{magic}}
+\begin{DoxyCompactList}\small\item\em magic = LAN\+\_\+\+PACKET\+\_\+\+STATS\+\_\+\+SYNC \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{struct_lan_stats_sync_packet_a6de2c30367d462a8298368f147cfb2bf}{username}} \mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em Username del giocatore. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_lan_stats_sync_packet_a52179854521a0c864a080bf2109188a9}{partite\+\_\+giocate}}
+\begin{DoxyCompactList}\small\item\em Totale partite giocate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_lan_stats_sync_packet_a7cd696055bef987c8d4e6c0963a91b09}{vittorie\+\_\+giocatore}}
+\begin{DoxyCompactList}\small\item\em Totale vittorie. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_lan_stats_sync_packet_addc2680a046adaed31da4d7967b987de}{vittorie\+\_\+bot}}
+\begin{DoxyCompactList}\small\item\em Totale sconfitte. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_lan_stats_sync_packet_abf14477a8c2d02bd3c38b69ef397494b}{storico\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em Numero di partite storiche valide (0-\/STORICO\+\_\+\+SYNC\+\_\+\+COUNT) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_partita_registrata}{Partita\+Registrata}} \mbox{\hyperlink{struct_lan_stats_sync_packet_a5e64547f6d68525026d6a732f2f54cd6}{storico\+\_\+partite}} \mbox{[}\mbox{\hyperlink{lan__protocol_8h_a9805d8d568aa10ad776d8b121a8367e4}{STORICO\+\_\+\+SYNC\+\_\+\+COUNT}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Ultime N partite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_lan_stats_sync_packet_adbe178e781460dfa8339e5520df9b787}\index{LanStatsSyncPacket@{LanStatsSyncPacket}!magic@{magic}}
+\index{magic@{magic}!LanStatsSyncPacket@{LanStatsSyncPacket}}
+\doxysubsubsection{\texorpdfstring{magic}{magic}}
+{\footnotesize\ttfamily \label{struct_lan_stats_sync_packet_adbe178e781460dfa8339e5520df9b787} 
+int Lan\+Stats\+Sync\+Packet\+::magic}
+
+
+
+magic = LAN\+\_\+\+PACKET\+\_\+\+STATS\+\_\+\+SYNC 
+
+\Hypertarget{struct_lan_stats_sync_packet_a52179854521a0c864a080bf2109188a9}\index{LanStatsSyncPacket@{LanStatsSyncPacket}!partite\_giocate@{partite\_giocate}}
+\index{partite\_giocate@{partite\_giocate}!LanStatsSyncPacket@{LanStatsSyncPacket}}
+\doxysubsubsection{\texorpdfstring{partite\_giocate}{partite\_giocate}}
+{\footnotesize\ttfamily \label{struct_lan_stats_sync_packet_a52179854521a0c864a080bf2109188a9} 
+int Lan\+Stats\+Sync\+Packet\+::partite\+\_\+giocate}
+
+
+
+Totale partite giocate. 
+
+\Hypertarget{struct_lan_stats_sync_packet_abf14477a8c2d02bd3c38b69ef397494b}\index{LanStatsSyncPacket@{LanStatsSyncPacket}!storico\_count@{storico\_count}}
+\index{storico\_count@{storico\_count}!LanStatsSyncPacket@{LanStatsSyncPacket}}
+\doxysubsubsection{\texorpdfstring{storico\_count}{storico\_count}}
+{\footnotesize\ttfamily \label{struct_lan_stats_sync_packet_abf14477a8c2d02bd3c38b69ef397494b} 
+int Lan\+Stats\+Sync\+Packet\+::storico\+\_\+count}
+
+
+
+Numero di partite storiche valide (0-\/STORICO\+\_\+\+SYNC\+\_\+\+COUNT) 
+
+\Hypertarget{struct_lan_stats_sync_packet_a5e64547f6d68525026d6a732f2f54cd6}\index{LanStatsSyncPacket@{LanStatsSyncPacket}!storico\_partite@{storico\_partite}}
+\index{storico\_partite@{storico\_partite}!LanStatsSyncPacket@{LanStatsSyncPacket}}
+\doxysubsubsection{\texorpdfstring{storico\_partite}{storico\_partite}}
+{\footnotesize\ttfamily \label{struct_lan_stats_sync_packet_a5e64547f6d68525026d6a732f2f54cd6} 
+\mbox{\hyperlink{struct_partita_registrata}{Partita\+Registrata}} Lan\+Stats\+Sync\+Packet\+::storico\+\_\+partite\mbox{[}\mbox{\hyperlink{lan__protocol_8h_a9805d8d568aa10ad776d8b121a8367e4}{STORICO\+\_\+\+SYNC\+\_\+\+COUNT}}\mbox{]}}
+
+
+
+Ultime N partite. 
+
+\Hypertarget{struct_lan_stats_sync_packet_a6de2c30367d462a8298368f147cfb2bf}\index{LanStatsSyncPacket@{LanStatsSyncPacket}!username@{username}}
+\index{username@{username}!LanStatsSyncPacket@{LanStatsSyncPacket}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily \label{struct_lan_stats_sync_packet_a6de2c30367d462a8298368f147cfb2bf} 
+char Lan\+Stats\+Sync\+Packet\+::username\mbox{[}30\mbox{]}}
+
+
+
+Username del giocatore. 
+
+\Hypertarget{struct_lan_stats_sync_packet_addc2680a046adaed31da4d7967b987de}\index{LanStatsSyncPacket@{LanStatsSyncPacket}!vittorie\_bot@{vittorie\_bot}}
+\index{vittorie\_bot@{vittorie\_bot}!LanStatsSyncPacket@{LanStatsSyncPacket}}
+\doxysubsubsection{\texorpdfstring{vittorie\_bot}{vittorie\_bot}}
+{\footnotesize\ttfamily \label{struct_lan_stats_sync_packet_addc2680a046adaed31da4d7967b987de} 
+int Lan\+Stats\+Sync\+Packet\+::vittorie\+\_\+bot}
+
+
+
+Totale sconfitte. 
+
+\Hypertarget{struct_lan_stats_sync_packet_a7cd696055bef987c8d4e6c0963a91b09}\index{LanStatsSyncPacket@{LanStatsSyncPacket}!vittorie\_giocatore@{vittorie\_giocatore}}
+\index{vittorie\_giocatore@{vittorie\_giocatore}!LanStatsSyncPacket@{LanStatsSyncPacket}}
+\doxysubsubsection{\texorpdfstring{vittorie\_giocatore}{vittorie\_giocatore}}
+{\footnotesize\ttfamily \label{struct_lan_stats_sync_packet_a7cd696055bef987c8d4e6c0963a91b09} 
+int Lan\+Stats\+Sync\+Packet\+::vittorie\+\_\+giocatore}
+
+
+
+Totale vittorie. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/socket/lan/\mbox{\hyperlink{lan__protocol_8h}{lan\+\_\+protocol.\+h}}\end{DoxyCompactItemize}

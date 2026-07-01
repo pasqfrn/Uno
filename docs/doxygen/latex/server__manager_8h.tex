@@ -1,0 +1,129 @@
+\doxysection{lib/socket/server/server\+\_\+manager.h File Reference}
+\hypertarget{server__manager_8h}{}\label{server__manager_8h}\index{lib/socket/server/server\_manager.h@{lib/socket/server/server\_manager.h}}
+
+
+Gestione delle sessioni di gioco lato server/host.  
+
+
+{\ttfamily \#include "{}../../data\+\_\+structures.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_session_player}{Session\+Player}}
+\begin{DoxyCompactList}\small\item\em Informazioni giocatore nella sessione. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_game_session}{Game\+Session}}
+\begin{DoxyCompactList}\small\item\em Sessione di gioco multiplayer. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_server_manager}{Server\+Manager}}
+\begin{DoxyCompactList}\small\item\em Gestore di tutte le sessioni di gioco attive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{server__manager_8h_a59177ab48229893d0eb334aecb316840}{MAX\+\_\+\+GAME\+\_\+\+SESSIONS}}~10
+\begin{DoxyCompactList}\small\item\em Numero massimo di sessioni di gioco contemporanee. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{server__manager_8h_aedc8c1a22b7965c1e61fc1f065c287ee}{MAX\+\_\+\+PLAYERS\+\_\+\+PER\+\_\+\+SESSION}}~4
+\begin{DoxyCompactList}\small\item\em Numero massimo di giocatori per sessione. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{server__manager_8h_a053b7859476cc9867ec62c49e68d3fa1}{MAX\+\_\+\+CONNECTIONS}}~40
+\begin{DoxyCompactList}\small\item\em Numero massimo di connessioni totali. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__server__manager__stati_gac82c179a797c0d7c249d1b98a8e3aa8f}{Session\+State}} \{ \newline
+\mbox{\hyperlink{group__server__manager__stati_ggac82c179a797c0d7c249d1b98a8e3aa8fa5964dfc2fd0e3a409c22e68564320d15}{SESSION\+\_\+\+WAITING}}
+, \mbox{\hyperlink{group__server__manager__stati_ggac82c179a797c0d7c249d1b98a8e3aa8faba27760d1c9400680479f5bd304ce305}{SESSION\+\_\+\+STARTING}}
+, \mbox{\hyperlink{group__server__manager__stati_ggac82c179a797c0d7c249d1b98a8e3aa8fa3831d35afa06c0bc305ec523a2f9c87a}{SESSION\+\_\+\+IN\+\_\+\+PROGRESS}}
+, \mbox{\hyperlink{group__server__manager__stati_ggac82c179a797c0d7c249d1b98a8e3aa8fad90ef073bffc0892df8168ac75d2179c}{SESSION\+\_\+\+FINISHED}}
+, \newline
+\mbox{\hyperlink{group__server__manager__stati_ggac82c179a797c0d7c249d1b98a8e3aa8fa4617fc679cfb70fe09c81309b63ee2cd}{SESSION\+\_\+\+CLOSED}}
+ \}
+\begin{DoxyCompactList}\small\item\em Sessione in attesa di giocatori. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__server__manager__api_gad49f47a1e9318a8183e7c4269c8c437b}{Init\+Server\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Inizializza il server manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga77098e4298a4acac07490885d068e0f7}{Update\+Server\+Manager}} (float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna lo stato di tutte le sessioni. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga0bb6b95401b7b67589bc7213e9f47ee9}{Shutdown\+Server\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Chiude il server manager e libera risorse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga16fd52dac20f4320260b28846fbddd9e}{Create\+Session}} (const char \texorpdfstring{$\ast$}{*}host\+\_\+name, int host\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Crea una nuova sessione di gioco. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga2e85aecf5499dd7a2ce0190099dc5822}{Get\+Session}} (const char \texorpdfstring{$\ast$}{*}sess\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Cerca una sessione per ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga3a6f3c2c7a63d479ce25d78410b20f7b}{Get\+Session\+By\+Player\+Id}} (int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}})
+\begin{DoxyCompactList}\small\item\em Cerca una sessione contenente un giocatore specifico. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga9c4e3c22ad94a695a648da6957a7cc11}{Add\+Player\+To\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, const char \texorpdfstring{$\ast$}{*}player\+\_\+name, int is\+\_\+bot)
+\begin{DoxyCompactList}\small\item\em Aggiunge un giocatore a una sessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga80c5b6914b694d9fdfdf7d583a801911}{Remove\+Player\+From\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}})
+\begin{DoxyCompactList}\small\item\em Rimuove un giocatore da una sessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga323407153355eb9a4348f5e2bdffb699}{Start\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session)
+\begin{DoxyCompactList}\small\item\em Avvia il conteggio per l\textquotesingle{}inizio della partita. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga8927513d3fed56e3104fb092d4ee5a3d}{Update\+Session\+Logic}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna la logica di una sessione (bot AI, timer). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_gae47b83053dd03f75306d6b4428ec4f61}{Close\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session)
+\begin{DoxyCompactList}\small\item\em Chiude una sessione. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga3b360a917a8a8e088fb7601541d7fb27}{Is\+Valid\+Move}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, int card\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Verifica se una mossa e\textquotesingle{} valida (lato server). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga95d41e70918a635e3d32b6035c2e3fe0}{Process\+Move}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, int card\+\_\+index, \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} color\+\_\+choice)
+\begin{DoxyCompactList}\small\item\em Processa una mossa (lato server). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_gaa855d2809b0d5c648293f8c6af3369df}{Process\+Draw}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, int draw\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Processa una pescata (lato server). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga98b8f5a55cc13c86013e2a7d49ff36e2}{Process\+Color\+Choice}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} color)
+\begin{DoxyCompactList}\small\item\em Processa una scelta colore (lato server). \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga727dc1bbb1c4967c2aa8235d081ceb79}{Generate\+Session\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Genera un ID di sessione univoco (stringa casuale). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_server_manager}{Server\+Manager}} \mbox{\hyperlink{server__manager_8h_ab5c207ae2247c6972e361d9c19dbd477}{server\+Manager}}
+\begin{DoxyCompactList}\small\item\em Istanza globale del server manager (lato host). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestione delle sessioni di gioco lato server/host. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{server__manager_8h_a053b7859476cc9867ec62c49e68d3fa1}\index{server\_manager.h@{server\_manager.h}!MAX\_CONNECTIONS@{MAX\_CONNECTIONS}}
+\index{MAX\_CONNECTIONS@{MAX\_CONNECTIONS}!server\_manager.h@{server\_manager.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_CONNECTIONS}{MAX\_CONNECTIONS}}
+{\footnotesize\ttfamily \label{server__manager_8h_a053b7859476cc9867ec62c49e68d3fa1} 
+\#define MAX\+\_\+\+CONNECTIONS~40}
+
+
+
+Numero massimo di connessioni totali. 
+
+\Hypertarget{server__manager_8h_a59177ab48229893d0eb334aecb316840}\index{server\_manager.h@{server\_manager.h}!MAX\_GAME\_SESSIONS@{MAX\_GAME\_SESSIONS}}
+\index{MAX\_GAME\_SESSIONS@{MAX\_GAME\_SESSIONS}!server\_manager.h@{server\_manager.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_GAME\_SESSIONS}{MAX\_GAME\_SESSIONS}}
+{\footnotesize\ttfamily \label{server__manager_8h_a59177ab48229893d0eb334aecb316840} 
+\#define MAX\+\_\+\+GAME\+\_\+\+SESSIONS~10}
+
+
+
+Numero massimo di sessioni di gioco contemporanee. 
+
+\Hypertarget{server__manager_8h_aedc8c1a22b7965c1e61fc1f065c287ee}\index{server\_manager.h@{server\_manager.h}!MAX\_PLAYERS\_PER\_SESSION@{MAX\_PLAYERS\_PER\_SESSION}}
+\index{MAX\_PLAYERS\_PER\_SESSION@{MAX\_PLAYERS\_PER\_SESSION}!server\_manager.h@{server\_manager.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_PLAYERS\_PER\_SESSION}{MAX\_PLAYERS\_PER\_SESSION}}
+{\footnotesize\ttfamily \label{server__manager_8h_aedc8c1a22b7965c1e61fc1f065c287ee} 
+\#define MAX\+\_\+\+PLAYERS\+\_\+\+PER\+\_\+\+SESSION~4}
+
+
+
+Numero massimo di giocatori per sessione. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{server__manager_8h_ab5c207ae2247c6972e361d9c19dbd477}\index{server\_manager.h@{server\_manager.h}!serverManager@{serverManager}}
+\index{serverManager@{serverManager}!server\_manager.h@{server\_manager.h}}
+\doxysubsubsection{\texorpdfstring{serverManager}{serverManager}}
+{\footnotesize\ttfamily \label{server__manager_8h_ab5c207ae2247c6972e361d9c19dbd477} 
+\mbox{\hyperlink{struct_server_manager}{Server\+Manager}} server\+Manager\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Istanza globale del server manager (lato host). 
+

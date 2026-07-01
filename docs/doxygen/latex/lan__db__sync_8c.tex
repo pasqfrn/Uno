@@ -1,0 +1,136 @@
+\doxysection{src/socket/lan/lan\+\_\+db\+\_\+sync.c File Reference}
+\hypertarget{lan__db__sync_8c}{}\label{lan__db__sync_8c}\index{src/socket/lan/lan\_db\_sync.c@{src/socket/lan/lan\_db\_sync.c}}
+
+
+Sincronizzazione database utenti via LAN (UDP broadcast).  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}../../../lib/socket/lan/lan\+\_\+sync.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/lan/lan\+\_\+protocol.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network\+\_\+send.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/data\+\_\+structures.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lan__db__sync_8c_a4ac5aeca9a0bc4c628f3c377b007a990}{LAN\+\_\+\+Email\+Esiste}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Verifica se una email esiste gia\textquotesingle{} nel DB locale o remoto (LAN). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lan__db__sync_8c_a3f8f65e7d6582283510158e54c4928fe}{Serializza\+DB}} (char \texorpdfstring{$\ast$}{*}buf, int buf\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Serializza il database utenti in un buffer per broadcast UDP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__db__sync_8c_afb110e20ad8f620b196145ddcb970c21}{LAN\+\_\+\+Process\+DBPacket}} (const char \texorpdfstring{$\ast$}{*}buf, int bytes, int offset)
+\begin{DoxyCompactList}\small\item\em Entry point pubblico per processare un pacchetto DB LAN ricevuto. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lan__db__sync_8c_acab0d05dc088e996d6c4a0fccafd0efb}{LAN\+\_\+\+Username\+Esiste}} (const char \texorpdfstring{$\ast$}{*}u, int skip)
+\begin{DoxyCompactList}\small\item\em Verifica se uno username esiste gia\textquotesingle{} nel DB locale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sincronizzazione database utenti via LAN (UDP broadcast). 
+
+Modulo per la serializzazione, deserializzazione e merge del database utenti tramite pacchetti UDP broadcast. Gestisce\+:
+\begin{DoxyItemize}
+\item Serializza\+DB\+: converte db\+Utenti in buffer per trasmissione
+\item Deserializza\+EMerge\+: riceve buffer e fonde con db locale
+\item LAN\+\_\+\+Process\+DBPacket\+: entry point pubblico per packet handler
+\item LAN\+\_\+\+Username\+Esiste\+: verifica unicita\textquotesingle{} username su LAN
+\item LAN\+\_\+\+Email\+Esiste\+: verifica unicita\textquotesingle{} email su LAN
+\end{DoxyItemize}
+
+ADT utilizzato\+: \doxylink{struct_database_utenti}{Database\+Utenti} (db\+Utenti, array dinamico allocato).
+
+Protocollo pacchetto\+: \mbox{[}\doxylink{struct_lan_packet_header}{Lan\+Packet\+Header} (magic=LAN\+\_\+\+PACKET\+\_\+\+DB + length)\mbox{]} \mbox{[}int num\+\_\+utenti\mbox{]} \mbox{[}\doxylink{struct_lan_compact_user}{Lan\+Compact\+User} x N\mbox{]}
+
+Strategia merge (Deserializza\+EMerge)\+:
+\begin{DoxyEnumerate}
+\item Rimuove utenti locali non presenti nel pacchetto remoto (eccetto utente loggato e utenti in deleted\+Users)
+\item Per ogni utente remoto\+: aggiorna se modificato, inserisce se nuovo
+\item Protezione anti-\/ricorsione\+: dentro\+Salva\+DB evita broadcast loop
+\item Dopo il merge, se siamo NET\+\_\+\+HOST, chiama \doxylink{group__network__send__admin_gac3bad81dd1e885fdb5fe711a2cc7902a}{Broadcast\+Admin\+DB()} per aggiornare i client TCP connessi in tempo reale.
+\end{DoxyEnumerate}
+
+BUG FIX 1 (Double Counting)\+: I contatori (partite\+\_\+giocate, vittorie\+\_\+giocatore, vittorie\+\_\+bot) vengono sincronizzati con "{}crescita monotona"{}\+: se il remoto ha contatori piu\textquotesingle{} alti, vengono copiati SENZA aggiungere nuovamente lo storico. Lo storico partite viene mergiato SOLO se i contatori sono gia\textquotesingle{} sincronizzati (per colmare eventuali partite mancanti). Questo evita il double counting per cui partite\+\_\+giocate veniva incrementato sia dalla copia dei contatori che dall\textquotesingle{}aggiunta delle partite storiche.
+
+BUG FIX 2 (Storico merge affidabile)\+: La deduplica usa una chiave composta (durata, esito, modalita, posizione) PIU\textquotesingle{} username per evitare falsi positivi quando piu\textquotesingle{} giocatori hanno partite con caratteristiche simili. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lan__db__sync_8c_a4ac5aeca9a0bc4c628f3c377b007a990}\index{lan\_db\_sync.c@{lan\_db\_sync.c}!LAN\_EmailEsiste@{LAN\_EmailEsiste}}
+\index{LAN\_EmailEsiste@{LAN\_EmailEsiste}!lan\_db\_sync.c@{lan\_db\_sync.c}}
+\doxysubsubsection{\texorpdfstring{LAN\_EmailEsiste()}{LAN\_EmailEsiste()}}
+{\footnotesize\ttfamily \label{lan__db__sync_8c_a4ac5aeca9a0bc4c628f3c377b007a990} 
+int LAN\+\_\+\+Email\+Esiste (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se una email esiste gia\textquotesingle{} nel DB locale o remoto (LAN). 
+
+Verifica se un\textquotesingle{}email esiste nel database LAN-\/synced.
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email da verificare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se esiste, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{lan__db__sync_8c_afb110e20ad8f620b196145ddcb970c21}\index{lan\_db\_sync.c@{lan\_db\_sync.c}!LAN\_ProcessDBPacket@{LAN\_ProcessDBPacket}}
+\index{LAN\_ProcessDBPacket@{LAN\_ProcessDBPacket}!lan\_db\_sync.c@{lan\_db\_sync.c}}
+\doxysubsubsection{\texorpdfstring{LAN\_ProcessDBPacket()}{LAN\_ProcessDBPacket()}}
+{\footnotesize\ttfamily \label{lan__db__sync_8c_afb110e20ad8f620b196145ddcb970c21} 
+void LAN\+\_\+\+Process\+DBPacket (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{int}]{bytes}{, }\item[{int}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Entry point pubblico per processare un pacchetto DB LAN ricevuto. 
+
+Processa un pacchetto DB ricevuto (merge utenti).
+
+Chiamato da \doxylink{lan__sync_8h_ab0b625c0463cad457894bf91847319c5}{LAN\+\_\+\+Update()} in \doxylink{lan__broadcast_8c}{lan\+\_\+broadcast.\+c}. \Hypertarget{lan__db__sync_8c_acab0d05dc088e996d6c4a0fccafd0efb}\index{lan\_db\_sync.c@{lan\_db\_sync.c}!LAN\_UsernameEsiste@{LAN\_UsernameEsiste}}
+\index{LAN\_UsernameEsiste@{LAN\_UsernameEsiste}!lan\_db\_sync.c@{lan\_db\_sync.c}}
+\doxysubsubsection{\texorpdfstring{LAN\_UsernameEsiste()}{LAN\_UsernameEsiste()}}
+{\footnotesize\ttfamily \label{lan__db__sync_8c_acab0d05dc088e996d6c4a0fccafd0efb} 
+int LAN\+\_\+\+Username\+Esiste (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{u}{, }\item[{int}]{skip}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se uno username esiste gia\textquotesingle{} nel DB locale. 
+
+Verifica se uno username esiste nel database LAN-\/synced.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Username da verificare. \\
+\hline
+{\em skip} & Indice da saltare (-\/1 per nessuno). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se esiste, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{lan__db__sync_8c_a3f8f65e7d6582283510158e54c4928fe}\index{lan\_db\_sync.c@{lan\_db\_sync.c}!SerializzaDB@{SerializzaDB}}
+\index{SerializzaDB@{SerializzaDB}!lan\_db\_sync.c@{lan\_db\_sync.c}}
+\doxysubsubsection{\texorpdfstring{SerializzaDB()}{SerializzaDB()}}
+{\footnotesize\ttfamily \label{lan__db__sync_8c_a3f8f65e7d6582283510158e54c4928fe} 
+int Serializza\+DB (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{int}]{buf\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Serializza il database utenti in un buffer per broadcast UDP. 
+
+Serializza il database utenti in un buffer JSON.
+
+Formato\+: header + int(num\+\_\+utenti) + \doxylink{struct_lan_compact_user}{Lan\+Compact\+User}\mbox{[}N\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Buffer di destinazione. \\
+\hline
+{\em buf\+\_\+size} & Dimensione buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero di byte scritti, 0 se errore. 
+\end{DoxyReturn}

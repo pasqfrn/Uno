@@ -1,0 +1,165 @@
+\doxysection{src/game/save\+\_\+manager.c File Reference}
+\hypertarget{save__manager_8c}{}\label{save__manager_8c}\index{src/game/save\_manager.c@{src/game/save\_manager.c}}
+
+
+Gestione salvataggi partite su file binario.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include "{}../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/socket/lan/lan\+\_\+sync.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../../lib/fs/fs.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_temp_save}{Temp\+Save}}
+\begin{DoxyCompactList}\small\item\em Struttura temporanea per ordinamento salvataggi (usata in Compatta\+Salvataggi\+Utente). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{save__manager_8c_ab6d8a480978f155fe71df7ce72d2d67e}{Salva\+Partita}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Salva lo stato corrente della partita su file binario. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{save__manager_8c_a1f3105448b986dc3c5fd8ef93e948fdf}{Carica\+Partita\+Da\+Slot}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, int slot)
+\begin{DoxyCompactList}\small\item\em Carica una partita da uno slot di salvataggio specifico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{save__manager_8c_a4af9aa327b760e4e4ff4c861879608d6}{Compatta\+Salvataggi\+Utente}} (void)
+\begin{DoxyCompactList}\small\item\em Compatta i salvataggi dell\textquotesingle{}utente loggato in ordine cronologico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{save__manager_8c_a8b2e4cdd665a790268c297e793abc369}{Elimina\+Salvataggio}} (int slot)
+\begin{DoxyCompactList}\small\item\em Elimina un salvataggio e sincronizza via LAN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{save__manager_8c_abef09d90f8a1244e64b884e89814cd9d}{Elimina\+Tutti\+Salvataggi\+Utente}} (const char \texorpdfstring{$\ast$}{*}username)
+\begin{DoxyCompactList}\small\item\em Elimina TUTTI i salvataggi di un utente specifico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{save__manager_8c_a56d174d587ba4d54b02fa4f18c6d5279}{Get\+Save\+File\+Path}} (int user\+\_\+index, int slot, char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t bufsize)
+\begin{DoxyCompactList}\small\item\em Restituisce il path del file di salvataggio per un dato utente e slot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestione salvataggi partite su file binario. 
+
+Modulo per la gestione completa dei salvataggi partita su file. Salvataggio, caricamento, compattazione cronologica, eliminazione e integrazione con broadcast LAN. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{save__manager_8c_a1f3105448b986dc3c5fd8ef93e948fdf}\index{save\_manager.c@{save\_manager.c}!CaricaPartitaDaSlot@{CaricaPartitaDaSlot}}
+\index{CaricaPartitaDaSlot@{CaricaPartitaDaSlot}!save\_manager.c@{save\_manager.c}}
+\doxysubsubsection{\texorpdfstring{CaricaPartitaDaSlot()}{CaricaPartitaDaSlot()}}
+{\footnotesize\ttfamily \label{save__manager_8c_a1f3105448b986dc3c5fd8ef93e948fdf} 
+int Carica\+Partita\+Da\+Slot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{int}]{slot}{}\end{DoxyParamCaption})}
+
+
+
+Carica una partita da uno slot di salvataggio specifico. 
+
+Carica una partita da un file di salvataggio.
+
+Cerca prima nel formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat. Fallback\+: se non trova, controlla nel vecchio formato save\+\_\+slot\+\_\+\+N.\+dat per retrocompatibilità con salvataggi preesistenti.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da popolare. \\
+\hline
+{\em slot} & Indice dello slot (1-\/100). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se caricamento riuscito, 0 se slot vuoto o errore. 
+\end{DoxyReturn}
+\Hypertarget{save__manager_8c_a4af9aa327b760e4e4ff4c861879608d6}\index{save\_manager.c@{save\_manager.c}!CompattaSalvataggiUtente@{CompattaSalvataggiUtente}}
+\index{CompattaSalvataggiUtente@{CompattaSalvataggiUtente}!save\_manager.c@{save\_manager.c}}
+\doxysubsubsection{\texorpdfstring{CompattaSalvataggiUtente()}{CompattaSalvataggiUtente()}}
+{\footnotesize\ttfamily \label{save__manager_8c_a4af9aa327b760e4e4ff4c861879608d6} 
+void Compatta\+Salvataggi\+Utente (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Compatta i salvataggi dell\textquotesingle{}utente loggato in ordine cronologico. 
+
+Raccoglie tutti i salvataggi dell\textquotesingle{}utente (cerca sia formato nuovo save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat che vecchio save\+\_\+slot\+\_\+\+N.\+dat), li ordina per data crescente (bubble sort) e li riscrive nei primi slot liberi con il nuovo formato. \Hypertarget{save__manager_8c_a8b2e4cdd665a790268c297e793abc369}\index{save\_manager.c@{save\_manager.c}!EliminaSalvataggio@{EliminaSalvataggio}}
+\index{EliminaSalvataggio@{EliminaSalvataggio}!save\_manager.c@{save\_manager.c}}
+\doxysubsubsection{\texorpdfstring{EliminaSalvataggio()}{EliminaSalvataggio()}}
+{\footnotesize\ttfamily \label{save__manager_8c_a8b2e4cdd665a790268c297e793abc369} 
+void Elimina\+Salvataggio (\begin{DoxyParamCaption}\item[{int}]{slot}{}\end{DoxyParamCaption})}
+
+
+
+Elimina un salvataggio e sincronizza via LAN. 
+
+Elimina un file di salvataggio esistente.
+
+Legge i metadati (owner, data) prima di eliminare, poi\+: rimuove il file, compatta, notifica altri dispositivi LAN. Cerca nel formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat.
+
+
+\begin{DoxyParams}{Parameters}
+{\em slot} & Indice dello slot da eliminare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{save__manager_8c_abef09d90f8a1244e64b884e89814cd9d}\index{save\_manager.c@{save\_manager.c}!EliminaTuttiSalvataggiUtente@{EliminaTuttiSalvataggiUtente}}
+\index{EliminaTuttiSalvataggiUtente@{EliminaTuttiSalvataggiUtente}!save\_manager.c@{save\_manager.c}}
+\doxysubsubsection{\texorpdfstring{EliminaTuttiSalvataggiUtente()}{EliminaTuttiSalvataggiUtente()}}
+{\footnotesize\ttfamily \label{save__manager_8c_abef09d90f8a1244e64b884e89814cd9d} 
+void Elimina\+Tutti\+Salvataggi\+Utente (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{}\end{DoxyParamCaption})}
+
+
+
+Elimina TUTTI i salvataggi di un utente specifico. 
+
+Scandisce tutti gli slot 1-\/100 e rimuove i file .dat il cui proprietario corrisponde allo username specificato. Controlla sia il formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat che il vecchio save\+\_\+slot\+\_\+\+N.\+dat.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Username dell\textquotesingle{}utente i cui salvataggi vanno eliminati. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{save__manager_8c_a56d174d587ba4d54b02fa4f18c6d5279}\index{save\_manager.c@{save\_manager.c}!GetSaveFilePath@{GetSaveFilePath}}
+\index{GetSaveFilePath@{GetSaveFilePath}!save\_manager.c@{save\_manager.c}}
+\doxysubsubsection{\texorpdfstring{GetSaveFilePath()}{GetSaveFilePath()}}
+{\footnotesize\ttfamily \label{save__manager_8c_a56d174d587ba4d54b02fa4f18c6d5279} 
+void Get\+Save\+File\+Path (\begin{DoxyParamCaption}\item[{int}]{user\+\_\+index}{, }\item[{int}]{slot}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{bufsize}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce il path del file di salvataggio per un dato utente e slot. 
+
+Implementazione della funzione dichiarata in \doxylink{game__logic_8h}{game\+\_\+logic.\+h} per compatibilità. Formato\+: data/games/save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+index} & Indice dell\textquotesingle{}utente nel db (non usato, si usa id\+\_\+utente\+\_\+corrente). \\
+\hline
+{\em slot} & Indice dello slot (1-\/100). \\
+\hline
+{\em buffer} & Buffer di destinazione. \\
+\hline
+{\em bufsize} & Dimensione del buffer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{save__manager_8c_ab6d8a480978f155fe71df7ce72d2d67e}\index{save\_manager.c@{save\_manager.c}!SalvaPartita@{SalvaPartita}}
+\index{SalvaPartita@{SalvaPartita}!save\_manager.c@{save\_manager.c}}
+\doxysubsubsection{\texorpdfstring{SalvaPartita()}{SalvaPartita()}}
+{\footnotesize\ttfamily \label{save__manager_8c_ab6d8a480978f155fe71df7ce72d2d67e} 
+void Salva\+Partita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Salva lo stato corrente della partita su file binario. 
+
+Salva lo stato corrente della partita su file.
+
+Procedura\+:
+\begin{DoxyEnumerate}
+\item Compatta i salvataggi esistenti dell\textquotesingle{}utente
+\item Genera il timestamp corrente
+\item Trova il primo slot libero
+\item Serializza le mani su array di backup
+\item Scrive lo \doxylink{struct_stato_gioco}{Stato\+Gioco} su file .dat
+\item Ricostruisce gli ADT
+\item Broadcast LAN dei nuovi salvataggi
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco da salvare. \\
+\hline
+\end{DoxyParams}

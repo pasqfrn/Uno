@@ -1,0 +1,151 @@
+\doxysection{lib/screens/game/end\+\_\+screen.h File Reference}
+\hypertarget{end__screen_8h}{}\label{end__screen_8h}\index{lib/screens/game/end\_screen.h@{lib/screens/game/end\_screen.h}}
+
+
+Schermata di fine partita con classifica e statistiche.  
+
+
+{\ttfamily \#include "{}../../data\+\_\+structures.\+h"{}}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{end__screen_8h_a0e745641fe838ddef9bdaf29f6c2f464}{Calcola\+Classifica}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, \mbox{\hyperlink{struct_classifica_record}{Classifica\+Record}} classifica\mbox{[}4\mbox{]}, int \texorpdfstring{$\ast$}{*}num\+\_\+in\+\_\+classifica)
+\begin{DoxyCompactList}\small\item\em Calcola e ordina la classifica finale dei giocatori. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{end__screen_8h_a8459192b484f1fa0580d03a8d65f54ae}{Esporta\+Statistiche\+Txt}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, const char \texorpdfstring{$\ast$}{*}esito)
+\begin{DoxyCompactList}\small\item\em Esporta le statistiche di fine partita su file .txt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{end__screen_8h_aa3e4add05eb49239e5e9a0d01220c301}{Disegna\+Fine\+Partita}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}fase, \mbox{\hyperlink{struct_vector2}{Vector2}} mouse\+Pos)
+\begin{DoxyCompactList}\small\item\em Disegna la schermata di fine partita con classifica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Schermata di fine partita con classifica e statistiche. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{end__screen_8h_a0e745641fe838ddef9bdaf29f6c2f464}\index{end\_screen.h@{end\_screen.h}!CalcolaClassifica@{CalcolaClassifica}}
+\index{CalcolaClassifica@{CalcolaClassifica}!end\_screen.h@{end\_screen.h}}
+\doxysubsubsection{\texorpdfstring{CalcolaClassifica()}{CalcolaClassifica()}}
+{\footnotesize\ttfamily \label{end__screen_8h_a0e745641fe838ddef9bdaf29f6c2f464} 
+void Calcola\+Classifica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{\mbox{\hyperlink{struct_classifica_record}{Classifica\+Record}}}]{classifica}{\mbox{[}4\mbox{]}, }\item[{int \texorpdfstring{$\ast$}{*}}]{num\+\_\+in\+\_\+classifica}{}\end{DoxyParamCaption})}
+
+
+
+Calcola e ordina la classifica finale dei giocatori. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; classifica array valido. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+classifica popolata e ordinata per punteggio; num\+\_\+in\+\_\+classifica aggiornato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato del gioco. \\
+\hline
+{\em classifica} & Array di \doxylink{struct_classifica_record}{Classifica\+Record} da riempire. \\
+\hline
+{\em num\+\_\+in\+\_\+classifica} & Puntatore al numero di giocatori in classifica.\\
+\hline
+\end{DoxyParams}
+Calcola e ordina la classifica finale dei giocatori.
+
+Ordina i giocatori per numero di carte rimanenti (vincitore = 0 carte). Utilizza bubble sort per ordinare in modo crescente. La posizione 1 corrisponde al vincitore (0 carte).
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco corrente. \\
+\hline
+{\em classifica} & Array di \doxylink{struct_classifica_record}{Classifica\+Record}\mbox{[}4\mbox{]} da popolare. \\
+\hline
+{\em num\+\_\+in\+\_\+classifica} & Puntatore a int\+: numero di giocatori in classifica. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{end__screen_8h_aa3e4add05eb49239e5e9a0d01220c301}\index{end\_screen.h@{end\_screen.h}!DisegnaFinePartita@{DisegnaFinePartita}}
+\index{DisegnaFinePartita@{DisegnaFinePartita}!end\_screen.h@{end\_screen.h}}
+\doxysubsubsection{\texorpdfstring{DisegnaFinePartita()}{DisegnaFinePartita()}}
+{\footnotesize\ttfamily \label{end__screen_8h_aa3e4add05eb49239e5e9a0d01220c301} 
+void Disegna\+Fine\+Partita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{\mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}}]{fase}{, }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{mouse\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Disegna la schermata di fine partita con classifica. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; fase != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Schermata fine partita renderizzata. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato del gioco. \\
+\hline
+{\em fase} & Fase corrente. \\
+\hline
+{\em mouse\+Pos} & Posizione del mouse.\\
+\hline
+\end{DoxyParams}
+Disegna la schermata di fine partita con classifica.
+
+Gestisce il rendering di\+:
+\begin{DoxyItemize}
+\item Titolo con messaggio di vittoria
+\item Classifica finale (1°, 2°, 3° posti)
+\item Tempo di gioco
+\item Pulsanti\+: "{}\+Gioca Ancora"{}, "{}\+Torna al Menu"{}, "{}\+Esci"{}
+\item Notifiche live (es. "{}\+Client X e\textquotesingle{} pronto in lobby"{})
+\end{DoxyItemize}
+
+Gestisce anche la transizione automatica per i client in attesa (BUG 4 FIX\+: client\+\_\+play\+\_\+again\+\_\+attesa + host\+\_\+in\+\_\+prelobby).
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco. \\
+\hline
+{\em fase} & Puntatore alla fase applicazione (puo\textquotesingle{} cambiare a FASE\+\_\+\+MENU, FASE\+\_\+\+HOST\+\_\+\+LOBBY, FASE\+\_\+\+CLIENT\+\_\+\+LOBBY). \\
+\hline
+{\em mouse\+Pos} & Posizione corrente del mouse. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{end__screen_8h_a8459192b484f1fa0580d03a8d65f54ae}\index{end\_screen.h@{end\_screen.h}!EsportaStatisticheTxt@{EsportaStatisticheTxt}}
+\index{EsportaStatisticheTxt@{EsportaStatisticheTxt}!end\_screen.h@{end\_screen.h}}
+\doxysubsubsection{\texorpdfstring{EsportaStatisticheTxt()}{EsportaStatisticheTxt()}}
+{\footnotesize\ttfamily \label{end__screen_8h_a8459192b484f1fa0580d03a8d65f54ae} 
+void Esporta\+Statistiche\+Txt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{esito}{}\end{DoxyParamCaption})}
+
+
+
+Esporta le statistiche di fine partita su file .txt. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL; esito != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+File .txt creato con statistiche della partita. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato del gioco. \\
+\hline
+{\em esito} & Stringa esito ("{}\+Vittoria"{} o "{}\+Sconfitta"{}).\\
+\hline
+\end{DoxyParams}
+Esporta le statistiche di fine partita su file .txt.
+
+Crea un file in data/logs/game\+\_\+log\+\_\+\+YYYYMMDD\+\_\+\+HHMMSS.\+txt con\+:
+\begin{DoxyItemize}
+\item Data e ora della partita
+\item Durata in minuti\+:secondi
+\item Esito (Vittoria/\+Sconfitta)
+\item Classifica finale con carte rimaste
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco. \\
+\hline
+{\em esito} & Stringa con l\textquotesingle{}esito della partita ("{}\+Vittoria"{} o "{}\+Sconfitta"{}). \\
+\hline
+\end{DoxyParams}

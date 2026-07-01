@@ -1,0 +1,159 @@
+\doxysection{src/socket/network/network.c File Reference}
+\hypertarget{network_8c}{}\label{network_8c}\index{src/socket/network/network.c@{src/socket/network/network.c}}
+
+
+Modulo di rete multiplayer TCP/\+UDP -\/ host e client.  
+
+
+{\ttfamily \#include "{}../../../lib/socket/network/socket\+\_\+compat.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network\+\_\+send.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/packet\+\_\+handler.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/server/server\+\_\+manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/list.\+h"{}}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga8ec5ddc728bd3aeff602ed6c2c103615}{Init\+Network}} (void)
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga9b41cc6afd8c747b00cde5ae23849aec}{Close\+Network}} (void)
+\item 
+void \mbox{\hyperlink{network_8c_a7fe5e191510a91783a12381ff4b14022}{Set\+Non\+Blocking}} (\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} sock)
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga4afd449b11f70e41fcfdf4df80a916ad}{Host\+Game}} (int port)
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gaa2baa82ea8ed3d587c950ca832d9bd2e}{Join\+Game}} (const char \texorpdfstring{$\ast$}{*}ip\+\_\+address, int port)
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga6b2d507a3b3bf210f28c0eedacd885a4}{Update\+Network}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gabc45bc454fab5dc2d69faf90e742d4e1}{Is\+Player\+Connected}} (int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}})
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga613b435b1d6ffb50b4255ceaa0bc6696}{Riassegna\+Socket}} (int old\+\_\+id, int new\+\_\+id, int is\+\_\+reconnect, int partita\+\_\+iniziata)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} \mbox{\hyperlink{network_8c_a0a755f1937d6aeb27a26504504141fec}{local\+Socket}} = \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}
+\begin{DoxyCompactList}\small\item\em Socket TCP principale (host\+: listening, client\+: connesso). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} \mbox{\hyperlink{network_8c_a4fdb1b96f709fc5cdd1d013c1703e484}{remote\+Socket}} = \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}
+\begin{DoxyCompactList}\small\item\em Socket remoto (solo client\+: connessione all\textquotesingle{}host). \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga80ac1ee1e5dc6a14be8c487f06ab9192}{connected\+Client\+Usernames}} \mbox{[}4\mbox{]}\mbox{[}30\mbox{]} = \{\{0\}\}
+\begin{DoxyCompactList}\small\item\em Username dei client TCP connessi all\textquotesingle{}host (per admin panel). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} \mbox{\hyperlink{network_8c_a87557f4936706eb20d02388efbfd01a5}{udp\+Discovery\+Socket}} = \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}
+\begin{DoxyCompactList}\small\item\em Socket UDP per discovery codici stanza (host+client). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} \mbox{\hyperlink{group__network__packet__strutture_gae1406de9f7c29f2553e952e0d5a0532c}{client\+Sockets}} \mbox{[}\mbox{\hyperlink{group__network__packet__strutture_gac7e4a6221f79e37a20003c8c18e4ae62}{MAX\+\_\+\+SERVER\+\_\+\+CLIENTS}}\mbox{]} = \{ \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}, \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}, \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}, \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}} \}
+\item 
+int \mbox{\hyperlink{network_8c_a2fccc7a9f7850b47e98e98c272d40370}{num\+Connected\+Clients}} = 0
+\item 
+\mbox{\hyperlink{group__network__ruoli_ga53e7e36fa630cf0cbd59d8ac87393100}{Network\+Role}} \mbox{\hyperlink{group__network__packet__strutture_ga16acec73ed8b5b9262d15211bedb6479}{current\+Role}} = \mbox{\hyperlink{group__network__ruoli_gga53e7e36fa630cf0cbd59d8ac87393100ae7ea65b33b650c9855f1bc1cc32e6138}{NET\+\_\+\+OFFLINE}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gaa358768cbc9b8ed27055d5b41726d79a}{is\+Connected}} = 0
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga011bfc7156351cec76e4a4b1e38c3169}{network\+\_\+pending}} = 0
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga7fbc791dd298a446c201d280dd8c1c3d}{network\+\_\+game\+\_\+initialized}} = 0
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga64831cef2cdeba3a0f16d745b3ecf4fc}{network\+\_\+client\+\_\+joined}} = 0
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga73bc5aa44ad9b3c3ca01c28252b93a56}{network\+\_\+start\+\_\+game\+\_\+flag}} = 0
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga0936e5fbf6f65df58464ed83a3272430}{join\+\_\+rejected}} = 0
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gac04d7d998bff797c954bba3776ba0c55}{reject\+\_\+message}} \mbox{[}100\mbox{]} = "{}"{}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}} = -\/1
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gae06ac14e3f4d5998b855e2ffbc411341}{host\+\_\+in\+\_\+prelobby}} = 0
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga5cad9e8eeb56c51e52badb34a5910fbe}{current\+\_\+session\+\_\+id}} \mbox{[}16\mbox{]} = "{}"{}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga3ceeb52643564997e64ac776a8f0fc9a}{session\+\_\+id}} \mbox{[}16\mbox{]} = "{}"{}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga3437dc7e27766145ab5c8d9a605083cd}{local\+\_\+player\+\_\+id}} = -\/1
+\item 
+struct sockaddr\+\_\+in \mbox{\hyperlink{network_8c_a2e58fa3f4fdc2b17320549ea0d1462f1}{server\+Addr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Modulo di rete multiplayer TCP/\+UDP -\/ host e client. 
+
+Gestisce la connessione multiplayer online per le partite UNO\+:
+\begin{DoxyItemize}
+\item HOST\+: crea stanza TCP, accetta client, gestisce disconnessioni
+\item CLIENT\+: si connette a stanza, riceve pacchetti
+\item Entrambi\+: invio/ricezione pacchetti \doxylink{struct_net_packet}{Net\+Packet} via TCP
+\end{DoxyItemize}
+
+Protocollo\+:
+\begin{DoxyItemize}
+\item TCP sulla porta base (27015) per il gioco
+\item UDP sulla porta base+1 per discovery codici stanza
+\item Ogni pacchetto e\textquotesingle{} un \doxylink{struct_net_packet}{Net\+Packet} Binario (fix 512 byte)
+\end{DoxyItemize}
+
+Architettura\+:
+\begin{DoxyItemize}
+\item Host ha MAX\+\_\+\+SERVER\+\_\+\+CLIENTS slot (1,2,3) + slot 0 riservato
+\item Buffer separati per ogni client (recv\+Buffer\mbox{[}4\mbox{]}) per evitare corruzione di pacchetti provenienti da socket diversi
+\item Modalita\textquotesingle{} non-\/blocking con WSAEWOULDBLOCK 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{network_8c_a7fe5e191510a91783a12381ff4b14022}\index{network.c@{network.c}!SetNonBlocking@{SetNonBlocking}}
+\index{SetNonBlocking@{SetNonBlocking}!network.c@{network.c}}
+\doxysubsubsection{\texorpdfstring{SetNonBlocking()}{SetNonBlocking()}}
+{\footnotesize\ttfamily \label{network_8c_a7fe5e191510a91783a12381ff4b14022} 
+void Set\+Non\+Blocking (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}}}]{sock}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{network_8c_a0a755f1937d6aeb27a26504504141fec}\index{network.c@{network.c}!localSocket@{localSocket}}
+\index{localSocket@{localSocket}!network.c@{network.c}}
+\doxysubsubsection{\texorpdfstring{localSocket}{localSocket}}
+{\footnotesize\ttfamily \label{network_8c_a0a755f1937d6aeb27a26504504141fec} 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} local\+Socket = \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}}
+
+
+
+Socket TCP principale (host\+: listening, client\+: connesso). 
+
+\Hypertarget{network_8c_a2fccc7a9f7850b47e98e98c272d40370}\index{network.c@{network.c}!numConnectedClients@{numConnectedClients}}
+\index{numConnectedClients@{numConnectedClients}!network.c@{network.c}}
+\doxysubsubsection{\texorpdfstring{numConnectedClients}{numConnectedClients}}
+{\footnotesize\ttfamily \label{network_8c_a2fccc7a9f7850b47e98e98c272d40370} 
+int num\+Connected\+Clients = 0}
+
+\Hypertarget{network_8c_a4fdb1b96f709fc5cdd1d013c1703e484}\index{network.c@{network.c}!remoteSocket@{remoteSocket}}
+\index{remoteSocket@{remoteSocket}!network.c@{network.c}}
+\doxysubsubsection{\texorpdfstring{remoteSocket}{remoteSocket}}
+{\footnotesize\ttfamily \label{network_8c_a4fdb1b96f709fc5cdd1d013c1703e484} 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} remote\+Socket = \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}}
+
+
+
+Socket remoto (solo client\+: connessione all\textquotesingle{}host). 
+
+\Hypertarget{network_8c_a2e58fa3f4fdc2b17320549ea0d1462f1}\index{network.c@{network.c}!serverAddr@{serverAddr}}
+\index{serverAddr@{serverAddr}!network.c@{network.c}}
+\doxysubsubsection{\texorpdfstring{serverAddr}{serverAddr}}
+{\footnotesize\ttfamily \label{network_8c_a2e58fa3f4fdc2b17320549ea0d1462f1} 
+struct sockaddr\+\_\+in server\+Addr}
+
+\Hypertarget{network_8c_a87557f4936706eb20d02388efbfd01a5}\index{network.c@{network.c}!udpDiscoverySocket@{udpDiscoverySocket}}
+\index{udpDiscoverySocket@{udpDiscoverySocket}!network.c@{network.c}}
+\doxysubsubsection{\texorpdfstring{udpDiscoverySocket}{udpDiscoverySocket}}
+{\footnotesize\ttfamily \label{network_8c_a87557f4936706eb20d02388efbfd01a5} 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} udp\+Discovery\+Socket = \mbox{\hyperlink{socket__compat_8h_a26769957ec1a2beaf223f33b66ee64ab}{INVALID\+\_\+\+SOCKET}}}
+
+
+
+Socket UDP per discovery codici stanza (host+client). 
+

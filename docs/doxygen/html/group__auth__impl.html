@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Implementazioni Auth</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__auth__impl.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Implementazioni Auth </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementazioni delle funzionalità di autenticazione e database.  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-groups" class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:lazy_5Fdeletion_5Fimpl" id="r_lazy_5Fdeletion_5Fimpl"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__lazy__deletion__impl.html">Lazy Deletion Implementazione</a></td></tr>
+<tr class="memdesc:group__lazy__deletion__impl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strutture e funzioni per eliminazione differita utenti. <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:gabbde975af8fe0d5e3c20e0fd862186b6" id="r_gabbde975af8fe0d5e3c20e0fd862186b6"><td class="memItemLeft"><a class="el" href="struct_database_utenti.html">DatabaseUtenti</a>&#160;</td><td class="memItemRight"><a class="el" href="#gabbde975af8fe0d5e3c20e0fd862186b6">dbUtenti</a> = {0}</td></tr>
+<tr class="memdesc:gabbde975af8fe0d5e3c20e0fd862186b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Database utenti globale in memoria (allocazione dinamica).  <br /></td></tr>
+<tr class="memitem:ga9ecbbe659dbada66e149c73cefb83815" id="r_ga9ecbbe659dbada66e149c73cefb83815"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga9ecbbe659dbada66e149c73cefb83815">id_utente_corrente</a> = -1</td></tr>
+<tr class="memdesc:ga9ecbbe659dbada66e149c73cefb83815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indice dell'utente correntemente loggato (-1 se nessuno).  <br /></td></tr>
+<tr class="memitem:ga80d354a96271494c85654ea411ddac01" id="r_ga80d354a96271494c85654ea411ddac01"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga80d354a96271494c85654ea411ddac01">inputEmail</a> [100] = &quot;\0&quot;</td></tr>
+<tr class="memitem:ga3876b1cc4b483062056d9cf261ec4654" id="r_ga3876b1cc4b483062056d9cf261ec4654"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga3876b1cc4b483062056d9cf261ec4654">emailCount</a> = 0</td></tr>
+<tr class="memitem:ga2b0e8ee2101796cab35e2f6d2f932993" id="r_ga2b0e8ee2101796cab35e2f6d2f932993"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga2b0e8ee2101796cab35e2f6d2f932993">inputNome</a> [30] = &quot;\0&quot;</td></tr>
+<tr class="memitem:ga8576d027f30608a7448b5e4a6887f2e2" id="r_ga8576d027f30608a7448b5e4a6887f2e2"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga8576d027f30608a7448b5e4a6887f2e2">nomeCount</a> = 0</td></tr>
+<tr class="memitem:gabdb70a410ac6fd790650381b7fb858b1" id="r_gabdb70a410ac6fd790650381b7fb858b1"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gabdb70a410ac6fd790650381b7fb858b1">inputCognome</a> [30] = &quot;\0&quot;</td></tr>
+<tr class="memitem:ga880fe550552161100d934bf21de27f90" id="r_ga880fe550552161100d934bf21de27f90"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga880fe550552161100d934bf21de27f90">cognomeCount</a> = 0</td></tr>
+<tr class="memitem:ga726a429817c84dacd48cce82b3c91003" id="r_ga726a429817c84dacd48cce82b3c91003"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga726a429817c84dacd48cce82b3c91003">inputUsername</a> [30] = &quot;\0&quot;</td></tr>
+<tr class="memitem:gabd5ade42baf19a2a2ffa715960842dfd" id="r_gabd5ade42baf19a2a2ffa715960842dfd"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gabd5ade42baf19a2a2ffa715960842dfd">usernameCount</a> = 0</td></tr>
+<tr class="memitem:ga716f9307558976d3a4c67840b2ceb8ac" id="r_ga716f9307558976d3a4c67840b2ceb8ac"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#ga716f9307558976d3a4c67840b2ceb8ac">inputPassword</a> [30] = &quot;\0&quot;</td></tr>
+<tr class="memitem:ga415b2b418d3a90a6e1da72992e7577aa" id="r_ga415b2b418d3a90a6e1da72992e7577aa"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga415b2b418d3a90a6e1da72992e7577aa">passCount</a> = 0</td></tr>
+<tr class="memitem:gafb61cbc7b14899011261458eb60e240a" id="r_gafb61cbc7b14899011261458eb60e240a"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#gafb61cbc7b14899011261458eb60e240a">inputPin</a> [7] = &quot;\0&quot;</td></tr>
+<tr class="memitem:ga5058e2763f324b4146cfa8af36168478" id="r_ga5058e2763f324b4146cfa8af36168478"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga5058e2763f324b4146cfa8af36168478">pinCount</a> = 0</td></tr>
+<tr class="memitem:ga5e67fb6826c236d3ff5d0ec98cd9c582" id="r_ga5e67fb6826c236d3ff5d0ec98cd9c582"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga5e67fb6826c236d3ff5d0ec98cd9c582">id_temp_login</a> = -1</td></tr>
+<tr class="memitem:ga1e9668bc833c732fa8a038ec007c4ee9" id="r_ga1e9668bc833c732fa8a038ec007c4ee9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga1e9668bc833c732fa8a038ec007c4ee9">errore_password</a> = 0</td></tr>
+<tr class="memitem:gae7b050dfa0f4d9bfdfb41c1746d8e055" id="r_gae7b050dfa0f4d9bfdfb41c1746d8e055"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gae7b050dfa0f4d9bfdfb41c1746d8e055">errore_registrazione_pass</a> = 0</td></tr>
+<tr class="memitem:gab2b3b778484eb9c5f529be0c2f9c10d3" id="r_gab2b3b778484eb9c5f529be0c2f9c10d3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gab2b3b778484eb9c5f529be0c2f9c10d3">errore_registrazione_email</a> = 0</td></tr>
+<tr class="memitem:gab25b9978d929d16da0918ad72bed9812" id="r_gab25b9978d929d16da0918ad72bed9812"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gab25b9978d929d16da0918ad72bed9812">errore_registrazione_username</a> = 0</td></tr>
+<tr class="memitem:ga2cf3aff3d88a04ea9b72ef90df54142c" id="r_ga2cf3aff3d88a04ea9b72ef90df54142c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga2cf3aff3d88a04ea9b72ef90df54142c">campo_focusato</a> = 0</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Implementazioni delle funzionalità di autenticazione e database. </p>
+</div><a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="ga2cf3aff3d88a04ea9b72ef90df54142c" name="ga2cf3aff3d88a04ea9b72ef90df54142c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2cf3aff3d88a04ea9b72ef90df54142c">&#9670;&#160;</a></span>campo_focusato</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int campo_focusato = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga880fe550552161100d934bf21de27f90" name="ga880fe550552161100d934bf21de27f90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga880fe550552161100d934bf21de27f90">&#9670;&#160;</a></span>cognomeCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cognomeCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabbde975af8fe0d5e3c20e0fd862186b6" name="gabbde975af8fe0d5e3c20e0fd862186b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabbde975af8fe0d5e3c20e0fd862186b6">&#9670;&#160;</a></span>dbUtenti</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_database_utenti.html">DatabaseUtenti</a> dbUtenti = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Database utenti globale in memoria (allocazione dinamica). </p>
+
+</div>
+</div>
+<a id="ga3876b1cc4b483062056d9cf261ec4654" name="ga3876b1cc4b483062056d9cf261ec4654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3876b1cc4b483062056d9cf261ec4654">&#9670;&#160;</a></span>emailCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int emailCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga1e9668bc833c732fa8a038ec007c4ee9" name="ga1e9668bc833c732fa8a038ec007c4ee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e9668bc833c732fa8a038ec007c4ee9">&#9670;&#160;</a></span>errore_password</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int errore_password = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab2b3b778484eb9c5f529be0c2f9c10d3" name="gab2b3b778484eb9c5f529be0c2f9c10d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab2b3b778484eb9c5f529be0c2f9c10d3">&#9670;&#160;</a></span>errore_registrazione_email</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int errore_registrazione_email = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gae7b050dfa0f4d9bfdfb41c1746d8e055" name="gae7b050dfa0f4d9bfdfb41c1746d8e055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae7b050dfa0f4d9bfdfb41c1746d8e055">&#9670;&#160;</a></span>errore_registrazione_pass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int errore_registrazione_pass = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gab25b9978d929d16da0918ad72bed9812" name="gab25b9978d929d16da0918ad72bed9812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab25b9978d929d16da0918ad72bed9812">&#9670;&#160;</a></span>errore_registrazione_username</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int errore_registrazione_username = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5e67fb6826c236d3ff5d0ec98cd9c582" name="ga5e67fb6826c236d3ff5d0ec98cd9c582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e67fb6826c236d3ff5d0ec98cd9c582">&#9670;&#160;</a></span>id_temp_login</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int id_temp_login = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga9ecbbe659dbada66e149c73cefb83815" name="ga9ecbbe659dbada66e149c73cefb83815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9ecbbe659dbada66e149c73cefb83815">&#9670;&#160;</a></span>id_utente_corrente</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int id_utente_corrente = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indice dell'utente correntemente loggato (-1 se nessuno). </p>
+
+</div>
+</div>
+<a id="gabdb70a410ac6fd790650381b7fb858b1" name="gabdb70a410ac6fd790650381b7fb858b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabdb70a410ac6fd790650381b7fb858b1">&#9670;&#160;</a></span>inputCognome</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char inputCognome[30] = &quot;\0&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga80d354a96271494c85654ea411ddac01" name="ga80d354a96271494c85654ea411ddac01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga80d354a96271494c85654ea411ddac01">&#9670;&#160;</a></span>inputEmail</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char inputEmail[100] = &quot;\0&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga2b0e8ee2101796cab35e2f6d2f932993" name="ga2b0e8ee2101796cab35e2f6d2f932993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b0e8ee2101796cab35e2f6d2f932993">&#9670;&#160;</a></span>inputNome</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char inputNome[30] = &quot;\0&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga716f9307558976d3a4c67840b2ceb8ac" name="ga716f9307558976d3a4c67840b2ceb8ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga716f9307558976d3a4c67840b2ceb8ac">&#9670;&#160;</a></span>inputPassword</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char inputPassword[30] = &quot;\0&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gafb61cbc7b14899011261458eb60e240a" name="gafb61cbc7b14899011261458eb60e240a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafb61cbc7b14899011261458eb60e240a">&#9670;&#160;</a></span>inputPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char inputPin[7] = &quot;\0&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga726a429817c84dacd48cce82b3c91003" name="ga726a429817c84dacd48cce82b3c91003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga726a429817c84dacd48cce82b3c91003">&#9670;&#160;</a></span>inputUsername</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char inputUsername[30] = &quot;\0&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga8576d027f30608a7448b5e4a6887f2e2" name="ga8576d027f30608a7448b5e4a6887f2e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8576d027f30608a7448b5e4a6887f2e2">&#9670;&#160;</a></span>nomeCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nomeCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga415b2b418d3a90a6e1da72992e7577aa" name="ga415b2b418d3a90a6e1da72992e7577aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga415b2b418d3a90a6e1da72992e7577aa">&#9670;&#160;</a></span>passCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int passCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga5058e2763f324b4146cfa8af36168478" name="ga5058e2763f324b4146cfa8af36168478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5058e2763f324b4146cfa8af36168478">&#9670;&#160;</a></span>pinCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pinCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gabd5ade42baf19a2a2ffa715960842dfd" name="gabd5ade42baf19a2a2ffa715960842dfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd5ade42baf19a2a2ffa715960842dfd">&#9670;&#160;</a></span>usernameCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int usernameCount = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

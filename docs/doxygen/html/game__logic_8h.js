@@ -1,0 +1,26 @@
+var game__logic_8h =
+[
+    [ "ApplicaEffetto", "game__logic_8h.html#a588fc681a6842fa5688ec1331484fe1b", null ],
+    [ "CaricaPartitaDaSlot", "game__logic_8h.html#a1f3105448b986dc3c5fd8ef93e948fdf", null ],
+    [ "CompattaSalvataggiUtente", "game__logic_8h.html#a4af9aa327b760e4e4ff4c861879608d6", null ],
+    [ "EliminaPartita", "game__logic_8h.html#a3446c1c30033cc8030a98d3e41399365", null ],
+    [ "EliminaSalvataggio", "game__logic_8h.html#a8b2e4cdd665a790268c297e793abc369", null ],
+    [ "EliminaTuttiSalvataggiUtente", "game__logic_8h.html#abef09d90f8a1244e64b884e89814cd9d", null ],
+    [ "GetCartaGiocatore", "group__game__logic.html#ga911f218567f81d8d4d6eec5c1c12b543", null ],
+    [ "GetLunghezzaMano", "group__game__logic.html#ga171821f60641393ff220f91b26e0325f", null ],
+    [ "GetNodoCartaGiocatore", "group__game__logic.html#ga5a26039c72d695715eb46d1dbe0f91ff", null ],
+    [ "GetSaveFilePath", "game__logic_8h.html#a56d174d587ba4d54b02fa4f18c6d5279", null ],
+    [ "InizializzaMazzo", "group__game__logic.html#ga2be362fe392971bbe8008aa9266cf539", null ],
+    [ "MossaValida", "game__logic_8h.html#a331462bb54826e9e9d477625d83dd9d5", null ],
+    [ "MostraNotifica", "game__logic_8h.html#ab202f15176056f42ac78bd55f0ef400e", null ],
+    [ "NuovaPartita", "game__logic_8h.html#a6f74b381349465d305eabe85f8b02a95", null ],
+    [ "Pesca", "group__game__logic.html#gad1b01bee170bfe43e167097d8fa75b3c", null ],
+    [ "RicarcaMazzo", "game__logic_8h.html#aa30d6c36fd5e60362e9863466f754b38", null ],
+    [ "RicostruisciStatoADT", "game__logic_8h.html#ac36d5d7fc58d57d5333d9de89432acb1", null ],
+    [ "RimescolaScartiNelMazzo", "group__game__logic.html#ga6fc614aadf58fe03606063067a2ad233", null ],
+    [ "RimuoviCartaGiocatore", "group__game__logic.html#gac60c0e57c8c2a799f008d302bbaaa5fd", null ],
+    [ "SalvaPartita", "game__logic_8h.html#ab6d8a480978f155fe71df7ce72d2d67e", null ],
+    [ "coda_turni", "game__logic_8h.html#ad1902a2e7f88106585a3606741e4ba34", null ],
+    [ "mazzo_pila", "game__logic_8h.html#afefe37ecc9aba9febda10fedc4dfa743", null ],
+    [ "scarti_pila", "game__logic_8h.html#ae43a4528acce4bced75b0d843415956f", null ]
+];

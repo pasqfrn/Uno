@@ -1,0 +1,35 @@
+\doxysection{bst.\+h}
+\hypertarget{bst_8h_source}{}\label{bst_8h_source}\index{lib/data\_structures/bst.h@{lib/data\_structures/bst.h}}
+\mbox{\hyperlink{bst_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ DATA\_STRUCTURES\_BST\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ DATA\_STRUCTURES\_BST\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{data__structures_8h}{../data\_structures.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_utente}{Utente}}\ \mbox{\hyperlink{struct_nodo_albero_ae44a3fe7638a711069168b12fc806ffe}{utente}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ \mbox{\hyperlink{struct_nodo_albero_a0f9a56f2a6b5da3024cca46728aa3c5b}{left}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ \mbox{\hyperlink{struct_nodo_albero_a72e9dc43c50fdee535e13487304bd1cf}{right}};}
+\DoxyCodeLine{00023\ \}\ \mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00038\ \mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ \mbox{\hyperlink{group__bst__operazioni_ga62e40793a2003872c369acb82e6af431}{BST\_CreaNodo}}(\mbox{\hyperlink{struct_utente}{Utente}}\ u);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00049\ \mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ \mbox{\hyperlink{group__bst__operazioni_gacacb3b4a6ddbd736f5b58735895adfd9}{BST\_Inserisci}}(\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ radice,\ \mbox{\hyperlink{struct_utente}{Utente}}\ u,\ \textcolor{keywordtype}{int}*\ duplicato);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00059\ \mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ \mbox{\hyperlink{group__bst__operazioni_ga79a477b261bbda20446e0f5df2faae46}{BST\_RicercaEmail}}(\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ radice,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ email);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ \mbox{\hyperlink{group__bst__operazioni_ga225db238626a3343a76ff1db348bdc76}{BST\_RimuoviEmail}}(\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ radice,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ email);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__bst__operazioni_ga9316a904ece8260cbe1018b94d2888a0}{BST\_Distruggi}}(\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ radice);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__bst__operazioni_ga192fed6e7b936d4348b504e1069e3e03}{BST\_Inordina}}(\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ radice,\ \mbox{\hyperlink{struct_utente}{Utente}}*\ out,\ \textcolor{keywordtype}{int}\ max);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__bst__operazioni_ga5635ff2d752c8c11d78e1d00915e2a1e}{BST\_Altezza}}(\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ radice);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__bst__operazioni_ga6f4d3c31a29be5dff40bfe065fe08ce1}{BST\_ContaNodi}}(\mbox{\hyperlink{struct_nodo_albero}{NodoAlbero}}*\ radice);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATA\_STRUCTURES\_BST\_H}}
+
+\end{DoxyCode}

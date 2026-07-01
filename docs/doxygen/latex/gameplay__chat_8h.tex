@@ -1,0 +1,96 @@
+\doxysection{lib/screens/game/gameplay\+\_\+chat.h File Reference}
+\hypertarget{gameplay__chat_8h}{}\label{gameplay__chat_8h}\index{lib/screens/game/gameplay\_chat.h@{lib/screens/game/gameplay\_chat.h}}
+
+
+Gestione della chat in-\/game.  
+
+
+{\ttfamily \#include "{}../../data\+\_\+structures.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gameplay__chat_8h_a128885540259cd9e820ae58bd839077b}{Aggiorna\+Chat}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Aggiorna lo stato della chat (input, ricezione messaggi). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gameplay__chat_8h_a9855d94a1234a9e74102c63c2ed13bd1}{Disegna\+Chat}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Disegna la finestra chat sullo schermo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{gameplay__chat_8h_a47807e52ded0ff6f35a6aa8a5e956b73}{input\+Chat}} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Buffer per input chat. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gameplay__chat_8h_a5c0b78531197553de40e19f2afd95ff4}{is\+Typing}}
+\begin{DoxyCompactList}\small\item\em Flag stato digitazione (1 se l\textquotesingle{}utente sta scrivendo). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestione della chat in-\/game. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gameplay__chat_8h_a128885540259cd9e820ae58bd839077b}\index{gameplay\_chat.h@{gameplay\_chat.h}!AggiornaChat@{AggiornaChat}}
+\index{AggiornaChat@{AggiornaChat}!gameplay\_chat.h@{gameplay\_chat.h}}
+\doxysubsubsection{\texorpdfstring{AggiornaChat()}{AggiornaChat()}}
+{\footnotesize\ttfamily \label{gameplay__chat_8h_a128885540259cd9e820ae58bd839077b} 
+void Aggiorna\+Chat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Aggiorna lo stato della chat (input, ricezione messaggi). 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+input\+Chat aggiornato; messaggi ricevuti processati. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato del gioco. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameplay__chat_8h_a9855d94a1234a9e74102c63c2ed13bd1}\index{gameplay\_chat.h@{gameplay\_chat.h}!DisegnaChat@{DisegnaChat}}
+\index{DisegnaChat@{DisegnaChat}!gameplay\_chat.h@{gameplay\_chat.h}}
+\doxysubsubsection{\texorpdfstring{DisegnaChat()}{DisegnaChat()}}
+{\footnotesize\ttfamily \label{gameplay__chat_8h_a9855d94a1234a9e74102c63c2ed13bd1} 
+void Disegna\+Chat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Disegna la finestra chat sullo schermo. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Chat renderizzata. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato del gioco. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{gameplay__chat_8h_a47807e52ded0ff6f35a6aa8a5e956b73}\index{gameplay\_chat.h@{gameplay\_chat.h}!inputChat@{inputChat}}
+\index{inputChat@{inputChat}!gameplay\_chat.h@{gameplay\_chat.h}}
+\doxysubsubsection{\texorpdfstring{inputChat}{inputChat}}
+{\footnotesize\ttfamily \label{gameplay__chat_8h_a47807e52ded0ff6f35a6aa8a5e956b73} 
+char input\+Chat\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Buffer per input chat. 
+
+Buffer per input chat. \Hypertarget{gameplay__chat_8h_a5c0b78531197553de40e19f2afd95ff4}\index{gameplay\_chat.h@{gameplay\_chat.h}!isTyping@{isTyping}}
+\index{isTyping@{isTyping}!gameplay\_chat.h@{gameplay\_chat.h}}
+\doxysubsubsection{\texorpdfstring{isTyping}{isTyping}}
+{\footnotesize\ttfamily \label{gameplay__chat_8h_a5c0b78531197553de40e19f2afd95ff4} 
+int is\+Typing\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Flag stato digitazione (1 se l\textquotesingle{}utente sta scrivendo). 
+
+Flag stato digitazione (1 se l\textquotesingle{}utente sta scrivendo). 

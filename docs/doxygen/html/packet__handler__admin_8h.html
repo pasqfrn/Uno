@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file lib/socket/network/packet_handler_admin.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('packet__handler__admin_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file packet_handler_admin.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestione pacchetti admin e sessione multiplayer.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network_8h_source.html">../../socket/network/network.h</a>&quot;</code><br />
+</div>
+<p><a href="packet__handler__admin_8h_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a288b7710444f522b9d6a771cda1d35dc" id="r_a288b7710444f522b9d6a771cda1d35dc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a288b7710444f522b9d6a771cda1d35dc">HandleAdminPacket</a> (<a class="el" href="struct_net_packet.html">NetPacket</a> *packet, <a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:a288b7710444f522b9d6a771cda1d35dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestisce i pacchetti admin e di sessione ricevuti.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Gestione pacchetti admin e sessione multiplayer. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a288b7710444f522b9d6a771cda1d35dc" name="a288b7710444f522b9d6a771cda1d35dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a288b7710444f522b9d6a771cda1d35dc">&#9670;&#160;</a></span>HandleAdminPacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HandleAdminPacket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_net_packet.html">NetPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gestisce i pacchetti admin e di sessione ricevuti. </p>
+<p>Gestisce i pacchetti admin e sessione.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>packet != NULL; gioco != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Pacchetto elaborato; sessione/admin aggiornato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pacchetto ricevuto. </td></tr>
+    <tr><td class="paramname">gioco</td><td>Stato del gioco.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Gestisce i pacchetti admin e di sessione ricevuti.</p>
+<p>Gestisce: CREATE_SESSION, JOIN_SESSION, PLAYER_READY, GAME_FINISHED, HEARTBEAT, ADMIN_USER_SYNC, ADMIN_DB_SYNC.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pacchetto ricevuto. </td></tr>
+    <tr><td class="paramname">gioco</td><td>Stato del gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>PACKET_PLAY_AGAIN: Un client ha premuto "Gioca Ancora" nella schermata finale.</p>
+<p>Comportamento:</p><ol type="1">
+<li>Mostra una notifica in basso a destra stile notifiche di gioco ("Client A e' pronto in lobby").</li>
+<li>Se l'host e' gia' in pre-lobby (host_in_prelobby == 1), segna il client come pronto e broadcasta lo stato aggiornato.</li>
+<li>Se l'host e' ancora nella schermata finale, la notifica informa l'host che il client e' in attesa.</li>
+</ol>
+<p>Meccanismo: Quando l'host ha premuto "Gioca Ancora", pulisce gli slot degli ALTRI giocatori e setta num_giocatori = 1 (solo host). Quando un client manda PACKET_PLAY_AGAIN, il suo player_id (pid) potrebbe essere &gt;= num_giocatori. In tal caso, non accedere a giocatori[pid] ma AGGIUNGI il client come nuovo giocatore in lobby.</p>
+<p>Lo slot del client viene trovato tramite socket_id (packet-&gt;sender_id): se il client si riconnette dal vecchio slot 1-3, lo riattiviamo. Se num_giocatori &lt; 4, lo aggiungiamo come nuovo slot.</p>
+<p>PACKET_PLAY_AGAIN: Un client ha premuto "Gioca Ancora" nella schermata finale.</p>
+<p>Meccanismo completo:</p><ol type="1">
+<li>Quando il client preme "Gioca Ancora", invia PACKET_PLAY_AGAIN all'host con il proprio nome (player_name) e il socket_id (sender_id).</li>
+<li>Se l'host e' gia' in pre-lobby (host_in_prelobby == 1):<ul>
+<li>Cerca lo slot del client per socket_id (1-3)</li>
+<li>Se trovato: lo segna come pronto e notifica "Client X e' pronto in lobby"</li>
+<li>Se NON trovato: lo aggiunge come nuovo giocatore in lobby</li>
+</ul>
+</li>
+<li>Se l'host e' ANCORA nella schermata finale (host_in_prelobby == 0):<ul>
+<li>Notifica in stile gioco: "Client X e' in attesa di rigiocare..."</li>
+<li>Questa notifica appare in basso a destra nell'end screen dell'host</li>
+<li>Il nome del client viene estratto dal campo player_name[] del pacchetto</li>
+</ul>
+</li>
+</ol>
+<p>Riconnessione: Il sender_id del pacchetto (1-3) viene usato come socket_id per identificare univocamente il client in fase di re-join, permettendo la corrispondenza anche dopo la rimozione del bot.</p>
+<p>PACKET_HOST_RETURN_LOBBY: L'host e' tornato in pre-lobby (ha premuto "Gioca Ancora").</p>
+<p>Comportamento:</p><ol type="1">
+<li>Imposta host_in_prelobby = 1 per permettere la transizione dalla schermata finale alla lobby.</li>
+<li>Resetta gioco_finito e num_carte_scarti per prepararsi a una nuova partita.</li>
+<li>NON resetta statistiche_gia_salvate per non duplicare il salvataggio.</li>
+</ol>
+<p>L'host riceve i dati utente da un client collegato.</p>
+<p>Dopo aver aggiunto il nuovo utente al database locale, l'host chiama <a class="el" href="group__network__send__admin.html#gac3bad81dd1e885fdb5fe711a2cc7902a" title="Invia il DatabaseUtenti aggiornato a tutti i client.">BroadcastAdminDB()</a> per propagare l'aggiornamento a TUTTI i client TCP connessi (non solo quello che ha inviato i dati). Senza questo, il pannello admin degli altri client non vede il nuovo utente finche' non arriva il prossimo broadcast LAN periodico (ogni LAN_SYNC_INTERVAL secondi).</p>
+<p><a class="el" href="group__network__send__admin.html#gac3bad81dd1e885fdb5fe711a2cc7902a" title="Invia il DatabaseUtenti aggiornato a tutti i client.">BroadcastAdminDB()</a> invia un pacchetto PACKET_ADMIN_DB_SYNC per ogni utente nel database, seguito da un pacchetto con user_index=-1 per segnalare il completamento della sincronizzazione.</p>
+<p>Tracking connessioni TCP: Memorizza l'username del client collegato in connectedClientUsernames[]. Questo permette all'admin panel di sapere quali utenti sono connessi via TCP e non eliminarli immediatamente dal DB.</p>
+<p>Sincronizzazione live delle statistiche dopo una partita. STATISTICHE READ-ONLY: Questo e' l'UNICO canale che modifica partite_giocate/vittore. L'admin panel NON puo' toccare questi campi. Solo il gioco stesso tramite PACKET_STATS_SYNC puo' aggiornare le statistiche.</p>
+<p>Ora merge anche l'intero array storico_partite[] trasmesso nel pacchetto <a class="el" href="struct_stats_sync_packet.html" title="StatsSyncPacket - Sincronizzazione live statistiche dopo una partita.">StatsSyncPacket</a> esteso. Senza questo, i client ricevono solo i contatori numerici ma non i dettagli delle partite storiche, causando campi "??????" nella schermata statistiche.</p>
+<p>La logica di merge e' identica a quella in <a class="el" href="lan__broadcast_8c.html" title="Gestione broadcast LAN: inizializzazione, chiusura e smistamento pacchetti.">lan_broadcast.c</a> per LAN_PACKET_STATS_SYNC, per garantire consistenza tra sincronizzazione TCP e UDP.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e17dec1d132ad7ed461be9444000b405.html">socket</a></li><li class="navelem"><a href="dir_3099fb8800c39f9f88796763e1d82049.html">network</a></li><li class="navelem"><a href="packet__handler__admin_8h.html">packet_handler_admin.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

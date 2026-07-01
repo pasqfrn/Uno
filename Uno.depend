@@ -1,0 +1,646 @@
+# depslib dependency file v1.0
+1782930050 source:c:\users\pasqu\onedrive\documenti\uno\src\auth.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"../lib/auth.h"
+	"../lib/auth_validation.h"
+	"../lib/data_structures.h"
+	"../lib/data_structures/bst.h"
+	"../lib/game_logic.h"
+	"../lib/socket/lan/lan_sync.h"
+	"../lib/screens/menu/string_utils.h"
+	"../lib/fs/fs.h"
+
+1782831340 c:\users\pasqu\onedrive\documenti\uno\lib\auth.h
+	"data_structures.h"
+
+1782831265 c:\users\pasqu\onedrive\documenti\uno\lib\data_structures.h
+	"raylib.h"
+	<stddef.h>
+	<string.h>
+	<stdio.h>
+
+1780945008 c:\users\pasqu\onedrive\documenti\uno\lib\raylib\include\raylib.h
+	<stdarg.h>
+	<stdbool.h>
+
+1782831539 c:\users\pasqu\onedrive\documenti\uno\lib\auth_validation.h
+	"data_structures.h"
+
+1782831911 c:\users\pasqu\onedrive\documenti\uno\lib\data_structures\bst.h
+	"../data_structures.h"
+
+1782831484 c:\users\pasqu\onedrive\documenti\uno\lib\game_logic.h
+	"data_structures.h"
+	"data_structures/stack.h"
+	"data_structures/queue.h"
+
+1782831984 c:\users\pasqu\onedrive\documenti\uno\lib\data_structures\stack.h
+	"../data_structures.h"
+
+1782832033 c:\users\pasqu\onedrive\documenti\uno\lib\data_structures\queue.h
+	"../data_structures.h"
+
+1782832231 c:\users\pasqu\onedrive\documenti\uno\lib\socket\lan\lan_sync.h
+	"../../data_structures.h"
+	"../../auth.h"
+	"lan_protocol.h"
+
+1782832411 c:\users\pasqu\onedrive\documenti\uno\lib\socket\lan\lan_protocol.h
+	<stdint.h>
+	"../../data_structures.h"
+
+1780945008 c:\users\pasqu\onedrive\documenti\uno\lib\screens\menu\string_utils.h
+
+1782837491 c:\users\pasqu\onedrive\documenti\uno\lib\fs\fs.h
+	<stdlib.h>
+
+1782831422 source:c:\users\pasqu\onedrive\documenti\uno\src\auth_validation.c
+	<string.h>
+	"../lib/auth.h"
+	"../lib/data_structures.h"
+	"../lib/screens/menu/string_utils.h"
+	"../lib/auth_validation.h"
+	"../lib/screens/string_utils.h"
+
+1782833603 c:\users\pasqu\onedrive\documenti\uno\lib\screens\string_utils.h
+
+1782837640 source:c:\users\pasqu\onedrive\documenti\uno\src\data_structures\bst.c
+	<stdlib.h>
+	<string.h>
+	"../../lib/data_structures.h"
+	"../../lib/data_structures/bst.h"
+
+1782834232 source:c:\users\pasqu\onedrive\documenti\uno\src\data_structures\chat.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"../../lib/data_structures.h"
+	"../../lib/data_structures/chat.h"
+
+1782831952 c:\users\pasqu\onedrive\documenti\uno\lib\data_structures\chat.h
+	"../data_structures.h"
+
+1782834265 source:c:\users\pasqu\onedrive\documenti\uno\src\data_structures\list.c
+	<stdlib.h>
+	"../../lib/data_structures.h"
+	"../../lib/data_structures/list.h"
+
+1782835161 c:\users\pasqu\onedrive\documenti\uno\lib\data_structures\list.h
+	"../data_structures.h"
+
+1782834294 source:c:\users\pasqu\onedrive\documenti\uno\src\data_structures\queue.c
+	<stdlib.h>
+	"../../lib/data_structures.h"
+	"../../lib/data_structures/queue.h"
+
+1782834324 source:c:\users\pasqu\onedrive\documenti\uno\src\data_structures\stack.c
+	<stdlib.h>
+	"../../lib/data_structures.h"
+	"../../lib/data_structures/stack.h"
+
+1782834390 source:c:\users\pasqu\onedrive\documenti\uno\src\game\deck.c
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"../../lib/game_logic.h"
+	"../../lib/data_structures.h"
+	"../../lib/data_structures/stack.h"
+	"../../lib/list.h"
+
+1782832117 c:\users\pasqu\onedrive\documenti\uno\lib\list.h
+	"data_structures.h"
+
+1782834403 source:c:\users\pasqu\onedrive\documenti\uno\src\game\game_flow.c
+	<stdlib.h>
+	<string.h>
+	"../../lib/game_logic.h"
+	"../../lib/data_structures.h"
+	"../../lib/data_structures/stack.h"
+	"../../lib/data_structures/queue.h"
+	"../../lib/list.h"
+	"../../lib/auth.h"
+
+1782837579 source:c:\users\pasqu\onedrive\documenti\uno\src\game\save_manager.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"../../lib/game_logic.h"
+	"../../lib/auth.h"
+	"../../lib/socket/lan/lan_sync.h"
+	"../../lib/socket/network/network.h"
+	"../../lib/fs/fs.h"
+
+1782832183 c:\users\pasqu\onedrive\documenti\uno\lib\socket\network\network.h
+	"../../data_structures.h"
+	"../lan/lan_protocol.h"
+	<winsock2.h>
+	<ws2tcpip.h>
+
+1782831504 source:c:\users\pasqu\onedrive\documenti\uno\src\game_logic.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<stdint.h>
+	"../lib/game_logic.h"
+	"../lib/auth.h"
+	"../lib/list.h"
+	"../lib/data_structures.h"
+	"../lib/data_structures/stack.h"
+	"../lib/data_structures/queue.h"
+	"../lib/socket/network/network.h"
+	"../lib/socket/lan/lan_sync.h"
+
+1782834119 source:c:\users\pasqu\onedrive\documenti\uno\src\list.c
+	<stdio.h>
+	<stdlib.h>
+	"../lib/data_structures.h"
+	"../lib/list.h"
+
+1782920643 source:c:\users\pasqu\onedrive\documenti\uno\src\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"raylib.h"
+	"../lib/data_structures.h"
+	"../lib/auth.h"
+	"../lib/game_logic.h"
+	"../lib/ui.h"
+	"../lib/socket/network/network.h"
+	"../lib/socket/lan/lan_sync.h"
+	"../lib/screens/auth/auth_screen.h"
+	"../lib/screens/menu/menu_screen.h"
+	"../lib/screens/game/gameplay_screen.h"
+	"../lib/screens/game/end_screen.h"
+	"../lib/screens/multiplayer/multiplayer_screen.h"
+	"../lib/screens/menu/stats_screen.h"
+	"../lib/screens/multiplayer/multiplayer_lobby.h"
+
+1782831579 c:\users\pasqu\onedrive\documenti\uno\lib\ui.h
+	"data_structures.h"
+
+1782832654 c:\users\pasqu\onedrive\documenti\uno\lib\screens\auth\auth_screen.h
+	"../../data_structures.h"
+	"auth_shared.h"
+	"auth_update.h"
+	"auth_draw.h"
+	"admin_draw.h"
+
+1782832691 c:\users\pasqu\onedrive\documenti\uno\lib\screens\auth\auth_shared.h
+	"raylib.h"
+
+1782832725 c:\users\pasqu\onedrive\documenti\uno\lib\screens\auth\auth_update.h
+	"../../data_structures.h"
+
+1782832753 c:\users\pasqu\onedrive\documenti\uno\lib\screens\auth\auth_draw.h
+	"../../data_structures.h"
+
+1782832883 c:\users\pasqu\onedrive\documenti\uno\lib\screens\auth\admin_draw.h
+	"../../data_structures.h"
+
+1782832949 c:\users\pasqu\onedrive\documenti\uno\lib\screens\menu\menu_screen.h
+	"../../data_structures.h"
+
+1782832988 c:\users\pasqu\onedrive\documenti\uno\lib\screens\game\gameplay_screen.h
+	"../../data_structures.h"
+	"raylib.h"
+	"gameplay_shared.h"
+	"gameplay_update.h"
+	"gameplay_draw.h"
+
+1782833646 c:\users\pasqu\onedrive\documenti\uno\lib\screens\game\gameplay_shared.h
+	"../../data_structures.h"
+	"raylib.h"
+
+1782833668 c:\users\pasqu\onedrive\documenti\uno\lib\screens\game\gameplay_update.h
+	"../../data_structures.h"
+	"raylib.h"
+
+1782833687 c:\users\pasqu\onedrive\documenti\uno\lib\screens\game\gameplay_draw.h
+	"../../data_structures.h"
+	"raylib.h"
+
+1782833782 c:\users\pasqu\onedrive\documenti\uno\lib\screens\game\end_screen.h
+	"../../data_structures.h"
+	"raylib.h"
+
+1782833808 c:\users\pasqu\onedrive\documenti\uno\lib\screens\multiplayer\multiplayer_screen.h
+	"../../data_structures.h"
+	"raylib.h"
+
+1782832970 c:\users\pasqu\onedrive\documenti\uno\lib\screens\menu\stats_screen.h
+	"../../data_structures.h"
+
+1782833829 c:\users\pasqu\onedrive\documenti\uno\lib\screens\multiplayer\multiplayer_lobby.h
+	"../../data_structures.h"
+	"../../socket/server/server_manager.h"
+	"raylib.h"
+
+1782832297 c:\users\pasqu\onedrive\documenti\uno\lib\socket\server\server_manager.h
+	"../../data_structures.h"
+
+1782927177 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\auth\admin_draw.c
+	<string.h>
+	"raylib.h"
+	"../../../lib/screens/auth/auth_shared.h"
+	"../../../lib/screens/auth/auth_draw.h"
+	"../../../lib/screens/auth/input_field.h"
+	"../../../lib/screens/menu/string_utils.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/auth.h"
+	"../../../lib/ui.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/data_structures/bst.h"
+
+1782832912 c:\users\pasqu\onedrive\documenti\uno\lib\screens\auth\input_field.h
+	"raylib.h"
+
+1782927177 c:\users\pasqu\onedrive\documenti\uno\lib\socket\network\network_send.h
+	"network.h"
+
+1782916466 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\auth\auth_draw.c
+	<string.h>
+	"raylib.h"
+	"../../../lib/screens/auth/auth_shared.h"
+	"../../../lib/screens/auth/auth_draw.h"
+	"../../../lib/screens/auth/input_field.h"
+	"../../../lib/screens/menu/string_utils.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/auth.h"
+	"../../../lib/ui.h"
+	"../../../lib/screens/auth/admin_draw.h"
+
+1782834575 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\auth\auth_screen.c
+	<string.h>
+	"raylib.h"
+	"../../../lib/screens/auth/auth_shared.h"
+	"../../../lib/screens/auth/auth_update.h"
+	"../../../lib/screens/auth/auth_draw.h"
+	"../../../lib/screens/auth/input_field.h"
+	"../../../lib/screens/menu/string_utils.h"
+	"../../../lib/auth.h"
+	"../../../lib/ui.h"
+
+1782929499 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\auth\auth_update.c
+	<string.h>
+	"raylib.h"
+	"../../../lib/screens/auth/auth_shared.h"
+	"../../../lib/screens/auth/auth_update.h"
+	"../../../lib/screens/auth/input_field.h"
+	"../../../lib/auth_validation.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/screens/menu/string_utils.h"
+	"../../../lib/auth.h"
+	"../../../lib/data_structures/bst.h"
+	"../../../lib/ui.h"
+
+1782930125 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\auth\input_field.c
+	<string.h>
+	"raylib.h"
+	"../../../lib/screens/auth/input_field.h"
+	"../../../lib/auth.h"
+	"../../../lib/ui.h"
+
+1782834711 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\game\bot_ai.c
+	<stdlib.h>
+	<string.h>
+	"../../../lib/screens/game/bot_ai.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/list.h"
+
+1782833760 c:\users\pasqu\onedrive\documenti\uno\lib\screens\game\bot_ai.h
+	"../../data_structures.h"
+
+1782834732 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\game\chat_render.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"raylib.h"
+	"../../../lib/screens/game/gameplay_shared.h"
+	"../../../lib/screens/game/gameplay_draw.h"
+	"../../../lib/screens/menu/string_utils.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/ui.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/auth.h"
+
+1782937512 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\game\end_screen.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<time.h>
+	"raylib.h"
+	"../../../lib/screens/game/end_screen.h"
+	"../../../lib/auth.h"
+	"../../../lib/ui.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/list.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/lan/lan_sync.h"
+
+1782834911 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\game\gameplay_draw.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"raylib.h"
+	"../../../lib/screens/game/gameplay_shared.h"
+	"../../../lib/screens/game/gameplay_draw.h"
+	"../../../lib/screens/menu/string_utils.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/ui.h"
+	"../../../lib/list.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/screens/game/end_screen.h"
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/auth.h"
+
+1782834829 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\game\gameplay_screen.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"raylib.h"
+	"../../../lib/screens/game/gameplay_shared.h"
+	"../../../lib/screens/game/gameplay_update.h"
+	"../../../lib/screens/game/gameplay_draw.h"
+	"../../../lib/screens/menu/string_utils.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/ui.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/auth.h"
+
+1782834858 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\game\gameplay_update.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"raylib.h"
+	"../../../lib/screens/game/gameplay_shared.h"
+	"../../../lib/screens/game/gameplay_update.h"
+	"../../../lib/screens/game/end_screen.h"
+	"../../../lib/screens/menu/string_utils.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/ui.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/auth.h"
+
+1782834994 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\menu\menu_screen.c
+	<stdio.h>
+	<string.h>
+	"raylib.h"
+	"../../../lib/screens/menu/menu_screen.h"
+	"../../../lib/auth.h"
+	"../../../lib/ui.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/socket/network/network.h"
+
+1782835030 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\menu\stats_screen.c
+	<string.h>
+	<stdlib.h>
+	"raylib.h"
+	"../../../lib/screens/menu/stats_screen.h"
+	"../../../lib/auth.h"
+	"../../../lib/ui.h"
+
+1782836370 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\menu\string_utils.c
+	<string.h>
+	"../../../lib/screens/menu/string_utils.h"
+
+1782937855 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\multiplayer\multiplayer_lobby.c
+	<stdio.h>
+	<string.h>
+	"raylib.h"
+	"../../../lib/screens/multiplayer/multiplayer_lobby.h"
+	"../../../lib/screens/multiplayer/multiplayer_screen.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/server/server_manager.h"
+	"../../../lib/ui.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/list.h"
+	"../../../lib/auth.h"
+	"../../../lib/screens/menu/string_utils.h"
+
+1782835210 source:c:\users\pasqu\onedrive\documenti\uno\src\screens\multiplayer\multiplayer_screen.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"raylib.h"
+	"../../../lib/screens/multiplayer/multiplayer_screen.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/ui.h"
+	"../../../lib/auth.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/list.h"
+	"../../../lib/screens/multiplayer/multiplayer_lobby.h"
+
+1782837159 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\lan\lan_broadcast.c
+	"../../../lib/socket/network/socket_compat.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/socket/lan/lan_protocol.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/auth.h"
+	"../../../lib/data_structures.h"
+
+1782837016 c:\users\pasqu\onedrive\documenti\uno\lib\socket\network\socket_compat.h
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/ioctl.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<errno.h>
+	<fcntl.h>
+
+1782933948 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\lan\lan_db_sync.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/socket/lan/lan_protocol.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/auth.h"
+	"../../../lib/data_structures.h"
+
+1782941437 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\lan\lan_save_helpers.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"../../../lib/auth.h"
+	"../../../lib/socket/lan/lan_protocol.h"
+
+1782837616 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\lan\lan_save_sync.c
+	"../../../lib/socket/network/socket_compat.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/socket/lan/lan_protocol.h"
+	"../../../lib/auth.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/fs/fs.h"
+
+1782920452 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\network\network.c
+	"../../../lib/socket/network/socket_compat.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/network/packet_handler.h"
+	"../../../lib/socket/server/server_manager.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/auth.h"
+	"../../../lib/list.h"
+	"raylib.h"
+
+1782832481 c:\users\pasqu\onedrive\documenti\uno\lib\socket\network\packet_handler.h
+	"network.h"
+	"../../game_logic.h"
+	"packet_handler_game.h"
+	"packet_handler_admin.h"
+
+1782832523 c:\users\pasqu\onedrive\documenti\uno\lib\socket\network\packet_handler_game.h
+	"../../data_structures.h"
+	"../../socket/network/network.h"
+
+1782832565 c:\users\pasqu\onedrive\documenti\uno\lib\socket\network\packet_handler_admin.h
+	"../../data_structures.h"
+	"../../socket/network/network.h"
+
+1782927177 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\network\network_send.c
+	"../../../lib/socket/network/socket_compat.h"
+	<stdio.h>
+	<string.h>
+	"raylib.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/auth.h"
+
+1782835865 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\network\packet_handler.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"raylib.h"
+	"../../../lib/socket/network/packet_handler.h"
+	"../../../lib/socket/network/packet_handler_game.h"
+	"../../../lib/socket/network/packet_handler_admin.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/network/state_sync.h"
+	"../../../lib/socket/server/server_manager.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/ui.h"
+	"../../../lib/list.h"
+	"../../../lib/auth.h"
+	"../../../lib/screens/game/gameplay_screen.h"
+	"../../../lib/screens/menu/string_utils.h"
+
+1782832616 c:\users\pasqu\onedrive\documenti\uno\lib\socket\network\state_sync.h
+	"network.h"
+	"../../game_logic.h"
+
+1782927177 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\network\packet_handler_admin.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"raylib.h"
+	"../../../lib/socket/network/packet_handler_admin.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/socket/network/state_sync.h"
+	"../../../lib/socket/server/server_manager.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/ui.h"
+	"../../../lib/list.h"
+	"../../../lib/auth.h"
+	"../../../lib/data_structures/bst.h"
+	"../../../lib/screens/game/gameplay_screen.h"
+	"../../../lib/screens/menu/string_utils.h"
+
+1782938157 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\network\packet_handler_game.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"raylib.h"
+	"../../../lib/socket/network/packet_handler_game.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/network/state_sync.h"
+	"../../../lib/socket/server/server_manager.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/ui.h"
+	"../../../lib/list.h"
+	"../../../lib/auth.h"
+	"../../../lib/screens/game/gameplay_screen.h"
+	"../../../lib/screens/game/end_screen.h"
+	"../../../lib/screens/menu/string_utils.h"
+	"../../../lib/socket/lan/lan_sync.h"
+
+1782938054 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\network\state_sync.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"../../../lib/socket/network/state_sync.h"
+	"../../../lib/socket/network/network.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/auth.h"
+	"../../../lib/screens/game/gameplay_screen.h"
+	"../../../lib/screens/game/end_screen.h"
+	"../../../lib/socket/lan/lan_sync.h"
+
+1782835975 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\server\server_manager.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"raylib.h"
+	"../../../lib/socket/server/server_manager.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/list.h"
+
+1782837117 source:c:\users\pasqu\onedrive\documenti\uno\src\socket\utils\network_utils.c
+	"../../../lib/socket/network/socket_compat.h"
+	<stdio.h>
+	<string.h>
+	"../../../lib/socket/network/network.h"
+	"../../../lib/socket/network/network_send.h"
+	"../../../lib/socket/lan/lan_sync.h"
+	"../../../lib/socket/utils/network_utils.h"
+	"../../../lib/socket/server/server_manager.h"
+	"../../../lib/game_logic.h"
+	"../../../lib/auth.h"
+	"../../../lib/screens/game/end_screen.h"
+	"raylib.h"
+
+1782832332 c:\users\pasqu\onedrive\documenti\uno\lib\socket\utils\network_utils.h
+	"../../data_structures.h"
+	<winsock2.h>
+	<ws2tcpip.h>
+
+1782831631 source:c:\users\pasqu\onedrive\documenti\uno\src\ui.c
+	"../lib/ui.h"
+	<stdio.h>
+

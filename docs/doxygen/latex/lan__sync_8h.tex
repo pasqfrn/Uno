@@ -1,0 +1,523 @@
+\doxysection{lib/socket/lan/lan\+\_\+sync.h File Reference}
+\hypertarget{lan__sync_8h}{}\label{lan__sync_8h}\index{lib/socket/lan/lan\_sync.h@{lib/socket/lan/lan\_sync.h}}
+
+
+Sincronizzazione LAN del database utenti via UDP broadcast.  
+
+
+{\ttfamily \#include "{}../../data\+\_\+structures.\+h"{}}\newline
+{\ttfamily \#include "{}../../auth.\+h"{}}\newline
+{\ttfamily \#include "{}lan\+\_\+protocol.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lan__sync_8h_ac994a8ec1622c6847ed9098bed849d10}{LAN\+\_\+\+SYNC\+\_\+\+PORT}}~27017
+\begin{DoxyCompactList}\small\item\em Porta UDP dedicata alla sincronizzazione LAN (diversa da game 27015). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{lan__sync_8h_a8983866c48fd15e74690a796df115a73}{LAN\+\_\+\+SYNC\+\_\+\+INTERVAL}}~1.\+0f
+\begin{DoxyCompactList}\small\item\em Intervallo in secondi tra broadcast LAN successivi. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lan__sync_8h_a3f8f65e7d6582283510158e54c4928fe}{Serializza\+DB}} (char \texorpdfstring{$\ast$}{*}buf, int buf\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Serializza il database utenti in un buffer JSON. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lan__sync_8h_a88d0b5ae2f24ad06c318deb550373b1e}{LAN\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Inizializza il modulo LAN (socket UDP, thread di ascolto). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_ab0b625c0463cad457894bf91847319c5}{LAN\+\_\+\+Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_aa5723e8d507407a08a3bac33e39ee03f}{LAN\+\_\+\+Close}} (void)
+\begin{DoxyCompactList}\small\item\em Chiude il modulo LAN e libera risorse. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lan__sync_8h_ae3fd9a777cc1edf5a29495a455d0edd3}{LAN\+\_\+\+Username\+Esiste}} (const char \texorpdfstring{$\ast$}{*}username, int skip\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Verifica se uno username esiste nel database LAN-\/synced. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lan__sync_8h_a4ac5aeca9a0bc4c628f3c377b007a990}{LAN\+\_\+\+Email\+Esiste}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Verifica se un\textquotesingle{}email esiste nel database LAN-\/synced. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_ae1b4876757ac2d2fbb965c0dfc1a1c4c}{LAN\+\_\+\+Broadcast\+Now}} (void)
+\begin{DoxyCompactList}\small\item\em Forza un broadcast immediato del database LAN. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lan__sync_8h_ad742056d7d001bc371900404f780fdb5}{LAN\+\_\+\+Get\+Utenti\+Count}} (void)
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di utenti nel database LAN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_a54bcee66d466e24ce98a66159c9b0d5a}{LAN\+\_\+\+Broadcast\+Saves\+Now}} (void)
+\begin{DoxyCompactList}\small\item\em Forza un broadcast immediato dei salvataggi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_a75f095ec4db72f1eaaf97fb8ae78b304}{LAN\+\_\+\+Broadcast\+Delete\+Save}} (const char \texorpdfstring{$\ast$}{*}owner\+\_\+username, const char \texorpdfstring{$\ast$}{*}data\+\_\+salvataggio)
+\begin{DoxyCompactList}\small\item\em Broadcasta una richiesta di eliminazione di un salvataggio. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_afb110e20ad8f620b196145ddcb970c21}{LAN\+\_\+\+Process\+DBPacket}} (const char \texorpdfstring{$\ast$}{*}buf, int bytes, int offset)
+\begin{DoxyCompactList}\small\item\em Processa un pacchetto DB ricevuto (merge utenti). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_a27e09f286eb4eba5a8589e9818346a2d}{LAN\+\_\+\+Process\+Save\+Chunk}} (const \mbox{\hyperlink{lan__protocol_8h_a5f5183faad8f417a84fda8b24a245a5e}{Lan\+Save\+Chunk\+Packet}} \texorpdfstring{$\ast$}{*}chunk)
+\begin{DoxyCompactList}\small\item\em Processa un chunk di salvataggio ricevuto via LAN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_a3d1549737db701594d58097588c08c36}{LAN\+\_\+\+Update\+Saves}} (float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna lo stato dei salvataggi (scadenza, pulizia). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_a38ae2de109b22ba34b6ebc58870676fd}{Compatta\+Saves\+Utente\+Corrente}} (void)
+\begin{DoxyCompactList}\small\item\em Compatta i salvataggi dell\textquotesingle{}utente corrente (rimuove duplicati). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_a041d8356ae80ac806101042d00ba50ce}{LAN\+\_\+\+Broadcast\+Delete\+User}} (const char \texorpdfstring{$\ast$}{*}username)
+\begin{DoxyCompactList}\small\item\em Broadcasta una richiesta di eliminazione utente su LAN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__sync_8h_a388834167710eff0f7c4c0253f90eea2}{LAN\+\_\+\+Broadcast\+Stats\+Sync}} (const char \texorpdfstring{$\ast$}{*}username)
+\begin{DoxyCompactList}\small\item\em Broadcasta un pacchetto di sincronizzazione completa delle statistiche. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lan__sync_8h_a35d530456749dea612236ad880c703d5}{dentro\+Salva\+DB}}
+\begin{DoxyCompactList}\small\item\em Flag per evitare broadcast ricorsivi durante Salva\+DB. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lan__sync_8h_a83d2b69124592dbd8092ed4214b3f35e}{num\+Deleted\+Users}}
+\begin{DoxyCompactList}\small\item\em Contatore utenti eliminati. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{lan__sync_8h_aa8b1b6c8ce6cf65c18ad02977e47f98f}{deleted\+Users}} \mbox{[}512\mbox{]}\mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em Buffer di username eliminati (per compatibilita\textquotesingle{} screens). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sincronizzazione LAN del database utenti via UDP broadcast. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{lan__sync_8h_a8983866c48fd15e74690a796df115a73}\index{lan\_sync.h@{lan\_sync.h}!LAN\_SYNC\_INTERVAL@{LAN\_SYNC\_INTERVAL}}
+\index{LAN\_SYNC\_INTERVAL@{LAN\_SYNC\_INTERVAL}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_SYNC\_INTERVAL}{LAN\_SYNC\_INTERVAL}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a8983866c48fd15e74690a796df115a73} 
+\#define LAN\+\_\+\+SYNC\+\_\+\+INTERVAL~1.\+0f}
+
+
+
+Intervallo in secondi tra broadcast LAN successivi. 
+
+\Hypertarget{lan__sync_8h_ac994a8ec1622c6847ed9098bed849d10}\index{lan\_sync.h@{lan\_sync.h}!LAN\_SYNC\_PORT@{LAN\_SYNC\_PORT}}
+\index{LAN\_SYNC\_PORT@{LAN\_SYNC\_PORT}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_SYNC\_PORT}{LAN\_SYNC\_PORT}}
+{\footnotesize\ttfamily \label{lan__sync_8h_ac994a8ec1622c6847ed9098bed849d10} 
+\#define LAN\+\_\+\+SYNC\+\_\+\+PORT~27017}
+
+
+
+Porta UDP dedicata alla sincronizzazione LAN (diversa da game 27015). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lan__sync_8h_a38ae2de109b22ba34b6ebc58870676fd}\index{lan\_sync.h@{lan\_sync.h}!CompattaSavesUtenteCorrente@{CompattaSavesUtenteCorrente}}
+\index{CompattaSavesUtenteCorrente@{CompattaSavesUtenteCorrente}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{CompattaSavesUtenteCorrente()}{CompattaSavesUtenteCorrente()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a38ae2de109b22ba34b6ebc58870676fd} 
+void Compatta\+Saves\+Utente\+Corrente (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Compatta i salvataggi dell\textquotesingle{}utente corrente (rimuove duplicati). 
+
+\begin{DoxyPrecond}{Precondition}
+\doxylink{struct_utente}{Utente} loggato. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Salvati solo gli slot non vuoti e piu\textquotesingle{} recenti.
+\end{DoxyPostcond}
+Compatta i salvataggi dell\textquotesingle{}utente corrente (rimuove duplicati).
+
+Procedura\+:
+\begin{DoxyEnumerate}
+\item Raccoglie tutti i salvataggi dell\textquotesingle{}utente (formato nuovo e vecchio)
+\item Ordina per data crescente (bubble sort)
+\item Rinnomina i file in formato temporaneo
+\item Riscrive negli slot 1-\/100 in ordine cronologico
+\item Rimuove i file temporanei
+\end{DoxyEnumerate}
+
+Usa il nuovo formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat con fallback al vecchio save\+\_\+slot\+\_\+\+N.\+dat per retrocompatibilita\textquotesingle{}. \Hypertarget{lan__sync_8h_a75f095ec4db72f1eaaf97fb8ae78b304}\index{lan\_sync.h@{lan\_sync.h}!LAN\_BroadcastDeleteSave@{LAN\_BroadcastDeleteSave}}
+\index{LAN\_BroadcastDeleteSave@{LAN\_BroadcastDeleteSave}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_BroadcastDeleteSave()}{LAN\_BroadcastDeleteSave()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a75f095ec4db72f1eaaf97fb8ae78b304} 
+void LAN\+\_\+\+Broadcast\+Delete\+Save (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{owner\+\_\+username}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{data\+\_\+salvataggio}{}\end{DoxyParamCaption})}
+
+
+
+Broadcasta una richiesta di eliminazione di un salvataggio. 
+
+\begin{DoxyPrecond}{Precondition}
+LAN inizializzata. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em owner\+\_\+username} & Proprietario del salvataggio. \\
+\hline
+{\em data\+\_\+salvataggio} & Data del salvataggio da eliminare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lan__sync_8h_a041d8356ae80ac806101042d00ba50ce}\index{lan\_sync.h@{lan\_sync.h}!LAN\_BroadcastDeleteUser@{LAN\_BroadcastDeleteUser}}
+\index{LAN\_BroadcastDeleteUser@{LAN\_BroadcastDeleteUser}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_BroadcastDeleteUser()}{LAN\_BroadcastDeleteUser()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a041d8356ae80ac806101042d00ba50ce} 
+void LAN\+\_\+\+Broadcast\+Delete\+User (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{}\end{DoxyParamCaption})}
+
+
+
+Broadcasta una richiesta di eliminazione utente su LAN. 
+
+\begin{DoxyPrecond}{Precondition}
+LAN inizializzata; username != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Username dell\textquotesingle{}utente eliminato. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lan__sync_8h_ae1b4876757ac2d2fbb965c0dfc1a1c4c}\index{lan\_sync.h@{lan\_sync.h}!LAN\_BroadcastNow@{LAN\_BroadcastNow}}
+\index{LAN\_BroadcastNow@{LAN\_BroadcastNow}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_BroadcastNow()}{LAN\_BroadcastNow()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_ae1b4876757ac2d2fbb965c0dfc1a1c4c} 
+void LAN\+\_\+\+Broadcast\+Now (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Forza un broadcast immediato del database LAN. 
+
+\begin{DoxyPrecond}{Precondition}
+LAN inizializzata e db\+Utenti valido. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Pacchetto UDP broadcast inviato. 
+\end{DoxyPostcond}
+\Hypertarget{lan__sync_8h_a54bcee66d466e24ce98a66159c9b0d5a}\index{lan\_sync.h@{lan\_sync.h}!LAN\_BroadcastSavesNow@{LAN\_BroadcastSavesNow}}
+\index{LAN\_BroadcastSavesNow@{LAN\_BroadcastSavesNow}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_BroadcastSavesNow()}{LAN\_BroadcastSavesNow()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a54bcee66d466e24ce98a66159c9b0d5a} 
+void LAN\+\_\+\+Broadcast\+Saves\+Now (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Forza un broadcast immediato dei salvataggi. 
+
+\begin{DoxyPrecond}{Precondition}
+LAN inizializzata. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Salvataggi broadcastati.
+\end{DoxyPostcond}
+Forza un broadcast immediato dei salvataggi.
+
+Chiama Serializza\+ESpedisci\+Salvataggi() per inviare tutti gli slot dell\textquotesingle{}utente loggato ai dispositivi sulla LAN. \Hypertarget{lan__sync_8h_a388834167710eff0f7c4c0253f90eea2}\index{lan\_sync.h@{lan\_sync.h}!LAN\_BroadcastStatsSync@{LAN\_BroadcastStatsSync}}
+\index{LAN\_BroadcastStatsSync@{LAN\_BroadcastStatsSync}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_BroadcastStatsSync()}{LAN\_BroadcastStatsSync()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a388834167710eff0f7c4c0253f90eea2} 
+void LAN\+\_\+\+Broadcast\+Stats\+Sync (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{}\end{DoxyParamCaption})}
+
+
+
+Broadcasta un pacchetto di sincronizzazione completa delle statistiche. 
+
+Invia a tutti i dispositivi LAN il pacchetto \doxylink{struct_stats_sync_packet}{Stats\+Sync\+Packet} contenente contatori e storico partite recenti.
+
+BUG FIX 5\+: Garantisce che i profili utente siano sincronizzati tra dispositivi dopo ogni partita, preservando lo storico partite (non solo i contatori).
+
+\begin{DoxyPrecond}{Precondition}
+LAN inizializzata; username != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Username del giocatore di cui sincronizzare i dati. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lan__sync_8h_aa5723e8d507407a08a3bac33e39ee03f}\index{lan\_sync.h@{lan\_sync.h}!LAN\_Close@{LAN\_Close}}
+\index{LAN\_Close@{LAN\_Close}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_Close()}{LAN\_Close()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_aa5723e8d507407a08a3bac33e39ee03f} 
+void LAN\+\_\+\+Close (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Chiude il modulo LAN e libera risorse. 
+
+\begin{DoxyPrecond}{Precondition}
+LAN inizializzata. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Socket chiuso; thread terminato; risorse liberate. 
+\end{DoxyPostcond}
+\Hypertarget{lan__sync_8h_a4ac5aeca9a0bc4c628f3c377b007a990}\index{lan\_sync.h@{lan\_sync.h}!LAN\_EmailEsiste@{LAN\_EmailEsiste}}
+\index{LAN\_EmailEsiste@{LAN\_EmailEsiste}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_EmailEsiste()}{LAN\_EmailEsiste()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a4ac5aeca9a0bc4c628f3c377b007a990} 
+int LAN\+\_\+\+Email\+Esiste (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se un\textquotesingle{}email esiste nel database LAN-\/synced. 
+
+\begin{DoxyPrecond}{Precondition}
+db\+Utenti inizializzato. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+1 se esiste, 0 altrimenti. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email da verificare.\\
+\hline
+\end{DoxyParams}
+Verifica se un\textquotesingle{}email esiste nel database LAN-\/synced.
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email da verificare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se esiste, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{lan__sync_8h_ad742056d7d001bc371900404f780fdb5}\index{lan\_sync.h@{lan\_sync.h}!LAN\_GetUtentiCount@{LAN\_GetUtentiCount}}
+\index{LAN\_GetUtentiCount@{LAN\_GetUtentiCount}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_GetUtentiCount()}{LAN\_GetUtentiCount()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_ad742056d7d001bc371900404f780fdb5} 
+int LAN\+\_\+\+Get\+Utenti\+Count (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce il numero di utenti nel database LAN. 
+
+\begin{DoxyReturn}{Returns}
+Numero di utenti. 
+\end{DoxyReturn}
+\Hypertarget{lan__sync_8h_a88d0b5ae2f24ad06c318deb550373b1e}\index{lan\_sync.h@{lan\_sync.h}!LAN\_Init@{LAN\_Init}}
+\index{LAN\_Init@{LAN\_Init}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_Init()}{LAN\_Init()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a88d0b5ae2f24ad06c318deb550373b1e} 
+int LAN\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Inizializza il modulo LAN (socket UDP, thread di ascolto). 
+
+\begin{DoxyPrecond}{Precondition}
+Nessuna. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Socket UDP aperto; thread di ascolto avviato. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+1 se inizializzato con successo, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{lan__sync_8h_afb110e20ad8f620b196145ddcb970c21}\index{lan\_sync.h@{lan\_sync.h}!LAN\_ProcessDBPacket@{LAN\_ProcessDBPacket}}
+\index{LAN\_ProcessDBPacket@{LAN\_ProcessDBPacket}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_ProcessDBPacket()}{LAN\_ProcessDBPacket()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_afb110e20ad8f620b196145ddcb970c21} 
+void LAN\+\_\+\+Process\+DBPacket (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{int}]{bytes}{, }\item[{int}]{offset}{}\end{DoxyParamCaption})}
+
+
+
+Processa un pacchetto DB ricevuto (merge utenti). 
+
+\begin{DoxyPrecond}{Precondition}
+buf contiene un JSON valido. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Buffer con i dati ricevuti. \\
+\hline
+{\em bytes} & Numero di bytes nel pacchetto. \\
+\hline
+{\em offset} & Offset nel buffer (per logging).\\
+\hline
+\end{DoxyParams}
+Processa un pacchetto DB ricevuto (merge utenti).
+
+Chiamato da \doxylink{lan__sync_8h_ab0b625c0463cad457894bf91847319c5}{LAN\+\_\+\+Update()} in \doxylink{lan__broadcast_8c}{lan\+\_\+broadcast.\+c}. \Hypertarget{lan__sync_8h_a27e09f286eb4eba5a8589e9818346a2d}\index{lan\_sync.h@{lan\_sync.h}!LAN\_ProcessSaveChunk@{LAN\_ProcessSaveChunk}}
+\index{LAN\_ProcessSaveChunk@{LAN\_ProcessSaveChunk}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_ProcessSaveChunk()}{LAN\_ProcessSaveChunk()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a27e09f286eb4eba5a8589e9818346a2d} 
+void LAN\+\_\+\+Process\+Save\+Chunk (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{lan__protocol_8h_a5f5183faad8f417a84fda8b24a245a5e}{Lan\+Save\+Chunk\+Packet}} \texorpdfstring{$\ast$}{*}}]{chunk}{}\end{DoxyParamCaption})}
+
+
+
+Processa un chunk di salvataggio ricevuto via LAN. 
+
+\begin{DoxyPrecond}{Precondition}
+chunk != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em chunk} & Pacchetto chunk di salvataggio.\\
+\hline
+\end{DoxyParams}
+Processa un chunk di salvataggio ricevuto via LAN.
+
+Chiamato da \doxylink{lan__sync_8h_ab0b625c0463cad457894bf91847319c5}{LAN\+\_\+\+Update()} in \doxylink{lan__broadcast_8c}{lan\+\_\+broadcast.\+c} quando arriva un pacchetto LAN\+\_\+\+PACKET\+\_\+\+SAVE.
+
+
+\begin{DoxyParams}{Parameters}
+{\em chunk} & Puntatore al pacchetto chunk ricevuto. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lan__sync_8h_ab0b625c0463cad457894bf91847319c5}\index{lan\_sync.h@{lan\_sync.h}!LAN\_Update@{LAN\_Update}}
+\index{LAN\_Update@{LAN\_Update}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_Update()}{LAN\_Update()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_ab0b625c0463cad457894bf91847319c5} 
+void LAN\+\_\+\+Update (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})}
+
+
+
+Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout). 
+
+\begin{DoxyPrecond}{Precondition}
+LAN inizializzata. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Pacchetti ricevuti processati; broadcast inviati se scaduto intervallo. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time dal frame precedente. \\
+\hline
+\end{DoxyParams}
+Sincronizza le statistiche di un utente ricevute da un dispositivo remoto. La sincronizzazione avviene in modo incrementale\+:
+\begin{DoxyItemize}
+\item I contatori (partite\+\_\+giocate, vittorie\+\_\+giocatore, vittorie\+\_\+bot) vengono aggiornati solo se il valore remoto e\textquotesingle{} maggiore di quello locale (crescita monotona).
+\item Lo storico partite viene sempre mergiato, indipendentemente dai contatori. Le partite remote vengono aggiunte solo se non gia\textquotesingle{} presenti (deduplica per durata+esito+modalita+posizione).
+\end{DoxyItemize}
+
+Questo approccio garantisce che entrambi i PC abbiano la stessa vista dello storico partite, anche se i contatori numerici sono identici. Garantisce inoltre che le statistiche non vengano mai sovrascritte ma solo estese con nuove partite.
+
+Ricezione pacchetto sincronizzazione statistiche (LAN\+\_\+\+PACKET\+\_\+\+STATS\+\_\+\+SYNC).
+
+BUG FIX 1 (Double Counting)\+: La logica di merge e\textquotesingle{} stata corretta per evitare che le partite storiche vengano contate due volte.
+
+Strategia\+:
+\begin{DoxyEnumerate}
+\item Se il remoto ha contatori PIU\textquotesingle{} ALTI del locale (crescita monotona), COPIA i contatori e NON mergiare lo storico (le partite sono gia\textquotesingle{} in quei numeri).
+\item Se i contatori sono UGUALI ma ci sono partite storiche NON PRESENTI in locale (deduplica per durata+esito+modalita+posizione), aggiungile a storico\+\_\+partite\mbox{[}\mbox{]} SENZA incrementare partite\+\_\+giocate (la partita e\textquotesingle{} gia\textquotesingle{} contata).
+\item Se i contatori sono UGUALI e lo storico e\textquotesingle{} gia\textquotesingle{} presente, non fare nulla.
+\end{DoxyEnumerate}
+
+Ricezione notifica di eliminazione salvataggio. Cerca il file nel nuovo formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat, con fallback al vecchio formato save\+\_\+slot\+\_\+\+N.\+dat per retrocompatibilita\textquotesingle{}.\Hypertarget{lan__sync_8h_a3d1549737db701594d58097588c08c36}\index{lan\_sync.h@{lan\_sync.h}!LAN\_UpdateSaves@{LAN\_UpdateSaves}}
+\index{LAN\_UpdateSaves@{LAN\_UpdateSaves}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_UpdateSaves()}{LAN\_UpdateSaves()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a3d1549737db701594d58097588c08c36} 
+void LAN\+\_\+\+Update\+Saves (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})}
+
+
+
+Aggiorna lo stato dei salvataggi (scadenza, pulizia). 
+
+\begin{DoxyPrecond}{Precondition}
+LAN inizializzata. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time.\\
+\hline
+\end{DoxyParams}
+Aggiorna lo stato dei salvataggi (scadenza, pulizia).
+
+Chiamata ogni frame da \doxylink{lan__sync_8h_ab0b625c0463cad457894bf91847319c5}{LAN\+\_\+\+Update()}. Gestisce\+:
+\begin{DoxyItemize}
+\item Timeout 30s\+: se un ricevitore non completa il file entro 30s, viene rilasciato
+\item Cleanup automatico\+: se tutti i chunk sono arrivati, rilascia il buffer
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time dall\textquotesingle{}ultimo frame (per aggiornamento timer). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lan__sync_8h_ae3fd9a777cc1edf5a29495a455d0edd3}\index{lan\_sync.h@{lan\_sync.h}!LAN\_UsernameEsiste@{LAN\_UsernameEsiste}}
+\index{LAN\_UsernameEsiste@{LAN\_UsernameEsiste}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{LAN\_UsernameEsiste()}{LAN\_UsernameEsiste()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_ae3fd9a777cc1edf5a29495a455d0edd3} 
+int LAN\+\_\+\+Username\+Esiste (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{u}{, }\item[{int}]{skip}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se uno username esiste nel database LAN-\/synced. 
+
+\begin{DoxyPrecond}{Precondition}
+db\+Utenti inizializzato. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+1 se esiste, 0 altrimenti. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Username da verificare. \\
+\hline
+{\em skip\+\_\+index} & Indice da ignorare (-\/1 per controllare tutti).\\
+\hline
+\end{DoxyParams}
+Verifica se uno username esiste nel database LAN-\/synced.
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & Username da verificare. \\
+\hline
+{\em skip} & Indice da saltare (-\/1 per nessuno). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se esiste, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{lan__sync_8h_a3f8f65e7d6582283510158e54c4928fe}\index{lan\_sync.h@{lan\_sync.h}!SerializzaDB@{SerializzaDB}}
+\index{SerializzaDB@{SerializzaDB}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{SerializzaDB()}{SerializzaDB()}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a3f8f65e7d6582283510158e54c4928fe} 
+int Serializza\+DB (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{int}]{buf\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Serializza il database utenti in un buffer JSON. 
+
+\begin{DoxyPrecond}{Precondition}
+db\+Utenti.\+num\+\_\+utenti \texorpdfstring{$>$}{>} 0. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Buffer riempito con stringa JSON; restituisce bytes scritti. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Buffer di output. \\
+\hline
+{\em buf\+\_\+size} & Dimensione massima del buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bytes scritti, o -\/1 se errore.
+\end{DoxyReturn}
+Serializza il database utenti in un buffer JSON.
+
+Formato\+: header + int(num\+\_\+utenti) + \doxylink{struct_lan_compact_user}{Lan\+Compact\+User}\mbox{[}N\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Buffer di destinazione. \\
+\hline
+{\em buf\+\_\+size} & Dimensione buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero di byte scritti, 0 se errore. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{lan__sync_8h_aa8b1b6c8ce6cf65c18ad02977e47f98f}\index{lan\_sync.h@{lan\_sync.h}!deletedUsers@{deletedUsers}}
+\index{deletedUsers@{deletedUsers}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{deletedUsers}{deletedUsers}}
+{\footnotesize\ttfamily \label{lan__sync_8h_aa8b1b6c8ce6cf65c18ad02977e47f98f} 
+char deleted\+Users\mbox{[}512\mbox{]}\mbox{[}30\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Buffer di username eliminati (per compatibilita\textquotesingle{} screens). 
+
+Buffer di username eliminati (per compatibilita\textquotesingle{} screens). \Hypertarget{lan__sync_8h_a35d530456749dea612236ad880c703d5}\index{lan\_sync.h@{lan\_sync.h}!dentroSalvaDB@{dentroSalvaDB}}
+\index{dentroSalvaDB@{dentroSalvaDB}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{dentroSalvaDB}{dentroSalvaDB}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a35d530456749dea612236ad880c703d5} 
+int dentro\+Salva\+DB\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Flag per evitare broadcast ricorsivi durante Salva\+DB. 
+
+Flag per evitare broadcast ricorsivi durante Salva\+DB. \Hypertarget{lan__sync_8h_a83d2b69124592dbd8092ed4214b3f35e}\index{lan\_sync.h@{lan\_sync.h}!numDeletedUsers@{numDeletedUsers}}
+\index{numDeletedUsers@{numDeletedUsers}!lan\_sync.h@{lan\_sync.h}}
+\doxysubsubsection{\texorpdfstring{numDeletedUsers}{numDeletedUsers}}
+{\footnotesize\ttfamily \label{lan__sync_8h_a83d2b69124592dbd8092ed4214b3f35e} 
+int num\+Deleted\+Users\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Contatore utenti eliminati. 
+
+Contatore utenti eliminati. 

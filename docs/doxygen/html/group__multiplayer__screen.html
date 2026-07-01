@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Multiplayer Screen</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__multiplayer__screen.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Multiplayer Screen </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestisce la logica e il disegno delle schermate multiplayer: creazione/join sessione, lobby host, lobby client.  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-files" class="groupheader"><a id="files" name="files"></a>
+File</h2></td></tr>
+<tr class="memitem:src_2Fscreens_2Fmultiplayer_2Fmultiplayer_5Fscreen_2Ec" id="r_src_2Fscreens_2Fmultiplayer_2Fmultiplayer_5Fscreen_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="multiplayer__screen_8c.html">src/screens/multiplayer/multiplayer_screen.c</a></td></tr>
+<tr class="memdesc:multiplayer__screen_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schermata di selezione multiplayer (host/client). <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:ga1ca7877dda220b7eca83451c50dc0ac1" id="r_ga1ca7877dda220b7eca83451c50dc0ac1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga1ca7877dda220b7eca83451c50dc0ac1">ResetMultiplayerError</a> (void)</td></tr>
+<tr class="memdesc:ga1ca7877dda220b7eca83451c50dc0ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetta l'errore di caricamento multiplayer.  <br /></td></tr>
+<tr class="memitem:ga8229566194e375f13f21c7f18d03bcba" id="r_ga8229566194e375f13f21c7f18d03bcba"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga8229566194e375f13f21c7f18d03bcba">DisegnaMultiplayer</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase, float *network_countdown, int *network_countdown_active)</td></tr>
+<tr class="memdesc:ga8229566194e375f13f21c7f18d03bcba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna la schermata di selezione multiplayer.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Gestisce la logica e il disegno delle schermate multiplayer: creazione/join sessione, lobby host, lobby client. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="ga8229566194e375f13f21c7f18d03bcba" name="ga8229566194e375f13f21c7f18d03bcba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8229566194e375f13f21c7f18d03bcba">&#9670;&#160;</a></span>DisegnaMultiplayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisegnaMultiplayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *</td>          <td class="paramname"><span class="paramname"><em>fase</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>network_countdown</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>network_countdown_active</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disegna la schermata di selezione multiplayer. </p>
+<p>Disegna e gestisce le schermate multiplayer.</p>
+<p>Gestisce tre fasi:</p><ul>
+<li>FASE_MULTIPLAYER_SCELTA: bottoni "Crea Stanza" e "Unisciti"</li>
+<li>FASE_CLIENT_JOIN: inserimento codice stanza</li>
+<li>FASE_HOST_LOBBY / FASE_CLIENT_LOBBY: waiting room (delegata)</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+    <tr><td class="paramname">fase</td><td>Puntatore alla fase applicazione. </td></tr>
+    <tr><td class="paramname">network_countdown</td><td>Puntatore al timer countdown inizio partita. </td></tr>
+    <tr><td class="paramname">network_countdown_active</td><td>Puntatore a flag countdown attivo.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Disegna la schermata di selezione multiplayer.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; fase != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Schermata multiplayer aggiornata e renderizzata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato del gioco. </td></tr>
+    <tr><td class="paramname">fase</td><td>Fase corrente. </td></tr>
+    <tr><td class="paramname">network_countdown</td><td>Puntatore al timer countdown. </td></tr>
+    <tr><td class="paramname">network_countdown_active</td><td>Puntatore al flag countdown attivo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga1ca7877dda220b7eca83451c50dc0ac1" name="ga1ca7877dda220b7eca83451c50dc0ac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ca7877dda220b7eca83451c50dc0ac1">&#9670;&#160;</a></span>ResetMultiplayerError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ResetMultiplayerError </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resetta l'errore di caricamento multiplayer. </p>
+<p>Resetta gli errori della schermata multiplayer.</p>
+<p>Resetta l'errore di caricamento multiplayer.</p>
+<dl class="section post"><dt>Postcondizione</dt><dd>Flag errori resettati. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+\doxysection{src/screens/menu/string\+\_\+utils.c File Reference}
+\hypertarget{string__utils_8c}{}\label{string__utils_8c}\index{src/screens/menu/string\_utils.c@{src/screens/menu/string\_utils.c}}
+
+
+Funzioni di utilita\textquotesingle{} per la gestione di stringhe.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}../../../lib/screens/menu/string\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{string__utils_8c_a020c15851ae0957e9fc8f93be3fb6ae8}{Compare\+Ignore\+Case}} (const char \texorpdfstring{$\ast$}{*}s1, const char \texorpdfstring{$\ast$}{*}s2)
+\begin{DoxyCompactList}\small\item\em Confronta due stringhe ignorando le differenze tra maiuscole/minuscole. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funzioni di utilita\textquotesingle{} per la gestione di stringhe. 
+
+Contiene funzioni helper per confronti e manipolazioni di stringhe\+:
+\begin{DoxyItemize}
+\item Compare\+Ignore\+Case\+: confronto case-\/insensitive tra due stringhe
+\item Altre utility per manipolazione testo
+\end{DoxyItemize}
+
+Usato in tutti i moduli che necessitano di confronti case-\/insensitive (auth, multiplayer, chat, ecc.). 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{string__utils_8c_a020c15851ae0957e9fc8f93be3fb6ae8}\index{string\_utils.c@{string\_utils.c}!CompareIgnoreCase@{CompareIgnoreCase}}
+\index{CompareIgnoreCase@{CompareIgnoreCase}!string\_utils.c@{string\_utils.c}}
+\doxysubsubsection{\texorpdfstring{CompareIgnoreCase()}{CompareIgnoreCase()}}
+{\footnotesize\ttfamily \label{string__utils_8c_a020c15851ae0957e9fc8f93be3fb6ae8} 
+int Compare\+Ignore\+Case (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s1}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{s2}{}\end{DoxyParamCaption})}
+
+
+
+Confronta due stringhe ignorando le differenze tra maiuscole/minuscole. 
+
+\begin{DoxyPrecond}{Precondition}
+s1 != NULL; s2 != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+0 se uguali, \texorpdfstring{$<$}{<}0 se s1 \texorpdfstring{$<$}{<} s2, \texorpdfstring{$>$}{>}0 se s1 \texorpdfstring{$>$}{>} s2. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & Prima stringa. \\
+\hline
+{\em s2} & Seconda stringa. \\
+\hline
+\end{DoxyParams}

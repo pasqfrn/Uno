@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno:  File sorgente lib/game_logic.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('game__logic_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">game_logic.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="game__logic_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef GAME_LOGIC_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define GAME_LOGIC_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">data_structures.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="stack_8h.html">data_structures/stack.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="queue_8h.html">data_structures/queue.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">extern</span> <a class="code hl_struct" href="struct_pila.html">Pila</a>* <a class="code hl_variable" href="game__logic_8c.html#afefe37ecc9aba9febda10fedc4dfa743">mazzo_pila</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">extern</span> <a class="code hl_struct" href="struct_pila.html">Pila</a>* <a class="code hl_variable" href="game__logic_8c.html#ae43a4528acce4bced75b0d843415956f">scarti_pila</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">extern</span> <a class="code hl_struct" href="struct_coda_turni.html">CodaTurni</a>* <a class="code hl_variable" href="game__logic_8c.html#ad1902a2e7f88106585a3606741e4ba34">coda_turni</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *  GESTIONE PARTITE (Salvataggio / Caricamento)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * ============================================================ */</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">int</span> <a class="code hl_function" href="game__logic_8h.html#a1f3105448b986dc3c5fd8ef93e948fdf">CaricaPartitaDaSlot</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <span class="keywordtype">int</span> slot);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#ac36d5d7fc58d57d5333d9de89432acb1">RicostruisciStatoADT</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#a8b2e4cdd665a790268c297e793abc369">EliminaSalvataggio</a>(<span class="keywordtype">int</span> slot);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#ab6d8a480978f155fe71df7ce72d2d67e">SalvaPartita</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#a4af9aa327b760e4e4ff4c861879608d6">CompattaSalvataggiUtente</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#abef09d90f8a1244e64b884e89814cd9d">EliminaTuttiSalvataggiUtente</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* username);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#a56d174d587ba4d54b02fa4f18c6d5279">GetSaveFilePath</a>(<span class="keywordtype">int</span> user_index, <span class="keywordtype">int</span> slot, <span class="keywordtype">char</span>* buffer, <span class="keywordtype">size_t</span> bufsize);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"> *  GESTIONE MAZZO E PESCA</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment"> * ============================================================ */</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__game__logic.html#ga2be362fe392971bbe8008aa9266cf539">InizializzaMazzo</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="game__logic_8h.html#aa30d6c36fd5e60362e9863466f754b38">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#aa30d6c36fd5e60362e9863466f754b38">RicarcaMazzo</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment"> *  VALIDAZIONE E APPLICAZIONE MOSSE</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment"> * ============================================================ */</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">int</span> <a class="code hl_function" href="game__logic_8h.html#a331462bb54826e9e9d477625d83dd9d5">MossaValida</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="code hl_struct" href="struct_carta.html">Carta</a> c);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#a588fc681a6842fa5688ec1331484fe1b">ApplicaEffetto</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="code hl_struct" href="struct_carta.html">Carta</a> c, <a class="code hl_enumeration" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> colore_scelto);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment"> *  INIZIALIZZAZIONE E FINE PARTITA</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment"> * ============================================================ */</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#a6f74b381349465d305eabe85f8b02a95">NuovaPartita</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <span class="keywordtype">int</span> num_avversari);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#a3446c1c30033cc8030a98d3e41399365">EliminaPartita</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="keywordtype">void</span> <a class="code hl_function" href="game__logic_8h.html#ab202f15176056f42ac78bd55f0ef400e">MostraNotifica</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <span class="keyword">const</span> <span class="keywordtype">char</span>* msg);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment"> *  FUNZIONI HELPER PER ACCESSO ALLE MANI (Liste collegate)</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment"> * ============================================================ */</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__game__logic.html#ga171821f60641393ff220f91b26e0325f">GetLunghezzaMano</a>(<a class="code hl_struct" href="struct_giocatore.html">Giocatore</a> *giocatore);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><a class="code hl_struct" href="struct_carta.html">Carta</a> <a class="code hl_function" href="group__game__logic.html#ga911f218567f81d8d4d6eec5c1c12b543">GetCartaGiocatore</a>(<a class="code hl_struct" href="struct_giocatore.html">Giocatore</a> *giocatore, <span class="keywordtype">int</span> indice);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><a class="code hl_struct" href="struct_nodo_carta.html">NodoCarta</a>* <a class="code hl_function" href="group__game__logic.html#ga5a26039c72d695715eb46d1dbe0f91ff">GetNodoCartaGiocatore</a>(<a class="code hl_struct" href="struct_giocatore.html">Giocatore</a> *giocatore, <span class="keywordtype">int</span> indice);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__game__logic.html#gac60c0e57c8c2a799f008d302bbaaa5fd">RimuoviCartaGiocatore</a>(<a class="code hl_struct" href="struct_giocatore.html">Giocatore</a> *giocatore, <span class="keywordtype">int</span> indice);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__game__logic.html#ga6fc614aadf58fe03606063067a2ad233">RimescolaScartiNelMazzo</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__game__logic.html#gad1b01bee170bfe43e167097d8fa75b3c">Pesca</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <span class="keywordtype">int</span> id_giocatore, <span class="keywordtype">int</span> quantita);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
+<div class="ttc" id="adata__structures_8h_html_a030035d63f7ea5baefdfe9a53844d27c"><div class="ttname"><a href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a></div><div class="ttdeci">Colore</div><div class="ttdoc">Colori disponibili per le carte UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:37</div></div>
+<div class="ttc" id="agame__logic_8c_html_ad1902a2e7f88106585a3606741e4ba34"><div class="ttname"><a href="game__logic_8c.html#ad1902a2e7f88106585a3606741e4ba34">coda_turni</a></div><div class="ttdeci">CodaTurni * coda_turni</div><div class="ttdoc">Coda globale dei turni.</div><div class="ttdef"><b>Definition</b> game_logic.c:30</div></div>
+<div class="ttc" id="agame__logic_8c_html_ae43a4528acce4bced75b0d843415956f"><div class="ttname"><a href="game__logic_8c.html#ae43a4528acce4bced75b0d843415956f">scarti_pila</a></div><div class="ttdeci">Pila * scarti_pila</div><div class="ttdoc">Pila globale degli scarti.</div><div class="ttdef"><b>Definition</b> game_logic.c:28</div></div>
+<div class="ttc" id="agame__logic_8c_html_afefe37ecc9aba9febda10fedc4dfa743"><div class="ttname"><a href="game__logic_8c.html#afefe37ecc9aba9febda10fedc4dfa743">mazzo_pila</a></div><div class="ttdeci">Pila * mazzo_pila</div><div class="ttdoc">Pila globale del mazzo di pesca.</div><div class="ttdef"><b>Definition</b> game_logic.c:26</div></div>
+<div class="ttc" id="agame__logic_8h_html_a1f3105448b986dc3c5fd8ef93e948fdf"><div class="ttname"><a href="game__logic_8h.html#a1f3105448b986dc3c5fd8ef93e948fdf">CaricaPartitaDaSlot</a></div><div class="ttdeci">int CaricaPartitaDaSlot(StatoGioco *gioco, int slot)</div><div class="ttdoc">Carica una partita da un file di salvataggio.</div><div class="ttdef"><b>Definition</b> save_manager.c:223</div></div>
+<div class="ttc" id="agame__logic_8h_html_a331462bb54826e9e9d477625d83dd9d5"><div class="ttname"><a href="game__logic_8h.html#a331462bb54826e9e9d477625d83dd9d5">MossaValida</a></div><div class="ttdeci">int MossaValida(StatoGioco *gioco, Carta c)</div><div class="ttdoc">Verifica se una carta puo&#39; essere giocata legalmente.</div><div class="ttdef"><b>Definition</b> game_logic.c:49</div></div>
+<div class="ttc" id="agame__logic_8h_html_a3446c1c30033cc8030a98d3e41399365"><div class="ttname"><a href="game__logic_8h.html#a3446c1c30033cc8030a98d3e41399365">EliminaPartita</a></div><div class="ttdeci">void EliminaPartita(StatoGioco *gioco)</div><div class="ttdoc">Libera tutte le risorse allocate per una partita.</div><div class="ttdef"><b>Definition</b> game_flow.c:132</div></div>
+<div class="ttc" id="agame__logic_8h_html_a4af9aa327b760e4e4ff4c861879608d6"><div class="ttname"><a href="game__logic_8h.html#a4af9aa327b760e4e4ff4c861879608d6">CompattaSalvataggiUtente</a></div><div class="ttdeci">void CompattaSalvataggiUtente(void)</div><div class="ttdoc">Compatta i salvataggi dell&#39;utente loggato in ordine cronologico.</div><div class="ttdef"><b>Definition</b> save_manager.c:257</div></div>
+<div class="ttc" id="agame__logic_8h_html_a56d174d587ba4d54b02fa4f18c6d5279"><div class="ttname"><a href="game__logic_8h.html#a56d174d587ba4d54b02fa4f18c6d5279">GetSaveFilePath</a></div><div class="ttdeci">void GetSaveFilePath(int user_index, int slot, char *buffer, size_t bufsize)</div><div class="ttdoc">Restituisce il path del file di salvataggio per un dato utente e slot.</div><div class="ttdef"><b>Definition</b> save_manager.c:433</div></div>
+<div class="ttc" id="agame__logic_8h_html_a588fc681a6842fa5688ec1331484fe1b"><div class="ttname"><a href="game__logic_8h.html#a588fc681a6842fa5688ec1331484fe1b">ApplicaEffetto</a></div><div class="ttdeci">void ApplicaEffetto(StatoGioco *gioco, Carta c, Colore colore_scelto)</div><div class="ttdoc">Applica l&#39;effetto speciale di una carta giocata.</div><div class="ttdef"><b>Definition</b> game_logic.c:67</div></div>
+<div class="ttc" id="agame__logic_8h_html_a6f74b381349465d305eabe85f8b02a95"><div class="ttname"><a href="game__logic_8h.html#a6f74b381349465d305eabe85f8b02a95">NuovaPartita</a></div><div class="ttdeci">void NuovaPartita(StatoGioco *gioco, int num_avversari)</div><div class="ttdoc">Inizializza una nuova partita con il numero di avversari specificato.</div><div class="ttdef"><b>Definition</b> game_flow.c:80</div></div>
+<div class="ttc" id="agame__logic_8h_html_a8b2e4cdd665a790268c297e793abc369"><div class="ttname"><a href="game__logic_8h.html#a8b2e4cdd665a790268c297e793abc369">EliminaSalvataggio</a></div><div class="ttdeci">void EliminaSalvataggio(int slot)</div><div class="ttdoc">Elimina un file di salvataggio esistente.</div><div class="ttdef"><b>Definition</b> save_manager.c:350</div></div>
+<div class="ttc" id="agame__logic_8h_html_aa30d6c36fd5e60362e9863466f754b38"><div class="ttname"><a href="game__logic_8h.html#aa30d6c36fd5e60362e9863466f754b38">RicarcaMazzo</a></div><div class="ttdeci">void RicarcaMazzo(StatoGioco *gioco)</div><div class="ttdoc">Ricarica il mazzo di pesca dagli scarti.</div></div>
+<div class="ttc" id="agame__logic_8h_html_ab202f15176056f42ac78bd55f0ef400e"><div class="ttname"><a href="game__logic_8h.html#ab202f15176056f42ac78bd55f0ef400e">MostraNotifica</a></div><div class="ttdeci">void MostraNotifica(StatoGioco *gioco, const char *msg)</div><div class="ttdoc">Mostra una notifica temporanea a schermo.</div><div class="ttdef"><b>Definition</b> game_logic.c:114</div></div>
+<div class="ttc" id="agame__logic_8h_html_ab6d8a480978f155fe71df7ce72d2d67e"><div class="ttname"><a href="game__logic_8h.html#ab6d8a480978f155fe71df7ce72d2d67e">SalvaPartita</a></div><div class="ttdeci">void SalvaPartita(StatoGioco *gioco)</div><div class="ttdoc">Salva lo stato corrente della partita su file.</div><div class="ttdef"><b>Definition</b> save_manager.c:108</div></div>
+<div class="ttc" id="agame__logic_8h_html_abef09d90f8a1244e64b884e89814cd9d"><div class="ttname"><a href="game__logic_8h.html#abef09d90f8a1244e64b884e89814cd9d">EliminaTuttiSalvataggiUtente</a></div><div class="ttdeci">void EliminaTuttiSalvataggiUtente(const char *username)</div><div class="ttdoc">Elimina TUTTI i salvataggi di un utente specifico.</div><div class="ttdef"><b>Definition</b> save_manager.c:383</div></div>
+<div class="ttc" id="agame__logic_8h_html_ac36d5d7fc58d57d5333d9de89432acb1"><div class="ttname"><a href="game__logic_8h.html#ac36d5d7fc58d57d5333d9de89432acb1">RicostruisciStatoADT</a></div><div class="ttdeci">void RicostruisciStatoADT(StatoGioco *gioco)</div><div class="ttdoc">Ricostruisce le strutture ADT statiche (mazzo_pila, scarti_pila, coda_turni) e le mani dei giocatori ...</div><div class="ttdef"><b>Definition</b> game_flow.c:32</div></div>
+<div class="ttc" id="agroup__game__logic_html_ga171821f60641393ff220f91b26e0325f"><div class="ttname"><a href="group__game__logic.html#ga171821f60641393ff220f91b26e0325f">GetLunghezzaMano</a></div><div class="ttdeci">int GetLunghezzaMano(Giocatore *giocatore)</div><div class="ttdoc">Restituisce il numero di carte nella mano di un giocatore.</div><div class="ttdef"><b>Definition</b> deck.c:182</div></div>
+<div class="ttc" id="agroup__game__logic_html_ga2be362fe392971bbe8008aa9266cf539"><div class="ttname"><a href="group__game__logic.html#ga2be362fe392971bbe8008aa9266cf539">InizializzaMazzo</a></div><div class="ttdeci">void InizializzaMazzo(StatoGioco *gioco)</div><div class="ttdoc">Inizializza il mazzo di pesca con 108 carte UNO standard.</div><div class="ttdef"><b>Definition</b> deck.c:74</div></div>
+<div class="ttc" id="agroup__game__logic_html_ga5a26039c72d695715eb46d1dbe0f91ff"><div class="ttname"><a href="group__game__logic.html#ga5a26039c72d695715eb46d1dbe0f91ff">GetNodoCartaGiocatore</a></div><div class="ttdeci">NodoCarta * GetNodoCartaGiocatore(Giocatore *giocatore, int indice)</div><div class="ttdoc">Restituisce il puntatore al nodo di una carta per indice.</div><div class="ttdef"><b>Definition</b> deck.c:198</div></div>
+<div class="ttc" id="agroup__game__logic_html_ga6fc614aadf58fe03606063067a2ad233"><div class="ttname"><a href="group__game__logic.html#ga6fc614aadf58fe03606063067a2ad233">RimescolaScartiNelMazzo</a></div><div class="ttdeci">void RimescolaScartiNelMazzo(StatoGioco *gioco)</div><div class="ttdoc">Rimescola le carte dalla pila degli scarti nel mazzo di pesca.</div><div class="ttdef"><b>Definition</b> deck.c:115</div></div>
+<div class="ttc" id="agroup__game__logic_html_ga911f218567f81d8d4d6eec5c1c12b543"><div class="ttname"><a href="group__game__logic.html#ga911f218567f81d8d4d6eec5c1c12b543">GetCartaGiocatore</a></div><div class="ttdeci">Carta GetCartaGiocatore(Giocatore *giocatore, int indice)</div><div class="ttdoc">Restituisce una carta dalla mano di un giocatore per indice.</div><div class="ttdef"><b>Definition</b> deck.c:210</div></div>
+<div class="ttc" id="agroup__game__logic_html_gac60c0e57c8c2a799f008d302bbaaa5fd"><div class="ttname"><a href="group__game__logic.html#gac60c0e57c8c2a799f008d302bbaaa5fd">RimuoviCartaGiocatore</a></div><div class="ttdeci">void RimuoviCartaGiocatore(Giocatore *giocatore, int indice)</div><div class="ttdoc">Rimuove una carta dalla mano di un giocatore per indice.</div><div class="ttdef"><b>Definition</b> deck.c:223</div></div>
+<div class="ttc" id="agroup__game__logic_html_gad1b01bee170bfe43e167097d8fa75b3c"><div class="ttname"><a href="group__game__logic.html#gad1b01bee170bfe43e167097d8fa75b3c">Pesca</a></div><div class="ttdeci">void Pesca(StatoGioco *gioco, int id_giocatore, int quantita)</div><div class="ttdoc">Fa pescare un certo numero di carte a un giocatore.</div><div class="ttdef"><b>Definition</b> deck.c:151</div></div>
+<div class="ttc" id="aqueue_8h_html"><div class="ttname"><a href="queue_8h.html">queue.h</a></div><div class="ttdoc">ADT Coda (Queue) bidirezionale per la gestione dei turni di gioco.</div></div>
+<div class="ttc" id="astack_8h_html"><div class="ttname"><a href="stack_8h.html">stack.h</a></div><div class="ttdoc">ADT Pila (Stack LIFO) per gestione mazzo di pesca e scarti.</div></div>
+<div class="ttc" id="astruct_carta_html"><div class="ttname"><a href="struct_carta.html">Carta</a></div><div class="ttdoc">Rappresenta una singola carta UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:66</div></div>
+<div class="ttc" id="astruct_coda_turni_html"><div class="ttname"><a href="struct_coda_turni.html">CodaTurni</a></div><div class="ttdoc">Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.</div><div class="ttdef"><b>Definition</b> queue.h:37</div></div>
+<div class="ttc" id="astruct_giocatore_html"><div class="ttname"><a href="struct_giocatore.html">Giocatore</a></div><div class="ttdoc">Rappresenta un giocatore nella partita (umano o bot).</div><div class="ttdef"><b>Definition</b> data_structures.h:144</div></div>
+<div class="ttc" id="astruct_nodo_carta_html"><div class="ttname"><a href="struct_nodo_carta.html">NodoCarta</a></div><div class="ttdoc">Nodo per la lista doppiamente concatenata della mano del giocatore.</div><div class="ttdef"><b>Definition</b> data_structures.h:87</div></div>
+<div class="ttc" id="astruct_pila_html"><div class="ttname"><a href="struct_pila.html">Pila</a></div><div class="ttdoc">Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.</div><div class="ttdef"><b>Definition</b> stack.h:31</div></div>
+<div class="ttc" id="astruct_stato_gioco_html"><div class="ttname"><a href="struct_stato_gioco.html">StatoGioco</a></div><div class="ttdoc">Stato completo di una partita in corso.</div><div class="ttdef"><b>Definition</b> data_structures.h:216</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="game__logic_8h.html">game_logic.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

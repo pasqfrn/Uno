@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/data_structures/queue.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('queue_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file queue.c<div class="ingroups"><a class="el" href="group__queue.html">Queue (Coda)</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementazione Coda (Queue) bidirezionale per i turni di gioco.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="queue_8h_source.html">../../lib/data_structures/queue.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:gab11ca930d6fab622f49e830d54ee2599" id="r_gab11ca930d6fab622f49e830d54ee2599"><td class="memItemLeft"><a class="el" href="struct_coda_turni.html">CodaTurni</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#gab11ca930d6fab622f49e830d54ee2599">Coda_Crea</a> (void)</td></tr>
+<tr class="memdesc:gab11ca930d6fab622f49e830d54ee2599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una coda vuota.  <br /></td></tr>
+<tr class="memitem:ga3ab0b2cbc6c5a60be1d892fb511e2684" id="r_ga3ab0b2cbc6c5a60be1d892fb511e2684"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#ga3ab0b2cbc6c5a60be1d892fb511e2684">Coda_Distruggi</a> (<a class="el" href="struct_coda_turni.html">CodaTurni</a> *c)</td></tr>
+<tr class="memdesc:ga3ab0b2cbc6c5a60be1d892fb511e2684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distrugge la coda e libera la memoria.  <br /></td></tr>
+<tr class="memitem:ga7e0da971008ab4c258d57d5bc3f53e54" id="r_ga7e0da971008ab4c258d57d5bc3f53e54"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#ga7e0da971008ab4c258d57d5bc3f53e54">Coda_Enqueue</a> (<a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_giocatore.html">Giocatore</a> g)</td></tr>
+<tr class="memdesc:ga7e0da971008ab4c258d57d5bc3f53e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce un giocatore in coda.  <br /></td></tr>
+<tr class="memitem:ga1c3d994f3790ec934fc95d9d853931c9" id="r_ga1c3d994f3790ec934fc95d9d853931c9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#ga1c3d994f3790ec934fc95d9d853931c9">Coda_Dequeue</a> (<a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_giocatore.html">Giocatore</a> *out)</td></tr>
+<tr class="memdesc:ga1c3d994f3790ec934fc95d9d853931c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove il giocatore in testa.  <br /></td></tr>
+<tr class="memitem:ga9f9d5b9d69e9482f994b36b39b642259" id="r_ga9f9d5b9d69e9482f994b36b39b642259"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#ga9f9d5b9d69e9482f994b36b39b642259">Coda_Front</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_giocatore.html">Giocatore</a> *out)</td></tr>
+<tr class="memdesc:ga9f9d5b9d69e9482f994b36b39b642259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il giocatore in testa (senza rimuovere).  <br /></td></tr>
+<tr class="memitem:ga4f1de642a8dfccfbc0bd40a390446a1a" id="r_ga4f1de642a8dfccfbc0bd40a390446a1a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#ga4f1de642a8dfccfbc0bd40a390446a1a">Coda_Rear</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_giocatore.html">Giocatore</a> *out)</td></tr>
+<tr class="memdesc:ga4f1de642a8dfccfbc0bd40a390446a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il giocatore in fondo.  <br /></td></tr>
+<tr class="memitem:gaa3e062ece5c53fa71fe3f38a40af9f8b" id="r_gaa3e062ece5c53fa71fe3f38a40af9f8b"><td class="memItemLeft"><a class="el" href="struct_nodo_coda.html">NodoCoda</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#gaa3e062ece5c53fa71fe3f38a40af9f8b">Coda_ProxNodo</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, <a class="el" href="struct_nodo_coda.html">NodoCoda</a> *n)</td></tr>
+<tr class="memdesc:gaa3e062ece5c53fa71fe3f38a40af9f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il prossimo nodo nella direzione corrente.  <br /></td></tr>
+<tr class="memitem:gafe5e85ee83772d0ce66f79eb6fb070d7" id="r_gafe5e85ee83772d0ce66f79eb6fb070d7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#gafe5e85ee83772d0ce66f79eb6fb070d7">Coda_Vuota</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c)</td></tr>
+<tr class="memdesc:gafe5e85ee83772d0ce66f79eb6fb070d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se la coda e' vuota.  <br /></td></tr>
+<tr class="memitem:ga79afb3f7bc3b06d5b1376e85963b32da" id="r_ga79afb3f7bc3b06d5b1376e85963b32da"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#ga79afb3f7bc3b06d5b1376e85963b32da">Coda_Dimensione</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c)</td></tr>
+<tr class="memdesc:ga79afb3f7bc3b06d5b1376e85963b32da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di giocatori.  <br /></td></tr>
+<tr class="memitem:gac73bc0051abe5c075e61b613ca8217ec" id="r_gac73bc0051abe5c075e61b613ca8217ec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#gac73bc0051abe5c075e61b613ca8217ec">Coda_InvertiVerso</a> (<a class="el" href="struct_coda_turni.html">CodaTurni</a> *c)</td></tr>
+<tr class="memdesc:gac73bc0051abe5c075e61b613ca8217ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inverte il verso di scorrimento (carta Cambio Giro).  <br /></td></tr>
+<tr class="memitem:ga2ef4fc1bffec7bb1dbef333edee72d8f" id="r_ga2ef4fc1bffec7bb1dbef333edee72d8f"><td class="memItemLeft"><a class="el" href="struct_nodo_coda.html">NodoCoda</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#ga2ef4fc1bffec7bb1dbef333edee72d8f">Coda_CercaPerIndice</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, int indice)</td></tr>
+<tr class="memdesc:ga2ef4fc1bffec7bb1dbef333edee72d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca un nodo per indice (0 = front).  <br /></td></tr>
+<tr class="memitem:ga124235163883b905dcea984a8384ee16" id="r_ga124235163883b905dcea984a8384ee16"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__queue.html#ga124235163883b905dcea984a8384ee16">Coda_CopiaPerIndice</a> (const <a class="el" href="struct_coda_turni.html">CodaTurni</a> *c, int indice, <a class="el" href="struct_giocatore.html">Giocatore</a> *out)</td></tr>
+<tr class="memdesc:ga124235163883b905dcea984a8384ee16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia il giocatore all'indice in out.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Implementazione Coda (Queue) bidirezionale per i turni di gioco. </p>
+<p>ADT: <a class="el" href="struct_coda_turni.html" title="Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.">CodaTurni</a> (FIFO con InvertiVerso per carta Cambio Giro). Operazioni: crea, enqueue, dequeue, front, rear, inversione verso, ricerca per indice, copia per indice. </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_e0e4df1b297a9f377abb7b27124b1ce7.html">data_structures</a></li><li class="navelem"><a href="queue_8c.html">queue.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

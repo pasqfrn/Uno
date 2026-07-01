@@ -1,0 +1,1368 @@
+\doxysection{Strutture Pacchetti}
+\hypertarget{group__network__packet__strutture}{}\label{group__network__packet__strutture}\index{Strutture Pacchetti@{Strutture Pacchetti}}
+
+
+Strutture dati per ogni tipo di pacchetto multiplayer.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_packet_move}{Packet\+Move}}
+\begin{DoxyCompactList}\small\item\em Pacchetto mossa\+: giocatore, indice carta, colore scelto. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_draw}{Packet\+Draw}}
+\begin{DoxyCompactList}\small\item\em Pacchetto pesca\+: giocatore e quantità. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_game_state}{Packet\+Game\+State}}
+\begin{DoxyCompactList}\small\item\em Pacchetto stato di gioco completo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_color_choice}{Packet\+Color\+Choice}}
+\begin{DoxyCompactList}\small\item\em Pacchetto scelta colore. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_chat}{Packet\+Chat}}
+\begin{DoxyCompactList}\small\item\em Pacchetto chat. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_join_game}{Packet\+Join\+Game}}
+\begin{DoxyCompactList}\small\item\em Pacchetto join game. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_join_rejected}{Packet\+Join\+Rejected}}
+\begin{DoxyCompactList}\small\item\em Pacchetto join rifiutato. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_player_hand}{Packet\+Player\+Hand}}
+\begin{DoxyCompactList}\small\item\em Pacchetto mano giocatore. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_create_session}{Packet\+Create\+Session}}
+\begin{DoxyCompactList}\small\item\em Pacchetto creazione sessione. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_join_session}{Packet\+Join\+Session}}
+\begin{DoxyCompactList}\small\item\em Pacchetto join sessione. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_session_list}{Packet\+Session\+List}}
+\begin{DoxyCompactList}\small\item\em Pacchetto lista sessioni. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_session_state}{Packet\+Session\+State}}
+\begin{DoxyCompactList}\small\item\em Pacchetto stato sessione multiplayer. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_player_ready}{Packet\+Player\+Ready}}
+\begin{DoxyCompactList}\small\item\em Pacchetto ready/play again. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_game_finished}{Packet\+Game\+Finished}}
+\begin{DoxyCompactList}\small\item\em Pacchetto fine partita. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_play_again}{Packet\+Play\+Again}}
+\begin{DoxyCompactList}\small\item\em Pacchetto play again (con nome giocatore per fix bug). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_heartbeat}{Packet\+Heartbeat}}
+\begin{DoxyCompactList}\small\item\em Pacchetto heartbeat per keep-\/alive. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_packet_host_return_lobby}{Packet\+Host\+Return\+Lobby}}
+\begin{DoxyCompactList}\small\item\em Pacchetto host return lobby. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_admin_user_sync_data}{Admin\+User\+Sync\+Data}}
+\item 
+struct \mbox{\hyperlink{struct_admin_user_action}{Admin\+User\+Action}}
+\item 
+struct \mbox{\hyperlink{struct_admin_d_b_sync_packet}{Admin\+DBSync\+Packet}}
+\item 
+struct \mbox{\hyperlink{struct_stats_sync_packet}{Stats\+Sync\+Packet}}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_stats_sync_packet}{Stats\+Sync\+Packet} -\/ Sincronizzazione live statistiche dopo una partita. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_net_packet}{Net\+Packet}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__network__packet__strutture_gac7e4a6221f79e37a20003c8c18e4ae62}{MAX\+\_\+\+SERVER\+\_\+\+CLIENTS}}~4
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga7b140306c116ba0e29a99eb0415fbe36}{Get\+Local\+IPAddress}} (char \texorpdfstring{$\ast$}{*}outbuf, int buflen)
+\begin{DoxyCompactList}\small\item\em Ottiene l\textquotesingle{}indirizzo IP locale del dispositivo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gabc45bc454fab5dc2d69faf90e742d4e1}{Is\+Player\+Connected}} (int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}})
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga613b435b1d6ffb50b4255ceaa0bc6696}{Riassegna\+Socket}} (int old\+\_\+id, int new\+\_\+id, int is\+\_\+reconnect, int partita\+\_\+iniziata)
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga740ef7a56f894d2149113373ed7c9601}{Broadcast\+Host\+Disconnect}} (void)
+\begin{DoxyCompactList}\small\item\em Invia un pacchetto di notifica disconnessione host a tutti i client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga981d40762c9af84bf5f4d5d24a024c04}{Send\+Player\+Ready}} (int ready)
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga76952802b05b5b11a933c2db18ede658}{Send\+Play\+Again}} (void)
+\begin{DoxyCompactList}\small\item\em Invia un pacchetto PACKET\+\_\+\+PLAY\+\_\+\+AGAIN all\textquotesingle{}host. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_gab5854145185d5f1e6a08d5a51022dd34}{Broadcast\+Host\+Return\+Lobby}} (void)
+\begin{DoxyCompactList}\small\item\em Broadcasta PACKET\+\_\+\+HOST\+\_\+\+RETURN\+\_\+\+LOBBY a tutti i client. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga1bc4af3da71346cdc346fd17ff078426}{Connetti\+Tramite\+Codice\+Stanza}} (const char \texorpdfstring{$\ast$}{*}codice, int porta\+Base)
+\begin{DoxyCompactList}\small\item\em Connette a una stanza tramite codice stanza (UDP discovery). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga8ec5ddc728bd3aeff602ed6c2c103615}{Init\+Network}} (void)
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga76a4e1704f09ea2ce18348e9add659d4}{Shift\+Network\+Sockets}} (int removed\+\_\+index, int num\+\_\+players)
+\begin{DoxyCompactList}\small\item\em Ricompatta l\textquotesingle{}array di socket client dopo una disconnessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga9b41cc6afd8c747b00cde5ae23849aec}{Close\+Network}} (void)
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga4afd449b11f70e41fcfdf4df80a916ad}{Host\+Game}} (int port)
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gaa2baa82ea8ed3d587c950ca832d9bd2e}{Join\+Game}} (const char \texorpdfstring{$\ast$}{*}ip\+\_\+address, int port)
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga6b2d507a3b3bf210f28c0eedacd885a4}{Update\+Network}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_gad3c903fa215cfb2106e60c84065a37cd}{Handle\+Received\+Packet}} (\mbox{\hyperlink{struct_net_packet}{Net\+Packet}} \texorpdfstring{$\ast$}{*}packet, \mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Handle\+Received\+Packet -\/ Dispatcher principale dei pacchetti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga5549082d80aa9bc430343ffed1f25c11}{Gestisci\+Disconnessione}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Gestisce la disconnessione di un giocatore (host o client). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_gaa3f0c68189cf8f6f045919dc6ac02a35}{Ip\+To\+Code}} (const char \texorpdfstring{$\ast$}{*}ip, char \texorpdfstring{$\ast$}{*}code)
+\begin{DoxyCompactList}\small\item\em Converte un indirizzo IP in codice esadecimale. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga1b8014223ec4e2f55bf50ed4f0956f29}{Code\+To\+Ip}} (const char \texorpdfstring{$\ast$}{*}code, char \texorpdfstring{$\ast$}{*}ip)
+\begin{DoxyCompactList}\small\item\em Converte un codice esadecimale in indirizzo IP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_gad24cb48d88d5827fff0faf81ae1fc05b}{Broadcast\+Stats\+Sync}} (const \mbox{\hyperlink{struct_stats_sync_packet}{Stats\+Sync\+Packet}} \texorpdfstring{$\ast$}{*}stats)
+\begin{DoxyCompactList}\small\item\em Invia un pacchetto di sincronizzazione statistiche COMPLETA a tutti i client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga36fc11ee8fde125894663e2c2ca2aa32}{Send\+Stats\+Sync}} (const \mbox{\hyperlink{struct_stats_sync_packet}{Stats\+Sync\+Packet}} \texorpdfstring{$\ast$}{*}stats)
+\begin{DoxyCompactList}\small\item\em Invia un pacchetto di sincronizzazione statistiche COMPLETA all\textquotesingle{}host (client). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga48dff0aed0d8c66bd700afea6aad9b38}{Packet\+Move\+::player\+\_\+id}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga26fb77aeafc9420f593477868c2e67e9}{Packet\+Move\+::card\+\_\+index}}
+\item 
+\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} \mbox{\hyperlink{group__network__packet__strutture_ga2fd6703e904f8518191e4de979f69189}{Packet\+Move\+::colore\+\_\+scelto}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga7d75ebf8c21ea768951f8e26dbd16884}{Packet\+Draw\+::player\+\_\+id}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gaf95b16aff38590d53d8f52227a73bfa3}{Packet\+Draw\+::count}}
+\item 
+\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \mbox{\hyperlink{group__network__packet__strutture_ga20f3500f9a6688a3d4c16b56f76ac007}{Packet\+Game\+State\+::stato\+\_\+gioco}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gae9866ba217c36a39ba4073858855caa6}{Packet\+Color\+Choice\+::player\+\_\+id}}
+\item 
+\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} \mbox{\hyperlink{group__network__packet__strutture_ga82c3f2c0248a3b52fb91dc65edbe78d3}{Packet\+Color\+Choice\+::colore}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga60f45f1c8c69bb485dedd5040b62b2b7}{Packet\+Chat\+::player\+\_\+id}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gaf43ad9dadb972307b3c58edc0c45198b}{Packet\+Chat\+::message}} \mbox{[}128\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gaaa1d3eeeb44c69e71bd1afd6be1ee3e7}{Packet\+Join\+Game\+::nome}} \mbox{[}50\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gaa001f2ef2a04583f55f8aed0afb6753b}{Packet\+Join\+Rejected\+::motivo}} \mbox{[}100\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gaca097944b71b7a8406b93e4b3ed2db4f}{Packet\+Player\+Hand\+::player\+\_\+id}}
+\item 
+\mbox{\hyperlink{struct_carta}{Carta}} \mbox{\hyperlink{group__network__packet__strutture_ga9b8ad66e75056db4f244268e512e2050}{Packet\+Player\+Hand\+::carte}} \mbox{[}108\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga027930ddbd1fdca4574393b25c6729b4}{Packet\+Player\+Hand\+::num\+\_\+carte}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga0b43b7c02501c9cd6bfefeae2f0d5ad6}{Packet\+Create\+Session\+::session\+\_\+id}} \mbox{[}16\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga8409bc6d5b36268bdacb03e5ce7e9780}{Packet\+Create\+Session\+::host\+\_\+name}} \mbox{[}30\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gab6419268cbf6e2c93cb228256f7effb0}{Packet\+Create\+Session\+::num\+\_\+players}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga98298829b528d7a7a0e6bafb5d39c46e}{Packet\+Join\+Session\+::session\+\_\+id}} \mbox{[}16\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga6912d90f8d9510ad4cf57b0fcab88420}{Packet\+Join\+Session\+::player\+\_\+name}} \mbox{[}30\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga528efbe1f2a92c5853dccc8ed2c67e93}{Packet\+Session\+List\+::session\+\_\+count}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gaf70a7913010e764d81f58e2ca1b96ff1}{Packet\+Session\+List\+::sessions}} \mbox{[}10\mbox{]}\mbox{[}16\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga8874b2989efd13fdfbe481350cc963db}{Packet\+Session\+State\+::session\+\_\+id}} \mbox{[}16\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga71586935479cf2643e01bbfa671b7273}{Packet\+Session\+State\+::num\+\_\+players}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga0def821662805847be2754df1a8d20e8}{Packet\+Session\+State\+::player\+\_\+names}} \mbox{[}4\mbox{]}\mbox{[}30\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga6085b0d4fafdb89b59b149d6968b4b69}{Packet\+Session\+State\+::player\+\_\+ready}} \mbox{[}4\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga596b1cabfc224d016498711229f02d4b}{Packet\+Session\+State\+::game\+\_\+started}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gad64175c30986eb4c8a88b0c49817bdbc}{Packet\+Player\+Ready\+::player\+\_\+id}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gad4d1f6a7b22f4c2f2e5a244718194383}{Packet\+Player\+Ready\+::is\+\_\+ready}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga8da9cba434f640515d782706341ebc04}{Packet\+Player\+Ready\+::want\+\_\+play\+\_\+again}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga2802060d7734564283278ffb5148e4a0}{Packet\+Game\+Finished\+::winning\+\_\+player\+\_\+id}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga1ff4264371887f1373f376828d6a7c3f}{Packet\+Game\+Finished\+::winner\+\_\+name}} \mbox{[}30\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gafb6a63ee6a6c7a4499d44aaebaf475e2}{Packet\+Play\+Again\+::player\+\_\+id}}
+\item 
+float \mbox{\hyperlink{group__network__packet__strutture_ga9f34dff657b264545e7f38767a4e2f9b}{Packet\+Play\+Again\+::timestamp}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga454d43cfb2e2f467f504863d363ca274}{Packet\+Play\+Again\+::play\+\_\+again}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gad0e5cb99e6d44afb1297610a71ff0839}{Packet\+Play\+Again\+::player\+\_\+name}} \mbox{[}30\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga0e2259a91f1626c4c9f20d490768de33}{Packet\+Heartbeat\+::player\+\_\+id}}
+\item 
+float \mbox{\hyperlink{group__network__packet__strutture_ga3a36376352934fafde900b15b51bf29d}{Packet\+Heartbeat\+::timestamp}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga21afc5dc63a86a4ff6a055486fad6441}{Packet\+Host\+Return\+Lobby\+::host\+\_\+ready}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gabafab5e79d5298dbbe81ce0cd201902d}{Admin\+User\+Sync\+Data\+::email}} \mbox{[}100\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gac81f1b89327c6f3a128761e702db16cc}{Admin\+User\+Sync\+Data\+::nome}} \mbox{[}30\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga406392fbcc5b9a327521a12b68f9d378}{Admin\+User\+Sync\+Data\+::cognome}} \mbox{[}30\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gadfa347ab441903e6a5d51933d5ef0069}{Admin\+User\+Sync\+Data\+::username}} \mbox{[}30\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga1b78f9830a1a67d47bc8825c8f73d801}{Admin\+User\+Sync\+Data\+::password}} \mbox{[}30\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga02026535119c49cc438aaf35e09b14c4}{Admin\+User\+Sync\+Data\+::pin\+\_\+recupero}} \mbox{[}7\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gad64d5575b39ad5dc8f2462b8ead65941}{Admin\+User\+Sync\+Data\+::partite\+\_\+giocate}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga4541673e51582113e53ab1d31d626c35}{Admin\+User\+Sync\+Data\+::vittorie\+\_\+giocatore}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga4eee1d90a8f2a55a4966d22f532c7b5e}{Admin\+User\+Sync\+Data\+::vittorie\+\_\+bot}}
+\item 
+\mbox{\hyperlink{struct_admin_user_sync_data}{Admin\+User\+Sync\+Data}} \mbox{\hyperlink{group__network__packet__strutture_gaa6cfd2ff64ab1d9d1a36d96e5438a4c7}{Admin\+User\+Action\+::user}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga3d07f0b9de209d0f402a844b8efa2a8b}{Admin\+User\+Action\+::action}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gaba3e8369946d0bcbe4912985202712dd}{Admin\+User\+Action\+::target\+\_\+id}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga3f8f3d3fd45f75d501e186908fc26ad1}{Admin\+DBSync\+Packet\+::user\+\_\+index}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gac6a474ddf16d9f20937f0edf4b45ba06}{Admin\+DBSync\+Packet\+::total\+\_\+users}}
+\item 
+\mbox{\hyperlink{struct_admin_user_sync_data}{Admin\+User\+Sync\+Data}} \mbox{\hyperlink{group__network__packet__strutture_gaa990cfef6a092ea75e646d4666758175}{Admin\+DBSync\+Packet\+::user}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gadabe23799491f084a28d537187fedbdf}{Stats\+Sync\+Packet\+::username}} \mbox{[}30\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gabcb39d60ae8573ad6547aa17daf77872}{Stats\+Sync\+Packet\+::partite\+\_\+giocate}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gad656264fcdf2079c7252dfc7a497dce4}{Stats\+Sync\+Packet\+::vittorie\+\_\+giocatore}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga60b4c234ff6dd8561d9f264fb37b68cf}{Stats\+Sync\+Packet\+::vittorie\+\_\+bot}}
+\item 
+float \mbox{\hyperlink{group__network__packet__strutture_ga757032a40e11dad5f12d2c2f6afd0cc8}{Stats\+Sync\+Packet\+::durata\+\_\+ultima\+\_\+partita}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga2efc2fc797cb131c559f930e646b21ef}{Stats\+Sync\+Packet\+::modalita\+\_\+ultima}} \mbox{[}20\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga2a09d71c4e7daed0a74edd976d9597cb}{Stats\+Sync\+Packet\+::esito\+\_\+ultima}} \mbox{[}15\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gad5ea8e8bdf83a475ded43b43b7613670}{Stats\+Sync\+Packet\+::posizione\+\_\+ultima}}
+\item 
+\mbox{\hyperlink{struct_partita_registrata}{Partita\+Registrata}} \mbox{\hyperlink{group__network__packet__strutture_ga0534e53e5caf2dd07dcf142cd6faa332}{Stats\+Sync\+Packet\+::storico\+\_\+partite}} \mbox{[}\mbox{\hyperlink{lan__protocol_8h_a9805d8d568aa10ad776d8b121a8367e4}{STORICO\+\_\+\+SYNC\+\_\+\+COUNT}}\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga0072a9f95163dfc459a5f0343416eec4}{Stats\+Sync\+Packet\+::storico\+\_\+count}}
+\item 
+\mbox{\hyperlink{group__network__packet_ga0a80a7bc045affcf10846075b88cbca0}{Packet\+Type}} \mbox{\hyperlink{group__network__packet__strutture_ga3bf9ba4b94cb8068a261bd07e01b0fc0}{Net\+Packet\+::type}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga171e8b116595940c618270d21fe9787b}{Net\+Packet\+::sender\+\_\+id}}
+\item 
+\mbox{\hyperlink{struct_packet_move}{Packet\+Move}} \mbox{\hyperlink{group__network__packet__strutture_ga132cc701b1cebecfb8f8992565f6bcc6}{Net\+Packet\+::move}}
+\item 
+\mbox{\hyperlink{struct_packet_draw}{Packet\+Draw}} \mbox{\hyperlink{group__network__packet__strutture_gab4d8deeb5c19963d6e1d692ce5b01776}{Net\+Packet\+::draw}}
+\item 
+\mbox{\hyperlink{struct_packet_game_state}{Packet\+Game\+State}} \mbox{\hyperlink{group__network__packet__strutture_gae1da5a64d081035f4af93792ff771050}{Net\+Packet\+::game\+\_\+state}}
+\item 
+\mbox{\hyperlink{struct_packet_color_choice}{Packet\+Color\+Choice}} \mbox{\hyperlink{group__network__packet__strutture_ga5a7420a732e939ca23615c9b7b686b49}{Net\+Packet\+::color\+\_\+choice}}
+\item 
+\mbox{\hyperlink{struct_packet_chat}{Packet\+Chat}} \mbox{\hyperlink{group__network__packet__strutture_gaee3e8eefd8701d9bd41cd426cfe941ec}{Net\+Packet\+::chat}}
+\item 
+\mbox{\hyperlink{struct_packet_join_game}{Packet\+Join\+Game}} \mbox{\hyperlink{group__network__packet__strutture_ga49d7d44bd4df64c5ba30b1c04bfafa02}{Net\+Packet\+::join\+\_\+game}}
+\item 
+\mbox{\hyperlink{struct_packet_join_rejected}{Packet\+Join\+Rejected}} \mbox{\hyperlink{group__network__packet__strutture_ga57e287d2946e56eba5a2d2ec0b01c40d}{Net\+Packet\+::join\+\_\+rejected}}
+\item 
+\mbox{\hyperlink{struct_packet_player_hand}{Packet\+Player\+Hand}} \mbox{\hyperlink{group__network__packet__strutture_gafae35b798ce130ffa2a4db68d44ebb40}{Net\+Packet\+::player\+\_\+hand}}
+\item 
+\mbox{\hyperlink{struct_packet_create_session}{Packet\+Create\+Session}} \mbox{\hyperlink{group__network__packet__strutture_gae9d31a94b42b77f7f74d93d09cd3dae0}{Net\+Packet\+::create\+\_\+session}}
+\item 
+\mbox{\hyperlink{struct_packet_join_session}{Packet\+Join\+Session}} \mbox{\hyperlink{group__network__packet__strutture_gacc8d068dd0266c0c8c9b20e37583a585}{Net\+Packet\+::join\+\_\+session}}
+\item 
+\mbox{\hyperlink{struct_packet_session_list}{Packet\+Session\+List}} \mbox{\hyperlink{group__network__packet__strutture_gaf2b36da7b084e54a381de21e667ecf01}{Net\+Packet\+::session\+\_\+list}}
+\item 
+\mbox{\hyperlink{struct_packet_session_state}{Packet\+Session\+State}} \mbox{\hyperlink{group__network__packet__strutture_ga4640495cc1b36655b7a0a8850d422384}{Net\+Packet\+::session\+\_\+state}}
+\item 
+\mbox{\hyperlink{struct_packet_player_ready}{Packet\+Player\+Ready}} \mbox{\hyperlink{group__network__packet__strutture_gacb05063e5d95dfe6ca677bc01d137d91}{Net\+Packet\+::player\+\_\+ready}}
+\item 
+\mbox{\hyperlink{struct_packet_game_finished}{Packet\+Game\+Finished}} \mbox{\hyperlink{group__network__packet__strutture_ga2f05176c025e583a0b0ff862d3723c75}{Net\+Packet\+::game\+\_\+finished}}
+\item 
+\mbox{\hyperlink{struct_packet_play_again}{Packet\+Play\+Again}} \mbox{\hyperlink{group__network__packet__strutture_gaa00db0a05b0d2dcb217cd435b8c84ede}{Net\+Packet\+::play\+\_\+again}}
+\item 
+\mbox{\hyperlink{struct_packet_host_return_lobby}{Packet\+Host\+Return\+Lobby}} \mbox{\hyperlink{group__network__packet__strutture_ga5bb950cf458b01e517c357691bb6e416}{Net\+Packet\+::host\+\_\+return\+\_\+lobby}}
+\item 
+\mbox{\hyperlink{struct_packet_heartbeat}{Packet\+Heartbeat}} \mbox{\hyperlink{group__network__packet__strutture_ga180be1c20dcb535e60e3803941b5d07f}{Net\+Packet\+::heartbeat}}
+\item 
+\mbox{\hyperlink{struct_admin_user_action}{Admin\+User\+Action}} \mbox{\hyperlink{group__network__packet__strutture_ga73a0ded76fc6e6d72987c55bb16e2adf}{Net\+Packet\+::admin\+\_\+action}}
+\item 
+\mbox{\hyperlink{struct_admin_d_b_sync_packet}{Admin\+DBSync\+Packet}} \mbox{\hyperlink{group__network__packet__strutture_ga740b8f9c2a02ecfa8de301efa16a6087}{Net\+Packet\+::admin\+\_\+db\+\_\+packet}}
+\item 
+\mbox{\hyperlink{struct_stats_sync_packet}{Stats\+Sync\+Packet}} \mbox{\hyperlink{group__network__packet__strutture_ga85e03ec5f7b0d5f8c9304564241a29ee}{Net\+Packet\+::stats\+\_\+sync}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga27a03e277b8bf17777c34d7d7c39a8ac}{Net\+Packet\+::raw}} \mbox{[}512\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\mbox{\hyperlink{struct_packet_move}{PacketMove}} \mbox{\hyperlink{group__network__packet__strutture_ga132cc701b1cebecfb8f8992565f6bcc6}{NetPacket::move}}\\
+\>\mbox{\hyperlink{struct_packet_draw}{PacketDraw}} \mbox{\hyperlink{group__network__packet__strutture_gab4d8deeb5c19963d6e1d692ce5b01776}{NetPacket::draw}}\\
+\>\mbox{\hyperlink{struct_packet_game_state}{PacketGameState}} \mbox{\hyperlink{group__network__packet__strutture_gae1da5a64d081035f4af93792ff771050}{NetPacket::game\_state}}\\
+\>\mbox{\hyperlink{struct_packet_color_choice}{PacketColorChoice}} \mbox{\hyperlink{group__network__packet__strutture_ga5a7420a732e939ca23615c9b7b686b49}{NetPacket::color\_choice}}\\
+\>\mbox{\hyperlink{struct_packet_chat}{PacketChat}} \mbox{\hyperlink{group__network__packet__strutture_gaee3e8eefd8701d9bd41cd426cfe941ec}{NetPacket::chat}}\\
+\>\mbox{\hyperlink{struct_packet_join_game}{PacketJoinGame}} \mbox{\hyperlink{group__network__packet__strutture_ga49d7d44bd4df64c5ba30b1c04bfafa02}{NetPacket::join\_game}}\\
+\>\mbox{\hyperlink{struct_packet_join_rejected}{PacketJoinRejected}} \mbox{\hyperlink{group__network__packet__strutture_ga57e287d2946e56eba5a2d2ec0b01c40d}{NetPacket::join\_rejected}}\\
+\>\mbox{\hyperlink{struct_packet_player_hand}{PacketPlayerHand}} \mbox{\hyperlink{group__network__packet__strutture_gafae35b798ce130ffa2a4db68d44ebb40}{NetPacket::player\_hand}}\\
+\>\mbox{\hyperlink{struct_packet_create_session}{PacketCreateSession}} \mbox{\hyperlink{group__network__packet__strutture_gae9d31a94b42b77f7f74d93d09cd3dae0}{NetPacket::create\_session}}\\
+\>\mbox{\hyperlink{struct_packet_join_session}{PacketJoinSession}} \mbox{\hyperlink{group__network__packet__strutture_gacc8d068dd0266c0c8c9b20e37583a585}{NetPacket::join\_session}}\\
+\>\mbox{\hyperlink{struct_packet_session_list}{PacketSessionList}} \mbox{\hyperlink{group__network__packet__strutture_gaf2b36da7b084e54a381de21e667ecf01}{NetPacket::session\_list}}\\
+\>\mbox{\hyperlink{struct_packet_session_state}{PacketSessionState}} \mbox{\hyperlink{group__network__packet__strutture_ga4640495cc1b36655b7a0a8850d422384}{NetPacket::session\_state}}\\
+\>\mbox{\hyperlink{struct_packet_player_ready}{PacketPlayerReady}} \mbox{\hyperlink{group__network__packet__strutture_gacb05063e5d95dfe6ca677bc01d137d91}{NetPacket::player\_ready}}\\
+\>\mbox{\hyperlink{struct_packet_game_finished}{PacketGameFinished}} \mbox{\hyperlink{group__network__packet__strutture_ga2f05176c025e583a0b0ff862d3723c75}{NetPacket::game\_finished}}\\
+\>\mbox{\hyperlink{struct_packet_play_again}{PacketPlayAgain}} \mbox{\hyperlink{group__network__packet__strutture_gaa00db0a05b0d2dcb217cd435b8c84ede}{NetPacket::play\_again}}\\
+\>\mbox{\hyperlink{struct_packet_host_return_lobby}{PacketHostReturnLobby}} \mbox{\hyperlink{group__network__packet__strutture_ga5bb950cf458b01e517c357691bb6e416}{NetPacket::host\_return\_lobby}}\\
+\>\mbox{\hyperlink{struct_packet_heartbeat}{PacketHeartbeat}} \mbox{\hyperlink{group__network__packet__strutture_ga180be1c20dcb535e60e3803941b5d07f}{NetPacket::heartbeat}}\\
+\>\mbox{\hyperlink{struct_admin_user_action}{AdminUserAction}} \mbox{\hyperlink{group__network__packet__strutture_ga73a0ded76fc6e6d72987c55bb16e2adf}{NetPacket::admin\_action}}\\
+\>\mbox{\hyperlink{struct_admin_d_b_sync_packet}{AdminDBSyncPacket}} \mbox{\hyperlink{group__network__packet__strutture_ga740b8f9c2a02ecfa8de301efa16a6087}{NetPacket::admin\_db\_packet}}\\
+\>\mbox{\hyperlink{struct_stats_sync_packet}{StatsSyncPacket}} \mbox{\hyperlink{group__network__packet__strutture_ga85e03ec5f7b0d5f8c9304564241a29ee}{NetPacket::stats\_sync}}\\
+\>char \mbox{\hyperlink{group__network__packet__strutture_ga27a03e277b8bf17777c34d7d7c39a8ac}{NetPacket::raw}} \mbox{[}512\mbox{]}\\
+\} \mbox{\hyperlink{group__network__packet__strutture_ga6d1829320713144288aa563464cfbf41}{NetPacket::data}}\\
+
+\end{tabbing}\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga73bc5aa44ad9b3c3ca01c28252b93a56}{network\+\_\+start\+\_\+game\+\_\+flag}}
+\item 
+\mbox{\hyperlink{group__network__ruoli_ga53e7e36fa630cf0cbd59d8ac87393100}{Network\+Role}} \mbox{\hyperlink{group__network__packet__strutture_ga16acec73ed8b5b9262d15211bedb6479}{current\+Role}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga0936e5fbf6f65df58464ed83a3272430}{join\+\_\+rejected}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_gac04d7d998bff797c954bba3776ba0c55}{reject\+\_\+message}} \mbox{[}100\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gaa358768cbc9b8ed27055d5b41726d79a}{is\+Connected}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga011bfc7156351cec76e4a4b1e38c3169}{network\+\_\+pending}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga7fbc791dd298a446c201d280dd8c1c3d}{network\+\_\+game\+\_\+initialized}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga64831cef2cdeba3a0f16d745b3ecf4fc}{network\+\_\+client\+\_\+joined}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga5cad9e8eeb56c51e52badb34a5910fbe}{current\+\_\+session\+\_\+id}} \mbox{[}16\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga3ceeb52643564997e64ac776a8f0fc9a}{session\+\_\+id}} \mbox{[}16\mbox{]}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_ga3437dc7e27766145ab5c8d9a605083cd}{local\+\_\+player\+\_\+id}}
+\item 
+int \mbox{\hyperlink{group__network__packet__strutture_gae06ac14e3f4d5998b855e2ffbc411341}{host\+\_\+in\+\_\+prelobby}}
+\item 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} \mbox{\hyperlink{group__network__packet__strutture_gae1406de9f7c29f2553e952e0d5a0532c}{client\+Sockets}} \mbox{[}\mbox{\hyperlink{group__network__packet__strutture_gac7e4a6221f79e37a20003c8c18e4ae62}{MAX\+\_\+\+SERVER\+\_\+\+CLIENTS}}\mbox{]}
+\item 
+char \mbox{\hyperlink{group__network__packet__strutture_ga80ac1ee1e5dc6a14be8c487f06ab9192}{connected\+Client\+Usernames}} \mbox{[}4\mbox{]}\mbox{[}30\mbox{]}
+\begin{DoxyCompactList}\small\item\em Username dei client TCP connessi all\textquotesingle{}host (per admin panel). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Strutture dati per ogni tipo di pacchetto multiplayer. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__network__packet__strutture_gac7e4a6221f79e37a20003c8c18e4ae62}\index{Strutture Pacchetti@{Strutture Pacchetti}!MAX\_SERVER\_CLIENTS@{MAX\_SERVER\_CLIENTS}}
+\index{MAX\_SERVER\_CLIENTS@{MAX\_SERVER\_CLIENTS}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{MAX\_SERVER\_CLIENTS}{MAX\_SERVER\_CLIENTS}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gac7e4a6221f79e37a20003c8c18e4ae62} 
+\#define MAX\+\_\+\+SERVER\+\_\+\+CLIENTS~4}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__network__packet__strutture_ga740ef7a56f894d2149113373ed7c9601}\index{Strutture Pacchetti@{Strutture Pacchetti}!BroadcastHostDisconnect@{BroadcastHostDisconnect}}
+\index{BroadcastHostDisconnect@{BroadcastHostDisconnect}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{BroadcastHostDisconnect()}{BroadcastHostDisconnect()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga740ef7a56f894d2149113373ed7c9601} 
+void Broadcast\+Host\+Disconnect (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Invia un pacchetto di notifica disconnessione host a tutti i client. 
+
+Usato quando l\textquotesingle{}host chiude la stanza (lobby o fine partita). I client ricevono l\textquotesingle{}avviso e vengono reindirizzati al menu principale. \Hypertarget{group__network__packet__strutture_gab5854145185d5f1e6a08d5a51022dd34}\index{Strutture Pacchetti@{Strutture Pacchetti}!BroadcastHostReturnLobby@{BroadcastHostReturnLobby}}
+\index{BroadcastHostReturnLobby@{BroadcastHostReturnLobby}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{BroadcastHostReturnLobby()}{BroadcastHostReturnLobby()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gab5854145185d5f1e6a08d5a51022dd34} 
+void Broadcast\+Host\+Return\+Lobby (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Broadcasta PACKET\+\_\+\+HOST\+\_\+\+RETURN\+\_\+\+LOBBY a tutti i client. 
+
+L\textquotesingle{}host segnala che e\textquotesingle{} tornato in pre-\/lobby dopo aver premuto "{}\+Gioca Ancora"{}. I client possono cosi\textquotesingle{} decidere se unirsi o andarsene. \Hypertarget{group__network__packet__strutture_gad24cb48d88d5827fff0faf81ae1fc05b}\index{Strutture Pacchetti@{Strutture Pacchetti}!BroadcastStatsSync@{BroadcastStatsSync}}
+\index{BroadcastStatsSync@{BroadcastStatsSync}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{BroadcastStatsSync()}{BroadcastStatsSync()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gad24cb48d88d5827fff0faf81ae1fc05b} 
+void Broadcast\+Stats\+Sync (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_stats_sync_packet}{Stats\+Sync\+Packet}} \texorpdfstring{$\ast$}{*}}]{stats}{}\end{DoxyParamCaption})}
+
+
+
+Invia un pacchetto di sincronizzazione statistiche COMPLETA a tutti i client. 
+
+Usato dopo ogni partita per aggiornare le statistiche di tutti i giocatori.
+
+Garantisce che i client connessi via TCP vedano TUTTI i dettagli delle partite storiche, non solo i contatori numerici. Popola l\textquotesingle{}intero array storico\+\_\+partite\mbox{[}\mbox{]} nel pacchetto Stats\+Sync.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stats} & Puntatore al pacchetto Stats\+Sync (gia\textquotesingle{} compilato con username e contatori). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__network__packet__strutture_ga9b41cc6afd8c747b00cde5ae23849aec}\index{Strutture Pacchetti@{Strutture Pacchetti}!CloseNetwork@{CloseNetwork}}
+\index{CloseNetwork@{CloseNetwork}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{CloseNetwork()}{CloseNetwork()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga9b41cc6afd8c747b00cde5ae23849aec} 
+void Close\+Network (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__network__packet__strutture_ga1b8014223ec4e2f55bf50ed4f0956f29}\index{Strutture Pacchetti@{Strutture Pacchetti}!CodeToIp@{CodeToIp}}
+\index{CodeToIp@{CodeToIp}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{CodeToIp()}{CodeToIp()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga1b8014223ec4e2f55bf50ed4f0956f29} 
+int Code\+To\+Ip (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{code}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{ip}{}\end{DoxyParamCaption})}
+
+
+
+Converte un codice esadecimale in indirizzo IP. 
+
+Formato\+: "{}\+C0\+A80164"{} -\/\texorpdfstring{$>$}{>} "{}192.\+168.\+1.\+100"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & Codice esadecimale (8 caratteri). \\
+\hline
+{\em ip} & Buffer di output per l\textquotesingle{}IP. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se conversione riuscita, 0 se formato non valido. 
+\end{DoxyReturn}
+\Hypertarget{group__network__packet__strutture_ga1bc4af3da71346cdc346fd17ff078426}\index{Strutture Pacchetti@{Strutture Pacchetti}!ConnettiTramiteCodiceStanza@{ConnettiTramiteCodiceStanza}}
+\index{ConnettiTramiteCodiceStanza@{ConnettiTramiteCodiceStanza}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{ConnettiTramiteCodiceStanza()}{ConnettiTramiteCodiceStanza()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga1bc4af3da71346cdc346fd17ff078426} 
+int Connetti\+Tramite\+Codice\+Stanza (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{codice}{, }\item[{int}]{porta\+Base}{}\end{DoxyParamCaption})}
+
+
+
+Connette a una stanza tramite codice stanza (UDP discovery). 
+
+Procedura\+:
+\begin{DoxyEnumerate}
+\item Crea socket UDP broadcast
+\item Invia "{}\+REQ\+\_\+\+CODE\+:$<$codice$>$"{} in broadcast sulla porta base+1
+\item Attende risposta "{}\+CODE\+\_\+\+FOUND"{} con timeout 1 secondo
+\item Se risposta ricevuta\+: chiama \doxylink{group__network__packet__strutture_gaa2baa82ea8ed3d587c950ca832d9bd2e}{Join\+Game()} con IP del server
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em codice} & Codice stanza da cercare (8 caratteri hex). \\
+\hline
+{\em porta\+Base} & Porta TCP del gioco (27015). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se connessione riuscita, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__network__packet__strutture_ga5549082d80aa9bc430343ffed1f25c11}\index{Strutture Pacchetti@{Strutture Pacchetti}!GestisciDisconnessione@{GestisciDisconnessione}}
+\index{GestisciDisconnessione@{GestisciDisconnessione}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{GestisciDisconnessione()}{GestisciDisconnessione()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga5549082d80aa9bc430343ffed1f25c11} 
+void Gestisci\+Disconnessione (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Gestisce la disconnessione di un giocatore (host o client). 
+
+Comportamento\+:
+\begin{DoxyItemize}
+\item HOST\+: Sostituisce il giocatore disconnesso con un BOT, notifica tutti, broadcasta nuovo stato.
+\item CLIENT\+: Imposta stato "{}\+\_\+\+\_\+\+HOST\+\_\+\+DISCONNECT\+\_\+\+\_\+"{}, salva statistiche solo se partita non era finita (evita duplicati).
+\end{DoxyItemize}
+
+Bug fissati\+:
+\begin{DoxyItemize}
+\item Bug 1\+: NON salva statistiche se partita gia\textquotesingle{} finita (duplicati)
+\item Bug 4\+: Partita interrotta non registra in classifica
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Puntatore allo stato di gioco. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__network__packet__strutture_ga7b140306c116ba0e29a99eb0415fbe36}\index{Strutture Pacchetti@{Strutture Pacchetti}!GetLocalIPAddress@{GetLocalIPAddress}}
+\index{GetLocalIPAddress@{GetLocalIPAddress}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{GetLocalIPAddress()}{GetLocalIPAddress()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga7b140306c116ba0e29a99eb0415fbe36} 
+int Get\+Local\+IPAddress (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{outbuf}{, }\item[{int}]{buflen}{}\end{DoxyParamCaption})}
+
+
+
+Ottiene l\textquotesingle{}indirizzo IP locale del dispositivo. 
+
+Utilizza metodo multiplo per robustezza\+:
+\begin{DoxyEnumerate}
+\item gethostname + gethostbyname (scorre TUTTI gli indirizzi) Filtra\+: loopback (127.\+0.\+0.\+1), APIPA (169.\+254.\+x.\+x), Virtual\+Box (10.\+0.\+2.\+x), VPN (tunnel interfaces). Accetta\+: 192.\+168.\+x.\+x, 10.\+x.\+x.\+x, 172.\+16-\/31.\+x.\+x
+\item Fallback\+: UDP connect a 8.\+8.\+8.\+8\+:53 (Google DNS) Non richiede header speciali, usa getsockname() per IP.
+\end{DoxyEnumerate}
+
+Bug fissato\+: prendeva solo h\+\_\+addr\+\_\+list\mbox{[}0\mbox{]} che su Windows spesso e\textquotesingle{} 127.\+0.\+0.\+1. Ora scorre tutta la lista.
+
+
+\begin{DoxyParams}{Parameters}
+{\em outbuf} & Buffer di output per l\textquotesingle{}IP trovato. \\
+\hline
+{\em buflen} & Dimensione del buffer output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se trovato IP valido, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__network__packet__strutture_gad3c903fa215cfb2106e60c84065a37cd}\index{Strutture Pacchetti@{Strutture Pacchetti}!HandleReceivedPacket@{HandleReceivedPacket}}
+\index{HandleReceivedPacket@{HandleReceivedPacket}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{HandleReceivedPacket()}{HandleReceivedPacket()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gad3c903fa215cfb2106e60c84065a37cd} 
+void Handle\+Received\+Packet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_net_packet}{Net\+Packet}} \texorpdfstring{$\ast$}{*}}]{packet}{, }\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Handle\+Received\+Packet -\/ Dispatcher principale dei pacchetti. 
+
+Classifica il tipo di pacchetto e delega la gestione al modulo specializzato appropriato. \Hypertarget{group__network__packet__strutture_ga4afd449b11f70e41fcfdf4df80a916ad}\index{Strutture Pacchetti@{Strutture Pacchetti}!HostGame@{HostGame}}
+\index{HostGame@{HostGame}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{HostGame()}{HostGame()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga4afd449b11f70e41fcfdf4df80a916ad} 
+int Host\+Game (\begin{DoxyParamCaption}\item[{int}]{port}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__network__packet__strutture_ga8ec5ddc728bd3aeff602ed6c2c103615}\index{Strutture Pacchetti@{Strutture Pacchetti}!InitNetwork@{InitNetwork}}
+\index{InitNetwork@{InitNetwork}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{InitNetwork()}{InitNetwork()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga8ec5ddc728bd3aeff602ed6c2c103615} 
+int Init\+Network (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__network__packet__strutture_gaa3f0c68189cf8f6f045919dc6ac02a35}\index{Strutture Pacchetti@{Strutture Pacchetti}!IpToCode@{IpToCode}}
+\index{IpToCode@{IpToCode}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{IpToCode()}{IpToCode()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaa3f0c68189cf8f6f045919dc6ac02a35} 
+void Ip\+To\+Code (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{ip}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Converte un indirizzo IP in codice esadecimale. 
+
+Formato\+: "{}192.\+168.\+1.\+100"{} -\/\texorpdfstring{$>$}{>} "{}\+C0\+A80164"{} Usato per generare codici stanza leggibili dai client.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip} & Indirizzo IP in formato stringa. \\
+\hline
+{\em code} & Buffer di output per il codice (min 9 byte). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__network__packet__strutture_gabc45bc454fab5dc2d69faf90e742d4e1}\index{Strutture Pacchetti@{Strutture Pacchetti}!IsPlayerConnected@{IsPlayerConnected}}
+\index{IsPlayerConnected@{IsPlayerConnected}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{IsPlayerConnected()}{IsPlayerConnected()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gabc45bc454fab5dc2d69faf90e742d4e1} 
+int Is\+Player\+Connected (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__network__packet__strutture_gaa2baa82ea8ed3d587c950ca832d9bd2e}\index{Strutture Pacchetti@{Strutture Pacchetti}!JoinGame@{JoinGame}}
+\index{JoinGame@{JoinGame}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{JoinGame()}{JoinGame()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaa2baa82ea8ed3d587c950ca832d9bd2e} 
+int Join\+Game (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{ip\+\_\+address}{, }\item[{int}]{port}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__network__packet__strutture_ga613b435b1d6ffb50b4255ceaa0bc6696}\index{Strutture Pacchetti@{Strutture Pacchetti}!RiassegnaSocket@{RiassegnaSocket}}
+\index{RiassegnaSocket@{RiassegnaSocket}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{RiassegnaSocket()}{RiassegnaSocket()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga613b435b1d6ffb50b4255ceaa0bc6696} 
+void Riassegna\+Socket (\begin{DoxyParamCaption}\item[{int}]{old\+\_\+id}{, }\item[{int}]{new\+\_\+id}{, }\item[{int}]{is\+\_\+reconnect}{, }\item[{int}]{partita\+\_\+iniziata}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__network__packet__strutture_ga76952802b05b5b11a933c2db18ede658}\index{Strutture Pacchetti@{Strutture Pacchetti}!SendPlayAgain@{SendPlayAgain}}
+\index{SendPlayAgain@{SendPlayAgain}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{SendPlayAgain()}{SendPlayAgain()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga76952802b05b5b11a933c2db18ede658} 
+void Send\+Play\+Again (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Invia un pacchetto PACKET\+\_\+\+PLAY\+\_\+\+AGAIN all\textquotesingle{}host. 
+
+Il client segnala all\textquotesingle{}host che vuole giocare ancora (tornare in pre-\/lobby). Invia anche il nome del giocatore nel campo player\+\_\+name\mbox{[}\mbox{]} per permettere all\textquotesingle{}host di ricreare lo slot correttamente dopo aver pulito la lobby. \Hypertarget{group__network__packet__strutture_ga981d40762c9af84bf5f4d5d24a024c04}\index{Strutture Pacchetti@{Strutture Pacchetti}!SendPlayerReady@{SendPlayerReady}}
+\index{SendPlayerReady@{SendPlayerReady}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{SendPlayerReady()}{SendPlayerReady()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga981d40762c9af84bf5f4d5d24a024c04} 
+void Send\+Player\+Ready (\begin{DoxyParamCaption}\item[{int}]{ready}{}\end{DoxyParamCaption})}
+
+\Hypertarget{group__network__packet__strutture_ga36fc11ee8fde125894663e2c2ca2aa32}\index{Strutture Pacchetti@{Strutture Pacchetti}!SendStatsSync@{SendStatsSync}}
+\index{SendStatsSync@{SendStatsSync}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{SendStatsSync()}{SendStatsSync()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga36fc11ee8fde125894663e2c2ca2aa32} 
+void Send\+Stats\+Sync (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_stats_sync_packet}{Stats\+Sync\+Packet}} \texorpdfstring{$\ast$}{*}}]{stats}{}\end{DoxyParamCaption})}
+
+
+
+Invia un pacchetto di sincronizzazione statistiche COMPLETA all\textquotesingle{}host (client). 
+
+Usato quando il client salva le proprie statistiche dopo una partita.
+
+Garantisce che l\textquotesingle{}host (e tutti gli altri client tramite broadcast) ricevano TUTTI i dettagli delle partite, non solo i contatori numerici.
+
+Popola l\textquotesingle{}intero array storico\+\_\+partite\mbox{[}\mbox{]} nel pacchetto Stats\+Sync. \Hypertarget{group__network__packet__strutture_ga76a4e1704f09ea2ce18348e9add659d4}\index{Strutture Pacchetti@{Strutture Pacchetti}!ShiftNetworkSockets@{ShiftNetworkSockets}}
+\index{ShiftNetworkSockets@{ShiftNetworkSockets}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{ShiftNetworkSockets()}{ShiftNetworkSockets()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga76a4e1704f09ea2ce18348e9add659d4} 
+void Shift\+Network\+Sockets (\begin{DoxyParamCaption}\item[{int}]{removed\+\_\+index}{, }\item[{int}]{num\+\_\+players}{}\end{DoxyParamCaption})}
+
+
+
+Ricompatta l\textquotesingle{}array di socket client dopo una disconnessione. 
+
+Sposta tutti gli socket dopo l\textquotesingle{}indice rimosso di una posizione indietro per mantenere gli slot contigui.
+
+
+\begin{DoxyParams}{Parameters}
+{\em removed\+\_\+index} & Indice dello slot rimosso. \\
+\hline
+{\em num\+\_\+players} & Numero totale giocatori (dopo rimozione). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__network__packet__strutture_ga6b2d507a3b3bf210f28c0eedacd885a4}\index{Strutture Pacchetti@{Strutture Pacchetti}!UpdateNetwork@{UpdateNetwork}}
+\index{UpdateNetwork@{UpdateNetwork}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{UpdateNetwork()}{UpdateNetwork()}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga6b2d507a3b3bf210f28c0eedacd885a4} 
+void Update\+Network (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{group__network__packet__strutture_ga3d07f0b9de209d0f402a844b8efa2a8b}\index{Strutture Pacchetti@{Strutture Pacchetti}!action@{action}}
+\index{action@{action}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga3d07f0b9de209d0f402a844b8efa2a8b} 
+int Admin\+User\+Action\+::action}
+
+\Hypertarget{group__network__packet__strutture_ga0a43ca38274c6e7a8529c3dd9ed77091}\index{Strutture Pacchetti@{Strutture Pacchetti}!admin\_action@{admin\_action}}
+\index{admin\_action@{admin\_action}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga0a43ca38274c6e7a8529c3dd9ed77091} 
+Admin\+User\+Action  \{ ... \} \+::admin\+\_\+action}
+
+\Hypertarget{group__network__packet__strutture_ga73a0ded76fc6e6d72987c55bb16e2adf}\index{Strutture Pacchetti@{Strutture Pacchetti}!admin\_action@{admin\_action}}
+\index{admin\_action@{admin\_action}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{admin\_action}{admin\_action}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga73a0ded76fc6e6d72987c55bb16e2adf} 
+\mbox{\hyperlink{struct_admin_user_action}{Admin\+User\+Action}} Net\+Packet\+::admin\+\_\+action}
+
+\Hypertarget{group__network__packet__strutture_ga682a96f866794284e226ab4b853fedae}\index{Strutture Pacchetti@{Strutture Pacchetti}!admin\_db\_packet@{admin\_db\_packet}}
+\index{admin\_db\_packet@{admin\_db\_packet}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga682a96f866794284e226ab4b853fedae} 
+Admin\+DBSync\+Packet  \{ ... \} \+::admin\+\_\+db\+\_\+packet}
+
+\Hypertarget{group__network__packet__strutture_ga740b8f9c2a02ecfa8de301efa16a6087}\index{Strutture Pacchetti@{Strutture Pacchetti}!admin\_db\_packet@{admin\_db\_packet}}
+\index{admin\_db\_packet@{admin\_db\_packet}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{admin\_db\_packet}{admin\_db\_packet}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga740b8f9c2a02ecfa8de301efa16a6087} 
+\mbox{\hyperlink{struct_admin_d_b_sync_packet}{Admin\+DBSync\+Packet}} Net\+Packet\+::admin\+\_\+db\+\_\+packet}
+
+\Hypertarget{group__network__packet__strutture_ga26fb77aeafc9420f593477868c2e67e9}\index{Strutture Pacchetti@{Strutture Pacchetti}!card\_index@{card\_index}}
+\index{card\_index@{card\_index}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{card\_index}{card\_index}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga26fb77aeafc9420f593477868c2e67e9} 
+int Packet\+Move\+::card\+\_\+index}
+
+\Hypertarget{group__network__packet__strutture_ga9b8ad66e75056db4f244268e512e2050}\index{Strutture Pacchetti@{Strutture Pacchetti}!carte@{carte}}
+\index{carte@{carte}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{carte}{carte}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga9b8ad66e75056db4f244268e512e2050} 
+\mbox{\hyperlink{struct_carta}{Carta}} Packet\+Player\+Hand\+::carte\mbox{[}108\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gabf2048c359de3eb2d8f90a63358ea33c}\index{Strutture Pacchetti@{Strutture Pacchetti}!chat@{chat}}
+\index{chat@{chat}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gabf2048c359de3eb2d8f90a63358ea33c} 
+Packet\+Chat  \{ ... \} \+::chat}
+
+\Hypertarget{group__network__packet__strutture_gaee3e8eefd8701d9bd41cd426cfe941ec}\index{Strutture Pacchetti@{Strutture Pacchetti}!chat@{chat}}
+\index{chat@{chat}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{chat}{chat}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaee3e8eefd8701d9bd41cd426cfe941ec} 
+\mbox{\hyperlink{struct_packet_chat}{Packet\+Chat}} Net\+Packet\+::chat}
+
+\Hypertarget{group__network__packet__strutture_gae1406de9f7c29f2553e952e0d5a0532c}\index{Strutture Pacchetti@{Strutture Pacchetti}!clientSockets@{clientSockets}}
+\index{clientSockets@{clientSockets}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{clientSockets}{clientSockets}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gae1406de9f7c29f2553e952e0d5a0532c} 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} client\+Sockets\mbox{[}\mbox{\hyperlink{group__network__packet__strutture_gac7e4a6221f79e37a20003c8c18e4ae62}{MAX\+\_\+\+SERVER\+\_\+\+CLIENTS}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga406392fbcc5b9a327521a12b68f9d378}\index{Strutture Pacchetti@{Strutture Pacchetti}!cognome@{cognome}}
+\index{cognome@{cognome}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{cognome}{cognome}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga406392fbcc5b9a327521a12b68f9d378} 
+char Admin\+User\+Sync\+Data\+::cognome\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga32df771a08a39231e11c8dfd5bdf83e0}\index{Strutture Pacchetti@{Strutture Pacchetti}!color\_choice@{color\_choice}}
+\index{color\_choice@{color\_choice}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga32df771a08a39231e11c8dfd5bdf83e0} 
+Packet\+Color\+Choice  \{ ... \} \+::color\+\_\+choice}
+
+\Hypertarget{group__network__packet__strutture_ga5a7420a732e939ca23615c9b7b686b49}\index{Strutture Pacchetti@{Strutture Pacchetti}!color\_choice@{color\_choice}}
+\index{color\_choice@{color\_choice}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{color\_choice}{color\_choice}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga5a7420a732e939ca23615c9b7b686b49} 
+\mbox{\hyperlink{struct_packet_color_choice}{Packet\+Color\+Choice}} Net\+Packet\+::color\+\_\+choice}
+
+\Hypertarget{group__network__packet__strutture_ga82c3f2c0248a3b52fb91dc65edbe78d3}\index{Strutture Pacchetti@{Strutture Pacchetti}!colore@{colore}}
+\index{colore@{colore}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{colore}{colore}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga82c3f2c0248a3b52fb91dc65edbe78d3} 
+\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} Packet\+Color\+Choice\+::colore}
+
+\Hypertarget{group__network__packet__strutture_ga2fd6703e904f8518191e4de979f69189}\index{Strutture Pacchetti@{Strutture Pacchetti}!colore\_scelto@{colore\_scelto}}
+\index{colore\_scelto@{colore\_scelto}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{colore\_scelto}{colore\_scelto}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga2fd6703e904f8518191e4de979f69189} 
+\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} Packet\+Move\+::colore\+\_\+scelto}
+
+\Hypertarget{group__network__packet__strutture_ga80ac1ee1e5dc6a14be8c487f06ab9192}\index{Strutture Pacchetti@{Strutture Pacchetti}!connectedClientUsernames@{connectedClientUsernames}}
+\index{connectedClientUsernames@{connectedClientUsernames}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{connectedClientUsernames}{connectedClientUsernames}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga80ac1ee1e5dc6a14be8c487f06ab9192} 
+char connected\+Client\+Usernames\mbox{[}4\mbox{]}\mbox{[}30\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Username dei client TCP connessi all\textquotesingle{}host (per admin panel). 
+
+NOTA\+: Indice 0 corrisponde allo slot 1 del client. \Hypertarget{group__network__packet__strutture_gaf95b16aff38590d53d8f52227a73bfa3}\index{Strutture Pacchetti@{Strutture Pacchetti}!count@{count}}
+\index{count@{count}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaf95b16aff38590d53d8f52227a73bfa3} 
+int Packet\+Draw\+::count}
+
+\Hypertarget{group__network__packet__strutture_ga314222760ce29bd0dfaaf64c86e6216f}\index{Strutture Pacchetti@{Strutture Pacchetti}!create\_session@{create\_session}}
+\index{create\_session@{create\_session}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga314222760ce29bd0dfaaf64c86e6216f} 
+Packet\+Create\+Session  \{ ... \} \+::create\+\_\+session}
+
+\Hypertarget{group__network__packet__strutture_gae9d31a94b42b77f7f74d93d09cd3dae0}\index{Strutture Pacchetti@{Strutture Pacchetti}!create\_session@{create\_session}}
+\index{create\_session@{create\_session}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{create\_session}{create\_session}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gae9d31a94b42b77f7f74d93d09cd3dae0} 
+\mbox{\hyperlink{struct_packet_create_session}{Packet\+Create\+Session}} Net\+Packet\+::create\+\_\+session}
+
+\Hypertarget{group__network__packet__strutture_ga5cad9e8eeb56c51e52badb34a5910fbe}\index{Strutture Pacchetti@{Strutture Pacchetti}!current\_session\_id@{current\_session\_id}}
+\index{current\_session\_id@{current\_session\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{current\_session\_id}{current\_session\_id}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga5cad9e8eeb56c51e52badb34a5910fbe} 
+char current\+\_\+session\+\_\+id\mbox{[}16\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga16acec73ed8b5b9262d15211bedb6479}\index{Strutture Pacchetti@{Strutture Pacchetti}!currentRole@{currentRole}}
+\index{currentRole@{currentRole}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{currentRole}{currentRole}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga16acec73ed8b5b9262d15211bedb6479} 
+\mbox{\hyperlink{group__network__ruoli_ga53e7e36fa630cf0cbd59d8ac87393100}{Network\+Role}} current\+Role\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga6d1829320713144288aa563464cfbf41}\index{Strutture Pacchetti@{Strutture Pacchetti}!data@{data}}
+\index{data@{data}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga6d1829320713144288aa563464cfbf41} 
+union  \{ ... \}  Net\+Packet\+::data}
+
+\Hypertarget{group__network__packet__strutture_ga9334aa06f6610990b64dc1f418c97339}\index{Strutture Pacchetti@{Strutture Pacchetti}!draw@{draw}}
+\index{draw@{draw}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga9334aa06f6610990b64dc1f418c97339} 
+Packet\+Draw  \{ ... \} \+::draw}
+
+\Hypertarget{group__network__packet__strutture_gab4d8deeb5c19963d6e1d692ce5b01776}\index{Strutture Pacchetti@{Strutture Pacchetti}!draw@{draw}}
+\index{draw@{draw}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{draw}{draw}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gab4d8deeb5c19963d6e1d692ce5b01776} 
+\mbox{\hyperlink{struct_packet_draw}{Packet\+Draw}} Net\+Packet\+::draw}
+
+\Hypertarget{group__network__packet__strutture_ga757032a40e11dad5f12d2c2f6afd0cc8}\index{Strutture Pacchetti@{Strutture Pacchetti}!durata\_ultima\_partita@{durata\_ultima\_partita}}
+\index{durata\_ultima\_partita@{durata\_ultima\_partita}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{durata\_ultima\_partita}{durata\_ultima\_partita}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga757032a40e11dad5f12d2c2f6afd0cc8} 
+float Stats\+Sync\+Packet\+::durata\+\_\+ultima\+\_\+partita}
+
+\Hypertarget{group__network__packet__strutture_gabafab5e79d5298dbbe81ce0cd201902d}\index{Strutture Pacchetti@{Strutture Pacchetti}!email@{email}}
+\index{email@{email}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gabafab5e79d5298dbbe81ce0cd201902d} 
+char Admin\+User\+Sync\+Data\+::email\mbox{[}100\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga2a09d71c4e7daed0a74edd976d9597cb}\index{Strutture Pacchetti@{Strutture Pacchetti}!esito\_ultima@{esito\_ultima}}
+\index{esito\_ultima@{esito\_ultima}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{esito\_ultima}{esito\_ultima}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga2a09d71c4e7daed0a74edd976d9597cb} 
+char Stats\+Sync\+Packet\+::esito\+\_\+ultima\mbox{[}15\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gaa4ba951ba12c61b3cc6ace81e706b32b}\index{Strutture Pacchetti@{Strutture Pacchetti}!game\_finished@{game\_finished}}
+\index{game\_finished@{game\_finished}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaa4ba951ba12c61b3cc6ace81e706b32b} 
+Packet\+Game\+Finished  \{ ... \} \+::game\+\_\+finished}
+
+\Hypertarget{group__network__packet__strutture_ga2f05176c025e583a0b0ff862d3723c75}\index{Strutture Pacchetti@{Strutture Pacchetti}!game\_finished@{game\_finished}}
+\index{game\_finished@{game\_finished}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{game\_finished}{game\_finished}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga2f05176c025e583a0b0ff862d3723c75} 
+\mbox{\hyperlink{struct_packet_game_finished}{Packet\+Game\+Finished}} Net\+Packet\+::game\+\_\+finished}
+
+\Hypertarget{group__network__packet__strutture_ga596b1cabfc224d016498711229f02d4b}\index{Strutture Pacchetti@{Strutture Pacchetti}!game\_started@{game\_started}}
+\index{game\_started@{game\_started}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{game\_started}{game\_started}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga596b1cabfc224d016498711229f02d4b} 
+int Packet\+Session\+State\+::game\+\_\+started}
+
+\Hypertarget{group__network__packet__strutture_ga17a833a0ed338f4f8bda0f67969bfe05}\index{Strutture Pacchetti@{Strutture Pacchetti}!game\_state@{game\_state}}
+\index{game\_state@{game\_state}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga17a833a0ed338f4f8bda0f67969bfe05} 
+Packet\+Game\+State  \{ ... \} \+::game\+\_\+state}
+
+\Hypertarget{group__network__packet__strutture_gae1da5a64d081035f4af93792ff771050}\index{Strutture Pacchetti@{Strutture Pacchetti}!game\_state@{game\_state}}
+\index{game\_state@{game\_state}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{game\_state}{game\_state}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gae1da5a64d081035f4af93792ff771050} 
+\mbox{\hyperlink{struct_packet_game_state}{Packet\+Game\+State}} Net\+Packet\+::game\+\_\+state}
+
+\Hypertarget{group__network__packet__strutture_gad19d3935c177c2bf5cb284c7d413ebde}\index{Strutture Pacchetti@{Strutture Pacchetti}!heartbeat@{heartbeat}}
+\index{heartbeat@{heartbeat}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gad19d3935c177c2bf5cb284c7d413ebde} 
+Packet\+Heartbeat  \{ ... \} \+::heartbeat}
+
+\Hypertarget{group__network__packet__strutture_ga180be1c20dcb535e60e3803941b5d07f}\index{Strutture Pacchetti@{Strutture Pacchetti}!heartbeat@{heartbeat}}
+\index{heartbeat@{heartbeat}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{heartbeat}{heartbeat}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga180be1c20dcb535e60e3803941b5d07f} 
+\mbox{\hyperlink{struct_packet_heartbeat}{Packet\+Heartbeat}} Net\+Packet\+::heartbeat}
+
+\Hypertarget{group__network__packet__strutture_gae06ac14e3f4d5998b855e2ffbc411341}\index{Strutture Pacchetti@{Strutture Pacchetti}!host\_in\_prelobby@{host\_in\_prelobby}}
+\index{host\_in\_prelobby@{host\_in\_prelobby}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{host\_in\_prelobby}{host\_in\_prelobby}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gae06ac14e3f4d5998b855e2ffbc411341} 
+int host\+\_\+in\+\_\+prelobby\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga8409bc6d5b36268bdacb03e5ce7e9780}\index{Strutture Pacchetti@{Strutture Pacchetti}!host\_name@{host\_name}}
+\index{host\_name@{host\_name}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{host\_name}{host\_name}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga8409bc6d5b36268bdacb03e5ce7e9780} 
+char Packet\+Create\+Session\+::host\+\_\+name\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga21afc5dc63a86a4ff6a055486fad6441}\index{Strutture Pacchetti@{Strutture Pacchetti}!host\_ready@{host\_ready}}
+\index{host\_ready@{host\_ready}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{host\_ready}{host\_ready}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga21afc5dc63a86a4ff6a055486fad6441} 
+int Packet\+Host\+Return\+Lobby\+::host\+\_\+ready}
+
+\Hypertarget{group__network__packet__strutture_ga1cc64144d2ea3170bb1f2cf5440e185d}\index{Strutture Pacchetti@{Strutture Pacchetti}!host\_return\_lobby@{host\_return\_lobby}}
+\index{host\_return\_lobby@{host\_return\_lobby}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga1cc64144d2ea3170bb1f2cf5440e185d} 
+Packet\+Host\+Return\+Lobby  \{ ... \} \+::host\+\_\+return\+\_\+lobby}
+
+\Hypertarget{group__network__packet__strutture_ga5bb950cf458b01e517c357691bb6e416}\index{Strutture Pacchetti@{Strutture Pacchetti}!host\_return\_lobby@{host\_return\_lobby}}
+\index{host\_return\_lobby@{host\_return\_lobby}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{host\_return\_lobby}{host\_return\_lobby}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga5bb950cf458b01e517c357691bb6e416} 
+\mbox{\hyperlink{struct_packet_host_return_lobby}{Packet\+Host\+Return\+Lobby}} Net\+Packet\+::host\+\_\+return\+\_\+lobby}
+
+\Hypertarget{group__network__packet__strutture_gad4d1f6a7b22f4c2f2e5a244718194383}\index{Strutture Pacchetti@{Strutture Pacchetti}!is\_ready@{is\_ready}}
+\index{is\_ready@{is\_ready}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{is\_ready}{is\_ready}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gad4d1f6a7b22f4c2f2e5a244718194383} 
+int Packet\+Player\+Ready\+::is\+\_\+ready}
+
+\Hypertarget{group__network__packet__strutture_gaa358768cbc9b8ed27055d5b41726d79a}\index{Strutture Pacchetti@{Strutture Pacchetti}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{isConnected}{isConnected}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaa358768cbc9b8ed27055d5b41726d79a} 
+int is\+Connected\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga64d4c0f84b1529829b89eab858897b1f}\index{Strutture Pacchetti@{Strutture Pacchetti}!join\_game@{join\_game}}
+\index{join\_game@{join\_game}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga64d4c0f84b1529829b89eab858897b1f} 
+Packet\+Join\+Game  \{ ... \} \+::join\+\_\+game}
+
+\Hypertarget{group__network__packet__strutture_ga49d7d44bd4df64c5ba30b1c04bfafa02}\index{Strutture Pacchetti@{Strutture Pacchetti}!join\_game@{join\_game}}
+\index{join\_game@{join\_game}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{join\_game}{join\_game}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga49d7d44bd4df64c5ba30b1c04bfafa02} 
+\mbox{\hyperlink{struct_packet_join_game}{Packet\+Join\+Game}} Net\+Packet\+::join\+\_\+game}
+
+\Hypertarget{group__network__packet__strutture_ga0936e5fbf6f65df58464ed83a3272430}\index{Strutture Pacchetti@{Strutture Pacchetti}!join\_rejected@{join\_rejected}}
+\index{join\_rejected@{join\_rejected}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{join\_rejected}{join\_rejected}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga0936e5fbf6f65df58464ed83a3272430} 
+int join\+\_\+rejected\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_gae555ea6e8bab49b93446614e49f21874}\index{Strutture Pacchetti@{Strutture Pacchetti}!join\_rejected@{join\_rejected}}
+\index{join\_rejected@{join\_rejected}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gae555ea6e8bab49b93446614e49f21874} 
+Packet\+Join\+Rejected  \{ ... \} \+::join\+\_\+rejected}
+
+\Hypertarget{group__network__packet__strutture_ga57e287d2946e56eba5a2d2ec0b01c40d}\index{Strutture Pacchetti@{Strutture Pacchetti}!join\_rejected@{join\_rejected}}
+\index{join\_rejected@{join\_rejected}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{join\_rejected}{join\_rejected}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga57e287d2946e56eba5a2d2ec0b01c40d} 
+\mbox{\hyperlink{struct_packet_join_rejected}{Packet\+Join\+Rejected}} Net\+Packet\+::join\+\_\+rejected}
+
+\Hypertarget{group__network__packet__strutture_gaa9c03f3f99a3e717bdaf5a04a230c7bc}\index{Strutture Pacchetti@{Strutture Pacchetti}!join\_session@{join\_session}}
+\index{join\_session@{join\_session}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaa9c03f3f99a3e717bdaf5a04a230c7bc} 
+Packet\+Join\+Session  \{ ... \} \+::join\+\_\+session}
+
+\Hypertarget{group__network__packet__strutture_gacc8d068dd0266c0c8c9b20e37583a585}\index{Strutture Pacchetti@{Strutture Pacchetti}!join\_session@{join\_session}}
+\index{join\_session@{join\_session}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{join\_session}{join\_session}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gacc8d068dd0266c0c8c9b20e37583a585} 
+\mbox{\hyperlink{struct_packet_join_session}{Packet\+Join\+Session}} Net\+Packet\+::join\+\_\+session}
+
+\Hypertarget{group__network__packet__strutture_ga3437dc7e27766145ab5c8d9a605083cd}\index{Strutture Pacchetti@{Strutture Pacchetti}!local\_player\_id@{local\_player\_id}}
+\index{local\_player\_id@{local\_player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{local\_player\_id}{local\_player\_id}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga3437dc7e27766145ab5c8d9a605083cd} 
+int local\+\_\+player\+\_\+id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_gaf43ad9dadb972307b3c58edc0c45198b}\index{Strutture Pacchetti@{Strutture Pacchetti}!message@{message}}
+\index{message@{message}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{message}{message}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaf43ad9dadb972307b3c58edc0c45198b} 
+char Packet\+Chat\+::message\mbox{[}128\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga2efc2fc797cb131c559f930e646b21ef}\index{Strutture Pacchetti@{Strutture Pacchetti}!modalita\_ultima@{modalita\_ultima}}
+\index{modalita\_ultima@{modalita\_ultima}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{modalita\_ultima}{modalita\_ultima}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga2efc2fc797cb131c559f930e646b21ef} 
+char Stats\+Sync\+Packet\+::modalita\+\_\+ultima\mbox{[}20\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gaa001f2ef2a04583f55f8aed0afb6753b}\index{Strutture Pacchetti@{Strutture Pacchetti}!motivo@{motivo}}
+\index{motivo@{motivo}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{motivo}{motivo}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaa001f2ef2a04583f55f8aed0afb6753b} 
+char Packet\+Join\+Rejected\+::motivo\mbox{[}100\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gab72d1fd0a869874805c1aeabfbad97a4}\index{Strutture Pacchetti@{Strutture Pacchetti}!move@{move}}
+\index{move@{move}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gab72d1fd0a869874805c1aeabfbad97a4} 
+Packet\+Move  \{ ... \} \+::move}
+
+\Hypertarget{group__network__packet__strutture_ga132cc701b1cebecfb8f8992565f6bcc6}\index{Strutture Pacchetti@{Strutture Pacchetti}!move@{move}}
+\index{move@{move}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{move}{move}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga132cc701b1cebecfb8f8992565f6bcc6} 
+\mbox{\hyperlink{struct_packet_move}{Packet\+Move}} Net\+Packet\+::move}
+
+\Hypertarget{group__network__packet__strutture_ga64831cef2cdeba3a0f16d745b3ecf4fc}\index{Strutture Pacchetti@{Strutture Pacchetti}!network\_client\_joined@{network\_client\_joined}}
+\index{network\_client\_joined@{network\_client\_joined}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{network\_client\_joined}{network\_client\_joined}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga64831cef2cdeba3a0f16d745b3ecf4fc} 
+int network\+\_\+client\+\_\+joined\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga7fbc791dd298a446c201d280dd8c1c3d}\index{Strutture Pacchetti@{Strutture Pacchetti}!network\_game\_initialized@{network\_game\_initialized}}
+\index{network\_game\_initialized@{network\_game\_initialized}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{network\_game\_initialized}{network\_game\_initialized}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga7fbc791dd298a446c201d280dd8c1c3d} 
+int network\+\_\+game\+\_\+initialized\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga011bfc7156351cec76e4a4b1e38c3169}\index{Strutture Pacchetti@{Strutture Pacchetti}!network\_pending@{network\_pending}}
+\index{network\_pending@{network\_pending}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{network\_pending}{network\_pending}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga011bfc7156351cec76e4a4b1e38c3169} 
+int network\+\_\+pending\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga73bc5aa44ad9b3c3ca01c28252b93a56}\index{Strutture Pacchetti@{Strutture Pacchetti}!network\_start\_game\_flag@{network\_start\_game\_flag}}
+\index{network\_start\_game\_flag@{network\_start\_game\_flag}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{network\_start\_game\_flag}{network\_start\_game\_flag}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga73bc5aa44ad9b3c3ca01c28252b93a56} 
+int network\+\_\+start\+\_\+game\+\_\+flag\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_gac81f1b89327c6f3a128761e702db16cc}\index{Strutture Pacchetti@{Strutture Pacchetti}!nome@{nome}}
+\index{nome@{nome}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{nome}{nome}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gac81f1b89327c6f3a128761e702db16cc} 
+char Admin\+User\+Sync\+Data\+::nome\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gaaa1d3eeeb44c69e71bd1afd6be1ee3e7}\index{Strutture Pacchetti@{Strutture Pacchetti}!nome@{nome}}
+\index{nome@{nome}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{nome}{nome}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaaa1d3eeeb44c69e71bd1afd6be1ee3e7} 
+char Packet\+Join\+Game\+::nome\mbox{[}50\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga027930ddbd1fdca4574393b25c6729b4}\index{Strutture Pacchetti@{Strutture Pacchetti}!num\_carte@{num\_carte}}
+\index{num\_carte@{num\_carte}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{num\_carte}{num\_carte}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga027930ddbd1fdca4574393b25c6729b4} 
+int Packet\+Player\+Hand\+::num\+\_\+carte}
+
+\Hypertarget{group__network__packet__strutture_gab6419268cbf6e2c93cb228256f7effb0}\index{Strutture Pacchetti@{Strutture Pacchetti}!num\_players@{num\_players}}
+\index{num\_players@{num\_players}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{num\_players}{num\_players}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gab6419268cbf6e2c93cb228256f7effb0} 
+int Packet\+Create\+Session\+::num\+\_\+players}
+
+\Hypertarget{group__network__packet__strutture_ga71586935479cf2643e01bbfa671b7273}\index{Strutture Pacchetti@{Strutture Pacchetti}!num\_players@{num\_players}}
+\index{num\_players@{num\_players}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{num\_players}{num\_players}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga71586935479cf2643e01bbfa671b7273} 
+int Packet\+Session\+State\+::num\+\_\+players}
+
+\Hypertarget{group__network__packet__strutture_gad64d5575b39ad5dc8f2462b8ead65941}\index{Strutture Pacchetti@{Strutture Pacchetti}!partite\_giocate@{partite\_giocate}}
+\index{partite\_giocate@{partite\_giocate}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{partite\_giocate}{partite\_giocate}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gad64d5575b39ad5dc8f2462b8ead65941} 
+int Admin\+User\+Sync\+Data\+::partite\+\_\+giocate}
+
+\Hypertarget{group__network__packet__strutture_gabcb39d60ae8573ad6547aa17daf77872}\index{Strutture Pacchetti@{Strutture Pacchetti}!partite\_giocate@{partite\_giocate}}
+\index{partite\_giocate@{partite\_giocate}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{partite\_giocate}{partite\_giocate}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gabcb39d60ae8573ad6547aa17daf77872} 
+int Stats\+Sync\+Packet\+::partite\+\_\+giocate}
+
+\Hypertarget{group__network__packet__strutture_ga1b78f9830a1a67d47bc8825c8f73d801}\index{Strutture Pacchetti@{Strutture Pacchetti}!password@{password}}
+\index{password@{password}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga1b78f9830a1a67d47bc8825c8f73d801} 
+char Admin\+User\+Sync\+Data\+::password\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga02026535119c49cc438aaf35e09b14c4}\index{Strutture Pacchetti@{Strutture Pacchetti}!pin\_recupero@{pin\_recupero}}
+\index{pin\_recupero@{pin\_recupero}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{pin\_recupero}{pin\_recupero}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga02026535119c49cc438aaf35e09b14c4} 
+char Admin\+User\+Sync\+Data\+::pin\+\_\+recupero\mbox{[}7\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga5214bcde5a96baab2032d034c07a280d}\index{Strutture Pacchetti@{Strutture Pacchetti}!play\_again@{play\_again}}
+\index{play\_again@{play\_again}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga5214bcde5a96baab2032d034c07a280d} 
+Packet\+Play\+Again  \{ ... \} \+::play\+\_\+again}
+
+\Hypertarget{group__network__packet__strutture_gaa00db0a05b0d2dcb217cd435b8c84ede}\index{Strutture Pacchetti@{Strutture Pacchetti}!play\_again@{play\_again}}
+\index{play\_again@{play\_again}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{play\_again}{play\_again}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaa00db0a05b0d2dcb217cd435b8c84ede} 
+\mbox{\hyperlink{struct_packet_play_again}{Packet\+Play\+Again}} Net\+Packet\+::play\+\_\+again}
+
+\Hypertarget{group__network__packet__strutture_ga454d43cfb2e2f467f504863d363ca274}\index{Strutture Pacchetti@{Strutture Pacchetti}!play\_again@{play\_again}}
+\index{play\_again@{play\_again}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{play\_again}{play\_again}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga454d43cfb2e2f467f504863d363ca274} 
+int Packet\+Play\+Again\+::play\+\_\+again}
+
+\Hypertarget{group__network__packet__strutture_ga6f55f2df7e1f3157fe34cb757b1d7e56}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_hand@{player\_hand}}
+\index{player\_hand@{player\_hand}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga6f55f2df7e1f3157fe34cb757b1d7e56} 
+Packet\+Player\+Hand  \{ ... \} \+::player\+\_\+hand}
+
+\Hypertarget{group__network__packet__strutture_gafae35b798ce130ffa2a4db68d44ebb40}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_hand@{player\_hand}}
+\index{player\_hand@{player\_hand}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_hand}{player\_hand}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gafae35b798ce130ffa2a4db68d44ebb40} 
+\mbox{\hyperlink{struct_packet_player_hand}{Packet\+Player\+Hand}} Net\+Packet\+::player\+\_\+hand}
+
+\Hypertarget{group__network__packet__strutture_ga60f45f1c8c69bb485dedd5040b62b2b7}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_id@{player\_id}}
+\index{player\_id@{player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_id}{player\_id}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga60f45f1c8c69bb485dedd5040b62b2b7} 
+int Packet\+Chat\+::player\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_gae9866ba217c36a39ba4073858855caa6}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_id@{player\_id}}
+\index{player\_id@{player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_id}{player\_id}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gae9866ba217c36a39ba4073858855caa6} 
+int Packet\+Color\+Choice\+::player\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_ga7d75ebf8c21ea768951f8e26dbd16884}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_id@{player\_id}}
+\index{player\_id@{player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_id}{player\_id}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga7d75ebf8c21ea768951f8e26dbd16884} 
+int Packet\+Draw\+::player\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_ga0e2259a91f1626c4c9f20d490768de33}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_id@{player\_id}}
+\index{player\_id@{player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_id}{player\_id}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga0e2259a91f1626c4c9f20d490768de33} 
+int Packet\+Heartbeat\+::player\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_ga48dff0aed0d8c66bd700afea6aad9b38}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_id@{player\_id}}
+\index{player\_id@{player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_id}{player\_id}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga48dff0aed0d8c66bd700afea6aad9b38} 
+int Packet\+Move\+::player\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_gafb6a63ee6a6c7a4499d44aaebaf475e2}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_id@{player\_id}}
+\index{player\_id@{player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_id}{player\_id}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gafb6a63ee6a6c7a4499d44aaebaf475e2} 
+int Packet\+Play\+Again\+::player\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_gaca097944b71b7a8406b93e4b3ed2db4f}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_id@{player\_id}}
+\index{player\_id@{player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_id}{player\_id}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaca097944b71b7a8406b93e4b3ed2db4f} 
+int Packet\+Player\+Hand\+::player\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_gad64175c30986eb4c8a88b0c49817bdbc}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_id@{player\_id}}
+\index{player\_id@{player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_id}{player\_id}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gad64175c30986eb4c8a88b0c49817bdbc} 
+int Packet\+Player\+Ready\+::player\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_id@{player\_id}}
+\index{player\_id@{player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_id}{player\_id}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54} 
+int player\+\_\+id\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga6912d90f8d9510ad4cf57b0fcab88420}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_name@{player\_name}}
+\index{player\_name@{player\_name}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_name}{player\_name}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga6912d90f8d9510ad4cf57b0fcab88420} 
+char Packet\+Join\+Session\+::player\+\_\+name\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gad0e5cb99e6d44afb1297610a71ff0839}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_name@{player\_name}}
+\index{player\_name@{player\_name}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_name}{player\_name}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gad0e5cb99e6d44afb1297610a71ff0839} 
+char Packet\+Play\+Again\+::player\+\_\+name\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga0def821662805847be2754df1a8d20e8}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_names@{player\_names}}
+\index{player\_names@{player\_names}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_names}{player\_names}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga0def821662805847be2754df1a8d20e8} 
+char Packet\+Session\+State\+::player\+\_\+names\mbox{[}4\mbox{]}\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga8df08272219148fca0f5615923e84675}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_ready@{player\_ready}}
+\index{player\_ready@{player\_ready}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga8df08272219148fca0f5615923e84675} 
+Packet\+Player\+Ready  \{ ... \} \+::player\+\_\+ready}
+
+\Hypertarget{group__network__packet__strutture_gacb05063e5d95dfe6ca677bc01d137d91}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_ready@{player\_ready}}
+\index{player\_ready@{player\_ready}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_ready}{player\_ready}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gacb05063e5d95dfe6ca677bc01d137d91} 
+\mbox{\hyperlink{struct_packet_player_ready}{Packet\+Player\+Ready}} Net\+Packet\+::player\+\_\+ready}
+
+\Hypertarget{group__network__packet__strutture_ga6085b0d4fafdb89b59b149d6968b4b69}\index{Strutture Pacchetti@{Strutture Pacchetti}!player\_ready@{player\_ready}}
+\index{player\_ready@{player\_ready}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{player\_ready}{player\_ready}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga6085b0d4fafdb89b59b149d6968b4b69} 
+int Packet\+Session\+State\+::player\+\_\+ready\mbox{[}4\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gad5ea8e8bdf83a475ded43b43b7613670}\index{Strutture Pacchetti@{Strutture Pacchetti}!posizione\_ultima@{posizione\_ultima}}
+\index{posizione\_ultima@{posizione\_ultima}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{posizione\_ultima}{posizione\_ultima}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gad5ea8e8bdf83a475ded43b43b7613670} 
+int Stats\+Sync\+Packet\+::posizione\+\_\+ultima}
+
+\Hypertarget{group__network__packet__strutture_ga5f514b76caf042b0eeb9755d7c8ebe03}\index{Strutture Pacchetti@{Strutture Pacchetti}!raw@{raw}}
+\index{raw@{raw}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga5f514b76caf042b0eeb9755d7c8ebe03} 
+char  \{ ... \} \+::raw\mbox{[}512\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga27a03e277b8bf17777c34d7d7c39a8ac}\index{Strutture Pacchetti@{Strutture Pacchetti}!raw@{raw}}
+\index{raw@{raw}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{raw}{raw}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga27a03e277b8bf17777c34d7d7c39a8ac} 
+char Net\+Packet\+::raw\mbox{[}512\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gac04d7d998bff797c954bba3776ba0c55}\index{Strutture Pacchetti@{Strutture Pacchetti}!reject\_message@{reject\_message}}
+\index{reject\_message@{reject\_message}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{reject\_message}{reject\_message}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gac04d7d998bff797c954bba3776ba0c55} 
+char reject\+\_\+message\mbox{[}100\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga171e8b116595940c618270d21fe9787b}\index{Strutture Pacchetti@{Strutture Pacchetti}!sender\_id@{sender\_id}}
+\index{sender\_id@{sender\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{sender\_id}{sender\_id}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga171e8b116595940c618270d21fe9787b} 
+int Net\+Packet\+::sender\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_ga528efbe1f2a92c5853dccc8ed2c67e93}\index{Strutture Pacchetti@{Strutture Pacchetti}!session\_count@{session\_count}}
+\index{session\_count@{session\_count}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{session\_count}{session\_count}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga528efbe1f2a92c5853dccc8ed2c67e93} 
+int Packet\+Session\+List\+::session\+\_\+count}
+
+\Hypertarget{group__network__packet__strutture_ga0b43b7c02501c9cd6bfefeae2f0d5ad6}\index{Strutture Pacchetti@{Strutture Pacchetti}!session\_id@{session\_id}}
+\index{session\_id@{session\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{session\_id}{session\_id}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga0b43b7c02501c9cd6bfefeae2f0d5ad6} 
+char Packet\+Create\+Session\+::session\+\_\+id\mbox{[}16\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga98298829b528d7a7a0e6bafb5d39c46e}\index{Strutture Pacchetti@{Strutture Pacchetti}!session\_id@{session\_id}}
+\index{session\_id@{session\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{session\_id}{session\_id}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga98298829b528d7a7a0e6bafb5d39c46e} 
+char Packet\+Join\+Session\+::session\+\_\+id\mbox{[}16\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga8874b2989efd13fdfbe481350cc963db}\index{Strutture Pacchetti@{Strutture Pacchetti}!session\_id@{session\_id}}
+\index{session\_id@{session\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{session\_id}{session\_id}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga8874b2989efd13fdfbe481350cc963db} 
+char Packet\+Session\+State\+::session\+\_\+id\mbox{[}16\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga3ceeb52643564997e64ac776a8f0fc9a}\index{Strutture Pacchetti@{Strutture Pacchetti}!session\_id@{session\_id}}
+\index{session\_id@{session\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{session\_id}{session\_id}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga3ceeb52643564997e64ac776a8f0fc9a} 
+char session\+\_\+id\mbox{[}16\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{group__network__packet__strutture_ga64f59a011eada605cdf9be9bfd6b12f6}\index{Strutture Pacchetti@{Strutture Pacchetti}!session\_list@{session\_list}}
+\index{session\_list@{session\_list}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga64f59a011eada605cdf9be9bfd6b12f6} 
+Packet\+Session\+List  \{ ... \} \+::session\+\_\+list}
+
+\Hypertarget{group__network__packet__strutture_gaf2b36da7b084e54a381de21e667ecf01}\index{Strutture Pacchetti@{Strutture Pacchetti}!session\_list@{session\_list}}
+\index{session\_list@{session\_list}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{session\_list}{session\_list}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaf2b36da7b084e54a381de21e667ecf01} 
+\mbox{\hyperlink{struct_packet_session_list}{Packet\+Session\+List}} Net\+Packet\+::session\+\_\+list}
+
+\Hypertarget{group__network__packet__strutture_ga6f23b5915de11f5d58e4ebcbe9c92772}\index{Strutture Pacchetti@{Strutture Pacchetti}!session\_state@{session\_state}}
+\index{session\_state@{session\_state}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga6f23b5915de11f5d58e4ebcbe9c92772} 
+Packet\+Session\+State  \{ ... \} \+::session\+\_\+state}
+
+\Hypertarget{group__network__packet__strutture_ga4640495cc1b36655b7a0a8850d422384}\index{Strutture Pacchetti@{Strutture Pacchetti}!session\_state@{session\_state}}
+\index{session\_state@{session\_state}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{session\_state}{session\_state}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga4640495cc1b36655b7a0a8850d422384} 
+\mbox{\hyperlink{struct_packet_session_state}{Packet\+Session\+State}} Net\+Packet\+::session\+\_\+state}
+
+\Hypertarget{group__network__packet__strutture_gaf70a7913010e764d81f58e2ca1b96ff1}\index{Strutture Pacchetti@{Strutture Pacchetti}!sessions@{sessions}}
+\index{sessions@{sessions}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{sessions}{sessions}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaf70a7913010e764d81f58e2ca1b96ff1} 
+char Packet\+Session\+List\+::sessions\mbox{[}10\mbox{]}\mbox{[}16\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga20f3500f9a6688a3d4c16b56f76ac007}\index{Strutture Pacchetti@{Strutture Pacchetti}!stato\_gioco@{stato\_gioco}}
+\index{stato\_gioco@{stato\_gioco}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{stato\_gioco}{stato\_gioco}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga20f3500f9a6688a3d4c16b56f76ac007} 
+\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} Packet\+Game\+State\+::stato\+\_\+gioco}
+
+\Hypertarget{group__network__packet__strutture_ga20b8068a242a74f11ed928e9afd6423b}\index{Strutture Pacchetti@{Strutture Pacchetti}!stats\_sync@{stats\_sync}}
+\index{stats\_sync@{stats\_sync}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{[]}{[]}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga20b8068a242a74f11ed928e9afd6423b} 
+Stats\+Sync\+Packet  \{ ... \} \+::stats\+\_\+sync}
+
+\Hypertarget{group__network__packet__strutture_ga85e03ec5f7b0d5f8c9304564241a29ee}\index{Strutture Pacchetti@{Strutture Pacchetti}!stats\_sync@{stats\_sync}}
+\index{stats\_sync@{stats\_sync}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{stats\_sync}{stats\_sync}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga85e03ec5f7b0d5f8c9304564241a29ee} 
+\mbox{\hyperlink{struct_stats_sync_packet}{Stats\+Sync\+Packet}} Net\+Packet\+::stats\+\_\+sync}
+
+\Hypertarget{group__network__packet__strutture_ga0072a9f95163dfc459a5f0343416eec4}\index{Strutture Pacchetti@{Strutture Pacchetti}!storico\_count@{storico\_count}}
+\index{storico\_count@{storico\_count}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{storico\_count}{storico\_count}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga0072a9f95163dfc459a5f0343416eec4} 
+int Stats\+Sync\+Packet\+::storico\+\_\+count}
+
+\Hypertarget{group__network__packet__strutture_ga0534e53e5caf2dd07dcf142cd6faa332}\index{Strutture Pacchetti@{Strutture Pacchetti}!storico\_partite@{storico\_partite}}
+\index{storico\_partite@{storico\_partite}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{storico\_partite}{storico\_partite}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga0534e53e5caf2dd07dcf142cd6faa332} 
+\mbox{\hyperlink{struct_partita_registrata}{Partita\+Registrata}} Stats\+Sync\+Packet\+::storico\+\_\+partite\mbox{[}\mbox{\hyperlink{lan__protocol_8h_a9805d8d568aa10ad776d8b121a8367e4}{STORICO\+\_\+\+SYNC\+\_\+\+COUNT}}\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gaba3e8369946d0bcbe4912985202712dd}\index{Strutture Pacchetti@{Strutture Pacchetti}!target\_id@{target\_id}}
+\index{target\_id@{target\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{target\_id}{target\_id}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaba3e8369946d0bcbe4912985202712dd} 
+int Admin\+User\+Action\+::target\+\_\+id}
+
+\Hypertarget{group__network__packet__strutture_ga3a36376352934fafde900b15b51bf29d}\index{Strutture Pacchetti@{Strutture Pacchetti}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{timestamp}{timestamp}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga3a36376352934fafde900b15b51bf29d} 
+float Packet\+Heartbeat\+::timestamp}
+
+\Hypertarget{group__network__packet__strutture_ga9f34dff657b264545e7f38767a4e2f9b}\index{Strutture Pacchetti@{Strutture Pacchetti}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{timestamp}{timestamp}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga9f34dff657b264545e7f38767a4e2f9b} 
+float Packet\+Play\+Again\+::timestamp}
+
+\Hypertarget{group__network__packet__strutture_gac6a474ddf16d9f20937f0edf4b45ba06}\index{Strutture Pacchetti@{Strutture Pacchetti}!total\_users@{total\_users}}
+\index{total\_users@{total\_users}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{total\_users}{total\_users}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gac6a474ddf16d9f20937f0edf4b45ba06} 
+int Admin\+DBSync\+Packet\+::total\+\_\+users}
+
+\Hypertarget{group__network__packet__strutture_ga3bf9ba4b94cb8068a261bd07e01b0fc0}\index{Strutture Pacchetti@{Strutture Pacchetti}!type@{type}}
+\index{type@{type}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga3bf9ba4b94cb8068a261bd07e01b0fc0} 
+\mbox{\hyperlink{group__network__packet_ga0a80a7bc045affcf10846075b88cbca0}{Packet\+Type}} Net\+Packet\+::type}
+
+\Hypertarget{group__network__packet__strutture_gaa990cfef6a092ea75e646d4666758175}\index{Strutture Pacchetti@{Strutture Pacchetti}!user@{user}}
+\index{user@{user}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{user}{user}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaa990cfef6a092ea75e646d4666758175} 
+\mbox{\hyperlink{struct_admin_user_sync_data}{Admin\+User\+Sync\+Data}} Admin\+DBSync\+Packet\+::user}
+
+\Hypertarget{group__network__packet__strutture_gaa6cfd2ff64ab1d9d1a36d96e5438a4c7}\index{Strutture Pacchetti@{Strutture Pacchetti}!user@{user}}
+\index{user@{user}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{user}{user}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gaa6cfd2ff64ab1d9d1a36d96e5438a4c7} 
+\mbox{\hyperlink{struct_admin_user_sync_data}{Admin\+User\+Sync\+Data}} Admin\+User\+Action\+::user}
+
+\Hypertarget{group__network__packet__strutture_ga3f8f3d3fd45f75d501e186908fc26ad1}\index{Strutture Pacchetti@{Strutture Pacchetti}!user\_index@{user\_index}}
+\index{user\_index@{user\_index}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{user\_index}{user\_index}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga3f8f3d3fd45f75d501e186908fc26ad1} 
+int Admin\+DBSync\+Packet\+::user\+\_\+index}
+
+\Hypertarget{group__network__packet__strutture_gadfa347ab441903e6a5d51933d5ef0069}\index{Strutture Pacchetti@{Strutture Pacchetti}!username@{username}}
+\index{username@{username}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{username}{username}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gadfa347ab441903e6a5d51933d5ef0069} 
+char Admin\+User\+Sync\+Data\+::username\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_gadabe23799491f084a28d537187fedbdf}\index{Strutture Pacchetti@{Strutture Pacchetti}!username@{username}}
+\index{username@{username}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{username}{username}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gadabe23799491f084a28d537187fedbdf} 
+char Stats\+Sync\+Packet\+::username\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga4eee1d90a8f2a55a4966d22f532c7b5e}\index{Strutture Pacchetti@{Strutture Pacchetti}!vittorie\_bot@{vittorie\_bot}}
+\index{vittorie\_bot@{vittorie\_bot}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{vittorie\_bot}{vittorie\_bot}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga4eee1d90a8f2a55a4966d22f532c7b5e} 
+int Admin\+User\+Sync\+Data\+::vittorie\+\_\+bot}
+
+\Hypertarget{group__network__packet__strutture_ga60b4c234ff6dd8561d9f264fb37b68cf}\index{Strutture Pacchetti@{Strutture Pacchetti}!vittorie\_bot@{vittorie\_bot}}
+\index{vittorie\_bot@{vittorie\_bot}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{vittorie\_bot}{vittorie\_bot}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga60b4c234ff6dd8561d9f264fb37b68cf} 
+int Stats\+Sync\+Packet\+::vittorie\+\_\+bot}
+
+\Hypertarget{group__network__packet__strutture_ga4541673e51582113e53ab1d31d626c35}\index{Strutture Pacchetti@{Strutture Pacchetti}!vittorie\_giocatore@{vittorie\_giocatore}}
+\index{vittorie\_giocatore@{vittorie\_giocatore}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{vittorie\_giocatore}{vittorie\_giocatore}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga4541673e51582113e53ab1d31d626c35} 
+int Admin\+User\+Sync\+Data\+::vittorie\+\_\+giocatore}
+
+\Hypertarget{group__network__packet__strutture_gad656264fcdf2079c7252dfc7a497dce4}\index{Strutture Pacchetti@{Strutture Pacchetti}!vittorie\_giocatore@{vittorie\_giocatore}}
+\index{vittorie\_giocatore@{vittorie\_giocatore}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{vittorie\_giocatore}{vittorie\_giocatore}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_gad656264fcdf2079c7252dfc7a497dce4} 
+int Stats\+Sync\+Packet\+::vittorie\+\_\+giocatore}
+
+\Hypertarget{group__network__packet__strutture_ga8da9cba434f640515d782706341ebc04}\index{Strutture Pacchetti@{Strutture Pacchetti}!want\_play\_again@{want\_play\_again}}
+\index{want\_play\_again@{want\_play\_again}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{want\_play\_again}{want\_play\_again}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga8da9cba434f640515d782706341ebc04} 
+int Packet\+Player\+Ready\+::want\+\_\+play\+\_\+again}
+
+\Hypertarget{group__network__packet__strutture_ga1ff4264371887f1373f376828d6a7c3f}\index{Strutture Pacchetti@{Strutture Pacchetti}!winner\_name@{winner\_name}}
+\index{winner\_name@{winner\_name}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{winner\_name}{winner\_name}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga1ff4264371887f1373f376828d6a7c3f} 
+char Packet\+Game\+Finished\+::winner\+\_\+name\mbox{[}30\mbox{]}}
+
+\Hypertarget{group__network__packet__strutture_ga2802060d7734564283278ffb5148e4a0}\index{Strutture Pacchetti@{Strutture Pacchetti}!winning\_player\_id@{winning\_player\_id}}
+\index{winning\_player\_id@{winning\_player\_id}!Strutture Pacchetti@{Strutture Pacchetti}}
+\doxysubsubsection{\texorpdfstring{winning\_player\_id}{winning\_player\_id}}
+{\footnotesize\ttfamily \label{group__network__packet__strutture_ga2802060d7734564283278ffb5148e4a0} 
+int Packet\+Game\+Finished\+::winning\+\_\+player\+\_\+id}
+

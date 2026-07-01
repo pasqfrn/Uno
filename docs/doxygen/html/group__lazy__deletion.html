@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Eliminazione Diffusa (Lazy Deletion)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__lazy__deletion.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Eliminazione Diffusa (Lazy Deletion) </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>API per la rimozione differita degli utenti.  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:ga0c703432e3edf6feb94fed2223922714" id="r_ga0c703432e3edf6feb94fed2223922714"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ga0c703432e3edf6feb94fed2223922714">MAX_PENDING_DELETIONS</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memdesc:ga0c703432e3edf6feb94fed2223922714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero massimo di eliminazioni pendenti.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:gaa103fe9f0b4ddf468b2d7ee6f6b28bba" id="r_gaa103fe9f0b4ddf468b2d7ee6f6b28bba"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaa103fe9f0b4ddf468b2d7ee6f6b28bba">Auth_MarkForDeletion</a> (const char *email)</td></tr>
+<tr class="memdesc:gaa103fe9f0b4ddf468b2d7ee6f6b28bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marca un utente per eliminazione differita.  <br /></td></tr>
+<tr class="memitem:gae8af680dcc7f7dcc3b73cff9ce19d89c" id="r_gae8af680dcc7f7dcc3b73cff9ce19d89c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gae8af680dcc7f7dcc3b73cff9ce19d89c">Auth_IsMarkedForDeletion</a> (const char *email)</td></tr>
+<tr class="memdesc:gae8af680dcc7f7dcc3b73cff9ce19d89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un utente e' marcato per eliminazione.  <br /></td></tr>
+<tr class="memitem:ga76017eead600b6ea252edb0e00c8758b" id="r_ga76017eead600b6ea252edb0e00c8758b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga76017eead600b6ea252edb0e00c8758b">Auth_ProcessPendingDeletions</a> (const char *email)</td></tr>
+<tr class="memdesc:ga76017eead600b6ea252edb0e00c8758b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processa le eliminazioni pendenti per un utente.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>API per la rimozione differita degli utenti. </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
+<a id="ga0c703432e3edf6feb94fed2223922714" name="ga0c703432e3edf6feb94fed2223922714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0c703432e3edf6feb94fed2223922714">&#9670;&#160;</a></span>MAX_PENDING_DELETIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_PENDING_DELETIONS&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Numero massimo di eliminazioni pendenti. </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="gae8af680dcc7f7dcc3b73cff9ce19d89c" name="gae8af680dcc7f7dcc3b73cff9ce19d89c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8af680dcc7f7dcc3b73cff9ce19d89c">&#9670;&#160;</a></span>Auth_IsMarkedForDeletion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_IsMarkedForDeletion </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se un utente e' marcato per eliminazione. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email dell'utente. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se marcato, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="gaa103fe9f0b4ddf468b2d7ee6f6b28bba" name="gaa103fe9f0b4ddf468b2d7ee6f6b28bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa103fe9f0b4ddf468b2d7ee6f6b28bba">&#9670;&#160;</a></span>Auth_MarkForDeletion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Auth_MarkForDeletion </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marca un utente per eliminazione differita. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email dell'utente. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se marcato, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="ga76017eead600b6ea252edb0e00c8758b" name="ga76017eead600b6ea252edb0e00c8758b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76017eead600b6ea252edb0e00c8758b">&#9670;&#160;</a></span>Auth_ProcessPendingDeletions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Auth_ProcessPendingDeletions </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processa le eliminazioni pendenti per un utente. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email dell'utente. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

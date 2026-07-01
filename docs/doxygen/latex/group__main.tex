@@ -1,0 +1,23 @@
+\doxysection{Entry Point}
+\hypertarget{group__main}{}\label{group__main}\index{Entry Point@{Entry Point}}
+
+
+Inizializza tutti i moduli, gestisce il loop principale e coordina la sincronizzazione LAN e il multiplayer.  
+
+
+Inizializza tutti i moduli, gestisce il loop principale e coordina la sincronizzazione LAN e il multiplayer. 
+
+Moduli coordinati\+:
+\begin{DoxyItemize}
+\item Raylib (window, textures, input)
+\item Database utenti (caricamento/salvataggio)
+\item Rete multiplayer (TCP per partite, UDP per discovery)
+\item Sincronizzazione LAN (UDP broadcast per DB utenti)
+\end{DoxyItemize}
+
+NOTA\+: La sincronizzazione LAN (LAN\+\_\+\+Init/\+LAN\+\_\+\+Update/\+LAN\+\_\+\+Close) permette a tutti i dispositivi sulla stessa rete di condividere automaticamente il database utenti, in modo che\+:
+\begin{DoxyItemize}
+\item L\textquotesingle{}admin panel su OGNI dispositivo veda TUTTI gli utenti
+\item Non si possano creare username gia\textquotesingle{} esistenti su LAN
+\item Ogni dispositivo notifichi subito i nuovi utenti agli altri 
+\end{DoxyItemize}

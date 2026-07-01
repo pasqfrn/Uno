@@ -1,0 +1,38 @@
+\doxysection{lib/data\+\_\+structures/list.h File Reference}
+\hypertarget{data__structures_2list_8h}{}\label{data__structures_2list_8h}\index{lib/data\_structures/list.h@{lib/data\_structures/list.h}}
+
+
+Interfaccia ADT Lista\+Doppia (lista doppiamente concatenata).  
+
+
+{\ttfamily \#include "{}../data\+\_\+structures.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_nodo_carta}{Nodo\+Carta}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__list_ga088820569fa2805555cdf3fbe0b2283c}{Lista\+\_\+\+Inserisci\+Dopo}} (\mbox{\hyperlink{struct_lista_carte}{Lista\+Carte}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{struct_nodo_carta}{Nodo\+Carta}} \texorpdfstring{$\ast$}{*}nodo, \mbox{\hyperlink{struct_carta}{Carta}} c)
+\begin{DoxyCompactList}\small\item\em Inserisce una carta dopo un nodo specifico (o in testa se nodo==NULL). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nodo_carta}{Nodo\+Carta}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__list_ga9de40d1e818238d37c0f07b3bee18734}{Lista\+\_\+\+Precedente}} (\mbox{\hyperlink{struct_lista_carte}{Lista\+Carte}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{struct_nodo_carta}{Nodo\+Carta}} \texorpdfstring{$\ast$}{*}nodo)
+\begin{DoxyCompactList}\small\item\em Restituisce il nodo precedente a quello dato. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_nodo_carta}{Nodo\+Carta}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__list_gae3b26d3b03d49fcd37187be9b4cfded5}{Lista\+\_\+\+Ultimo}} (\mbox{\hyperlink{struct_lista_carte}{Lista\+Carte}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Restituisce l\textquotesingle{}ultimo nodo della lista (coda). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__list_gacc099b32c3eec87dd70207099d538236}{Lista\+\_\+\+Rimuovi\+Nodo\+Bidirezionale}} (\mbox{\hyperlink{struct_lista_carte}{Lista\+Carte}} \texorpdfstring{$\ast$}{*}lista, \mbox{\hyperlink{struct_nodo_carta}{Nodo\+Carta}} \texorpdfstring{$\ast$}{*}nodo)
+\begin{DoxyCompactList}\small\item\em Rimuove un nodo dalla lista gestendo correttamente prev/next. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__list_ga9dc1fa933bb0dd65a60aa13f5a6d63d7}{Lista\+\_\+\+Verifica\+Bidirezionale}} (\mbox{\hyperlink{struct_lista_carte}{Lista\+Carte}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Verifica l\textquotesingle{}integrita\textquotesingle{} dei puntatori prev/next (debug). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interfaccia ADT Lista\+Doppia (lista doppiamente concatenata). 
+
+Modulo specializzato per le liste bidirezionali utilizzato per la gestione della mano dei giocatori.
+
+\doxylink{struct_nodo_carta}{Nodo\+Carta} e\textquotesingle{} dotato dei campi prossimo/next e prev per supportare la navigazione bidirezionale.
+
+Funzioni specifiche rispetto a list.\+h generale\+:
+\begin{DoxyItemize}
+\item Lista\+\_\+\+Inserisci\+Dopo\+: inserimento dopo nodo specifico
+\item Lista\+\_\+\+Precedente\+: accesso O(1) al nodo precedente
+\item Lista\+\_\+\+Ultimo\+: accesso O(1) all\textquotesingle{}ultimo nodo
+\item Lista\+\_\+\+Rimuovi\+Nodo\+Bidirezionale\+: rimozione sicura con aggiornamento prev/next
+\item Lista\+\_\+\+Verifica\+Bidirezionale\+: verifica integrita\textquotesingle{} puntatori (debug) 
+\end{DoxyItemize}

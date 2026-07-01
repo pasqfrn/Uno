@@ -1,0 +1,56 @@
+\doxysection{lib/socket/network/state\+\_\+sync.h File Reference}
+\hypertarget{state__sync_8h}{}\label{state__sync_8h}\index{lib/socket/network/state\_sync.h@{lib/socket/network/state\_sync.h}}
+
+
+Sincronizzazione stato di gioco da pacchetti di rete.  
+
+
+{\ttfamily \#include "{}network.\+h"{}}\newline
+{\ttfamily \#include "{}../../game\+\_\+logic.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{state__sync_8h_a45154749b04291f242d09ad3d57341aa}{Sync\+Game\+State\+From\+Network}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}local, const \mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}remote)
+\begin{DoxyCompactList}\small\item\em Sincronizza lo stato di gioco locale con quello remoto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sincronizzazione stato di gioco da pacchetti di rete. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{state__sync_8h_a45154749b04291f242d09ad3d57341aa}\index{state\_sync.h@{state\_sync.h}!SyncGameStateFromNetwork@{SyncGameStateFromNetwork}}
+\index{SyncGameStateFromNetwork@{SyncGameStateFromNetwork}!state\_sync.h@{state\_sync.h}}
+\doxysubsubsection{\texorpdfstring{SyncGameStateFromNetwork()}{SyncGameStateFromNetwork()}}
+{\footnotesize\ttfamily \label{state__sync_8h_a45154749b04291f242d09ad3d57341aa} 
+void Sync\+Game\+State\+From\+Network (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{local}{, }\item[{const \mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{remote}{}\end{DoxyParamCaption})}
+
+
+
+Sincronizza lo stato di gioco locale con quello remoto. 
+
+\begin{DoxyPrecond}{Precondition}
+local != NULL; remote != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Stato locale aggiornato con i dati remoti. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em local} & Stato di gioco locale (da aggiornare). \\
+\hline
+{\em remote} & Stato di gioco remoto (fonte).\\
+\hline
+\end{DoxyParams}
+Sincronizza lo stato di gioco locale con quello remoto.
+
+Sincronizza\+: stato principale, animazioni, notifiche, chat, giocatori, scarti. Per il client, calcola anche la classifica finale e salva le statistiche nel DB locale con la posizione reale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em local} & Puntatore allo stato di gioco locale da aggiornare. \\
+\hline
+{\em remote} & Puntatore allo stato di gioco ricevuto dalla rete. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,93 @@
+\doxysection{Eliminazione Diffusa (Lazy Deletion)}
+\hypertarget{group__lazy__deletion}{}\label{group__lazy__deletion}\index{Eliminazione Diffusa (Lazy Deletion)@{Eliminazione Diffusa (Lazy Deletion)}}
+
+
+API per la rimozione differita degli utenti.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__lazy__deletion_ga0c703432e3edf6feb94fed2223922714}{MAX\+\_\+\+PENDING\+\_\+\+DELETIONS}}~64
+\begin{DoxyCompactList}\small\item\em Numero massimo di eliminazioni pendenti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__lazy__deletion_gaa103fe9f0b4ddf468b2d7ee6f6b28bba}{Auth\+\_\+\+Mark\+For\+Deletion}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Marca un utente per eliminazione differita. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion_gae8af680dcc7f7dcc3b73cff9ce19d89c}{Auth\+\_\+\+Is\+Marked\+For\+Deletion}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Verifica se un utente e\textquotesingle{} marcato per eliminazione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion_ga76017eead600b6ea252edb0e00c8758b}{Auth\+\_\+\+Process\+Pending\+Deletions}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Processa le eliminazioni pendenti per un utente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+API per la rimozione differita degli utenti. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__lazy__deletion_ga0c703432e3edf6feb94fed2223922714}\index{Eliminazione Diffusa (Lazy Deletion)@{Eliminazione Diffusa (Lazy Deletion)}!MAX\_PENDING\_DELETIONS@{MAX\_PENDING\_DELETIONS}}
+\index{MAX\_PENDING\_DELETIONS@{MAX\_PENDING\_DELETIONS}!Eliminazione Diffusa (Lazy Deletion)@{Eliminazione Diffusa (Lazy Deletion)}}
+\doxysubsubsection{\texorpdfstring{MAX\_PENDING\_DELETIONS}{MAX\_PENDING\_DELETIONS}}
+{\footnotesize\ttfamily \label{group__lazy__deletion_ga0c703432e3edf6feb94fed2223922714} 
+\#define MAX\+\_\+\+PENDING\+\_\+\+DELETIONS~64}
+
+
+
+Numero massimo di eliminazioni pendenti. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__lazy__deletion_gae8af680dcc7f7dcc3b73cff9ce19d89c}\index{Eliminazione Diffusa (Lazy Deletion)@{Eliminazione Diffusa (Lazy Deletion)}!Auth\_IsMarkedForDeletion@{Auth\_IsMarkedForDeletion}}
+\index{Auth\_IsMarkedForDeletion@{Auth\_IsMarkedForDeletion}!Eliminazione Diffusa (Lazy Deletion)@{Eliminazione Diffusa (Lazy Deletion)}}
+\doxysubsubsection{\texorpdfstring{Auth\_IsMarkedForDeletion()}{Auth\_IsMarkedForDeletion()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion_gae8af680dcc7f7dcc3b73cff9ce19d89c} 
+int Auth\+\_\+\+Is\+Marked\+For\+Deletion (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se un utente e\textquotesingle{} marcato per eliminazione. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email dell\textquotesingle{}utente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se marcato, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__lazy__deletion_gaa103fe9f0b4ddf468b2d7ee6f6b28bba}\index{Eliminazione Diffusa (Lazy Deletion)@{Eliminazione Diffusa (Lazy Deletion)}!Auth\_MarkForDeletion@{Auth\_MarkForDeletion}}
+\index{Auth\_MarkForDeletion@{Auth\_MarkForDeletion}!Eliminazione Diffusa (Lazy Deletion)@{Eliminazione Diffusa (Lazy Deletion)}}
+\doxysubsubsection{\texorpdfstring{Auth\_MarkForDeletion()}{Auth\_MarkForDeletion()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion_gaa103fe9f0b4ddf468b2d7ee6f6b28bba} 
+int Auth\+\_\+\+Mark\+For\+Deletion (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Marca un utente per eliminazione differita. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email dell\textquotesingle{}utente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se marcato, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__lazy__deletion_ga76017eead600b6ea252edb0e00c8758b}\index{Eliminazione Diffusa (Lazy Deletion)@{Eliminazione Diffusa (Lazy Deletion)}!Auth\_ProcessPendingDeletions@{Auth\_ProcessPendingDeletions}}
+\index{Auth\_ProcessPendingDeletions@{Auth\_ProcessPendingDeletions}!Eliminazione Diffusa (Lazy Deletion)@{Eliminazione Diffusa (Lazy Deletion)}}
+\doxysubsubsection{\texorpdfstring{Auth\_ProcessPendingDeletions()}{Auth\_ProcessPendingDeletions()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion_ga76017eead600b6ea252edb0e00c8758b} 
+void Auth\+\_\+\+Process\+Pending\+Deletions (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Processa le eliminazioni pendenti per un utente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email dell\textquotesingle{}utente. \\
+\hline
+\end{DoxyParams}

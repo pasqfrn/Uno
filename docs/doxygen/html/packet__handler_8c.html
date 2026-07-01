@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/socket/network/packet_handler.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('packet__handler_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file packet_handler.c<div class="ingroups"><a class="el" href="group__network.html">Rete Multiplayer</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Dispatcher principale dei pacchetti di rete.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="packet__handler_8h_source.html">../../../lib/socket/network/packet_handler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="packet__handler__game_8h_source.html">../../../lib/socket/network/packet_handler_game.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="packet__handler__admin_8h_source.html">../../../lib/socket/network/packet_handler_admin.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network_8h_source.html">../../../lib/socket/network/network.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network__send_8h_source.html">../../../lib/socket/network/network_send.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="state__sync_8h_source.html">../../../lib/socket/network/state_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="server__manager_8h_source.html">../../../lib/socket/server/server_manager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ui_8h_source.html">../../../lib/ui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">../../../lib/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gameplay__screen_8h_source.html">../../../lib/screens/game/gameplay_screen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_2string__utils_8h_source.html">../../../lib/screens/menu/string_utils.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:gad3c903fa215cfb2106e60c84065a37cd" id="r_gad3c903fa215cfb2106e60c84065a37cd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#gad3c903fa215cfb2106e60c84065a37cd">HandleReceivedPacket</a> (<a class="el" href="struct_net_packet.html">NetPacket</a> *packet, <a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:gad3c903fa215cfb2106e60c84065a37cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">HandleReceivedPacket - Dispatcher principale dei pacchetti.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Dispatcher principale dei pacchetti di rete. </p>
+<p>Questo file contiene la funzione HandleReceivedPacket che delega la gestione dei pacchetti ai moduli specializzati:</p><ul>
+<li><a class="el" href="packet__handler__game_8c.html" title="Gestore pacchetti di gioco per multiplayer online.">packet_handler_game.c</a> : pacchetti di gioco</li>
+<li><a class="el" href="packet__handler__admin_8c.html" title="Gestione pacchetti admin e sessione di rete.">packet_handler_admin.c</a> : pacchetti admin/sessione</li>
+</ul>
+<p>Fattorizzato da <a class="el" href="packet__handler_8c.html" title="Dispatcher principale dei pacchetti di rete.">packet_handler.c</a> (461 righe) in:</p><ul>
+<li><a class="el" href="packet__handler__game_8h.html" title="Gestione pacchetti di gioco (mosse, pesche, chat, disconnessione).">packet_handler_game.h</a>/.c : gestione pacchetti di gioco</li>
+<li><a class="el" href="packet__handler__admin_8h.html" title="Gestione pacchetti admin e sessione multiplayer.">packet_handler_admin.h</a>/.c : gestione pacchetti admin/sessione</li>
+<li><a class="el" href="packet__handler_8c.html" title="Dispatcher principale dei pacchetti di rete.">packet_handler.c</a> : dispatcher (questo file) </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_858915971c8656b65d461b873c3b3855.html">network</a></li><li class="navelem"><a href="packet__handler_8c.html">packet_handler.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

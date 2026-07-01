@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno:  File sorgente lib/socket/lan/lan_save_helpers.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__save__helpers_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">lan_save_helpers.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="lan__save__helpers_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef LAN_SAVE_HELPERS_H</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define LAN_SAVE_HELPERS_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span> <a class="code hl_function" href="lan__save__helpers_8h.html#ab2dedfd0382e39a090544904af65e3fc">GetSlotPath</a>(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">size_t</span> bufsize, <span class="keywordtype">int</span> slot);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="lan__save__helpers_8h.html#ad45135b07dc8a3f36b5e7a99ee728e6c">GetSlotPathForUser</a>(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">size_t</span> bufsize, <span class="keywordtype">int</span> uid, <span class="keywordtype">int</span> slot);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">int</span> <a class="code hl_function" href="lan__save__helpers_8h.html#a634183521fafd79ce08e2cba8d07d2ae">GetSlotPathForUsername</a>(<span class="keywordtype">char</span>* buffer, <span class="keywordtype">size_t</span> bufsize, <span class="keyword">const</span> <span class="keywordtype">char</span>* username, <span class="keywordtype">int</span> slot);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">int</span> <a class="code hl_function" href="lan__save__helpers_8h.html#a2be1321ebd26526dd8e93c9312b068dc">TrovaRecv</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* owner, <span class="keyword">const</span> <span class="keywordtype">char</span>* data);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif </span><span class="comment">/* LAN_SAVE_HELPERS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="alan__save__helpers_8h_html_a2be1321ebd26526dd8e93c9312b068dc"><div class="ttname"><a href="lan__save__helpers_8h.html#a2be1321ebd26526dd8e93c9312b068dc">TrovaRecv</a></div><div class="ttdeci">int TrovaRecv(const char *owner, const char *data)</div><div class="ttdoc">Cerca o alloca un ricevitore per owner/data.</div><div class="ttdef"><b>Definition</b> lan_save_helpers.c:98</div></div>
+<div class="ttc" id="alan__save__helpers_8h_html_a634183521fafd79ce08e2cba8d07d2ae"><div class="ttname"><a href="lan__save__helpers_8h.html#a634183521fafd79ce08e2cba8d07d2ae">GetSlotPathForUsername</a></div><div class="ttdeci">int GetSlotPathForUsername(char *buffer, size_t bufsize, const char *username, int slot)</div><div class="ttdoc">Costruisce il path del file di salvataggio per username.</div><div class="ttdef"><b>Definition</b> lan_save_helpers.c:67</div></div>
+<div class="ttc" id="alan__save__helpers_8h_html_ab2dedfd0382e39a090544904af65e3fc"><div class="ttname"><a href="lan__save__helpers_8h.html#ab2dedfd0382e39a090544904af65e3fc">GetSlotPath</a></div><div class="ttdeci">void GetSlotPath(char *buffer, size_t bufsize, int slot)</div><div class="ttdoc">Costruisce il path del file di salvataggio nel nuovo formato &quot;save_user{ID}_slot_{N}...</div><div class="ttdef"><b>Definition</b> lan_save_helpers.c:40</div></div>
+<div class="ttc" id="alan__save__helpers_8h_html_ad45135b07dc8a3f36b5e7a99ee728e6c"><div class="ttname"><a href="lan__save__helpers_8h.html#ad45135b07dc8a3f36b5e7a99ee728e6c">GetSlotPathForUser</a></div><div class="ttdeci">void GetSlotPathForUser(char *buffer, size_t bufsize, int uid, int slot)</div><div class="ttdoc">Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente.</div><div class="ttdef"><b>Definition</b> lan_save_helpers.c:54</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e17dec1d132ad7ed461be9444000b405.html">socket</a></li><li class="navelem"><a href="dir_eafa113c866c19c3f812b2f973b25251.html">lan</a></li><li class="navelem"><a href="lan__save__helpers_8h.html">lan_save_helpers.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

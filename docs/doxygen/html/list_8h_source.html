@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno:  File sorgente lib/list.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('list_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">list.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="list_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifndef LIST_H</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define LIST_H</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">data_structures.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/* Le definizioni di NodoCarta e ListaCarte sono in data_structures.h */</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> *  FUNZIONI DI BASE PER LA LISTA</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * ============================================================ */</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* <a class="code hl_function" href="group__list.html#ga0c38f3271c6962cd2986a14f57532bcd">CreaLista</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__list.html#ga99ebb60bca506018590520094caae2a6">InsertInCoda</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista, <a class="code hl_struct" href="struct_carta.html">Carta</a> carta);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__list.html#ga74d8335a000844920df5cfb67baf56df">InsertInTesta</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista, <a class="code hl_struct" href="struct_carta.html">Carta</a> carta);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__list.html#gab485ba1cca6279265705a27e47a47285">RemoveAt</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista, <span class="keywordtype">int</span> indice);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__list.html#gad52b0b3db79ecc32ccc0840add1a68f4">RemoveNode</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista, <a class="code hl_struct" href="struct_nodo_carta.html">NodoCarta</a>* nodo);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><a class="code hl_struct" href="struct_nodo_carta.html">NodoCarta</a>* <a class="code hl_function" href="group__list.html#ga866f9235d9bfa09e3b1482f827bae3e0">GetAt</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista, <span class="keywordtype">int</span> indice);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__list.html#ga77562ee3084da27182cc68c8a54a4725">EliminaLista</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__list.html#gad8af731ad3dbcb8a0b952c49158d7433">StampaLista</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif </span><span class="comment">/* LIST_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
+<div class="ttc" id="agroup__list_html_ga0c38f3271c6962cd2986a14f57532bcd"><div class="ttname"><a href="group__list.html#ga0c38f3271c6962cd2986a14f57532bcd">CreaLista</a></div><div class="ttdeci">ListaCarte * CreaLista(void)</div><div class="ttdoc">Crea una nuova lista di carte vuota.</div><div class="ttdef"><b>Definition</b> list.c:33</div></div>
+<div class="ttc" id="agroup__list_html_ga74d8335a000844920df5cfb67baf56df"><div class="ttname"><a href="group__list.html#ga74d8335a000844920df5cfb67baf56df">InsertInTesta</a></div><div class="ttdeci">void InsertInTesta(ListaCarte *lista, Carta carta)</div><div class="ttdoc">Inserisce una carta in testa alla lista.</div><div class="ttdef"><b>Definition</b> list.c:78</div></div>
+<div class="ttc" id="agroup__list_html_ga77562ee3084da27182cc68c8a54a4725"><div class="ttname"><a href="group__list.html#ga77562ee3084da27182cc68c8a54a4725">EliminaLista</a></div><div class="ttdeci">void EliminaLista(ListaCarte *lista)</div><div class="ttdoc">Elimina tutta la lista e libera la memoria.</div><div class="ttdef"><b>Definition</b> list.c:209</div></div>
+<div class="ttc" id="agroup__list_html_ga866f9235d9bfa09e3b1482f827bae3e0"><div class="ttname"><a href="group__list.html#ga866f9235d9bfa09e3b1482f827bae3e0">GetAt</a></div><div class="ttdeci">NodoCarta * GetAt(ListaCarte *lista, int indice)</div><div class="ttdoc">Restituisce il puntatore al nodo all&#39;indice specificato.</div><div class="ttdef"><b>Definition</b> list.c:105</div></div>
+<div class="ttc" id="agroup__list_html_ga99ebb60bca506018590520094caae2a6"><div class="ttname"><a href="group__list.html#ga99ebb60bca506018590520094caae2a6">InsertInCoda</a></div><div class="ttdeci">void InsertInCoda(ListaCarte *lista, Carta carta)</div><div class="ttdoc">Inserisce una carta in coda alla lista.</div><div class="ttdef"><b>Definition</b> list.c:51</div></div>
+<div class="ttc" id="agroup__list_html_gab485ba1cca6279265705a27e47a47285"><div class="ttname"><a href="group__list.html#gab485ba1cca6279265705a27e47a47285">RemoveAt</a></div><div class="ttdeci">void RemoveAt(ListaCarte *lista, int indice)</div><div class="ttdoc">Rimuove una carta dalla lista per indice.</div><div class="ttdef"><b>Definition</b> list.c:126</div></div>
+<div class="ttc" id="agroup__list_html_gad52b0b3db79ecc32ccc0840add1a68f4"><div class="ttname"><a href="group__list.html#gad52b0b3db79ecc32ccc0840add1a68f4">RemoveNode</a></div><div class="ttdeci">void RemoveNode(ListaCarte *lista, NodoCarta *nodo)</div><div class="ttdoc">Rimuove un nodo specifico dalla lista.</div><div class="ttdef"><b>Definition</b> list.c:170</div></div>
+<div class="ttc" id="agroup__list_html_gad8af731ad3dbcb8a0b952c49158d7433"><div class="ttname"><a href="group__list.html#gad8af731ad3dbcb8a0b952c49158d7433">StampaLista</a></div><div class="ttdeci">void StampaLista(ListaCarte *lista)</div><div class="ttdoc">Stampa il contenuto della lista su stdout (debug).</div><div class="ttdef"><b>Definition</b> list.c:229</div></div>
+<div class="ttc" id="astruct_carta_html"><div class="ttname"><a href="struct_carta.html">Carta</a></div><div class="ttdoc">Rappresenta una singola carta UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:66</div></div>
+<div class="ttc" id="astruct_lista_carte_html"><div class="ttname"><a href="struct_lista_carte.html">ListaCarte</a></div><div class="ttdoc">Struttura container per la lista di carte (mano del giocatore).</div><div class="ttdef"><b>Definition</b> data_structures.h:102</div></div>
+<div class="ttc" id="astruct_nodo_carta_html"><div class="ttname"><a href="struct_nodo_carta.html">NodoCarta</a></div><div class="ttdoc">Nodo per la lista doppiamente concatenata della mano del giocatore.</div><div class="ttdef"><b>Definition</b> data_structures.h:87</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="list_8h.html">list.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

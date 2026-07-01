@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file lib/data_structures.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('data__structures_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file data_structures.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Header principale del progetto UNO - Definizione di tutti i tipi di dato.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+</div>
+<p><a href="data__structures_8h_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Strutture dati</h2></td></tr>
+<tr class="memitem:Carta" id="r_Carta"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_carta.html">Carta</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rappresenta una singola carta UNO.  <a href="struct_carta.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:NodoCarta" id="r_NodoCarta"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_nodo_carta.html">NodoCarta</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nodo per la lista doppiamente concatenata della mano del giocatore.  <a href="struct_nodo_carta.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:ListaCarte" id="r_ListaCarte"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_lista_carte.html">ListaCarte</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struttura container per la lista di carte (mano del giocatore).  <a href="struct_lista_carte.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:Utente" id="r_Utente"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_utente.html">Utente</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rappresenta un utente registrato nel sistema.  <a href="struct_utente.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:Giocatore" id="r_Giocatore"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_giocatore.html">Giocatore</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rappresenta un giocatore nella partita (umano o bot).  <a href="struct_giocatore.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:StatoGioco" id="r_StatoGioco"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_stato_gioco.html">StatoGioco</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stato completo di una partita in corso.  <a href="struct_stato_gioco.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:PartitaRegistrata" id="r_PartitaRegistrata"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_partita_registrata.html">PartitaRegistrata</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record di una singola partita nello storico di un utente.  <a href="struct_partita_registrata.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:Statistiche" id="r_Statistiche"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_statistiche.html">Statistiche</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_statistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> complete di un utente registrato.  <a href="struct_statistiche.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:DatabaseUtenti" id="r_DatabaseUtenti"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_database_utenti.html">DatabaseUtenti</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Database degli utenti in memoria (allocazione DINAMICA).  <a href="struct_database_utenti.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:MessaggioChat" id="r_MessaggioChat"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_messaggio_chat.html">MessaggioChat</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Singolo messaggio nella chat multiplayer.  <a href="struct_messaggio_chat.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:ClassificaRecord" id="r_ClassificaRecord"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_classifica_record.html">ClassificaRecord</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record per la classifica visualizzata a fine partita.  <a href="struct_classifica_record.html#details">Continua...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:a79bdb013fafcecab59a3a66c537144ed" id="r_a79bdb013fafcecab59a3a66c537144ed"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a79bdb013fafcecab59a3a66c537144ed">DB_CAPACITA_INIZIALE</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memdesc:a79bdb013fafcecab59a3a66c537144ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capacita' iniziale del database utenti (allocazione dinamica).  <br /></td></tr>
+<tr class="memitem:a5026ff5f759c4fa9a23782d0303b2ef8" id="r_a5026ff5f759c4fa9a23782d0303b2ef8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a5026ff5f759c4fa9a23782d0303b2ef8">MAX_PARTITE_STORICO</a>&#160;&#160;&#160;100</td></tr>
+<tr class="memdesc:a5026ff5f759c4fa9a23782d0303b2ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero massimo di partite nello storico di ogni utente.  <br /></td></tr>
+<tr class="memitem:ad122d7c5cf74ad68b85d6f22321a1f14" id="r_ad122d7c5cf74ad68b85d6f22321a1f14"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad122d7c5cf74ad68b85d6f22321a1f14">GIOCATORE_NOME_BUF</a>&#160;&#160;&#160;60</td></tr>
+<tr class="memdesc:ad122d7c5cf74ad68b85d6f22321a1f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensione del buffer per Giocatore_NomeBot.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Ridefinizioni di tipo (typedef)</h2></td></tr>
+<tr class="memitem:aa6cf4d93059ee70ef92df8b1d1a666c8" id="r_aa6cf4d93059ee70ef92df8b1d1a666c8"><td class="memItemLeft">typedef struct NodoCarta&#160;</td><td class="memItemRight"><a class="el" href="#aa6cf4d93059ee70ef92df8b1d1a666c8">NodoCarta</a></td></tr>
+<tr class="memdesc:aa6cf4d93059ee70ef92df8b1d1a666c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nodo per la lista doppiamente concatenata della mano del giocatore.  <br /></td></tr>
+<tr class="memitem:a4c21bead0a069a63c668c59b159c829c" id="r_a4c21bead0a069a63c668c59b159c829c"><td class="memItemLeft">typedef <a class="el" href="struct_nodo_carta.html">NodoCarta</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4c21bead0a069a63c668c59b159c829c">NodoMano</a></td></tr>
+<tr class="memdesc:a4c21bead0a069a63c668c59b159c829c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias per <a class="el" href="struct_nodo_carta.html" title="Nodo per la lista doppiamente concatenata della mano del giocatore.">NodoCarta</a> (usato nella documentazione CdS come <a class="el" href="#a4c21bead0a069a63c668c59b159c829c" title="Alias per NodoCarta (usato nella documentazione CdS come NodoMano).">NodoMano</a>).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Tipi enumerati (enum)</h2></td></tr>
+<tr class="memitem:a030035d63f7ea5baefdfe9a53844d27c" id="r_a030035d63f7ea5baefdfe9a53844d27c"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> { <br />
+&#160;&#160;<a class="el" href="#a030035d63f7ea5baefdfe9a53844d27caf31d451540fbe9019951dc44d57cada9">ROSSO</a>
+, <a class="el" href="#a030035d63f7ea5baefdfe9a53844d27cab43fc5129914206a77c76e0cffd20df2">GIALLO</a>
+, <a class="el" href="#a030035d63f7ea5baefdfe9a53844d27caf9efd9e6bd17c0580d8a0432ba1b04a2">VERDE</a>
+, <a class="el" href="#a030035d63f7ea5baefdfe9a53844d27ca26d3f814fefb4d00336affb21a2f55b9">BLU</a>
+, <br />
+&#160;&#160;<a class="el" href="#a030035d63f7ea5baefdfe9a53844d27ca40019d0f9c04951a840bde24c579e876">NERO</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a030035d63f7ea5baefdfe9a53844d27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colori disponibili per le carte UNO.  <a href="#a030035d63f7ea5baefdfe9a53844d27c">Continua...</a><br /></td></tr>
+<tr class="memitem:ae6987de74ad65e6ea8b577c57f950d6d" id="r_ae6987de74ad65e6ea8b577c57f950d6d"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6d">TipoCarta</a> { <br />
+&#160;&#160;<a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6da13dc9a8037f05fe9347ef38d219cebf7">NUM_0</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6dafb96732a6380755dfb3aea484ea984fe">NUM_1</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6da23d36623278d6c9f44c0d3d51cbe60e9">NUM_2</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6dadcb22d4c698b5a12cafe28e9b16d95f3">NUM_3</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6da310815251cae925041a7d7943c419f17">NUM_4</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6dab308ccbaba17c6da62aa6af500f163aa">NUM_5</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6da447f60bc3ead3701531dccdef66c0c15">NUM_6</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6daeaeaa109f538b75f8da00759e95a9b94">NUM_7</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6dad402062cc9c7407039fd7ca32ab4ec83">NUM_8</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6daa5a8533deb5dc4cfb8d0dabf659599f5">NUM_9</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6da150773ba1df9e1914be905e7fcd09a4b">SALTA</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6da14de110867291a9eb45ba51dae011528">CAMBIA_GIRO</a>
+, <br />
+&#160;&#160;<a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6daabe13e7547c113d19798dba060c09c38">PESCA_DUE</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6da9590144117e6dd29fa7c7702a4ec2b06">CAMBIO_COLORE</a>
+, <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6da450a026bfeea80d8e313e676328347aa">PESCA_QUATTRO</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ae6987de74ad65e6ea8b577c57f950d6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tipi di carta UNO.  <a href="#ae6987de74ad65e6ea8b577c57f950d6d">Continua...</a><br /></td></tr>
+<tr class="memitem:a2820e5c9a40f05bb9d572ea8b0d4e3f4" id="r_a2820e5c9a40f05bb9d572ea8b0d4e3f4"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> { <br />
+&#160;&#160;<a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4ad6e31f361c575129ccff5e1330973935">FASE_SCELTA_ACCESSO</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4adacd438199948c23cb204dc28adcce08">FASE_REGISTRAZIONE</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4acbbb76ee66b50e70a7c18b1c715f1494">FASE_LOGIN</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a8539df50489c7a30ff7107007e93994e">FASE_RECUPERO_PASSWORD</a>
+, <br />
+&#160;&#160;<a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a1079c6e5bfd989925b7e1826028e32e9">FASE_PROFILO_VISUALIZZA</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a930ae839589c287b460135cbe6b12b48">FASE_PROFILO_MODIFICA</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4ab089bb955890a5abb503d66c54f43c84">FASE_ADMIN_PANEL</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a5b672297493e5a4db190d0c68508d835">FASE_ADMIN_MODIFICA_UTENTE</a>
+, <br />
+&#160;&#160;<a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a67bca53836937ab56d15a6807f194147">FASE_MENU</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a2dcbf54ba35b01b7e8f7dead719007b1">FASE_GIOCO</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a82e71c7714cd66e542bb96e61f0c93a7">FASE_FINE_PARTITA</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a6f1a8394c957e91787eb398052844fbf">FASE_STATISTICHE</a>
+, <br />
+&#160;&#160;<a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a0a1d5af5494cf42c5ada9bea597051f1">FASE_MULTIPLAYER_SCELTA</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4ae1bc0f40721df6b6117a75749a93b1e4">FASE_HOST_LOBBY</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a7e046a29f088b32590eea2d23bd1f872">FASE_CLIENT_JOIN</a>
+, <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4a83f103725ed15dc489b929c39ba4f9a9">FASE_CLIENT_LOBBY</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:a2820e5c9a40f05bb9d572ea8b0d4e3f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum che rappresenta tutte le fasi dello stato macchina dell'applicazione.  <a href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4">Continua...</a><br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Header principale del progetto UNO - Definizione di tutti i tipi di dato. </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
+<a id="a79bdb013fafcecab59a3a66c537144ed" name="a79bdb013fafcecab59a3a66c537144ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79bdb013fafcecab59a3a66c537144ed">&#9670;&#160;</a></span>DB_CAPACITA_INIZIALE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DB_CAPACITA_INIZIALE&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Capacita' iniziale del database utenti (allocazione dinamica). </p>
+
+</div>
+</div>
+<a id="ad122d7c5cf74ad68b85d6f22321a1f14" name="ad122d7c5cf74ad68b85d6f22321a1f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad122d7c5cf74ad68b85d6f22321a1f14">&#9670;&#160;</a></span>GIOCATORE_NOME_BUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GIOCATORE_NOME_BUF&#160;&#160;&#160;60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dimensione del buffer per Giocatore_NomeBot. </p>
+
+</div>
+</div>
+<a id="a5026ff5f759c4fa9a23782d0303b2ef8" name="a5026ff5f759c4fa9a23782d0303b2ef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5026ff5f759c4fa9a23782d0303b2ef8">&#9670;&#160;</a></span>MAX_PARTITE_STORICO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_PARTITE_STORICO&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Numero massimo di partite nello storico di ogni utente. </p>
+
+</div>
+</div>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentazione delle ridefinizioni di tipo (typedef)</h2>
+<a id="aa6cf4d93059ee70ef92df8b1d1a666c8" name="aa6cf4d93059ee70ef92df8b1d1a666c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6cf4d93059ee70ef92df8b1d1a666c8">&#9670;&#160;</a></span>NodoCarta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct NodoCarta NodoCarta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Nodo per la lista doppiamente concatenata della mano del giocatore. </p>
+<p>Ogni nodo contiene una carta e due puntatori: uno al nodo successivo (forward link) e uno al nodo precedente (backward link). Questo permette inserimenti ed eliminazioni efficienti in qualsiasi posizione. </p>
+
+</div>
+</div>
+<a id="a4c21bead0a069a63c668c59b159c829c" name="a4c21bead0a069a63c668c59b159c829c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c21bead0a069a63c668c59b159c829c">&#9670;&#160;</a></span>NodoMano</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="struct_nodo_carta.html">NodoCarta</a> <a class="el" href="#a4c21bead0a069a63c668c59b159c829c">NodoMano</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alias per <a class="el" href="struct_nodo_carta.html" title="Nodo per la lista doppiamente concatenata della mano del giocatore.">NodoCarta</a> (usato nella documentazione CdS come <a class="el" href="#a4c21bead0a069a63c668c59b159c829c" title="Alias per NodoCarta (usato nella documentazione CdS come NodoMano).">NodoMano</a>). </p>
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentazione dei tipi enumerati</h2>
+<a id="a030035d63f7ea5baefdfe9a53844d27c" name="a030035d63f7ea5baefdfe9a53844d27c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a030035d63f7ea5baefdfe9a53844d27c">&#9670;&#160;</a></span>Colore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a030035d63f7ea5baefdfe9a53844d27c">Colore</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Colori disponibili per le carte UNO. </p>
+<p>NERO = jolly/cambio colore. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valori del tipo enumerato</th></tr><tr><td class="fieldname"><a id="a030035d63f7ea5baefdfe9a53844d27caf31d451540fbe9019951dc44d57cada9" name="a030035d63f7ea5baefdfe9a53844d27caf31d451540fbe9019951dc44d57cada9"></a>ROSSO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a030035d63f7ea5baefdfe9a53844d27cab43fc5129914206a77c76e0cffd20df2" name="a030035d63f7ea5baefdfe9a53844d27cab43fc5129914206a77c76e0cffd20df2"></a>GIALLO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a030035d63f7ea5baefdfe9a53844d27caf9efd9e6bd17c0580d8a0432ba1b04a2" name="a030035d63f7ea5baefdfe9a53844d27caf9efd9e6bd17c0580d8a0432ba1b04a2"></a>VERDE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a030035d63f7ea5baefdfe9a53844d27ca26d3f814fefb4d00336affb21a2f55b9" name="a030035d63f7ea5baefdfe9a53844d27ca26d3f814fefb4d00336affb21a2f55b9"></a>BLU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a030035d63f7ea5baefdfe9a53844d27ca40019d0f9c04951a840bde24c579e876" name="a030035d63f7ea5baefdfe9a53844d27ca40019d0f9c04951a840bde24c579e876"></a>NERO&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4">&#9670;&#160;</a></span>FaseApplicazione</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum che rappresenta tutte le fasi dello stato macchina dell'applicazione. </p>
+<p>Ogni fase corrisponde a una schermata o modalita' dell'applicazione. Le transizioni tra le fasi sono gestite dalle funzioni AggiornaAuth e AggiornaGameplay. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valori del tipo enumerato</th></tr><tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4ad6e31f361c575129ccff5e1330973935" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4ad6e31f361c575129ccff5e1330973935"></a>FASE_SCELTA_ACCESSO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4adacd438199948c23cb204dc28adcce08" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4adacd438199948c23cb204dc28adcce08"></a>FASE_REGISTRAZIONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4acbbb76ee66b50e70a7c18b1c715f1494" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4acbbb76ee66b50e70a7c18b1c715f1494"></a>FASE_LOGIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a8539df50489c7a30ff7107007e93994e" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a8539df50489c7a30ff7107007e93994e"></a>FASE_RECUPERO_PASSWORD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a1079c6e5bfd989925b7e1826028e32e9" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a1079c6e5bfd989925b7e1826028e32e9"></a>FASE_PROFILO_VISUALIZZA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a930ae839589c287b460135cbe6b12b48" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a930ae839589c287b460135cbe6b12b48"></a>FASE_PROFILO_MODIFICA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4ab089bb955890a5abb503d66c54f43c84" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4ab089bb955890a5abb503d66c54f43c84"></a>FASE_ADMIN_PANEL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a5b672297493e5a4db190d0c68508d835" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a5b672297493e5a4db190d0c68508d835"></a>FASE_ADMIN_MODIFICA_UTENTE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a67bca53836937ab56d15a6807f194147" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a67bca53836937ab56d15a6807f194147"></a>FASE_MENU&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a2dcbf54ba35b01b7e8f7dead719007b1" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a2dcbf54ba35b01b7e8f7dead719007b1"></a>FASE_GIOCO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a82e71c7714cd66e542bb96e61f0c93a7" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a82e71c7714cd66e542bb96e61f0c93a7"></a>FASE_FINE_PARTITA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a6f1a8394c957e91787eb398052844fbf" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a6f1a8394c957e91787eb398052844fbf"></a>FASE_STATISTICHE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a0a1d5af5494cf42c5ada9bea597051f1" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a0a1d5af5494cf42c5ada9bea597051f1"></a>FASE_MULTIPLAYER_SCELTA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4ae1bc0f40721df6b6117a75749a93b1e4" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4ae1bc0f40721df6b6117a75749a93b1e4"></a>FASE_HOST_LOBBY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a7e046a29f088b32590eea2d23bd1f872" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a7e046a29f088b32590eea2d23bd1f872"></a>FASE_CLIENT_JOIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2820e5c9a40f05bb9d572ea8b0d4e3f4a83f103725ed15dc489b929c39ba4f9a9" name="a2820e5c9a40f05bb9d572ea8b0d4e3f4a83f103725ed15dc489b929c39ba4f9a9"></a>FASE_CLIENT_LOBBY&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="ae6987de74ad65e6ea8b577c57f950d6d" name="ae6987de74ad65e6ea8b577c57f950d6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6987de74ad65e6ea8b577c57f950d6d">&#9670;&#160;</a></span>TipoCarta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ae6987de74ad65e6ea8b577c57f950d6d">TipoCarta</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tipi di carta UNO. </p>
+<p>Da NUM_0 a NUM_9 = carte normali, poi speciali. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valori del tipo enumerato</th></tr><tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6da13dc9a8037f05fe9347ef38d219cebf7" name="ae6987de74ad65e6ea8b577c57f950d6da13dc9a8037f05fe9347ef38d219cebf7"></a>NUM_0&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6dafb96732a6380755dfb3aea484ea984fe" name="ae6987de74ad65e6ea8b577c57f950d6dafb96732a6380755dfb3aea484ea984fe"></a>NUM_1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6da23d36623278d6c9f44c0d3d51cbe60e9" name="ae6987de74ad65e6ea8b577c57f950d6da23d36623278d6c9f44c0d3d51cbe60e9"></a>NUM_2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6dadcb22d4c698b5a12cafe28e9b16d95f3" name="ae6987de74ad65e6ea8b577c57f950d6dadcb22d4c698b5a12cafe28e9b16d95f3"></a>NUM_3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6da310815251cae925041a7d7943c419f17" name="ae6987de74ad65e6ea8b577c57f950d6da310815251cae925041a7d7943c419f17"></a>NUM_4&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6dab308ccbaba17c6da62aa6af500f163aa" name="ae6987de74ad65e6ea8b577c57f950d6dab308ccbaba17c6da62aa6af500f163aa"></a>NUM_5&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6da447f60bc3ead3701531dccdef66c0c15" name="ae6987de74ad65e6ea8b577c57f950d6da447f60bc3ead3701531dccdef66c0c15"></a>NUM_6&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6daeaeaa109f538b75f8da00759e95a9b94" name="ae6987de74ad65e6ea8b577c57f950d6daeaeaa109f538b75f8da00759e95a9b94"></a>NUM_7&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6dad402062cc9c7407039fd7ca32ab4ec83" name="ae6987de74ad65e6ea8b577c57f950d6dad402062cc9c7407039fd7ca32ab4ec83"></a>NUM_8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6daa5a8533deb5dc4cfb8d0dabf659599f5" name="ae6987de74ad65e6ea8b577c57f950d6daa5a8533deb5dc4cfb8d0dabf659599f5"></a>NUM_9&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6da150773ba1df9e1914be905e7fcd09a4b" name="ae6987de74ad65e6ea8b577c57f950d6da150773ba1df9e1914be905e7fcd09a4b"></a>SALTA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6da14de110867291a9eb45ba51dae011528" name="ae6987de74ad65e6ea8b577c57f950d6da14de110867291a9eb45ba51dae011528"></a>CAMBIA_GIRO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6daabe13e7547c113d19798dba060c09c38" name="ae6987de74ad65e6ea8b577c57f950d6daabe13e7547c113d19798dba060c09c38"></a>PESCA_DUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6da9590144117e6dd29fa7c7702a4ec2b06" name="ae6987de74ad65e6ea8b577c57f950d6da9590144117e6dd29fa7c7702a4ec2b06"></a>CAMBIO_COLORE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ae6987de74ad65e6ea8b577c57f950d6da450a026bfeea80d8e313e676328347aa" name="ae6987de74ad65e6ea8b577c57f950d6da450a026bfeea80d8e313e676328347aa"></a>PESCA_QUATTRO&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="data__structures_8h.html">data_structures.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

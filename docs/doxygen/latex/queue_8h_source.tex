@@ -1,0 +1,50 @@
+\doxysection{queue.\+h}
+\hypertarget{queue_8h_source}{}\label{queue_8h_source}\index{lib/data\_structures/queue.h@{lib/data\_structures/queue.h}}
+\mbox{\hyperlink{queue_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ DATA\_STRUCTURES\_QUEUE\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ DATA\_STRUCTURES\_QUEUE\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{data__structures_8h}{../data\_structures.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nodo_coda}{NodoCoda}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{struct_giocatore}{Giocatore}}\ \mbox{\hyperlink{struct_nodo_coda_a3a5fda8e4c9c7753cbc05be748bfb0b7}{giocatore}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nodo_coda}{NodoCoda}}*\ \mbox{\hyperlink{struct_nodo_coda_ac340d601bc10d3dce628dab3fc3bd9ae}{next}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_nodo_coda}{NodoCoda}}*\ \mbox{\hyperlink{struct_nodo_coda_a598e00f9d4a4d91061737683582ca45f}{prev}};}
+\DoxyCodeLine{00023\ \}\ \mbox{\hyperlink{struct_nodo_coda}{NodoCoda}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_coda_turni}{CodaTurni}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{struct_nodo_coda}{NodoCoda}}*\ \mbox{\hyperlink{struct_coda_turni_adb61df3ce7e539cc49dd100b5faa8a8b}{front}};}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{struct_nodo_coda}{NodoCoda}}*\ \mbox{\hyperlink{struct_coda_turni_aa572728f086322efaa9a368f00b17a4d}{rear}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_coda_turni_a76a608c06fd3d799ab5e84813ef07e45}{size}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_coda_turni_a23507dfeef9e7db73f023d828f2149c9}{verso}};\ \ \ }
+\DoxyCodeLine{00042\ \}\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00055\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ \mbox{\hyperlink{group__queue__api_gab11ca930d6fab622f49e830d54ee2599}{Coda\_Crea}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__queue__api_ga3ab0b2cbc6c5a60be1d892fb511e2684}{Coda\_Distruggi}}(\mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__queue__api_ga7e0da971008ab4c258d57d5bc3f53e54}{Coda\_Enqueue}}(\mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c,\ \mbox{\hyperlink{struct_giocatore}{Giocatore}}\ g);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__queue__api_ga1c3d994f3790ec934fc95d9d853931c9}{Coda\_Dequeue}}(\mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c,\ \mbox{\hyperlink{struct_giocatore}{Giocatore}}*\ out);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__queue__api_ga9f9d5b9d69e9482f994b36b39b642259}{Coda\_Front}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c,\ \mbox{\hyperlink{struct_giocatore}{Giocatore}}*\ out);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__queue__api_ga4f1de642a8dfccfbc0bd40a390446a1a}{Coda\_Rear}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c,\ \mbox{\hyperlink{struct_giocatore}{Giocatore}}*\ out);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00115\ \mbox{\hyperlink{struct_nodo_coda}{NodoCoda}}*\ \mbox{\hyperlink{group__queue__api_gaa3e062ece5c53fa71fe3f38a40af9f8b}{Coda\_ProxNodo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c,\ \mbox{\hyperlink{struct_nodo_coda}{NodoCoda}}*\ n);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__queue__api_gafe5e85ee83772d0ce66f79eb6fb070d7}{Coda\_Vuota}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__queue__api_ga79afb3f7bc3b06d5b1376e85963b32da}{Coda\_Dimensione}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__queue__api_gac73bc0051abe5c075e61b613ca8217ec}{Coda\_InvertiVerso}}(\mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00151\ \mbox{\hyperlink{struct_nodo_coda}{NodoCoda}}*\ \mbox{\hyperlink{group__queue__api_ga2ef4fc1bffec7bb1dbef333edee72d8f}{Coda\_CercaPerIndice}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c,\ \textcolor{keywordtype}{int}\ indice);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00162\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__queue__api_ga124235163883b905dcea984a8384ee16}{Coda\_CopiaPerIndice}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_coda_turni}{CodaTurni}}*\ c,\ \textcolor{keywordtype}{int}\ indice,\ \mbox{\hyperlink{struct_giocatore}{Giocatore}}*\ out);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATA\_STRUCTURES\_QUEUE\_H}}
+
+\end{DoxyCode}

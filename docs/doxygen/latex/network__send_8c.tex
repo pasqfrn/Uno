@@ -1,0 +1,357 @@
+\doxysection{src/socket/network/network\+\_\+send.c File Reference}
+\hypertarget{network__send_8c}{}\label{network__send_8c}\index{src/socket/network/network\_send.c@{src/socket/network/network\_send.c}}
+
+
+Funzioni di invio pacchetti per il multiplayer online.  
+
+
+{\ttfamily \#include "{}../../../lib/socket/network/socket\+\_\+compat.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network\+\_\+send.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{network__send_8c_a0554cb970fa4a11e12b77295592a1f4a}{Send\+Start\+Game}} (void)
+\begin{DoxyCompactList}\small\item\em Invia pacchetto di inizio partita a tutti i client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_a32427ed924559d92e996e42316d323f6}{Send\+Game\+State}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Invia lo stato di gioco completo all\textquotesingle{}host. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_a05bff45fa180f48a80bcdf6e10611fc8}{Send\+Chat}} (const char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Invia un messaggio chat in broadcast. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_a7965e8e2c7ed1e4ef9e71d3974ad1199}{Send\+Move}} (int card\+\_\+index, \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} colore)
+\begin{DoxyCompactList}\small\item\em Invia una mossa (carta giocata + colore). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_ad4c4757d74c717f8cbaa6c81e833f2d4}{Send\+Draw}} (int count)
+\begin{DoxyCompactList}\small\item\em Invia una richiesta di pescata. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_ab18571a6ad86877cbe01c9a589be4ea0}{Send\+Color\+Choice}} (\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} colore)
+\begin{DoxyCompactList}\small\item\em Invia una scelta colore. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_a33f5e952ff406b092bd8e51a98c736bc}{Send\+Join\+Game}} (const char \texorpdfstring{$\ast$}{*}nome)
+\begin{DoxyCompactList}\small\item\em Invia richiesta di join game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_a55a6eadffdfbe2d43ed94c51e6f5ffb3}{Send\+Player\+Hand}} (int target\+\_\+socket, int data\+\_\+player\+\_\+id, \mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Invia la mano di un giocatore a un socket specifico. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_a8b66f3de67a48ce04af83a3d9ec26476}{Broadcast\+Game\+State}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Broadcasta lo stato di gioco a tutti i client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_ae2ba7d25b79aac7673fae23cf316bce5}{Broadcast\+Player\+Hands}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Broadcasta la mano di tutti i giocatori. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_a04736d06c71f2196b586fae3bd7a4dbb}{Broadcast\+Chat}} (const char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Broadcasta un messaggio chat a tutti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_a5200e7a90babbead97641938606e28a9}{Send\+Create\+Session}} (const char \texorpdfstring{$\ast$}{*}host\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Invia richiesta di creazione sessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_a506aaa42c1f375d99a5e0f28d784d075}{Send\+Join\+Session}} (const char \texorpdfstring{$\ast$}{*}sess\+\_\+id, const char \texorpdfstring{$\ast$}{*}player\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Invia richiesta di join a una sessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga981d40762c9af84bf5f4d5d24a024c04}{Send\+Player\+Ready}} (int ready)
+\begin{DoxyCompactList}\small\item\em Invia stato ready/play again. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{network__send_8c_af775bba86070a2ddf470f66ff759cdfa}{Send\+Heartbeat}} (void)
+\begin{DoxyCompactList}\small\item\em Invia heartbeat (keep-\/alive). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga76952802b05b5b11a933c2db18ede658}{Send\+Play\+Again}} (void)
+\begin{DoxyCompactList}\small\item\em Invia un pacchetto PACKET\+\_\+\+PLAY\+\_\+\+AGAIN all\textquotesingle{}host. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_gab5854145185d5f1e6a08d5a51022dd34}{Broadcast\+Host\+Return\+Lobby}} (void)
+\begin{DoxyCompactList}\small\item\em Broadcasta PACKET\+\_\+\+HOST\+\_\+\+RETURN\+\_\+\+LOBBY a tutti i client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__send__admin_ga4f474be2ec77d5945531b038049e70ba}{Send\+Admin\+User\+Sync}} (const \mbox{\hyperlink{struct_admin_user_sync_data}{Admin\+User\+Sync\+Data}} \texorpdfstring{$\ast$}{*}user\+Data)
+\begin{DoxyCompactList}\small\item\em Send\+Admin\+User\+Sync -\/ Invia i dati utente del client all\textquotesingle{}host. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__send__admin_ga9d7cd15c8ce0029e9f3efd947125a391}{Broadcast\+Admin\+User\+Action}} (const \mbox{\hyperlink{struct_admin_user_action}{Admin\+User\+Action}} \texorpdfstring{$\ast$}{*}action)
+\begin{DoxyCompactList}\small\item\em Broadcast\+Admin\+User\+Action -\/ Invia un\textquotesingle{}azione admin (modifica/elimina/crea) a tutti i client connessi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga740ef7a56f894d2149113373ed7c9601}{Broadcast\+Host\+Disconnect}} (void)
+\begin{DoxyCompactList}\small\item\em Invia un pacchetto di notifica disconnessione host a tutti i client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_gad24cb48d88d5827fff0faf81ae1fc05b}{Broadcast\+Stats\+Sync}} (const \mbox{\hyperlink{struct_stats_sync_packet}{Stats\+Sync\+Packet}} \texorpdfstring{$\ast$}{*}stats)
+\begin{DoxyCompactList}\small\item\em Invia un pacchetto di sincronizzazione statistiche COMPLETA a tutti i client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__packet__strutture_ga36fc11ee8fde125894663e2c2ca2aa32}{Send\+Stats\+Sync}} (const \mbox{\hyperlink{struct_stats_sync_packet}{Stats\+Sync\+Packet}} \texorpdfstring{$\ast$}{*}stats)
+\begin{DoxyCompactList}\small\item\em Invia un pacchetto di sincronizzazione statistiche COMPLETA all\textquotesingle{}host (client). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__network__send__admin_gac3bad81dd1e885fdb5fe711a2cc7902a}{Broadcast\+Admin\+DB}} (void)
+\begin{DoxyCompactList}\small\item\em Invia il \doxylink{struct_database_utenti}{Database\+Utenti} aggiornato a tutti i client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} \mbox{\hyperlink{network__send_8c_a4fdb1b96f709fc5cdd1d013c1703e484}{remote\+Socket}}
+\begin{DoxyCompactList}\small\item\em Socket remoto (solo client\+: connessione all\textquotesingle{}host). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} \mbox{\hyperlink{network__send_8c_acf235198fdda36e8980bbf0ead99f61f}{client\+Sockets}} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funzioni di invio pacchetti per il multiplayer online. 
+
+Contiene le funzioni per l\textquotesingle{}invio di pacchetti TCP/\+UDP\+:
+\begin{DoxyItemize}
+\item Send\+Game\+State\+: invia stato completo all\textquotesingle{}host (client)
+\item Broadcast\+Game\+State\+: invia stato a tutti i client (host)
+\item Send\+Move/\+Send\+Draw\+: invia mossa/pescata all\textquotesingle{}host (client)
+\item Send\+Chat/\+Send\+Color\+Choice\+: invia chat/scelta colore
+\item Send\+Create\+Session/\+Send\+Join\+Session\+: gestione sessioni
+\item Send\+Admin\+User\+Sync/\+Broadcast\+Admin\+DB\+: sincronizzazione admin
+\item Send\+Play\+Again/\+Broadcast\+Host\+Return\+Lobby\+: gestione "{}\+Gioca Ancora"{}
+\end{DoxyItemize}
+
+Architettura\+:
+\begin{DoxyItemize}
+\item Host usa Broadcast\texorpdfstring{$\ast$}{*}() per inviare a tutti i client
+\item Client usa Send\texorpdfstring{$\ast$}{*}() per inviare all\textquotesingle{}host 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{network__send_8c_a04736d06c71f2196b586fae3bd7a4dbb}\index{network\_send.c@{network\_send.c}!BroadcastChat@{BroadcastChat}}
+\index{BroadcastChat@{BroadcastChat}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{BroadcastChat()}{BroadcastChat()}}
+{\footnotesize\ttfamily \label{network__send_8c_a04736d06c71f2196b586fae3bd7a4dbb} 
+void Broadcast\+Chat (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Broadcasta un messaggio chat a tutti. 
+
+\begin{DoxyPrecond}{Precondition}
+message != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Testo del messaggio. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_a8b66f3de67a48ce04af83a3d9ec26476}\index{network\_send.c@{network\_send.c}!BroadcastGameState@{BroadcastGameState}}
+\index{BroadcastGameState@{BroadcastGameState}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{BroadcastGameState()}{BroadcastGameState()}}
+{\footnotesize\ttfamily \label{network__send_8c_a8b66f3de67a48ce04af83a3d9ec26476} 
+void Broadcast\+Game\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Broadcasta lo stato di gioco a tutti i client. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_ae2ba7d25b79aac7673fae23cf316bce5}\index{network\_send.c@{network\_send.c}!BroadcastPlayerHands@{BroadcastPlayerHands}}
+\index{BroadcastPlayerHands@{BroadcastPlayerHands}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{BroadcastPlayerHands()}{BroadcastPlayerHands()}}
+{\footnotesize\ttfamily \label{network__send_8c_ae2ba7d25b79aac7673fae23cf316bce5} 
+void Broadcast\+Player\+Hands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Broadcasta la mano di tutti i giocatori. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_a05bff45fa180f48a80bcdf6e10611fc8}\index{network\_send.c@{network\_send.c}!SendChat@{SendChat}}
+\index{SendChat@{SendChat}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendChat()}{SendChat()}}
+{\footnotesize\ttfamily \label{network__send_8c_a05bff45fa180f48a80bcdf6e10611fc8} 
+void Send\+Chat (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Invia un messaggio chat in broadcast. 
+
+\begin{DoxyPrecond}{Precondition}
+message != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em message} & Testo del messaggio. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_ab18571a6ad86877cbe01c9a589be4ea0}\index{network\_send.c@{network\_send.c}!SendColorChoice@{SendColorChoice}}
+\index{SendColorChoice@{SendColorChoice}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendColorChoice()}{SendColorChoice()}}
+{\footnotesize\ttfamily \label{network__send_8c_ab18571a6ad86877cbe01c9a589be4ea0} 
+void Send\+Color\+Choice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}}]{colore}{}\end{DoxyParamCaption})}
+
+
+
+Invia una scelta colore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colore} & \doxylink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore} scelto. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_a5200e7a90babbead97641938606e28a9}\index{network\_send.c@{network\_send.c}!SendCreateSession@{SendCreateSession}}
+\index{SendCreateSession@{SendCreateSession}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendCreateSession()}{SendCreateSession()}}
+{\footnotesize\ttfamily \label{network__send_8c_a5200e7a90babbead97641938606e28a9} 
+void Send\+Create\+Session (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{host\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Invia richiesta di creazione sessione. 
+
+\begin{DoxyPrecond}{Precondition}
+host\+\_\+name != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em host\+\_\+name} & Nome dell\textquotesingle{}host. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_ad4c4757d74c717f8cbaa6c81e833f2d4}\index{network\_send.c@{network\_send.c}!SendDraw@{SendDraw}}
+\index{SendDraw@{SendDraw}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendDraw()}{SendDraw()}}
+{\footnotesize\ttfamily \label{network__send_8c_ad4c4757d74c717f8cbaa6c81e833f2d4} 
+void Send\+Draw (\begin{DoxyParamCaption}\item[{int}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Invia una richiesta di pescata. 
+
+\begin{DoxyPrecond}{Precondition}
+count \texorpdfstring{$>$}{>} 0. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em count} & Numero di carte da pescare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_a32427ed924559d92e996e42316d323f6}\index{network\_send.c@{network\_send.c}!SendGameState@{SendGameState}}
+\index{SendGameState@{SendGameState}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendGameState()}{SendGameState()}}
+{\footnotesize\ttfamily \label{network__send_8c_a32427ed924559d92e996e42316d323f6} 
+void Send\+Game\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Invia lo stato di gioco completo all\textquotesingle{}host. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_af775bba86070a2ddf470f66ff759cdfa}\index{network\_send.c@{network\_send.c}!SendHeartbeat@{SendHeartbeat}}
+\index{SendHeartbeat@{SendHeartbeat}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendHeartbeat()}{SendHeartbeat()}}
+{\footnotesize\ttfamily \label{network__send_8c_af775bba86070a2ddf470f66ff759cdfa} 
+void Send\+Heartbeat (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Invia heartbeat (keep-\/alive). 
+
+\Hypertarget{network__send_8c_a33f5e952ff406b092bd8e51a98c736bc}\index{network\_send.c@{network\_send.c}!SendJoinGame@{SendJoinGame}}
+\index{SendJoinGame@{SendJoinGame}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendJoinGame()}{SendJoinGame()}}
+{\footnotesize\ttfamily \label{network__send_8c_a33f5e952ff406b092bd8e51a98c736bc} 
+void Send\+Join\+Game (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome}{}\end{DoxyParamCaption})}
+
+
+
+Invia richiesta di join game. 
+
+\begin{DoxyPrecond}{Precondition}
+nome != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Nome del giocatore. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_a506aaa42c1f375d99a5e0f28d784d075}\index{network\_send.c@{network\_send.c}!SendJoinSession@{SendJoinSession}}
+\index{SendJoinSession@{SendJoinSession}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendJoinSession()}{SendJoinSession()}}
+{\footnotesize\ttfamily \label{network__send_8c_a506aaa42c1f375d99a5e0f28d784d075} 
+void Send\+Join\+Session (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{sess\+\_\+id}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{player\+\_\+name}{}\end{DoxyParamCaption})}
+
+
+
+Invia richiesta di join a una sessione. 
+
+\begin{DoxyPrecond}{Precondition}
+sess\+\_\+id != NULL; player\+\_\+name != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em sess\+\_\+id} & ID della sessione. \\
+\hline
+{\em player\+\_\+name} & Nome del giocatore. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_a7965e8e2c7ed1e4ef9e71d3974ad1199}\index{network\_send.c@{network\_send.c}!SendMove@{SendMove}}
+\index{SendMove@{SendMove}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendMove()}{SendMove()}}
+{\footnotesize\ttfamily \label{network__send_8c_a7965e8e2c7ed1e4ef9e71d3974ad1199} 
+void Send\+Move (\begin{DoxyParamCaption}\item[{int}]{card\+\_\+index}{, }\item[{\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}}]{colore}{}\end{DoxyParamCaption})}
+
+
+
+Invia una mossa (carta giocata + colore). 
+
+\begin{DoxyPrecond}{Precondition}
+card\+\_\+index valido; colore valido. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em card\+\_\+index} & Indice della carta. \\
+\hline
+{\em colore} & \doxylink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore} scelto (per jolly). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_a55a6eadffdfbe2d43ed94c51e6f5ffb3}\index{network\_send.c@{network\_send.c}!SendPlayerHand@{SendPlayerHand}}
+\index{SendPlayerHand@{SendPlayerHand}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendPlayerHand()}{SendPlayerHand()}}
+{\footnotesize\ttfamily \label{network__send_8c_a55a6eadffdfbe2d43ed94c51e6f5ffb3} 
+void Send\+Player\+Hand (\begin{DoxyParamCaption}\item[{int}]{target\+\_\+socket}{, }\item[{int}]{data\+\_\+player\+\_\+id}{, }\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{}\end{DoxyParamCaption})}
+
+
+
+Invia la mano di un giocatore a un socket specifico. 
+
+\begin{DoxyPrecond}{Precondition}
+gioco != NULL. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em target\+\_\+socket} & Socket destinatario. \\
+\hline
+{\em data\+\_\+player\+\_\+id} & ID del giocatore. \\
+\hline
+{\em gioco} & Stato di gioco. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{network__send_8c_a0554cb970fa4a11e12b77295592a1f4a}\index{network\_send.c@{network\_send.c}!SendStartGame@{SendStartGame}}
+\index{SendStartGame@{SendStartGame}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{SendStartGame()}{SendStartGame()}}
+{\footnotesize\ttfamily \label{network__send_8c_a0554cb970fa4a11e12b77295592a1f4a} 
+void Send\+Start\+Game (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Invia pacchetto di inizio partita a tutti i client. 
+
+\begin{DoxyPostcond}{Postcondition}
+PACKET\+\_\+\+START\+\_\+\+GAME broadcastato. 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{network__send_8c_acf235198fdda36e8980bbf0ead99f61f}\index{network\_send.c@{network\_send.c}!clientSockets@{clientSockets}}
+\index{clientSockets@{clientSockets}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{clientSockets}{clientSockets}}
+{\footnotesize\ttfamily \label{network__send_8c_acf235198fdda36e8980bbf0ead99f61f} 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} client\+Sockets\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{network__send_8c_a4fdb1b96f709fc5cdd1d013c1703e484}\index{network\_send.c@{network\_send.c}!remoteSocket@{remoteSocket}}
+\index{remoteSocket@{remoteSocket}!network\_send.c@{network\_send.c}}
+\doxysubsubsection{\texorpdfstring{remoteSocket}{remoteSocket}}
+{\footnotesize\ttfamily \label{network__send_8c_a4fdb1b96f709fc5cdd1d013c1703e484} 
+\mbox{\hyperlink{socket__compat_8h_a8dc8083897335125630f1af5dafd5831}{SOCKET}} remote\+Socket\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Socket remoto (solo client\+: connessione all\textquotesingle{}host). 
+

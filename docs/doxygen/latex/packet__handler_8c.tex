@@ -1,0 +1,46 @@
+\doxysection{src/socket/network/packet\+\_\+handler.c File Reference}
+\hypertarget{packet__handler_8c}{}\label{packet__handler_8c}\index{src/socket/network/packet\_handler.c@{src/socket/network/packet\_handler.c}}
+
+
+Dispatcher principale dei pacchetti di rete.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/packet\+\_\+handler.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/packet\+\_\+handler\+\_\+game.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/packet\+\_\+handler\+\_\+admin.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network\+\_\+send.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/state\+\_\+sync.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/server/server\+\_\+manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/ui.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/list.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/game/gameplay\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/menu/string\+\_\+utils.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__network__packet__strutture_gad3c903fa215cfb2106e60c84065a37cd}{Handle\+Received\+Packet}} (\mbox{\hyperlink{struct_net_packet}{Net\+Packet}} \texorpdfstring{$\ast$}{*}packet, \mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco)
+\begin{DoxyCompactList}\small\item\em Handle\+Received\+Packet -\/ Dispatcher principale dei pacchetti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dispatcher principale dei pacchetti di rete. 
+
+Questo file contiene la funzione Handle\+Received\+Packet che delega la gestione dei pacchetti ai moduli specializzati\+:
+\begin{DoxyItemize}
+\item \doxylink{packet__handler__game_8c}{packet\+\_\+handler\+\_\+game.\+c} \+: pacchetti di gioco
+\item \doxylink{packet__handler__admin_8c}{packet\+\_\+handler\+\_\+admin.\+c} \+: pacchetti admin/sessione
+\end{DoxyItemize}
+
+Fattorizzato da \doxylink{packet__handler_8c}{packet\+\_\+handler.\+c} (461 righe) in\+:
+\begin{DoxyItemize}
+\item \doxylink{packet__handler__game_8h}{packet\+\_\+handler\+\_\+game.\+h}/.c \+: gestione pacchetti di gioco
+\item \doxylink{packet__handler__admin_8h}{packet\+\_\+handler\+\_\+admin.\+h}/.c \+: gestione pacchetti admin/sessione
+\item \doxylink{packet__handler_8c}{packet\+\_\+handler.\+c} \+: dispatcher (questo file) 
+\end{DoxyItemize}

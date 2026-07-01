@@ -1,0 +1,26 @@
+\doxysection{Autenticazione e Database Utenti}
+\hypertarget{group__auth}{}\label{group__auth}\index{Autenticazione e Database Utenti@{Autenticazione e Database Utenti}}
+
+
+Gestisce registrazione, login, recupero password, eliminazione utenti e sincronizzazione Lan dell\textquotesingle{}Admin Panel.  
+
+
+\doxysubsubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{auth_8c}{auth.\+c}}
+\begin{DoxyCompactList}\small\item\em Implementazione modulo autenticazione e database utenti (allocazione dinamica). \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{auth__validation_8c}{auth\+\_\+validation.\+c}}
+\begin{DoxyCompactList}\small\item\em Funzioni di validazione per autenticazione e gestione utenti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestisce registrazione, login, recupero password, eliminazione utenti e sincronizzazione Lan dell\textquotesingle{}Admin Panel. 
+
+Caratteristiche principali\+:
+\begin{DoxyItemize}
+\item Database utenti con allocazione dinamica (malloc/realloc)
+\item Eliminazione lazy\+: la rimozione fisica avviene solo al logout/disconnessione
+\item Admin Panel real-\/time via LAN + TCP broadcast
+\item BST parallelo per ricerca O(log n) dell\textquotesingle{}email 
+\end{DoxyItemize}

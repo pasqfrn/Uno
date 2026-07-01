@@ -1,0 +1,169 @@
+\doxysection{lib/auth.h File Reference}
+\hypertarget{auth_8h}{}\label{auth_8h}\index{lib/auth.h@{lib/auth.h}}
+
+
+Modulo di autenticazione e gestione database utenti.  
+
+
+{\ttfamily \#include "{}data\+\_\+structures.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__lazy__deletion_ga0c703432e3edf6feb94fed2223922714}{MAX\+\_\+\+PENDING\+\_\+\+DELETIONS}}~64
+\begin{DoxyCompactList}\small\item\em Numero massimo di eliminazioni pendenti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__lazy__deletion_gaa103fe9f0b4ddf468b2d7ee6f6b28bba}{Auth\+\_\+\+Mark\+For\+Deletion}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Marca un utente per eliminazione differita. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion_gae8af680dcc7f7dcc3b73cff9ce19d89c}{Auth\+\_\+\+Is\+Marked\+For\+Deletion}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Verifica se un utente e\textquotesingle{} marcato per eliminazione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion_ga76017eead600b6ea252edb0e00c8758b}{Auth\+\_\+\+Process\+Pending\+Deletions}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Processa le eliminazioni pendenti per un utente. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__database__api_gab5d6680f3c3fd1d4690f635d9a10a172}{DB\+\_\+\+Alloca}} (int min\+\_\+slot)
+\begin{DoxyCompactList}\small\item\em Alloca o rialloca il database per garantire almeno min\+\_\+slot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__database__api_gae268c79271c4ee59ba3a082ebd80e0a9}{Salva\+DB}} (void)
+\begin{DoxyCompactList}\small\item\em Salva il database su file binario con cifratura XOR. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__database__api_ga92a8b147f7f309caeaba6776d16a4204}{Auth\+BST\+\_\+\+Ricostruisci}} (void)
+\begin{DoxyCompactList}\small\item\em Ricostruisce il BST parallelo a partire dall\textquotesingle{}array db\+Utenti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__database__api_ga780f5d85ee36704ef8c39e58d6d24ba3}{Carica\+DB}} (void)
+\begin{DoxyCompactList}\small\item\em Carica il database da file binario. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__database__api_gaca7ac3087dce186468964882201c904b}{Auth\+\_\+\+Registra\+Utente}} (const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*}, const char \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Registra un nuovo utente dopo aver generato l\textquotesingle{}ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__database__api_ga8477b8acaa3d9d97cdb06846bdaff9c0}{Auth\+\_\+\+Rimuovi\+Utente}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Rimuove un utente da database e BST. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__database__api_ga8ca75be3b7e67f16f1544e9fc6eb9279}{Auth\+BST\+\_\+\+Cerca\+Indice\+Per\+Email}} (const char \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Ricerca l\textquotesingle{}indice di un utente per email tramite BST. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__database__api_gaee07663d2c32dd38c1a79b994383a7b6}{Auth\+BST\+\_\+\+Altezza}} (void)
+\begin{DoxyCompactList}\small\item\em Restituisce l\textquotesingle{}altezza del BST (per debug). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__database__api_ga4b6f9cad580a7fa31e55093db0e732ce}{Auth\+BST\+\_\+\+Conta\+Nodi}} (void)
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di nodi nel BST. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_database_utenti}{Database\+Utenti}} \mbox{\hyperlink{group__auth__impl_gabbde975af8fe0d5e3c20e0fd862186b6}{db\+Utenti}}
+\begin{DoxyCompactList}\small\item\em Database utenti globale in memoria (allocazione dinamica). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__auth__impl_ga9ecbbe659dbada66e149c73cefb83815}{id\+\_\+utente\+\_\+corrente}}
+\begin{DoxyCompactList}\small\item\em Indice dell\textquotesingle{}utente correntemente loggato (-\/1 se nessuno). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{auth_8h_abc565e2ba6cc88b20dded8d5345e869e}{nuovo\+\_\+utente}}
+\begin{DoxyCompactList}\small\item\em Flag nuovo utente (submit). \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{group__auth__impl_ga80d354a96271494c85654ea411ddac01}{input\+Email}} \mbox{[}100\mbox{]}
+\item 
+char \mbox{\hyperlink{auth_8h_a2b0e8ee2101796cab35e2f6d2f932993}{input\+Nome}} \mbox{[}30\mbox{]}
+\item 
+char \mbox{\hyperlink{auth_8h_abdb70a410ac6fd790650381b7fb858b1}{input\+Cognome}} \mbox{[}30\mbox{]}
+\item 
+char \mbox{\hyperlink{group__auth__impl_ga726a429817c84dacd48cce82b3c91003}{input\+Username}} \mbox{[}30\mbox{]}
+\item 
+char \mbox{\hyperlink{auth_8h_a716f9307558976d3a4c67840b2ceb8ac}{input\+Password}} \mbox{[}30\mbox{]}
+\item 
+char \mbox{\hyperlink{auth_8h_afb61cbc7b14899011261458eb60e240a}{input\+Pin}} \mbox{[}7\mbox{]}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga3876b1cc4b483062056d9cf261ec4654}{email\+Count}}
+\item 
+int \mbox{\hyperlink{auth_8h_a8576d027f30608a7448b5e4a6887f2e2}{nome\+Count}}
+\item 
+int \mbox{\hyperlink{auth_8h_a880fe550552161100d934bf21de27f90}{cognome\+Count}}
+\item 
+int \mbox{\hyperlink{group__auth__impl_gabd5ade42baf19a2a2ffa715960842dfd}{username\+Count}}
+\item 
+int \mbox{\hyperlink{auth_8h_a415b2b418d3a90a6e1da72992e7577aa}{pass\+Count}}
+\item 
+int \mbox{\hyperlink{auth_8h_a5058e2763f324b4146cfa8af36168478}{pin\+Count}}
+\item 
+int \mbox{\hyperlink{auth_8h_a5e67fb6826c236d3ff5d0ec98cd9c582}{id\+\_\+temp\+\_\+login}}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga1e9668bc833c732fa8a038ec007c4ee9}{errore\+\_\+password}}
+\item 
+int \mbox{\hyperlink{auth_8h_ae7b050dfa0f4d9bfdfb41c1746d8e055}{errore\+\_\+registrazione\+\_\+pass}}
+\item 
+int \mbox{\hyperlink{group__auth__impl_gab2b3b778484eb9c5f529be0c2f9c10d3}{errore\+\_\+registrazione\+\_\+email}}
+\item 
+int \mbox{\hyperlink{auth_8h_ab25b9978d929d16da0918ad72bed9812}{errore\+\_\+registrazione\+\_\+username}}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga2cf3aff3d88a04ea9b72ef90df54142c}{campo\+\_\+focusato}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Modulo di autenticazione e gestione database utenti. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{auth_8h_a880fe550552161100d934bf21de27f90}\index{auth.h@{auth.h}!cognomeCount@{cognomeCount}}
+\index{cognomeCount@{cognomeCount}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{cognomeCount}{cognomeCount}}
+{\footnotesize\ttfamily \label{auth_8h_a880fe550552161100d934bf21de27f90} 
+int cognome\+Count}
+
+\Hypertarget{auth_8h_ae7b050dfa0f4d9bfdfb41c1746d8e055}\index{auth.h@{auth.h}!errore\_registrazione\_pass@{errore\_registrazione\_pass}}
+\index{errore\_registrazione\_pass@{errore\_registrazione\_pass}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{errore\_registrazione\_pass}{errore\_registrazione\_pass}}
+{\footnotesize\ttfamily \label{auth_8h_ae7b050dfa0f4d9bfdfb41c1746d8e055} 
+int errore\+\_\+registrazione\+\_\+pass}
+
+\Hypertarget{auth_8h_ab25b9978d929d16da0918ad72bed9812}\index{auth.h@{auth.h}!errore\_registrazione\_username@{errore\_registrazione\_username}}
+\index{errore\_registrazione\_username@{errore\_registrazione\_username}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{errore\_registrazione\_username}{errore\_registrazione\_username}}
+{\footnotesize\ttfamily \label{auth_8h_ab25b9978d929d16da0918ad72bed9812} 
+int errore\+\_\+registrazione\+\_\+username}
+
+\Hypertarget{auth_8h_a5e67fb6826c236d3ff5d0ec98cd9c582}\index{auth.h@{auth.h}!id\_temp\_login@{id\_temp\_login}}
+\index{id\_temp\_login@{id\_temp\_login}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{id\_temp\_login}{id\_temp\_login}}
+{\footnotesize\ttfamily \label{auth_8h_a5e67fb6826c236d3ff5d0ec98cd9c582} 
+int id\+\_\+temp\+\_\+login}
+
+\Hypertarget{auth_8h_abdb70a410ac6fd790650381b7fb858b1}\index{auth.h@{auth.h}!inputCognome@{inputCognome}}
+\index{inputCognome@{inputCognome}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{inputCognome}{inputCognome}}
+{\footnotesize\ttfamily \label{auth_8h_abdb70a410ac6fd790650381b7fb858b1} 
+char input\+Cognome\mbox{[}30\mbox{]}}
+
+\Hypertarget{auth_8h_a2b0e8ee2101796cab35e2f6d2f932993}\index{auth.h@{auth.h}!inputNome@{inputNome}}
+\index{inputNome@{inputNome}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{inputNome}{inputNome}}
+{\footnotesize\ttfamily \label{auth_8h_a2b0e8ee2101796cab35e2f6d2f932993} 
+char input\+Nome\mbox{[}30\mbox{]}}
+
+\Hypertarget{auth_8h_a716f9307558976d3a4c67840b2ceb8ac}\index{auth.h@{auth.h}!inputPassword@{inputPassword}}
+\index{inputPassword@{inputPassword}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{inputPassword}{inputPassword}}
+{\footnotesize\ttfamily \label{auth_8h_a716f9307558976d3a4c67840b2ceb8ac} 
+char input\+Password\mbox{[}30\mbox{]}}
+
+\Hypertarget{auth_8h_afb61cbc7b14899011261458eb60e240a}\index{auth.h@{auth.h}!inputPin@{inputPin}}
+\index{inputPin@{inputPin}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{inputPin}{inputPin}}
+{\footnotesize\ttfamily \label{auth_8h_afb61cbc7b14899011261458eb60e240a} 
+char input\+Pin\mbox{[}7\mbox{]}}
+
+\Hypertarget{auth_8h_a8576d027f30608a7448b5e4a6887f2e2}\index{auth.h@{auth.h}!nomeCount@{nomeCount}}
+\index{nomeCount@{nomeCount}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{nomeCount}{nomeCount}}
+{\footnotesize\ttfamily \label{auth_8h_a8576d027f30608a7448b5e4a6887f2e2} 
+int nome\+Count}
+
+\Hypertarget{auth_8h_abc565e2ba6cc88b20dded8d5345e869e}\index{auth.h@{auth.h}!nuovo\_utente@{nuovo\_utente}}
+\index{nuovo\_utente@{nuovo\_utente}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{nuovo\_utente}{nuovo\_utente}}
+{\footnotesize\ttfamily \label{auth_8h_abc565e2ba6cc88b20dded8d5345e869e} 
+int nuovo\+\_\+utente}
+
+
+
+Flag nuovo utente (submit). 
+
+Flag nuovo utente (submit). \Hypertarget{auth_8h_a415b2b418d3a90a6e1da72992e7577aa}\index{auth.h@{auth.h}!passCount@{passCount}}
+\index{passCount@{passCount}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{passCount}{passCount}}
+{\footnotesize\ttfamily \label{auth_8h_a415b2b418d3a90a6e1da72992e7577aa} 
+int pass\+Count}
+
+\Hypertarget{auth_8h_a5058e2763f324b4146cfa8af36168478}\index{auth.h@{auth.h}!pinCount@{pinCount}}
+\index{pinCount@{pinCount}!auth.h@{auth.h}}
+\doxysubsubsection{\texorpdfstring{pinCount}{pinCount}}
+{\footnotesize\ttfamily \label{auth_8h_a5058e2763f324b4146cfa8af36168478} 
+int pin\+Count}
+

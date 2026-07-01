@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/screens/game/chat_render.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('chat__render_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file chat_render.c<div class="ingroups"><a class="el" href="group__gameplay__chat.html">Gameplay Chat</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Rendering della chat e componenti UI correlati.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gameplay__shared_8h_source.html">../../../lib/screens/game/gameplay_shared.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gameplay__draw_8h_source.html">../../../lib/screens/game/gameplay_draw.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_2string__utils_8h_source.html">../../../lib/screens/menu/string_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ui_8h_source.html">../../../lib/ui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network_8h_source.html">../../../lib/socket/network/network.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network__send_8h_source.html">../../../lib/socket/network/network_send.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:accf70613e15dd3bcc231017b8f814c80" id="r_accf70613e15dd3bcc231017b8f814c80"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#accf70613e15dd3bcc231017b8f814c80">LARGHEZZA</a>&#160;&#160;&#160;1280</td></tr>
+<tr class="memitem:a737f1e0014465787871b62d0e61129d8" id="r_a737f1e0014465787871b62d0e61129d8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a737f1e0014465787871b62d0e61129d8">ALTEZZA</a>&#160;&#160;&#160;720</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a1b5dfa99b81aaf484e299e268b30ba2a" id="r_a1b5dfa99b81aaf484e299e268b30ba2a"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a1b5dfa99b81aaf484e299e268b30ba2a">StartsWithIgnoreCase</a> (const char *str, const char *prefix)</td></tr>
+<tr class="memdesc:a1b5dfa99b81aaf484e299e268b30ba2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confronto case-insensitive di un prefisso.  <br /></td></tr>
+<tr class="memitem:adf67a511d7c4de12e19cb511e6a07a1f" id="r_adf67a511d7c4de12e19cb511e6a07a1f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adf67a511d7c4de12e19cb511e6a07a1f">DrawChatMsgSegmentato</a> (const char *msg, int x, int y, int fontSize, <a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, int mio_id)</td></tr>
+<tr class="memdesc:adf67a511d7c4de12e19cb511e6a07a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna un messaggio chat con tag @ evidenziati.  <br /></td></tr>
+<tr class="memitem:a851f34a7d7a2268f4657ff72b388646b" id="r_a851f34a7d7a2268f4657ff72b388646b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a851f34a7d7a2268f4657ff72b388646b">DisegnaPannelloChat</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, int mio_id, <a class="el" href="struct_vector2.html">Vector2</a> mousePos)</td></tr>
+<tr class="memdesc:a851f34a7d7a2268f4657ff72b388646b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna il pannello chat completo.  <br /></td></tr>
+<tr class="memitem:a8ba5c34b26e94291e472a9397d912d54" id="r_a8ba5c34b26e94291e472a9397d912d54"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8ba5c34b26e94291e472a9397d912d54">DisegnaPopupUscita</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase)</td></tr>
+<tr class="memdesc:a8ba5c34b26e94291e472a9397d912d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna il popup di conferma uscita partita.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:a20d7f38f3172dfe2ed4c5819e84c78ed" id="r_a20d7f38f3172dfe2ed4c5819e84c78ed"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a20d7f38f3172dfe2ed4c5819e84c78ed">inputChat</a> [128]</td></tr>
+<tr class="memdesc:a20d7f38f3172dfe2ed4c5819e84c78ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer per il messaggio chat in digitazione.  <br /></td></tr>
+<tr class="memitem:a5c0b78531197553de40e19f2afd95ff4" id="r_a5c0b78531197553de40e19f2afd95ff4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a5c0b78531197553de40e19f2afd95ff4">isTyping</a></td></tr>
+<tr class="memdesc:a5c0b78531197553de40e19f2afd95ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag: 1 se l'utente sta digitando nella chat.  <br /></td></tr>
+<tr class="memitem:a0841fa17b3362cfad64d784cf9a0b5e3" id="r_a0841fa17b3362cfad64d784cf9a0b5e3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0841fa17b3362cfad64d784cf9a0b5e3">popup_uscita_attivo</a></td></tr>
+<tr class="memdesc:a0841fa17b3362cfad64d784cf9a0b5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag: 1 se il popup di conferma uscita e' visibile durante il gioco.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Rendering della chat e componenti UI correlati. </p>
+<p>Rendering della chat in-game.</p>
+<p>Modulo specializzato per il rendering della chat multiplayer, suggerimenti @mentions, invio messaggi e popup di uscita.</p>
+<p>Funzioni:</p><ul>
+<li>DrawChatMsgSegmentato: disegna messaggio chat con tag evidenziati</li>
+<li>DisegnaPannelloChat: pannello completo chat con cronologia e input</li>
+<li>DisegnaPopupUscita: popup di conferma uscita partita</li>
+</ul>
+<p>Estratto da <a class="el" href="gameplay__draw_8c.html" title="Rendering del gameplay UNO.">gameplay_draw.c</a> per ridurre la complessita' del file. Utilizza le variabili di stato definite in <a class="el" href="gameplay__screen_8c.html" title="Definizioni variabili di stato condivise del gameplay.">gameplay_screen.c</a>.</p>
+<p>Gestisce il disegno della finestra chat e dei messaggi. </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
+<a id="a737f1e0014465787871b62d0e61129d8" name="a737f1e0014465787871b62d0e61129d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a737f1e0014465787871b62d0e61129d8">&#9670;&#160;</a></span>ALTEZZA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ALTEZZA&#160;&#160;&#160;720</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="accf70613e15dd3bcc231017b8f814c80" name="accf70613e15dd3bcc231017b8f814c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accf70613e15dd3bcc231017b8f814c80">&#9670;&#160;</a></span>LARGHEZZA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LARGHEZZA&#160;&#160;&#160;1280</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a851f34a7d7a2268f4657ff72b388646b" name="a851f34a7d7a2268f4657ff72b388646b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851f34a7d7a2268f4657ff72b388646b">&#9670;&#160;</a></span>DisegnaPannelloChat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisegnaPannelloChat </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mio_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>mousePos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disegna il pannello chat completo. </p>
+<p>Include:</p><ul>
+<li>Cronologia messaggi (ultimi 7 visibili)</li>
+<li>Evidenziazione messaggi con tag verso il giocatore locale</li>
+<li>Campo di input se isTyping</li>
+<li>Suggerimento giocatori con @</li>
+<li>Pulsante INVIA</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco. </td></tr>
+    <tr><td class="paramname">mio_id</td><td>ID del giocatore locale. </td></tr>
+    <tr><td class="paramname">mousePos</td><td>Posizione del mouse per rilevamento click. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8ba5c34b26e94291e472a9397d912d54" name="a8ba5c34b26e94291e472a9397d912d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ba5c34b26e94291e472a9397d912d54">&#9670;&#160;</a></span>DisegnaPopupUscita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisegnaPopupUscita </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *</td>          <td class="paramname"><span class="paramname"><em>fase</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disegna il popup di conferma uscita partita. </p>
+<p>Mostra overlay scuro con opzioni:</p><ul>
+<li>Offline: "Salva ed Esci", "Esci", "Annulla"</li>
+<li>Online: "SI" (esce + chiude rete), "NO"</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco (per salvataggio opzionale). </td></tr>
+    <tr><td class="paramname">fase</td><td>Puntatore alla fase (cambia a FASE_MENU se confermato). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adf67a511d7c4de12e19cb511e6a07a1f" name="adf67a511d7c4de12e19cb511e6a07a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf67a511d7c4de12e19cb511e6a07a1f">&#9670;&#160;</a></span>DrawChatMsgSegmentato()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DrawChatMsgSegmentato </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>fontSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mio_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disegna un messaggio chat con tag @ evidenziati. </p>
+<p>Disegna un messaggio chat evidenziando i tag @NomeGiocatore.</p>
+<p>I tag diretti a mio_id vengono evidenziati in giallo (YELLOW), i tag ad altri giocatori in azzurro (CYAN). Il resto del testo viene disegnato in LIGHTGRAY.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Messaggio da disegnare. </td></tr>
+    <tr><td class="paramname">x</td><td>Coordinata X di partenza. </td></tr>
+    <tr><td class="paramname">y</td><td>Coordinata Y di partenza. </td></tr>
+    <tr><td class="paramname">fontSize</td><td>Dimensione del font. </td></tr>
+    <tr><td class="paramname">gioco</td><td>Stato di gioco (per accedere ai nomi dei giocatori). </td></tr>
+    <tr><td class="paramname">mio_id</td><td>ID del giocatore locale.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Disegna un messaggio chat con tag @ evidenziati.</p>
+<p>Tag diretto a mio_id: giallo (YELLOW) Tag diretto ad altro giocatore: azzurro (CYAN chiaro) Resto del testo: colore di default (LIGHTGRAY) </p>
+
+</div>
+</div>
+<a id="a1b5dfa99b81aaf484e299e268b30ba2a" name="a1b5dfa99b81aaf484e299e268b30ba2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b5dfa99b81aaf484e299e268b30ba2a">&#9670;&#160;</a></span>StartsWithIgnoreCase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StartsWithIgnoreCase </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>prefix</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Confronto case-insensitive di un prefisso. </p>
+<p>Restituisce 1 se inizia con il prefisso specificato. </p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="a20d7f38f3172dfe2ed4c5819e84c78ed" name="a20d7f38f3172dfe2ed4c5819e84c78ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20d7f38f3172dfe2ed4c5819e84c78ed">&#9670;&#160;</a></span>inputChat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char inputChat[128]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer per il messaggio chat in digitazione. </p>
+
+</div>
+</div>
+<a id="a5c0b78531197553de40e19f2afd95ff4" name="a5c0b78531197553de40e19f2afd95ff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c0b78531197553de40e19f2afd95ff4">&#9670;&#160;</a></span>isTyping</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isTyping</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag: 1 se l'utente sta digitando nella chat. </p>
+
+</div>
+</div>
+<a id="a0841fa17b3362cfad64d784cf9a0b5e3" name="a0841fa17b3362cfad64d784cf9a0b5e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0841fa17b3362cfad64d784cf9a0b5e3">&#9670;&#160;</a></span>popup_uscita_attivo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int popup_uscita_attivo</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag: 1 se il popup di conferma uscita e' visibile durante il gioco. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_8790123cd27986151acde1ce1c3bab17.html">screens</a></li><li class="navelem"><a href="dir_9baab45634982f8b3d0134cb623803a1.html">game</a></li><li class="navelem"><a href="chat__render_8c.html">chat_render.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Operazioni BST</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__bst__operazioni.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Operazioni BST </div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Funzioni di gestione dell'albero binario di ricerca.  
+<a href="#details">Continua...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:ga62e40793a2003872c369acb82e6af431" id="r_ga62e40793a2003872c369acb82e6af431"><td class="memItemLeft"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ga62e40793a2003872c369acb82e6af431">BST_CreaNodo</a> (<a class="el" href="struct_utente.html">Utente</a> u)</td></tr>
+<tr class="memdesc:ga62e40793a2003872c369acb82e6af431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un nuovo nodo BST a partire da un <a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a>.  <br /></td></tr>
+<tr class="memitem:gacacb3b4a6ddbd736f5b58735895adfd9" id="r_gacacb3b4a6ddbd736f5b58735895adfd9"><td class="memItemLeft"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="#gacacb3b4a6ddbd736f5b58735895adfd9">BST_Inserisci</a> (<a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *radice, <a class="el" href="struct_utente.html">Utente</a> u, int *duplicato)</td></tr>
+<tr class="memdesc:gacacb3b4a6ddbd736f5b58735895adfd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce un utente nell'albero.  <br /></td></tr>
+<tr class="memitem:ga79a477b261bbda20446e0f5df2faae46" id="r_ga79a477b261bbda20446e0f5df2faae46"><td class="memItemLeft"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ga79a477b261bbda20446e0f5df2faae46">BST_RicercaEmail</a> (<a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *radice, const char *email)</td></tr>
+<tr class="memdesc:ga79a477b261bbda20446e0f5df2faae46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricerca un utente per email.  <br /></td></tr>
+<tr class="memitem:ga225db238626a3343a76ff1db348bdc76" id="r_ga225db238626a3343a76ff1db348bdc76"><td class="memItemLeft"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ga225db238626a3343a76ff1db348bdc76">BST_RimuoviEmail</a> (<a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *radice, const char *email)</td></tr>
+<tr class="memdesc:ga225db238626a3343a76ff1db348bdc76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove il nodo con l'email specificata.  <br /></td></tr>
+<tr class="memitem:ga9316a904ece8260cbe1018b94d2888a0" id="r_ga9316a904ece8260cbe1018b94d2888a0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga9316a904ece8260cbe1018b94d2888a0">BST_Distruggi</a> (<a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *radice)</td></tr>
+<tr class="memdesc:ga9316a904ece8260cbe1018b94d2888a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera ricorsivamente tutta la memoria dell'albero.  <br /></td></tr>
+<tr class="memitem:ga192fed6e7b936d4348b504e1069e3e03" id="r_ga192fed6e7b936d4348b504e1069e3e03"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga192fed6e7b936d4348b504e1069e3e03">BST_Inordina</a> (<a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *radice, <a class="el" href="struct_utente.html">Utente</a> *out, int max)</td></tr>
+<tr class="memdesc:ga192fed6e7b936d4348b504e1069e3e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visita in-order e copia i puntatori agli Utenti in un array.  <br /></td></tr>
+<tr class="memitem:ga5635ff2d752c8c11d78e1d00915e2a1e" id="r_ga5635ff2d752c8c11d78e1d00915e2a1e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga5635ff2d752c8c11d78e1d00915e2a1e">BST_Altezza</a> (<a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *radice)</td></tr>
+<tr class="memdesc:ga5635ff2d752c8c11d78e1d00915e2a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce l'altezza dell'albero.  <br /></td></tr>
+<tr class="memitem:ga6f4d3c31a29be5dff40bfe065fe08ce1" id="r_ga6f4d3c31a29be5dff40bfe065fe08ce1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga6f4d3c31a29be5dff40bfe065fe08ce1">BST_ContaNodi</a> (<a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *radice)</td></tr>
+<tr class="memdesc:ga6f4d3c31a29be5dff40bfe065fe08ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di nodi nell'albero.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Funzioni di gestione dell'albero binario di ricerca. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="ga5635ff2d752c8c11d78e1d00915e2a1e" name="ga5635ff2d752c8c11d78e1d00915e2a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5635ff2d752c8c11d78e1d00915e2a1e">&#9670;&#160;</a></span>BST_Altezza()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BST_Altezza </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>radice</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce l'altezza dell'albero. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida o NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Altezza (0 se vuoto).</dd>
+<dd>
+Altezza (0 se vuoto). </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6f4d3c31a29be5dff40bfe065fe08ce1" name="ga6f4d3c31a29be5dff40bfe065fe08ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f4d3c31a29be5dff40bfe065fe08ce1">&#9670;&#160;</a></span>BST_ContaNodi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BST_ContaNodi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>radice</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il numero di nodi nell'albero. </p>
+<p>Restituisce il numero di nodi.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida o NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di nodi.</dd></dl>
+<p>Restituisce il numero di nodi nell'albero.</p>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di nodi. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga62e40793a2003872c369acb82e6af431" name="ga62e40793a2003872c369acb82e6af431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga62e40793a2003872c369acb82e6af431">&#9670;&#160;</a></span>BST_CreaNodo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> * BST_CreaNodo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_utente.html">Utente</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crea un nuovo nodo BST a partire da un <a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a>. </p>
+<p>Crea un nuovo nodo BST.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>u.email valida. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Nodo allocato e inizializzato, o NULL se out-of-memory. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td><a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> da inserire nel nodo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al nodo creato, o NULL.</dd></dl>
+<p>Crea un nuovo nodo BST a partire da un <a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a>.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>u.email valida. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Nodo allocato e inizializzato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">u</td><td><a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> da inserire. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al nodo, o NULL. </dd></dl>
+
+</div>
+</div>
+<a id="ga9316a904ece8260cbe1018b94d2888a0" name="ga9316a904ece8260cbe1018b94d2888a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9316a904ece8260cbe1018b94d2888a0">&#9670;&#160;</a></span>BST_Distruggi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BST_Distruggi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>radice</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libera ricorsivamente tutta la memoria dell'albero. </p>
+<p>Distrugge ricorsivamente l'albero.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida o NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Tutti i nodi deallocati. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice dell'albero da distruggere.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Libera ricorsivamente tutta la memoria dell'albero.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida o NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Memoria liberata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga192fed6e7b936d4348b504e1069e3e03" name="ga192fed6e7b936d4348b504e1069e3e03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga192fed6e7b936d4348b504e1069e3e03">&#9670;&#160;</a></span>BST_Inordina()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BST_Inordina </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>radice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_utente.html">Utente</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Visita in-order e copia i puntatori agli Utenti in un array. </p>
+<p>Visita in-order: copia utenti in array ordinato.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida; out != NULL; max &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Array out popolato con i nodi in ordine; restituisce il conteggio. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice dell'albero. </td></tr>
+    <tr><td class="paramname">out</td><td>Array di <a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> da riempire. </td></tr>
+    <tr><td class="paramname">max</td><td>Dimensione massima di out. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di elementi scritti.</dd></dl>
+<p>Visita in-order e copia i puntatori agli Utenti in un array.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida; out != NULL; max &gt; 0. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di elementi scritti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice. </td></tr>
+    <tr><td class="paramname">out</td><td>Array output. </td></tr>
+    <tr><td class="paramname">max</td><td>Dimensione massima. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gacacb3b4a6ddbd736f5b58735895adfd9" name="gacacb3b4a6ddbd736f5b58735895adfd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacacb3b4a6ddbd736f5b58735895adfd9">&#9670;&#160;</a></span>BST_Inserisci()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> * BST_Inserisci </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>radice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_utente.html">Utente</a></td>          <td class="paramname"><span class="paramname"><em>u</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>duplicato</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserisce un utente nell'albero. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida (o NULL); u.email non duplicata. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Albero aggiornato; nuovo nodo inserito se non duplicato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice corrente dell'albero. </td></tr>
+    <tr><td class="paramname">u</td><td><a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> da inserire. </td></tr>
+    <tr><td class="paramname">duplicato</td><td>Flag impostato a 1 se email duplicata. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Nuova radice dell'albero.</dd></dl>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida; u.email non duplicata. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Nuovo nodo inserito se non duplicato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice corrente. </td></tr>
+    <tr><td class="paramname">u</td><td><a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> da inserire. </td></tr>
+    <tr><td class="paramname">duplicato</td><td>Flag duplicato (1 se email gia' presente). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Nuova radice. </dd></dl>
+
+</div>
+</div>
+<a id="ga79a477b261bbda20446e0f5df2faae46" name="ga79a477b261bbda20446e0f5df2faae46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79a477b261bbda20446e0f5df2faae46">&#9670;&#160;</a></span>BST_RicercaEmail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> * BST_RicercaEmail </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>radice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>email</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ricerca un utente per email. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida; email != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce nodo trovato o NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice dell'albero. </td></tr>
+    <tr><td class="paramname">email</td><td>Email da cercare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al <a class="el" href="struct_nodo_albero.html" title="Nodo dell&#39;albero BST: contiene un Utente e puntatori ai figli.">NodoAlbero</a> trovato, o NULL.</dd></dl>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida; email != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Nodo trovato o NULL. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice. </td></tr>
+    <tr><td class="paramname">email</td><td>Email da cercare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga225db238626a3343a76ff1db348bdc76" name="ga225db238626a3343a76ff1db348bdc76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga225db238626a3343a76ff1db348bdc76">&#9670;&#160;</a></span>BST_RimuoviEmail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> * BST_RimuoviEmail </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_nodo_albero.html">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>radice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>email</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rimuove il nodo con l'email specificata. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida; email esistente nell'albero. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Nodo rimosso; albero bilanciato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice corrente. </td></tr>
+    <tr><td class="paramname">email</td><td>Email del nodo da rimuovere. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Nuova radice dell'albero.</dd></dl>
+<dl class="section pre"><dt>Precondizione</dt><dd>radice valida; email esistente. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Nodo rimosso; albero aggiornato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radice</td><td>Radice. </td></tr>
+    <tr><td class="paramname">email</td><td>Email da rimuovere. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Nuova radice. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

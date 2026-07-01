@@ -1,0 +1,20 @@
+\doxysection{fs.\+h}
+\hypertarget{fs_8h_source}{}\label{fs_8h_source}\index{lib/fs/fs.h@{lib/fs/fs.h}}
+\mbox{\hyperlink{fs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FS\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FS\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ fs\_mkdirs(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00010\ \ \ \ \ system(\textcolor{stringliteral}{"{}if\ not\ exist\ data\ mkdir\ data"{}});}
+\DoxyCodeLine{00011\ \ \ \ \ system(\textcolor{stringliteral}{"{}if\ not\ exist\ data\(\backslash\)\(\backslash\)users\ mkdir\ data\(\backslash\)\(\backslash\)users"{}});}
+\DoxyCodeLine{00012\ \ \ \ \ system(\textcolor{stringliteral}{"{}if\ not\ exist\ data\(\backslash\)\(\backslash\)games\ mkdir\ data\(\backslash\)\(\backslash\)games"{}});}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00014\ \ \ \ \ system(\textcolor{stringliteral}{"{}mkdir\ -\/p\ data/users\ data/games"{}});}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ \}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

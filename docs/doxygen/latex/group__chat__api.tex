@@ -1,0 +1,258 @@
+\doxysection{API Chat}
+\hypertarget{group__chat__api}{}\label{group__chat__api}\index{API Chat@{API Chat}}
+
+
+Funzioni per la gestione della chat (creazione, inserimento, accesso, formattazione).  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__chat__api_ga5742cf207ce2ffec75d4b46ecdd330df}{Chat\+\_\+\+Crea}} (\mbox{\hyperlink{struct_chat_storico}{Chat\+Storico}} \texorpdfstring{$\ast$}{*}c)
+\begin{DoxyCompactList}\small\item\em Crea uno storico chat vuoto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__chat__api_ga45a2d902c345306574b0fbabe549d92c}{Chat\+\_\+\+Aggiungi}} (\mbox{\hyperlink{struct_chat_storico}{Chat\+Storico}} \texorpdfstring{$\ast$}{*}c, const char \texorpdfstring{$\ast$}{*}mittente, const char \texorpdfstring{$\ast$}{*}testo)
+\begin{DoxyCompactList}\small\item\em Aggiunge un messaggio in coda (FIFO). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__chat__api_gac08be014c8c4eeb26931b5c64091df90}{Chat\+\_\+\+Ora\+Corrente}} (char \texorpdfstring{$\ast$}{*}out, size\+\_\+t out\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Genera un timestamp "{}\+HH\+:\+MM"{} nel buffer fornito. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_messaggio_chat}{Messaggio\+Chat}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__chat__api_gae1848e211b111491db167b98c47922d5}{Chat\+\_\+\+Ottieni}} (const \mbox{\hyperlink{struct_chat_storico}{Chat\+Storico}} \texorpdfstring{$\ast$}{*}c, int i)
+\begin{DoxyCompactList}\small\item\em Restituisce il messaggio in posizione i della cronologia. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__chat__api_ga28daec16e4d8d5e35ed61e2410b0975c}{Chat\+\_\+\+Svuota}} (\mbox{\hyperlink{struct_chat_storico}{Chat\+Storico}} \texorpdfstring{$\ast$}{*}c)
+\begin{DoxyCompactList}\small\item\em Svuota la cronologia chat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__chat__api_gacd2c9941c4a7d8770c1981797586e025}{Chat\+\_\+\+Formatta\+Riga}} (const \mbox{\hyperlink{struct_messaggio_chat}{Messaggio\+Chat}} \texorpdfstring{$\ast$}{*}m, char \texorpdfstring{$\ast$}{*}out, size\+\_\+t out\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Formatta un \doxylink{struct_messaggio_chat}{Messaggio\+Chat} in una riga "{}\+HH\+:\+MM @\+Mittente\+: testo"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funzioni per la gestione della chat (creazione, inserimento, accesso, formattazione). 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__chat__api_ga45a2d902c345306574b0fbabe549d92c}\index{API Chat@{API Chat}!Chat\_Aggiungi@{Chat\_Aggiungi}}
+\index{Chat\_Aggiungi@{Chat\_Aggiungi}!API Chat@{API Chat}}
+\doxysubsubsection{\texorpdfstring{Chat\_Aggiungi()}{Chat\_Aggiungi()}}
+{\footnotesize\ttfamily \label{group__chat__api_ga45a2d902c345306574b0fbabe549d92c} 
+void Chat\+\_\+\+Aggiungi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_chat_storico}{Chat\+Storico}} \texorpdfstring{$\ast$}{*}}]{c}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{mittente}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{testo}{}\end{DoxyParamCaption})}
+
+
+
+Aggiunge un messaggio in coda (FIFO). 
+
+Se la cronologia è piena, sovrascrive il messaggio più vecchio.
+
+\begin{DoxyPrecond}{Precondition}
+c != NULL; mittente != NULL; testo != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+count aggiornato; head avanzato se pieno. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Puntatore a \doxylink{struct_chat_storico}{Chat\+Storico}. \\
+\hline
+{\em mittente} & Username del mittente. \\
+\hline
+{\em testo} & Testo del messaggio.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+c != NULL; mittente != NULL; testo != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Messaggio aggiunto; count aggiornato; head ruotato se pieno. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \doxylink{struct_chat_storico}{Chat\+Storico}. \\
+\hline
+{\em mittente} & Mittente. \\
+\hline
+{\em testo} & Testo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__chat__api_ga5742cf207ce2ffec75d4b46ecdd330df}\index{API Chat@{API Chat}!Chat\_Crea@{Chat\_Crea}}
+\index{Chat\_Crea@{Chat\_Crea}!API Chat@{API Chat}}
+\doxysubsubsection{\texorpdfstring{Chat\_Crea()}{Chat\_Crea()}}
+{\footnotesize\ttfamily \label{group__chat__api_ga5742cf207ce2ffec75d4b46ecdd330df} 
+void Chat\+\_\+\+Crea (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_chat_storico}{Chat\+Storico}} \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Crea uno storico chat vuoto. 
+
+\begin{DoxyPrecond}{Precondition}
+c != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Storico inizializzato (count=0, head=0). 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Puntatore a \doxylink{struct_chat_storico}{Chat\+Storico} da inizializzare.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+c != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+count=0, head=0, buffer azzerato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Puntatore a \doxylink{struct_chat_storico}{Chat\+Storico}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__chat__api_gacd2c9941c4a7d8770c1981797586e025}\index{API Chat@{API Chat}!Chat\_FormattaRiga@{Chat\_FormattaRiga}}
+\index{Chat\_FormattaRiga@{Chat\_FormattaRiga}!API Chat@{API Chat}}
+\doxysubsubsection{\texorpdfstring{Chat\_FormattaRiga()}{Chat\_FormattaRiga()}}
+{\footnotesize\ttfamily \label{group__chat__api_gacd2c9941c4a7d8770c1981797586e025} 
+void Chat\+\_\+\+Formatta\+Riga (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_messaggio_chat}{Messaggio\+Chat}} \texorpdfstring{$\ast$}{*}}]{m}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{out}{, }\item[{size\+\_\+t}]{out\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Formatta un \doxylink{struct_messaggio_chat}{Messaggio\+Chat} in una riga "{}\+HH\+:\+MM @\+Mittente\+: testo"{}. 
+
+Helper per il rendering delle schermate.
+
+\begin{DoxyPrecond}{Precondition}
+m != NULL; out != NULL; out\+\_\+size \texorpdfstring{$>$}{>}= 320. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Riga formattata scritta in out. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & Puntatore a \doxylink{struct_messaggio_chat}{Messaggio\+Chat}. \\
+\hline
+{\em out} & Buffer di output (almeno 320 byte). \\
+\hline
+{\em out\+\_\+size} & Dimensione del buffer.\\
+\hline
+\end{DoxyParams}
+Formatta un \doxylink{struct_messaggio_chat}{Messaggio\+Chat} in una riga "{}\+HH\+:\+MM @\+Mittente\+: testo"{}.
+
+\begin{DoxyPrecond}{Precondition}
+m != NULL; out != NULL; out\+\_\+size \texorpdfstring{$>$}{>}= 320. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Riga formattata in out. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & \doxylink{struct_messaggio_chat}{Messaggio\+Chat}. \\
+\hline
+{\em out} & Buffer output. \\
+\hline
+{\em out\+\_\+size} & Dimensione buffer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__chat__api_gac08be014c8c4eeb26931b5c64091df90}\index{API Chat@{API Chat}!Chat\_OraCorrente@{Chat\_OraCorrente}}
+\index{Chat\_OraCorrente@{Chat\_OraCorrente}!API Chat@{API Chat}}
+\doxysubsubsection{\texorpdfstring{Chat\_OraCorrente()}{Chat\_OraCorrente()}}
+{\footnotesize\ttfamily \label{group__chat__api_gac08be014c8c4eeb26931b5c64091df90} 
+void Chat\+\_\+\+Ora\+Corrente (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{out}{, }\item[{size\+\_\+t}]{out\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Genera un timestamp "{}\+HH\+:\+MM"{} nel buffer fornito. 
+
+\begin{DoxyPrecond}{Precondition}
+out != NULL; out\+\_\+size \texorpdfstring{$>$}{>}= 6. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Stringa "{}\+HH\+:\+MM"{} scritta in out. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Buffer di output (almeno 6 byte). \\
+\hline
+{\em out\+\_\+size} & Dimensione del buffer.\\
+\hline
+\end{DoxyParams}
+Genera un timestamp "{}\+HH\+:\+MM"{} nel buffer fornito.
+
+\begin{DoxyPrecond}{Precondition}
+out != NULL; out\+\_\+size \texorpdfstring{$>$}{>}= 6. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Stringa "{}\+HH\+:\+MM"{} in out. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Buffer output. \\
+\hline
+{\em out\+\_\+size} & Dimensione buffer. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__chat__api_gae1848e211b111491db167b98c47922d5}\index{API Chat@{API Chat}!Chat\_Ottieni@{Chat\_Ottieni}}
+\index{Chat\_Ottieni@{Chat\_Ottieni}!API Chat@{API Chat}}
+\doxysubsubsection{\texorpdfstring{Chat\_Ottieni()}{Chat\_Ottieni()}}
+{\footnotesize\ttfamily \label{group__chat__api_gae1848e211b111491db167b98c47922d5} 
+const \mbox{\hyperlink{struct_messaggio_chat}{Messaggio\+Chat}} \texorpdfstring{$\ast$}{*} Chat\+\_\+\+Ottieni (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_chat_storico}{Chat\+Storico}} \texorpdfstring{$\ast$}{*}}]{c}{, }\item[{int}]{i}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce il messaggio in posizione i della cronologia. 
+
+Ordine\+: 0 = più vecchio, count-\/1 = più recente.
+
+\begin{DoxyPrecond}{Precondition}
+c != NULL; 0 \texorpdfstring{$<$}{<}= i \texorpdfstring{$<$}{<} c-\/\texorpdfstring{$>$}{>}count. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Puntatore a \doxylink{struct_messaggio_chat}{Messaggio\+Chat}, o NULL se indice non valido. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Puntatore a \doxylink{struct_chat_storico}{Chat\+Storico}. \\
+\hline
+{\em i} & Indice del messaggio (0-\/based).\\
+\hline
+\end{DoxyParams}
+Restituisce il messaggio in posizione i della cronologia.
+
+\begin{DoxyPrecond}{Precondition}
+c != NULL; 0 \texorpdfstring{$<$}{<}= i \texorpdfstring{$<$}{<} c-\/\texorpdfstring{$>$}{>}count. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Puntatore a \doxylink{struct_messaggio_chat}{Messaggio\+Chat}, o NULL. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \doxylink{struct_chat_storico}{Chat\+Storico}. \\
+\hline
+{\em i} & Indice. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__chat__api_ga28daec16e4d8d5e35ed61e2410b0975c}\index{API Chat@{API Chat}!Chat\_Svuota@{Chat\_Svuota}}
+\index{Chat\_Svuota@{Chat\_Svuota}!API Chat@{API Chat}}
+\doxysubsubsection{\texorpdfstring{Chat\_Svuota()}{Chat\_Svuota()}}
+{\footnotesize\ttfamily \label{group__chat__api_ga28daec16e4d8d5e35ed61e2410b0975c} 
+void Chat\+\_\+\+Svuota (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_chat_storico}{Chat\+Storico}} \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Svuota la cronologia chat. 
+
+\begin{DoxyPrecond}{Precondition}
+c != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+count=0, head=0. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Puntatore a \doxylink{struct_chat_storico}{Chat\+Storico}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+c != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+count=0, head=0. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \doxylink{struct_chat_storico}{Chat\+Storico}. \\
+\hline
+\end{DoxyParams}

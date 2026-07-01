@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/screens/game/end_screen.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('end__screen_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file end_screen.c<div class="ingroups"><a class="el" href="group__end__screen.html">End Screen</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementazione schermata fine partita.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="end__screen_8h_source.html">../../../lib/screens/game/end_screen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ui_8h_source.html">../../../lib/ui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">../../../lib/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network_8h_source.html">../../../lib/socket/network/network.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network__send_8h_source.html">../../../lib/socket/network/network_send.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../../../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:accf70613e15dd3bcc231017b8f814c80" id="r_accf70613e15dd3bcc231017b8f814c80"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#accf70613e15dd3bcc231017b8f814c80">LARGHEZZA</a>&#160;&#160;&#160;1280</td></tr>
+<tr class="memitem:a737f1e0014465787871b62d0e61129d8" id="r_a737f1e0014465787871b62d0e61129d8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a737f1e0014465787871b62d0e61129d8">ALTEZZA</a>&#160;&#160;&#160;720</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a0e745641fe838ddef9bdaf29f6c2f464" id="r_a0e745641fe838ddef9bdaf29f6c2f464"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0e745641fe838ddef9bdaf29f6c2f464">CalcolaClassifica</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="struct_classifica_record.html">ClassificaRecord</a> classifica[4], int *num_in_classifica)</td></tr>
+<tr class="memdesc:a0e745641fe838ddef9bdaf29f6c2f464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola la classifica finale della partita.  <br /></td></tr>
+<tr class="memitem:a8459192b484f1fa0580d03a8d65f54ae" id="r_a8459192b484f1fa0580d03a8d65f54ae"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8459192b484f1fa0580d03a8d65f54ae">EsportaStatisticheTxt</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, const char *esito)</td></tr>
+<tr class="memdesc:a8459192b484f1fa0580d03a8d65f54ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Esporta il report della partita in un file di log testuale.  <br /></td></tr>
+<tr class="memitem:aa3e4add05eb49239e5e9a0d01220c301" id="r_aa3e4add05eb49239e5e9a0d01220c301"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa3e4add05eb49239e5e9a0d01220c301">DisegnaFinePartita</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase, <a class="el" href="struct_vector2.html">Vector2</a> mousePos)</td></tr>
+<tr class="memdesc:aa3e4add05eb49239e5e9a0d01220c301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna la schermata di fine partita con classifica e opzioni.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:a3e01e33a3f56bfa733e56e52296ca1fa" id="r_a3e01e33a3f56bfa733e56e52296ca1fa"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3e01e33a3f56bfa733e56e52296ca1fa">client_play_again_attesa</a> = 0</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Implementazione schermata fine partita. </p>
+<p>Gestisce classifica, statistiche, esportazione report txt, transizioni host/client per "Gioca Ancora".</p>
+<p>Gestisce la visualizzazione dei risultati finali:</p><ul>
+<li>Classifica con posizioni 1°, 2°, 3° (realistica)</li>
+<li><a class="el" href="struct_statistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> del vincitore</li>
+<li>Pulsanti per tornare al menu o salvare</li>
+<li>Visualizzazione punteggi e durata partita</li>
+</ul>
+<p>La classifica viene calcolata da <a class="el" href="#a0e745641fe838ddef9bdaf29f6c2f464" title="Calcola la classifica finale della partita.">CalcolaClassifica()</a> in <a class="el" href="game__logic_8c.html" title="Implementazione logica di gioco UNO: regole, effetti carte, validazione mosse e gestione ADT.">game_logic.c</a>.</p>
+<p>BUG FIX COMPLETO (Fase Fine Partita):</p><ul>
+<li>RICHIESTA 1: Client "Gioca Ancora" → riportato subito in Pre-Lobby. L'Host vede notifica "Client A e' pronto in lobby" in basso a destra.</li>
+<li>RICHIESTA 2: Client "Esci" → torna al menu, slot liberato e non riassegnato.</li>
+<li>RICHIESTA 3: Host "Gioca Ancora" → torna in Pre-Lobby, slot vuoti.</li>
+<li>RICHIESTA 4: Client "Gioca Ancora" DOPO che l'Host e' gia' tornato → si unisce direttamente alla Pre-Lobby con l'Host.</li>
+<li>RICHIESTA 5: <a class="el" href="struct_statistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> sempre salvate, mai modificate.</li>
+</ul>
+<p>BUG 4 FIX (<a class="el" href="end__screen_8c.html" title="Implementazione schermata fine partita.">end_screen.c</a>):</p><ul>
+<li>Cliente ora usa host_in_prelobby per decidere se andare subito in lobby o attendere. Pattern identico a <a class="el" href="gameplay__draw_8c.html" title="Rendering del gameplay UNO.">gameplay_draw.c</a> per consistenza.</li>
+<li>Host ora pulisce gli slot degli altri giocatori (NON host) quando preme "Gioca Ancora", così la lobby mostra solo l'host come giocatore. Gli slot si riempiono man mano che i client premono "Gioca Ancora".</li>
+<li>Rimossa transizione immediata a FASE_CLIENT_LOBBY: ora il client va in attesa (client_play_again_attesa=1) se host_in_prelobby e' 0. </li>
+</ul>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
+<a id="a737f1e0014465787871b62d0e61129d8" name="a737f1e0014465787871b62d0e61129d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a737f1e0014465787871b62d0e61129d8">&#9670;&#160;</a></span>ALTEZZA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ALTEZZA&#160;&#160;&#160;720</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="accf70613e15dd3bcc231017b8f814c80" name="accf70613e15dd3bcc231017b8f814c80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accf70613e15dd3bcc231017b8f814c80">&#9670;&#160;</a></span>LARGHEZZA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LARGHEZZA&#160;&#160;&#160;1280</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a0e745641fe838ddef9bdaf29f6c2f464" name="a0e745641fe838ddef9bdaf29f6c2f464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e745641fe838ddef9bdaf29f6c2f464">&#9670;&#160;</a></span>CalcolaClassifica()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CalcolaClassifica </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_classifica_record.html">ClassificaRecord</a></td>          <td class="paramname"><span class="paramname"><em>classifica</em></span>[4], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *</td>          <td class="paramname"><span class="paramname"><em>num_in_classifica</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcola la classifica finale della partita. </p>
+<p>Calcola e ordina la classifica finale dei giocatori.</p>
+<p>Ordina i giocatori per numero di carte rimanenti (vincitore = 0 carte). Utilizza bubble sort per ordinare in modo crescente. La posizione 1 corrisponde al vincitore (0 carte).</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco corrente. </td></tr>
+    <tr><td class="paramname">classifica</td><td>Array di <a class="el" href="struct_classifica_record.html" title="Record per la classifica visualizzata a fine partita.">ClassificaRecord</a>[4] da popolare. </td></tr>
+    <tr><td class="paramname">num_in_classifica</td><td>Puntatore a int: numero di giocatori in classifica.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Calcola la classifica finale della partita.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; classifica array valido. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>classifica popolata e ordinata per punteggio; num_in_classifica aggiornato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato del gioco. </td></tr>
+    <tr><td class="paramname">classifica</td><td>Array di <a class="el" href="struct_classifica_record.html" title="Record per la classifica visualizzata a fine partita.">ClassificaRecord</a> da riempire. </td></tr>
+    <tr><td class="paramname">num_in_classifica</td><td>Puntatore al numero di giocatori in classifica. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa3e4add05eb49239e5e9a0d01220c301" name="aa3e4add05eb49239e5e9a0d01220c301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3e4add05eb49239e5e9a0d01220c301">&#9670;&#160;</a></span>DisegnaFinePartita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisegnaFinePartita </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *</td>          <td class="paramname"><span class="paramname"><em>fase</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>mousePos</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disegna la schermata di fine partita con classifica e opzioni. </p>
+<p>Disegna la schermata di fine partita con classifica.</p>
+<p>Gestisce il rendering di:</p><ul>
+<li>Titolo con messaggio di vittoria</li>
+<li>Classifica finale (1°, 2°, 3° posti)</li>
+<li>Tempo di gioco</li>
+<li>Pulsanti: "Gioca Ancora", "Torna al Menu", "Esci"</li>
+<li>Notifiche live (es. "Client X e' pronto in lobby")</li>
+</ul>
+<p>Gestisce anche la transizione automatica per i client in attesa (BUG 4 FIX: client_play_again_attesa + host_in_prelobby).</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+    <tr><td class="paramname">fase</td><td>Puntatore alla fase applicazione (puo' cambiare a FASE_MENU, FASE_HOST_LOBBY, FASE_CLIENT_LOBBY). </td></tr>
+    <tr><td class="paramname">mousePos</td><td>Posizione corrente del mouse.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Disegna la schermata di fine partita con classifica e opzioni.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; fase != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Schermata fine partita renderizzata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato del gioco. </td></tr>
+    <tr><td class="paramname">fase</td><td>Fase corrente. </td></tr>
+    <tr><td class="paramname">mousePos</td><td>Posizione del mouse. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8459192b484f1fa0580d03a8d65f54ae" name="a8459192b484f1fa0580d03a8d65f54ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8459192b484f1fa0580d03a8d65f54ae">&#9670;&#160;</a></span>EsportaStatisticheTxt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EsportaStatisticheTxt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>esito</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Esporta il report della partita in un file di log testuale. </p>
+<p>Esporta le statistiche di fine partita su file .txt.</p>
+<p>Crea un file in data/logs/game_log_YYYYMMDD_HHMMSS.txt con:</p><ul>
+<li>Data e ora della partita</li>
+<li>Durata in minuti:secondi</li>
+<li>Esito (Vittoria/Sconfitta)</li>
+<li>Classifica finale con carte rimaste</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+    <tr><td class="paramname">esito</td><td>Stringa con l'esito della partita ("Vittoria" o "Sconfitta").</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Esporta il report della partita in un file di log testuale.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; esito != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>File .txt creato con statistiche della partita. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato del gioco. </td></tr>
+    <tr><td class="paramname">esito</td><td>Stringa esito ("Vittoria" o "Sconfitta"). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="a3e01e33a3f56bfa733e56e52296ca1fa" name="a3e01e33a3f56bfa733e56e52296ca1fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e01e33a3f56bfa733e56e52296ca1fa">&#9670;&#160;</a></span>client_play_again_attesa</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int client_play_again_attesa = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_8790123cd27986151acde1ce1c3bab17.html">screens</a></li><li class="navelem"><a href="dir_9baab45634982f8b3d0134cb623803a1.html">game</a></li><li class="navelem"><a href="end__screen_8c.html">end_screen.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

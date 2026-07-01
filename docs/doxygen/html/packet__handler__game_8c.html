@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file src/socket/network/packet_handler_game.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('packet__handler__game_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file packet_handler_game.c<div class="ingroups"><a class="el" href="group__network.html">Rete Multiplayer</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestore pacchetti di gioco per multiplayer online.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="packet__handler__game_8h_source.html">../../../lib/socket/network/packet_handler_game.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network_8h_source.html">../../../lib/socket/network/network.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network__send_8h_source.html">../../../lib/socket/network/network_send.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="state__sync_8h_source.html">../../../lib/socket/network/state_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="server__manager_8h_source.html">../../../lib/socket/server/server_manager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ui_8h_source.html">../../../lib/ui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">../../../lib/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gameplay__screen_8h_source.html">../../../lib/screens/game/gameplay_screen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="end__screen_8h_source.html">../../../lib/screens/game/end_screen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_2string__utils_8h_source.html">../../../lib/screens/menu/string_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../../../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a8425a0930462d077e52ebfdab4d46a54" id="r_a8425a0930462d077e52ebfdab4d46a54"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8425a0930462d077e52ebfdab4d46a54">HandleGamePacket</a> (<a class="el" href="struct_net_packet.html">NetPacket</a> *packet, <a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:a8425a0930462d077e52ebfdab4d46a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestisce un pacchetto di gioco (smistamento principale).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Gestore pacchetti di gioco per multiplayer online. </p>
+<p>Questo modulo gestisce TUTTI i pacchetti relativi alla logica di gioco scambiati tra host e client durante una partita multiplayer online. Implementa l'architettura client-server dove:</p><ul>
+<li>HOST: Riceve comandi dai client, valida le mosse, applica effetti e sincronizza lo stato completo tramite broadcast</li>
+<li>CLIENT: Riceve lo stato sincronizzato dall'host e invia comandi</li>
+</ul>
+<dl class="section note"><dt>Nota</dt><dd>Include gestione riconnessione diretta in partita: i client disconnessi possono rientrare senza passare per la lobby.</dd></dl>
+<p>Pacchetti gestiti:</p><ul>
+<li>PACKET_JOIN_GAME: nuovo giocatore o riconnessione client</li>
+<li>PACKET_GAME_STATE: sincronizzazione stato completo (host -&gt; client)</li>
+<li>PACKET_PLAYER_HAND: sincronizzazione mano di un giocatore</li>
+<li>PACKET_CHAT: messaggi di chat con supporto tag @utente</li>
+<li>PACKET_DISCONNECT/HOST_DISCONNECT: gestione uscite e sostituzione bot</li>
+<li>PACKET_COLOR_CHOICE: scelta colore dopo carta Jolly</li>
+<li>PACKET_MOVE: mossa carta (solo host valida e applica)</li>
+<li>PACKET_DRAW: pescata carte (solo host applica e cambia turno)</li>
+<li>PACKET_JOIN_REJECTED: rifiuto connessione (client)</li>
+<li>PACKET_START_GAME: segnalazione inizio partita (client)</li>
+</ul>
+<p>File correlati:</p><ul>
+<li><a class="el" href="packet__handler_8c.html" title="Dispatcher principale dei pacchetti di rete.">packet_handler.c</a> : gestore principale (smista a questo modulo)</li>
+<li><a class="el" href="state__sync_8c.html" title="Sincronizzazione dello stato di gioco da remoto a locale.">state_sync.c</a> : SyncGameStateFromNetwork (merge stato remoto)</li>
+<li><a class="el" href="network__send_8c.html" title="Funzioni di invio pacchetti per il multiplayer online.">network_send.c</a> : funzioni di invio (BroadcastGameState, SendMove, ecc.)</li>
+<li><a class="el" href="game__logic_8h.html" title="Modulo di logica di gioco UNO.">game_logic.h</a> : funzioni di logica (ApplicaEffetto, Pesca, MossaValida)</li>
+<li><a class="el" href="network__utils_8c.html" title="Funzioni di utilita&#39; per il modulo di rete multiplayer.">network_utils.c</a> : GestisciDisconnessione, RiassegnaSocket</li>
+</ul>
+<dl class="section author"><dt>Autore</dt><dd>Pasquale Franco </dd></dl>
+<dl class="section version"><dt>Versione</dt><dd>9.1.3 </dd></dl>
+<dl class="section date"><dt>Data</dt><dd>2026-07-01 </dd></dl>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a8425a0930462d077e52ebfdab4d46a54" name="a8425a0930462d077e52ebfdab4d46a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8425a0930462d077e52ebfdab4d46a54">&#9670;&#160;</a></span>HandleGamePacket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HandleGamePacket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_net_packet.html">NetPacket</a> *</td>          <td class="paramname"><span class="paramname"><em>packet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gestisce un pacchetto di gioco (smistamento principale). </p>
+<p>Gestisce i pacchetti di gioco ricevuti.</p>
+<p>Switch sul tipo di pacchetto e delega alle funzioni specifiche:</p><ul>
+<li>PACKET_START_GAME: inizio partita (client)</li>
+<li>PACKET_JOIN_GAME: nuovo giocatore (host)</li>
+<li>PACKET_GAME_STATE: sync stato completo (client)</li>
+<li>PACKET_PLAYER_HAND: sync mano giocatore (client)</li>
+<li>PACKET_CHAT: messaggio chat</li>
+<li>PACKET_DISCONNECT/HOST_DISCONNECT: gestione uscite</li>
+<li>PACKET_COLOR_CHOICE: scelta colore dopo jolly</li>
+<li>PACKET_MOVE: mossa carta (host valida e applica)</li>
+<li>PACKET_DRAW: pescata carte (host applica)</li>
+<li>PACKET_JOIN_REJECTED: rifiuto connessione (client)</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pacchetto ricevuto (gia' deserializzato). </td></tr>
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco locale.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Gestisce un pacchetto di gioco (smistamento principale).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>packet != NULL; gioco != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Pacchetto elaborato; stato di gioco aggiornato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>Pacchetto ricevuto. </td></tr>
+    <tr><td class="paramname">gioco</td><td>Stato del gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>PACKET_JOIN_GAME: Un client richiede di entrare nella stanza.</p>
+<p>Riconnessione diretta in partita: Quando un client si disconnette durante una partita, il server lo sostituisce con un Bot. Se il client si riconnette:</p><ol type="1">
+<li>Il server riconosce l'ID del client tramite il nome del giocatore (campo join_game.nome) o tramite il socket_id (sender_id).</li>
+<li>Trova lo slot del giocatore nell'array giocatori[].</li>
+<li>Rimuove il Bot che lo stava sostituendo (is_bot = 0).</li>
+<li>Riassegna i comandi al client umano.</li>
+<li>Il client NON passa dalla lobby: entra direttamente in partita senza attendere il suo turno. Lo stato di gioco e la mano vengono broadcastati immediatamente.</li>
+</ol>
+<p>Se la partita NON e' iniziata (prelobby), il client si unisce normalmente alla lobby.</p>
+<p>Se la partita e' gia' iniziata e il client non e' riconosciuto (nuovo tentativo di connessione), viene RIFIUTATO.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_858915971c8656b65d461b873c3b3855.html">network</a></li><li class="navelem"><a href="packet__handler__game_8c.html">packet_handler_game.c</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

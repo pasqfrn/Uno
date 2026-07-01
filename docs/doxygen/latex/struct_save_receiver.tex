@@ -1,0 +1,109 @@
+\doxysection{Save\+Receiver Struct Reference}
+\hypertarget{struct_save_receiver}{}\label{struct_save_receiver}\index{SaveReceiver@{SaveReceiver}}
+
+
+Struttura per ricezione chunk di salvataggio.  
+
+
+
+
+{\ttfamily \#include $<$lan\+\_\+protocol.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_save_receiver_aff60c992771baa4929b1ae3a6e029676}{attivo}}
+\begin{DoxyCompactList}\small\item\em Flag di attività (1 se ricezione in corso). \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{struct_save_receiver_a90c02628c32018a98a5b940e4579d185}{key}} \mbox{[}70\mbox{]}
+\begin{DoxyCompactList}\small\item\em Chiave identificativa (username + data). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_save_receiver_af869a8696ea72cd82bc140267ef2b6ca}{total}}
+\begin{DoxyCompactList}\small\item\em Numero totale di chunk attesi. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_save_receiver_a5a69fb356eb35f544c9935541bfa3bac}{ricevuti}}
+\begin{DoxyCompactList}\small\item\em Numero di chunk ricevuti finora. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_save_receiver_a611fb3ebd31e4b7fb168b26e42f375d4}{file\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Dimensione totale del file. \end{DoxyCompactList}\item 
+unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_save_receiver_a85519c6fd8be2afc4d715cf0c1dd8d13}{filedata}}
+\begin{DoxyCompactList}\small\item\em Buffer per i dati ricevuti (allocato dinamicamente). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_save_receiver_af854aaf5f7b756a428a0a83a099c0cb3}{timer}}
+\begin{DoxyCompactList}\small\item\em Timer per timeout ricezione. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struttura per ricezione chunk di salvataggio. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_save_receiver_aff60c992771baa4929b1ae3a6e029676}\index{SaveReceiver@{SaveReceiver}!attivo@{attivo}}
+\index{attivo@{attivo}!SaveReceiver@{SaveReceiver}}
+\doxysubsubsection{\texorpdfstring{attivo}{attivo}}
+{\footnotesize\ttfamily \label{struct_save_receiver_aff60c992771baa4929b1ae3a6e029676} 
+int Save\+Receiver\+::attivo}
+
+
+
+Flag di attività (1 se ricezione in corso). 
+
+\Hypertarget{struct_save_receiver_a611fb3ebd31e4b7fb168b26e42f375d4}\index{SaveReceiver@{SaveReceiver}!file\_size@{file\_size}}
+\index{file\_size@{file\_size}!SaveReceiver@{SaveReceiver}}
+\doxysubsubsection{\texorpdfstring{file\_size}{file\_size}}
+{\footnotesize\ttfamily \label{struct_save_receiver_a611fb3ebd31e4b7fb168b26e42f375d4} 
+int Save\+Receiver\+::file\+\_\+size}
+
+
+
+Dimensione totale del file. 
+
+\Hypertarget{struct_save_receiver_a85519c6fd8be2afc4d715cf0c1dd8d13}\index{SaveReceiver@{SaveReceiver}!filedata@{filedata}}
+\index{filedata@{filedata}!SaveReceiver@{SaveReceiver}}
+\doxysubsubsection{\texorpdfstring{filedata}{filedata}}
+{\footnotesize\ttfamily \label{struct_save_receiver_a85519c6fd8be2afc4d715cf0c1dd8d13} 
+unsigned char\texorpdfstring{$\ast$}{*} Save\+Receiver\+::filedata}
+
+
+
+Buffer per i dati ricevuti (allocato dinamicamente). 
+
+\Hypertarget{struct_save_receiver_a90c02628c32018a98a5b940e4579d185}\index{SaveReceiver@{SaveReceiver}!key@{key}}
+\index{key@{key}!SaveReceiver@{SaveReceiver}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \label{struct_save_receiver_a90c02628c32018a98a5b940e4579d185} 
+char Save\+Receiver\+::key\mbox{[}70\mbox{]}}
+
+
+
+Chiave identificativa (username + data). 
+
+\Hypertarget{struct_save_receiver_a5a69fb356eb35f544c9935541bfa3bac}\index{SaveReceiver@{SaveReceiver}!ricevuti@{ricevuti}}
+\index{ricevuti@{ricevuti}!SaveReceiver@{SaveReceiver}}
+\doxysubsubsection{\texorpdfstring{ricevuti}{ricevuti}}
+{\footnotesize\ttfamily \label{struct_save_receiver_a5a69fb356eb35f544c9935541bfa3bac} 
+int Save\+Receiver\+::ricevuti}
+
+
+
+Numero di chunk ricevuti finora. 
+
+\Hypertarget{struct_save_receiver_af854aaf5f7b756a428a0a83a099c0cb3}\index{SaveReceiver@{SaveReceiver}!timer@{timer}}
+\index{timer@{timer}!SaveReceiver@{SaveReceiver}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily \label{struct_save_receiver_af854aaf5f7b756a428a0a83a099c0cb3} 
+float Save\+Receiver\+::timer}
+
+
+
+Timer per timeout ricezione. 
+
+\Hypertarget{struct_save_receiver_af869a8696ea72cd82bc140267ef2b6ca}\index{SaveReceiver@{SaveReceiver}!total@{total}}
+\index{total@{total}!SaveReceiver@{SaveReceiver}}
+\doxysubsubsection{\texorpdfstring{total}{total}}
+{\footnotesize\ttfamily \label{struct_save_receiver_af869a8696ea72cd82bc140267ef2b6ca} 
+int Save\+Receiver\+::total}
+
+
+
+Numero totale di chunk attesi. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/socket/lan/\mbox{\hyperlink{lan__protocol_8h}{lan\+\_\+protocol.\+h}}\end{DoxyCompactItemize}

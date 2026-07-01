@@ -1,0 +1,98 @@
+\doxysection{src/auth.c File Reference}
+\hypertarget{auth_8c}{}\label{auth_8c}\index{src/auth.c@{src/auth.c}}
+
+
+Implementazione modulo autenticazione e database utenti (allocazione dinamica).  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}../lib/auth.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/auth\+\_\+validation.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/data\+\_\+structures.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/data\+\_\+structures/bst.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/socket/lan/lan\+\_\+sync.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/screens/menu/string\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include "{}../lib/fs/fs.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gaa103fe9f0b4ddf468b2d7ee6f6b28bba}{Auth\+\_\+\+Mark\+For\+Deletion}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Marca un utente per eliminazione differita. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gae8af680dcc7f7dcc3b73cff9ce19d89c}{Auth\+\_\+\+Is\+Marked\+For\+Deletion}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Verifica se un utente e\textquotesingle{} marcato per eliminazione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga76017eead600b6ea252edb0e00c8758b}{Auth\+\_\+\+Process\+Pending\+Deletions}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Processa le eliminazioni pendenti per un utente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga92a8b147f7f309caeaba6776d16a4204}{Auth\+BST\+\_\+\+Ricostruisci}} (void)
+\begin{DoxyCompactList}\small\item\em Ricostruisce il BST parallelo a partire dall\textquotesingle{}array db\+Utenti. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gab5d6680f3c3fd1d4690f635d9a10a172}{DB\+\_\+\+Alloca}} (int min\+\_\+slot)
+\begin{DoxyCompactList}\small\item\em Alloca o rialloca dinamicamente il database utenti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga0314b066ae5d7042b1d10fa263b5652c}{Cifra\+Decifra\+DB}} (void)
+\begin{DoxyCompactList}\small\item\em Cifra/decifra password e PIN in memoria (XOR 0x\+AA). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_gae268c79271c4ee59ba3a082ebd80e0a9}{Salva\+DB}} (void)
+\begin{DoxyCompactList}\small\item\em Salva il database su file binario (data/users/users.\+dat). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga780f5d85ee36704ef8c39e58d6d24ba3}{Carica\+DB}} (void)
+\begin{DoxyCompactList}\small\item\em Carica il database da file binario (data/users/users.\+dat). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_ga17dace69eec2d85eb4ecaf0c4f2232b6}{Auth\+\_\+\+Registra\+Utente}} (const char \texorpdfstring{$\ast$}{*}email, const char \texorpdfstring{$\ast$}{*}nome, const char \texorpdfstring{$\ast$}{*}cognome, const char \texorpdfstring{$\ast$}{*}username, const char \texorpdfstring{$\ast$}{*}password, const char \texorpdfstring{$\ast$}{*}pin)
+\begin{DoxyCompactList}\small\item\em Registra un nuovo utente nel sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga8477b8acaa3d9d97cdb06846bdaff9c0}{Auth\+\_\+\+Rimuovi\+Utente}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Rimuove un utente da database e BST. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gaeba2158fd96048197d238a24a9c28bfc}{Auth\+BST\+\_\+\+Cerca\+Indice\+Per\+Email}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Ricerca O(log n) di un utente per email tramite BST. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gaee07663d2c32dd38c1a79b994383a7b6}{Auth\+BST\+\_\+\+Altezza}} (void)
+\begin{DoxyCompactList}\small\item\em Restituisce l\textquotesingle{}altezza del BST (utile per debug/test). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_ga4b6f9cad580a7fa31e55093db0e732ce}{Auth\+BST\+\_\+\+Conta\+Nodi}} (void)
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di nodi nel BST. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_database_utenti}{Database\+Utenti}} \mbox{\hyperlink{group__auth__impl_gabbde975af8fe0d5e3c20e0fd862186b6}{db\+Utenti}} = \{0\}
+\begin{DoxyCompactList}\small\item\em Database utenti globale in memoria (allocazione dinamica). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__auth__impl_ga9ecbbe659dbada66e149c73cefb83815}{id\+\_\+utente\+\_\+corrente}} = -\/1
+\begin{DoxyCompactList}\small\item\em Indice dell\textquotesingle{}utente correntemente loggato (-\/1 se nessuno). \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{group__auth__impl_ga80d354a96271494c85654ea411ddac01}{input\+Email}} \mbox{[}100\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga3876b1cc4b483062056d9cf261ec4654}{email\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_ga2b0e8ee2101796cab35e2f6d2f932993}{input\+Nome}} \mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga8576d027f30608a7448b5e4a6887f2e2}{nome\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_gabdb70a410ac6fd790650381b7fb858b1}{input\+Cognome}} \mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga880fe550552161100d934bf21de27f90}{cognome\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_ga726a429817c84dacd48cce82b3c91003}{input\+Username}} \mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_gabd5ade42baf19a2a2ffa715960842dfd}{username\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_ga716f9307558976d3a4c67840b2ceb8ac}{input\+Password}} \mbox{[}30\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga415b2b418d3a90a6e1da72992e7577aa}{pass\+Count}} = 0
+\item 
+char \mbox{\hyperlink{group__auth__impl_gafb61cbc7b14899011261458eb60e240a}{input\+Pin}} \mbox{[}7\mbox{]} = "{}\textbackslash{}0"{}
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga5058e2763f324b4146cfa8af36168478}{pin\+Count}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga5e67fb6826c236d3ff5d0ec98cd9c582}{id\+\_\+temp\+\_\+login}} = -\/1
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga1e9668bc833c732fa8a038ec007c4ee9}{errore\+\_\+password}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_gae7b050dfa0f4d9bfdfb41c1746d8e055}{errore\+\_\+registrazione\+\_\+pass}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_gab2b3b778484eb9c5f529be0c2f9c10d3}{errore\+\_\+registrazione\+\_\+email}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_gab25b9978d929d16da0918ad72bed9812}{errore\+\_\+registrazione\+\_\+username}} = 0
+\item 
+int \mbox{\hyperlink{group__auth__impl_ga2cf3aff3d88a04ea9b72ef90df54142c}{campo\+\_\+focusato}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementazione modulo autenticazione e database utenti (allocazione dinamica). 
+
+Fornisce le funzioni per la gestione del database utenti in memoria, con allocazione DINAMICA tramite malloc/realloc. Il database viene caricato da file all\textquotesingle{}avvio e salvato ad ogni modifica.
+
+Supporta anche un BST (Binary Search Tree) parallelo per ricerca logaritmica O(log n) dell\textquotesingle{}email. 

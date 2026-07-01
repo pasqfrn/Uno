@@ -1,0 +1,848 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: UNO - Gioco Multiplayer di Carte</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">UNO - Gioco Multiplayer di Carte </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Introduzione</h2>
+<p><b>UNO</b> è un caso di studio che riporta il famoso gioco di carte integrando funzionalità multiplayer. Il caso di studio, sviluppato in C, implementa il classico gioco da tavolo UNO di Mattel combinando algoritmi di logica di gioco, strutture dati avanzate e comunicazione in rete per offrire un'esperienza completa sia in modalità locale che online.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Caratteristiche Principali</h3>
+<ul>
+<li><b>Modalità di gioco</b>: Singolo giocatore vs Bot, Multiplayer locale (1-4 giocatori), Multiplayer online via socket TCP</li>
+<li><b>Interfaccia grafica</b>: Rendering 2D con Raylib, animazioni fluide per carte e trascinamenti</li>
+<li><b>Sistema di autenticazione</b>: Registrazione/Login utenti con database dinamico in memoria, BST per ricerca veloce</li>
+<li><b>Persistenza dati</b>: Salvataggio partite e statistiche su file binario, sync LAN per database condiviso</li>
+<li><b>Intelligenza Artificiale</b>: Bot con strategie di gioco configurabili (easy/medium/hard) basate su albero decisionale</li>
+<li><b>Admin Panel</b>: Gestione utenti remote via LAN sync con lazy deletion</li>
+<li><b>Chat Multiplayer</b>: Sistema di messaggistica real-time integrato durante le partite</li>
+<li><b>Broadcast LAN</b>: Scoperta automatica server sulla rete locale</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Struttura del Caso di Studio</h2>
+<p>Il caso di studio è organizzato in moduli funzionali separati con chiara separazione delle responsabilità:</p>
+<div class="fragment"><div class="line">Uno/</div>
+<div class="line">├── src/                        # File sorgente C</div>
+<div class="line">│   ├── main.c                 # Entry point e loop principale, gestione stati macchina a stati</div>
+<div class="line">│   ├── auth.c                 # Gestione autenticazione: registrazione, login, recupero PIN</div>
+<div class="line">│   ├── auth_validation.c      # Validazione email, password, PIN, username</div>
+<div class="line">│   ├── game_logic.c           # Logica di gioco UNO: mazzo 108 carte, effetti speciali, turni</div>
+<div class="line">│   ├── ui.c                   # Interfaccia utente Raylib: rendering, gestione eventi</div>
+<div class="line">│   ├── list.c                 # Implementazione lista doppiamente concatenata (wrapper)</div>
+<div class="line">│   ├── data_structures/       # Strutture dati avanzate</div>
+<div class="line">│   │   ├── bst.c              # Albero binario di ricerca (DAB) per indicizzazione utenti</div>
+<div class="line">│   │   ├── chat.c             # Chat: buffer circolare per messaggi</div>
+<div class="line">│   │   ├── list.c             # Lista doppiamente concatenata (ADT generico)</div>
+<div class="line">│   │   ├── queue.c            # Coda (FIFO) per gestione turni multiplayer</div>
+<div class="line">│   │   └── stack.c            # Pila (LIFO) per mazzo di pesca e scarti</div>
+<div class="line">│   ├── game/                  # Modulo di gioco</div>
+<div class="line">│   │   ├── deck.c             # Mazzo: creazione 108 carte, mescolamento Fisher-Yates</div>
+<div class="line">│   │   ├── game_flow.c        # Flusso di gioco: fasi, transizioni, gestione round</div>
+<div class="line">│   │   └── save_manager.c     # Salvataggio/caricamento partite su file binario</div>
+<div class="line">│   ├── screens/               # Schermate UI organizzate per dominio</div>
+<div class="line">│   │   ├── auth/              # Schermate autenticazione (login, registrazione, admin)</div>
+<div class="line">│   │   │   ├── auth_screen.c      # Schermate login/registrazione</div>
+<div class="line">│   │   │   ├── auth_update.c      # Aggiornamento logico schermate auth</div>
+<div class="line">│   │   │   ├── auth_draw.c        # Rendering schermate auth</div>
+<div class="line">│   │   │   ├── admin_draw.c       # Rendering pannello admin</div>
+<div class="line">│   │   │   └── input_field.c      # Gestione campi input testo</div>
+<div class="line">│   │   ├── game/              # Schermate gameplay</div>
+<div class="line">│   │   │   ├── gameplay_screen.c    # Schermata di gioco principale</div>
+<div class="line">│   │   │   ├── gameplay_draw.c     # Rendering gameplay (carte, tavolo, UI)</div>
+<div class="line">│   │   │   ├── gameplay_update.c   # Aggiornamento logico stato gameplay</div>
+<div class="line">│   │   │   ├── bot_ai.c            # Intelligenza Artificiale dei Bot</div>
+<div class="line">│   │   │   ├── chat_render.c       # Rendering overlay chat in-game</div>
+<div class="line">│   │   │   └── end_screen.c        # Schermata fine partita e classifica</div>
+<div class="line">│   │   ├── menu/              # Schermate menu</div>
+<div class="line">│   │   │   ├── menu_screen.c       # Menu principale e navigazione</div>
+<div class="line">│   │   │   ├── stats_screen.c      # Schermata statistiche utente</div>
+<div class="line">│   │   │   └── string_utils.c      # Utility stringhe per menu</div>
+<div class="line">│   │   └── multiplayer/       # Schermate multiplayer</div>
+<div class="line">│   │       ├── multiplayer_screen.c  # Creazione/join partite multiplayer</div>
+<div class="line">│   │       └── multiplayer_lobby.c   # Lobby multiplayer (attesa giocatori, ready)</div>
+<div class="line">│   └── socket/                # Networking e comunicazione</div>
+<div class="line">│       ├── network/</div>
+<div class="line">│       │   ├── network.c             # Gestione connessioni TCP, socket API</div>
+<div class="line">│       │   ├── network_send.c        # Invio pacchetti strutturati</div>
+<div class="line">│       │   ├── packet_handler.c      # Dispatcher pacchetti ricevuti</div>
+<div class="line">│       │   ├── packet_handler_admin.c  # Gestione pacchetti admin (sync utenti)</div>
+<div class="line">│       │   ├── packet_handler_game.c   # Gestione pacchetti di gioco</div>
+<div class="line">│       │   └── state_sync.c          # Sincronizzazione stato tra host e client</div>
+<div class="line">│       ├── lan/</div>
+<div class="line">│       │   ├── lan_broadcast.c        # Broadcast UDP per scoperta server LAN</div>
+<div class="line">│       │   ├── lan_db_sync.c          # Sincronizzazione database utenti via LAN</div>
+<div class="line">│       │   ├── lan_save_helpers.c     # Helper per salvataggio sync LAN</div>
+<div class="line">│       │   └── lan_save_sync.c        # Sync salvataggi tra host e client</div>
+<div class="line">│       ├── server/</div>
+<div class="line">│       │   └── server_manager.c       # Gestione server: lobby, sessioni, giocatori</div>
+<div class="line">│       └── utils/</div>
+<div class="line">│           └── network_utils.c        # Utility di rete (timeout, heartbeat, etc.)</div>
+<div class="line">├── lib/                        # Header files pubblici</div>
+<div class="line">│   ├── data_structures.h      # Definizioni tipi principali (Carta, Giocatore, StatoGioco, etc.)</div>
+<div class="line">│   ├── auth.h                 # API autenticazione e BST</div>
+<div class="line">│   ├── auth_validation.h      # API validazione input</div>
+<div class="line">│   ├── game_logic.h           # API logica gioco</div>
+<div class="line">│   ├── ui.h                   # API interfaccia Raylib</div>
+<div class="line">│   ├── list.h                 # API lista doppiamente concatenata (wrapper)</div>
+<div class="line">│   ├── data_structures/       # Header strutture dati</div>
+<div class="line">│   │   ├── bst.h              # API albero binario di ricerca</div>
+<div class="line">│   │   ├── chat.h             # API chat</div>
+<div class="line">│   │   ├── list.h             # API lista ADT</div>
+<div class="line">│   │   ├── queue.h            # API coda</div>
+<div class="line">│   │   └── stack.h            # API pila</div>
+<div class="line">│   ├── fs/</div>
+<div class="line">│   │   └── fs.h               # API file system (salvataggio/caricamento)</div>
+<div class="line">│   ├── screens/               # Header schermate</div>
+<div class="line">│   │   ├── string_utils.h     # Utility stringhe</div>
+<div class="line">│   │   ├── auth/</div>
+<div class="line">│   │   │   ├── admin_draw.h      # API rendering admin</div>
+<div class="line">│   │   │   ├── auth_draw.h       # API rendering auth</div>
+<div class="line">│   │   │   ├── auth_screen.h     # API schermate auth</div>
+<div class="line">│   │   │   ├── auth_shared.h     # Costanti condivise auth</div>
+<div class="line">│   │   │   ├── auth_update.h     # API aggiornamento auth</div>
+<div class="line">│   │   │   └── input_field.h     # API campi input</div>
+<div class="line">│   │   ├── game/</div>
+<div class="line">│   │   │   ├── bot_ai.h          # API IA Bot</div>
+<div class="line">│   │   │   ├── end_screen.h      # API schermata fine partita</div>
+<div class="line">│   │   │   ├── gameplay_animation.h  # API animazioni</div>
+<div class="line">│   │   │   ├── gameplay_chat.h       # API chat gameplay</div>
+<div class="line">│   │   │   ├── gameplay_draw.h       # API rendering gameplay</div>
+<div class="line">│   │   │   ├── gameplay_screen.h     # API schermata gameplay</div>
+<div class="line">│   │   │   ├── gameplay_shared.h     # Costanti condivise gameplay</div>
+<div class="line">│   │   │   └── gameplay_update.h     # API aggiornamento gameplay</div>
+<div class="line">│   │   ├── menu/</div>
+<div class="line">│   │   │   ├── menu_screen.h    # API menu principale</div>
+<div class="line">│   │   │   └── stats_screen.h   # API statistiche</div>
+<div class="line">│   │   └── multiplayer/</div>
+<div class="line">│   │       ├── multiplayer_lobby.h    # API lobby multiplayer</div>
+<div class="line">│   │       └── multiplayer_screen.h   # API schermata multiplayer</div>
+<div class="line">│   ├── socket/                # Header rete</div>
+<div class="line">│   │   ├── network.h          # API rete</div>
+<div class="line">│   │   ├── lan/</div>
+<div class="line">│   │   │   ├── lan_protocol.h # Protocollo LAN (header pacchetti)</div>
+<div class="line">│   │   │   └── lan_sync.h     # API sync LAN</div>
+<div class="line">│   │   ├── server/</div>
+<div class="line">│   │   │   └── server_manager.h  # API gestione server</div>
+<div class="line">│   │   └── utils/</div>
+<div class="line">│   │       └── network_utils.h   # API utility rete</div>
+<div class="line">│   └── raylib/                # Libreria grafica Raylib (include/lib)</div>
+<div class="line">├── assets/                     # Risorse grafiche</div>
+<div class="line">│   ├── card/                  # Immagini carte UNO (fronte/retro)</div>
+<div class="line">│   ├── textures/              # Texture UI (bottoni, sfondi, icone)</div>
+<div class="line">│   └── altro/                 # Font, suoni e risorse varie</div>
+<div class="line">├── data/                       # Dati persistenti</div>
+<div class="line">│   ├── users/                 # Database utenti (formato binario)</div>
+<div class="line">│   ├── games/                 # Salvataggi partite (file .bin)</div>
+<div class="line">│   └── saves/                 # Backup e file temporanei</div>
+<div class="line">├── docs/                       # Documentazione</div>
+<div class="line">│   ├── Documentazione CdS.pdf</div>
+<div class="line">│   └── doxygen/</div>
+<div class="line">│       ├── Doxyfile           # Configurazione Doxygen</div>
+<div class="line">│       ├── main.md            # Questa pagina principale</div>
+<div class="line">│       ├── html/              # Documentazione HTML generata</div>
+<div class="line">│       └── latex/             # Documentazione LaTeX generata</div>
+<div class="line">└── build/                      # Build system</div>
+<div class="line">    └── Makefile               # Makefile cross-piattaforma (MinGW, GCC, MSVC)</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Analisi del Sistema</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+Diagramma ER (Entity-Relationship)</h3>
+<p>Il sistema è strutturato attorno a <b>3 macro-aree</b>:</p>
+<ol type="1">
+<li><b>Persistenza</b> (Utenti, statistiche, partite salvate)</li>
+<li><b>Sessione di gioco attiva</b> (<a class="el" href="struct_stato_gioco.html" title="Stato completo di una partita in corso.">StatoGioco</a>, giocatori, carte, chat)</li>
+<li><b>Strutture dati di supporto</b> (liste, stack, BST, buffer chat)</li>
+</ol>
+<div class="fragment"><div class="line">╔══════════════════════════════════════════════════════════════╗</div>
+<div class="line">║                   MACRO-AREA PERSISTENZA                    ║</div>
+<div class="line">╠══════════════════════════════════════════════════════════════╣</div>
+<div class="line">║                                                              ║</div>
+<div class="line">║  ┌──────────────────────┐     1     ┌──────────────────────┐ ║</div>
+<div class="line">║  │       UTENTE         │───────────│     STATISTICHE      │ ║</div>
+<div class="line">║  │──────────────────────│   possiede│──────────────────────│ ║</div>
+<div class="line">║  │ email (PK)           │           │ email (PK, FK) -------│ ║</div>
+<div class="line">║  │ nome                 │           │ username             │ ║</div>
+<div class="line">║  │ cognome              │           │ partite_giocate      │ ║</div>
+<div class="line">║  │ username (UQ)        │           │ vittorie (gioc/bot)  │ ║</div>
+<div class="line">║  │ password (XOR)       │           │ partite_online       │ ║</div>
+<div class="line">║  │ pin_recupero         │           │ vittorie_online      │ ║</div>
+<div class="line">║  │ data_creazione       │           │ punteggio_max        │ ║</div>
+<div class="line">║  │ flag_eliminato (lazy)│           │ storico_partite[]    │ ║</div>
+<div class="line">║  └──────────┬───────────┘           └──────────────────────┘ ║</div>
+<div class="line">║             │                         1                      ║</div>
+<div class="line">║             │                          │                      ║</div>
+<div class="line">║             │1                         N                      ║</div>
+<div class="line">║             │                          v                      ║</div>
+<div class="line">║             │              ┌──────────────────────────┐      ║</div>
+<div class="line">║             │              │   PARTITA_REGISTRATA      │      ║</div>
+<div class="line">║             │              │──────────────────────────│      ║</div>
+<div class="line">║             │              │ email (PK, FK)            │      ║</div>
+<div class="line">║             │              │ indice (PK)               │      ║</div>
+<div class="line">║             │              │ modalità, esito, data     │      ║</div>
+<div class="line">║             │              │ durata_secondi, posizione │      ║</div>
+<div class="line">║             │              └──────────────────────────┘      ║</div>
+<div class="line">║  ┌──────────────────────┐                                    ║</div>
+<div class="line">║  │   DATABASE_UTENTI    │  (container globale)               ║</div>
+<div class="line">║  │──────────────────────│                                    ║</div>
+<div class="line">║  │ utenti[] (array din.)│──1──▶│ BST (DAB)  │(ricerca O(logn))║</div>
+<div class="line">║  │ capacity, size       │      └────────────┘               ║</div>
+<div class="line">║  │ deleted_list[]       │                                    ║</div>
+<div class="line">║  └──────────────────────┘                                    ║</div>
+<div class="line">╚══════════════════════════════════════════════════════════════╝</div>
+<div class="line"> </div>
+<div class="line">╔══════════════════════════════════════════════════════════════╗</div>
+<div class="line">║                  MACRO-AREA SESSIONE DI GIOCO               ║</div>
+<div class="line">╠══════════════════════════════════════════════════════════════╣</div>
+<div class="line">║                                                              ║</div>
+<div class="line">║  ┌─────────────────────────────────────────────────────┐    ║</div>
+<div class="line">║  │                    STATO_GIOCO                       │    ║</div>
+<div class="line">║  │─────────────────────────────────────────────────────│    ║</div>
+<div class="line">║  │ mazzo_di_pesca (Stack*)    │  pila_scarti (Stack*)  │    ║</div>
+<div class="line">║  │ turno_corrente, direzione  │  colore_attuale        │    ║</div>
+<div class="line">║  │ carta_attuale, fase        │  host_socket_id        │    ║</div>
+<div class="line">║  │ giocatori[] (Array)        │  num_giocatori         │    ║</div>
+<div class="line">║  └─────┬─────────────────────────────────────┬──────────┘    ║</div>
+<div class="line">║        │1                                    │1              ║</div>
+<div class="line">║        │N                                    │N              ║</div>
+<div class="line">║        v                                    v                ║</div>
+<div class="line">║  ┌──────────────────────┐     ┌──────────────────────┐      ║</div>
+<div class="line">║  │      GIOCATORE       │     │   MESSAGGIO_CHAT     │      ║</div>
+<div class="line">║  │──────────────────────│     │──────────────────────│      ║</div>
+<div class="line">║  │ nome (da Utente)     │     │ giocatore_nome       │      ║</div>
+<div class="line">║  │ socket_id, is_bot    │     │ timestamp            │      ║</div>
+<div class="line">║  │ stato_pronto         │     │ testo[128]           │      ║</div>
+<div class="line">║  │ ha_uno, ha_pescato   │     │ colore_giocatore     │      ║</div>
+<div class="line">║  │ skip_prox_turno      │     └──────────────────────┘      ║</div>
+<div class="line">║  │ turno_attuale        │                                    ║</div>
+<div class="line">║  │ mani_vinte           │                                    ║</div>
+<div class="line">║  └──────────┬───────────┘                                    ║</div>
+<div class="line">║             │1 (mano)                                        ║</div>
+<div class="line">║             v                                                ║</div>
+<div class="line">║  ┌──────────────────────┐                                    ║</div>
+<div class="line">║  │     LISTA_CARTE      │  (lista doppiamente concatenata)   ║</div>
+<div class="line">║  │──────────────────────│                                    ║</div>
+<div class="line">║  │ testa (Nodo*)        │  coda (Nodo*)                      ║</div>
+<div class="line">║  │ contatore            │                                    ║</div>
+<div class="line">║  └──────────┬───────────┘                                    ║</div>
+<div class="line">║             │1                                                ║</div>
+<div class="line">║             N                                                ║</div>
+<div class="line">║             v                                                ║</div>
+<div class="line">║  ┌──────────────────────┐     ┌──────────────────────┐      ║</div>
+<div class="line">║  │     NODO_CARTA       │  N 1│       CARTA          │      ║</div>
+<div class="line">║  │──────────────────────│─────│──────────────────────│      ║</div>
+<div class="line">║  │ prev (Nodo*)         │     │ colore (4 colori)    │      ║</div>
+<div class="line">║  │ next (Nodo*)         │     │ tipo (0-9, Skip,     │      ║</div>
+<div class="line">║  │ carta (Carta)        │     │       Reverse, +2,   │      ║</div>
+<div class="line">║  └──────────────────────┘     │       Jolly, Jolly+4)│      ║</div>
+<div class="line">║                               │ valore, area (sprite)│      ║</div>
+<div class="line">║                               └──────────────────────┘      ║</div>
+<div class="line">╚══════════════════════════════════════════════════════════════╝</div>
+<div class="line"> </div>
+<div class="line">╔══════════════════════════════════════════════════════════════╗</div>
+<div class="line">║               MACRO-AREA STRUTTURE DATI DI SUPPORTO          ║</div>
+<div class="line">╠══════════════════════════════════════════════════════════════╣</div>
+<div class="line">║                                                              ║</div>
+<div class="line">║ ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        ║</div>
+<div class="line">║ │ STACK (Pila) │  │ QUEUE (Coda) │  │ BST (DAB)    │        ║</div>
+<div class="line">║ │──────────────│  │──────────────│  │──────────────│        ║</div>
+<div class="line">║ │ Mazzo pesca  │  │ Turni multi- │  │ Ricerca      │        ║</div>
+<div class="line">║ │ Pila scarti  │  │ player       │  │ utenti       │        ║</div>
+<div class="line">║ │ Push/Pop O(1)│  │ FIFO         │  │ O(log n)     │        ║</div>
+<div class="line">║ └──────────────┘  └──────────────┘  └──────────────┘        ║</div>
+<div class="line">║                                                              ║</div>
+<div class="line">║ ┌──────────────────────┐   ┌──────────────────────┐         ║</div>
+<div class="line">║ │  LISTA DOPPIAMENTE   │   │  DATABASE_UTENTI     │         ║</div>
+<div class="line">║ │  CONCATENATA (ADT)   │   │──────────────────────│         ║</div>
+<div class="line">║ │──────────────────────│   │ Array dinamico + BST │         ║</div>
+<div class="line">║ │ Inserimento O(1)     │   │ Capacity espandibile │         ║</div>
+<div class="line">║ │ Rimozione O(1)       │   │ Lazy deletion        │         ║</div>
+<div class="line">║ └──────────────────────┘   └──────────────────────┘         ║</div>
+<div class="line">║                                                              ║</div>
+<div class="line">║ ┌──────────────────────┐                                     ║</div>
+<div class="line">║ │  STORICO_CHAT        │  (buffer circolare)                ║</div>
+<div class="line">║ │──────────────────────│                                     ║</div>
+<div class="line">║ │ messaggi[M] (array)  │  testa, coda, contatore            ║</div>
+<div class="line">║ │ Inserimento O(1)     │                                     ║</div>
+<div class="line">║ └──────────────────────┘                                     ║</div>
+<div class="line">╚══════════════════════════════════════════════════════════════╝</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+Relazioni Principali (riassunto)</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Entità A  </th><th class="markdownTableHeadCenter">Cardinalità  </th><th class="markdownTableHeadNone">Entità B  </th><th class="markdownTableHeadNone">Descrizione  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>UTENTE</b>  </td><td class="markdownTableBodyCenter">1 → 1  </td><td class="markdownTableBodyNone"><b>STATISTICHE</b>  </td><td class="markdownTableBodyNone">Ogni utente ha esattamente un profilo statistiche (stessa email PK/FK)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>UTENTE</b>  </td><td class="markdownTableBodyCenter">1 → N  </td><td class="markdownTableBodyNone"><b>PARTITA_REGISTRATA</b>  </td><td class="markdownTableBodyNone">Storico partite giocate (max 100 per utente)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>DATABASE_UTENTI</b>  </td><td class="markdownTableBodyCenter">1 → N  </td><td class="markdownTableBodyNone"><b>UTENTE</b>  </td><td class="markdownTableBodyNone">Container globale: array dinamico di utenti  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>DATABASE_UTENTI</b>  </td><td class="markdownTableBodyCenter">1 → 1  </td><td class="markdownTableBodyNone"><b>BST (DAB)</b>  </td><td class="markdownTableBodyNone">Albero binario parallelo per ricerca veloce  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>STATO_GIOCO</b>  </td><td class="markdownTableBodyCenter">1 → N  </td><td class="markdownTableBodyNone"><b>GIOCATORE</b>  </td><td class="markdownTableBodyNone">Partita attiva con 1-4 giocatori  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>STATO_GIOCO</b>  </td><td class="markdownTableBodyCenter">1 → N  </td><td class="markdownTableBodyNone"><b>MESSAGGIO_CHAT</b>  </td><td class="markdownTableBodyNone">Cronologia chat della sessione  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>STATO_GIOCO</b>  </td><td class="markdownTableBodyCenter">1 → 2  </td><td class="markdownTableBodyNone"><b>STACK</b>  </td><td class="markdownTableBodyNone">Mazzo di pesca + pila scarti  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>GIOCATORE</b>  </td><td class="markdownTableBodyCenter">1 → 1  </td><td class="markdownTableBodyNone"><b>LISTA_CARTE</b>  </td><td class="markdownTableBodyNone">Mano del giocatore (lista doppiamente concatenata)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>LISTA_CARTE</b>  </td><td class="markdownTableBodyCenter">1 → N  </td><td class="markdownTableBodyNone"><b>NODO_CARTA</b>  </td><td class="markdownTableBodyNone">Nodi collegati della lista  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>NODO_CARTA</b>  </td><td class="markdownTableBodyCenter">N → 1  </td><td class="markdownTableBodyNone"><b>CARTA</b>  </td><td class="markdownTableBodyNone">Ogni nodo contiene esattamente una carta  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>UTENTE</b>  </td><td class="markdownTableBodyCenter">1 → 0..N  </td><td class="markdownTableBodyNone"><b>GIOCATORE</b>  </td><td class="markdownTableBodyNone">Un utente può partecipare a più partite  </td></tr>
+</table>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+Dettaglio Composizione Carte UNO</h3>
+<div class="fragment"><div class="line">MAZZO COMPLETO (108 carte):</div>
+<div class="line">┌─────────────────────────────────────────────────────────────┐</div>
+<div class="line">│   COLORE    │  0  │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │Spec│</div>
+<div class="line">├─────────────┼─────┼───┼───┼───┼───┼───┼───┼───┼───┼───┼────┤</div>
+<div class="line">│ Rosso       │  1  │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2  │</div>
+<div class="line">│ Blu         │  1  │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2  │</div>
+<div class="line">│ Verde       │  1  │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2  │</div>
+<div class="line">│ Giallo      │  1  │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2 │ 2  │</div>
+<div class="line">├─────────────┴─────┴───┴───┴───┴───┴───┴───┴───┴───┴───┴────┤</div>
+<div class="line">│ Speciali per colore: Skip (2), Reverse (2), +2 (2)           │</div>
+<div class="line">│ Jolly (Wild): 4   |   Jolly+4 (Wild Draw Four): 4           │</div>
+<div class="line">└─────────────────────────────────────────────────────────────┘</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Strutture Dati Implementate</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Struttura  </th><th class="markdownTableHeadNone">Tipo  </th><th class="markdownTableHeadNone">File  </th><th class="markdownTableHeadNone">Complessità  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Lista doppiamente concatenata</b>  </td><td class="markdownTableBodyNone">ADT generico  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="data__structures_2list_8c.html" title="Implementazione lista doppiamente concatenata (funzioni specifiche).">data_structures/list.c</a></span>  </td><td class="markdownTableBodyNone">Inserimento/rimozione O(1)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>BST (Binary Search Tree)</b>  </td><td class="markdownTableBodyNone">DAB  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="bst_8c.html" title="Implementazione Albero Binario di Ricerca (BST) per ricerca utenti.">data_structures/bst.c</a></span>  </td><td class="markdownTableBodyNone">Ricerca O(log n) medio  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Stack (<a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a>)</b>  </td><td class="markdownTableBodyNone">LIFO  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="stack_8c.html" title="Implementazione Pila (Stack LIFO) per mazzo di pesca e scarti.">data_structures/stack.c</a></span>  </td><td class="markdownTableBodyNone">Push/pop O(1)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Queue (Coda)</b>  </td><td class="markdownTableBodyNone">FIFO  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="queue_8c.html" title="Implementazione Coda (Queue) bidirezionale per i turni di gioco.">data_structures/queue.c</a></span>  </td><td class="markdownTableBodyNone">Enqueue/dequeue O(1)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Chat buffer</b>  </td><td class="markdownTableBodyNone">Circolare  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="chat_8c.html" title="Implementazione ADT ChatStorico per la chat di gioco.">data_structures/chat.c</a></span>  </td><td class="markdownTableBodyNone">Inserimento O(1)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b><a class="el" href="struct_database_utenti.html" title="Database degli utenti in memoria (allocazione DINAMICA).">DatabaseUtenti</a></b>  </td><td class="markdownTableBodyNone">Array dinamico + BST  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="auth_8c.html" title="Implementazione modulo autenticazione e database utenti (allocazione dinamica).">auth.c</a></span>  </td><td class="markdownTableBodyNone">Ricerca O(log n)  </td></tr>
+</table>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+Mapping Strutture Dati a Carte</h3>
+<div class="fragment"><div class="line">Mano del Giocatore:  ListaCarte (lista doppiamente concatenata)</div>
+<div class="line">  testa --&gt; NodoCarta &lt;--&gt; NodoCarta &lt;--&gt; NodoCarta &lt;-- coda</div>
+<div class="line">               |              |              |</div>
+<div class="line">             Carta          Carta          Carta</div>
+<div class="line"> </div>
+<div class="line">Mazzo di Pesca:     Stack (pila)</div>
+<div class="line">  cima  --&gt; Carta -&gt; Carta -&gt; Carta ... -&gt; fondo</div>
+<div class="line"> </div>
+<div class="line">Pila Scarti:        Stack (pila)</div>
+<div class="line">  cima  --&gt; Carta -&gt; Carta -&gt; Carta ... -&gt; fondo</div>
+<div class="line">  (ultima carta giocata in cima)</div>
+<div class="line"> </div>
+<div class="line">Turni Multiplayer:  Coda + array circolare</div>
+<div class="line">  front --&gt; [P1] -&gt; [P3] -&gt; [P2] -&gt; [P4] &lt;-- back</div>
+<div class="line">  (direzione +1 avanti, -1 indietro)</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+Flusso Operativo</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+Macchina a Stati Principale</h3>
+<div class="fragment"><div class="line">+------------------+</div>
+<div class="line">|     AVVIO        |</div>
+<div class="line">|  Init Raylib     |</div>
+<div class="line">|  Carica DB       |</div>
+<div class="line">|  Init Assets     |</div>
+<div class="line">+------------------+</div>
+<div class="line">         |</div>
+<div class="line">         v</div>
+<div class="line">+------------------+</div>
+<div class="line">|  FASE_LOGIN/REG  |&lt;------+</div>
+<div class="line">|  Autenticazione  |       |</div>
+<div class="line">|  Validazione     |       |</div>
+<div class="line">+------------------+       |</div>
+<div class="line">         |                 |</div>
+<div class="line">    [Login OK]             |</div>
+<div class="line">         |                 |</div>
+<div class="line">         v                 |</div>
+<div class="line">+------------------+       |</div>
+<div class="line">|   FASE_MENU      |-------+</div>
+<div class="line">|  Scelta modalità |</div>
+<div class="line">+------------------+</div>
+<div class="line">    |    |     |</div>
+<div class="line">    v    v     v</div>
+<div class="line">  [SINGOLO] [MULTI] [STATS]</div>
+<div class="line"> </div>
+<div class="line">SINGOLO:</div>
+<div class="line">  +-&gt; Inizializza Mazzo (deck.c)</div>
+<div class="line">  |     Fisher-Yates shuffle</div>
+<div class="line">  |-&gt; Inizializza Giocatori + Bot (bot_ai.c)</div>
+<div class="line">  |-&gt; Distribuisci 7 carte</div>
+<div class="line">  |-&gt; Posiziona prima carta</div>
+<div class="line">  |</div>
+<div class="line">  v</div>
+<div class="line">+------------------+</div>
+<div class="line">|  FASE_GAMEPLAY   |</div>
+<div class="line">|  Loop Gioco      |</div>
+<div class="line">+------------------+</div>
+<div class="line">    |</div>
+<div class="line">    v</div>
+<div class="line">[Turno Giocatore]</div>
+<div class="line">    |</div>
+<div class="line">    +-&gt; [UMANO]</div>
+<div class="line">    |     Mostra mano (lista carte)</div>
+<div class="line">    |     Input: click carta / trascinamento</div>
+<div class="line">    |     Valida: colore/tipo combacia? (game_logic.c)</div>
+<div class="line">    |     Effetto: applica azione speciale</div>
+<div class="line">    |     Chiamata UNO se 1 carta</div>
+<div class="line">    |     Controlla fine partita</div>
+<div class="line">    |</div>
+<div class="line">    +-&gt; [BOT]</div>
+<div class="line">    |     Valuta mosse possibili (bot_ai.c)</div>
+<div class="line">    |     Seleziona strategia:</div>
+<div class="line">    |        - easy: carta casuale giocabile</div>
+<div class="line">    |        - medium: priorità colore + carte speciali</div>
+<div class="line">    |        - hard: albero decisionale (minimax semplificato)</div>
+<div class="line">    |     Esegui mossa ottimale</div>
+<div class="line">    |</div>
+<div class="line">    v</div>
+<div class="line">[Aggiorna turno]</div>
+<div class="line">  direzione (+1/-1)</div>
+<div class="line">  salta se PescaDue/Salta</div>
+<div class="line">  cambia direzione se CambioGiro</div>
+<div class="line">    |</div>
+<div class="line">    v</div>
+<div class="line">[Ripeti fino a fine partita]</div>
+<div class="line">    |</div>
+<div class="line">    v</div>
+<div class="line">+------------------+</div>
+<div class="line">|  FASE_FINE_PARTITA|</div>
+<div class="line">|  Calcola classifica|</div>
+<div class="line">|  Aggiorna stats   |</div>
+<div class="line">|  Mostra risultati |</div>
+<div class="line">|  Offri rivincita  |</div>
+<div class="line">+------------------+</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+Flusso Multiplayer Online</h3>
+<div class="fragment"><div class="line">[HOST]                              [CLIENT]</div>
+<div class="line">   |                                    |</div>
+<div class="line">   v                                    |</div>
+<div class="line">+------------+                          |</div>
+<div class="line">| Init Server|                          |</div>
+<div class="line">| TCP Listen |                          |</div>
+<div class="line">+------------+                          |</div>
+<div class="line">   |                                    |</div>
+<div class="line">   v                                    |</div>
+<div class="line">+----------------+                      |</div>
+<div class="line">| FASE_HOST_LOBBY|                      |</div>
+<div class="line">| Attendi giocat.|                      |</div>
+<div class="line">+----------------+                      |</div>
+<div class="line">   |                    [Connetti]       |</div>
+<div class="line">   |&lt;-----------------------------------|</div>
+<div class="line">   v                                    |</div>
+<div class="line">+----------------+                      |</div>
+<div class="line">| FASE_CLIENT_    |                     |</div>
+<div class="line">| LOBBY (Ready)   |                    |</div>
+<div class="line">+----------------+                     |</div>
+<div class="line">   |                    [Ready OK]       |</div>
+<div class="line">   |&lt;-----------------------------------|</div>
+<div class="line">   v                                    |</div>
+<div class="line">[Inizio Partita]                       |</div>
+<div class="line">   |                                    |</div>
+<div class="line">   v                                    |</div>
+<div class="line">+--------------------+                  |</div>
+<div class="line">| Sincronizza Stato  |                  |</div>
+<div class="line">| Invia Mazzo/Gioc.  |                  |</div>
+<div class="line">+--------------------+                  |</div>
+<div class="line">   |                    [Stato Ricevuto] |</div>
+<div class="line">   |-----------------------------------&gt;|</div>
+<div class="line">   |                                    |</div>
+<div class="line">   |   +----- Loop Gameplay ----+       |</div>
+<div class="line">   |   |                         |       |</div>
+<div class="line">   |   v                         |       |</div>
+<div class="line">   | [Turno Host]               |       |</div>
+<div class="line">   |   |                         |       |</div>
+<div class="line">   |   v                         |       |</div>
+<div class="line">   | [Invia Pacchetto]          |       |</div>
+<div class="line">   |   |                         |       |</div>
+<div class="line">   |   v                         |       |</div>
+<div class="line">   | [Attendi Pacchetto]        |       |</div>
+<div class="line">   |   |                         |       |</div>
+<div class="line">   |   v                         |       |</div>
+<div class="line">   | [Turno Client]             |       |</div>
+<div class="line">   |   |                         |       |</div>
+<div class="line">   |   |                         |       |</div>
+<div class="line">   +---+-------------------------+       |</div>
+<div class="line">       |                                 |</div>
+<div class="line">       v                                 |</div>
+<div class="line">   [Fine Partita]                       |</div>
+<div class="line">       |                                 |</div>
+<div class="line">       v                                 |</div>
+<div class="line">   +----------------+                    |</div>
+<div class="line">   | Sincronizza    |                    |</div>
+<div class="line">   | Classifica     |                    |</div>
+<div class="line">   +----------------+                    |</div>
+<div class="line">       |                                 |</div>
+<div class="line">       v                                 |</div>
+<div class="line">   [FASE_END_SCREEN] &lt;--------------------+</div>
+<div class="line"> </div>
+<div class="line">Protocollo di rete:</div>
+<div class="line">  - Heartbeat ogni N secondi (network_utils.c)</div>
+<div class="line">  - Packet types: MOVE, DRAW, CHAT, STATE_SYNC, HEARTBEAT, GAME_FINISHED</div>
+<div class="line">  - Broadcast LAN per discovery (lan_broadcast.c)</div>
+<div class="line">  - DB Sync per admin panel (lan_db_sync.c)</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+Architettura della Macchina a Stati</h3>
+<div class="fragment"><div class="line">STATI PRINCIPALI:</div>
+<div class="line">+----------------------+</div>
+<div class="line">| FASE_SCELTA_ACCESSO  |  Login / Registrazione / Esci</div>
+<div class="line">+----------------------+</div>
+<div class="line">         |</div>
+<div class="line">         v</div>
+<div class="line">+----------------------+</div>
+<div class="line">|   FASE_LOGIN         |  Inserimento credenziali</div>
+<div class="line">+----------------------+</div>
+<div class="line">         |</div>
+<div class="line">         v</div>
+<div class="line">+----------------------+</div>
+<div class="line">| FASE_REGISTRAZIONE   |  Creazione nuovo account</div>
+<div class="line">+----------------------+</div>
+<div class="line">         |</div>
+<div class="line">         v</div>
+<div class="line">+----------------------+--------------------------------------+</div>
+<div class="line">|     FASE_MENU         |  Nuova Partita | Multiplayer | Stats |</div>
+<div class="line">+-----------------------+----------------+-------------+-------+</div>
+<div class="line">         |                              |             |</div>
+<div class="line">         v                              v             v</div>
+<div class="line">+------------------+     +----------------------+  +----------------+</div>
+<div class="line">| FASE_GAMEPLAY    |     | FASE_MULTIPLAYER_    |  | FASE_STATS     |</div>
+<div class="line">| (vs Bot)         |     | SCELTA (Host/Client) |  | Statistiche    |</div>
+<div class="line">+------------------+     +----------------------+  +----------------+</div>
+<div class="line">         |                        |</div>
+<div class="line">         v                        v</div>
+<div class="line">+------------------+     +----------------------+</div>
+<div class="line">| FASE_END_SCREEN  |     | FASE_HOST_LOBBY /    |</div>
+<div class="line">| Fine Partita     |     | FASE_CLIENT_LOBBY    |</div>
+<div class="line">+------------------+     +----------------------+</div>
+<div class="line">         |                        |</div>
+<div class="line">         v                        v</div>
+<div class="line">   [Ritorno Menu]         +----------------------+</div>
+<div class="line">                          | FASE_GAMEPLAY (ONLINE)|</div>
+<div class="line">                          +----------------------+</div>
+<div class="line">                                   |</div>
+<div class="line">                                   v</div>
+<div class="line">                          +----------------------+</div>
+<div class="line">                          | FASE_END_SCREEN      |</div>
+<div class="line">                          | (Online)            |</div>
+<div class="line">                          +----------------------+</div>
+<div class="line"> </div>
+<div class="line">STATI SECONDARI:</div>
+<div class="line">- FASE_ADMIN_PANEL: Gestione utenti (da menu con flag admin)</div>
+<div class="line">- FASE_PASSWORD_DIMENTICATA: Recupero password via PIN</div>
+<div class="line">- FASE_HOST_GAME: Host in attesa durante partita online</div>
+<div class="line">- FASE_CLIENT_GAME: Client in attesa durante partita online</div>
+<div class="line">- FASE_CARICA_PARTITA: Caricamento partita salvata da file</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+Gestione Eventi e Input</h3>
+<div class="fragment"><div class="line">Ogni frame nel loop principale:</div>
+<div class="line">  [Poll Events (Raylib)]</div>
+<div class="line">         |</div>
+<div class="line">         v</div>
+<div class="line">  [Update State Machine]</div>
+<div class="line">         |</div>
+<div class="line">         +-&gt; [FASE_LOGIN/REG] --&gt; gestisci input campi, pulsanti</div>
+<div class="line">         +-&gt; [FASE_MENU]      --&gt; navigazione menu, selezione</div>
+<div class="line">         +-&gt; [FASE_GAMEPLAY]  --&gt; eventi click carte, drag, chat</div>
+<div class="line">         +-&gt; [FASE_LOBBY]     --&gt; ready, start, chat lobby</div>
+<div class="line">         +-&gt; [FASE_END]       --&gt; mostra risultati, scegli rivincita</div>
+<div class="line">         |</div>
+<div class="line">         v</div>
+<div class="line">  [Draw Frame]</div>
+<div class="line">         |</div>
+<div class="line">         v</div>
+<div class="line">  [Swap buffers / vsync]</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+Componenti del Sistema</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
+Modulo Autenticazione (<span class="tt">auth.c</span>, <span class="tt">auth_validation.c</span>)</h3>
+<ul>
+<li><b>Registrazione utenti</b> con validazione email (regex), username (alfanumerico), password (min 8 char, cifratura XOR)</li>
+<li><b>Login</b> con ricerca O(log n) tramite BST (DAB) per username/email</li>
+<li><b>Recupero password</b> tramite PIN di sicurezza a 6 cifre</li>
+<li><b>Database dinamico</b> con allocazione malloc/realloc e capacity espandibile</li>
+<li><b>Lazy Deletion</b>: rimozione logica immediata (<span class="tt">flag_eliminato</span>), fisica al logout</li>
+<li><b>Admin Panel</b> per gestione utenti via LAN sync (sync DB tra host e client)</li>
+<li><b>Validazione input</b>: email, password, PIN, username con pattern specifici</li>
+<li><b>Cifratura password</b>: XOR con chiave fissa per offuscamento</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+Modulo Logica di Gioco (<span class="tt">game_logic.c</span>, <span class="tt">game/deck.c</span>)</h3>
+<ul>
+<li><b>Mazzo UNO completo</b>: 108 carte (4 colori × speciali + numeriche)</li>
+<li><b>Mescolamento</b>: algoritmo Fisher-Yates con inizializzazione basata su tempo</li>
+<li><b>Validazione mosse</b>: controllo colore/tipo, gestione Jolly con scelta colore</li>
+<li><b>Effetti carte</b>:<ul>
+<li><b>Salta (Skip)</b>: salta turno prossimo giocatore</li>
+<li><b>CambioGiro (Reverse)</b>: inverte direzione (+1/-1)</li>
+<li><b>PescaDue (+2)</b>: prossimo pesca 2 carte, perde turno</li>
+<li><b>Jolly (Wild)</b>: cambia colore a scelta</li>
+<li><b>Jolly+4 (Wild Draw Four)</b>: cambia colore + prossimo pesca 4</li>
+</ul>
+</li>
+<li><b>Gestione turni</b>: array circolare con direzione ±1, skip condizionale</li>
+<li><b>Pesca automatica</b>: se mazzo esaurito, rimescola scarti (tranne ultima)</li>
+<li><b>Chiamata UNO</b>: rilevamento quando giocatore ha 1 carta</li>
+<li><b>Salvataggio/Caricamento</b>: serializzazione binaria struttura <span class="tt"><a class="el" href="struct_stato_gioco.html" title="Stato completo di una partita in corso.">StatoGioco</a></span> -&gt; file</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
+Strutture Dati (<span class="tt">data_structures/</span>)</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Struttura  </th><th class="markdownTableHeadNone">Utilizzo  </th><th class="markdownTableHeadNone">Complessità  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Lista Doppiamente Concatenata</b>  </td><td class="markdownTableBodyNone">Mano del giocatore (<a class="el" href="struct_lista_carte.html" title="Struttura container per la lista di carte (mano del giocatore).">ListaCarte</a>)  </td><td class="markdownTableBodyNone">Inserimento/rimozione O(1) noti  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>BST (DAB)</b>  </td><td class="markdownTableBodyNone">Ricerca utenti per username/email  </td><td class="markdownTableBodyNone">O(log n) medio  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Stack (<a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a>)</b>  </td><td class="markdownTableBodyNone">Mazzo di pesca e pila scarti  </td><td class="markdownTableBodyNone">Push/pop O(1)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Queue (Coda)</b>  </td><td class="markdownTableBodyNone">Gestione turni multiplayer ordinata  </td><td class="markdownTableBodyNone">Enqueue/dequeue O(1)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Chat Buffer</b>  </td><td class="markdownTableBodyNone">Buffer circolare messaggi chat  </td><td class="markdownTableBodyNone">Inserimento O(1)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b><a class="el" href="struct_database_utenti.html" title="Database degli utenti in memoria (allocazione DINAMICA).">DatabaseUtenti</a></b>  </td><td class="markdownTableBodyNone">Array ridimensionabile + BST per indice  </td><td class="markdownTableBodyNone">Ricerca O(log n)  </td></tr>
+</table>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md28"></a>
+Interfaccia Grafica (<span class="tt">ui.c</span>, <span class="tt">screens/game/gameplay_draw.c</span>, <span class="tt">screens/</span>)</h3>
+<ul>
+<li><b>Raylib</b>: Libreria grafica 2D cross-piattaforma</li>
+<li><b>Animazioni</b>: Trascinamento carte con interpolazione, pesca animata, scarto con effetto</li>
+<li><b>UI Adattiva</b>: Menu navigabili, pulsanti, pannelli notifiche, timer partita</li>
+<li><b>Chat Multiplayer</b>: Overlay chat in-game con messaggi colorati per giocatore, cronologia</li>
+<li><b>Feedback visivi</b>: Notifiche temporanee (toast), indici turno, evidenziazione carte giocabili</li>
+<li><b>Admin Panel</b>: Schermata di gestione utenti remota con sync LAN</li>
+<li><b>Campi Input</b>: Gestione testo con cursore, backspace, limite caratteri</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md29"></a>
+Networking Multiplayer (<span class="tt">socket/</span>)</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Componente  </th><th class="markdownTableHeadNone">Descrizione  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>TCP Sockets</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="network_8c.html" title="Modulo di rete multiplayer TCP/UDP - host e client.">network.c</a></span> - Connessioni stabili e ordinate  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Broadcast LAN</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="lan__broadcast_8c.html" title="Gestione broadcast LAN: inizializzazione, chiusura e smistamento pacchetti.">lan_broadcast.c</a></span> - Scoperta automatica server sulla rete locale (UDP)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Protocollo Binario</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="lan__protocol_8h.html" title="Protocollo UDP per sincronizzazione LAN.">lan_protocol.h</a></span> - Formato compatto per ridurre latenza  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Packet Handler</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="packet__handler_8c.html" title="Dispatcher principale dei pacchetti di rete.">packet_handler.c</a></span> - Dispatcher basato su tipo pacchetto  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>State Sync</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="state__sync_8c.html" title="Sincronizzazione dello stato di gioco da remoto a locale.">state_sync.c</a></span> - Sincronizzazione stato gioco host/client  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>DB Sync</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="lan__db__sync_8c.html" title="Sincronizzazione database utenti via LAN (UDP broadcast).">lan_db_sync.c</a></span> - Sincronizzazione database utenti (admin)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Save Sync</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="lan__save__sync_8c.html" title="Sincronizzazione salvataggi partite via LAN (chunk UDP).">lan_save_sync.c</a></span> - Sincronizzazione salvataggi tra host e client  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Server Manager</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="server__manager_8c.html" title="Gestione sessioni di gioco multiplayer.">server_manager.c</a></span> - Gestione lobby, sessioni, giocatori  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Heartbeat</b>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="network__utils_8c.html" title="Funzioni di utilita&#39; per il modulo di rete multiplayer.">network_utils.c</a></span> - Keep-alive e rilevamento disconnessioni  </td></tr>
+</table>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md30"></a>
+Intelligenza Artificiale (<span class="tt">screens/game/bot_ai.c</span>)</h3>
+<ul>
+<li><b>Strategia Easy</b>: Seleziona carta casuale tra quelle giocabili</li>
+<li><b>Strategia Medium</b>: Priorità colore dominante + carte speciali difensive</li>
+<li><b>Strategia Hard</b>: Algoritmo decisionale con valutazione euristica:<ul>
+<li>Punteggio carte per colore e tipo</li>
+<li>Previsione turni futuri</li>
+<li>Gestione ottimale carte speciali (Jolly, +4 ritardati)</li>
+<li>Chiamata UNO automatica</li>
+</ul>
+</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md31"></a>
+Architettura Tecnica</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
+Pattern Architetturali</h3>
+<ul>
+<li><b>State Pattern</b>: Macchina a stati finiti con enum <span class="tt"><a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4" title="Enum che rappresenta tutte le fasi dello stato macchina dell&#39;applicazione.">FaseApplicazione</a></span> e array di function pointer per update/draw per ogni stato</li>
+<li><b>Separation of Concerns</b>: Suddivisione in <span class="tt">_screen.c</span> (logica stato), <span class="tt">_update.c</span> (aggiornamento), <span class="tt">_draw.c</span> (rendering)</li>
+<li><b>Strategy Pattern</b>: IA Bot con diverse strategie (easy/medium/hard) selezionabili</li>
+<li><b>Repository Pattern</b>: Accesso astratto al database utenti con caricamento/salvataggio su file binario</li>
+<li><b>Observer implicito</b>: Aggiornamento stato giocatori tramite loop centrale con polling</li>
+<li><b>Singleton</b>: <a class="el" href="struct_database_utenti.html" title="Database degli utenti in memoria (allocazione DINAMICA).">DatabaseUtenti</a> e <a class="el" href="struct_stato_gioco.html" title="Stato completo di una partita in corso.">StatoGioco</a> come strutture globali accessibili</li>
+</ul>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md33"></a>
+Scelte Progettuali</h3>
+<ol type="1">
+<li><b>Lazy Deletion</b>: Rimozione fisica utenti solo al logout per evitare riallocazioni costose</li>
+<li><b>Denormalizzazione</b>: <a class="el" href="struct_statistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> duplicate in <span class="tt"><a class="el" href="struct_statistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a></span> per accesso O(1)</li>
+<li><b>Serializzazione Flat</b>: Array backup <span class="tt">mano_backup[]</span> per salvataggio liste su file</li>
+<li><b>Comunicazione Binary</b>: Protocollo socket con struct packate compatte (nessuna serializzazione testo)</li>
+<li><b>Rendering 2D</b>: Raylib per portabilità cross-piattaforma (Windows, Linux, macOS)</li>
+<li><b><a class="el" href="struct_stato_gioco.html" title="Stato completo di una partita in corso.">StatoGioco</a> Monolitico</b>: Singola struttura serializzabile per semplicità save/load</li>
+<li><b>DAB + Lista</b>: Database array lineare + BST parallelo per indicizzazione veloce</li>
+<li><b>Buffer Circolare</b>: Chat implementata come buffer circolare per memoria pre-allocata O(1)</li>
+<li><b>Configurazione a Compile-time</b>: Costanti per limiti (max giocatori, max carte, ecc.) definite in header</li>
+</ol>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md34"></a>
+Performance e Ottimizzazioni</h3>
+<ul>
+<li><b>Ricerca utenti O(log n)</b> con BST (DAB) per username/email</li>
+<li><b>Accesso statistiche O(1)</b> per denormalizzazione in array</li>
+<li><b>Inserimenti/rimozioni O(1)</b> su liste doppiamente concatenate</li>
+<li><b>Rendering ottimizzato</b>: <a class="el" href="struct_texture.html">Texture</a> caching, draw call minimization, update selettivo</li>
+<li><b>Salvataggio incrementale</b>: Solo delta modifiche su file binario</li>
+<li><b>Gestione memoria</b>: Pulizia automatica risorse Raylib, free su riallocazioni, no memory leak</li>
+<li><b>Broadcast LAN</b>: UDP multicast per discovery senza polling</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
+Sviluppi Futuri</h2>
+<ul class="check">
+<li class="unchecked">Modalità torneo con bracket eliminatorie</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Personalizzazione carte e temi</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Classifiche globali online</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Replay partite con log eventi</li>
+</ul>
+<ul class="check">
+<li class="unchecked">IA avanzata con machine learning</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Supporto Unicode completo per nickname</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Achievements e sistema di progressione</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Modalità spettatore</li>
+</ul>
+<ul class="check">
+<li class="unchecked">Tornei automatici con scheduling</li>
+</ul>
+<hr  />
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Autore  </th><th class="markdownTableHeadNone">Matricola  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Alessio Decarolis  </td><td class="markdownTableBodyNone">852865  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Pasquale Franco  </td><td class="markdownTableBodyNone">852866  </td></tr>
+</table>
+<p><b>Versione</b>: 9.1.3 <br  />
+ <b>Data</b>: 1/07/2026 </p>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

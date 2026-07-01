@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file lib/data_structures/stack.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('stack_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file stack.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>ADT <a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> (Stack LIFO) per gestione mazzo di pesca e scarti.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="data__structures_8h_source.html">../data_structures.h</a>&quot;</code><br />
+</div>
+<p><a href="stack_8h_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Strutture dati</h2></td></tr>
+<tr class="memitem:NodoPila" id="r_NodoPila"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_nodo_pila.html">NodoPila</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nodo della pila: contiene una carta e puntatore al next.  <a href="struct_nodo_pila.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:Pila" id="r_Pila"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_pila.html">Pila</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> LIFO: top punta all'ultimo inserito, size è la cardinalità.  <a href="struct_pila.html#details">Continua...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Ridefinizioni di tipo (typedef)</h2></td></tr>
+<tr class="memitem:ga8330fe274cc05faa43085fe3a259d046" id="r_ga8330fe274cc05faa43085fe3a259d046"><td class="memItemLeft">typedef struct NodoPila&#160;</td><td class="memItemRight"><a class="el" href="group__stack__nodi.html#ga8330fe274cc05faa43085fe3a259d046">NodoPila</a></td></tr>
+<tr class="memdesc:ga8330fe274cc05faa43085fe3a259d046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nodo della pila: contiene una carta e puntatore al next.  <br /></td></tr>
+<tr class="memitem:ga6b296460996e4bf880d4dab13fab46a6" id="r_ga6b296460996e4bf880d4dab13fab46a6"><td class="memItemLeft">typedef struct Pila&#160;</td><td class="memItemRight"><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a></td></tr>
+<tr class="memdesc:ga6b296460996e4bf880d4dab13fab46a6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> LIFO: top punta all'ultimo inserito, size è la cardinalità.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:gae2580d2cd99d4bbccf2d97f0e7505986" id="r_gae2580d2cd99d4bbccf2d97f0e7505986"><td class="memItemLeft"><a class="el" href="struct_pila.html">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__stack__api.html#gae2580d2cd99d4bbccf2d97f0e7505986">Pila_Crea</a> (void)</td></tr>
+<tr class="memdesc:gae2580d2cd99d4bbccf2d97f0e7505986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una pila vuota.  <br /></td></tr>
+<tr class="memitem:ga263f40cb0178a91e84a55530b759de12" id="r_ga263f40cb0178a91e84a55530b759de12"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__stack__api.html#ga263f40cb0178a91e84a55530b759de12">Pila_Distruggi</a> (<a class="el" href="struct_pila.html">Pila</a> *p)</td></tr>
+<tr class="memdesc:ga263f40cb0178a91e84a55530b759de12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distruttore: libera tutti i nodi e la struttura <a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a>.  <br /></td></tr>
+<tr class="memitem:gab82fab8722fd6967c4eb8df559bd54a0" id="r_gab82fab8722fd6967c4eb8df559bd54a0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack__api.html#gab82fab8722fd6967c4eb8df559bd54a0">Pila_Push</a> (<a class="el" href="struct_pila.html">Pila</a> *p, <a class="el" href="struct_carta.html">Carta</a> c)</td></tr>
+<tr class="memdesc:gab82fab8722fd6967c4eb8df559bd54a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce una carta in cima alla pila.  <br /></td></tr>
+<tr class="memitem:ga5bdd368203194d752ff33dbb1cac1c63" id="r_ga5bdd368203194d752ff33dbb1cac1c63"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack__api.html#ga5bdd368203194d752ff33dbb1cac1c63">Pila_Pop</a> (<a class="el" href="struct_pila.html">Pila</a> *p, <a class="el" href="struct_carta.html">Carta</a> *out)</td></tr>
+<tr class="memdesc:ga5bdd368203194d752ff33dbb1cac1c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove la carta in cima alla pila.  <br /></td></tr>
+<tr class="memitem:gac59443252a5933aafadbe3a44baaac7b" id="r_gac59443252a5933aafadbe3a44baaac7b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack__api.html#gac59443252a5933aafadbe3a44baaac7b">Pila_Top</a> (const <a class="el" href="struct_pila.html">Pila</a> *p, <a class="el" href="struct_carta.html">Carta</a> *out)</td></tr>
+<tr class="memdesc:gac59443252a5933aafadbe3a44baaac7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce la carta in cima SENZA rimuoverla.  <br /></td></tr>
+<tr class="memitem:ga70ddd166cfe7b417c89adcd326423cf7" id="r_ga70ddd166cfe7b417c89adcd326423cf7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack__api.html#ga70ddd166cfe7b417c89adcd326423cf7">Pila_Vuota</a> (const <a class="el" href="struct_pila.html">Pila</a> *p)</td></tr>
+<tr class="memdesc:ga70ddd166cfe7b417c89adcd326423cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se la pila è vuota.  <br /></td></tr>
+<tr class="memitem:ga10a5907e144119205466751dc42045b3" id="r_ga10a5907e144119205466751dc42045b3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack__api.html#ga10a5907e144119205466751dc42045b3">Pila_Dimensione</a> (const <a class="el" href="struct_pila.html">Pila</a> *p)</td></tr>
+<tr class="memdesc:ga10a5907e144119205466751dc42045b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce la dimensione corrente della pila.  <br /></td></tr>
+<tr class="memitem:ga0e02cb5e94d45aafbf07b62fcea1061f" id="r_ga0e02cb5e94d45aafbf07b62fcea1061f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__stack__api.html#ga0e02cb5e94d45aafbf07b62fcea1061f">Pila_Svuota</a> (<a class="el" href="struct_pila.html">Pila</a> *p)</td></tr>
+<tr class="memdesc:ga0e02cb5e94d45aafbf07b62fcea1061f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Svuota la pila lasciando la struttura allocata.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>ADT <a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> (Stack LIFO) per gestione mazzo di pesca e scarti. </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e1211c1ba4cadc9e94fe0fdad0038fad.html">data_structures</a></li><li class="navelem"><a href="stack_8h.html">stack.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

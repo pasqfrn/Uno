@@ -1,0 +1,141 @@
+\doxysection{lib/socket/lan/lan\+\_\+save\+\_\+helpers.h File Reference}
+\hypertarget{lan__save__helpers_8h}{}\label{lan__save__helpers_8h}\index{lib/socket/lan/lan\_save\_helpers.h@{lib/socket/lan/lan\_save\_helpers.h}}
+
+
+Header per gli helper di sincronizzazione salvataggi LAN.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lan__save__helpers_8h_ab2dedfd0382e39a090544904af65e3fc}{Get\+Slot\+Path}} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t bufsize, int slot)
+\begin{DoxyCompactList}\small\item\em Costruisce il path del file di salvataggio nel nuovo formato "{}save\+\_\+user\{\+ID\}\+\_\+slot\+\_\+\{\+N\}.\+dat"{} (coerente con \doxylink{save__manager_8c}{save\+\_\+manager.\+c}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lan__save__helpers_8h_ad45135b07dc8a3f36b5e7a99ee728e6c}{Get\+Slot\+Path\+For\+User}} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t bufsize, int uid, int slot)
+\begin{DoxyCompactList}\small\item\em Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lan__save__helpers_8h_a634183521fafd79ce08e2cba8d07d2ae}{Get\+Slot\+Path\+For\+Username}} (char \texorpdfstring{$\ast$}{*}buffer, size\+\_\+t bufsize, const char \texorpdfstring{$\ast$}{*}username, int slot)
+\begin{DoxyCompactList}\small\item\em Costruisce il path del file di salvataggio per username. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{lan__save__helpers_8h_a2be1321ebd26526dd8e93c9312b068dc}{Trova\+Recv}} (const char \texorpdfstring{$\ast$}{*}owner, const char \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Cerca o alloca un ricevitore per owner/data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header per gli helper di sincronizzazione salvataggi LAN. 
+
+Dichiara le funzioni helper fattorizzate da \doxylink{lan__save__sync_8c}{lan\+\_\+save\+\_\+sync.\+c}\+:
+\begin{DoxyItemize}
+\item Get\+Slot\+Path\+: costruisce path file nel formato save\+\_\+user\{ID\}\+\_\+slot\+\_\+\{N\}.dat
+\item Get\+Slot\+Path\+For\+User\+: path per un dato ID utente
+\item Get\+Slot\+Path\+For\+Username\+: path per dato username (scansiona ID)
+\item Trova\+Recv\+: cerca o alloca un ricevitore di chunk
+\end{DoxyItemize}
+
+Fattorizzato per ridurre la complessita\textquotesingle{} di \doxylink{lan__save__sync_8c}{lan\+\_\+save\+\_\+sync.\+c} (\texorpdfstring{$>$}{>}450 righe). 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lan__save__helpers_8h_ab2dedfd0382e39a090544904af65e3fc}\index{lan\_save\_helpers.h@{lan\_save\_helpers.h}!GetSlotPath@{GetSlotPath}}
+\index{GetSlotPath@{GetSlotPath}!lan\_save\_helpers.h@{lan\_save\_helpers.h}}
+\doxysubsubsection{\texorpdfstring{GetSlotPath()}{GetSlotPath()}}
+{\footnotesize\ttfamily \label{lan__save__helpers_8h_ab2dedfd0382e39a090544904af65e3fc} 
+void Get\+Slot\+Path (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{bufsize}{, }\item[{int}]{slot}{}\end{DoxyParamCaption})}
+
+
+
+Costruisce il path del file di salvataggio nel nuovo formato "{}save\+\_\+user\{\+ID\}\+\_\+slot\+\_\+\{\+N\}.\+dat"{} (coerente con \doxylink{save__manager_8c}{save\+\_\+manager.\+c}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Buffer di destinazione. \\
+\hline
+{\em bufsize} & Dimensione del buffer. \\
+\hline
+{\em slot} & Indice dello slot (1-\/100). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lan__save__helpers_8h_ad45135b07dc8a3f36b5e7a99ee728e6c}\index{lan\_save\_helpers.h@{lan\_save\_helpers.h}!GetSlotPathForUser@{GetSlotPathForUser}}
+\index{GetSlotPathForUser@{GetSlotPathForUser}!lan\_save\_helpers.h@{lan\_save\_helpers.h}}
+\doxysubsubsection{\texorpdfstring{GetSlotPathForUser()}{GetSlotPathForUser()}}
+{\footnotesize\ttfamily \label{lan__save__helpers_8h_ad45135b07dc8a3f36b5e7a99ee728e6c} 
+void Get\+Slot\+Path\+For\+User (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{bufsize}{, }\item[{int}]{uid}{, }\item[{int}]{slot}{}\end{DoxyParamCaption})}
+
+
+
+Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Buffer di destinazione. \\
+\hline
+{\em bufsize} & Dimensione del buffer. \\
+\hline
+{\em uid} & ID dell\textquotesingle{}utente nel database. \\
+\hline
+{\em slot} & Indice dello slot (1-\/100).\\
+\hline
+\end{DoxyParams}
+Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Buffer di destinazione. \\
+\hline
+{\em bufsize} & Dimensione del buffer. \\
+\hline
+{\em uid} & ID dell\textquotesingle{}utente nel database. \\
+\hline
+{\em slot} & Indice dello slot (1-\/100). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{lan__save__helpers_8h_a634183521fafd79ce08e2cba8d07d2ae}\index{lan\_save\_helpers.h@{lan\_save\_helpers.h}!GetSlotPathForUsername@{GetSlotPathForUsername}}
+\index{GetSlotPathForUsername@{GetSlotPathForUsername}!lan\_save\_helpers.h@{lan\_save\_helpers.h}}
+\doxysubsubsection{\texorpdfstring{GetSlotPathForUsername()}{GetSlotPathForUsername()}}
+{\footnotesize\ttfamily \label{lan__save__helpers_8h_a634183521fafd79ce08e2cba8d07d2ae} 
+int Get\+Slot\+Path\+For\+Username (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{size\+\_\+t}]{bufsize}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{, }\item[{int}]{slot}{}\end{DoxyParamCaption})}
+
+
+
+Costruisce il path del file di salvataggio per username. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Buffer di destinazione. \\
+\hline
+{\em bufsize} & Dimensione del buffer. \\
+\hline
+{\em username} & Username del proprietario del salvataggio. \\
+\hline
+{\em slot} & Indice dello slot (1-\/100). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se trovato, 0 altrimenti.
+\end{DoxyReturn}
+Costruisce il path del file di salvataggio per username.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Buffer di destinazione. \\
+\hline
+{\em bufsize} & Dimensione del buffer. \\
+\hline
+{\em username} & Username del proprietario del salvataggio. \\
+\hline
+{\em slot} & Indice dello slot (1-\/100). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se trovato, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{lan__save__helpers_8h_a2be1321ebd26526dd8e93c9312b068dc}\index{lan\_save\_helpers.h@{lan\_save\_helpers.h}!TrovaRecv@{TrovaRecv}}
+\index{TrovaRecv@{TrovaRecv}!lan\_save\_helpers.h@{lan\_save\_helpers.h}}
+\doxysubsubsection{\texorpdfstring{TrovaRecv()}{TrovaRecv()}}
+{\footnotesize\ttfamily \label{lan__save__helpers_8h_a2be1321ebd26526dd8e93c9312b068dc} 
+int Trova\+Recv (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{owner}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Cerca o alloca un ricevitore per owner/data. 
+
+\begin{DoxyReturn}{Returns}
+Indice nell\textquotesingle{}array recvs, -\/1 se pieno. 
+\end{DoxyReturn}

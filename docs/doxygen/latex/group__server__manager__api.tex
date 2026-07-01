@@ -1,0 +1,425 @@
+\doxysection{API Server Manager}
+\hypertarget{group__server__manager__api}{}\label{group__server__manager__api}\index{API Server Manager@{API Server Manager}}
+
+
+Funzioni per la gestione del server manager e delle sessioni.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__server__manager__api_gad49f47a1e9318a8183e7c4269c8c437b}{Init\+Server\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Inizializza il server manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga77098e4298a4acac07490885d068e0f7}{Update\+Server\+Manager}} (float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna lo stato di tutte le sessioni. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga0bb6b95401b7b67589bc7213e9f47ee9}{Shutdown\+Server\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Chiude il server manager e libera risorse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga16fd52dac20f4320260b28846fbddd9e}{Create\+Session}} (const char \texorpdfstring{$\ast$}{*}host\+\_\+name, int host\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Crea una nuova sessione di gioco. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga2e85aecf5499dd7a2ce0190099dc5822}{Get\+Session}} (const char \texorpdfstring{$\ast$}{*}sess\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Cerca una sessione per ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga3a6f3c2c7a63d479ce25d78410b20f7b}{Get\+Session\+By\+Player\+Id}} (int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}})
+\begin{DoxyCompactList}\small\item\em Cerca una sessione contenente un giocatore specifico. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga9c4e3c22ad94a695a648da6957a7cc11}{Add\+Player\+To\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, const char \texorpdfstring{$\ast$}{*}player\+\_\+name, int is\+\_\+bot)
+\begin{DoxyCompactList}\small\item\em Aggiunge un giocatore a una sessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga80c5b6914b694d9fdfdf7d583a801911}{Remove\+Player\+From\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}})
+\begin{DoxyCompactList}\small\item\em Rimuove un giocatore da una sessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga323407153355eb9a4348f5e2bdffb699}{Start\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session)
+\begin{DoxyCompactList}\small\item\em Avvia il conteggio per l\textquotesingle{}inizio della partita. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga8927513d3fed56e3104fb092d4ee5a3d}{Update\+Session\+Logic}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna la logica di una sessione (bot AI, timer). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_gae47b83053dd03f75306d6b4428ec4f61}{Close\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session)
+\begin{DoxyCompactList}\small\item\em Chiude una sessione. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga3b360a917a8a8e088fb7601541d7fb27}{Is\+Valid\+Move}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, int card\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Verifica se una mossa e\textquotesingle{} valida (lato server). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga95d41e70918a635e3d32b6035c2e3fe0}{Process\+Move}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, int card\+\_\+index, \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} color\+\_\+choice)
+\begin{DoxyCompactList}\small\item\em Processa una mossa (lato server). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_gaa855d2809b0d5c648293f8c6af3369df}{Process\+Draw}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, int draw\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Processa una pescata (lato server). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga98b8f5a55cc13c86013e2a7d49ff36e2}{Process\+Color\+Choice}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} color)
+\begin{DoxyCompactList}\small\item\em Processa una scelta colore (lato server). \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga727dc1bbb1c4967c2aa8235d081ceb79}{Generate\+Session\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Genera un ID di sessione univoco (stringa casuale). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funzioni per la gestione del server manager e delle sessioni. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__server__manager__api_ga9c4e3c22ad94a695a648da6957a7cc11}\index{API Server Manager@{API Server Manager}!AddPlayerToSession@{AddPlayerToSession}}
+\index{AddPlayerToSession@{AddPlayerToSession}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{AddPlayerToSession()}{AddPlayerToSession()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga9c4e3c22ad94a695a648da6957a7cc11} 
+int Add\+Player\+To\+Session (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{, }\item[{int}]{player\+\_\+id}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{player\+\_\+name}{, }\item[{int}]{is\+\_\+bot}{}\end{DoxyParamCaption})}
+
+
+
+Aggiunge un giocatore a una sessione. 
+
+\begin{DoxyPrecond}{Precondition}
+session valida; numero giocatori \texorpdfstring{$<$}{<} MAX\+\_\+\+PLAYERS\+\_\+\+PER\+\_\+\+SESSION. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_giocatore}{Giocatore} aggiunto; num\+\_\+players incrementato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione target. \\
+\hline
+{\em player\+\_\+id} & ID del giocatore. \\
+\hline
+{\em player\+\_\+name} & Nome del giocatore. \\
+\hline
+{\em is\+\_\+bot} & 1 se bot, 0 se umano. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se aggiunto, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__server__manager__api_gae47b83053dd03f75306d6b4428ec4f61}\index{API Server Manager@{API Server Manager}!CloseSession@{CloseSession}}
+\index{CloseSession@{CloseSession}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{CloseSession()}{CloseSession()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_gae47b83053dd03f75306d6b4428ec4f61} 
+void Close\+Session (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{}\end{DoxyParamCaption})}
+
+
+
+Chiude una sessione. 
+
+\begin{DoxyPrecond}{Precondition}
+session valida. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+state = SESSION\+\_\+\+CLOSED; risorse liberate. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione da chiudere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__server__manager__api_ga16fd52dac20f4320260b28846fbddd9e}\index{API Server Manager@{API Server Manager}!CreateSession@{CreateSession}}
+\index{CreateSession@{CreateSession}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{CreateSession()}{CreateSession()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga16fd52dac20f4320260b28846fbddd9e} 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} Create\+Session (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{host\+\_\+name}{, }\item[{int}]{host\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Crea una nuova sessione di gioco. 
+
+\begin{DoxyPrecond}{Precondition}
+host\+\_\+name != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Sessione aggiunta a server\+Manager. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em host\+\_\+name} & Nome del host. \\
+\hline
+{\em host\+\_\+id} & ID del giocatore host. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Puntatore alla sessione creata, o NULL se errore.
+\end{DoxyReturn}
+Crea una nuova sessione di gioco.
+
+Alloca una sessione nell\textquotesingle{}array statico, genera un ID univoco, inizializza lo stato di gioco con il mazzo e distribuisce 7 carte all\textquotesingle{}host.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+\_\+name} & Nome dell\textquotesingle{}host (giocatore 0). \\
+\hline
+{\em host\+\_\+id} & ID del giocatore host. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Puntatore alla sessione creata, NULL se errore (max sessioni raggiunto). 
+\end{DoxyReturn}
+\Hypertarget{group__server__manager__api_ga727dc1bbb1c4967c2aa8235d081ceb79}\index{API Server Manager@{API Server Manager}!GenerateSessionId@{GenerateSessionId}}
+\index{GenerateSessionId@{GenerateSessionId}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{GenerateSessionId()}{GenerateSessionId()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga727dc1bbb1c4967c2aa8235d081ceb79} 
+char \texorpdfstring{$\ast$}{*} Generate\+Session\+Id (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Genera un ID di sessione univoco (stringa casuale). 
+
+\begin{DoxyReturn}{Returns}
+Puntatore a stringa allocata (da liberare con free). 
+\end{DoxyReturn}
+BUG 3\+: Il vecchio codice generava solo 4 caratteri casuali, che potevano collidere quando piu\textquotesingle{} dispositivi sulla stessa rete creavano stanze contemporaneamente.
+
+CORREZIONE\+: Codice di 8 caratteri che combina\+:
+\begin{DoxyItemize}
+\item Parte bassa del timestamp (millisecondi / 10) per unicita\textquotesingle{} temporale
+\item Un carattere casuale per ridurre ulteriormente la probabilita\textquotesingle{} di collisione Questo garantisce unicita\textquotesingle{} anche su dispositivi sulla stessa rete.
+\end{DoxyItemize}\Hypertarget{group__server__manager__api_ga2e85aecf5499dd7a2ce0190099dc5822}\index{API Server Manager@{API Server Manager}!GetSession@{GetSession}}
+\index{GetSession@{GetSession}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{GetSession()}{GetSession()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga2e85aecf5499dd7a2ce0190099dc5822} 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} Get\+Session (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{sess\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Cerca una sessione per ID. 
+
+\begin{DoxyPrecond}{Precondition}
+sess\+\_\+id != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Puntatore a \doxylink{struct_game_session}{Game\+Session}, o NULL se non trovata. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sess\+\_\+id} & ID della sessione. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__server__manager__api_ga3a6f3c2c7a63d479ce25d78410b20f7b}\index{API Server Manager@{API Server Manager}!GetSessionByPlayerId@{GetSessionByPlayerId}}
+\index{GetSessionByPlayerId@{GetSessionByPlayerId}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{GetSessionByPlayerId()}{GetSessionByPlayerId()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga3a6f3c2c7a63d479ce25d78410b20f7b} 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} Get\+Session\+By\+Player\+Id (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Cerca una sessione contenente un giocatore specifico. 
+
+\begin{DoxyReturn}{Returns}
+Puntatore a \doxylink{struct_game_session}{Game\+Session}, o NULL se non trovata. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+id} & ID del giocatore. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__server__manager__api_gad49f47a1e9318a8183e7c4269c8c437b}\index{API Server Manager@{API Server Manager}!InitServerManager@{InitServerManager}}
+\index{InitServerManager@{InitServerManager}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{InitServerManager()}{InitServerManager()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_gad49f47a1e9318a8183e7c4269c8c437b} 
+void Init\+Server\+Manager (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Inizializza il server manager. 
+
+\begin{DoxyPostcond}{Postcondition}
+Tutte le sessioni resettate; num\+\_\+active\+\_\+sessions=0.
+\end{DoxyPostcond}
+Inizializza il server manager.
+
+Resetta a zero tutte le sessioni e inizializza il seed per la generazione di ID sessione casuali. \Hypertarget{group__server__manager__api_ga3b360a917a8a8e088fb7601541d7fb27}\index{API Server Manager@{API Server Manager}!IsValidMove@{IsValidMove}}
+\index{IsValidMove@{IsValidMove}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{IsValidMove()}{IsValidMove()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga3b360a917a8a8e088fb7601541d7fb27} 
+int Is\+Valid\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{, }\item[{int}]{player\+\_\+id}{, }\item[{int}]{card\+\_\+index}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se una mossa e\textquotesingle{} valida (lato server). 
+
+\begin{DoxyPrecond}{Precondition}
+session valida; player\+\_\+id nella sessione. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+1 se mossa valida, 0 altrimenti. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione di gioco. \\
+\hline
+{\em player\+\_\+id} & ID del giocatore. \\
+\hline
+{\em card\+\_\+index} & Indice della carta da giocare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__server__manager__api_ga98b8f5a55cc13c86013e2a7d49ff36e2}\index{API Server Manager@{API Server Manager}!ProcessColorChoice@{ProcessColorChoice}}
+\index{ProcessColorChoice@{ProcessColorChoice}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{ProcessColorChoice()}{ProcessColorChoice()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga98b8f5a55cc13c86013e2a7d49ff36e2} 
+int Process\+Color\+Choice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{, }\item[{int}]{player\+\_\+id}{, }\item[{\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Processa una scelta colore (lato server). 
+
+\begin{DoxyPrecond}{Precondition}
+session valida; player\+\_\+id nella sessione. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+colore\+\_\+attivo aggiornato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione. \\
+\hline
+{\em player\+\_\+id} & ID del giocatore. \\
+\hline
+{\em color} & \doxylink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore} scelto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se successo, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__server__manager__api_gaa855d2809b0d5c648293f8c6af3369df}\index{API Server Manager@{API Server Manager}!ProcessDraw@{ProcessDraw}}
+\index{ProcessDraw@{ProcessDraw}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{ProcessDraw()}{ProcessDraw()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_gaa855d2809b0d5c648293f8c6af3369df} 
+int Process\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{, }\item[{int}]{player\+\_\+id}{, }\item[{int}]{draw\+\_\+count}{}\end{DoxyParamCaption})}
+
+
+
+Processa una pescata (lato server). 
+
+\begin{DoxyPrecond}{Precondition}
+session valida; player\+\_\+id nella sessione. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Carte pescate aggiunte alla mano. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione. \\
+\hline
+{\em player\+\_\+id} & ID del giocatore. \\
+\hline
+{\em draw\+\_\+count} & Numero di carte da pescare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se successo, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__server__manager__api_ga95d41e70918a635e3d32b6035c2e3fe0}\index{API Server Manager@{API Server Manager}!ProcessMove@{ProcessMove}}
+\index{ProcessMove@{ProcessMove}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{ProcessMove()}{ProcessMove()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga95d41e70918a635e3d32b6035c2e3fe0} 
+int Process\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{, }\item[{int}]{player\+\_\+id}{, }\item[{int}]{card\+\_\+index}{, }\item[{\mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}}}]{color\+\_\+choice}{}\end{DoxyParamCaption})}
+
+
+
+Processa una mossa (lato server). 
+
+\begin{DoxyPrecond}{Precondition}
+session valida; mossa valida. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Stato gioco aggiornato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione. \\
+\hline
+{\em player\+\_\+id} & ID del giocatore. \\
+\hline
+{\em card\+\_\+index} & Indice carta. \\
+\hline
+{\em color\+\_\+choice} & \doxylink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore} scelto (per jolly). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se successo, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__server__manager__api_ga80c5b6914b694d9fdfdf7d583a801911}\index{API Server Manager@{API Server Manager}!RemovePlayerFromSession@{RemovePlayerFromSession}}
+\index{RemovePlayerFromSession@{RemovePlayerFromSession}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{RemovePlayerFromSession()}{RemovePlayerFromSession()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga80c5b6914b694d9fdfdf7d583a801911} 
+void Remove\+Player\+From\+Session (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{, }\item[{int}]{player\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Rimuove un giocatore da una sessione. 
+
+\begin{DoxyPrecond}{Precondition}
+session valida; player\+\_\+id presente. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_giocatore}{Giocatore} rimosso; num\+\_\+players decrementato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione. \\
+\hline
+{\em player\+\_\+id} & ID del giocatore. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__server__manager__api_ga0bb6b95401b7b67589bc7213e9f47ee9}\index{API Server Manager@{API Server Manager}!ShutdownServerManager@{ShutdownServerManager}}
+\index{ShutdownServerManager@{ShutdownServerManager}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{ShutdownServerManager()}{ShutdownServerManager()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga0bb6b95401b7b67589bc7213e9f47ee9} 
+void Shutdown\+Server\+Manager (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Chiude il server manager e libera risorse. 
+
+\begin{DoxyPrecond}{Precondition}
+server\+Manager inizializzato. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Tutte le sessioni chiuse; memoria liberata.
+\end{DoxyPostcond}
+Chiude il server manager e libera risorse.
+
+Chiamato alla chiusura dell\textquotesingle{}applicazione o quando si esce dalla modalita\textquotesingle{} multiplayer. \Hypertarget{group__server__manager__api_ga323407153355eb9a4348f5e2bdffb699}\index{API Server Manager@{API Server Manager}!StartSession@{StartSession}}
+\index{StartSession@{StartSession}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{StartSession()}{StartSession()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga323407153355eb9a4348f5e2bdffb699} 
+void Start\+Session (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{}\end{DoxyParamCaption})}
+
+
+
+Avvia il conteggio per l\textquotesingle{}inizio della partita. 
+
+\begin{DoxyPrecond}{Precondition}
+session valida e in SESSION\+\_\+\+WAITING con abbastanza giocatori. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+state = SESSION\+\_\+\+STARTING; start\+Countdown impostato. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione da avviare. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__server__manager__api_ga77098e4298a4acac07490885d068e0f7}\index{API Server Manager@{API Server Manager}!UpdateServerManager@{UpdateServerManager}}
+\index{UpdateServerManager@{UpdateServerManager}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{UpdateServerManager()}{UpdateServerManager()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga77098e4298a4acac07490885d068e0f7} 
+void Update\+Server\+Manager (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})}
+
+
+
+Aggiorna lo stato di tutte le sessioni. 
+
+\begin{DoxyPrecond}{Precondition}
+server\+Manager inizializzato. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__server__manager__api_ga8927513d3fed56e3104fb092d4ee5a3d}\index{API Server Manager@{API Server Manager}!UpdateSessionLogic@{UpdateSessionLogic}}
+\index{UpdateSessionLogic@{UpdateSessionLogic}!API Server Manager@{API Server Manager}}
+\doxysubsubsection{\texorpdfstring{UpdateSessionLogic()}{UpdateSessionLogic()}}
+{\footnotesize\ttfamily \label{group__server__manager__api_ga8927513d3fed56e3104fb092d4ee5a3d} 
+void Update\+Session\+Logic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}}]{session}{, }\item[{float}]{dt}{}\end{DoxyParamCaption})}
+
+
+
+Aggiorna la logica di una sessione (bot AI, timer). 
+
+\begin{DoxyPrecond}{Precondition}
+session valida. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em session} & Sessione. \\
+\hline
+{\em dt} & Delta time. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Uno: Riferimenti per il file lib/game_logic.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = 'dark';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Uno
+   </div>
+   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('game__logic_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file game_logic.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Modulo di logica di gioco UNO.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="data__structures_8h_source.html">data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stack_8h_source.html">data_structures/stack.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="queue_8h_source.html">data_structures/queue.h</a>&quot;</code><br />
+</div>
+<p><a href="game__logic_8h_source.html">Vai al codice sorgente di questo file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:a1f3105448b986dc3c5fd8ef93e948fdf" id="r_a1f3105448b986dc3c5fd8ef93e948fdf"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a1f3105448b986dc3c5fd8ef93e948fdf">CaricaPartitaDaSlot</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, int slot)</td></tr>
+<tr class="memdesc:a1f3105448b986dc3c5fd8ef93e948fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica una partita da un file di salvataggio.  <br /></td></tr>
+<tr class="memitem:ac36d5d7fc58d57d5333d9de89432acb1" id="r_ac36d5d7fc58d57d5333d9de89432acb1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac36d5d7fc58d57d5333d9de89432acb1">RicostruisciStatoADT</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:ac36d5d7fc58d57d5333d9de89432acb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricostruisce le strutture ADT statiche (mazzo_pila, scarti_pila, coda_turni) e le mani dei giocatori dopo un caricamento da file.  <br /></td></tr>
+<tr class="memitem:a8b2e4cdd665a790268c297e793abc369" id="r_a8b2e4cdd665a790268c297e793abc369"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8b2e4cdd665a790268c297e793abc369">EliminaSalvataggio</a> (int slot)</td></tr>
+<tr class="memdesc:a8b2e4cdd665a790268c297e793abc369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina un file di salvataggio esistente.  <br /></td></tr>
+<tr class="memitem:ab6d8a480978f155fe71df7ce72d2d67e" id="r_ab6d8a480978f155fe71df7ce72d2d67e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab6d8a480978f155fe71df7ce72d2d67e">SalvaPartita</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:ab6d8a480978f155fe71df7ce72d2d67e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Salva lo stato corrente della partita su file.  <br /></td></tr>
+<tr class="memitem:a4af9aa327b760e4e4ff4c861879608d6" id="r_a4af9aa327b760e4e4ff4c861879608d6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4af9aa327b760e4e4ff4c861879608d6">CompattaSalvataggiUtente</a> (void)</td></tr>
+<tr class="memdesc:a4af9aa327b760e4e4ff4c861879608d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compatta i salvataggi dell'utente loggato in ordine cronologico.  <br /></td></tr>
+<tr class="memitem:abef09d90f8a1244e64b884e89814cd9d" id="r_abef09d90f8a1244e64b884e89814cd9d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abef09d90f8a1244e64b884e89814cd9d">EliminaTuttiSalvataggiUtente</a> (const char *username)</td></tr>
+<tr class="memdesc:abef09d90f8a1244e64b884e89814cd9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina TUTTI i salvataggi di un utente specifico.  <br /></td></tr>
+<tr class="memitem:a56d174d587ba4d54b02fa4f18c6d5279" id="r_a56d174d587ba4d54b02fa4f18c6d5279"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a56d174d587ba4d54b02fa4f18c6d5279">GetSaveFilePath</a> (int user_index, int slot, char *buffer, size_t bufsize)</td></tr>
+<tr class="memdesc:a56d174d587ba4d54b02fa4f18c6d5279"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il path del file di salvataggio per un dato utente e slot.  <br /></td></tr>
+<tr class="memitem:ga2be362fe392971bbe8008aa9266cf539" id="r_ga2be362fe392971bbe8008aa9266cf539"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga2be362fe392971bbe8008aa9266cf539">InizializzaMazzo</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:ga2be362fe392971bbe8008aa9266cf539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza il mazzo di pesca con 108 carte UNO standard.  <br /></td></tr>
+<tr class="memitem:aa30d6c36fd5e60362e9863466f754b38" id="r_aa30d6c36fd5e60362e9863466f754b38"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa30d6c36fd5e60362e9863466f754b38">RicarcaMazzo</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:aa30d6c36fd5e60362e9863466f754b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricarica il mazzo di pesca dagli scarti.  <br /></td></tr>
+<tr class="memitem:a331462bb54826e9e9d477625d83dd9d5" id="r_a331462bb54826e9e9d477625d83dd9d5"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a331462bb54826e9e9d477625d83dd9d5">MossaValida</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="struct_carta.html">Carta</a> c)</td></tr>
+<tr class="memdesc:a331462bb54826e9e9d477625d83dd9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se una carta puo' essere giocata legalmente.  <br /></td></tr>
+<tr class="memitem:a588fc681a6842fa5688ec1331484fe1b" id="r_a588fc681a6842fa5688ec1331484fe1b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a588fc681a6842fa5688ec1331484fe1b">ApplicaEffetto</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="struct_carta.html">Carta</a> c, <a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> colore_scelto)</td></tr>
+<tr class="memdesc:a588fc681a6842fa5688ec1331484fe1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applica l'effetto speciale di una carta giocata.  <br /></td></tr>
+<tr class="memitem:a6f74b381349465d305eabe85f8b02a95" id="r_a6f74b381349465d305eabe85f8b02a95"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6f74b381349465d305eabe85f8b02a95">NuovaPartita</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, int num_avversari)</td></tr>
+<tr class="memdesc:a6f74b381349465d305eabe85f8b02a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza una nuova partita con il numero di avversari specificato.  <br /></td></tr>
+<tr class="memitem:a3446c1c30033cc8030a98d3e41399365" id="r_a3446c1c30033cc8030a98d3e41399365"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3446c1c30033cc8030a98d3e41399365">EliminaPartita</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:a3446c1c30033cc8030a98d3e41399365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera tutte le risorse allocate per una partita.  <br /></td></tr>
+<tr class="memitem:ab202f15176056f42ac78bd55f0ef400e" id="r_ab202f15176056f42ac78bd55f0ef400e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab202f15176056f42ac78bd55f0ef400e">MostraNotifica</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, const char *msg)</td></tr>
+<tr class="memdesc:ab202f15176056f42ac78bd55f0ef400e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra una notifica temporanea a schermo.  <br /></td></tr>
+<tr class="memitem:ga171821f60641393ff220f91b26e0325f" id="r_ga171821f60641393ff220f91b26e0325f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga171821f60641393ff220f91b26e0325f">GetLunghezzaMano</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *giocatore)</td></tr>
+<tr class="memdesc:ga171821f60641393ff220f91b26e0325f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di carte nella mano di un giocatore.  <br /></td></tr>
+<tr class="memitem:ga911f218567f81d8d4d6eec5c1c12b543" id="r_ga911f218567f81d8d4d6eec5c1c12b543"><td class="memItemLeft"><a class="el" href="struct_carta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga911f218567f81d8d4d6eec5c1c12b543">GetCartaGiocatore</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *giocatore, int indice)</td></tr>
+<tr class="memdesc:ga911f218567f81d8d4d6eec5c1c12b543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una carta dalla mano di un giocatore per indice.  <br /></td></tr>
+<tr class="memitem:ga5a26039c72d695715eb46d1dbe0f91ff" id="r_ga5a26039c72d695715eb46d1dbe0f91ff"><td class="memItemLeft"><a class="el" href="struct_nodo_carta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga5a26039c72d695715eb46d1dbe0f91ff">GetNodoCartaGiocatore</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *giocatore, int indice)</td></tr>
+<tr class="memdesc:ga5a26039c72d695715eb46d1dbe0f91ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il puntatore al nodo di una carta per indice.  <br /></td></tr>
+<tr class="memitem:gac60c0e57c8c2a799f008d302bbaaa5fd" id="r_gac60c0e57c8c2a799f008d302bbaaa5fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#gac60c0e57c8c2a799f008d302bbaaa5fd">RimuoviCartaGiocatore</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *giocatore, int indice)</td></tr>
+<tr class="memdesc:gac60c0e57c8c2a799f008d302bbaaa5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove una carta dalla mano di un giocatore per indice.  <br /></td></tr>
+<tr class="memitem:ga6fc614aadf58fe03606063067a2ad233" id="r_ga6fc614aadf58fe03606063067a2ad233"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga6fc614aadf58fe03606063067a2ad233">RimescolaScartiNelMazzo</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:ga6fc614aadf58fe03606063067a2ad233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimescola le carte dalla pila degli scarti nel mazzo di pesca.  <br /></td></tr>
+<tr class="memitem:gad1b01bee170bfe43e167097d8fa75b3c" id="r_gad1b01bee170bfe43e167097d8fa75b3c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#gad1b01bee170bfe43e167097d8fa75b3c">Pesca</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, int id_giocatore, int quantita)</td></tr>
+<tr class="memdesc:gad1b01bee170bfe43e167097d8fa75b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fa pescare un certo numero di carte a un giocatore.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:afefe37ecc9aba9febda10fedc4dfa743" id="r_afefe37ecc9aba9febda10fedc4dfa743"><td class="memItemLeft"><a class="el" href="struct_pila.html">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="#afefe37ecc9aba9febda10fedc4dfa743">mazzo_pila</a></td></tr>
+<tr class="memdesc:afefe37ecc9aba9febda10fedc4dfa743"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADT globali del gioco: pila mazzo pesca, pila scarti, coda turni.  <br /></td></tr>
+<tr class="memitem:ae43a4528acce4bced75b0d843415956f" id="r_ae43a4528acce4bced75b0d843415956f"><td class="memItemLeft"><a class="el" href="struct_pila.html">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ae43a4528acce4bced75b0d843415956f">scarti_pila</a></td></tr>
+<tr class="memdesc:ae43a4528acce4bced75b0d843415956f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale degli scarti.  <br /></td></tr>
+<tr class="memitem:ad1902a2e7f88106585a3606741e4ba34" id="r_ad1902a2e7f88106585a3606741e4ba34"><td class="memItemLeft"><a class="el" href="struct_coda_turni.html">CodaTurni</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad1902a2e7f88106585a3606741e4ba34">coda_turni</a></td></tr>
+<tr class="memdesc:ad1902a2e7f88106585a3606741e4ba34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coda globale dei turni.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Modulo di logica di gioco UNO. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="a588fc681a6842fa5688ec1331484fe1b" name="a588fc681a6842fa5688ec1331484fe1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588fc681a6842fa5688ec1331484fe1b">&#9670;&#160;</a></span>ApplicaEffetto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ApplicaEffetto </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_carta.html">Carta</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a></td>          <td class="paramname"><span class="paramname"><em>colore_scelto</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applica l'effetto speciale di una carta giocata. </p>
+<p>Applica l'effetto di una carta giocata allo stato di gioco.</p>
+<p>Gestisce gli effetti di tutte le carte speciali:</p><ul>
+<li>CAMBIA_GIRO: Inverte la direzione del turno.</li>
+<li>SALTA: Salta il giocatore successivo.</li>
+<li>PIU_2: Il giocatore successivo pesca 2 carte.</li>
+<li>JOLLY: Il giocatore sceglie un colore.</li>
+<li>JOLLY_PIU_4: Il giocatore successivo pesca 4 carte e si sceglie un colore.</li>
+</ul>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; carta valida e giocabile. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Stato gioco aggiornato con effetto applicato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+    <tr><td class="paramname">c</td><td>La carta giocata con effetto speciale. </td></tr>
+    <tr><td class="paramname">colore_scelto</td><td>Il colore scelto dal giocatore (per Jolly/JollyPiù4).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Applica l'effetto speciale di una carta giocata.</p>
+<p>Gestisce: cambio colore, cambio giro, salta turno, pesca carte, aggiornamento colore attivo e rotazione coda turni.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; carta valida. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Stato aggiornato con effetto applicato; notifica mostrata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco. </td></tr>
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a> giocata. </td></tr>
+    <tr><td class="paramname">colore_scelto</td><td><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c" title="Colori disponibili per le carte UNO.">Colore</a> scelto dal giocatore (per jolly). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1f3105448b986dc3c5fd8ef93e948fdf" name="a1f3105448b986dc3c5fd8ef93e948fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f3105448b986dc3c5fd8ef93e948fdf">&#9670;&#160;</a></span>CaricaPartitaDaSlot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CaricaPartitaDaSlot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slot</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carica una partita da un file di salvataggio. </p>
+<p>Carica una partita da uno slot di salvataggio specifico.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; slot nel range valido. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Stato partita ricaricato; ADT ricostruiti se necessario. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da popolare. </td></tr>
+    <tr><td class="paramname">slot</td><td>Indice dello slot di salvataggio (1-5). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se il caricamento e' riuscito, 0 altrimenti.</dd></dl>
+<p>Carica una partita da un file di salvataggio.</p>
+<p>Cerca prima nel formato save_user{ID}_slot_{N}.dat. Fallback: se non trova, controlla nel vecchio formato save_slot_N.dat per retrocompatibilità con salvataggi preesistenti.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da popolare. </td></tr>
+    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se caricamento riuscito, 0 se slot vuoto o errore. </dd></dl>
+
+</div>
+</div>
+<a id="a4af9aa327b760e4e4ff4c861879608d6" name="a4af9aa327b760e4e4ff4c861879608d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af9aa327b760e4e4ff4c861879608d6">&#9670;&#160;</a></span>CompattaSalvataggiUtente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CompattaSalvataggiUtente </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compatta i salvataggi dell'utente loggato in ordine cronologico. </p>
+<p>Raccoglie tutti i salvataggi dell'utente (cerca sia formato nuovo save_user{ID}_slot_{N}.dat che vecchio save_slot_N.dat), li ordina per data crescente (bubble sort) e li riscrive nei primi slot liberi con il nuovo formato. </p>
+
+</div>
+</div>
+<a id="a3446c1c30033cc8030a98d3e41399365" name="a3446c1c30033cc8030a98d3e41399365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3446c1c30033cc8030a98d3e41399365">&#9670;&#160;</a></span>EliminaPartita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EliminaPartita </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Libera tutte le risorse allocate per una partita. </p>
+<p>Libera tutte le risorse di una partita terminata.</p>
+<p>Distrugge la mano di ogni giocatore (liste collegate), svuota le pile di pesca e scarti, libera l'albero BST.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Tutte le risorse liberate; ADT resettate. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da deallocare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Libera tutte le risorse allocate per una partita.</p>
+<p>Distrugge: mani giocatori (liste), mazzo_pila, scarti_pila, coda_turni. Resetta num_giocatori, num_carte_mazzo, num_carte_scarti a 0.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da deallocare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8b2e4cdd665a790268c297e793abc369" name="a8b2e4cdd665a790268c297e793abc369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b2e4cdd665a790268c297e793abc369">&#9670;&#160;</a></span>EliminaSalvataggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EliminaSalvataggio </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slot</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina un file di salvataggio esistente. </p>
+<p>Elimina un salvataggio e sincronizza via LAN.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>slot nel range valido. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>File di salvataggio rimosso. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot</td><td>Indice dello slot di salvataggio da eliminare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Elimina un file di salvataggio esistente.</p>
+<p>Legge i metadati (owner, data) prima di eliminare, poi: rimuove il file, compatta, notifica altri dispositivi LAN. Cerca nel formato save_user{ID}_slot_{N}.dat.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot</td><td>Indice dello slot da eliminare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abef09d90f8a1244e64b884e89814cd9d" name="abef09d90f8a1244e64b884e89814cd9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abef09d90f8a1244e64b884e89814cd9d">&#9670;&#160;</a></span>EliminaTuttiSalvataggiUtente()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EliminaTuttiSalvataggiUtente </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina TUTTI i salvataggi di un utente specifico. </p>
+<p>Scandisce tutti gli slot 1-100 e rimuove i file .dat il cui proprietario corrisponde allo username specificato. Controlla sia il formato save_user{ID}_slot_{N}.dat che il vecchio save_slot_N.dat.</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username dell'utente i cui salvataggi vanno eliminati. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a56d174d587ba4d54b02fa4f18c6d5279" name="a56d174d587ba4d54b02fa4f18c6d5279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56d174d587ba4d54b02fa4f18c6d5279">&#9670;&#160;</a></span>GetSaveFilePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GetSaveFilePath </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>user_index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slot</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>bufsize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il path del file di salvataggio per un dato utente e slot. </p>
+<p>Implementazione della funzione dichiarata in <a class="el" href="game__logic_8h.html" title="Modulo di logica di gioco UNO.">game_logic.h</a> per compatibilità. Formato: data/games/save_user{ID}_slot_{N}.dat</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user_index</td><td>Indice dell'utente nel db (non usato, si usa id_utente_corrente). </td></tr>
+    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100). </td></tr>
+    <tr><td class="paramname">buffer</td><td>Buffer di destinazione. </td></tr>
+    <tr><td class="paramname">bufsize</td><td>Dimensione del buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a331462bb54826e9e9d477625d83dd9d5" name="a331462bb54826e9e9d477625d83dd9d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331462bb54826e9e9d477625d83dd9d5">&#9670;&#160;</a></span>MossaValida()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MossaValida </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_carta.html">Carta</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se una carta puo' essere giocata legalmente. </p>
+<p>Verifica se una carta e' legalmente giocabile.</p>
+<p>Controlla se il colore o il valore della carta corrisponde alla carta in cima alla pila degli scarti, oppure se e' un Jolly.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; gioco-&gt;num_carte_scarti &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se mossa valida, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco corrente. </td></tr>
+    <tr><td class="paramname">c</td><td>La carta che si vuole giocare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se la mossa e' valida, 0 altrimenti.</dd></dl>
+<p>Verifica se una carta puo' essere giocata legalmente.</p>
+<p>Regole UNO:</p><ul>
+<li>Jolly (cambiocolore/PescaQuattro): sempre validi</li>
+<li>Altrimenti: match colore attivo OPPURE match tipo/valore</li>
+</ul>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; gioco-&gt;num_carte_scarti &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Restituisce 1 se corrispondenza colore/tipo o carta nera. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco corrente. </td></tr>
+    <tr><td class="paramname">c</td><td><a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a> da giocare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se mossa valida, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="ab202f15176056f42ac78bd55f0ef400e" name="ab202f15176056f42ac78bd55f0ef400e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab202f15176056f42ac78bd55f0ef400e">&#9670;&#160;</a></span>MostraNotifica()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MostraNotifica </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>msg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mostra una notifica temporanea a schermo. </p>
+<p>Imposta il testo della notifica e un timer di visualizzazione. La notifica viene disegnata in DisegnaGameplay.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; msg != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Notifica attiva per 3 secondi. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+    <tr><td class="paramname">msg</td><td>Testo della notifica da mostrare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Sostituisce eventuale notifica precedente. Si auto-cancella dopo un certo tempo gestito dal loop di gioco.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; msg != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Notifica visibile per 3 secondi. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Stato di gioco. </td></tr>
+    <tr><td class="paramname">msg</td><td>Testo della notifica. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6f74b381349465d305eabe85f8b02a95" name="a6f74b381349465d305eabe85f8b02a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f74b381349465d305eabe85f8b02a95">&#9670;&#160;</a></span>NuovaPartita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NuovaPartita </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num_avversari</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inizializza una nuova partita con il numero di avversari specificato. </p>
+<p>Inizializza una nuova partita offline contro bot.</p>
+<p>Crea il mazzo, distribuisce 7 carte a ogni giocatore, pesca la prima carta dagli scarti e gestisce le eventuali carte speciali iniziali.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; num_avversari in range 1-3. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Stato partita inizializzato e pronto per il gioco. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da inizializzare. </td></tr>
+    <tr><td class="paramname">num_avversari</td><td>Numero di avversari (bot).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Inizializza una nuova partita con il numero di avversari specificato.</p>
+<p>Procedura:</p><ol type="1">
+<li>Azzera lo <a class="el" href="struct_stato_gioco.html" title="Stato completo di una partita in corso.">StatoGioco</a></li>
+<li>Imposta il giocatore umano (slot 0) e i bot (1..N)</li>
+<li>Crea il mazzo standard UNO (108 carte)</li>
+<li>Distribuisce 7 carte per giocatore</li>
+<li>Pesca la prima carta scarto (evitando jolly)</li>
+<li>Inizializza la coda turni</li>
+<li>Trova il primo slot di salvataggio libero</li>
+</ol>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da inizializzare. </td></tr>
+    <tr><td class="paramname">num_avversari</td><td>Numero di avversari bot (1..3). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa30d6c36fd5e60362e9863466f754b38" name="aa30d6c36fd5e60362e9863466f754b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa30d6c36fd5e60362e9863466f754b38">&#9670;&#160;</a></span>RicarcaMazzo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RicarcaMazzo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ricarica il mazzo di pesca dagli scarti. </p>
+<p>Quando il mazzo di pesca e' vuoto, prende tutte le carte dalla pila degli scarti (tranne l'ultima in cima) e le rimette nel mazzo di pesca dopo averle rimescolate con Fisher-Yates.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; scarti_pila non vuota. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>mazzo_pila ricaricata e rimescolata. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac36d5d7fc58d57d5333d9de89432acb1" name="ac36d5d7fc58d57d5333d9de89432acb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36d5d7fc58d57d5333d9de89432acb1">&#9670;&#160;</a></span>RicostruisciStatoADT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RicostruisciStatoADT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ricostruisce le strutture ADT statiche (mazzo_pila, scarti_pila, coda_turni) e le mani dei giocatori dopo un caricamento da file. </p>
+<p>Ricostruisce TUTTE le strutture ADT statiche dopo il caricamento da file.</p>
+<p>Deve essere chiamata SUBITO DOPO <a class="el" href="#a1f3105448b986dc3c5fd8ef93e948fdf" title="Carica una partita da un file di salvataggio.">CaricaPartitaDaSlot()</a> per rendere consistente lo stato interno con quello caricato dal file. </p><dl class="section pre"><dt>Precondizione</dt><dd>gioco caricato con dati consistenti. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>ADT ricostruiti e mani ricreate. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco appena caricato.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Ricostruisce le strutture ADT statiche (mazzo_pila, scarti_pila, coda_turni) e le mani dei giocatori dopo un caricamento da file.</p>
+<p>Dopo <a class="el" href="#a1f3105448b986dc3c5fd8ef93e948fdf" title="Carica una partita da un file di salvataggio.">CaricaPartitaDaSlot()</a>, le strutture ADT dinamiche (pile, code, liste) sono NULL. Questa funzione ricrea tutto partendo dai dati serializzati:</p><ul>
+<li>Ricrea mazzo_pila da gioco-&gt;mazzo[]</li>
+<li>Ricrea scarti_pila da gioco-&gt;scarti[]</li>
+<li>Ricrea coda_turni da gioco-&gt;giocatori[]</li>
+<li>Ricrea la mano di ogni giocatore da gioco-&gt;mano_backup[]</li>
+</ul>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco appena caricato. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab6d8a480978f155fe71df7ce72d2d67e" name="ab6d8a480978f155fe71df7ce72d2d67e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6d8a480978f155fe71df7ce72d2d67e">&#9670;&#160;</a></span>SalvaPartita()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SalvaPartita </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Salva lo stato corrente della partita su file. </p>
+<p>Salva lo stato corrente della partita su file binario.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; partita inizializzata. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>File di salvataggio aggiornato. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da salvare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Salva lo stato corrente della partita su file.</p>
+<p>Procedura:</p><ol type="1">
+<li>Compatta i salvataggi esistenti dell'utente</li>
+<li>Genera il timestamp corrente</li>
+<li>Trova il primo slot libero</li>
+<li>Serializza le mani su array di backup</li>
+<li>Scrive lo <a class="el" href="struct_stato_gioco.html" title="Stato completo di una partita in corso.">StatoGioco</a> su file .dat</li>
+<li>Ricostruisce gli ADT</li>
+<li>Broadcast LAN dei nuovi salvataggi</li>
+</ol>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco da salvare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="ad1902a2e7f88106585a3606741e4ba34" name="ad1902a2e7f88106585a3606741e4ba34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1902a2e7f88106585a3606741e4ba34">&#9670;&#160;</a></span>coda_turni</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_coda_turni.html">CodaTurni</a>* coda_turni</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Coda globale dei turni. </p>
+
+</div>
+</div>
+<a id="afefe37ecc9aba9febda10fedc4dfa743" name="afefe37ecc9aba9febda10fedc4dfa743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afefe37ecc9aba9febda10fedc4dfa743">&#9670;&#160;</a></span>mazzo_pila</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_pila.html">Pila</a>* mazzo_pila</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ADT globali del gioco: pila mazzo pesca, pila scarti, coda turni. </p>
+<p><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale del mazzo di pesca.</p>
+<p>ADT globali del gioco: pila mazzo pesca, pila scarti, coda turni. </p>
+
+</div>
+</div>
+<a id="ae43a4528acce4bced75b0d843415956f" name="ae43a4528acce4bced75b0d843415956f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae43a4528acce4bced75b0d843415956f">&#9670;&#160;</a></span>scarti_pila</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_pila.html">Pila</a>* scarti_pila</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale degli scarti. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="game__logic_8h.html">game_logic.h</a></li>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

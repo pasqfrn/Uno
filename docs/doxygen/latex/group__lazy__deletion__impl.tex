@@ -1,0 +1,252 @@
+\doxysubsection{Lazy Deletion Implementazione}
+\hypertarget{group__lazy__deletion__impl}{}\label{group__lazy__deletion__impl}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+
+
+Strutture e funzioni per eliminazione differita utenti.  
+
+
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gaa103fe9f0b4ddf468b2d7ee6f6b28bba}{Auth\+\_\+\+Mark\+For\+Deletion}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Marca un utente per eliminazione differita. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gae8af680dcc7f7dcc3b73cff9ce19d89c}{Auth\+\_\+\+Is\+Marked\+For\+Deletion}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Verifica se un utente e\textquotesingle{} marcato per eliminazione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga76017eead600b6ea252edb0e00c8758b}{Auth\+\_\+\+Process\+Pending\+Deletions}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Processa le eliminazioni pendenti per un utente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga92a8b147f7f309caeaba6776d16a4204}{Auth\+BST\+\_\+\+Ricostruisci}} (void)
+\begin{DoxyCompactList}\small\item\em Ricostruisce il BST parallelo a partire dall\textquotesingle{}array db\+Utenti. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gab5d6680f3c3fd1d4690f635d9a10a172}{DB\+\_\+\+Alloca}} (int min\+\_\+slot)
+\begin{DoxyCompactList}\small\item\em Alloca o rialloca dinamicamente il database utenti. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga0314b066ae5d7042b1d10fa263b5652c}{Cifra\+Decifra\+DB}} (void)
+\begin{DoxyCompactList}\small\item\em Cifra/decifra password e PIN in memoria (XOR 0x\+AA). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_gae268c79271c4ee59ba3a082ebd80e0a9}{Salva\+DB}} (void)
+\begin{DoxyCompactList}\small\item\em Salva il database su file binario (data/users/users.\+dat). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga780f5d85ee36704ef8c39e58d6d24ba3}{Carica\+DB}} (void)
+\begin{DoxyCompactList}\small\item\em Carica il database da file binario (data/users/users.\+dat). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_ga17dace69eec2d85eb4ecaf0c4f2232b6}{Auth\+\_\+\+Registra\+Utente}} (const char \texorpdfstring{$\ast$}{*}email, const char \texorpdfstring{$\ast$}{*}nome, const char \texorpdfstring{$\ast$}{*}cognome, const char \texorpdfstring{$\ast$}{*}username, const char \texorpdfstring{$\ast$}{*}password, const char \texorpdfstring{$\ast$}{*}pin)
+\begin{DoxyCompactList}\small\item\em Registra un nuovo utente nel sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__lazy__deletion__impl_ga8477b8acaa3d9d97cdb06846bdaff9c0}{Auth\+\_\+\+Rimuovi\+Utente}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Rimuove un utente da database e BST. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gaeba2158fd96048197d238a24a9c28bfc}{Auth\+BST\+\_\+\+Cerca\+Indice\+Per\+Email}} (const char \texorpdfstring{$\ast$}{*}email)
+\begin{DoxyCompactList}\small\item\em Ricerca O(log n) di un utente per email tramite BST. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_gaee07663d2c32dd38c1a79b994383a7b6}{Auth\+BST\+\_\+\+Altezza}} (void)
+\begin{DoxyCompactList}\small\item\em Restituisce l\textquotesingle{}altezza del BST (utile per debug/test). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__lazy__deletion__impl_ga4b6f9cad580a7fa31e55093db0e732ce}{Auth\+BST\+\_\+\+Conta\+Nodi}} (void)
+\begin{DoxyCompactList}\small\item\em Restituisce il numero di nodi nel BST. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Strutture e funzioni per eliminazione differita utenti. 
+
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group__lazy__deletion__impl_gae8af680dcc7f7dcc3b73cff9ce19d89c}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!Auth\_IsMarkedForDeletion@{Auth\_IsMarkedForDeletion}}
+\index{Auth\_IsMarkedForDeletion@{Auth\_IsMarkedForDeletion}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{Auth\_IsMarkedForDeletion()}{Auth\_IsMarkedForDeletion()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_gae8af680dcc7f7dcc3b73cff9ce19d89c} 
+int Auth\+\_\+\+Is\+Marked\+For\+Deletion (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se un utente e\textquotesingle{} marcato per eliminazione. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email dell\textquotesingle{}utente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se marcato, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__lazy__deletion__impl_gaa103fe9f0b4ddf468b2d7ee6f6b28bba}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!Auth\_MarkForDeletion@{Auth\_MarkForDeletion}}
+\index{Auth\_MarkForDeletion@{Auth\_MarkForDeletion}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{Auth\_MarkForDeletion()}{Auth\_MarkForDeletion()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_gaa103fe9f0b4ddf468b2d7ee6f6b28bba} 
+int Auth\+\_\+\+Mark\+For\+Deletion (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Marca un utente per eliminazione differita. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email dell\textquotesingle{}utente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se marcato, 0 altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{group__lazy__deletion__impl_ga76017eead600b6ea252edb0e00c8758b}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!Auth\_ProcessPendingDeletions@{Auth\_ProcessPendingDeletions}}
+\index{Auth\_ProcessPendingDeletions@{Auth\_ProcessPendingDeletions}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{Auth\_ProcessPendingDeletions()}{Auth\_ProcessPendingDeletions()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_ga76017eead600b6ea252edb0e00c8758b} 
+void Auth\+\_\+\+Process\+Pending\+Deletions (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Processa le eliminazioni pendenti per un utente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email dell\textquotesingle{}utente. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__lazy__deletion__impl_ga17dace69eec2d85eb4ecaf0c4f2232b6}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!Auth\_RegistraUtente@{Auth\_RegistraUtente}}
+\index{Auth\_RegistraUtente@{Auth\_RegistraUtente}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{Auth\_RegistraUtente()}{Auth\_RegistraUtente()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_ga17dace69eec2d85eb4ecaf0c4f2232b6} 
+int Auth\+\_\+\+Registra\+Utente (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{nome}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{cognome}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{password}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Registra un nuovo utente nel sistema. 
+
+Registra un nuovo utente dopo aver generato l\textquotesingle{}ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email dell\textquotesingle{}utente. \\
+\hline
+{\em nome} & Nome. \\
+\hline
+{\em cognome} & Cognome. \\
+\hline
+{\em username} & Username univoco. \\
+\hline
+{\em password} & Password. \\
+\hline
+{\em pin} & PIN di recupero. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se registrazione OK, 0 se errore allocazione o PIN duplicato. 
+\end{DoxyReturn}
+\Hypertarget{group__lazy__deletion__impl_ga8477b8acaa3d9d97cdb06846bdaff9c0}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!Auth\_RimuoviUtente@{Auth\_RimuoviUtente}}
+\index{Auth\_RimuoviUtente@{Auth\_RimuoviUtente}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{Auth\_RimuoviUtente()}{Auth\_RimuoviUtente()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_ga8477b8acaa3d9d97cdb06846bdaff9c0} 
+void Auth\+\_\+\+Rimuovi\+Utente (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Rimuove un utente da database e BST. 
+
+\begin{DoxyPrecond}{Precondition}
+email esiste nel database. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\doxylink{struct_utente}{Utente} rimosso da db\+Utenti e BST. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email dell\textquotesingle{}utente da rimuovere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__lazy__deletion__impl_gaee07663d2c32dd38c1a79b994383a7b6}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!AuthBST\_Altezza@{AuthBST\_Altezza}}
+\index{AuthBST\_Altezza@{AuthBST\_Altezza}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{AuthBST\_Altezza()}{AuthBST\_Altezza()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_gaee07663d2c32dd38c1a79b994383a7b6} 
+int Auth\+BST\+\_\+\+Altezza (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce l\textquotesingle{}altezza del BST (utile per debug/test). 
+
+Restituisce l\textquotesingle{}altezza del BST (per debug).
+
+\begin{DoxyReturn}{Returns}
+Altezza dell\textquotesingle{}albero. 
+\end{DoxyReturn}
+\Hypertarget{group__lazy__deletion__impl_gaeba2158fd96048197d238a24a9c28bfc}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!AuthBST\_CercaIndicePerEmail@{AuthBST\_CercaIndicePerEmail}}
+\index{AuthBST\_CercaIndicePerEmail@{AuthBST\_CercaIndicePerEmail}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{AuthBST\_CercaIndicePerEmail()}{AuthBST\_CercaIndicePerEmail()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_gaeba2158fd96048197d238a24a9c28bfc} 
+int Auth\+BST\+\_\+\+Cerca\+Indice\+Per\+Email (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Ricerca O(log n) di un utente per email tramite BST. 
+
+Ricerca l\textquotesingle{}indice di un utente per email tramite BST.
+
+\begin{DoxyReturn}{Returns}
+Indice nel db\+Utenti, -\/1 se non trovato. 
+\end{DoxyReturn}
+\Hypertarget{group__lazy__deletion__impl_ga4b6f9cad580a7fa31e55093db0e732ce}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!AuthBST\_ContaNodi@{AuthBST\_ContaNodi}}
+\index{AuthBST\_ContaNodi@{AuthBST\_ContaNodi}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{AuthBST\_ContaNodi()}{AuthBST\_ContaNodi()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_ga4b6f9cad580a7fa31e55093db0e732ce} 
+int Auth\+BST\+\_\+\+Conta\+Nodi (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce il numero di nodi nel BST. 
+
+\begin{DoxyReturn}{Returns}
+Numero di nodi. 
+\end{DoxyReturn}
+\Hypertarget{group__lazy__deletion__impl_ga92a8b147f7f309caeaba6776d16a4204}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!AuthBST\_Ricostruisci@{AuthBST\_Ricostruisci}}
+\index{AuthBST\_Ricostruisci@{AuthBST\_Ricostruisci}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{AuthBST\_Ricostruisci()}{AuthBST\_Ricostruisci()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_ga92a8b147f7f309caeaba6776d16a4204} 
+void Auth\+BST\+\_\+\+Ricostruisci (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Ricostruisce il BST parallelo a partire dall\textquotesingle{}array db\+Utenti. 
+
+\Hypertarget{group__lazy__deletion__impl_ga780f5d85ee36704ef8c39e58d6d24ba3}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!CaricaDB@{CaricaDB}}
+\index{CaricaDB@{CaricaDB}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{CaricaDB()}{CaricaDB()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_ga780f5d85ee36704ef8c39e58d6d24ba3} 
+void Carica\+DB (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Carica il database da file binario (data/users/users.\+dat). 
+
+Carica il database da file binario. \Hypertarget{group__lazy__deletion__impl_ga0314b066ae5d7042b1d10fa263b5652c}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!CifraDecifraDB@{CifraDecifraDB}}
+\index{CifraDecifraDB@{CifraDecifraDB}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{CifraDecifraDB()}{CifraDecifraDB()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_ga0314b066ae5d7042b1d10fa263b5652c} 
+void Cifra\+Decifra\+DB (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Cifra/decifra password e PIN in memoria (XOR 0x\+AA). 
+
+\Hypertarget{group__lazy__deletion__impl_gab5d6680f3c3fd1d4690f635d9a10a172}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!DB\_Alloca@{DB\_Alloca}}
+\index{DB\_Alloca@{DB\_Alloca}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{DB\_Alloca()}{DB\_Alloca()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_gab5d6680f3c3fd1d4690f635d9a10a172} 
+int DB\+\_\+\+Alloca (\begin{DoxyParamCaption}\item[{int}]{min\+\_\+slot}{}\end{DoxyParamCaption})}
+
+
+
+Alloca o rialloca dinamicamente il database utenti. 
+
+Alloca o rialloca il database per garantire almeno min\+\_\+slot.
+
+Se la capacita\textquotesingle{} corrente e\textquotesingle{} insufficiente, raddoppia l\textquotesingle{}array con realloc finche\textquotesingle{} non raggiunge {\ttfamily min\+\_\+slot}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+\_\+slot} & Numero minimo di slot richiesti. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se allocazione OK, 0 se out-\/of-\/memory. 
+\end{DoxyReturn}
+\Hypertarget{group__lazy__deletion__impl_gae268c79271c4ee59ba3a082ebd80e0a9}\index{Lazy Deletion Implementazione@{Lazy Deletion Implementazione}!SalvaDB@{SalvaDB}}
+\index{SalvaDB@{SalvaDB}!Lazy Deletion Implementazione@{Lazy Deletion Implementazione}}
+\doxysubsubsubsection{\texorpdfstring{SalvaDB()}{SalvaDB()}}
+{\footnotesize\ttfamily \label{group__lazy__deletion__impl_gae268c79271c4ee59ba3a082ebd80e0a9} 
+void Salva\+DB (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Salva il database su file binario (data/users/users.\+dat). 
+
+Salva il database su file binario con cifratura XOR. 

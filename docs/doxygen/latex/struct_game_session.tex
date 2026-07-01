@@ -1,0 +1,89 @@
+\doxysection{Game\+Session Struct Reference}
+\hypertarget{struct_game_session}{}\label{struct_game_session}\index{GameSession@{GameSession}}
+
+
+Sessione di gioco multiplayer.  
+
+
+
+
+{\ttfamily \#include $<$server\+\_\+manager.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{struct_game_session_a7bbc632bd875d88ab74e8237f42dce87}{session\+\_\+id}} \mbox{[}16\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_game_session_aee510d1f386239337e1857a1c599215c}{num\+\_\+players}}
+\item 
+\mbox{\hyperlink{struct_session_player}{Session\+Player}} \mbox{\hyperlink{struct_game_session_a8c4fe498314f1d64a47c21327a20ebd9}{players}} \mbox{[}\mbox{\hyperlink{server__manager_8h_aedc8c1a22b7965c1e61fc1f065c287ee}{MAX\+\_\+\+PLAYERS\+\_\+\+PER\+\_\+\+SESSION}}\mbox{]}
+\item 
+\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \mbox{\hyperlink{struct_game_session_a9d94cdeff2fe20b42320060b9f3e4f92}{game\+\_\+state}}
+\item 
+\mbox{\hyperlink{group__server__manager__stati_gac82c179a797c0d7c249d1b98a8e3aa8f}{Session\+State}} \mbox{\hyperlink{struct_game_session_a89a8d8177be75def1d7d7b3ec1b24627}{state}}
+\item 
+float \mbox{\hyperlink{struct_game_session_a060d364991bfc4696ec79ccb24229e55}{start\+Countdown}}
+\item 
+float \mbox{\hyperlink{struct_game_session_a9088938158952033e865dd94aba1bfbe}{idle\+Time}}
+\item 
+int \mbox{\hyperlink{struct_game_session_a1559abd9c62138813faeed6b0fc62023}{host\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sessione di gioco multiplayer. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_game_session_a9d94cdeff2fe20b42320060b9f3e4f92}\index{GameSession@{GameSession}!game\_state@{game\_state}}
+\index{game\_state@{game\_state}!GameSession@{GameSession}}
+\doxysubsubsection{\texorpdfstring{game\_state}{game\_state}}
+{\footnotesize\ttfamily \label{struct_game_session_a9d94cdeff2fe20b42320060b9f3e4f92} 
+\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} Game\+Session\+::game\+\_\+state}
+
+\Hypertarget{struct_game_session_a1559abd9c62138813faeed6b0fc62023}\index{GameSession@{GameSession}!host\_id@{host\_id}}
+\index{host\_id@{host\_id}!GameSession@{GameSession}}
+\doxysubsubsection{\texorpdfstring{host\_id}{host\_id}}
+{\footnotesize\ttfamily \label{struct_game_session_a1559abd9c62138813faeed6b0fc62023} 
+int Game\+Session\+::host\+\_\+id}
+
+\Hypertarget{struct_game_session_a9088938158952033e865dd94aba1bfbe}\index{GameSession@{GameSession}!idleTime@{idleTime}}
+\index{idleTime@{idleTime}!GameSession@{GameSession}}
+\doxysubsubsection{\texorpdfstring{idleTime}{idleTime}}
+{\footnotesize\ttfamily \label{struct_game_session_a9088938158952033e865dd94aba1bfbe} 
+float Game\+Session\+::idle\+Time}
+
+\Hypertarget{struct_game_session_aee510d1f386239337e1857a1c599215c}\index{GameSession@{GameSession}!num\_players@{num\_players}}
+\index{num\_players@{num\_players}!GameSession@{GameSession}}
+\doxysubsubsection{\texorpdfstring{num\_players}{num\_players}}
+{\footnotesize\ttfamily \label{struct_game_session_aee510d1f386239337e1857a1c599215c} 
+int Game\+Session\+::num\+\_\+players}
+
+\Hypertarget{struct_game_session_a8c4fe498314f1d64a47c21327a20ebd9}\index{GameSession@{GameSession}!players@{players}}
+\index{players@{players}!GameSession@{GameSession}}
+\doxysubsubsection{\texorpdfstring{players}{players}}
+{\footnotesize\ttfamily \label{struct_game_session_a8c4fe498314f1d64a47c21327a20ebd9} 
+\mbox{\hyperlink{struct_session_player}{Session\+Player}} Game\+Session\+::players\mbox{[}\mbox{\hyperlink{server__manager_8h_aedc8c1a22b7965c1e61fc1f065c287ee}{MAX\+\_\+\+PLAYERS\+\_\+\+PER\+\_\+\+SESSION}}\mbox{]}}
+
+\Hypertarget{struct_game_session_a7bbc632bd875d88ab74e8237f42dce87}\index{GameSession@{GameSession}!session\_id@{session\_id}}
+\index{session\_id@{session\_id}!GameSession@{GameSession}}
+\doxysubsubsection{\texorpdfstring{session\_id}{session\_id}}
+{\footnotesize\ttfamily \label{struct_game_session_a7bbc632bd875d88ab74e8237f42dce87} 
+char Game\+Session\+::session\+\_\+id\mbox{[}16\mbox{]}}
+
+\Hypertarget{struct_game_session_a060d364991bfc4696ec79ccb24229e55}\index{GameSession@{GameSession}!startCountdown@{startCountdown}}
+\index{startCountdown@{startCountdown}!GameSession@{GameSession}}
+\doxysubsubsection{\texorpdfstring{startCountdown}{startCountdown}}
+{\footnotesize\ttfamily \label{struct_game_session_a060d364991bfc4696ec79ccb24229e55} 
+float Game\+Session\+::start\+Countdown}
+
+\Hypertarget{struct_game_session_a89a8d8177be75def1d7d7b3ec1b24627}\index{GameSession@{GameSession}!state@{state}}
+\index{state@{state}!GameSession@{GameSession}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{struct_game_session_a89a8d8177be75def1d7d7b3ec1b24627} 
+\mbox{\hyperlink{group__server__manager__stati_gac82c179a797c0d7c249d1b98a8e3aa8f}{Session\+State}} Game\+Session\+::state}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/socket/server/\mbox{\hyperlink{server__manager_8h}{server\+\_\+manager.\+h}}\end{DoxyCompactItemize}

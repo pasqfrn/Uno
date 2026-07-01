@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['schermate_20auth_0',['Schermate Auth',['../group__auth__screen.html',1,'']]],
+  ['screen_1',['Screen',['../group__end__screen.html',1,'End Screen'],['../group__gameplay__screen.html',1,'Gameplay Screen'],['../group__menu__screen.html',1,'Menu Screen'],['../group__multiplayer__screen.html',1,'Multiplayer Screen'],['../group__stats__screen.html',1,'Stats Screen']]],
+  ['send_2',['Network Send',['../group__network__send.html',1,'']]],
+  ['server_20manager_3',['Server Manager',['../group__server__manager__api.html',1,'API Server Manager'],['../group__server__manager.html',1,'Server Manager'],['../group__server__manager__struttura.html',1,'Struttura Server Manager']]],
+  ['sessione_4',['Sessione',['../group__server__manager__giocatore.html',1,'Giocatore Sessione'],['../group__server__manager__stati.html',1,'Stati Sessione']]],
+  ['sessione_20di_20gioco_5',['Sessione di Gioco',['../group__server__manager__sessione.html',1,'']]],
+  ['shared_6',['Shared',['../group__auth__shared.html',1,'Auth Shared'],['../group__gameplay__shared.html',1,'Gameplay Shared']]],
+  ['sincronizzazione_20lan_7',['Sincronizzazione LAN',['../group__lan__sync.html',1,'']]],
+  ['stack_8',['API Stack',['../group__stack__api.html',1,'']]],
+  ['stack_20pila_9',['Stack (Pila)',['../group__stack.html',1,'']]],
+  ['state_20sync_10',['State Sync',['../group__state__sync.html',1,'']]],
+  ['stati_20sessione_11',['Stati Sessione',['../group__server__manager__stati.html',1,'']]],
+  ['stats_20screen_12',['Stats Screen',['../group__stats__screen.html',1,'']]],
+  ['stats_20sync_20packet_13',['Stats Sync Packet',['../group__lan__protocol__stats.html',1,'']]],
+  ['storico_20chat_14',['Storico Chat',['../group__chat__storico.html',1,'']]],
+  ['string_20utils_15',['String Utils',['../group__string__utils.html',1,'']]],
+  ['struttura_20coda_16',['Struttura Coda',['../group__queue__struttura.html',1,'']]],
+  ['struttura_20pila_17',['Struttura Pila',['../group__stack__struttura.html',1,'']]],
+  ['struttura_20server_20manager_18',['Struttura Server Manager',['../group__server__manager__struttura.html',1,'']]],
+  ['strutture_19',['Tipi di Dato e Strutture',['../group__data__structures.html',1,'']]],
+  ['strutture_20pacchetti_20',['Strutture Pacchetti',['../group__network__packet__strutture.html',1,'']]],
+  ['sync_21',['Sync',['../group__network__send__admin.html',1,'Admin Sync'],['../group__state__sync.html',1,'State Sync']]],
+  ['sync_20packet_22',['Stats Sync Packet',['../group__lan__protocol__stats.html',1,'']]]
+];

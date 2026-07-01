@@ -1,0 +1,101 @@
+\doxysection{src/socket/server/server\+\_\+manager.c File Reference}
+\hypertarget{server__manager_8c}{}\label{server__manager_8c}\index{src/socket/server/server\_manager.c@{src/socket/server/server\_manager.c}}
+
+
+Gestione sessioni di gioco multiplayer.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/server/server\+\_\+manager.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/list.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__server__manager__api_gad49f47a1e9318a8183e7c4269c8c437b}{Init\+Server\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Inizializza il \doxylink{struct_server_manager}{Server\+Manager} globale. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga0bb6b95401b7b67589bc7213e9f47ee9}{Shutdown\+Server\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Chiude tutte le sessioni attive e resetta il manager. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga727dc1bbb1c4967c2aa8235d081ceb79}{Generate\+Session\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Genera un ID di sessione univoco (stringa casuale). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga16fd52dac20f4320260b28846fbddd9e}{Create\+Session}} (const char \texorpdfstring{$\ast$}{*}host\+\_\+name, int host\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Crea una nuova sessione di gioco con l\textquotesingle{}host come primo giocatore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga2e85aecf5499dd7a2ce0190099dc5822}{Get\+Session}} (const char \texorpdfstring{$\ast$}{*}sess\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Cerca una sessione per ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__server__manager__api_ga3a6f3c2c7a63d479ce25d78410b20f7b}{Get\+Session\+By\+Player\+Id}} (int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}})
+\begin{DoxyCompactList}\small\item\em Cerca una sessione contenente un giocatore specifico. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga9c4e3c22ad94a695a648da6957a7cc11}{Add\+Player\+To\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, const char \texorpdfstring{$\ast$}{*}player\+\_\+name, int is\+\_\+bot)
+\begin{DoxyCompactList}\small\item\em Aggiunge un giocatore a una sessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga80c5b6914b694d9fdfdf7d583a801911}{Remove\+Player\+From\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}})
+\begin{DoxyCompactList}\small\item\em Rimuove un giocatore da una sessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga323407153355eb9a4348f5e2bdffb699}{Start\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session)
+\begin{DoxyCompactList}\small\item\em Avvia il conteggio per l\textquotesingle{}inizio della partita. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga3b360a917a8a8e088fb7601541d7fb27}{Is\+Valid\+Move}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, int card\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Verifica se una mossa e\textquotesingle{} valida (lato server). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga95d41e70918a635e3d32b6035c2e3fe0}{Process\+Move}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, int card\+\_\+index, \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} color\+\_\+choice)
+\begin{DoxyCompactList}\small\item\em Processa una mossa (lato server). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_gaa855d2809b0d5c648293f8c6af3369df}{Process\+Draw}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, int draw\+\_\+count)
+\begin{DoxyCompactList}\small\item\em Processa una pescata (lato server). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__server__manager__api_ga98b8f5a55cc13c86013e2a7d49ff36e2}{Process\+Color\+Choice}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, int \mbox{\hyperlink{group__network__packet__strutture_gae801f06b6cb8328022fb0756915d0b54}{player\+\_\+id}}, \mbox{\hyperlink{data__structures_8h_a030035d63f7ea5baefdfe9a53844d27c}{Colore}} color)
+\begin{DoxyCompactList}\small\item\em Processa una scelta colore (lato server). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga8927513d3fed56e3104fb092d4ee5a3d}{Update\+Session\+Logic}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session, float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna la logica di una sessione (bot AI, timer). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_gae47b83053dd03f75306d6b4428ec4f61}{Close\+Session}} (\mbox{\hyperlink{struct_game_session}{Game\+Session}} \texorpdfstring{$\ast$}{*}session)
+\begin{DoxyCompactList}\small\item\em Chiude una sessione. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__server__manager__api_ga77098e4298a4acac07490885d068e0f7}{Update\+Server\+Manager}} (float dt)
+\begin{DoxyCompactList}\small\item\em Aggiorna lo stato di tutte le sessioni. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_server_manager}{Server\+Manager}} \mbox{\hyperlink{server__manager_8c_ab5c207ae2247c6972e361d9c19dbd477}{server\+Manager}} = \{0\}
+\begin{DoxyCompactList}\small\item\em Istanza globale del server manager (lato host). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestione sessioni di gioco multiplayer. 
+
+Modulo per la gestione delle sessioni di gioco\+:
+\begin{DoxyItemize}
+\item Creazione/join/leave sessioni
+\item Tracking giocatori connessi e ready state
+\item Liste sessioni disponibili (UDP discovery)
+\item Gestione stati lobby (WAITING, IN\+\_\+\+PROGRESS, CLOSED)
+\end{DoxyItemize}
+
+Sessioni\+: array statico di \doxylink{struct_game_session}{Game\+Session} (max MAX\+\_\+\+GAME\+\_\+\+SESSIONS).
+
+Architettura\+:
+\begin{DoxyItemize}
+\item \doxylink{struct_server_manager}{Server\+Manager}\+: struttura globale con array sessioni\mbox{[}\mbox{]} e contatore
+\item \doxylink{struct_game_session}{Game\+Session}\+: stato completo di una stanza (giocatori, mazzo, turno)
+\item Player\+Session\+: dati di un singolo giocatore nella sessione
+\end{DoxyItemize}
+
+Funzionalita\textquotesingle{}\+:
+\begin{DoxyItemize}
+\item Init\+Server\+Manager\+: inizializza il manager (chiamato all\textquotesingle{}avvio)
+\item Shutdown\+Server\+Manager\+: chiude tutte le sessioni attive
+\item Create\+Session\+: crea una nuova sessione con host
+\item Add\+Player\+To\+Session\+: aggiunge un giocatore alla sessione
+\item Remove\+Player\+From\+Session\+: rimuove/disconnette un giocatore
+\item Start\+Session\+: inizializza il mazzo e distribuisce le carte
+\item Process\+Move/\+Process\+Draw/\+Process\+Color\+Choice\+: applica mosse
+\item Update\+Session\+Logic\+: aggiorna timer e stati (chiamato ogni frame)
+\item Update\+Server\+Manager\+: aggiorna tutte le sessioni e rimuove chiuse 
+\end{DoxyItemize}
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{server__manager_8c_ab5c207ae2247c6972e361d9c19dbd477}\index{server\_manager.c@{server\_manager.c}!serverManager@{serverManager}}
+\index{serverManager@{serverManager}!server\_manager.c@{server\_manager.c}}
+\doxysubsubsection{\texorpdfstring{serverManager}{serverManager}}
+{\footnotesize\ttfamily \label{server__manager_8c_ab5c207ae2247c6972e361d9c19dbd477} 
+\mbox{\hyperlink{struct_server_manager}{Server\+Manager}} server\+Manager = \{0\}}
+
+
+
+Istanza globale del server manager (lato host). 
+

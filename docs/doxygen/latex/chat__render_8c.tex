@@ -1,0 +1,205 @@
+\doxysection{src/screens/game/chat\+\_\+render.c File Reference}
+\hypertarget{chat__render_8c}{}\label{chat__render_8c}\index{src/screens/game/chat\_render.c@{src/screens/game/chat\_render.c}}
+
+
+Rendering della chat e componenti UI correlati.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}raylib.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/game/gameplay\+\_\+shared.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/game/gameplay\+\_\+draw.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/screens/menu/string\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/ui.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/socket/network/network\+\_\+send.\+h"{}}\newline
+{\ttfamily \#include "{}../../../lib/auth.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{chat__render_8c_accf70613e15dd3bcc231017b8f814c80}{LARGHEZZA}}~1280
+\item 
+\#define \mbox{\hyperlink{chat__render_8c_a737f1e0014465787871b62d0e61129d8}{ALTEZZA}}~720
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{chat__render_8c_a1b5dfa99b81aaf484e299e268b30ba2a}{Starts\+With\+Ignore\+Case}} (const char \texorpdfstring{$\ast$}{*}str, const char \texorpdfstring{$\ast$}{*}prefix)
+\begin{DoxyCompactList}\small\item\em Confronto case-\/insensitive di un prefisso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{chat__render_8c_adf67a511d7c4de12e19cb511e6a07a1f}{Draw\+Chat\+Msg\+Segmentato}} (const char \texorpdfstring{$\ast$}{*}msg, int x, int y, int font\+Size, \mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, int mio\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Disegna un messaggio chat con tag @ evidenziati. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{chat__render_8c_a851f34a7d7a2268f4657ff72b388646b}{Disegna\+Pannello\+Chat}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, int mio\+\_\+id, \mbox{\hyperlink{struct_vector2}{Vector2}} mouse\+Pos)
+\begin{DoxyCompactList}\small\item\em Disegna il pannello chat completo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{chat__render_8c_a8ba5c34b26e94291e472a9397d912d54}{Disegna\+Popup\+Uscita}} (\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}gioco, \mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}fase)
+\begin{DoxyCompactList}\small\item\em Disegna il popup di conferma uscita partita. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{chat__render_8c_a20d7f38f3172dfe2ed4c5819e84c78ed}{input\+Chat}} \mbox{[}128\mbox{]}
+\begin{DoxyCompactList}\small\item\em Buffer per il messaggio chat in digitazione. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{chat__render_8c_a5c0b78531197553de40e19f2afd95ff4}{is\+Typing}}
+\begin{DoxyCompactList}\small\item\em Flag\+: 1 se l\textquotesingle{}utente sta digitando nella chat. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{chat__render_8c_a0841fa17b3362cfad64d784cf9a0b5e3}{popup\+\_\+uscita\+\_\+attivo}}
+\begin{DoxyCompactList}\small\item\em Flag\+: 1 se il popup di conferma uscita e\textquotesingle{} visibile durante il gioco. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Rendering della chat e componenti UI correlati. 
+
+Rendering della chat in-\/game.
+
+Modulo specializzato per il rendering della chat multiplayer, suggerimenti @mentions, invio messaggi e popup di uscita.
+
+Funzioni\+:
+\begin{DoxyItemize}
+\item Draw\+Chat\+Msg\+Segmentato\+: disegna messaggio chat con tag evidenziati
+\item Disegna\+Pannello\+Chat\+: pannello completo chat con cronologia e input
+\item Disegna\+Popup\+Uscita\+: popup di conferma uscita partita
+\end{DoxyItemize}
+
+Estratto da \doxylink{gameplay__draw_8c}{gameplay\+\_\+draw.\+c} per ridurre la complessita\textquotesingle{} del file. Utilizza le variabili di stato definite in \doxylink{gameplay__screen_8c}{gameplay\+\_\+screen.\+c}.
+
+Gestisce il disegno della finestra chat e dei messaggi. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{chat__render_8c_a737f1e0014465787871b62d0e61129d8}\index{chat\_render.c@{chat\_render.c}!ALTEZZA@{ALTEZZA}}
+\index{ALTEZZA@{ALTEZZA}!chat\_render.c@{chat\_render.c}}
+\doxysubsubsection{\texorpdfstring{ALTEZZA}{ALTEZZA}}
+{\footnotesize\ttfamily \label{chat__render_8c_a737f1e0014465787871b62d0e61129d8} 
+\#define ALTEZZA~720}
+
+\Hypertarget{chat__render_8c_accf70613e15dd3bcc231017b8f814c80}\index{chat\_render.c@{chat\_render.c}!LARGHEZZA@{LARGHEZZA}}
+\index{LARGHEZZA@{LARGHEZZA}!chat\_render.c@{chat\_render.c}}
+\doxysubsubsection{\texorpdfstring{LARGHEZZA}{LARGHEZZA}}
+{\footnotesize\ttfamily \label{chat__render_8c_accf70613e15dd3bcc231017b8f814c80} 
+\#define LARGHEZZA~1280}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{chat__render_8c_a851f34a7d7a2268f4657ff72b388646b}\index{chat\_render.c@{chat\_render.c}!DisegnaPannelloChat@{DisegnaPannelloChat}}
+\index{DisegnaPannelloChat@{DisegnaPannelloChat}!chat\_render.c@{chat\_render.c}}
+\doxysubsubsection{\texorpdfstring{DisegnaPannelloChat()}{DisegnaPannelloChat()}}
+{\footnotesize\ttfamily \label{chat__render_8c_a851f34a7d7a2268f4657ff72b388646b} 
+void Disegna\+Pannello\+Chat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{int}]{mio\+\_\+id}{, }\item[{\mbox{\hyperlink{struct_vector2}{Vector2}}}]{mouse\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Disegna il pannello chat completo. 
+
+Include\+:
+\begin{DoxyItemize}
+\item Cronologia messaggi (ultimi 7 visibili)
+\item Evidenziazione messaggi con tag verso il giocatore locale
+\item Campo di input se is\+Typing
+\item Suggerimento giocatori con @
+\item Pulsante INVIA
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco. \\
+\hline
+{\em mio\+\_\+id} & ID del giocatore locale. \\
+\hline
+{\em mouse\+Pos} & Posizione del mouse per rilevamento click. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{chat__render_8c_a8ba5c34b26e94291e472a9397d912d54}\index{chat\_render.c@{chat\_render.c}!DisegnaPopupUscita@{DisegnaPopupUscita}}
+\index{DisegnaPopupUscita@{DisegnaPopupUscita}!chat\_render.c@{chat\_render.c}}
+\doxysubsubsection{\texorpdfstring{DisegnaPopupUscita()}{DisegnaPopupUscita()}}
+{\footnotesize\ttfamily \label{chat__render_8c_a8ba5c34b26e94291e472a9397d912d54} 
+void Disegna\+Popup\+Uscita (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{\mbox{\hyperlink{data__structures_8h_a2820e5c9a40f05bb9d572ea8b0d4e3f4}{Fase\+Applicazione}} \texorpdfstring{$\ast$}{*}}]{fase}{}\end{DoxyParamCaption})}
+
+
+
+Disegna il popup di conferma uscita partita. 
+
+Mostra overlay scuro con opzioni\+:
+\begin{DoxyItemize}
+\item Offline\+: "{}\+Salva ed Esci"{}, "{}\+Esci"{}, "{}\+Annulla"{}
+\item Online\+: "{}\+SI"{} (esce + chiude rete), "{}\+NO"{}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em gioco} & Stato di gioco (per salvataggio opzionale). \\
+\hline
+{\em fase} & Puntatore alla fase (cambia a FASE\+\_\+\+MENU se confermato). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{chat__render_8c_adf67a511d7c4de12e19cb511e6a07a1f}\index{chat\_render.c@{chat\_render.c}!DrawChatMsgSegmentato@{DrawChatMsgSegmentato}}
+\index{DrawChatMsgSegmentato@{DrawChatMsgSegmentato}!chat\_render.c@{chat\_render.c}}
+\doxysubsubsection{\texorpdfstring{DrawChatMsgSegmentato()}{DrawChatMsgSegmentato()}}
+{\footnotesize\ttfamily \label{chat__render_8c_adf67a511d7c4de12e19cb511e6a07a1f} 
+void Draw\+Chat\+Msg\+Segmentato (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{msg}{, }\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{font\+Size}{, }\item[{\mbox{\hyperlink{struct_stato_gioco}{Stato\+Gioco}} \texorpdfstring{$\ast$}{*}}]{gioco}{, }\item[{int}]{mio\+\_\+id}{}\end{DoxyParamCaption})}
+
+
+
+Disegna un messaggio chat con tag @ evidenziati. 
+
+Disegna un messaggio chat evidenziando i tag @\+Nome\+Giocatore.
+
+I tag diretti a mio\+\_\+id vengono evidenziati in giallo (YELLOW), i tag ad altri giocatori in azzurro (CYAN). Il resto del testo viene disegnato in LIGHTGRAY.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Messaggio da disegnare. \\
+\hline
+{\em x} & Coordinata X di partenza. \\
+\hline
+{\em y} & Coordinata Y di partenza. \\
+\hline
+{\em font\+Size} & Dimensione del font. \\
+\hline
+{\em gioco} & Stato di gioco (per accedere ai nomi dei giocatori). \\
+\hline
+{\em mio\+\_\+id} & ID del giocatore locale. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{chat__render_8c_a1b5dfa99b81aaf484e299e268b30ba2a}\index{chat\_render.c@{chat\_render.c}!StartsWithIgnoreCase@{StartsWithIgnoreCase}}
+\index{StartsWithIgnoreCase@{StartsWithIgnoreCase}!chat\_render.c@{chat\_render.c}}
+\doxysubsubsection{\texorpdfstring{StartsWithIgnoreCase()}{StartsWithIgnoreCase()}}
+{\footnotesize\ttfamily \label{chat__render_8c_a1b5dfa99b81aaf484e299e268b30ba2a} 
+int Starts\+With\+Ignore\+Case (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{prefix}{}\end{DoxyParamCaption})}
+
+
+
+Confronto case-\/insensitive di un prefisso. 
+
+Restituisce 1 se inizia con il prefisso specificato. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{chat__render_8c_a20d7f38f3172dfe2ed4c5819e84c78ed}\index{chat\_render.c@{chat\_render.c}!inputChat@{inputChat}}
+\index{inputChat@{inputChat}!chat\_render.c@{chat\_render.c}}
+\doxysubsubsection{\texorpdfstring{inputChat}{inputChat}}
+{\footnotesize\ttfamily \label{chat__render_8c_a20d7f38f3172dfe2ed4c5819e84c78ed} 
+char input\+Chat\mbox{[}128\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Buffer per il messaggio chat in digitazione. 
+
+\Hypertarget{chat__render_8c_a5c0b78531197553de40e19f2afd95ff4}\index{chat\_render.c@{chat\_render.c}!isTyping@{isTyping}}
+\index{isTyping@{isTyping}!chat\_render.c@{chat\_render.c}}
+\doxysubsubsection{\texorpdfstring{isTyping}{isTyping}}
+{\footnotesize\ttfamily \label{chat__render_8c_a5c0b78531197553de40e19f2afd95ff4} 
+int is\+Typing\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Flag\+: 1 se l\textquotesingle{}utente sta digitando nella chat. 
+
+\Hypertarget{chat__render_8c_a0841fa17b3362cfad64d784cf9a0b5e3}\index{chat\_render.c@{chat\_render.c}!popup\_uscita\_attivo@{popup\_uscita\_attivo}}
+\index{popup\_uscita\_attivo@{popup\_uscita\_attivo}!chat\_render.c@{chat\_render.c}}
+\doxysubsubsection{\texorpdfstring{popup\_uscita\_attivo}{popup\_uscita\_attivo}}
+{\footnotesize\ttfamily \label{chat__render_8c_a0841fa17b3362cfad64d784cf9a0b5e3} 
+int popup\+\_\+uscita\+\_\+attivo\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Flag\+: 1 se il popup di conferma uscita e\textquotesingle{} visibile durante il gioco. 
+
