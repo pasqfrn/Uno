@@ -171,8 +171,8 @@ Il progetto è stato progettato per rispettare i vincoli didattici:
 
 ## Autori
 
-- **Alessio Decarolis** - Matricola 852865
-- **Pasquale Franco** - Matricola 852866
+- **Alessio Decarolis** - Matricola 852865 - 
+- **Pasquale Franco** - Matricola 852866 - https://github.com/pasqfrn
 
 ## Licenza
 
