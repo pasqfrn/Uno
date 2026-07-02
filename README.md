@@ -144,9 +144,9 @@ bin/Uno.exe
 - **Mouse**: selezionare e giocare le carte, navigare nei menu
 - **Tasti rapidi**: implementazione di tasti funzione per azioni comuni
 
-### Funzionalità avanzate in sviluppo
+### Funzionalità avanzate sviluppate
 
-- Tasto "UNO!" con时限 per penalità
+- Tasto "UNO!" con check per penalità
 - Cifratura avanzata delle password
 - Gestione robusta disconnessioni in rete
 - Auto-ricostruzione del mazzo quando finiscono le carte
