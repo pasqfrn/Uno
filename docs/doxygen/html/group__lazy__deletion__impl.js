@@ -12,5 +12,9 @@ var group__lazy__deletion__impl =
     [ "CaricaDB", "group__lazy__deletion__impl.html#ga780f5d85ee36704ef8c39e58d6d24ba3", null ],
     [ "CifraDecifraDB", "group__lazy__deletion__impl.html#ga0314b066ae5d7042b1d10fa263b5652c", null ],
     [ "DB_Alloca", "group__lazy__deletion__impl.html#gab5d6680f3c3fd1d4690f635d9a10a172", null ],
-    [ "SalvaDB", "group__lazy__deletion__impl.html#gae268c79271c4ee59ba3a082ebd80e0a9", null ]
+    [ "DB_Inizializza", "group__lazy__deletion__impl.html#ga1917c22ac3975d7d94a1a27328b356b6", null ],
+    [ "SalvaDB", "group__lazy__deletion__impl.html#gae268c79271c4ee59ba3a082ebd80e0a9", null ],
+    [ "Statistiche_a_Utente", "group__lazy__deletion__impl.html#ga6f9865b5197df32426f14c7bf36d4e54", null ],
+    [ "num_pending_deletions_auth", "group__lazy__deletion__impl.html#ga9deec7665a3a96ce86dc66a64847700c", null ],
+    [ "pending_deletions_auth", "group__lazy__deletion__impl.html#ga279c8650eeeb42b4ddd316f88abd5f7b", null ]
 ];

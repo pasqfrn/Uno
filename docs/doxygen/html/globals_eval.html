@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Elementi globali</title>
+<title>UNO - Gioco di Carte: Elementi globali</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,7 +117,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_eval.h
 
 <div class="contents">
 <div class="textblock">&#160;</div><br/>
-<div class="qindex"><a class="qindex" href="globals_eval.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="globals_eval_v.html#index_v">V</a></div>
+<div class="qindex"><a class="qindex" href="#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="#index_v">V</a></div>
 
 
 <h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
@@ -113,13 +130,118 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_eval.h
 <li>AZIONE_GIOCA_SALTA&#160;:&#160;<a class="el" href="group__bot__ai__azioni.html#gga9ba63d9ab706e1b3df0ee26eac06dd19a032a02e7d82f64d8b53eac41244b15b5">bot_ai.h</a></li>
 <li>AZIONE_PESCA&#160;:&#160;<a class="el" href="group__bot__ai__azioni.html#gga9ba63d9ab706e1b3df0ee26eac06dd19a7ebecbdd225aca33f6d5d59ffc29ce58">bot_ai.h</a></li>
 </ul>
+
+
+<h3 class="doxsection"><a id="index_b" name="index_b"></a>- b -</h3><ul>
+<li>BLU&#160;:&#160;<a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27ca26d3f814fefb4d00336affb21a2f55b9">data_structures.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>CAMBIA_GIRO&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da14de110867291a9eb45ba51dae011528">data_structures.h</a></li>
+<li>CAMBIO_COLORE&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da9590144117e6dd29fa7c7702a4ec2b06">data_structures.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>FASE_ADMIN_MODIFICA_UTENTE&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a5b672297493e5a4db190d0c68508d835">data_structures.h</a></li>
+<li>FASE_ADMIN_PANEL&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4ab089bb955890a5abb503d66c54f43c84">data_structures.h</a></li>
+<li>FASE_CLIENT_JOIN&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a7e046a29f088b32590eea2d23bd1f872">data_structures.h</a></li>
+<li>FASE_CLIENT_LOBBY&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a83f103725ed15dc489b929c39ba4f9a9">data_structures.h</a></li>
+<li>FASE_FINE_PARTITA&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a82e71c7714cd66e542bb96e61f0c93a7">data_structures.h</a></li>
+<li>FASE_GIOCO&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a2dcbf54ba35b01b7e8f7dead719007b1">data_structures.h</a></li>
+<li>FASE_HOST_LOBBY&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4ae1bc0f40721df6b6117a75749a93b1e4">data_structures.h</a></li>
+<li>FASE_LOGIN&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4acbbb76ee66b50e70a7c18b1c715f1494">data_structures.h</a></li>
+<li>FASE_MENU&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a67bca53836937ab56d15a6807f194147">data_structures.h</a></li>
+<li>FASE_MULTIPLAYER_SCELTA&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a0a1d5af5494cf42c5ada9bea597051f1">data_structures.h</a></li>
+<li>FASE_PROFILO_MODIFICA&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a930ae839589c287b460135cbe6b12b48">data_structures.h</a></li>
+<li>FASE_PROFILO_VISUALIZZA&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a1079c6e5bfd989925b7e1826028e32e9">data_structures.h</a></li>
+<li>FASE_RECUPERO_PASSWORD&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a8539df50489c7a30ff7107007e93994e">data_structures.h</a></li>
+<li>FASE_REGISTRAZIONE&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4adacd438199948c23cb204dc28adcce08">data_structures.h</a></li>
+<li>FASE_SCELTA_ACCESSO&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4ad6e31f361c575129ccff5e1330973935">data_structures.h</a></li>
+<li>FASE_STATISTICHE&#160;:&#160;<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4a6f1a8394c957e91787eb398052844fbf">data_structures.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>GIALLO&#160;:&#160;<a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27cab43fc5129914206a77c76e0cffd20df2">data_structures.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_n" name="index_n"></a>- n -</h3><ul>
+<li>NERO&#160;:&#160;<a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27ca40019d0f9c04951a840bde24c579e876">data_structures.h</a></li>
+<li>NET_CLIENT&#160;:&#160;<a class="el" href="group__network__ruoli.html#gga53e7e36fa630cf0cbd59d8ac87393100ac0e26a27bc6a21634f0dcfd08b5d1e4b">network.h</a></li>
+<li>NET_HOST&#160;:&#160;<a class="el" href="group__network__ruoli.html#gga53e7e36fa630cf0cbd59d8ac87393100ac960304caae0d6a977448898c7775009">network.h</a></li>
+<li>NET_OFFLINE&#160;:&#160;<a class="el" href="group__network__ruoli.html#gga53e7e36fa630cf0cbd59d8ac87393100ae7ea65b33b650c9855f1bc1cc32e6138">network.h</a></li>
+<li>NUM_0&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da13dc9a8037f05fe9347ef38d219cebf7">data_structures.h</a></li>
+<li>NUM_1&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6dafb96732a6380755dfb3aea484ea984fe">data_structures.h</a></li>
+<li>NUM_2&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da23d36623278d6c9f44c0d3d51cbe60e9">data_structures.h</a></li>
+<li>NUM_3&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6dadcb22d4c698b5a12cafe28e9b16d95f3">data_structures.h</a></li>
+<li>NUM_4&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da310815251cae925041a7d7943c419f17">data_structures.h</a></li>
+<li>NUM_5&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6dab308ccbaba17c6da62aa6af500f163aa">data_structures.h</a></li>
+<li>NUM_6&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da447f60bc3ead3701531dccdef66c0c15">data_structures.h</a></li>
+<li>NUM_7&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6daeaeaa109f538b75f8da00759e95a9b94">data_structures.h</a></li>
+<li>NUM_8&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6dad402062cc9c7407039fd7ca32ab4ec83">data_structures.h</a></li>
+<li>NUM_9&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6daa5a8533deb5dc4cfb8d0dabf659599f5">data_structures.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_p" name="index_p"></a>- p -</h3><ul>
+<li>PACKET_ADMIN_DB_SYNC&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0aeea01617a728c8f0a876d015cb0b6d3d">network.h</a></li>
+<li>PACKET_ADMIN_DB_SYNC_DONE&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a369caf3cda4e9f3a194f4fdb7c5c8a33">network.h</a></li>
+<li>PACKET_ADMIN_USER_SYNC&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a33a0eb4a7808de54940444de66c16951">network.h</a></li>
+<li>PACKET_CHAT&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0ae1b441b9abefe018206c3d9486b8b24c">network.h</a></li>
+<li>PACKET_COLOR_CHOICE&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a6f6729e8049097c9b5b4a2712120ea92">network.h</a></li>
+<li>PACKET_CREATE_SESSION&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a5e612732b5253ec9025464ae5cf85a0f">network.h</a></li>
+<li>PACKET_DISCONNECT&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0ac71adcd308057d916ed8fec10e696dfd">network.h</a></li>
+<li>PACKET_DRAW&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a9b9271f113a3b97745416482211c76c5">network.h</a></li>
+<li>PACKET_GAME_FINISHED&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0afbeaea9f079e833ca7e5b1c562f786bd">network.h</a></li>
+<li>PACKET_GAME_STATE&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0af0b1d88ad6aa7984300753c22c26fcf7">network.h</a></li>
+<li>PACKET_HEARTBEAT&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a5c17a8acf9faa476b348746280cbd91e">network.h</a></li>
+<li>PACKET_HOST_DISCONNECT&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a3bc8179a72fc6531f101ee91c7c06e64">network.h</a></li>
+<li>PACKET_HOST_RETURN_LOBBY&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a25bac22c1665f903ed544ec35aa33f89">network.h</a></li>
+<li>PACKET_JOIN&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0acd0833298bdffab1351471c009443720">network.h</a></li>
+<li>PACKET_JOIN_GAME&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a29d378a2b7936c8eafd7bbe593498ef3">network.h</a></li>
+<li>PACKET_JOIN_REJECTED&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0af7779c84104cc6fdd6e2ebeee0f21c28">network.h</a></li>
+<li>PACKET_JOIN_SESSION&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0acbed8b71369c3aa9f38931185fa72f3f">network.h</a></li>
+<li>PACKET_MOVE&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0aa3d97e3aef38924330aef8676c3b3777">network.h</a></li>
+<li>PACKET_PLAY_AGAIN&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a69dd215185c5665c706d516184eb3c5b">network.h</a></li>
+<li>PACKET_PLAYER_HAND&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0ab5b0533954a11babf74970449c41a56b">network.h</a></li>
+<li>PACKET_PLAYER_READY&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0aba3a4d2e729e19bf67dbe1cf9a914689">network.h</a></li>
+<li>PACKET_SESSION_LIST&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a7a99db687e4e9e8fce2aecf6eff6ddaf">network.h</a></li>
+<li>PACKET_SESSION_STATE&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a97b2792404ed7b3425fe5af6af270c03">network.h</a></li>
+<li>PACKET_START_GAME&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a457d5055f4e24cf4f6f423c1f77c4316">network.h</a></li>
+<li>PACKET_STATS_SYNC&#160;:&#160;<a class="el" href="group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0a36dc33c6a50583de36785c5ff8ae833a">network.h</a></li>
+<li>PESCA_DUE&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6daabe13e7547c113d19798dba060c09c38">data_structures.h</a></li>
+<li>PESCA_QUATTRO&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da450a026bfeea80d8e313e676328347aa">data_structures.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
+<li>ROSSO&#160;:&#160;<a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27caf31d451540fbe9019951dc44d57cada9">data_structures.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>SALTA&#160;:&#160;<a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da150773ba1df9e1914be905e7fcd09a4b">data_structures.h</a></li>
+<li>SESSION_CLOSED&#160;:&#160;<a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fa4617fc679cfb70fe09c81309b63ee2cd">server_manager.h</a></li>
+<li>SESSION_FINISHED&#160;:&#160;<a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fad90ef073bffc0892df8168ac75d2179c">server_manager.h</a></li>
+<li>SESSION_IN_PROGRESS&#160;:&#160;<a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fa3831d35afa06c0bc305ec523a2f9c87a">server_manager.h</a></li>
+<li>SESSION_STARTING&#160;:&#160;<a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8faba27760d1c9400680479f5bd304ce305">server_manager.h</a></li>
+<li>SESSION_WAITING&#160;:&#160;<a class="el" href="group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fa5964dfc2fd0e3a409c22e68564320d15">server_manager.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_v" name="index_v"></a>- v -</h3><ul>
+<li>VERDE&#160;:&#160;<a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27caf9efd9e6bd17c0580d8a0432ba1b04a2">data_structures.h</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

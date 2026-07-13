@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keyboardkey_0',['KeyboardKey',['../raylib_8h.html#a94b4a5e76ed30c0af90a1bbbdc214b2b',1,'raylib.h']]]
+  ['sessionstate_0',['SessionState',['../group__server__manager__stati.html#gac82c179a797c0d7c249d1b98a8e3aa8f',1,'server_manager.h']]]
 ];

@@ -1,12 +1,13 @@
 /**
  * @file data_structures.h
- * @brief Header principale del progetto UNO - Definizione di tutti i tipi di dato.
- * @defgroup data_structures Tipi di Dato e Strutture
- * @brief Definizione centralizzata di tutti i tipi di dato, enumerazioni, strutture e typedef del progetto UNO.
+ * @brief Header centrale del progetto UNO - Tipi di dato condivisi.
+ * @defgroup data_structures Tipi di Dato Condivisi
+ * @brief Definizione dei tipi di dato fondamentali e condivisi del progetto UNO.
  *
- * Questo header costituisce il dominio applicativo: contiene entità come Carta, Utente, Giocatore,
- * StatoGioco e le strutture dati per liste, pile, code e database dinamico.
- * Viene incluso dalla maggior parte dei moduli.
+ * Contiene solo i tipi base (Carta, Colore, TipoCarta, Utente, ecc.) che
+ * sono utilizzati da MOLTI moduli. Le strutture dati specifiche degli ADT
+ * (NodoCarta, ListaCarte, Giocatore, StatoGioco) sono state spostate nei
+ * rispettivi header dei moduli per migliorare l'incapsulamento.
  *
  * Riferimento: Documentazione CdS - "Strutture dati e tipi (dati strutturati)"
  *
@@ -19,8 +20,6 @@
 
 #include "raylib.h"
 #include <stddef.h>  /* per size_t */
-#include <string.h>  /* per strncpy usato nelle inline functions */
-#include <stdio.h>   /* per snprintf in Giocatore_NomeBot */
 
 /** @brief Capacita' iniziale del database utenti (allocazione dinamica). */
 #define DB_CAPACITA_INIZIALE 64
@@ -72,40 +71,6 @@ typedef struct {
 } Carta;
 
 /* ============================================================
- *  NODO CARTA - Lista DOPPIAMENTE concatenata - ADT 1/4
- *  Riferimento: Documentazione CdS - "NodoMano"
- *  "Gestione nodo per la mano del giocatore (lista doppiamente concatenata)"
- * ============================================================ */
-
-/**
- * @brief Nodo per la lista doppiamente concatenata della mano del giocatore.
- *
- * Ogni nodo contiene una carta e due puntatori: uno al nodo successivo
- * (forward link) e uno al nodo precedente (backward link).
- * Questo permette inserimenti ed eliminazioni efficienti in qualsiasi posizione.
- */
-typedef struct NodoCarta {
-    Carta carta;                    /* La carta contenuta nel nodo */
-    struct NodoCarta* prossimo;     /* Puntatore al nodo successivo (next) */
-    struct NodoCarta* prev;         /* Puntatore al nodo precedente (prev) */
-} NodoCarta;
-
-/** @brief Alias per NodoCarta (usato nella documentazione CdS come NodoMano). */
-typedef NodoCarta NodoMano;
-
-/**
- * @brief Struttura container per la lista di carte (mano del giocatore).
- *
- * Mantiene i puntatori a testa e coda per operazioni O(1) e la lunghezza
- * corrente per contare rapidamente le carte in mano.
- */
-typedef struct {
-    NodoCarta* testa;       /* Primo nodo della lista */
-    NodoCarta* coda;        /* Ultimo nodo della lista */
-    int lunghezza;          /* Numero totale di carte nella lista */
-} ListaCarte;
-
-/* ============================================================
  *  UTENTE - Entita' di dominio
  *  Riferimento: Documentazione CdS - "Gestione utente"
  * ============================================================ */
@@ -123,144 +88,6 @@ typedef struct {
     char email[100];        /* Email (chiave primaria per il database) */
     char password[50];      /* Password (eventualmente cifrata con XOR) */
 } Utente;
-
-/* ============================================================
- *  GIOCATORE - Entita' di flusso/stato
- *  Riferimento: Documentazione CdS - "Gestione giocatore"
- * ============================================================ */
-
-/**
- * @brief Rappresenta un giocatore nella partita (umano o bot).
- *
- * Contiene i dati anagrafici dell'utente (o nome del bot),
- * la mano di carte (lista concatenata bidirezionale), e lo stato
- * nella lobby (pronto/in attesa).
- *
- * mano_backup[] e num_carte_backup servono per serializzare su file:
- * la lista linkata (mano) non e' serializzabile via fwrite, quindi
- * prima di salvare si copiano le carte in mano_backup e si setta
- * mano = NULL. Al caricamento si ricostruisce la lista da mano_backup.
- */
-typedef struct {
-    Utente info;                /* Dati anagrafici completi dell'utente */
-    char nome[30];              /* Nome breve (alias per retrocompatibilita') */
-    ListaCarte* mano;           /* Puntatore alla lista delle carte in mano (ADT Lista) */
-    int is_bot;                 /* 1 se controllato dall'IA, 0 se umano */
-    int stato_pronto;           /* 1 = Pronto nella lobby, 0 = In attesa */
-    int num_carte_mano;         /* Numero di carte (usato a fine partita per classifica) */
-    int socket_id;              /* ID socket del giocatore (-1 se bot o locale) */
-    int era_in_prelobby;        /* 1 se il giocatore era presente in prelobby prima di iniziare (per riconnessione) */
-    /* Campi per serializzazione: backup flat delle carte mano */
-    Carta mano_backup[108];     /* Backup flat delle carte mano per salvataggio su file */
-    int num_carte_backup;       /* Numero di carte valide in mano_backup */
-} Giocatore;
-
-/* ============================================================
- *  HELPER INLINE PER GIOCATORE
- * ============================================================ */
-
-/**
- * @brief Restituisce il nome del giocatore (compatta con campo nome[30]).
- * @param g Puntatore al giocatore.
- * @return Nome del giocatore, o "Sconosciuto" se vuoto.
- */
-static inline const char* Giocatore_Nome(const Giocatore* g) {
-    return g->nome[0] ? g->nome : "Sconosciuto";
-}
-
-/** @brief Dimensione del buffer per Giocatore_NomeBot. */
-#define GIOCATORE_NOME_BUF 60
-
-/**
- * @brief Restituisce il nome del giocatore con suffisso "(Bot)" se e' un bot.
- * @param g Puntatore al giocatore.
- * @return Nome formattato (buffer statico, thread-local).
- */
-static inline const char* Giocatore_NomeBot(const Giocatore* g) {
-    static char buf[GIOCATORE_NOME_BUF];
-    if (g->is_bot) {
-        snprintf(buf, GIOCATORE_NOME_BUF, "%s (Bot)", Giocatore_Nome(g));
-        return buf;
-    }
-    return Giocatore_Nome(g);
-}
-
-/**
- * @brief Imposta il nome del giocatore in tutti i campi rilevanti.
- *
- * Copia il nome in: nome[30], info.nome e info.username.
- *
- * @param g Puntatore al giocatore.
- * @param nome Nome da impostare.
- */
-static inline void Giocatore_SetNome(Giocatore* g, const char* nome) {
-    if (g && nome) {
-        strncpy(g->nome, nome, sizeof(g->nome) - 1);
-        strncpy(g->info.nome, nome, sizeof(g->info.nome) - 1);
-        strncpy(g->info.username, nome, sizeof(g->info.username) - 1);
-    }
-}
-
-/* ============================================================
- *  STATO GIOCO - Stato completo della partita in corso
- * ============================================================ */
-
-/**
- * @brief Stato completo di una partita in corso.
- *
- * Contiene tutti i dati necessari per gestire il gameplay:
- * giocatori, mazzo, scarti, turno, animazioni, chat, UNO, ecc.
- * Questa struttura viene serializzata per il salvataggio su file
- * e per la sincronizzazione multiplayer via socket.
- */
-typedef struct {
-    Giocatore giocatori[4];         /* Array dei giocatori (max 4) */
-    int num_giocatori;              /* Numero effettivo di giocatori nella partita */
-    Carta mazzo[108];               /* Mazzo di pesca (max 108 carte UNO standard) */
-    int num_carte_mazzo;            /* Carte rimanenti nel mazzo di pesca */
-    Carta scarti[108];              /* Pila degli scarti (max 108) */
-    int num_carte_scarti;           /* Carte nella pila degli scarti */
-    int turno_corrente;             /* Indice del giocatore di turno */
-    int direzione;                  /* 1 = orario, -1 = antiorario (CambioGiro) */
-    Colore colore_attivo;           /* Colore attualmente valido per giocare */
-    int id_carta_in_trascinamento;  /* Indice della carta trascinata (-1 = nessuna) */
-    NodoCarta* nodo_carta_trascinata; /* Puntatore al nodo della carta trascinata */
-    int gioco_finito;               /* 1 se la partita e' terminata */
-    char messaggio[100];            /* Messaggio da mostrare (es. "HA VINTO X!") */
-
-    /* --- Stato animazioni --- */
-    int anim_attiva;                /* 1 se un'animazione e' in corso */
-    Carta anim_carta;               /* Carta coinvolta nell'animazione */
-    Vector2 anim_start;             /* Punto di partenza dell'animazione */
-    Vector2 anim_end;               /* Punto di arrivo dell'animazione */
-    float anim_t;                   /* Progresso animazione (0.0 - 1.0) */
-    int tipo_animazione;            /* 0 = normale, 1 = animazione speciale */
-
-    /* --- Stato scelta colore e UNO --- */
-    int in_scelta_colore;           /* 1 se il giocatore deve scegliere un colore */
-    Carta carta_pendente;           /* Carta giocata in attesa della scelta del colore */
-    int deve_chiamare_uno;          /* ID+1 del giocatore che deve premere UNO */
-    float timer_uno;                /* Timer countdown per il pulsante UNO */
-    char notifica[128];             /* Testo della notifica temporanea (aumentato da 50 a 128 per evitare overflow con nomi lunghi) */
-    float timer_notifica;           /* Timer di visualizzazione della notifica */
-    int autore_animazione;          /* ID del giocatore che ha scatenato l'animazione */
-    int anim_pesca_count;           /* Quante carte pescare quando animazione DRAW termina */
-    int anim_gia_applicata;         /* 1 = stato gia' applicato dal packet_handler */
-
-    /* --- Stato chat --- */
-    char chat_buffer[256];          /* Buffer per il messaggio chat in scrittura */
-
-    /* --- Informazioni partita --- */
-    float durata_partita;           /* Durata in secondi della partita in corso */
-    char chat_history[15][128];     /* Cronologia ultimi 15 messaggi chat */
-    int num_chat_msg;               /* Numero di messaggi nella cronologia */
-    int chat_aperta;                /* 1 se il pannello chat e' visibile */
-    int slot_salvataggio;           /* Slot di salvataggio corrente */
-    char data_salvataggio[30];      /* Data/ora del salvataggio */
-    int statistiche_gia_salvate;    /* 1 se le statistiche fine-partita sono gia' state salvate */
-    char modalita[20];              /* BUG 3 FIX: Modalita' di gioco salvata (es. "1 vs 3", "Online")
-                                       per ripristino corretto al caricamento della partita. */
-} StatoGioco;
 
 /* ============================================================
  *  PARTITA REGISTRATA - Storico di una singola partita

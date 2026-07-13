@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['material_0',['Material',['../struct_material.html',1,'']]],
-  ['materialmap_1',['MaterialMap',['../struct_material_map.html',1,'']]],
-  ['matrix_2',['Matrix',['../struct_matrix.html',1,'']]],
-  ['mesh_3',['Mesh',['../struct_mesh.html',1,'']]],
-  ['messaggiochat_4',['MessaggioChat',['../struct_messaggio_chat.html',1,'']]],
-  ['model_5',['Model',['../struct_model.html',1,'']]],
-  ['modelanimation_6',['ModelAnimation',['../struct_model_animation.html',1,'']]],
-  ['modelskeleton_7',['ModelSkeleton',['../struct_model_skeleton.html',1,'']]],
-  ['music_8',['Music',['../struct_music.html',1,'']]]
+  ['savereceiver_0',['SaveReceiver',['../structSaveReceiver.html',1,'']]],
+  ['servermanager_1',['ServerManager',['../structServerManager.html',1,'']]],
+  ['sessionplayer_2',['SessionPlayer',['../structSessionPlayer.html',1,'']]],
+  ['statistiche_3',['Statistiche',['../structStatistiche.html',1,'']]],
+  ['statogioco_4',['StatoGioco',['../structStatoGioco.html',1,'']]],
+  ['statssyncpacket_5',['StatsSyncPacket',['../structStatsSyncPacket.html',1,'']]]
 ];

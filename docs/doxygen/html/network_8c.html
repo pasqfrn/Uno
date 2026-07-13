@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file src/socket/network/network.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file socket/network/network.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -116,7 +133,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('network_8c.htm
 <code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../../lib/game_logic.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="list_8h_source.html">../../../lib/list.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;raylib.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
@@ -125,7 +142,7 @@ Funzioni</h2></td></tr>
 <tr class="memitem:a7fe5e191510a91783a12381ff4b14022" id="r_a7fe5e191510a91783a12381ff4b14022"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7fe5e191510a91783a12381ff4b14022">SetNonBlocking</a> (<a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a> sock)</td></tr>
 <tr class="memitem:ga4afd449b11f70e41fcfdf4df80a916ad" id="r_ga4afd449b11f70e41fcfdf4df80a916ad"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga4afd449b11f70e41fcfdf4df80a916ad">HostGame</a> (int port)</td></tr>
 <tr class="memitem:gaa2baa82ea8ed3d587c950ca832d9bd2e" id="r_gaa2baa82ea8ed3d587c950ca832d9bd2e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#gaa2baa82ea8ed3d587c950ca832d9bd2e">JoinGame</a> (const char *ip_address, int port)</td></tr>
-<tr class="memitem:ga6b2d507a3b3bf210f28c0eedacd885a4" id="r_ga6b2d507a3b3bf210f28c0eedacd885a4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga6b2d507a3b3bf210f28c0eedacd885a4">UpdateNetwork</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memitem:ga6b2d507a3b3bf210f28c0eedacd885a4" id="r_ga6b2d507a3b3bf210f28c0eedacd885a4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga6b2d507a3b3bf210f28c0eedacd885a4">UpdateNetwork</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco)</td></tr>
 <tr class="memitem:gabc45bc454fab5dc2d69faf90e742d4e1" id="r_gabc45bc454fab5dc2d69faf90e742d4e1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#gabc45bc454fab5dc2d69faf90e742d4e1">IsPlayerConnected</a> (int player_id)</td></tr>
 <tr class="memitem:ga613b435b1d6ffb50b4255ceaa0bc6696" id="r_ga613b435b1d6ffb50b4255ceaa0bc6696"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga613b435b1d6ffb50b4255ceaa0bc6696">RiassegnaSocket</a> (int old_id, int new_id, int is_reconnect, int partita_iniziata)</td></tr>
 </table><table class="memberdecls">
@@ -139,6 +156,7 @@ Variabili</h2></td></tr>
 <tr class="memdesc:ga80ac1ee1e5dc6a14be8c487f06ab9192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Username dei client TCP connessi all'host (per admin panel).  <br /></td></tr>
 <tr class="memitem:a87557f4936706eb20d02388efbfd01a5" id="r_a87557f4936706eb20d02388efbfd01a5"><td class="memItemLeft"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>&#160;</td><td class="memItemRight"><a class="el" href="#a87557f4936706eb20d02388efbfd01a5">udpDiscoverySocket</a> = <a class="el" href="socket__compat_8h.html#a26769957ec1a2beaf223f33b66ee64ab">INVALID_SOCKET</a></td></tr>
 <tr class="memdesc:a87557f4936706eb20d02388efbfd01a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket UDP per discovery codici stanza (host+client).  <br /></td></tr>
+<tr class="memitem:ab0e775d3294aeb480e4229dfa1c47eee" id="r_ab0e775d3294aeb480e4229dfa1c47eee"><td class="memItemLeft">static char&#160;</td><td class="memItemRight"><a class="el" href="#ab0e775d3294aeb480e4229dfa1c47eee">direct_multiplayer_code</a> [16] = &quot;&quot;</td></tr>
 <tr class="memitem:gae1406de9f7c29f2553e952e0d5a0532c" id="r_gae1406de9f7c29f2553e952e0d5a0532c"><td class="memItemLeft"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#gae1406de9f7c29f2553e952e0d5a0532c">clientSockets</a> [<a class="el" href="group__network__packet__strutture.html#gac7e4a6221f79e37a20003c8c18e4ae62">MAX_SERVER_CLIENTS</a>] = { <a class="el" href="socket__compat_8h.html#a26769957ec1a2beaf223f33b66ee64ab">INVALID_SOCKET</a>, <a class="el" href="socket__compat_8h.html#a26769957ec1a2beaf223f33b66ee64ab">INVALID_SOCKET</a>, <a class="el" href="socket__compat_8h.html#a26769957ec1a2beaf223f33b66ee64ab">INVALID_SOCKET</a>, <a class="el" href="socket__compat_8h.html#a26769957ec1a2beaf223f33b66ee64ab">INVALID_SOCKET</a> }</td></tr>
 <tr class="memitem:a2fccc7a9f7850b47e98e98c272d40370" id="r_a2fccc7a9f7850b47e98e98c272d40370"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a2fccc7a9f7850b47e98e98c272d40370">numConnectedClients</a> = 0</td></tr>
 <tr class="memitem:ga16acec73ed8b5b9262d15211bedb6479" id="r_ga16acec73ed8b5b9262d15211bedb6479"><td class="memItemLeft"><a class="el" href="group__network__ruoli.html#ga53e7e36fa630cf0cbd59d8ac87393100">NetworkRole</a>&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga16acec73ed8b5b9262d15211bedb6479">currentRole</a> = <a class="el" href="group__network__ruoli.html#gga53e7e36fa630cf0cbd59d8ac87393100ae7ea65b33b650c9855f1bc1cc32e6138">NET_OFFLINE</a></td></tr>
@@ -155,19 +173,23 @@ Variabili</h2></td></tr>
 <tr class="memitem:ga3ceeb52643564997e64ac776a8f0fc9a" id="r_ga3ceeb52643564997e64ac776a8f0fc9a"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga3ceeb52643564997e64ac776a8f0fc9a">session_id</a> [16] = &quot;&quot;</td></tr>
 <tr class="memitem:ga3437dc7e27766145ab5c8d9a605083cd" id="r_ga3437dc7e27766145ab5c8d9a605083cd"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga3437dc7e27766145ab5c8d9a605083cd">local_player_id</a> = -1</td></tr>
 <tr class="memitem:a2e58fa3f4fdc2b17320549ea0d1462f1" id="r_a2e58fa3f4fdc2b17320549ea0d1462f1"><td class="memItemLeft">struct sockaddr_in&#160;</td><td class="memItemRight"><a class="el" href="#a2e58fa3f4fdc2b17320549ea0d1462f1">serverAddr</a></td></tr>
+<tr class="memitem:a5256d4801f734705300af0e1b076c28b" id="r_a5256d4801f734705300af0e1b076c28b"><td class="memItemLeft">static char&#160;</td><td class="memItemRight"><a class="el" href="#a5256d4801f734705300af0e1b076c28b">recvBuffer</a> [4][sizeof(<a class="el" href="structNetPacket.html">NetPacket</a>) *2+4096]</td></tr>
+<tr class="memitem:a7ebc4d38681e685bcbda82c98b4e82dd" id="r_a7ebc4d38681e685bcbda82c98b4e82dd"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a7ebc4d38681e685bcbda82c98b4e82dd">recvOffset</a> [4] = {0, 0, 0, 0}</td></tr>
+<tr class="memitem:acd530c97d7e4c1008d7cfeb5465a1f96" id="r_acd530c97d7e4c1008d7cfeb5465a1f96"><td class="memItemLeft">static char&#160;</td><td class="memItemRight"><a class="el" href="#acd530c97d7e4c1008d7cfeb5465a1f96">clientRecvBuffer</a> [sizeof(<a class="el" href="structNetPacket.html">NetPacket</a>) *2+4096]</td></tr>
+<tr class="memitem:a7f279f76d100727ab7d61d38420516ca" id="r_a7f279f76d100727ab7d61d38420516ca"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a7f279f76d100727ab7d61d38420516ca">clientRecvOffset</a> = 0</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
 <div class="textblock"><p>Modulo di rete multiplayer TCP/UDP - host e client. </p>
 <p>Gestisce la connessione multiplayer online per le partite UNO. Implementa architettura client-server con:</p><ul>
 <li>HOST: crea stanza TCP, accetta client, gestisce disconnessioni e sostituzione con bot, invia broadcast stato di gioco</li>
 <li>CLIENT: si connette a stanza, riceve pacchetti, invia comandi</li>
-<li>Entrambi: invio/ricezione pacchetti <a class="el" href="struct_net_packet.html">NetPacket</a> via TCP</li>
+<li>Entrambi: invio/ricezione pacchetti <a class="el" href="structNetPacket.html">NetPacket</a> via TCP</li>
 </ul>
 <dl class="section note"><dt>Nota</dt><dd>Utilizza socket non-blocking con WSAEWOULDBLOCK per gestire multiple connessioni in modo asincrono. Ogni client ha un buffer separato (recvBuffer[4]) per evitare corruzione pacchetti.</dd></dl>
 <p>Protocollo:</p><ul>
 <li>TCP porta 27015 per il gioco (connessioni stabili)</li>
 <li>UDP porta 27016 per discovery codici stanza</li>
-<li><a class="el" href="struct_net_packet.html">NetPacket</a> Binario 512 byte per tutti i messaggi</li>
+<li><a class="el" href="structNetPacket.html">NetPacket</a> Binario 512 byte per tutti i messaggi</li>
 </ul>
 <p>Architettura:</p><ul>
 <li>MAX_SERVER_CLIENTS = 4 slot (0 riservato host, 1-3 per client)</li>
@@ -204,6 +226,72 @@ Variabili</h2></td></tr>
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="acd530c97d7e4c1008d7cfeb5465a1f96" name="acd530c97d7e4c1008d7cfeb5465a1f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd530c97d7e4c1008d7cfeb5465a1f96">&#9670;&#160;</a></span>clientRecvBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char clientRecvBuffer[sizeof(<a class="el" href="structNetPacket.html">NetPacket</a>) *2+4096]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7f279f76d100727ab7d61d38420516ca" name="a7f279f76d100727ab7d61d38420516ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f279f76d100727ab7d61d38420516ca">&#9670;&#160;</a></span>clientRecvOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int clientRecvOffset = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0e775d3294aeb480e4229dfa1c47eee" name="ab0e775d3294aeb480e4229dfa1c47eee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0e775d3294aeb480e4229dfa1c47eee">&#9670;&#160;</a></span>direct_multiplayer_code</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char direct_multiplayer_code[16] = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0a755f1937d6aeb27a26504504141fec" name="a0a755f1937d6aeb27a26504504141fec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a755f1937d6aeb27a26504504141fec">&#9670;&#160;</a></span>localSocket</h2>
 
@@ -230,6 +318,50 @@ Variabili</h2></td></tr>
           <td class="memname">int numConnectedClients = 0</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5256d4801f734705300af0e1b076c28b" name="a5256d4801f734705300af0e1b076c28b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5256d4801f734705300af0e1b076c28b">&#9670;&#160;</a></span>recvBuffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char recvBuffer[4][sizeof(<a class="el" href="structNetPacket.html">NetPacket</a>) *2+4096]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7ebc4d38681e685bcbda82c98b4e82dd" name="a7ebc4d38681e685bcbda82c98b4e82dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ebc4d38681e685bcbda82c98b4e82dd">&#9670;&#160;</a></span>recvOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int recvOffset[4] = {0, 0, 0, 0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -293,8 +425,8 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_858915971c8656b65d461b873c3b3855.html">network</a></li><li class="navelem"><a href="network_8c.html">network.c</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_858915971c8656b65d461b873c3b3855.html">network</a></li><li class="navelem"><a href="network_8c.html">network.c</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

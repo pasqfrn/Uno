@@ -10,8 +10,11 @@
 #define GAME_LOGIC_H
 
 #include "data_structures.h"
+#include "player.h"
+#include "game_state.h"
 #include "data_structures/stack.h"
 #include "data_structures/queue.h"
+#include "data_structures/list.h"
 
 /** @brief ADT globali del gioco: pila mazzo pesca, pila scarti, coda turni. */
 extern Pila* mazzo_pila;

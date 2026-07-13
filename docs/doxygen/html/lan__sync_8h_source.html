@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno:  File sorgente lib/socket/lan/lan_sync.h</title>
+<title>UNO - Gioco di Carte:  File sorgente socket/lan/lan_sync.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -111,9 +128,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__sync_8h_s
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="auth_8h.html">../../auth.h</a>&quot;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="lan__protocol_8h.html">lan_protocol.h</a>&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="lan__broadcast_8c.html#a35d530456749dea612236ad880c703d5">dentroSalvaDB</a>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="admin__draw_8c.html#a83d2b69124592dbd8092ed4214b3f35e">numDeletedUsers</a>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="admin__draw_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f">deletedUsers</a>[512][30];</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="lan__sync_8h.html#a35d530456749dea612236ad880c703d5">dentroSalvaDB</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="lan__sync_8h.html#a83d2b69124592dbd8092ed4214b3f35e">numDeletedUsers</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="lan__sync_8h.html#aa8b1b6c8ce6cf65c18ad02977e47f98f">deletedUsers</a>[512][30];</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">int</span> <a class="code hl_function" href="lan__sync_8h.html#a3f8f65e7d6582283510158e54c4928fe">SerializzaDB</a>(<span class="keywordtype">char</span>* buf, <span class="keywordtype">int</span> buf_size);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
@@ -151,15 +168,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__sync_8h_s
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="keywordtype">void</span> <a class="code hl_function" href="lan__sync_8h.html#a388834167710eff0f7c4c0253f90eea2">LAN_BroadcastStatsSync</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* username);</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">#endif </span><span class="comment">// LAN_SYNC_H</span></div>
-<div class="ttc" id="aadmin__draw_8c_html_a83d2b69124592dbd8092ed4214b3f35e"><div class="ttname"><a href="admin__draw_8c.html#a83d2b69124592dbd8092ed4214b3f35e">numDeletedUsers</a></div><div class="ttdeci">int numDeletedUsers</div><div class="ttdoc">Numero di utenti nella cache delle eliminazioni.</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:63</div></div>
-<div class="ttc" id="aadmin__draw_8c_html_aa8b1b6c8ce6cf65c18ad02977e47f98f"><div class="ttname"><a href="admin__draw_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f">deletedUsers</a></div><div class="ttdeci">char deletedUsers[512][30]</div><div class="ttdoc">Cache degli utenti eliminati (per non riaggiungerli da remoto).</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:65</div></div>
 <div class="ttc" id="aauth_8h_html"><div class="ttname"><a href="auth_8h.html">auth.h</a></div><div class="ttdoc">Modulo di autenticazione e gestione database utenti.</div></div>
-<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
-<div class="ttc" id="alan__broadcast_8c_html_a35d530456749dea612236ad880c703d5"><div class="ttname"><a href="lan__broadcast_8c.html#a35d530456749dea612236ad880c703d5">dentroSalvaDB</a></div><div class="ttdeci">int dentroSalvaDB</div><div class="ttdoc">Flag: 1 se siamo all&#39;interno di una chiamata a SalvaDB() (per evitare ricorsione LAN).</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:61</div></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header centrale del progetto UNO - Tipi di dato condivisi.</div></div>
 <div class="ttc" id="alan__protocol_8h_html"><div class="ttname"><a href="lan__protocol_8h.html">lan_protocol.h</a></div><div class="ttdoc">Protocollo UDP per sincronizzazione LAN.</div></div>
 <div class="ttc" id="alan__protocol_8h_html_a5f5183faad8f417a84fda8b24a245a5e"><div class="ttname"><a href="lan__protocol_8h.html#a5f5183faad8f417a84fda8b24a245a5e">LanSaveChunkPacket</a></div><div class="ttdeci">LanSaveChunkPacket</div><div class="ttdef"><b>Definition</b> lan_protocol.h:116</div></div>
 <div class="ttc" id="alan__sync_8h_html_a041d8356ae80ac806101042d00ba50ce"><div class="ttname"><a href="lan__sync_8h.html#a041d8356ae80ac806101042d00ba50ce">LAN_BroadcastDeleteUser</a></div><div class="ttdeci">void LAN_BroadcastDeleteUser(const char *username)</div><div class="ttdoc">Broadcasta una richiesta di eliminazione utente su LAN.</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:220</div></div>
 <div class="ttc" id="alan__sync_8h_html_a27e09f286eb4eba5a8589e9818346a2d"><div class="ttname"><a href="lan__sync_8h.html#a27e09f286eb4eba5a8589e9818346a2d">LAN_ProcessSaveChunk</a></div><div class="ttdeci">void LAN_ProcessSaveChunk(const LanSaveChunkPacket *chunk)</div><div class="ttdoc">Processa un chunk di salvataggio ricevuto via LAN.</div><div class="ttdef"><b>Definition</b> lan_save_sync.c:408</div></div>
+<div class="ttc" id="alan__sync_8h_html_a35d530456749dea612236ad880c703d5"><div class="ttname"><a href="lan__sync_8h.html#a35d530456749dea612236ad880c703d5">dentroSalvaDB</a></div><div class="ttdeci">int dentroSalvaDB</div><div class="ttdoc">Flag per evitare broadcast ricorsivi durante SalvaDB.</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:61</div></div>
 <div class="ttc" id="alan__sync_8h_html_a388834167710eff0f7c4c0253f90eea2"><div class="ttname"><a href="lan__sync_8h.html#a388834167710eff0f7c4c0253f90eea2">LAN_BroadcastStatsSync</a></div><div class="ttdeci">void LAN_BroadcastStatsSync(const char *username)</div><div class="ttdoc">Broadcasta un pacchetto di sincronizzazione completa delle statistiche.</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:238</div></div>
 <div class="ttc" id="alan__sync_8h_html_a38ae2de109b22ba34b6ebc58870676fd"><div class="ttname"><a href="lan__sync_8h.html#a38ae2de109b22ba34b6ebc58870676fd">CompattaSavesUtenteCorrente</a></div><div class="ttdeci">void CompattaSavesUtenteCorrente(void)</div><div class="ttdoc">Compatta i salvataggi dell&#39;utente corrente (rimuove duplicati).</div><div class="ttdef"><b>Definition</b> lan_save_sync.c:425</div></div>
 <div class="ttc" id="alan__sync_8h_html_a3d1549737db701594d58097588c08c36"><div class="ttname"><a href="lan__sync_8h.html#a3d1549737db701594d58097588c08c36">LAN_UpdateSaves</a></div><div class="ttdeci">void LAN_UpdateSaves(float dt)</div><div class="ttdoc">Aggiorna lo stato dei salvataggi (scadenza, pulizia).</div><div class="ttdef"><b>Definition</b> lan_save_sync.c:372</div></div>
@@ -167,8 +182,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__sync_8h_s
 <div class="ttc" id="alan__sync_8h_html_a4ac5aeca9a0bc4c628f3c377b007a990"><div class="ttname"><a href="lan__sync_8h.html#a4ac5aeca9a0bc4c628f3c377b007a990">LAN_EmailEsiste</a></div><div class="ttdeci">int LAN_EmailEsiste(const char *email)</div><div class="ttdoc">Verifica se un&#39;email esiste nel database LAN-synced.</div><div class="ttdef"><b>Definition</b> lan_db_sync.c:210</div></div>
 <div class="ttc" id="alan__sync_8h_html_a54bcee66d466e24ce98a66159c9b0d5a"><div class="ttname"><a href="lan__sync_8h.html#a54bcee66d466e24ce98a66159c9b0d5a">LAN_BroadcastSavesNow</a></div><div class="ttdeci">void LAN_BroadcastSavesNow(void)</div><div class="ttdoc">Forza un broadcast immediato dei salvataggi.</div><div class="ttdef"><b>Definition</b> lan_save_sync.c:396</div></div>
 <div class="ttc" id="alan__sync_8h_html_a75f095ec4db72f1eaaf97fb8ae78b304"><div class="ttname"><a href="lan__sync_8h.html#a75f095ec4db72f1eaaf97fb8ae78b304">LAN_BroadcastDeleteSave</a></div><div class="ttdeci">void LAN_BroadcastDeleteSave(const char *owner_username, const char *data_salvataggio)</div><div class="ttdoc">Broadcasta una richiesta di eliminazione di un salvataggio.</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:266</div></div>
+<div class="ttc" id="alan__sync_8h_html_a83d2b69124592dbd8092ed4214b3f35e"><div class="ttname"><a href="lan__sync_8h.html#a83d2b69124592dbd8092ed4214b3f35e">numDeletedUsers</a></div><div class="ttdeci">int numDeletedUsers</div><div class="ttdoc">Contatore utenti eliminati.</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:63</div></div>
 <div class="ttc" id="alan__sync_8h_html_a88d0b5ae2f24ad06c318deb550373b1e"><div class="ttname"><a href="lan__sync_8h.html#a88d0b5ae2f24ad06c318deb550373b1e">LAN_Init</a></div><div class="ttdeci">int LAN_Init(void)</div><div class="ttdoc">Inizializza il modulo LAN (socket UDP, thread di ascolto).</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:156</div></div>
 <div class="ttc" id="alan__sync_8h_html_aa5723e8d507407a08a3bac33e39ee03f"><div class="ttname"><a href="lan__sync_8h.html#aa5723e8d507407a08a3bac33e39ee03f">LAN_Close</a></div><div class="ttdeci">void LAN_Close(void)</div><div class="ttdoc">Chiude il modulo LAN e libera risorse.</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:184</div></div>
+<div class="ttc" id="alan__sync_8h_html_aa8b1b6c8ce6cf65c18ad02977e47f98f"><div class="ttname"><a href="lan__sync_8h.html#aa8b1b6c8ce6cf65c18ad02977e47f98f">deletedUsers</a></div><div class="ttdeci">char deletedUsers[512][30]</div><div class="ttdoc">Buffer di username eliminati (per compatibilita&#39; screens).</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:65</div></div>
 <div class="ttc" id="alan__sync_8h_html_ab0b625c0463cad457894bf91847319c5"><div class="ttname"><a href="lan__sync_8h.html#ab0b625c0463cad457894bf91847319c5">LAN_Update</a></div><div class="ttdeci">void LAN_Update(float dt)</div><div class="ttdoc">Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout).</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:277</div></div>
 <div class="ttc" id="alan__sync_8h_html_ad742056d7d001bc371900404f780fdb5"><div class="ttname"><a href="lan__sync_8h.html#ad742056d7d001bc371900404f780fdb5">LAN_GetUtentiCount</a></div><div class="ttdeci">int LAN_GetUtentiCount(void)</div><div class="ttdoc">Restituisce il numero di utenti nel database LAN.</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:488</div></div>
 <div class="ttc" id="alan__sync_8h_html_ae1b4876757ac2d2fbb965c0dfc1a1c4c"><div class="ttname"><a href="lan__sync_8h.html#ae1b4876757ac2d2fbb965c0dfc1a1c4c">LAN_BroadcastNow</a></div><div class="ttdeci">void LAN_BroadcastNow(void)</div><div class="ttdoc">Forza un broadcast immediato del database LAN.</div><div class="ttdef"><b>Definition</b> lan_broadcast.c:211</div></div>
@@ -180,8 +197,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__sync_8h_s
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e17dec1d132ad7ed461be9444000b405.html">socket</a></li><li class="navelem"><a href="dir_eafa113c866c19c3f812b2f973b25251.html">lan</a></li><li class="navelem"><a href="lan__sync_8h.html">lan_sync.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_e17dec1d132ad7ed461be9444000b405.html">socket</a></li><li class="navelem"><a href="dir_eafa113c866c19c3f812b2f973b25251.html">lan</a></li><li class="navelem"><a href="lan__sync_8h.html">lan_sync.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

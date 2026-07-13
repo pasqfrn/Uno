@@ -1,10 +1,10 @@
 var lan__protocol_8h =
 [
-    [ "LanCompactUser", "struct_lan_compact_user.html", "struct_lan_compact_user" ],
-    [ "LanStatsSyncPacket", "struct_lan_stats_sync_packet.html", "struct_lan_stats_sync_packet" ],
-    [ "LanPacketHeader", "struct_lan_packet_header.html", "struct_lan_packet_header" ],
-    [ "LanDeleteSavePacket", "struct_lan_delete_save_packet.html", "struct_lan_delete_save_packet" ],
-    [ "SaveReceiver", "struct_save_receiver.html", "struct_save_receiver" ],
+    [ "LanCompactUser", "structLanCompactUser.html", "structLanCompactUser" ],
+    [ "LanStatsSyncPacket", "structLanStatsSyncPacket.html", "structLanStatsSyncPacket" ],
+    [ "LanPacketHeader", "structLanPacketHeader.html", "structLanPacketHeader" ],
+    [ "LanDeleteSavePacket", "structLanDeleteSavePacket.html", "structLanDeleteSavePacket" ],
+    [ "SaveReceiver", "structSaveReceiver.html", "structSaveReceiver" ],
     [ "LAN_PACKET_DB", "lan__protocol_8h.html#af209f894092f0198fedf3793b1b08e78", null ],
     [ "LAN_PACKET_DEL_SAVE", "lan__protocol_8h.html#adfd1cd8824de1aadfbf6ab88dd5e6403", null ],
     [ "LAN_PACKET_DEL_USER", "lan__protocol_8h.html#a7ad00aea5b79d92f29677091873e0ac6", null ],

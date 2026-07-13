@@ -1,29 +1,56 @@
 /**
  * @file list.h
- * @brief Interfaccia ADT ListaDoppia (lista doppiamente concatenata).
- * @ingroup list
+ * @brief ADT Lista Doppiamente Concatenata per gestione mano giocatori.
+ * @defgroup list Lista (Lista Concatenata)
+ * @brief Definisce NodoCarta e ListaCarte, le strutture per la lista
+ * doppiamente concatenata usata per la mano di ciascun giocatore, e le
+ * relative operazioni.
  *
- * Modulo specializzato per le liste bidirezionali utilizzato per
- * la gestione della mano dei giocatori.
+ * Ogni nodo contiene una carta e puntatori al nodo successivo e precedente,
+ * permettendo inserimenti/eliminazioni in O(1) in qualsiasi posizione.
  *
- * NodoCarta e' dotato dei campi prossimo/next e prev per supportare
- * la navigazione bidirezionale.
- *
- * Funzioni specifiche rispetto a list.h generale:
- *   - Lista_InserisciDopo: inserimento dopo nodo specifico
- *   - Lista_Precedente: accesso O(1) al nodo precedente
- *   - Lista_Ultimo: accesso O(1) all'ultimo nodo
- *   - Lista_RimuoviNodoBidirezionale: rimozione sicura con aggiornamento prev/next
- *   - Lista_VerificaBidirezionale: verifica integrita' puntatori (debug)
+ * Riferimento: Documentazione CdS - "NodoMano", "Lista (Lista Concatenata)"
  */
 #ifndef DATA_STRUCTURES_LIST_H
 #define DATA_STRUCTURES_LIST_H
 
 #include "../data_structures.h"
 
+/* ============================================================
+ *  NODO CARTA - Lista DOPPIAMENTE concatenata
+ *  Riferimento: Documentazione CdS - "NodoMano"
+ * ============================================================ */
+
+/**
+ * @brief Nodo per la lista doppiamente concatenata della mano del giocatore.
+ *
+ * Ogni nodo contiene una carta e due puntatori: uno al nodo successivo
+ * (forward link) e uno al nodo precedente (backward link).
+ * Questo permette inserimenti ed eliminazioni efficienti in qualsiasi posizione.
+ */
+typedef struct NodoCarta {
+    Carta carta;                    /* La carta contenuta nel nodo */
+    struct NodoCarta* prossimo;     /* Puntatore al nodo successivo (next) */
+    struct NodoCarta* prev;         /* Puntatore al nodo precedente (prev) */
+} NodoCarta;
+
+/** @brief Alias per NodoCarta (usato nella documentazione CdS come NodoMano). */
+typedef NodoCarta NodoMano;
+
+/**
+ * @brief Struttura container per la lista di carte (mano del giocatore).
+ *
+ * Mantiene i puntatori a testa e coda per operazioni O(1) e la lunghezza
+ * corrente per contare rapidamente le carte in mano.
+ */
+typedef struct {
+    NodoCarta* testa;       /* Primo nodo della lista */
+    NodoCarta* coda;        /* Ultimo nodo della lista */
+    int lunghezza;          /* Numero totale di carte nella lista */
+} ListaCarte;
+
 /**
  * @brief Inserisce una carta dopo un nodo specifico (o in testa se nodo==NULL).
- * @ingroup list
  * @pre lista != NULL.
  * @post Carta inserita; lunghezza incrementata.
  * @param lista Lista.
@@ -35,7 +62,6 @@ NodoCarta* Lista_InserisciDopo(ListaCarte* lista, NodoCarta* nodo, Carta c);
 
 /**
  * @brief Restituisce il nodo precedente a quello dato.
- * @ingroup list
  * @param lista Lista (non usato).
  * @param nodo Nodo di riferimento.
  * @return Nodo precedente, o NULL.
@@ -44,7 +70,6 @@ NodoCarta* Lista_Precedente(ListaCarte* lista, NodoCarta* nodo);
 
 /**
  * @brief Restituisce l'ultimo nodo della lista (coda).
- * @ingroup list
  * @pre lista != NULL.
  * @return Puntatore alla coda, o NULL.
  * @param lista Lista.
@@ -53,7 +78,6 @@ NodoCarta* Lista_Ultimo(ListaCarte* lista);
 
 /**
  * @brief Rimuove un nodo dalla lista gestendo correttamente prev/next.
- * @ingroup list
  * @pre lista != NULL; nodo appartiene alla lista.
  * @post Nodo rimosso; testa/coda aggiornati; lunghezza decrementata.
  * @param lista Lista.
@@ -63,7 +87,6 @@ void Lista_RimuoviNodoBidirezionale(ListaCarte* lista, NodoCarta* nodo);
 
 /**
  * @brief Verifica l'integrita' dei puntatori prev/next (debug).
- * @ingroup list
  * @param lista Lista.
  * @return 1 se valida, 0 se inconsistente.
  */

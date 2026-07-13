@@ -1,20 +1,9 @@
 var searchData=
 [
-  ['nero_0',['NERO',['../data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27ca40019d0f9c04951a840bde24c579e876',1,'data_structures.h']]],
-  ['net_5fclient_1',['NET_CLIENT',['../group__network__ruoli.html#gga53e7e36fa630cf0cbd59d8ac87393100ac0e26a27bc6a21634f0dcfd08b5d1e4b',1,'network.h']]],
-  ['net_5fhost_2',['NET_HOST',['../group__network__ruoli.html#gga53e7e36fa630cf0cbd59d8ac87393100ac960304caae0d6a977448898c7775009',1,'network.h']]],
-  ['net_5foffline_3',['NET_OFFLINE',['../group__network__ruoli.html#gga53e7e36fa630cf0cbd59d8ac87393100ae7ea65b33b650c9855f1bc1cc32e6138',1,'network.h']]],
-  ['npatch_5fnine_5fpatch_4',['NPATCH_NINE_PATCH',['../raylib_8h.html#abfcc85d1626e997d4990ca13760f7ec4a20679b55ac6eee2877c97acf12b4bda1',1,'raylib.h']]],
-  ['npatch_5fthree_5fpatch_5fhorizontal_5',['NPATCH_THREE_PATCH_HORIZONTAL',['../raylib_8h.html#abfcc85d1626e997d4990ca13760f7ec4a2d217e741b6f0f445480e80829ab222e',1,'raylib.h']]],
-  ['npatch_5fthree_5fpatch_5fvertical_6',['NPATCH_THREE_PATCH_VERTICAL',['../raylib_8h.html#abfcc85d1626e997d4990ca13760f7ec4a371784792d89d6ff150d938e84059ae9',1,'raylib.h']]],
-  ['num_5f0_7',['NUM_0',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da13dc9a8037f05fe9347ef38d219cebf7',1,'data_structures.h']]],
-  ['num_5f1_8',['NUM_1',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6dafb96732a6380755dfb3aea484ea984fe',1,'data_structures.h']]],
-  ['num_5f2_9',['NUM_2',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da23d36623278d6c9f44c0d3d51cbe60e9',1,'data_structures.h']]],
-  ['num_5f3_10',['NUM_3',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6dadcb22d4c698b5a12cafe28e9b16d95f3',1,'data_structures.h']]],
-  ['num_5f4_11',['NUM_4',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da310815251cae925041a7d7943c419f17',1,'data_structures.h']]],
-  ['num_5f5_12',['NUM_5',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6dab308ccbaba17c6da62aa6af500f163aa',1,'data_structures.h']]],
-  ['num_5f6_13',['NUM_6',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da447f60bc3ead3701531dccdef66c0c15',1,'data_structures.h']]],
-  ['num_5f7_14',['NUM_7',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6daeaeaa109f538b75f8da00759e95a9b94',1,'data_structures.h']]],
-  ['num_5f8_15',['NUM_8',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6dad402062cc9c7407039fd7ca32ab4ec83',1,'data_structures.h']]],
-  ['num_5f9_16',['NUM_9',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6daa5a8533deb5dc4cfb8d0dabf659599f5',1,'data_structures.h']]]
+  ['salta_0',['SALTA',['../data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6da150773ba1df9e1914be905e7fcd09a4b',1,'data_structures.h']]],
+  ['session_5fclosed_1',['SESSION_CLOSED',['../group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fa4617fc679cfb70fe09c81309b63ee2cd',1,'server_manager.h']]],
+  ['session_5ffinished_2',['SESSION_FINISHED',['../group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fad90ef073bffc0892df8168ac75d2179c',1,'server_manager.h']]],
+  ['session_5fin_5fprogress_3',['SESSION_IN_PROGRESS',['../group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fa3831d35afa06c0bc305ec523a2f9c87a',1,'server_manager.h']]],
+  ['session_5fstarting_4',['SESSION_STARTING',['../group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8faba27760d1c9400680479f5bd304ce305',1,'server_manager.h']]],
+  ['session_5fwaiting_5',['SESSION_WAITING',['../group__server__manager__stati.html#ggac82c179a797c0d7c249d1b98a8e3aa8fa5964dfc2fd0e3a409c22e68564320d15',1,'server_manager.h']]]
 ];

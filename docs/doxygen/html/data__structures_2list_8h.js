@@ -1,5 +1,8 @@
 var data__structures_2list_8h =
 [
+    [ "NodoCarta", "structNodoCarta.html", "structNodoCarta" ],
+    [ "ListaCarte", "structListaCarte.html", "structListaCarte" ],
+    [ "NodoMano", "data__structures_2list_8h.html#a4c21bead0a069a63c668c59b159c829c", null ],
     [ "Lista_InserisciDopo", "group__list.html#ga088820569fa2805555cdf3fbe0b2283c", null ],
     [ "Lista_Precedente", "group__list.html#ga9de40d1e818238d37c0f07b3bee18734", null ],
     [ "Lista_RimuoviNodoBidirezionale", "group__list.html#gacc099b32c3eec87dd70207099d538236", null ],

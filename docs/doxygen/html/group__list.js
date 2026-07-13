@@ -2,7 +2,6 @@ var group__list =
 [
     [ "list.c", "data__structures_2list_8c.html", null ],
     [ "list.c", "list_8c.html", null ],
-    [ "list.h", "data__structures_2list_8h.html", null ],
     [ "CreaLista", "group__list.html#ga0c38f3271c6962cd2986a14f57532bcd", null ],
     [ "EliminaLista", "group__list.html#ga77562ee3084da27182cc68c8a54a4725", null ],
     [ "GetAt", "group__list.html#ga866f9235d9bfa09e3b1482f827bae3e0", null ],

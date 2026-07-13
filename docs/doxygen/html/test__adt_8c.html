@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UNO - Gioco di Carte: Riferimenti per il file C:/Users/pasqu/OneDrive/Documenti/ITPS - UniBa/1° Anno/2° Semestre/Laboratorio di programmazione/Uno/tests/test_adt.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('test__adt_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per il file test_adt.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Test unitari per le strutture dati ADT e la logica di gioco UNO.  
+<a href="#details">Continua...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;stubs/raylib.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_2list_8h_source.html">../lib/data_structures/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stack_8h_source.html">../lib/data_structures/stack.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="queue_8h_source.html">../lib/data_structures/queue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bst_8h_source.html">../lib/data_structures/bst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="chat_8h_source.html">../lib/data_structures/chat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">../lib/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="player_8h_source.html">../lib/player.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__state_8h_source.html">../lib/game_state.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../lib/game_logic.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Definizioni</h2></td></tr>
+<tr class="memitem:a28541d132dc6fcf5cad12b319f02e519" id="r_a28541d132dc6fcf5cad12b319f02e519"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a28541d132dc6fcf5cad12b319f02e519">TEST</a>(nome,  expr)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funzioni</h2></td></tr>
+<tr class="memitem:aef330b9209cc2de0139cf9fef0b7cb83" id="r_aef330b9209cc2de0139cf9fef0b7cb83"><td class="memItemLeft">static <a class="el" href="structCarta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="#aef330b9209cc2de0139cf9fef0b7cb83">crea_carta</a> (<a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> colore, <a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6d">TipoCarta</a> tipo)</td></tr>
+<tr class="memitem:affbc40e6803959d2f4c70df43a103990" id="r_affbc40e6803959d2f4c70df43a103990"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#affbc40e6803959d2f4c70df43a103990">test_lista</a> (void)</td></tr>
+<tr class="memitem:a06e86b3fd262b39bcf9eac553ad0a928" id="r_a06e86b3fd262b39bcf9eac553ad0a928"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a06e86b3fd262b39bcf9eac553ad0a928">test_pila</a> (void)</td></tr>
+<tr class="memitem:acc6e7732c7d93e15bc11f8da2817186c" id="r_acc6e7732c7d93e15bc11f8da2817186c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acc6e7732c7d93e15bc11f8da2817186c">test_coda</a> (void)</td></tr>
+<tr class="memitem:a36afba827c86cbc0214a21b17bdb5d21" id="r_a36afba827c86cbc0214a21b17bdb5d21"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a36afba827c86cbc0214a21b17bdb5d21">test_bst</a> (void)</td></tr>
+<tr class="memitem:ada70adddd582c5a30ce08a477baf050b" id="r_ada70adddd582c5a30ce08a477baf050b"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ada70adddd582c5a30ce08a477baf050b">test_chat</a> (void)</td></tr>
+<tr class="memitem:ae47a593c2df2cc837a5a11ec4304823a" id="r_ae47a593c2df2cc837a5a11ec4304823a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae47a593c2df2cc837a5a11ec4304823a">test_game_logic</a> (void)</td></tr>
+<tr class="memitem:aca096a4d6f68d76dbf34366f08c2de66" id="r_aca096a4d6f68d76dbf34366f08c2de66"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aca096a4d6f68d76dbf34366f08c2de66">test_giocatore</a> (void)</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:a840869b7a68653c11721fe79e3142aa8" id="r_a840869b7a68653c11721fe79e3142aa8"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a840869b7a68653c11721fe79e3142aa8">test_passati</a> = 0</td></tr>
+<tr class="memitem:a8687eac29eada80b70662897b0fa396f" id="r_a8687eac29eada80b70662897b0fa396f"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a8687eac29eada80b70662897b0fa396f">test_totali</a> = 0</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Test unitari per le strutture dati ADT e la logica di gioco UNO. </p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
+<a id="a28541d132dc6fcf5cad12b319f02e519" name="a28541d132dc6fcf5cad12b319f02e519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28541d132dc6fcf5cad12b319f02e519">&#9670;&#160;</a></span>TEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEST</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>expr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valore:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
+<div class="line">    <a class="code hl_variable" href="#a8687eac29eada80b70662897b0fa396f">test_totali</a>++; \</div>
+<div class="line">    if (!(expr)) { \</div>
+<div class="line">        printf(<span class="stringliteral">&quot;  [FAIL] %s (riga %d)\n&quot;</span>, nome, __LINE__); \</div>
+<div class="line">    } <span class="keywordflow">else</span> { \</div>
+<div class="line">        printf(<span class="stringliteral">&quot;  [OK]   %s\n&quot;</span>, nome); \</div>
+<div class="line">        <a class="code hl_variable" href="#a840869b7a68653c11721fe79e3142aa8">test_passati</a>++; \</div>
+<div class="line">    } \</div>
+<div class="line">} <span class="keywordflow">while</span>(0)</div>
+<div class="ttc" id="atest__adt_8c_html_a840869b7a68653c11721fe79e3142aa8"><div class="ttname"><a href="#a840869b7a68653c11721fe79e3142aa8">test_passati</a></div><div class="ttdeci">static int test_passati</div><div class="ttdef"><b>Definition</b> test_adt.c:41</div></div>
+<div class="ttc" id="atest__adt_8c_html_a8687eac29eada80b70662897b0fa396f"><div class="ttname"><a href="#a8687eac29eada80b70662897b0fa396f">test_totali</a></div><div class="ttdeci">static int test_totali</div><div class="ttdef"><b>Definition</b> test_adt.c:42</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="aef330b9209cc2de0139cf9fef0b7cb83" name="aef330b9209cc2de0139cf9fef0b7cb83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef330b9209cc2de0139cf9fef0b7cb83">&#9670;&#160;</a></span>crea_carta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCarta.html">Carta</a> crea_carta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a></td>          <td class="paramname"><span class="paramname"><em>colore</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6d">TipoCarta</a></td>          <td class="paramname"><span class="paramname"><em>tipo</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a36afba827c86cbc0214a21b17bdb5d21" name="a36afba827c86cbc0214a21b17bdb5d21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36afba827c86cbc0214a21b17bdb5d21">&#9670;&#160;</a></span>test_bst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_bst </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada70adddd582c5a30ce08a477baf050b" name="ada70adddd582c5a30ce08a477baf050b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada70adddd582c5a30ce08a477baf050b">&#9670;&#160;</a></span>test_chat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_chat </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc6e7732c7d93e15bc11f8da2817186c" name="acc6e7732c7d93e15bc11f8da2817186c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc6e7732c7d93e15bc11f8da2817186c">&#9670;&#160;</a></span>test_coda()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_coda </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae47a593c2df2cc837a5a11ec4304823a" name="ae47a593c2df2cc837a5a11ec4304823a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae47a593c2df2cc837a5a11ec4304823a">&#9670;&#160;</a></span>test_game_logic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_game_logic </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca096a4d6f68d76dbf34366f08c2de66" name="aca096a4d6f68d76dbf34366f08c2de66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca096a4d6f68d76dbf34366f08c2de66">&#9670;&#160;</a></span>test_giocatore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_giocatore </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affbc40e6803959d2f4c70df43a103990" name="affbc40e6803959d2f4c70df43a103990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affbc40e6803959d2f4c70df43a103990">&#9670;&#160;</a></span>test_lista()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_lista </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a06e86b3fd262b39bcf9eac553ad0a928" name="a06e86b3fd262b39bcf9eac553ad0a928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e86b3fd262b39bcf9eac553ad0a928">&#9670;&#160;</a></span>test_pila()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_pila </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="a840869b7a68653c11721fe79e3142aa8" name="a840869b7a68653c11721fe79e3142aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840869b7a68653c11721fe79e3142aa8">&#9670;&#160;</a></span>test_passati</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int test_passati = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8687eac29eada80b70662897b0fa396f" name="a8687eac29eada80b70662897b0fa396f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8687eac29eada80b70662897b0fa396f">&#9670;&#160;</a></span>test_totali</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int test_totali = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a href="test__adt_8c.html">test_adt.c</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

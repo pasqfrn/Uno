@@ -1,15 +1,16 @@
 var topics =
 [
-    [ "Entry Point", "group__main.html", null ],
     [ "Autenticazione e Database Utenti", "group__auth.html", "group__auth" ],
     [ "Validazione Autenticazione", "group__auth__validation.html", null ],
-    [ "Tipi di Dato e Strutture", "group__data__structures.html", null ],
+    [ "Tipi di Dato Condivisi", "group__data__structures.html", null ],
     [ "BST (Albero Binario Ricerca)", "group__bst.html", "group__bst" ],
     [ "Chat", "group__chat.html", "group__chat" ],
+    [ "Lista (Lista Concatenata)", "group__list.html", "group__list" ],
     [ "Queue (Coda)", "group__queue.html", "group__queue" ],
     [ "Stack (Pila)", "group__stack.html", "group__stack" ],
     [ "Logica di Gioco", "group__game__logic.html", "group__game__logic" ],
-    [ "Lista (Lista Concatenata)", "group__list.html", "group__list" ],
+    [ "Stato Gioco", "group__game__state.html", null ],
+    [ "Giocatore", "group__player.html", null ],
     [ "Admin Draw", "group__admin__draw.html", "group__admin__draw" ],
     [ "Auth Draw", "group__auth__draw.html", "group__auth__draw" ],
     [ "Schermate Auth", "group__auth__screen.html", "group__auth__screen" ],
@@ -42,8 +43,8 @@ var topics =
     [ "Server Manager", "group__server__manager.html", null ],
     [ "Network Utils", "group__network__utils.html", null ],
     [ "Rendering e Interfaccia Utente", "group__ui.html", "group__ui" ],
-    [ "Implementazioni Auth", "group__auth__impl.html", "group__auth__impl" ],
-    [ "Texture e Risorse Grafiche", "group__ui__texture.html", "group__ui__texture" ],
+    [ "Entry Point", "group__main.html", null ],
+    [ "Test Unitari", "group__tests.html", null ],
     [ "Eliminazione Diffusa (Lazy Deletion)", "group__lazy__deletion.html", "group__lazy__deletion" ],
     [ "Database API", "group__database__api.html", "group__database__api" ],
     [ "Nodi BST", "group__bst__nodi.html", "group__bst__nodi" ],
@@ -67,5 +68,7 @@ var topics =
     [ "Giocatore Sessione", "group__server__manager__giocatore.html", "group__server__manager__giocatore" ],
     [ "Sessione di Gioco", "group__server__manager__sessione.html", "group__server__manager__sessione" ],
     [ "Struttura Server Manager", "group__server__manager__struttura.html", "group__server__manager__struttura" ],
-    [ "API Server Manager", "group__server__manager__api.html", "group__server__manager__api" ]
+    [ "API Server Manager", "group__server__manager__api.html", "group__server__manager__api" ],
+    [ "Implementazioni Auth", "group__auth__impl.html", "group__auth__impl" ],
+    [ "Texture e Risorse Grafiche", "group__ui__texture.html", "group__ui__texture" ]
 ];

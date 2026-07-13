@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Elementi globali</title>
+<title>UNO - Gioco di Carte: Elementi globali</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,18 +117,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_w.html
 
 <div class="contents">
 <div class="textblock">Questo è un elenco di tutte le funzioni, variabili, define, tipi enumerati, e ridefinizioni dei tipi (typedef) con collegamenti alla documentazione del file a cui appartengono:</div><br/>
-<div class="qindex"><a class="qindex" href="globals.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="globals_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="globals_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="globals_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="globals_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="globals_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="globals_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="globals_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="globals_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="globals_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="globals_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="globals_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="globals_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="globals_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="globals_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="globals_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="globals_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="globals_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="globals_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="globals_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="globals_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="globals_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="globals_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="globals_y.html#index_y">Y</a><div class="alphasepar"></div><a class="qindex" href="globals__.html#index__">_</a></div>
+<div class="qindex"><a class="qindex" href="globals.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="globals_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="globals_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="globals_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="globals_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="globals_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="globals_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="globals_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="globals_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="globals_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="globals_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="globals_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="globals_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="globals_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="globals_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="globals_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="globals_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="globals_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="globals_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="globals_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="globals_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="globals__.html#index__">_</a></div>
 
 
 <h3 class="doxsection"><a id="index_w" name="index_w"></a>- w -</h3><ul>
-<li>WaitTime()&#160;:&#160;<a class="el" href="raylib_8h.html#a130d9a5ac10a20b09c97faff26145e61">raylib.h</a></li>
-<li>Wave&#160;:&#160;<a class="el" href="raylib_8h.html#a34a0185b98ac3ba8f79630b39dfd3bfe">raylib.h</a></li>
-<li>WaveCopy()&#160;:&#160;<a class="el" href="raylib_8h.html#a7885ce891fe412fecb6569bad2ca1e31">raylib.h</a></li>
-<li>WaveCrop()&#160;:&#160;<a class="el" href="raylib_8h.html#a9f6860db1ec8c78caaff8391d8884045">raylib.h</a></li>
-<li>WaveFormat()&#160;:&#160;<a class="el" href="raylib_8h.html#ab54edbb74d0b414c47cba9bebd106387">raylib.h</a></li>
-<li>WHITE&#160;:&#160;<a class="el" href="raylib_8h.html#a87b537f5fa5c109d3c05c13d6b18f382">raylib.h</a></li>
-<li>WindowShouldClose()&#160;:&#160;<a class="el" href="raylib_8h.html#a14dab2feeb947c7810c3b8830ffee233">raylib.h</a></li>
-<li>Wrap()&#160;:&#160;<a class="el" href="raymath_8h.html#a860599a4d89fb83090024811f068f114">raymath.h</a></li>
 <li>WSACleanup&#160;:&#160;<a class="el" href="socket__compat_8h.html#a1bd38876e67a93ddcc85203cd536e386">socket_compat.h</a></li>
 <li>WSAEADDRINUSE&#160;:&#160;<a class="el" href="socket__compat_8h.html#ae57d56be40e06a6148c41bb9c1f66eb6">socket_compat.h</a></li>
 <li>WSAEADDRNOTAVAIL&#160;:&#160;<a class="el" href="socket__compat_8h.html#a0664bb62661e5a0d7017743d1c8899b0">socket_compat.h</a></li>
@@ -146,6 +155,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_w.html
 <li>WSAHOST_NOT_FOUND&#160;:&#160;<a class="el" href="socket__compat_8h.html#a603c6033d4f3969e96c6ad580502fdb1">socket_compat.h</a></li>
 <li>WSANO_RECOVERY&#160;:&#160;<a class="el" href="socket__compat_8h.html#afe4fd360a2fe7cdf0c042c0dffcfc802">socket_compat.h</a></li>
 <li>WSANOTINITIALISED&#160;:&#160;<a class="el" href="socket__compat_8h.html#a25b517a4390903e6fa0f945e80a3394c">socket_compat.h</a></li>
+<li>WSASafeToCancel()&#160;:&#160;<a class="el" href="socket__compat_8h.html#aeb8d8c9e6a8d065005dbc71ed1b686a7">socket_compat.h</a></li>
 <li>WSAStartup&#160;:&#160;<a class="el" href="socket__compat_8h.html#aae02aeaae446b2c945835677193c1a10">socket_compat.h</a></li>
 <li>WSATRY_AGAIN&#160;:&#160;<a class="el" href="socket__compat_8h.html#a599d174763197c716eb6ec996b7d282a">socket_compat.h</a></li>
 </ul>
@@ -155,7 +165,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_w.html
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

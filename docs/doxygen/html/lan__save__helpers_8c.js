@@ -5,5 +5,5 @@ var lan__save__helpers_8c =
     [ "GetSlotPathForUser", "lan__save__helpers_8c.html#ad45135b07dc8a3f36b5e7a99ee728e6c", null ],
     [ "GetSlotPathForUsername", "lan__save__helpers_8c.html#a634183521fafd79ce08e2cba8d07d2ae", null ],
     [ "TrovaRecv", "lan__save__helpers_8c.html#a2be1321ebd26526dd8e93c9312b068dc", null ],
-    [ "recvs", "lan__save__helpers_8c.html#a9ca04c95e094afdec5e6ed9beaf7c47b", null ]
+    [ "recv", "lan__save__helpers_8c.html#a88a7d1cd7ddd2130b1f795bb0338bde0", null ]
 ];

@@ -20,5 +20,6 @@ var group__auth__impl =
     [ "nomeCount", "group__auth__impl.html#ga8576d027f30608a7448b5e4a6887f2e2", null ],
     [ "passCount", "group__auth__impl.html#ga415b2b418d3a90a6e1da72992e7577aa", null ],
     [ "pinCount", "group__auth__impl.html#ga5058e2763f324b4146cfa8af36168478", null ],
-    [ "usernameCount", "group__auth__impl.html#gabd5ade42baf19a2a2ffa715960842dfd", null ]
+    [ "usernameCount", "group__auth__impl.html#gabd5ade42baf19a2a2ffa715960842dfd", null ],
+    [ "utenti_bst", "group__auth__impl.html#gad1120987e1738e9f3b30315606f87feb", null ]
 ];

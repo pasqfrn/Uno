@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file src/list.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file list.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -112,21 +129,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('list_8c.html',
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr class="memitem:ga0c38f3271c6962cd2986a14f57532bcd" id="r_ga0c38f3271c6962cd2986a14f57532bcd"><td class="memItemLeft"><a class="el" href="struct_lista_carte.html">ListaCarte</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga0c38f3271c6962cd2986a14f57532bcd">CreaLista</a> (void)</td></tr>
+<tr class="memitem:ga0c38f3271c6962cd2986a14f57532bcd" id="r_ga0c38f3271c6962cd2986a14f57532bcd"><td class="memItemLeft"><a class="el" href="structListaCarte.html">ListaCarte</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga0c38f3271c6962cd2986a14f57532bcd">CreaLista</a> (void)</td></tr>
 <tr class="memdesc:ga0c38f3271c6962cd2986a14f57532bcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una nuova lista di carte vuota.  <br /></td></tr>
-<tr class="memitem:ga99ebb60bca506018590520094caae2a6" id="r_ga99ebb60bca506018590520094caae2a6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga99ebb60bca506018590520094caae2a6">InsertInCoda</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista, <a class="el" href="struct_carta.html">Carta</a> carta)</td></tr>
+<tr class="memitem:ga99ebb60bca506018590520094caae2a6" id="r_ga99ebb60bca506018590520094caae2a6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga99ebb60bca506018590520094caae2a6">InsertInCoda</a> (<a class="el" href="structListaCarte.html">ListaCarte</a> *lista, <a class="el" href="structCarta.html">Carta</a> carta)</td></tr>
 <tr class="memdesc:ga99ebb60bca506018590520094caae2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce una carta in coda alla lista.  <br /></td></tr>
-<tr class="memitem:ga74d8335a000844920df5cfb67baf56df" id="r_ga74d8335a000844920df5cfb67baf56df"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga74d8335a000844920df5cfb67baf56df">InsertInTesta</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista, <a class="el" href="struct_carta.html">Carta</a> carta)</td></tr>
+<tr class="memitem:ga74d8335a000844920df5cfb67baf56df" id="r_ga74d8335a000844920df5cfb67baf56df"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga74d8335a000844920df5cfb67baf56df">InsertInTesta</a> (<a class="el" href="structListaCarte.html">ListaCarte</a> *lista, <a class="el" href="structCarta.html">Carta</a> carta)</td></tr>
 <tr class="memdesc:ga74d8335a000844920df5cfb67baf56df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce una carta in testa alla lista.  <br /></td></tr>
-<tr class="memitem:ga866f9235d9bfa09e3b1482f827bae3e0" id="r_ga866f9235d9bfa09e3b1482f827bae3e0"><td class="memItemLeft"><a class="el" href="struct_nodo_carta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga866f9235d9bfa09e3b1482f827bae3e0">GetAt</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista, int indice)</td></tr>
+<tr class="memitem:ga866f9235d9bfa09e3b1482f827bae3e0" id="r_ga866f9235d9bfa09e3b1482f827bae3e0"><td class="memItemLeft"><a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga866f9235d9bfa09e3b1482f827bae3e0">GetAt</a> (<a class="el" href="structListaCarte.html">ListaCarte</a> *lista, int indice)</td></tr>
 <tr class="memdesc:ga866f9235d9bfa09e3b1482f827bae3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ottiene il nodo all'indice specificato (0-based).  <br /></td></tr>
-<tr class="memitem:gab485ba1cca6279265705a27e47a47285" id="r_gab485ba1cca6279265705a27e47a47285"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#gab485ba1cca6279265705a27e47a47285">RemoveAt</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista, int indice)</td></tr>
+<tr class="memitem:gab485ba1cca6279265705a27e47a47285" id="r_gab485ba1cca6279265705a27e47a47285"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#gab485ba1cca6279265705a27e47a47285">RemoveAt</a> (<a class="el" href="structListaCarte.html">ListaCarte</a> *lista, int indice)</td></tr>
 <tr class="memdesc:gab485ba1cca6279265705a27e47a47285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove la carta all'indice specificato.  <br /></td></tr>
-<tr class="memitem:gad52b0b3db79ecc32ccc0840add1a68f4" id="r_gad52b0b3db79ecc32ccc0840add1a68f4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#gad52b0b3db79ecc32ccc0840add1a68f4">RemoveNode</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista, <a class="el" href="struct_nodo_carta.html">NodoCarta</a> *nodo)</td></tr>
+<tr class="memitem:gad52b0b3db79ecc32ccc0840add1a68f4" id="r_gad52b0b3db79ecc32ccc0840add1a68f4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#gad52b0b3db79ecc32ccc0840add1a68f4">RemoveNode</a> (<a class="el" href="structListaCarte.html">ListaCarte</a> *lista, <a class="el" href="structNodoCarta.html">NodoCarta</a> *nodo)</td></tr>
 <tr class="memdesc:gad52b0b3db79ecc32ccc0840add1a68f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un nodo specifico dalla lista.  <br /></td></tr>
-<tr class="memitem:ga77562ee3084da27182cc68c8a54a4725" id="r_ga77562ee3084da27182cc68c8a54a4725"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga77562ee3084da27182cc68c8a54a4725">EliminaLista</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista)</td></tr>
+<tr class="memitem:ga77562ee3084da27182cc68c8a54a4725" id="r_ga77562ee3084da27182cc68c8a54a4725"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#ga77562ee3084da27182cc68c8a54a4725">EliminaLista</a> (<a class="el" href="structListaCarte.html">ListaCarte</a> *lista)</td></tr>
 <tr class="memdesc:ga77562ee3084da27182cc68c8a54a4725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina completamente la lista e libera la memoria.  <br /></td></tr>
-<tr class="memitem:gad8af731ad3dbcb8a0b952c49158d7433" id="r_gad8af731ad3dbcb8a0b952c49158d7433"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#gad8af731ad3dbcb8a0b952c49158d7433">StampaLista</a> (<a class="el" href="struct_lista_carte.html">ListaCarte</a> *lista)</td></tr>
+<tr class="memitem:gad8af731ad3dbcb8a0b952c49158d7433" id="r_gad8af731ad3dbcb8a0b952c49158d7433"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__list.html#gad8af731ad3dbcb8a0b952c49158d7433">StampaLista</a> (<a class="el" href="structListaCarte.html">ListaCarte</a> *lista)</td></tr>
 <tr class="memdesc:gad8af731ad3dbcb8a0b952c49158d7433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stampa il contenuto della lista su stdout (debug).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
@@ -154,8 +171,8 @@ Funzioni</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="list_8c.html">list.c</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="list_8c.html">list.c</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

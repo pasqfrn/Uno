@@ -1,0 +1,711 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UNO - Gioco di Carte: Riferimenti per la struct StatoGioco</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('structStatoGioco.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per la struct StatoGioco</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Stato completo di una partita in corso.  
+ <a href="#details">Continua...</a></p>
+
+<p><code>#include &lt;<a class="el" href="game__state_8h_source.html">game_state.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Campi</h2></td></tr>
+<tr class="memitem:afc9fe2cc95071032381b5fee85bc7b4d" id="r_afc9fe2cc95071032381b5fee85bc7b4d"><td class="memItemLeft"><a class="el" href="structGiocatore.html">Giocatore</a>&#160;</td><td class="memItemRight"><a class="el" href="#afc9fe2cc95071032381b5fee85bc7b4d">giocatori</a> [4]</td></tr>
+<tr class="memitem:a58b8ca98ddd90508c9d31a3d518f30fa" id="r_a58b8ca98ddd90508c9d31a3d518f30fa"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a58b8ca98ddd90508c9d31a3d518f30fa">num_giocatori</a></td></tr>
+<tr class="memitem:a67281efcd0e938ffbe135f1812a6abe3" id="r_a67281efcd0e938ffbe135f1812a6abe3"><td class="memItemLeft"><a class="el" href="structCarta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="#a67281efcd0e938ffbe135f1812a6abe3">mazzo</a> [108]</td></tr>
+<tr class="memitem:a88ef8d87de962aa187c874b95a787da1" id="r_a88ef8d87de962aa187c874b95a787da1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a88ef8d87de962aa187c874b95a787da1">num_carte_mazzo</a></td></tr>
+<tr class="memitem:a4bdf593bc582e401fd9ed967c2026853" id="r_a4bdf593bc582e401fd9ed967c2026853"><td class="memItemLeft"><a class="el" href="structCarta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="#a4bdf593bc582e401fd9ed967c2026853">scarti</a> [108]</td></tr>
+<tr class="memitem:a407cd9244913d7524fb090b77a989780" id="r_a407cd9244913d7524fb090b77a989780"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a407cd9244913d7524fb090b77a989780">num_carte_scarti</a></td></tr>
+<tr class="memitem:a8f1416d2f035e301ec99b2c21a697f47" id="r_a8f1416d2f035e301ec99b2c21a697f47"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a8f1416d2f035e301ec99b2c21a697f47">turno_corrente</a></td></tr>
+<tr class="memitem:acceb5d9f4390a7a89d73962eaeb100aa" id="r_acceb5d9f4390a7a89d73962eaeb100aa"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#acceb5d9f4390a7a89d73962eaeb100aa">direzione</a></td></tr>
+<tr class="memitem:a74d7aa15f671b9bfefa18ac1cf0c84ea" id="r_a74d7aa15f671b9bfefa18ac1cf0c84ea"><td class="memItemLeft"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a>&#160;</td><td class="memItemRight"><a class="el" href="#a74d7aa15f671b9bfefa18ac1cf0c84ea">colore_attivo</a></td></tr>
+<tr class="memitem:a03439e6c9077fa496b326a68b1793619" id="r_a03439e6c9077fa496b326a68b1793619"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a03439e6c9077fa496b326a68b1793619">id_carta_in_trascinamento</a></td></tr>
+<tr class="memitem:a6beedf5acfde19afffa91dcbff8dcf65" id="r_a6beedf5acfde19afffa91dcbff8dcf65"><td class="memItemLeft"><a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a6beedf5acfde19afffa91dcbff8dcf65">nodo_carta_trascinata</a></td></tr>
+<tr class="memitem:a4d59c8b2f015e4359516cb476320255b" id="r_a4d59c8b2f015e4359516cb476320255b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a4d59c8b2f015e4359516cb476320255b">gioco_finito</a></td></tr>
+<tr class="memitem:aeff81de05b55c2247deb3b3665d4de9d" id="r_aeff81de05b55c2247deb3b3665d4de9d"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#aeff81de05b55c2247deb3b3665d4de9d">messaggio</a> [100]</td></tr>
+<tr class="memitem:a00d3dedc6f537629b77b442bd2443ff9" id="r_a00d3dedc6f537629b77b442bd2443ff9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a00d3dedc6f537629b77b442bd2443ff9">anim_attiva</a></td></tr>
+<tr class="memitem:a6b04e0d2301980012941acd88b45e2e1" id="r_a6b04e0d2301980012941acd88b45e2e1"><td class="memItemLeft"><a class="el" href="structCarta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="#a6b04e0d2301980012941acd88b45e2e1">anim_carta</a></td></tr>
+<tr class="memitem:a10f72a052336fefa168cd2c5948026eb" id="r_a10f72a052336fefa168cd2c5948026eb"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#a10f72a052336fefa168cd2c5948026eb">anim_start</a></td></tr>
+<tr class="memitem:a90bae182b30c7b621624dc3af746ee80" id="r_a90bae182b30c7b621624dc3af746ee80"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#a90bae182b30c7b621624dc3af746ee80">anim_end</a></td></tr>
+<tr class="memitem:a819b745b3c098cea5a3f846ea68fe4c2" id="r_a819b745b3c098cea5a3f846ea68fe4c2"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a819b745b3c098cea5a3f846ea68fe4c2">anim_t</a></td></tr>
+<tr class="memitem:a3bc5fbe76d9d128bcc952ed57d0dca26" id="r_a3bc5fbe76d9d128bcc952ed57d0dca26"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3bc5fbe76d9d128bcc952ed57d0dca26">tipo_animazione</a></td></tr>
+<tr class="memitem:aeb67d15003bf5a99247679660daf8eb4" id="r_aeb67d15003bf5a99247679660daf8eb4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aeb67d15003bf5a99247679660daf8eb4">in_scelta_colore</a></td></tr>
+<tr class="memitem:adcd01ff65081a7d26ec7a893552872a5" id="r_adcd01ff65081a7d26ec7a893552872a5"><td class="memItemLeft"><a class="el" href="structCarta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="#adcd01ff65081a7d26ec7a893552872a5">carta_pendente</a></td></tr>
+<tr class="memitem:a7893a4cbfd40913396a71c865f75e105" id="r_a7893a4cbfd40913396a71c865f75e105"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a7893a4cbfd40913396a71c865f75e105">deve_chiamare_uno</a></td></tr>
+<tr class="memitem:a69a7cf4db8b6ce8d66750a3e06d403a2" id="r_a69a7cf4db8b6ce8d66750a3e06d403a2"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a69a7cf4db8b6ce8d66750a3e06d403a2">timer_uno</a></td></tr>
+<tr class="memitem:a4cce055221d6d802a3e7cb9f22e4260a" id="r_a4cce055221d6d802a3e7cb9f22e4260a"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a4cce055221d6d802a3e7cb9f22e4260a">notifica</a> [128]</td></tr>
+<tr class="memitem:a89df943210c791c241cd5cfdc6da5661" id="r_a89df943210c791c241cd5cfdc6da5661"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a89df943210c791c241cd5cfdc6da5661">timer_notifica</a></td></tr>
+<tr class="memitem:aebcae6307fff59f7a86f8f25ca42e5c3" id="r_aebcae6307fff59f7a86f8f25ca42e5c3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aebcae6307fff59f7a86f8f25ca42e5c3">autore_animazione</a></td></tr>
+<tr class="memitem:a6df6ba1c119c0b940ab582e0b5288553" id="r_a6df6ba1c119c0b940ab582e0b5288553"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a6df6ba1c119c0b940ab582e0b5288553">anim_pesca_count</a></td></tr>
+<tr class="memitem:aa2828dc9d8268df45ffb15eaa61fda5e" id="r_aa2828dc9d8268df45ffb15eaa61fda5e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#aa2828dc9d8268df45ffb15eaa61fda5e">anim_gia_applicata</a></td></tr>
+<tr class="memitem:a096a6b669ea4b3eaeb7671683656385e" id="r_a096a6b669ea4b3eaeb7671683656385e"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a096a6b669ea4b3eaeb7671683656385e">chat_buffer</a> [256]</td></tr>
+<tr class="memitem:a6fd1ed705d6ebec5dc51363b3fbe7adb" id="r_a6fd1ed705d6ebec5dc51363b3fbe7adb"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a6fd1ed705d6ebec5dc51363b3fbe7adb">durata_partita</a></td></tr>
+<tr class="memitem:a33592b7050a50332a06e5bbddce422c1" id="r_a33592b7050a50332a06e5bbddce422c1"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a33592b7050a50332a06e5bbddce422c1">chat_history</a> [15][128]</td></tr>
+<tr class="memitem:a8f7a93125fe682a80d2e0c586084c5ab" id="r_a8f7a93125fe682a80d2e0c586084c5ab"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a8f7a93125fe682a80d2e0c586084c5ab">num_chat_msg</a></td></tr>
+<tr class="memitem:ad453ebf03c18ede0c53087d20bb2db48" id="r_ad453ebf03c18ede0c53087d20bb2db48"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ad453ebf03c18ede0c53087d20bb2db48">chat_aperta</a></td></tr>
+<tr class="memitem:a98fd0157d290ee7f5f77a90b612c9254" id="r_a98fd0157d290ee7f5f77a90b612c9254"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a98fd0157d290ee7f5f77a90b612c9254">slot_salvataggio</a></td></tr>
+<tr class="memitem:a7b1d2fdd92ac7429cc9d00be4dc7e237" id="r_a7b1d2fdd92ac7429cc9d00be4dc7e237"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a7b1d2fdd92ac7429cc9d00be4dc7e237">data_salvataggio</a> [30]</td></tr>
+<tr class="memitem:adb8540aebbc52c3f5751d9dbcbf331d4" id="r_adb8540aebbc52c3f5751d9dbcbf331d4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#adb8540aebbc52c3f5751d9dbcbf331d4">statistiche_gia_salvate</a></td></tr>
+<tr class="memitem:a753e93c4f222fb894447df926ec85209" id="r_a753e93c4f222fb894447df926ec85209"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a753e93c4f222fb894447df926ec85209">modalita</a> [20]</td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Stato completo di una partita in corso. </p>
+<p>Contiene tutti i dati necessari per gestire il gameplay: giocatori, mazzo, scarti, turno, animazioni, chat, UNO, ecc. Questa struttura viene serializzata per il salvataggio su file e per la sincronizzazione multiplayer via socket. </p>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentazione dei campi</h2>
+<a id="a00d3dedc6f537629b77b442bd2443ff9" name="a00d3dedc6f537629b77b442bd2443ff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00d3dedc6f537629b77b442bd2443ff9">&#9670;&#160;</a></span>anim_attiva</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::anim_attiva</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b04e0d2301980012941acd88b45e2e1" name="a6b04e0d2301980012941acd88b45e2e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b04e0d2301980012941acd88b45e2e1">&#9670;&#160;</a></span>anim_carta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCarta.html">Carta</a> StatoGioco::anim_carta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a90bae182b30c7b621624dc3af746ee80" name="a90bae182b30c7b621624dc3af746ee80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90bae182b30c7b621624dc3af746ee80">&#9670;&#160;</a></span>anim_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2 StatoGioco::anim_end</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2828dc9d8268df45ffb15eaa61fda5e" name="aa2828dc9d8268df45ffb15eaa61fda5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2828dc9d8268df45ffb15eaa61fda5e">&#9670;&#160;</a></span>anim_gia_applicata</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::anim_gia_applicata</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6df6ba1c119c0b940ab582e0b5288553" name="a6df6ba1c119c0b940ab582e0b5288553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6df6ba1c119c0b940ab582e0b5288553">&#9670;&#160;</a></span>anim_pesca_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::anim_pesca_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10f72a052336fefa168cd2c5948026eb" name="a10f72a052336fefa168cd2c5948026eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10f72a052336fefa168cd2c5948026eb">&#9670;&#160;</a></span>anim_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2 StatoGioco::anim_start</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a819b745b3c098cea5a3f846ea68fe4c2" name="a819b745b3c098cea5a3f846ea68fe4c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a819b745b3c098cea5a3f846ea68fe4c2">&#9670;&#160;</a></span>anim_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float StatoGioco::anim_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aebcae6307fff59f7a86f8f25ca42e5c3" name="aebcae6307fff59f7a86f8f25ca42e5c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebcae6307fff59f7a86f8f25ca42e5c3">&#9670;&#160;</a></span>autore_animazione</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::autore_animazione</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adcd01ff65081a7d26ec7a893552872a5" name="adcd01ff65081a7d26ec7a893552872a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcd01ff65081a7d26ec7a893552872a5">&#9670;&#160;</a></span>carta_pendente</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCarta.html">Carta</a> StatoGioco::carta_pendente</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad453ebf03c18ede0c53087d20bb2db48" name="ad453ebf03c18ede0c53087d20bb2db48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad453ebf03c18ede0c53087d20bb2db48">&#9670;&#160;</a></span>chat_aperta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::chat_aperta</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a096a6b669ea4b3eaeb7671683656385e" name="a096a6b669ea4b3eaeb7671683656385e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096a6b669ea4b3eaeb7671683656385e">&#9670;&#160;</a></span>chat_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char StatoGioco::chat_buffer[256]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a33592b7050a50332a06e5bbddce422c1" name="a33592b7050a50332a06e5bbddce422c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33592b7050a50332a06e5bbddce422c1">&#9670;&#160;</a></span>chat_history</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char StatoGioco::chat_history[15][128]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74d7aa15f671b9bfefa18ac1cf0c84ea" name="a74d7aa15f671b9bfefa18ac1cf0c84ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74d7aa15f671b9bfefa18ac1cf0c84ea">&#9670;&#160;</a></span>colore_attivo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> StatoGioco::colore_attivo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b1d2fdd92ac7429cc9d00be4dc7e237" name="a7b1d2fdd92ac7429cc9d00be4dc7e237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b1d2fdd92ac7429cc9d00be4dc7e237">&#9670;&#160;</a></span>data_salvataggio</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char StatoGioco::data_salvataggio[30]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7893a4cbfd40913396a71c865f75e105" name="a7893a4cbfd40913396a71c865f75e105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7893a4cbfd40913396a71c865f75e105">&#9670;&#160;</a></span>deve_chiamare_uno</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::deve_chiamare_uno</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acceb5d9f4390a7a89d73962eaeb100aa" name="acceb5d9f4390a7a89d73962eaeb100aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acceb5d9f4390a7a89d73962eaeb100aa">&#9670;&#160;</a></span>direzione</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::direzione</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6fd1ed705d6ebec5dc51363b3fbe7adb" name="a6fd1ed705d6ebec5dc51363b3fbe7adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fd1ed705d6ebec5dc51363b3fbe7adb">&#9670;&#160;</a></span>durata_partita</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float StatoGioco::durata_partita</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc9fe2cc95071032381b5fee85bc7b4d" name="afc9fe2cc95071032381b5fee85bc7b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc9fe2cc95071032381b5fee85bc7b4d">&#9670;&#160;</a></span>giocatori</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structGiocatore.html">Giocatore</a> StatoGioco::giocatori[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d59c8b2f015e4359516cb476320255b" name="a4d59c8b2f015e4359516cb476320255b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d59c8b2f015e4359516cb476320255b">&#9670;&#160;</a></span>gioco_finito</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::gioco_finito</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03439e6c9077fa496b326a68b1793619" name="a03439e6c9077fa496b326a68b1793619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03439e6c9077fa496b326a68b1793619">&#9670;&#160;</a></span>id_carta_in_trascinamento</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::id_carta_in_trascinamento</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeb67d15003bf5a99247679660daf8eb4" name="aeb67d15003bf5a99247679660daf8eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb67d15003bf5a99247679660daf8eb4">&#9670;&#160;</a></span>in_scelta_colore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::in_scelta_colore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67281efcd0e938ffbe135f1812a6abe3" name="a67281efcd0e938ffbe135f1812a6abe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67281efcd0e938ffbe135f1812a6abe3">&#9670;&#160;</a></span>mazzo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCarta.html">Carta</a> StatoGioco::mazzo[108]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeff81de05b55c2247deb3b3665d4de9d" name="aeff81de05b55c2247deb3b3665d4de9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeff81de05b55c2247deb3b3665d4de9d">&#9670;&#160;</a></span>messaggio</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char StatoGioco::messaggio[100]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a753e93c4f222fb894447df926ec85209" name="a753e93c4f222fb894447df926ec85209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a753e93c4f222fb894447df926ec85209">&#9670;&#160;</a></span>modalita</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char StatoGioco::modalita[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6beedf5acfde19afffa91dcbff8dcf65" name="a6beedf5acfde19afffa91dcbff8dcf65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6beedf5acfde19afffa91dcbff8dcf65">&#9670;&#160;</a></span>nodo_carta_trascinata</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structNodoCarta.html">NodoCarta</a>* StatoGioco::nodo_carta_trascinata</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cce055221d6d802a3e7cb9f22e4260a" name="a4cce055221d6d802a3e7cb9f22e4260a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cce055221d6d802a3e7cb9f22e4260a">&#9670;&#160;</a></span>notifica</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char StatoGioco::notifica[128]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88ef8d87de962aa187c874b95a787da1" name="a88ef8d87de962aa187c874b95a787da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ef8d87de962aa187c874b95a787da1">&#9670;&#160;</a></span>num_carte_mazzo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::num_carte_mazzo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a407cd9244913d7524fb090b77a989780" name="a407cd9244913d7524fb090b77a989780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a407cd9244913d7524fb090b77a989780">&#9670;&#160;</a></span>num_carte_scarti</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::num_carte_scarti</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f7a93125fe682a80d2e0c586084c5ab" name="a8f7a93125fe682a80d2e0c586084c5ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f7a93125fe682a80d2e0c586084c5ab">&#9670;&#160;</a></span>num_chat_msg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::num_chat_msg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a58b8ca98ddd90508c9d31a3d518f30fa" name="a58b8ca98ddd90508c9d31a3d518f30fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58b8ca98ddd90508c9d31a3d518f30fa">&#9670;&#160;</a></span>num_giocatori</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::num_giocatori</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4bdf593bc582e401fd9ed967c2026853" name="a4bdf593bc582e401fd9ed967c2026853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bdf593bc582e401fd9ed967c2026853">&#9670;&#160;</a></span>scarti</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCarta.html">Carta</a> StatoGioco::scarti[108]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98fd0157d290ee7f5f77a90b612c9254" name="a98fd0157d290ee7f5f77a90b612c9254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98fd0157d290ee7f5f77a90b612c9254">&#9670;&#160;</a></span>slot_salvataggio</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::slot_salvataggio</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb8540aebbc52c3f5751d9dbcbf331d4" name="adb8540aebbc52c3f5751d9dbcbf331d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb8540aebbc52c3f5751d9dbcbf331d4">&#9670;&#160;</a></span>statistiche_gia_salvate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::statistiche_gia_salvate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89df943210c791c241cd5cfdc6da5661" name="a89df943210c791c241cd5cfdc6da5661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89df943210c791c241cd5cfdc6da5661">&#9670;&#160;</a></span>timer_notifica</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float StatoGioco::timer_notifica</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69a7cf4db8b6ce8d66750a3e06d403a2" name="a69a7cf4db8b6ce8d66750a3e06d403a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a7cf4db8b6ce8d66750a3e06d403a2">&#9670;&#160;</a></span>timer_uno</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float StatoGioco::timer_uno</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3bc5fbe76d9d128bcc952ed57d0dca26" name="a3bc5fbe76d9d128bcc952ed57d0dca26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bc5fbe76d9d128bcc952ed57d0dca26">&#9670;&#160;</a></span>tipo_animazione</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::tipo_animazione</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f1416d2f035e301ec99b2c21a697f47" name="a8f1416d2f035e301ec99b2c21a697f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1416d2f035e301ec99b2c21a697f47">&#9670;&#160;</a></span>turno_corrente</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int StatoGioco::turno_corrente</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentazione per questa struct è stata generata a partire dal seguente file:<ul>
+<li><a class="el" href="game__state_8h_source.html">game_state.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="structStatoGioco.html">StatoGioco</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

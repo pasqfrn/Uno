@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Campi dei dati</title>
+<title>UNO - Gioco di Carte: Campi dei dati</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,34 +117,27 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_p.ht
 
 <div class="contents">
 <div class="textblock">Questo è un elenco di tutte le struct e le union con collegamenti alla documentazione della struct/union per ciascun campo:</div><br/>
-<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_x.html#index_x">X</a><div class="alphasepar"></div><a class="qindex" href="functions_y.html#index_y">Y</a><div class="alphasepar"></div><a class="qindex" href="functions_z.html#index_z">Z</a></div>
+<div class="qindex"><a class="qindex" href="functions.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="functions_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_w.html#index_w">W</a></div>
 
 
 <h3 class="doxsection"><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>params&#160;:&#160;<a class="el" href="struct_automation_event.html#ac4c915812016013c5706329dbe5fad10">AutomationEvent</a>, <a class="el" href="struct_material.html#a680c1e5c3f4c1872679fd8c629ec3f49">Material</a></li>
-<li>parent&#160;:&#160;<a class="el" href="struct_bone_info.html#a1e7ec388c54e16a6396e5a5f3f3438c6">BoneInfo</a></li>
-<li>partite_giocate&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gad64d5575b39ad5dc8f2462b8ead65941">AdminUserSyncData</a>, <a class="el" href="struct_lan_compact_user.html#af721a416f4999ddfd6519d6919031672">LanCompactUser</a>, <a class="el" href="struct_lan_stats_sync_packet.html#a52179854521a0c864a080bf2109188a9">LanStatsSyncPacket</a>, <a class="el" href="struct_statistiche.html#a59f4d1460def17b90f9f3672e1477aba">Statistiche</a>, <a class="el" href="group__network__packet__strutture.html#gabcb39d60ae8573ad6547aa17daf77872">StatsSyncPacket</a></li>
-<li>password&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga1b78f9830a1a67d47bc8825c8f73d801">AdminUserSyncData</a>, <a class="el" href="struct_lan_compact_user.html#a85d6e4d8e8ed7db4db64c510cb968b6d">LanCompactUser</a>, <a class="el" href="struct_statistiche.html#a1acca010d53d5beb01cbd476c309d535">Statistiche</a>, <a class="el" href="struct_utente.html#af0a5d28aaf3a93d2e5a82e57f4a04286">Utente</a></li>
-<li>paths&#160;:&#160;<a class="el" href="struct_file_path_list.html#a63c9b7e49a3af81cbb46659871480db5">FilePathList</a></li>
-<li>percorso&#160;:&#160;<a class="el" href="struct_temp_save.html#aafd3dd343487df624e487ed3ed4c27a4">TempSave</a></li>
-<li>pin_recupero&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga02026535119c49cc438aaf35e09b14c4">AdminUserSyncData</a>, <a class="el" href="struct_lan_compact_user.html#a0d0e9168df6a851f5eee6126f1424ef8">LanCompactUser</a>, <a class="el" href="struct_statistiche.html#a8c5f5abec231bae7ccef86f41d8fb08d">Statistiche</a></li>
+<li>partite_giocate&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gad64d5575b39ad5dc8f2462b8ead65941">AdminUserSyncData</a>, <a class="el" href="structLanCompactUser.html#af721a416f4999ddfd6519d6919031672">LanCompactUser</a>, <a class="el" href="structLanStatsSyncPacket.html#a52179854521a0c864a080bf2109188a9">LanStatsSyncPacket</a>, <a class="el" href="structStatistiche.html#a59f4d1460def17b90f9f3672e1477aba">Statistiche</a>, <a class="el" href="group__network__packet__strutture.html#gabcb39d60ae8573ad6547aa17daf77872">StatsSyncPacket</a></li>
+<li>password&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga1b78f9830a1a67d47bc8825c8f73d801">AdminUserSyncData</a>, <a class="el" href="structLanCompactUser.html#a85d6e4d8e8ed7db4db64c510cb968b6d">LanCompactUser</a>, <a class="el" href="structStatistiche.html#a1acca010d53d5beb01cbd476c309d535">Statistiche</a>, <a class="el" href="structUtente.html#af0a5d28aaf3a93d2e5a82e57f4a04286">Utente</a></li>
+<li>percorso&#160;:&#160;<a class="el" href="structTempSave.html#aafd3dd343487df624e487ed3ed4c27a4">TempSave</a></li>
+<li>pin_recupero&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga02026535119c49cc438aaf35e09b14c4">AdminUserSyncData</a>, <a class="el" href="structLanCompactUser.html#a0d0e9168df6a851f5eee6126f1424ef8">LanCompactUser</a>, <a class="el" href="structStatistiche.html#a8c5f5abec231bae7ccef86f41d8fb08d">Statistiche</a></li>
 <li>play_again&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gaa00db0a05b0d2dcb217cd435b8c84ede">NetPacket</a>, <a class="el" href="group__network__packet__strutture.html#ga454d43cfb2e2f467f504863d363ca274">PacketPlayAgain</a></li>
 <li>player_hand&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gafae35b798ce130ffa2a4db68d44ebb40">NetPacket</a></li>
-<li>player_id&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga60f45f1c8c69bb485dedd5040b62b2b7">PacketChat</a>, <a class="el" href="group__network__packet__strutture.html#gae9866ba217c36a39ba4073858855caa6">PacketColorChoice</a>, <a class="el" href="group__network__packet__strutture.html#ga7d75ebf8c21ea768951f8e26dbd16884">PacketDraw</a>, <a class="el" href="group__network__packet__strutture.html#ga0e2259a91f1626c4c9f20d490768de33">PacketHeartbeat</a>, <a class="el" href="group__network__packet__strutture.html#ga48dff0aed0d8c66bd700afea6aad9b38">PacketMove</a>, <a class="el" href="group__network__packet__strutture.html#gafb6a63ee6a6c7a4499d44aaebaf475e2">PacketPlayAgain</a>, <a class="el" href="group__network__packet__strutture.html#gaca097944b71b7a8406b93e4b3ed2db4f">PacketPlayerHand</a>, <a class="el" href="group__network__packet__strutture.html#gad64175c30986eb4c8a88b0c49817bdbc">PacketPlayerReady</a>, <a class="el" href="struct_session_player.html#a7ee81ac7c5568f7c20b1012d1d703f5b">SessionPlayer</a></li>
+<li>player_id&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga60f45f1c8c69bb485dedd5040b62b2b7">PacketChat</a>, <a class="el" href="group__network__packet__strutture.html#gae9866ba217c36a39ba4073858855caa6">PacketColorChoice</a>, <a class="el" href="group__network__packet__strutture.html#ga7d75ebf8c21ea768951f8e26dbd16884">PacketDraw</a>, <a class="el" href="group__network__packet__strutture.html#ga0e2259a91f1626c4c9f20d490768de33">PacketHeartbeat</a>, <a class="el" href="group__network__packet__strutture.html#ga48dff0aed0d8c66bd700afea6aad9b38">PacketMove</a>, <a class="el" href="group__network__packet__strutture.html#gafb6a63ee6a6c7a4499d44aaebaf475e2">PacketPlayAgain</a>, <a class="el" href="group__network__packet__strutture.html#gaca097944b71b7a8406b93e4b3ed2db4f">PacketPlayerHand</a>, <a class="el" href="group__network__packet__strutture.html#gad64175c30986eb4c8a88b0c49817bdbc">PacketPlayerReady</a>, <a class="el" href="structSessionPlayer.html#a7ee81ac7c5568f7c20b1012d1d703f5b">SessionPlayer</a></li>
 <li>player_name&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga6912d90f8d9510ad4cf57b0fcab88420">PacketJoinSession</a>, <a class="el" href="group__network__packet__strutture.html#gad0e5cb99e6d44afb1297610a71ff0839">PacketPlayAgain</a></li>
 <li>player_names&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga0def821662805847be2754df1a8d20e8">PacketSessionState</a></li>
 <li>player_ready&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gacb05063e5d95dfe6ca677bc01d137d91">NetPacket</a>, <a class="el" href="group__network__packet__strutture.html#ga6085b0d4fafdb89b59b149d6968b4b69">PacketSessionState</a></li>
-<li>players&#160;:&#160;<a class="el" href="struct_game_session.html#a8c4fe498314f1d64a47c21327a20ebd9">GameSession</a></li>
-<li>point&#160;:&#160;<a class="el" href="struct_ray_collision.html#a98e698fb51ca8534769791a316e64052">RayCollision</a></li>
-<li>position&#160;:&#160;<a class="el" href="struct_camera3_d.html#a78c3d3310cebdfe1054e10f62c8d15ce">Camera3D</a>, <a class="el" href="struct_ray.html#a8dcf55a86abd8b716a0f4be6900ac51b">Ray</a></li>
-<li>posizione&#160;:&#160;<a class="el" href="struct_classifica_record.html#a66203cea3f610966b073a091c7f9dfff">ClassificaRecord</a>, <a class="el" href="struct_partita_registrata.html#a5fdaa75d7f3fb26e701da9e04fbe7bdb">PartitaRegistrata</a></li>
+<li>players&#160;:&#160;<a class="el" href="structGameSession.html#a8c4fe498314f1d64a47c21327a20ebd9">GameSession</a></li>
+<li>posizione&#160;:&#160;<a class="el" href="structClassificaRecord.html#a66203cea3f610966b073a091c7f9dfff">ClassificaRecord</a>, <a class="el" href="structPartitaRegistrata.html#a5fdaa75d7f3fb26e701da9e04fbe7bdb">PartitaRegistrata</a></li>
 <li>posizione_ultima&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gad5ea8e8bdf83a475ded43b43b7613670">StatsSyncPacket</a></li>
-<li>posOriginale&#160;:&#160;<a class="el" href="struct_carta.html#af2ba5c3d53a4af20c84bfa8e87a11003">Carta</a></li>
-<li>prev&#160;:&#160;<a class="el" href="struct_nodo_carta.html#a79d379018c2987198cab3d3e198b6d67">NodoCarta</a>, <a class="el" href="struct_nodo_coda.html#a598e00f9d4a4d91061737683582ca45f">NodoCoda</a></li>
-<li>priorita&#160;:&#160;<a class="el" href="struct_nodo_decisione.html#a919f84c8c6feb0423135bdc90f234071">NodoDecisione</a></li>
-<li>processor&#160;:&#160;<a class="el" href="struct_audio_stream.html#ac6d12728b428b4ad000c0621bcc15075">AudioStream</a></li>
-<li>projection&#160;:&#160;<a class="el" href="struct_camera3_d.html#a6bdd1f11cd4e3d72ac9321b15979f3f0">Camera3D</a>, <a class="el" href="struct_vr_stereo_config.html#abff33f3782ba267e7551eb92aa263037">VrStereoConfig</a></li>
-<li>prossimo&#160;:&#160;<a class="el" href="struct_nodo_carta.html#a38a4756098b91f388f6b762034cea50b">NodoCarta</a></li>
+<li>posOriginale&#160;:&#160;<a class="el" href="structCarta.html#af2ba5c3d53a4af20c84bfa8e87a11003">Carta</a></li>
+<li>prev&#160;:&#160;<a class="el" href="structNodoCarta.html#a79d379018c2987198cab3d3e198b6d67">NodoCarta</a>, <a class="el" href="structNodoCoda.html#a598e00f9d4a4d91061737683582ca45f">NodoCoda</a></li>
+<li>priorita&#160;:&#160;<a class="el" href="structNodoDecisione.html#a919f84c8c6feb0423135bdc90f234071">NodoDecisione</a></li>
+<li>prossimo&#160;:&#160;<a class="el" href="structNodoCarta.html#a38a4756098b91f388f6b762034cea50b">NodoCarta</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -135,7 +145,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_p.ht
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

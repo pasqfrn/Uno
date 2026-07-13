@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Logica di Gioco</title>
+<title>UNO - Gioco di Carte: Logica di Gioco</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -108,30 +125,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__game__l
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-files" class="groupheader"><a id="files" name="files"></a>
 File</h2></td></tr>
-<tr class="memitem:src_2Fgame_2Fdeck_2Ec" id="r_src_2Fgame_2Fdeck_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="deck_8c.html">src/game/deck.c</a></td></tr>
-<tr class="memdesc:deck_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestione mazzo di pesca e operazioni sulle carte. <br /></td></tr>
-<tr class="memitem:src_2Fgame_2Fgame_5Fflow_2Ec" id="r_src_2Fgame_2Fgame_5Fflow_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="game__flow_8c.html">src/game/game_flow.c</a></td></tr>
+<tr class="memitem:game_2Fdeck_2Ec" id="r_game_2Fdeck_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="deck_8c.html">game/deck.c</a></td></tr>
+<tr class="memdesc:deck_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestione mazzo di pesca, scarti e pesca carte. <br /></td></tr>
+<tr class="memitem:game_2Fgame_5Fflow_2Ec" id="r_game_2Fgame_5Fflow_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="game__flow_8c.html">game/game_flow.c</a></td></tr>
 <tr class="memdesc:game__flow_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestione flusso di gioco: inizializzazione, fine partita, ricostruzione ADT. <br /></td></tr>
-<tr class="memitem:src_2Fgame_2Fsave_5Fmanager_2Ec" id="r_src_2Fgame_2Fsave_5Fmanager_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="save__manager_8c.html">src/game/save_manager.c</a></td></tr>
+<tr class="memitem:game_2Fsave_5Fmanager_2Ec" id="r_game_2Fsave_5Fmanager_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="save__manager_8c.html">game/save_manager.c</a></td></tr>
 <tr class="memdesc:save__manager_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestione salvataggi partite su file binario. <br /></td></tr>
-<tr class="memitem:src_2Fgame_5Flogic_2Ec" id="r_src_2Fgame_5Flogic_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="game__logic_8c.html">src/game_logic.c</a></td></tr>
+<tr class="memitem:game_5Flogic_2Ec" id="r_game_5Flogic_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="game__logic_8c.html">game_logic.c</a></td></tr>
 <tr class="memdesc:game__logic_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementazione logica di gioco UNO: regole, effetti carte, validazione mosse e gestione ADT. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr class="memitem:ga2be362fe392971bbe8008aa9266cf539" id="r_ga2be362fe392971bbe8008aa9266cf539"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga2be362fe392971bbe8008aa9266cf539">InizializzaMazzo</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memitem:ga2be362fe392971bbe8008aa9266cf539" id="r_ga2be362fe392971bbe8008aa9266cf539"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga2be362fe392971bbe8008aa9266cf539">InizializzaMazzo</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco)</td></tr>
 <tr class="memdesc:ga2be362fe392971bbe8008aa9266cf539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza il mazzo di 108 carte UNO standard e le mescola (Fisher-Yates).  <br /></td></tr>
-<tr class="memitem:ga6fc614aadf58fe03606063067a2ad233" id="r_ga6fc614aadf58fe03606063067a2ad233"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6fc614aadf58fe03606063067a2ad233">RimescolaScartiNelMazzo</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memitem:ga6fc614aadf58fe03606063067a2ad233" id="r_ga6fc614aadf58fe03606063067a2ad233"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6fc614aadf58fe03606063067a2ad233">RimescolaScartiNelMazzo</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco)</td></tr>
 <tr class="memdesc:ga6fc614aadf58fe03606063067a2ad233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricarica il mazzo dalla pila scarti (mazzo esaurito).  <br /></td></tr>
-<tr class="memitem:gad1b01bee170bfe43e167097d8fa75b3c" id="r_gad1b01bee170bfe43e167097d8fa75b3c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gad1b01bee170bfe43e167097d8fa75b3c">Pesca</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, int id_giocatore, int quantita)</td></tr>
+<tr class="memitem:gad1b01bee170bfe43e167097d8fa75b3c" id="r_gad1b01bee170bfe43e167097d8fa75b3c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gad1b01bee170bfe43e167097d8fa75b3c">Pesca</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco, int id_giocatore, int quantita)</td></tr>
 <tr class="memdesc:gad1b01bee170bfe43e167097d8fa75b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fa pescare un numero di carte a un giocatore.  <br /></td></tr>
-<tr class="memitem:ga171821f60641393ff220f91b26e0325f" id="r_ga171821f60641393ff220f91b26e0325f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga171821f60641393ff220f91b26e0325f">GetLunghezzaMano</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memitem:ga171821f60641393ff220f91b26e0325f" id="r_ga171821f60641393ff220f91b26e0325f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga171821f60641393ff220f91b26e0325f">GetLunghezzaMano</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
 <tr class="memdesc:ga171821f60641393ff220f91b26e0325f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di carte nella mano di un giocatore.  <br /></td></tr>
-<tr class="memitem:ga5a26039c72d695715eb46d1dbe0f91ff" id="r_ga5a26039c72d695715eb46d1dbe0f91ff"><td class="memItemLeft"><a class="el" href="struct_nodo_carta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ga5a26039c72d695715eb46d1dbe0f91ff">GetNodoCartaGiocatore</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *g, int indice)</td></tr>
+<tr class="memitem:ga5a26039c72d695715eb46d1dbe0f91ff" id="r_ga5a26039c72d695715eb46d1dbe0f91ff"><td class="memItemLeft"><a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ga5a26039c72d695715eb46d1dbe0f91ff">GetNodoCartaGiocatore</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice)</td></tr>
 <tr class="memdesc:ga5a26039c72d695715eb46d1dbe0f91ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nodo carta per indice.  <br /></td></tr>
-<tr class="memitem:ga911f218567f81d8d4d6eec5c1c12b543" id="r_ga911f218567f81d8d4d6eec5c1c12b543"><td class="memItemLeft"><a class="el" href="struct_carta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga911f218567f81d8d4d6eec5c1c12b543">GetCartaGiocatore</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *g, int indice)</td></tr>
+<tr class="memitem:ga911f218567f81d8d4d6eec5c1c12b543" id="r_ga911f218567f81d8d4d6eec5c1c12b543"><td class="memItemLeft"><a class="el" href="structCarta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga911f218567f81d8d4d6eec5c1c12b543">GetCartaGiocatore</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice)</td></tr>
 <tr class="memdesc:ga911f218567f81d8d4d6eec5c1c12b543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una carta dalla mano per indice.  <br /></td></tr>
-<tr class="memitem:gac60c0e57c8c2a799f008d302bbaaa5fd" id="r_gac60c0e57c8c2a799f008d302bbaaa5fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gac60c0e57c8c2a799f008d302bbaaa5fd">RimuoviCartaGiocatore</a> (<a class="el" href="struct_giocatore.html">Giocatore</a> *g, int indice)</td></tr>
+<tr class="memitem:gac60c0e57c8c2a799f008d302bbaaa5fd" id="r_gac60c0e57c8c2a799f008d302bbaaa5fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gac60c0e57c8c2a799f008d302bbaaa5fd">RimuoviCartaGiocatore</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice)</td></tr>
 <tr class="memdesc:gac60c0e57c8c2a799f008d302bbaaa5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove una carta dalla mano per indice.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
@@ -144,9 +161,9 @@ Funzioni</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_carta.html">Carta</a> GetCartaGiocatore </td>
+          <td class="memname"><a class="el" href="structCarta.html">Carta</a> GetCartaGiocatore </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -159,10 +176,10 @@ Funzioni</h2></td></tr>
 <p>Restituisce una carta dalla mano per indice. </p>
 <p>Restituisce una carta dalla mano di un giocatore per indice.</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; indice valido. </dd></dl>
-<dl class="section return"><dt>Restituisce</dt><dd><a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a>, o carta vuota. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd><a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a>, o carta vuota. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g</td><td><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>. </td></tr>
+    <tr><td class="paramname">g</td><td><a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>. </td></tr>
     <tr><td class="paramname">indice</td><td>Indice (0-based).</td></tr>
   </table>
   </dd>
@@ -189,7 +206,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">int GetLunghezzaMano </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -200,7 +217,7 @@ Funzioni</h2></td></tr>
 <dl class="section return"><dt>Restituisce</dt><dd>Numero di carte. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g</td><td><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>.</td></tr>
+    <tr><td class="paramname">g</td><td><a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -222,9 +239,9 @@ Funzioni</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_nodo_carta.html">NodoCarta</a> * GetNodoCartaGiocatore </td>
+          <td class="memname"><a class="el" href="structNodoCarta.html">NodoCarta</a> * GetNodoCartaGiocatore </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -237,10 +254,10 @@ Funzioni</h2></td></tr>
 <p>Restituisce il nodo carta per indice. </p>
 <p>Restituisce il puntatore al nodo di una carta per indice.</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; indice valido. </dd></dl>
-<dl class="section return"><dt>Restituisce</dt><dd><a class="el" href="struct_nodo_carta.html" title="Nodo per la lista doppiamente concatenata della mano del giocatore.">NodoCarta</a>, o NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd><a class="el" href="structNodoCarta.html" title="Nodo per la lista doppiamente concatenata della mano del giocatore.">NodoCarta</a>, o NULL. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g</td><td><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>. </td></tr>
+    <tr><td class="paramname">g</td><td><a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>. </td></tr>
     <tr><td class="paramname">indice</td><td>Indice (0-based).</td></tr>
   </table>
   </dd>
@@ -254,7 +271,7 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al <a class="el" href="struct_nodo_carta.html" title="Nodo per la lista doppiamente concatenata della mano del giocatore.">NodoCarta</a> all'indice specificato. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al <a class="el" href="structNodoCarta.html" title="Nodo per la lista doppiamente concatenata della mano del giocatore.">NodoCarta</a> all'indice specificato. </dd></dl>
 
 </div>
 </div>
@@ -267,7 +284,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">void InizializzaMazzo </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structStatoGioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -305,7 +322,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">void Pesca </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structStatoGioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -356,7 +373,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">void RimescolaScartiNelMazzo </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structStatoGioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -394,7 +411,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">void RimuoviCartaGiocatore </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_giocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -407,17 +424,17 @@ Funzioni</h2></td></tr>
 <p>Rimuove una carta dalla mano per indice. </p>
 <p>Rimuove una carta dalla mano di un giocatore per indice.</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; indice valido. </dd></dl>
-<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a> rimossa; num_carte_mano aggiornato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a> rimossa; num_carte_mano aggiornato. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g</td><td><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>. </td></tr>
+    <tr><td class="paramname">g</td><td><a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>. </td></tr>
     <tr><td class="paramname">indice</td><td>Indice (0-based).</td></tr>
   </table>
   </dd>
 </dl>
 <p>Rimuove una carta dalla mano per indice.</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>giocatore != NULL; indice &lt; lunghezza mano. </dd></dl>
-<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a> rimossa dalla mano; nodo deallocato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a> rimossa dalla mano; nodo deallocato. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
     <tr><td class="paramname">giocatore</td><td>Puntatore al giocatore. </td></tr>
@@ -441,7 +458,7 @@ Funzioni</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

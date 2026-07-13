@@ -40,5 +40,6 @@ var socket__compat_8h =
     [ "WSANOTINITIALISED", "socket__compat_8h.html#a25b517a4390903e6fa0f945e80a3394c", null ],
     [ "WSAStartup", "socket__compat_8h.html#aae02aeaae446b2c945835677193c1a10", null ],
     [ "WSATRY_AGAIN", "socket__compat_8h.html#a599d174763197c716eb6ec996b7d282a", null ],
-    [ "SOCKET", "socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831", null ]
+    [ "SOCKET", "socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831", null ],
+    [ "WSASafeToCancel", "socket__compat_8h.html#aeb8d8c9e6a8d065005dbc71ed1b686a7", null ]
 ];

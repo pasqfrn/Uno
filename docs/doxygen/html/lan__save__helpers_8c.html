@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file src/socket/lan/lan_save_helpers.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file socket/lan/lan_save_helpers.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -128,8 +145,8 @@ Funzioni</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variabili</h2></td></tr>
-<tr class="memitem:a9ca04c95e094afdec5e6ed9beaf7c47b" id="r_a9ca04c95e094afdec5e6ed9beaf7c47b"><td class="memItemLeft"><a class="el" href="struct_save_receiver.html">SaveReceiver</a>&#160;</td><td class="memItemRight"><a class="el" href="#a9ca04c95e094afdec5e6ed9beaf7c47b">recvs</a> [<a class="el" href="#ae2c377a9138eb6905d9e09edf7c70f95">MAX_RECV</a>]</td></tr>
-<tr class="memdesc:a9ca04c95e094afdec5e6ed9beaf7c47b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array dei ricevitori di chunk salvataggio (definito in <a class="el" href="lan__save__sync_8c.html" title="Sincronizzazione salvataggi partite via LAN (chunk UDP).">lan_save_sync.c</a>).  <br /></td></tr>
+<tr class="memitem:a88a7d1cd7ddd2130b1f795bb0338bde0" id="r_a88a7d1cd7ddd2130b1f795bb0338bde0"><td class="memItemLeft"><a class="el" href="structSaveReceiver.html">SaveReceiver</a>&#160;</td><td class="memItemRight"><a class="el" href="#a88a7d1cd7ddd2130b1f795bb0338bde0">recv</a> [<a class="el" href="#ae2c377a9138eb6905d9e09edf7c70f95">MAX_RECV</a>]</td></tr>
+<tr class="memdesc:a88a7d1cd7ddd2130b1f795bb0338bde0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array dei ricevitori di chunk salvataggio (definito in <a class="el" href="lan__save__sync_8c.html" title="Sincronizzazione salvataggi partite via LAN (chunk UDP).">lan_save_sync.c</a>).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
 <div class="textblock"><p>Helper per la sincronizzazione salvataggi partite via LAN. </p>
@@ -139,7 +156,7 @@ Variabili</h2></td></tr>
 <li>GetSlotPathForUsername: path per dato username (scansiona ID)</li>
 <li>TrovaRecv: cerca o alloca un ricevitore di chunk</li>
 </ul>
-<p>ADT utilizzato: <a class="el" href="struct_save_receiver.html" title="Struttura per ricezione chunk di salvataggio.">SaveReceiver</a>[MAX_RECV] per accumulo chunk.</p>
+<p>ADT utilizzato: <a class="el" href="structSaveReceiver.html" title="Struttura per ricezione chunk di salvataggio.">SaveReceiver</a>[MAX_RECV] per accumulo chunk.</p>
 <p>BUG FIX 4: Tutti i riferimenti al vecchio "save_slot_N.dat" sono stati migrati al nuovo formato "save_user{ID}_slot_N.dat" per coerenza con <a class="el" href="save__manager_8c.html" title="Gestione salvataggi partite su file binario.">save_manager.c</a>.</p>
 <p>Fattorizzato da <a class="el" href="lan__save__sync_8c.html" title="Sincronizzazione salvataggi partite via LAN (chunk UDP).">lan_save_sync.c</a> per modularizzazione (file &gt;450 righe). </p>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
@@ -322,13 +339,15 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cerca o alloca un ricevitore per owner/data. </p>
-<dl class="section return"><dt>Restituisce</dt><dd>Indice nell'array recvs, -1 se pieno. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Indice nell'array recv, -1 se pieno.</dd>
+<dd>
+Indice nell'array recvs, -1 se pieno. </dd></dl>
 
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
-<a id="a9ca04c95e094afdec5e6ed9beaf7c47b" name="a9ca04c95e094afdec5e6ed9beaf7c47b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ca04c95e094afdec5e6ed9beaf7c47b">&#9670;&#160;</a></span>recvs</h2>
+<a id="a88a7d1cd7ddd2130b1f795bb0338bde0" name="a88a7d1cd7ddd2130b1f795bb0338bde0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88a7d1cd7ddd2130b1f795bb0338bde0">&#9670;&#160;</a></span>recv</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -337,7 +356,7 @@ Variabili</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_save_receiver.html">SaveReceiver</a> recvs[<a class="el" href="#ae2c377a9138eb6905d9e09edf7c70f95">MAX_RECV</a>]</td>
+          <td class="memname"><a class="el" href="structSaveReceiver.html">SaveReceiver</a> recv[<a class="el" href="#ae2c377a9138eb6905d9e09edf7c70f95">MAX_RECV</a>]</td>
         </tr>
       </table>
   </td>
@@ -364,8 +383,8 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_4a9058f586c45bd4458c3b7f033b4dec.html">lan</a></li><li class="navelem"><a href="lan__save__helpers_8c.html">lan_save_helpers.c</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_4a9058f586c45bd4458c3b7f033b4dec.html">lan</a></li><li class="navelem"><a href="lan__save__helpers_8c.html">lan_save_helpers.c</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

@@ -1,8 +1,22 @@
 var searchData=
 [
-  ['lancompactuser_0',['LanCompactUser',['../struct_lan_compact_user.html',1,'']]],
-  ['landeletesavepacket_1',['LanDeleteSavePacket',['../struct_lan_delete_save_packet.html',1,'']]],
-  ['lanpacketheader_2',['LanPacketHeader',['../struct_lan_packet_header.html',1,'']]],
-  ['lanstatssyncpacket_3',['LanStatsSyncPacket',['../struct_lan_stats_sync_packet.html',1,'']]],
-  ['listacarte_4',['ListaCarte',['../struct_lista_carte.html',1,'']]]
+  ['packetchat_0',['PacketChat',['../structPacketChat.html',1,'']]],
+  ['packetcolorchoice_1',['PacketColorChoice',['../structPacketColorChoice.html',1,'']]],
+  ['packetcreatesession_2',['PacketCreateSession',['../structPacketCreateSession.html',1,'']]],
+  ['packetdraw_3',['PacketDraw',['../structPacketDraw.html',1,'']]],
+  ['packetgamefinished_4',['PacketGameFinished',['../structPacketGameFinished.html',1,'']]],
+  ['packetgamestate_5',['PacketGameState',['../structPacketGameState.html',1,'']]],
+  ['packetheartbeat_6',['PacketHeartbeat',['../structPacketHeartbeat.html',1,'']]],
+  ['packethostreturnlobby_7',['PacketHostReturnLobby',['../structPacketHostReturnLobby.html',1,'']]],
+  ['packetjoingame_8',['PacketJoinGame',['../structPacketJoinGame.html',1,'']]],
+  ['packetjoinrejected_9',['PacketJoinRejected',['../structPacketJoinRejected.html',1,'']]],
+  ['packetjoinsession_10',['PacketJoinSession',['../structPacketJoinSession.html',1,'']]],
+  ['packetmove_11',['PacketMove',['../structPacketMove.html',1,'']]],
+  ['packetplayagain_12',['PacketPlayAgain',['../structPacketPlayAgain.html',1,'']]],
+  ['packetplayerhand_13',['PacketPlayerHand',['../structPacketPlayerHand.html',1,'']]],
+  ['packetplayerready_14',['PacketPlayerReady',['../structPacketPlayerReady.html',1,'']]],
+  ['packetsessionlist_15',['PacketSessionList',['../structPacketSessionList.html',1,'']]],
+  ['packetsessionstate_16',['PacketSessionState',['../structPacketSessionState.html',1,'']]],
+  ['partitaregistrata_17',['PartitaRegistrata',['../structPartitaRegistrata.html',1,'']]],
+  ['pila_18',['Pila',['../structPila.html',1,'']]]
 ];

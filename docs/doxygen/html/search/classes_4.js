@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['filepathlist_0',['FilePathList',['../struct_file_path_list.html',1,'']]],
-  ['float16_1',['float16',['../structfloat16.html',1,'']]],
-  ['float3_2',['float3',['../structfloat3.html',1,'']]],
-  ['font_3',['Font',['../struct_font.html',1,'']]]
+  ['lancompactuser_0',['LanCompactUser',['../structLanCompactUser.html',1,'']]],
+  ['landeletesavepacket_1',['LanDeleteSavePacket',['../structLanDeleteSavePacket.html',1,'']]],
+  ['lanpacketheader_2',['LanPacketHeader',['../structLanPacketHeader.html',1,'']]],
+  ['lanstatssyncpacket_3',['LanStatsSyncPacket',['../structLanStatsSyncPacket.html',1,'']]],
+  ['listacarte_4',['ListaCarte',['../structListaCarte.html',1,'']]]
 ];

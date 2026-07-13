@@ -1,6 +1,6 @@
 var auth__shared_8h =
 [
-    [ "CampoInput", "struct_campo_input.html", "struct_campo_input" ],
+    [ "CampoInput", "structCampoInput.html", "structCampoInput" ],
     [ "errore_recupero", "auth__shared_8h.html#a7d41f73b4aaf323dd4a42e616750f1a3", null ],
     [ "mostra_popup_uscita_auth", "auth__shared_8h.html#ae71cbf05374b49c2a9136899bd39b04b", null ],
     [ "nuovo_utente", "auth__shared_8h.html#abc565e2ba6cc88b20dded8d5345e869e", null ],

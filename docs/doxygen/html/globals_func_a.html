@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Elementi globali</title>
+<title>UNO - Gioco di Carte: Elementi globali</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,36 +117,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_func_a
 
 <div class="contents">
 <div class="textblock">&#160;</div><br/>
-<div class="qindex"><a class="qindex" href="globals_func.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="globals_func_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="globals_func_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="globals_func_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="globals_func_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="globals_func_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="globals_func_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="globals_func_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="globals_func_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="globals_func_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="globals_func_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="globals_func_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="globals_func_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="globals_func_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="globals_func_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="globals_func_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="globals_func_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="globals_func_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="globals_func_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="globals_func_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="globals_func_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="globals_func_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="globals_func__.html#index__">_</a></div>
+<div class="qindex"><a class="qindex" href="globals_func.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="globals_func_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="globals_func_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="globals_func_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="globals_func_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="globals_func_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="globals_func_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="globals_func_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="globals_func_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="globals_func_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="globals_func_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="globals_func_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="globals_func_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="globals_func_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="globals_func_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="globals_func_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="globals_func_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="globals_func_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="globals_func_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="globals_func_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="globals_func__.html#index__">_</a></div>
 
 
 <h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
-<li>AddPlayerToSession()&#160;:&#160;<a class="el" href="group__server__manager__api.html#ga9c4e3c22ad94a695a648da6957a7cc11">server_manager.c</a>, <a class="el" href="group__server__manager__api.html#ga9c4e3c22ad94a695a648da6957a7cc11">server_manager.h</a></li>
+<li>AddPlayerToSession()&#160;:&#160;<a class="el" href="group__server__manager__api.html#ga9c4e3c22ad94a695a648da6957a7cc11">server_manager.h</a>, <a class="el" href="group__server__manager__api.html#ga9c4e3c22ad94a695a648da6957a7cc11">server_manager.c</a></li>
 <li>AggiornaAnimazioni()&#160;:&#160;<a class="el" href="gameplay__animation_8h.html#af744d2952272ae276b215ab237284686">gameplay_animation.h</a></li>
-<li>AggiornaAuth()&#160;:&#160;<a class="el" href="auth__update_8c.html#a63cd56c684cf39398eda9013a4ab4b32">auth_update.c</a>, <a class="el" href="auth__update_8h.html#a63cd56c684cf39398eda9013a4ab4b32">auth_update.h</a></li>
+<li>AggiornaAuth()&#160;:&#160;<a class="el" href="auth__update_8h.html#a63cd56c684cf39398eda9013a4ab4b32">auth_update.h</a>, <a class="el" href="auth__update_8c.html#a63cd56c684cf39398eda9013a4ab4b32">auth_update.c</a></li>
 <li>AggiornaChat()&#160;:&#160;<a class="el" href="gameplay__chat_8h.html#a128885540259cd9e820ae58bd839077b">gameplay_chat.h</a></li>
-<li>AggiornaGameplay()&#160;:&#160;<a class="el" href="gameplay__update_8c.html#ab87ee38deb5da11d345dce53a9d9c4a3">gameplay_update.c</a>, <a class="el" href="gameplay__update_8h.html#ab87ee38deb5da11d345dce53a9d9c4a3">gameplay_update.h</a></li>
-<li>AggiornaInputCampo()&#160;:&#160;<a class="el" href="group__input__field.html#gab7226869f631c265b54f1fae9728d74c">input_field.c</a>, <a class="el" href="group__input__field.html#gab7226869f631c265b54f1fae9728d74c">input_field.h</a></li>
-<li>ApplicaEffetto()&#160;:&#160;<a class="el" href="game__logic_8c.html#a588fc681a6842fa5688ec1331484fe1b">game_logic.c</a>, <a class="el" href="game__logic_8h.html#a588fc681a6842fa5688ec1331484fe1b">game_logic.h</a></li>
-<li>AttachAudioMixedProcessor()&#160;:&#160;<a class="el" href="raylib_8h.html#a5b3e5ce267937bc30c698ce67047bae7">raylib.h</a></li>
-<li>AttachAudioStreamProcessor()&#160;:&#160;<a class="el" href="raylib_8h.html#ac3abc24155bb95f6187f9787a1377b47">raylib.h</a></li>
-<li>Auth_EmailFormalmenteValida()&#160;:&#160;<a class="el" href="auth__validation_8c.html#a0959d2b8a823c24f6cf9e7cc624a2da8">auth_validation.c</a>, <a class="el" href="auth__validation_8h.html#a0959d2b8a823c24f6cf9e7cc624a2da8">auth_validation.h</a></li>
-<li>Auth_EmailGiaUsata()&#160;:&#160;<a class="el" href="auth__validation_8c.html#aabb0472ff0f5ec0167d6b3346c8462da">auth_validation.c</a>, <a class="el" href="auth__validation_8h.html#aabb0472ff0f5ec0167d6b3346c8462da">auth_validation.h</a></li>
-<li>Auth_IsMarkedForDeletion()&#160;:&#160;<a class="el" href="group__lazy__deletion__impl.html#gae8af680dcc7f7dcc3b73cff9ce19d89c">auth.c</a>, <a class="el" href="group__lazy__deletion.html#gae8af680dcc7f7dcc3b73cff9ce19d89c">auth.h</a></li>
-<li>Auth_MarkForDeletion()&#160;:&#160;<a class="el" href="group__lazy__deletion__impl.html#gaa103fe9f0b4ddf468b2d7ee6f6b28bba">auth.c</a>, <a class="el" href="group__lazy__deletion.html#gaa103fe9f0b4ddf468b2d7ee6f6b28bba">auth.h</a></li>
-<li>Auth_PasswordValida()&#160;:&#160;<a class="el" href="auth__validation_8c.html#a8c2896ffd0bd8e925dd6ff0abdb5632b">auth_validation.c</a>, <a class="el" href="auth__validation_8h.html#a8c2896ffd0bd8e925dd6ff0abdb5632b">auth_validation.h</a></li>
-<li>Auth_PINValido()&#160;:&#160;<a class="el" href="auth__validation_8c.html#aa1e0c29da409c33f5c90ae8781813b52">auth_validation.c</a>, <a class="el" href="auth__validation_8h.html#aa1e0c29da409c33f5c90ae8781813b52">auth_validation.h</a></li>
-<li>Auth_ProcessPendingDeletions()&#160;:&#160;<a class="el" href="group__lazy__deletion__impl.html#ga76017eead600b6ea252edb0e00c8758b">auth.c</a>, <a class="el" href="group__lazy__deletion.html#ga76017eead600b6ea252edb0e00c8758b">auth.h</a></li>
-<li>Auth_RegistraUtente()&#160;:&#160;<a class="el" href="group__lazy__deletion__impl.html#ga17dace69eec2d85eb4ecaf0c4f2232b6">auth.c</a>, <a class="el" href="group__database__api.html#gaca7ac3087dce186468964882201c904b">auth.h</a></li>
-<li>Auth_RimuoviUtente()&#160;:&#160;<a class="el" href="group__lazy__deletion__impl.html#ga8477b8acaa3d9d97cdb06846bdaff9c0">auth.c</a>, <a class="el" href="group__database__api.html#ga8477b8acaa3d9d97cdb06846bdaff9c0">auth.h</a></li>
-<li>Auth_UsernameGiaUsato()&#160;:&#160;<a class="el" href="auth__validation_8c.html#af98da30c95224517aee816c9402d8a8c">auth_validation.c</a>, <a class="el" href="auth__validation_8h.html#af98da30c95224517aee816c9402d8a8c">auth_validation.h</a></li>
-<li>Auth_UsernameNonVuoto()&#160;:&#160;<a class="el" href="auth__validation_8c.html#a582c2dd0feb8bfb2dfed93f53de56ac9">auth_validation.c</a>, <a class="el" href="auth__validation_8h.html#a582c2dd0feb8bfb2dfed93f53de56ac9">auth_validation.h</a></li>
-<li>Auth_VerificaCredenziali()&#160;:&#160;<a class="el" href="auth__validation_8c.html#a6059e6ad0ef9d8973620d6877f0688ad">auth_validation.c</a>, <a class="el" href="auth__validation_8h.html#a6059e6ad0ef9d8973620d6877f0688ad">auth_validation.h</a></li>
-<li>Auth_VerificaEmailPIN()&#160;:&#160;<a class="el" href="auth__validation_8c.html#a785518b8228af0439552afcb650cc131">auth_validation.c</a>, <a class="el" href="auth__validation_8h.html#a785518b8228af0439552afcb650cc131">auth_validation.h</a></li>
-<li>AuthBST_Altezza()&#160;:&#160;<a class="el" href="group__lazy__deletion__impl.html#gaee07663d2c32dd38c1a79b994383a7b6">auth.c</a>, <a class="el" href="group__database__api.html#gaee07663d2c32dd38c1a79b994383a7b6">auth.h</a></li>
-<li>AuthBST_CercaIndicePerEmail()&#160;:&#160;<a class="el" href="group__lazy__deletion__impl.html#gaeba2158fd96048197d238a24a9c28bfc">auth.c</a>, <a class="el" href="group__database__api.html#ga8ca75be3b7e67f16f1544e9fc6eb9279">auth.h</a></li>
-<li>AuthBST_ContaNodi()&#160;:&#160;<a class="el" href="group__lazy__deletion__impl.html#ga4b6f9cad580a7fa31e55093db0e732ce">auth.c</a>, <a class="el" href="group__database__api.html#ga4b6f9cad580a7fa31e55093db0e732ce">auth.h</a></li>
-<li>AuthBST_Ricostruisci()&#160;:&#160;<a class="el" href="group__lazy__deletion__impl.html#ga92a8b147f7f309caeaba6776d16a4204">auth.c</a>, <a class="el" href="group__database__api.html#ga92a8b147f7f309caeaba6776d16a4204">auth.h</a></li>
+<li>AggiornaGameplay()&#160;:&#160;<a class="el" href="gameplay__update_8h.html#ab87ee38deb5da11d345dce53a9d9c4a3">gameplay_update.h</a>, <a class="el" href="gameplay__update_8c.html#ab87ee38deb5da11d345dce53a9d9c4a3">gameplay_update.c</a></li>
+<li>AggiornaInputCampo()&#160;:&#160;<a class="el" href="group__input__field.html#gab7226869f631c265b54f1fae9728d74c">input_field.h</a>, <a class="el" href="group__input__field.html#gab7226869f631c265b54f1fae9728d74c">input_field.c</a></li>
+<li>AggiornaStatistiche()&#160;:&#160;<a class="el" href="lan__db__sync_8c.html#abf84ade58dda42103ab79f713b80bbc8">lan_db_sync.c</a></li>
+<li>AggiungiPendingDeletion()&#160;:&#160;<a class="el" href="lan__broadcast_8c.html#afc84fc196a6b2e1aaa9a22e88589a2f5">lan_broadcast.c</a></li>
+<li>ApplicaEffetto()&#160;:&#160;<a class="el" href="game__logic_8h.html#a588fc681a6842fa5688ec1331484fe1b">game_logic.h</a>, <a class="el" href="game__logic_8c.html#a588fc681a6842fa5688ec1331484fe1b">game_logic.c</a></li>
+<li>Auth_EmailFormalmenteValida()&#160;:&#160;<a class="el" href="auth__validation_8h.html#a0959d2b8a823c24f6cf9e7cc624a2da8">auth_validation.h</a>, <a class="el" href="auth__validation_8c.html#a0959d2b8a823c24f6cf9e7cc624a2da8">auth_validation.c</a></li>
+<li>Auth_EmailGiaUsata()&#160;:&#160;<a class="el" href="auth__validation_8h.html#aabb0472ff0f5ec0167d6b3346c8462da">auth_validation.h</a>, <a class="el" href="auth__validation_8c.html#aabb0472ff0f5ec0167d6b3346c8462da">auth_validation.c</a></li>
+<li>Auth_IsMarkedForDeletion()&#160;:&#160;<a class="el" href="group__lazy__deletion.html#gae8af680dcc7f7dcc3b73cff9ce19d89c">auth.h</a>, <a class="el" href="group__lazy__deletion__impl.html#gae8af680dcc7f7dcc3b73cff9ce19d89c">auth.c</a></li>
+<li>Auth_MarkForDeletion()&#160;:&#160;<a class="el" href="group__lazy__deletion.html#gaa103fe9f0b4ddf468b2d7ee6f6b28bba">auth.h</a>, <a class="el" href="group__lazy__deletion__impl.html#gaa103fe9f0b4ddf468b2d7ee6f6b28bba">auth.c</a></li>
+<li>Auth_PasswordValida()&#160;:&#160;<a class="el" href="auth__validation_8h.html#a8c2896ffd0bd8e925dd6ff0abdb5632b">auth_validation.h</a>, <a class="el" href="auth__validation_8c.html#a8c2896ffd0bd8e925dd6ff0abdb5632b">auth_validation.c</a></li>
+<li>Auth_PINValido()&#160;:&#160;<a class="el" href="auth__validation_8h.html#aa1e0c29da409c33f5c90ae8781813b52">auth_validation.h</a>, <a class="el" href="auth__validation_8c.html#aa1e0c29da409c33f5c90ae8781813b52">auth_validation.c</a></li>
+<li>Auth_ProcessPendingDeletions()&#160;:&#160;<a class="el" href="group__lazy__deletion.html#ga76017eead600b6ea252edb0e00c8758b">auth.h</a>, <a class="el" href="group__lazy__deletion__impl.html#ga76017eead600b6ea252edb0e00c8758b">auth.c</a></li>
+<li>Auth_RegistraUtente()&#160;:&#160;<a class="el" href="group__database__api.html#gaca7ac3087dce186468964882201c904b">auth.h</a>, <a class="el" href="group__lazy__deletion__impl.html#ga17dace69eec2d85eb4ecaf0c4f2232b6">auth.c</a></li>
+<li>Auth_RimuoviUtente()&#160;:&#160;<a class="el" href="group__database__api.html#ga8477b8acaa3d9d97cdb06846bdaff9c0">auth.h</a>, <a class="el" href="group__lazy__deletion__impl.html#ga8477b8acaa3d9d97cdb06846bdaff9c0">auth.c</a></li>
+<li>Auth_UsernameGiaUsato()&#160;:&#160;<a class="el" href="auth__validation_8h.html#af98da30c95224517aee816c9402d8a8c">auth_validation.h</a>, <a class="el" href="auth__validation_8c.html#af98da30c95224517aee816c9402d8a8c">auth_validation.c</a></li>
+<li>Auth_UsernameNonVuoto()&#160;:&#160;<a class="el" href="auth__validation_8h.html#a582c2dd0feb8bfb2dfed93f53de56ac9">auth_validation.h</a>, <a class="el" href="auth__validation_8c.html#a582c2dd0feb8bfb2dfed93f53de56ac9">auth_validation.c</a></li>
+<li>Auth_VerificaCredenziali()&#160;:&#160;<a class="el" href="auth__validation_8h.html#a6059e6ad0ef9d8973620d6877f0688ad">auth_validation.h</a>, <a class="el" href="auth__validation_8c.html#a6059e6ad0ef9d8973620d6877f0688ad">auth_validation.c</a></li>
+<li>Auth_VerificaEmailPIN()&#160;:&#160;<a class="el" href="auth__validation_8h.html#a785518b8228af0439552afcb650cc131">auth_validation.h</a>, <a class="el" href="auth__validation_8c.html#a785518b8228af0439552afcb650cc131">auth_validation.c</a></li>
+<li>AuthBST_Altezza()&#160;:&#160;<a class="el" href="group__database__api.html#gaee07663d2c32dd38c1a79b994383a7b6">auth.h</a>, <a class="el" href="group__lazy__deletion__impl.html#gaee07663d2c32dd38c1a79b994383a7b6">auth.c</a></li>
+<li>AuthBST_CercaIndicePerEmail()&#160;:&#160;<a class="el" href="group__database__api.html#ga8ca75be3b7e67f16f1544e9fc6eb9279">auth.h</a>, <a class="el" href="group__lazy__deletion__impl.html#gaeba2158fd96048197d238a24a9c28bfc">auth.c</a></li>
+<li>AuthBST_ContaNodi()&#160;:&#160;<a class="el" href="group__database__api.html#ga4b6f9cad580a7fa31e55093db0e732ce">auth.h</a>, <a class="el" href="group__lazy__deletion__impl.html#ga4b6f9cad580a7fa31e55093db0e732ce">auth.c</a></li>
+<li>AuthBST_Ricostruisci()&#160;:&#160;<a class="el" href="group__database__api.html#ga92a8b147f7f309caeaba6776d16a4204">auth.h</a>, <a class="el" href="group__lazy__deletion__impl.html#ga92a8b147f7f309caeaba6776d16a4204">auth.c</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -137,7 +154,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_func_a
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

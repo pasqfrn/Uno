@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Strutture dati</title>
+<title>UNO - Gioco di Carte: Strutture dati</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -104,96 +121,56 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('annotated.html
 <div class="contents">
 <div class="textblock">Queste sono le strutture dati con una loro breve descrizione:</div><div class="directory">
 <table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_admin_d_b_sync_packet.html" target="_self">AdminDBSyncPacket</a></td><td class="desc"></td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_admin_user_action.html" target="_self">AdminUserAction</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_admin_user_sync_data.html" target="_self">AdminUserSyncData</a></td><td class="desc"></td></tr>
-<tr id="row_3_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_audio_stream.html" target="_self">AudioStream</a></td><td class="desc"></td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_automation_event.html" target="_self">AutomationEvent</a></td><td class="desc"></td></tr>
-<tr id="row_5_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_automation_event_list.html" target="_self">AutomationEventList</a></td><td class="desc"></td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_bone_info.html" target="_self">BoneInfo</a></td><td class="desc"></td></tr>
-<tr id="row_7_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_bounding_box.html" target="_self">BoundingBox</a></td><td class="desc"></td></tr>
-<tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_camera2_d.html" target="_self">Camera2D</a></td><td class="desc"></td></tr>
-<tr id="row_9_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_camera3_d.html" target="_self">Camera3D</a></td><td class="desc"></td></tr>
-<tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_campo_input.html" target="_self">CampoInput</a></td><td class="desc">Struttura per la gestione dei campi di input (area + ID) </td></tr>
-<tr id="row_11_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_carta.html" target="_self">Carta</a></td><td class="desc">Rappresenta una singola carta UNO </td></tr>
-<tr id="row_12_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_chat_storico.html" target="_self">ChatStorico</a></td><td class="desc">Cronologia circolare (FIFO) di messaggi </td></tr>
-<tr id="row_13_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_classifica_record.html" target="_self">ClassificaRecord</a></td><td class="desc">Record per la classifica visualizzata a fine partita </td></tr>
-<tr id="row_14_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_coda_turni.html" target="_self">CodaTurni</a></td><td class="desc">Coda dei turni: coda doppiamente concatenata con direzione di scorrimento </td></tr>
-<tr id="row_15_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_color.html" target="_self">Color</a></td><td class="desc"></td></tr>
-<tr id="row_16_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_database_utenti.html" target="_self">DatabaseUtenti</a></td><td class="desc">Database degli utenti in memoria (allocazione DINAMICA) </td></tr>
-<tr id="row_17_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_file_path_list.html" target="_self">FilePathList</a></td><td class="desc"></td></tr>
-<tr id="row_18_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structfloat16.html" target="_self">float16</a></td><td class="desc"></td></tr>
-<tr id="row_19_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structfloat3.html" target="_self">float3</a></td><td class="desc"></td></tr>
-<tr id="row_20_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_font.html" target="_self">Font</a></td><td class="desc"></td></tr>
-<tr id="row_21_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_game_session.html" target="_self">GameSession</a></td><td class="desc">Sessione di gioco multiplayer </td></tr>
-<tr id="row_22_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_giocatore.html" target="_self">Giocatore</a></td><td class="desc">Rappresenta un giocatore nella partita (umano o bot) </td></tr>
-<tr id="row_23_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_glyph_info.html" target="_self">GlyphInfo</a></td><td class="desc"></td></tr>
-<tr id="row_24_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_image.html" target="_self">Image</a></td><td class="desc"></td></tr>
-<tr id="row_25_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_lan_compact_user.html" target="_self">LanCompactUser</a></td><td class="desc"></td></tr>
-<tr id="row_26_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_lan_delete_save_packet.html" target="_self">LanDeleteSavePacket</a></td><td class="desc">Pacchetto per segnalazione eliminazione salvataggio </td></tr>
-<tr id="row_27_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_lan_packet_header.html" target="_self">LanPacketHeader</a></td><td class="desc">Header comune a tutti i pacchetti database LAN </td></tr>
-<tr id="row_28_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_lan_stats_sync_packet.html" target="_self">LanStatsSyncPacket</a></td><td class="desc"></td></tr>
-<tr id="row_29_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_lista_carte.html" target="_self">ListaCarte</a></td><td class="desc">Struttura container per la lista di carte (mano del giocatore) </td></tr>
-<tr id="row_30_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_material.html" target="_self">Material</a></td><td class="desc"></td></tr>
-<tr id="row_31_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_material_map.html" target="_self">MaterialMap</a></td><td class="desc"></td></tr>
-<tr id="row_32_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_matrix.html" target="_self">Matrix</a></td><td class="desc"></td></tr>
-<tr id="row_33_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_mesh.html" target="_self">Mesh</a></td><td class="desc"></td></tr>
-<tr id="row_34_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_messaggio_chat.html" target="_self">MessaggioChat</a></td><td class="desc">Singolo messaggio nella chat multiplayer </td></tr>
-<tr id="row_35_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_model.html" target="_self">Model</a></td><td class="desc"></td></tr>
-<tr id="row_36_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_model_animation.html" target="_self">ModelAnimation</a></td><td class="desc"></td></tr>
-<tr id="row_37_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_model_skeleton.html" target="_self">ModelSkeleton</a></td><td class="desc"></td></tr>
-<tr id="row_38_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_music.html" target="_self">Music</a></td><td class="desc"></td></tr>
-<tr id="row_39_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_net_packet.html" target="_self">NetPacket</a></td><td class="desc"></td></tr>
-<tr id="row_40_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_nodo_albero.html" target="_self">NodoAlbero</a></td><td class="desc">Nodo dell'albero BST: contiene un <a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> e puntatori ai figli </td></tr>
-<tr id="row_41_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_nodo_carta.html" target="_self">NodoCarta</a></td><td class="desc">Nodo per la lista doppiamente concatenata della mano del giocatore </td></tr>
-<tr id="row_42_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_nodo_coda.html" target="_self">NodoCoda</a></td><td class="desc">Nodo della coda: contiene un <a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> e puntatori next/prev </td></tr>
-<tr id="row_43_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_nodo_decisione.html" target="_self">NodoDecisione</a></td><td class="desc">Nodo albero: azione, priorità, figli si/no </td></tr>
-<tr id="row_44_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_nodo_pila.html" target="_self">NodoPila</a></td><td class="desc">Nodo della pila: contiene una carta e puntatore al next </td></tr>
-<tr id="row_45_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_n_patch_info.html" target="_self">NPatchInfo</a></td><td class="desc"></td></tr>
-<tr id="row_46_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_chat.html" target="_self">PacketChat</a></td><td class="desc">Pacchetto chat </td></tr>
-<tr id="row_47_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_color_choice.html" target="_self">PacketColorChoice</a></td><td class="desc">Pacchetto scelta colore </td></tr>
-<tr id="row_48_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_create_session.html" target="_self">PacketCreateSession</a></td><td class="desc">Pacchetto creazione sessione </td></tr>
-<tr id="row_49_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_draw.html" target="_self">PacketDraw</a></td><td class="desc">Pacchetto pesca: giocatore e quantità </td></tr>
-<tr id="row_50_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_game_finished.html" target="_self">PacketGameFinished</a></td><td class="desc">Pacchetto fine partita </td></tr>
-<tr id="row_51_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_game_state.html" target="_self">PacketGameState</a></td><td class="desc">Pacchetto stato di gioco completo </td></tr>
-<tr id="row_52_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_heartbeat.html" target="_self">PacketHeartbeat</a></td><td class="desc">Pacchetto heartbeat per keep-alive </td></tr>
-<tr id="row_53_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_host_return_lobby.html" target="_self">PacketHostReturnLobby</a></td><td class="desc">Pacchetto host return lobby </td></tr>
-<tr id="row_54_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_join_game.html" target="_self">PacketJoinGame</a></td><td class="desc">Pacchetto join game </td></tr>
-<tr id="row_55_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_join_rejected.html" target="_self">PacketJoinRejected</a></td><td class="desc">Pacchetto join rifiutato </td></tr>
-<tr id="row_56_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_join_session.html" target="_self">PacketJoinSession</a></td><td class="desc">Pacchetto join sessione </td></tr>
-<tr id="row_57_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_move.html" target="_self">PacketMove</a></td><td class="desc">Pacchetto mossa: giocatore, indice carta, colore scelto </td></tr>
-<tr id="row_58_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_play_again.html" target="_self">PacketPlayAgain</a></td><td class="desc">Pacchetto play again (con nome giocatore per fix bug) </td></tr>
-<tr id="row_59_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_player_hand.html" target="_self">PacketPlayerHand</a></td><td class="desc">Pacchetto mano giocatore </td></tr>
-<tr id="row_60_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_player_ready.html" target="_self">PacketPlayerReady</a></td><td class="desc">Pacchetto ready/play again </td></tr>
-<tr id="row_61_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_session_list.html" target="_self">PacketSessionList</a></td><td class="desc">Pacchetto lista sessioni </td></tr>
-<tr id="row_62_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_packet_session_state.html" target="_self">PacketSessionState</a></td><td class="desc">Pacchetto stato sessione multiplayer </td></tr>
-<tr id="row_63_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_partita_registrata.html" target="_self">PartitaRegistrata</a></td><td class="desc">Record di una singola partita nello storico di un utente </td></tr>
-<tr id="row_64_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_pila.html" target="_self">Pila</a></td><td class="desc"><a class="el" href="struct_pila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> LIFO: top punta all'ultimo inserito, size è la cardinalità </td></tr>
-<tr id="row_65_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_ray.html" target="_self">Ray</a></td><td class="desc"></td></tr>
-<tr id="row_66_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_ray_collision.html" target="_self">RayCollision</a></td><td class="desc"></td></tr>
-<tr id="row_67_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_rectangle.html" target="_self">Rectangle</a></td><td class="desc"></td></tr>
-<tr id="row_68_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_render_texture.html" target="_self">RenderTexture</a></td><td class="desc"></td></tr>
-<tr id="row_69_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structrl_draw_call.html" target="_self">rlDrawCall</a></td><td class="desc"></td></tr>
-<tr id="row_70_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structrl_render_batch.html" target="_self">rlRenderBatch</a></td><td class="desc"></td></tr>
-<tr id="row_71_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structrl_vertex_buffer.html" target="_self">rlVertexBuffer</a></td><td class="desc"></td></tr>
-<tr id="row_72_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_save_receiver.html" target="_self">SaveReceiver</a></td><td class="desc">Struttura per ricezione chunk di salvataggio </td></tr>
-<tr id="row_73_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_server_manager.html" target="_self">ServerManager</a></td><td class="desc">Gestore di tutte le sessioni di gioco attive </td></tr>
-<tr id="row_74_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_session_player.html" target="_self">SessionPlayer</a></td><td class="desc">Informazioni giocatore nella sessione </td></tr>
-<tr id="row_75_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_shader.html" target="_self">Shader</a></td><td class="desc"></td></tr>
-<tr id="row_76_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_sound.html" target="_self">Sound</a></td><td class="desc"></td></tr>
-<tr id="row_77_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_statistiche.html" target="_self">Statistiche</a></td><td class="desc"><a class="el" href="struct_statistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> complete di un utente registrato </td></tr>
-<tr id="row_78_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_stato_gioco.html" target="_self">StatoGioco</a></td><td class="desc">Stato completo di una partita in corso </td></tr>
-<tr id="row_79_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_stats_sync_packet.html" target="_self">StatsSyncPacket</a></td><td class="desc"><a class="el" href="struct_stats_sync_packet.html" title="StatsSyncPacket - Sincronizzazione live statistiche dopo una partita.">StatsSyncPacket</a> - Sincronizzazione live statistiche dopo una partita </td></tr>
-<tr id="row_80_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_temp_save.html" target="_self">TempSave</a></td><td class="desc">Struttura temporanea per ordinamento salvataggi (usata in CompattaSalvataggiUtente) </td></tr>
-<tr id="row_81_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_texture.html" target="_self">Texture</a></td><td class="desc"></td></tr>
-<tr id="row_82_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_transform.html" target="_self">Transform</a></td><td class="desc"></td></tr>
-<tr id="row_83_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_utente.html" target="_self">Utente</a></td><td class="desc">Rappresenta un utente registrato nel sistema </td></tr>
-<tr id="row_84_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_vector2.html" target="_self">Vector2</a></td><td class="desc"></td></tr>
-<tr id="row_85_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_vector3.html" target="_self">Vector3</a></td><td class="desc"></td></tr>
-<tr id="row_86_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_vector4.html" target="_self">Vector4</a></td><td class="desc"></td></tr>
-<tr id="row_87_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_vr_device_info.html" target="_self">VrDeviceInfo</a></td><td class="desc"></td></tr>
-<tr id="row_88_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_vr_stereo_config.html" target="_self">VrStereoConfig</a></td><td class="desc"></td></tr>
-<tr id="row_89_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="struct_wave.html" target="_self">Wave</a></td><td class="desc"></td></tr>
+<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structAdminDBSyncPacket.html" target="_self">AdminDBSyncPacket</a></td><td class="desc"></td></tr>
+<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structAdminUserAction.html" target="_self">AdminUserAction</a></td><td class="desc"></td></tr>
+<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structAdminUserSyncData.html" target="_self">AdminUserSyncData</a></td><td class="desc"></td></tr>
+<tr id="row_3_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structCampoInput.html" target="_self">CampoInput</a></td><td class="desc">Struttura per la gestione dei campi di input (area + ID) </td></tr>
+<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structCarta.html" target="_self">Carta</a></td><td class="desc">Rappresenta una singola carta UNO </td></tr>
+<tr id="row_5_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structChatStorico.html" target="_self">ChatStorico</a></td><td class="desc">Cronologia circolare (FIFO) di messaggi </td></tr>
+<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structClassificaRecord.html" target="_self">ClassificaRecord</a></td><td class="desc">Record per la classifica visualizzata a fine partita </td></tr>
+<tr id="row_7_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structCodaTurni.html" target="_self">CodaTurni</a></td><td class="desc">Coda dei turni: coda doppiamente concatenata con direzione di scorrimento </td></tr>
+<tr id="row_8_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structDatabaseUtenti.html" target="_self">DatabaseUtenti</a></td><td class="desc">Database degli utenti in memoria (allocazione DINAMICA) </td></tr>
+<tr id="row_9_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structGameSession.html" target="_self">GameSession</a></td><td class="desc">Sessione di gioco multiplayer </td></tr>
+<tr id="row_10_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structGiocatore.html" target="_self">Giocatore</a></td><td class="desc">Rappresenta un giocatore nella partita (umano o bot) </td></tr>
+<tr id="row_11_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structLanCompactUser.html" target="_self">LanCompactUser</a></td><td class="desc"></td></tr>
+<tr id="row_12_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structLanDeleteSavePacket.html" target="_self">LanDeleteSavePacket</a></td><td class="desc">Pacchetto per segnalazione eliminazione salvataggio </td></tr>
+<tr id="row_13_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structLanPacketHeader.html" target="_self">LanPacketHeader</a></td><td class="desc">Header comune a tutti i pacchetti database LAN </td></tr>
+<tr id="row_14_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structLanStatsSyncPacket.html" target="_self">LanStatsSyncPacket</a></td><td class="desc"></td></tr>
+<tr id="row_15_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structListaCarte.html" target="_self">ListaCarte</a></td><td class="desc">Struttura container per la lista di carte (mano del giocatore) </td></tr>
+<tr id="row_16_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structMessaggioChat.html" target="_self">MessaggioChat</a></td><td class="desc">Singolo messaggio nella chat multiplayer </td></tr>
+<tr id="row_17_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structNetPacket.html" target="_self">NetPacket</a></td><td class="desc"></td></tr>
+<tr id="row_18_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structNodoAlbero.html" target="_self">NodoAlbero</a></td><td class="desc">Nodo dell'albero BST: contiene un <a class="el" href="structUtente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> e puntatori ai figli </td></tr>
+<tr id="row_19_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structNodoCarta.html" target="_self">NodoCarta</a></td><td class="desc">Nodo per la lista doppiamente concatenata della mano del giocatore </td></tr>
+<tr id="row_20_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structNodoCoda.html" target="_self">NodoCoda</a></td><td class="desc">Nodo della coda: contiene un <a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> e puntatori next/prev </td></tr>
+<tr id="row_21_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structNodoDecisione.html" target="_self">NodoDecisione</a></td><td class="desc">Nodo albero: azione, priorità, figli si/no </td></tr>
+<tr id="row_22_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structNodoPila.html" target="_self">NodoPila</a></td><td class="desc">Nodo della pila: contiene una carta e puntatore al next </td></tr>
+<tr id="row_23_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketChat.html" target="_self">PacketChat</a></td><td class="desc">Pacchetto chat </td></tr>
+<tr id="row_24_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketColorChoice.html" target="_self">PacketColorChoice</a></td><td class="desc">Pacchetto scelta colore </td></tr>
+<tr id="row_25_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketCreateSession.html" target="_self">PacketCreateSession</a></td><td class="desc">Pacchetto creazione sessione </td></tr>
+<tr id="row_26_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketDraw.html" target="_self">PacketDraw</a></td><td class="desc">Pacchetto pesca: giocatore e quantità </td></tr>
+<tr id="row_27_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketGameFinished.html" target="_self">PacketGameFinished</a></td><td class="desc">Pacchetto fine partita </td></tr>
+<tr id="row_28_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketGameState.html" target="_self">PacketGameState</a></td><td class="desc">Pacchetto stato di gioco completo </td></tr>
+<tr id="row_29_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketHeartbeat.html" target="_self">PacketHeartbeat</a></td><td class="desc">Pacchetto heartbeat per keep-alive </td></tr>
+<tr id="row_30_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketHostReturnLobby.html" target="_self">PacketHostReturnLobby</a></td><td class="desc">Pacchetto host return lobby </td></tr>
+<tr id="row_31_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketJoinGame.html" target="_self">PacketJoinGame</a></td><td class="desc">Pacchetto join game </td></tr>
+<tr id="row_32_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketJoinRejected.html" target="_self">PacketJoinRejected</a></td><td class="desc">Pacchetto join rifiutato </td></tr>
+<tr id="row_33_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketJoinSession.html" target="_self">PacketJoinSession</a></td><td class="desc">Pacchetto join sessione </td></tr>
+<tr id="row_34_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketMove.html" target="_self">PacketMove</a></td><td class="desc">Pacchetto mossa: giocatore, indice carta, colore scelto </td></tr>
+<tr id="row_35_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketPlayAgain.html" target="_self">PacketPlayAgain</a></td><td class="desc">Pacchetto play again (con nome giocatore per fix bug) </td></tr>
+<tr id="row_36_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketPlayerHand.html" target="_self">PacketPlayerHand</a></td><td class="desc">Pacchetto mano giocatore </td></tr>
+<tr id="row_37_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketPlayerReady.html" target="_self">PacketPlayerReady</a></td><td class="desc">Pacchetto ready/play again </td></tr>
+<tr id="row_38_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketSessionList.html" target="_self">PacketSessionList</a></td><td class="desc">Pacchetto lista sessioni </td></tr>
+<tr id="row_39_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPacketSessionState.html" target="_self">PacketSessionState</a></td><td class="desc">Pacchetto stato sessione multiplayer </td></tr>
+<tr id="row_40_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPartitaRegistrata.html" target="_self">PartitaRegistrata</a></td><td class="desc">Record di una singola partita nello storico di un utente </td></tr>
+<tr id="row_41_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structPila.html" target="_self">Pila</a></td><td class="desc"><a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> LIFO: top punta all'ultimo inserito, size è la cardinalità </td></tr>
+<tr id="row_42_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structSaveReceiver.html" target="_self">SaveReceiver</a></td><td class="desc">Struttura per ricezione chunk di salvataggio </td></tr>
+<tr id="row_43_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structServerManager.html" target="_self">ServerManager</a></td><td class="desc">Gestore di tutte le sessioni di gioco attive </td></tr>
+<tr id="row_44_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structSessionPlayer.html" target="_self">SessionPlayer</a></td><td class="desc">Informazioni giocatore nella sessione </td></tr>
+<tr id="row_45_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structStatistiche.html" target="_self">Statistiche</a></td><td class="desc"><a class="el" href="structStatistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> complete di un utente registrato </td></tr>
+<tr id="row_46_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structStatoGioco.html" target="_self">StatoGioco</a></td><td class="desc">Stato completo di una partita in corso </td></tr>
+<tr id="row_47_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structStatsSyncPacket.html" target="_self">StatsSyncPacket</a></td><td class="desc"><a class="el" href="structStatsSyncPacket.html" title="StatsSyncPacket - Sincronizzazione live statistiche dopo una partita.">StatsSyncPacket</a> - Sincronizzazione live statistiche dopo una partita </td></tr>
+<tr id="row_48_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structTempSave.html" target="_self">TempSave</a></td><td class="desc">Struttura temporanea per ordinamento salvataggi (usata in CompattaSalvataggiUtente) </td></tr>
+<tr id="row_49_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="structUtente.html" target="_self">Utente</a></td><td class="desc">Rappresenta un utente registrato nel sistema </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
@@ -202,7 +179,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('annotated.html
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

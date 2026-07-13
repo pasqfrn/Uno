@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UNO - Gioco di Carte: Riferimenti per la struct Carta</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('structCarta.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Riferimenti per la struct Carta</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Rappresenta una singola carta UNO.  
+ <a href="#details">Continua...</a></p>
+
+<p><code>#include &lt;<a class="el" href="data__structures_8h_source.html">data_structures.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Campi</h2></td></tr>
+<tr class="memitem:a8b69cbbcb6093494dc470c9e34cd5691" id="r_a8b69cbbcb6093494dc470c9e34cd5691"><td class="memItemLeft"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a>&#160;</td><td class="memItemRight"><a class="el" href="#a8b69cbbcb6093494dc470c9e34cd5691">colore</a></td></tr>
+<tr class="memitem:ae488767adc6386b868c262ba100b4762" id="r_ae488767adc6386b868c262ba100b4762"><td class="memItemLeft"><a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6d">TipoCarta</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae488767adc6386b868c262ba100b4762">tipo</a></td></tr>
+<tr class="memitem:a321de95c83b77542773e361c0fc42c61" id="r_a321de95c83b77542773e361c0fc42c61"><td class="memItemLeft">Rectangle&#160;</td><td class="memItemRight"><a class="el" href="#a321de95c83b77542773e361c0fc42c61">area</a></td></tr>
+<tr class="memitem:af2ba5c3d53a4af20c84bfa8e87a11003" id="r_af2ba5c3d53a4af20c84bfa8e87a11003"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#af2ba5c3d53a4af20c84bfa8e87a11003">posOriginale</a></td></tr>
+<tr class="memitem:a54af4043346725181d409aa88c41243b" id="r_a54af4043346725181d409aa88c41243b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a54af4043346725181d409aa88c41243b">isTrascinata</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
+<div class="textblock"><p>Rappresenta una singola carta UNO. </p>
+<p>Contiene il colore, il tipo, l'area di rendering (Rectangle), la posizione originale (per animazioni di trascinamento) e il flag di trascinamento. </p>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentazione dei campi</h2>
+<a id="a321de95c83b77542773e361c0fc42c61" name="a321de95c83b77542773e361c0fc42c61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a321de95c83b77542773e361c0fc42c61">&#9670;&#160;</a></span>area</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rectangle Carta::area</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b69cbbcb6093494dc470c9e34cd5691" name="a8b69cbbcb6093494dc470c9e34cd5691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b69cbbcb6093494dc470c9e34cd5691">&#9670;&#160;</a></span>colore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c">Colore</a> Carta::colore</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54af4043346725181d409aa88c41243b" name="a54af4043346725181d409aa88c41243b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54af4043346725181d409aa88c41243b">&#9670;&#160;</a></span>isTrascinata</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Carta::isTrascinata</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2ba5c3d53a4af20c84bfa8e87a11003" name="af2ba5c3d53a4af20c84bfa8e87a11003"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2ba5c3d53a4af20c84bfa8e87a11003">&#9670;&#160;</a></span>posOriginale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2 Carta::posOriginale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae488767adc6386b868c262ba100b4762" name="ae488767adc6386b868c262ba100b4762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae488767adc6386b868c262ba100b4762">&#9670;&#160;</a></span>tipo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6d">TipoCarta</a> Carta::tipo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentazione per questa struct è stata generata a partire dal seguente file:<ul>
+<li><a class="el" href="data__structures_8h_source.html">data_structures.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="structCarta.html">Carta</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

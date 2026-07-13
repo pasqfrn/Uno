@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file lib/socket/lan/lan_sync.h</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file socket/lan/lan_sync.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -215,7 +232,7 @@ Variabili</h2></td></tr>
 
 <p>Compatta i salvataggi dell'utente corrente (rimuove duplicati). </p>
 <p>Compatta i salvataggi dell'utente corrente in ordine cronologico.</p>
-<dl class="section pre"><dt>Precondizione</dt><dd><a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> loggato. </dd></dl>
+<dl class="section pre"><dt>Precondizione</dt><dd><a class="el" href="structUtente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a> loggato. </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>Salvati solo gli slot non vuoti e piu' recenti.</dd></dl>
 <p>Compatta i salvataggi dell'utente corrente (rimuove duplicati).</p>
 <p>Procedura:</p><ol type="1">
@@ -327,7 +344,7 @@ Variabili</h2></td></tr>
 <dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata. </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>Salvataggi broadcastati.</dd></dl>
 <p>Forza un broadcast immediato dei salvataggi.</p>
-<p>Chiama SerializzaESpedisciSalvataggi() per inviare tutti gli slot dell'utente loggato ai dispositivi sulla LAN. </p>
+<p>Chiama <a class="el" href="lan__save__sync_8c.html#af0fd6d9e8f35f099b9c4289ab13988b5" title="Scandisce gli slot 1-100 e invia i salvataggi dell&#39;utente corrente.">SerializzaESpedisciSalvataggi()</a> per inviare tutti gli slot dell'utente loggato ai dispositivi sulla LAN. </p>
 
 </div>
 </div>
@@ -347,7 +364,7 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Broadcasta un pacchetto di sincronizzazione completa delle statistiche. </p>
-<p>Invia a tutti i dispositivi LAN il pacchetto <a class="el" href="struct_stats_sync_packet.html" title="StatsSyncPacket - Sincronizzazione live statistiche dopo una partita.">StatsSyncPacket</a> contenente contatori e storico partite recenti.</p>
+<p>Invia a tutti i dispositivi LAN il pacchetto <a class="el" href="structStatsSyncPacket.html" title="StatsSyncPacket - Sincronizzazione live statistiche dopo una partita.">StatsSyncPacket</a> contenente contatori e storico partite recenti.</p>
 <p>BUG FIX 5: Garantisce che i profili utente siano sincronizzati tra dispositivi dopo ogni partita, preservando lo storico partite (non solo i contatori).</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata; username != NULL. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
@@ -685,7 +702,7 @@ Variabili</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Restituisce</dt><dd>Bytes scritti, o -1 se errore.</dd></dl>
 <p>Serializza il database utenti in un buffer JSON.</p>
-<p>Formato: header + int(num_utenti) + <a class="el" href="struct_lan_compact_user.html">LanCompactUser</a>[N].</p>
+<p>Formato: header + int(num_utenti) + <a class="el" href="structLanCompactUser.html">LanCompactUser</a>[N].</p>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
     <tr><td class="paramname">buf</td><td>Buffer di destinazione. </td></tr>
@@ -719,7 +736,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Buffer di username eliminati (per compatibilita' screens). </p>
-<p>Cache degli utenti eliminati (per non riaggiungerli da remoto). </p>
+<p>Cache degli utenti eliminati (per non riaggiungerli da remoto).</p>
+<p>Buffer di username eliminati (per compatibilita' screens). </p>
 
 </div>
 </div>
@@ -744,7 +762,7 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Flag per evitare broadcast ricorsivi durante SalvaDB. </p>
-<p>Flag: 1 se siamo all'interno di una chiamata a <a class="el" href="group__lazy__deletion__impl.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario (data/users/users.dat).">SalvaDB()</a> (per evitare ricorsione LAN).</p>
+<p>Flag: 1 se siamo all'interno di una chiamata a <a class="el" href="group__database__api.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario con cifratura XOR.">SalvaDB()</a> (per evitare ricorsione LAN).</p>
 <p>Flag per evitare broadcast ricorsivi durante SalvaDB. </p>
 
 </div>
@@ -770,7 +788,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Contatore utenti eliminati. </p>
-<p>Numero di utenti nella cache delle eliminazioni. </p>
+<p>Numero di utenti nella cache delle eliminazioni.</p>
+<p>Contatore utenti eliminati. </p>
 
 </div>
 </div>
@@ -787,8 +806,8 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e17dec1d132ad7ed461be9444000b405.html">socket</a></li><li class="navelem"><a href="dir_eafa113c866c19c3f812b2f973b25251.html">lan</a></li><li class="navelem"><a href="lan__sync_8h.html">lan_sync.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_e17dec1d132ad7ed461be9444000b405.html">socket</a></li><li class="navelem"><a href="dir_eafa113c866c19c3f812b2f973b25251.html">lan</a></li><li class="navelem"><a href="lan__sync_8h.html">lan_sync.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

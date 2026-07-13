@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno:  File sorgente lib/screens/multiplayer/multiplayer_lobby.h</title>
+<title>UNO - Gioco di Carte:  File sorgente screens/multiplayer/multiplayer_lobby.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -107,33 +124,36 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('multiplayer__l
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define MULTIPLAYER_LOBBY_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">../../data_structures.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="server__manager_8h.html">../../socket/server/server_manager.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="raylib_8h.html">raylib.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="multiplayer__lobby_8h.html#a67402a351b27f2a8bd596a27d53a5017">DisegnaMultiplayerLobby</a>(<a class="code hl_struct" href="struct_game_session.html">GameSession</a>* session, <a class="code hl_enumeration" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a>* fase);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__multiplayer__lobby.html#ga13505e75b399adba90515ff9e17d097a">DisegnaWaitingRoom</a>(<a class="code hl_struct" href="struct_game_session.html">GameSession</a>* session, <a class="code hl_enumeration" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a>* fase, <a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a>* gioco);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> <a class="code hl_function" href="multiplayer__lobby_8h.html#aefc394c91e82f5a50913acf46635f420">ResetTimerErroreAvvio</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
-<div class="ttc" id="adata__structures_8h_html_a2820e5c9a40f05bb9d572ea8b0d4e3f4"><div class="ttname"><a href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a></div><div class="ttdeci">FaseApplicazione</div><div class="ttdoc">Enum che rappresenta tutte le fasi dello stato macchina dell&#39;applicazione.</div><div class="ttdef"><b>Definition</b> data_structures.h:363</div></div>
-<div class="ttc" id="agroup__multiplayer__lobby_html_ga13505e75b399adba90515ff9e17d097a"><div class="ttname"><a href="group__multiplayer__lobby.html#ga13505e75b399adba90515ff9e17d097a">DisegnaWaitingRoom</a></div><div class="ttdeci">void DisegnaWaitingRoom(GameSession *session, FaseApplicazione *fase, StatoGioco *gioco)</div><div class="ttdoc">Disegna la waiting room (schermata client in attesa).</div><div class="ttdef"><b>Definition</b> multiplayer_lobby.c:137</div></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">../../player.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="game__state_8h.html">../../game_state.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="server__manager_8h.html">../../socket/server/server_manager.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> <a class="code hl_function" href="multiplayer__lobby_8h.html#a67402a351b27f2a8bd596a27d53a5017">DisegnaMultiplayerLobby</a>(<a class="code hl_struct" href="structGameSession.html">GameSession</a>* session, <a class="code hl_enumeration" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a>* fase);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__multiplayer__lobby.html#ga13505e75b399adba90515ff9e17d097a">DisegnaWaitingRoom</a>(<a class="code hl_struct" href="structGameSession.html">GameSession</a>* session, <a class="code hl_enumeration" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a>* fase, <a class="code hl_struct" href="structStatoGioco.html">StatoGioco</a>* gioco);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">void</span> <a class="code hl_function" href="multiplayer__lobby_8h.html#aefc394c91e82f5a50913acf46635f420">ResetTimerErroreAvvio</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header centrale del progetto UNO - Tipi di dato condivisi.</div></div>
+<div class="ttc" id="adata__structures_8h_html_a2820e5c9a40f05bb9d572ea8b0d4e3f4"><div class="ttname"><a href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a></div><div class="ttdeci">FaseApplicazione</div><div class="ttdoc">Enum che rappresenta tutte le fasi dello stato macchina dell&#39;applicazione.</div><div class="ttdef"><b>Definition</b> data_structures.h:190</div></div>
+<div class="ttc" id="agame__state_8h_html"><div class="ttname"><a href="game__state_8h.html">game_state.h</a></div><div class="ttdoc">Modulo StatoGioco - Stato completo della partita in corso.</div></div>
+<div class="ttc" id="agroup__multiplayer__lobby_html_ga13505e75b399adba90515ff9e17d097a"><div class="ttname"><a href="group__multiplayer__lobby.html#ga13505e75b399adba90515ff9e17d097a">DisegnaWaitingRoom</a></div><div class="ttdeci">void DisegnaWaitingRoom(GameSession *session, FaseApplicazione *fase, StatoGioco *gioco)</div><div class="ttdoc">Disegna la waiting room (schermata client in attesa).</div><div class="ttdef"><b>Definition</b> multiplayer_lobby.c:142</div></div>
 <div class="ttc" id="amultiplayer__lobby_8h_html_a67402a351b27f2a8bd596a27d53a5017"><div class="ttname"><a href="multiplayer__lobby_8h.html#a67402a351b27f2a8bd596a27d53a5017">DisegnaMultiplayerLobby</a></div><div class="ttdeci">void DisegnaMultiplayerLobby(GameSession *session, FaseApplicazione *fase)</div><div class="ttdoc">Disegna la lobby multiplayer (schermata host).</div><div class="ttdef"><b>Definition</b> multiplayer_lobby.c:34</div></div>
 <div class="ttc" id="amultiplayer__lobby_8h_html_aefc394c91e82f5a50913acf46635f420"><div class="ttname"><a href="multiplayer__lobby_8h.html#aefc394c91e82f5a50913acf46635f420">ResetTimerErroreAvvio</a></div><div class="ttdeci">void ResetTimerErroreAvvio(void)</div><div class="ttdoc">Resetta il timer di errore avvio partita.</div><div class="ttdef"><b>Definition</b> multiplayer_lobby.c:70</div></div>
-<div class="ttc" id="araylib_8h_html"><div class="ttname"><a href="raylib_8h.html">raylib.h</a></div></div>
+<div class="ttc" id="aplayer_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div><div class="ttdoc">Modulo Giocatore - Entità di flusso/stato per la partita.</div></div>
 <div class="ttc" id="aserver__manager_8h_html"><div class="ttname"><a href="server__manager_8h.html">server_manager.h</a></div><div class="ttdoc">Gestione delle sessioni di gioco lato server/host.</div></div>
-<div class="ttc" id="astruct_game_session_html"><div class="ttname"><a href="struct_game_session.html">GameSession</a></div><div class="ttdoc">Sessione di gioco multiplayer.</div><div class="ttdef"><b>Definition</b> server_manager.h:55</div></div>
-<div class="ttc" id="astruct_stato_gioco_html"><div class="ttname"><a href="struct_stato_gioco.html">StatoGioco</a></div><div class="ttdoc">Stato completo di una partita in corso.</div><div class="ttdef"><b>Definition</b> data_structures.h:216</div></div>
+<div class="ttc" id="astructGameSession_html"><div class="ttname"><a href="structGameSession.html">GameSession</a></div><div class="ttdoc">Sessione di gioco multiplayer.</div><div class="ttdef"><b>Definition</b> server_manager.h:58</div></div>
+<div class="ttc" id="astructStatoGioco_html"><div class="ttname"><a href="structStatoGioco.html">StatoGioco</a></div><div class="ttdoc">Stato completo di una partita in corso.</div><div class="ttdef"><b>Definition</b> game_state.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_299aa870bb746bafe99131a774bd9579.html">screens</a></li><li class="navelem"><a href="dir_f65e8c93f474ad2ed0dc776944eef760.html">multiplayer</a></li><li class="navelem"><a href="multiplayer__lobby_8h.html">multiplayer_lobby.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_299aa870bb746bafe99131a774bd9579.html">screens</a></li><li class="navelem"><a href="dir_f65e8c93f474ad2ed0dc776944eef760.html">multiplayer</a></li><li class="navelem"><a href="multiplayer__lobby_8h.html">multiplayer_lobby.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

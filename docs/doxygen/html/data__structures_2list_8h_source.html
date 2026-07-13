@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno:  File sorgente lib/data_structures/list.h</title>
+<title>UNO - Gioco di Carte:  File sorgente data_structures/list.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -103,39 +120,69 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('data__structur
 </div><!--header-->
 <div class="contents">
 <a href="data__structures_2list_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef DATA_STRUCTURES_LIST_H</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define DATA_STRUCTURES_LIST_H</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">../data_structures.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef DATA_STRUCTURES_LIST_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define DATA_STRUCTURES_LIST_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">../data_structures.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *  NODO CARTA - Lista DOPPIAMENTE concatenata</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *  Riferimento: Documentazione CdS - &quot;NodoMano&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * ============================================================ */</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><a class="code hl_struct" href="struct_nodo_carta.html">NodoCarta</a>* <a class="code hl_function" href="group__list.html#ga088820569fa2805555cdf3fbe0b2283c">Lista_InserisciDopo</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista, <a class="code hl_struct" href="struct_nodo_carta.html">NodoCarta</a>* nodo, <a class="code hl_struct" href="struct_carta.html">Carta</a> c);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><a class="code hl_struct" href="struct_nodo_carta.html">NodoCarta</a>* <a class="code hl_function" href="group__list.html#ga9de40d1e818238d37c0f07b3bee18734">Lista_Precedente</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista, <a class="code hl_struct" href="struct_nodo_carta.html">NodoCarta</a>* nodo);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><a class="code hl_struct" href="struct_nodo_carta.html">NodoCarta</a>* <a class="code hl_function" href="group__list.html#gae3b26d3b03d49fcd37187be9b4cfded5">Lista_Ultimo</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__list.html#gacc099b32c3eec87dd70207099d538236">Lista_RimuoviNodoBidirezionale</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista, <a class="code hl_struct" href="struct_nodo_carta.html">NodoCarta</a>* nodo);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__list.html#ga9dc1fa933bb0dd65a60aa13f5a6d63d7">Lista_VerificaBidirezionale</a>(<a class="code hl_struct" href="struct_lista_carte.html">ListaCarte</a>* lista);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">// DATA_STRUCTURES_LIST_H</span></div>
-<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structNodoCarta.html">   31</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structNodoCarta.html#aeebf8d75d3ea1e1c167344b5c4d98e4e">   32</a></span>    <a class="code hl_struct" href="structCarta.html">Carta</a> <a class="code hl_variable" href="structNodoCarta.html#aeebf8d75d3ea1e1c167344b5c4d98e4e">carta</a>;                    <span class="comment">/* La carta contenuta nel nodo */</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structNodoCarta.html#a38a4756098b91f388f6b762034cea50b">   33</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_variable" href="structNodoCarta.html#a38a4756098b91f388f6b762034cea50b">prossimo</a>;     <span class="comment">/* Puntatore al nodo successivo (next) */</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structNodoCarta.html#a79d379018c2987198cab3d3e198b6d67">   34</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_variable" href="structNodoCarta.html#a79d379018c2987198cab3d3e198b6d67">prev</a>;         <span class="comment">/* Puntatore al nodo precedente (prev) */</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>} <a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>;</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="data__structures_2list_8h.html#a4c21bead0a069a63c668c59b159c829c">   38</a></span><span class="keyword">typedef</span> <a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a> <a class="code hl_typedef" href="data__structures_2list_8h.html#a4c21bead0a069a63c668c59b159c829c">NodoMano</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structListaCarte.html">   46</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structListaCarte.html#a2af0aa0daab6080813b843eaa6feaff4">   47</a></span>    <a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_variable" href="structListaCarte.html#a2af0aa0daab6080813b843eaa6feaff4">testa</a>;       <span class="comment">/* Primo nodo della lista */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structListaCarte.html#af15cb66c2fd993a220e65b5602711d36">   48</a></span>    <a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_variable" href="structListaCarte.html#af15cb66c2fd993a220e65b5602711d36">coda</a>;        <span class="comment">/* Ultimo nodo della lista */</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structListaCarte.html#ab4710d62e8351a06557c98ed3820ea9b">   49</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structListaCarte.html#ab4710d62e8351a06557c98ed3820ea9b">lunghezza</a>;          <span class="comment">/* Numero totale di carte nella lista */</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>} <a class="code hl_struct" href="structListaCarte.html">ListaCarte</a>;</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_function" href="group__list.html#ga088820569fa2805555cdf3fbe0b2283c">Lista_InserisciDopo</a>(<a class="code hl_struct" href="structListaCarte.html">ListaCarte</a>* lista, <a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* nodo, <a class="code hl_struct" href="structCarta.html">Carta</a> c);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_function" href="group__list.html#ga9de40d1e818238d37c0f07b3bee18734">Lista_Precedente</a>(<a class="code hl_struct" href="structListaCarte.html">ListaCarte</a>* lista, <a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* nodo);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_function" href="group__list.html#gae3b26d3b03d49fcd37187be9b4cfded5">Lista_Ultimo</a>(<a class="code hl_struct" href="structListaCarte.html">ListaCarte</a>* lista);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__list.html#gacc099b32c3eec87dd70207099d538236">Lista_RimuoviNodoBidirezionale</a>(<a class="code hl_struct" href="structListaCarte.html">ListaCarte</a>* lista, <a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* nodo);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__list.html#ga9dc1fa933bb0dd65a60aa13f5a6d63d7">Lista_VerificaBidirezionale</a>(<a class="code hl_struct" href="structListaCarte.html">ListaCarte</a>* lista);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif </span><span class="comment">// DATA_STRUCTURES_LIST_H</span></div>
+<div class="ttc" id="adata__structures_2list_8h_html_a4c21bead0a069a63c668c59b159c829c"><div class="ttname"><a href="data__structures_2list_8h.html#a4c21bead0a069a63c668c59b159c829c">NodoMano</a></div><div class="ttdeci">NodoCarta NodoMano</div><div class="ttdoc">Alias per NodoCarta (usato nella documentazione CdS come NodoMano).</div><div class="ttdef"><b>Definition</b> list.h:38</div></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header centrale del progetto UNO - Tipi di dato condivisi.</div></div>
 <div class="ttc" id="agroup__list_html_ga088820569fa2805555cdf3fbe0b2283c"><div class="ttname"><a href="group__list.html#ga088820569fa2805555cdf3fbe0b2283c">Lista_InserisciDopo</a></div><div class="ttdeci">NodoCarta * Lista_InserisciDopo(ListaCarte *lista, NodoCarta *nodo, Carta c)</div><div class="ttdoc">Inserisce una carta dopo un nodo specifico (o in testa se nodo==NULL).</div><div class="ttdef"><b>Definition</b> list.c:28</div></div>
 <div class="ttc" id="agroup__list_html_ga9dc1fa933bb0dd65a60aa13f5a6d63d7"><div class="ttname"><a href="group__list.html#ga9dc1fa933bb0dd65a60aa13f5a6d63d7">Lista_VerificaBidirezionale</a></div><div class="ttdeci">int Lista_VerificaBidirezionale(ListaCarte *lista)</div><div class="ttdoc">Verifica l&#39;integrita&#39; dei puntatori prev/next (debug).</div><div class="ttdef"><b>Definition</b> list.c:114</div></div>
 <div class="ttc" id="agroup__list_html_ga9de40d1e818238d37c0f07b3bee18734"><div class="ttname"><a href="group__list.html#ga9de40d1e818238d37c0f07b3bee18734">Lista_Precedente</a></div><div class="ttdeci">NodoCarta * Lista_Precedente(ListaCarte *lista, NodoCarta *nodo)</div><div class="ttdoc">Restituisce il nodo precedente a quello dato.</div><div class="ttdef"><b>Definition</b> list.c:66</div></div>
 <div class="ttc" id="agroup__list_html_gacc099b32c3eec87dd70207099d538236"><div class="ttname"><a href="group__list.html#gacc099b32c3eec87dd70207099d538236">Lista_RimuoviNodoBidirezionale</a></div><div class="ttdeci">void Lista_RimuoviNodoBidirezionale(ListaCarte *lista, NodoCarta *nodo)</div><div class="ttdoc">Rimuove un nodo dalla lista gestendo correttamente prev/next.</div><div class="ttdef"><b>Definition</b> list.c:92</div></div>
 <div class="ttc" id="agroup__list_html_gae3b26d3b03d49fcd37187be9b4cfded5"><div class="ttname"><a href="group__list.html#gae3b26d3b03d49fcd37187be9b4cfded5">Lista_Ultimo</a></div><div class="ttdeci">NodoCarta * Lista_Ultimo(ListaCarte *lista)</div><div class="ttdoc">Restituisce l&#39;ultimo nodo della lista (coda).</div><div class="ttdef"><b>Definition</b> list.c:79</div></div>
-<div class="ttc" id="astruct_carta_html"><div class="ttname"><a href="struct_carta.html">Carta</a></div><div class="ttdoc">Rappresenta una singola carta UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:66</div></div>
-<div class="ttc" id="astruct_lista_carte_html"><div class="ttname"><a href="struct_lista_carte.html">ListaCarte</a></div><div class="ttdoc">Struttura container per la lista di carte (mano del giocatore).</div><div class="ttdef"><b>Definition</b> data_structures.h:102</div></div>
-<div class="ttc" id="astruct_nodo_carta_html"><div class="ttname"><a href="struct_nodo_carta.html">NodoCarta</a></div><div class="ttdoc">Nodo per la lista doppiamente concatenata della mano del giocatore.</div><div class="ttdef"><b>Definition</b> data_structures.h:87</div></div>
+<div class="ttc" id="astructCarta_html"><div class="ttname"><a href="structCarta.html">Carta</a></div><div class="ttdoc">Rappresenta una singola carta UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:65</div></div>
+<div class="ttc" id="astructListaCarte_html"><div class="ttname"><a href="structListaCarte.html">ListaCarte</a></div><div class="ttdoc">Struttura container per la lista di carte (mano del giocatore).</div><div class="ttdef"><b>Definition</b> list.h:46</div></div>
+<div class="ttc" id="astructListaCarte_html_a2af0aa0daab6080813b843eaa6feaff4"><div class="ttname"><a href="structListaCarte.html#a2af0aa0daab6080813b843eaa6feaff4">ListaCarte::testa</a></div><div class="ttdeci">NodoCarta * testa</div><div class="ttdef"><b>Definition</b> list.h:47</div></div>
+<div class="ttc" id="astructListaCarte_html_ab4710d62e8351a06557c98ed3820ea9b"><div class="ttname"><a href="structListaCarte.html#ab4710d62e8351a06557c98ed3820ea9b">ListaCarte::lunghezza</a></div><div class="ttdeci">int lunghezza</div><div class="ttdef"><b>Definition</b> list.h:49</div></div>
+<div class="ttc" id="astructListaCarte_html_af15cb66c2fd993a220e65b5602711d36"><div class="ttname"><a href="structListaCarte.html#af15cb66c2fd993a220e65b5602711d36">ListaCarte::coda</a></div><div class="ttdeci">NodoCarta * coda</div><div class="ttdef"><b>Definition</b> list.h:48</div></div>
+<div class="ttc" id="astructNodoCarta_html"><div class="ttname"><a href="structNodoCarta.html">NodoCarta</a></div><div class="ttdoc">Nodo per la lista doppiamente concatenata della mano del giocatore.</div><div class="ttdef"><b>Definition</b> list.h:31</div></div>
+<div class="ttc" id="astructNodoCarta_html_a38a4756098b91f388f6b762034cea50b"><div class="ttname"><a href="structNodoCarta.html#a38a4756098b91f388f6b762034cea50b">NodoCarta::prossimo</a></div><div class="ttdeci">struct NodoCarta * prossimo</div><div class="ttdef"><b>Definition</b> list.h:33</div></div>
+<div class="ttc" id="astructNodoCarta_html_a79d379018c2987198cab3d3e198b6d67"><div class="ttname"><a href="structNodoCarta.html#a79d379018c2987198cab3d3e198b6d67">NodoCarta::prev</a></div><div class="ttdeci">struct NodoCarta * prev</div><div class="ttdef"><b>Definition</b> list.h:34</div></div>
+<div class="ttc" id="astructNodoCarta_html_aeebf8d75d3ea1e1c167344b5c4d98e4e"><div class="ttname"><a href="structNodoCarta.html#aeebf8d75d3ea1e1c167344b5c4d98e4e">NodoCarta::carta</a></div><div class="ttdeci">Carta carta</div><div class="ttdef"><b>Definition</b> list.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e1211c1ba4cadc9e94fe0fdad0038fad.html">data_structures</a></li><li class="navelem"><a href="data__structures_2list_8h.html">list.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_e1211c1ba4cadc9e94fe0fdad0038fad.html">data_structures</a></li><li class="navelem"><a href="data__structures_2list_8h.html">list.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Elementi globali</title>
+<title>UNO - Gioco di Carte: Elementi globali</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,38 +117,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_func_t
 
 <div class="contents">
 <div class="textblock">&#160;</div><br/>
-<div class="qindex"><a class="qindex" href="globals_func.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="globals_func_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="globals_func_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="globals_func_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="globals_func_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="globals_func_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="globals_func_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="globals_func_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="globals_func_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="globals_func_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="globals_func_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="globals_func_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="globals_func_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="globals_func_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="globals_func_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="globals_func_q.html#index_q">Q</a><div class="alphasepar"></div><a class="qindex" href="globals_func_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="globals_func_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="globals_func_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="globals_func_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="globals_func_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="globals_func_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="globals_func__.html#index__">_</a></div>
+<div class="qindex"><a class="qindex" href="globals_func.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="globals_func_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="globals_func_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="globals_func_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="globals_func_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="globals_func_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="globals_func_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="globals_func_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="globals_func_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="globals_func_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="globals_func_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="globals_func_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="globals_func_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="globals_func_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="globals_func_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="globals_func_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="globals_func_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="globals_func_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="globals_func_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="globals_func_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="globals_func__.html#index__">_</a></div>
 
 
 <h3 class="doxsection"><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>TakeScreenshot()&#160;:&#160;<a class="el" href="raylib_8h.html#a5d93d0879de8a3e13306a64c98986c1b">raylib.h</a></li>
-<li>TextAppend()&#160;:&#160;<a class="el" href="raylib_8h.html#af6795f1f64e153dd7108dee5af1f5be1">raylib.h</a></li>
-<li>TextCopy()&#160;:&#160;<a class="el" href="raylib_8h.html#ac359e01c109151c2f64e21fe0967e676">raylib.h</a></li>
-<li>TextFindIndex()&#160;:&#160;<a class="el" href="raylib_8h.html#a840078d57073b76450c89e54e98edf1e">raylib.h</a></li>
-<li>TextFormat()&#160;:&#160;<a class="el" href="raylib_8h.html#a04f6dce52328f8287caab282ad4235ee">raylib.h</a></li>
-<li>TextInsert()&#160;:&#160;<a class="el" href="raylib_8h.html#ac61d0ec1545ccb4c5e019ed478942277">raylib.h</a></li>
-<li>TextInsertAlloc()&#160;:&#160;<a class="el" href="raylib_8h.html#ad1b85d01dd9ff4066bfbc03e2432c7be">raylib.h</a></li>
-<li>TextIsEqual()&#160;:&#160;<a class="el" href="raylib_8h.html#a6cc13fe7aad0d04efbd8c34a1cc09a24">raylib.h</a></li>
-<li>TextJoin()&#160;:&#160;<a class="el" href="raylib_8h.html#a5121d9569d7a93748dd3c3fa68f9b661">raylib.h</a></li>
-<li>TextLength()&#160;:&#160;<a class="el" href="raylib_8h.html#afcb6f63b882f361f756afc86c4db9569">raylib.h</a></li>
-<li>TextRemoveSpaces()&#160;:&#160;<a class="el" href="raylib_8h.html#a29d213d818af629bae25b7e711b2dadd">raylib.h</a></li>
-<li>TextReplace()&#160;:&#160;<a class="el" href="raylib_8h.html#a125e15e4ee1267fbf6a7f5afe6a167e1">raylib.h</a></li>
-<li>TextReplaceAlloc()&#160;:&#160;<a class="el" href="raylib_8h.html#ab4a682ce3321b77f82c5532c01c5b2c2">raylib.h</a></li>
-<li>TextReplaceBetween()&#160;:&#160;<a class="el" href="raylib_8h.html#a64438d83471f415fbe80cf04aea55ac5">raylib.h</a></li>
-<li>TextReplaceBetweenAlloc()&#160;:&#160;<a class="el" href="raylib_8h.html#aae8ba477e3e5082be9f1e1d94c988773">raylib.h</a></li>
-<li>TextSplit()&#160;:&#160;<a class="el" href="raylib_8h.html#a1ce5cdf25f7187d5c8192d019d1f0cb2">raylib.h</a></li>
-<li>TextSubtext()&#160;:&#160;<a class="el" href="raylib_8h.html#aa74f1ec07da56288801328cb07adb891">raylib.h</a></li>
-<li>TextToCamel()&#160;:&#160;<a class="el" href="raylib_8h.html#a1c6ae3137e9128c75a3adb14b5a1444d">raylib.h</a></li>
-<li>TextToFloat()&#160;:&#160;<a class="el" href="raylib_8h.html#a017e2505353182cb1ca88e194e769ecc">raylib.h</a></li>
-<li>TextToInteger()&#160;:&#160;<a class="el" href="raylib_8h.html#a6a2e2982bf45fd90db5fb36a0e8d96c8">raylib.h</a></li>
-<li>TextToLower()&#160;:&#160;<a class="el" href="raylib_8h.html#a35f23ce95df569b87560c16fae7e1bc5">raylib.h</a></li>
-<li>TextToPascal()&#160;:&#160;<a class="el" href="raylib_8h.html#ad9a0033e5aba05711c1a07588da2b1c2">raylib.h</a></li>
-<li>TextToSnake()&#160;:&#160;<a class="el" href="raylib_8h.html#af235ba5104e1da0b93aa009df5ce9df1">raylib.h</a></li>
-<li>TextToUpper()&#160;:&#160;<a class="el" href="raylib_8h.html#ad32f2431e9fa149b1092a7a3c77ec13d">raylib.h</a></li>
-<li>ToggleBorderlessWindowed()&#160;:&#160;<a class="el" href="raylib_8h.html#ad6f84ea7e00d92013745e7cd0477c230">raylib.h</a></li>
-<li>ToggleFullscreen()&#160;:&#160;<a class="el" href="raylib_8h.html#a93e6fe98a216087fb8226e6361b545bf">raylib.h</a></li>
-<li>TraceLog()&#160;:&#160;<a class="el" href="raylib_8h.html#a7c00212b28a73fc28770e22cef8283ff">raylib.h</a></li>
-<li>TrovaRecv()&#160;:&#160;<a class="el" href="lan__save__helpers_8c.html#a2be1321ebd26526dd8e93c9312b068dc">lan_save_helpers.c</a>, <a class="el" href="lan__save__helpers_8h.html#a2be1321ebd26526dd8e93c9312b068dc">lan_save_helpers.h</a></li>
+<li>test_bst()&#160;:&#160;<a class="el" href="test__adt_8c.html#a36afba827c86cbc0214a21b17bdb5d21">test_adt.c</a></li>
+<li>test_chat()&#160;:&#160;<a class="el" href="test__adt_8c.html#ada70adddd582c5a30ce08a477baf050b">test_adt.c</a></li>
+<li>test_coda()&#160;:&#160;<a class="el" href="test__adt_8c.html#acc6e7732c7d93e15bc11f8da2817186c">test_adt.c</a></li>
+<li>test_game_logic()&#160;:&#160;<a class="el" href="test__adt_8c.html#ae47a593c2df2cc837a5a11ec4304823a">test_adt.c</a></li>
+<li>test_giocatore()&#160;:&#160;<a class="el" href="test__adt_8c.html#aca096a4d6f68d76dbf34366f08c2de66">test_adt.c</a></li>
+<li>test_lista()&#160;:&#160;<a class="el" href="test__adt_8c.html#affbc40e6803959d2f4c70df43a103990">test_adt.c</a></li>
+<li>test_pila()&#160;:&#160;<a class="el" href="test__adt_8c.html#a06e86b3fd262b39bcf9eac553ad0a928">test_adt.c</a></li>
+<li>TrovaRecv()&#160;:&#160;<a class="el" href="lan__save__helpers_8h.html#a2be1321ebd26526dd8e93c9312b068dc">lan_save_helpers.h</a>, <a class="el" href="lan__save__helpers_8c.html#a2be1321ebd26526dd8e93c9312b068dc">lan_save_helpers.c</a>, <a class="el" href="lan__save__sync_8c.html#a2084cf7fb44e75b9e929c83e8fb898bc">lan_save_sync.c</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -139,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_func_t
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

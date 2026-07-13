@@ -1,5 +1,9 @@
 var lan__broadcast_8c =
 [
+    [ "AggiungiPendingDeletion", "lan__broadcast_8c.html#afc84fc196a6b2e1aaa9a22e88589a2f5", null ],
+    [ "CalcolaSubnetBroadcast", "lan__broadcast_8c.html#ac9cfe5a94772d9d0f1ebfcabcb91279c", null ],
+    [ "ConfermaPendingDeletions", "lan__broadcast_8c.html#a1dd332c43b0bb24c97702a450c5fa19d", null ],
+    [ "IsPendingDeletion", "lan__broadcast_8c.html#ae60e38482415a1686e2e396c5833477a", null ],
     [ "LAN_BroadcastDeleteSave", "lan__broadcast_8c.html#a75f095ec4db72f1eaaf97fb8ae78b304", null ],
     [ "LAN_BroadcastDeleteUser", "lan__broadcast_8c.html#a041d8356ae80ac806101042d00ba50ce", null ],
     [ "LAN_BroadcastNow", "lan__broadcast_8c.html#ae1b4876757ac2d2fbb965c0dfc1a1c4c", null ],
@@ -9,9 +13,17 @@ var lan__broadcast_8c =
     [ "LAN_GetUtentiCount", "lan__broadcast_8c.html#ad742056d7d001bc371900404f780fdb5", null ],
     [ "LAN_Init", "lan__broadcast_8c.html#a88d0b5ae2f24ad06c318deb550373b1e", null ],
     [ "LAN_Update", "lan__broadcast_8c.html#ab0b625c0463cad457894bf91847319c5", null ],
+    [ "RimuoviPendingDeletion", "lan__broadcast_8c.html#a4dd7a4537b1d26bd0548aeaf68d91daf", null ],
     [ "broadcastAddr", "lan__broadcast_8c.html#a3a57e935a86c9a15dba005b214923a52", null ],
     [ "deletedUsers", "lan__broadcast_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f", null ],
     [ "dentroSalvaDB", "lan__broadcast_8c.html#a35d530456749dea612236ad880c703d5", null ],
+    [ "lanInizializzato", "lan__broadcast_8c.html#a5b75aa5f36ca26e12342c4dc57075c8e", null ],
+    [ "lanRecvBuf", "lan__broadcast_8c.html#ae78e972ef5455de3eed809237828f2be", null ],
+    [ "lanSaveTimer", "lan__broadcast_8c.html#a0c3757abe33337404b9ecc9e90b20e06", null ],
     [ "lanSocket", "lan__broadcast_8c.html#a352ca6eff6deccbae445480052cf9bdc", null ],
-    [ "numDeletedUsers", "lan__broadcast_8c.html#a83d2b69124592dbd8092ed4214b3f35e", null ]
+    [ "lanTimer", "lan__broadcast_8c.html#a6d0aa9313d240718c068dd13d497982a", null ],
+    [ "localHostname", "lan__broadcast_8c.html#adb8cfa9e8699a60b732bc7abd0f6c442", null ],
+    [ "numDeletedUsers", "lan__broadcast_8c.html#a83d2b69124592dbd8092ed4214b3f35e", null ],
+    [ "numPendingDeletions", "lan__broadcast_8c.html#a67eb720694ab7d997347a60d0ed659e2", null ],
+    [ "pendingDeletions", "lan__broadcast_8c.html#a630cbe6895f3642b9a20122adc345eb6", null ]
 ];

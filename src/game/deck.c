@@ -1,16 +1,19 @@
 /**
  * @file deck.c
- * @brief Gestione mazzo di pesca e operazioni sulle carte.
+ * @brief Gestione mazzo di pesca, scarti e pesca carte.
  * @ingroup game_logic
  *
- * Modulo specializzato per la creazione, mescolamento, rimescolamento
- * e pesca delle carte UNO. Utility per accesso alle mani dei giocatori.
- *
- * ADT utilizzati: Pila (mazzo_pila, scarti_pila), ListaCarte (mani).
+ * Contiene:
+ *   - InizializzaMazzo: creazione e mescolamento del mazzo standard UNO (108 carte)
+ *   - RimescolaScartiNelMazzo: rigenerazione mazzo dalla pila scarti
+ *   - Pesca: distribuzione carte ai giocatori
+ *   - GetLunghezzaMano, GetCartaGiocatore, GetNodoCartaGiocatore, RimuoviCartaGiocatore
  */
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <stdint.h>
 
 #include "../../lib/game_logic.h"
 #include "../../lib/data_structures.h"
@@ -18,17 +21,10 @@
 #include "../../lib/list.h"
 
 /* ============================================================
- *  FUNZIONI HELPER PRIVATE - Conversione Pila <-> Array
+ *  FUNZIONI STATICHE (commentate per warning - unused)
+ *  Mantenute per eventuale uso futuro (serializzazione mazzo)
  * ============================================================ */
-
-/**
- * @brief Svuota una pila e ne copia il contenuto nell'array mazzo[].
- * @ingroup game_logic
- * @pre gioco != NULL; pila != NULL.
- * @post Array mazzo[] popolato; pila ricostruita.
- * @param gioco Stato di gioco.
- * @param pila Pila da convertire.
- */
+/*
 static void PilaToMazzoArray(StatoGioco* gioco, Pila* pila) {
     Carta tmp[108];
     int n = 0;
@@ -43,11 +39,6 @@ static void PilaToMazzoArray(StatoGioco* gioco, Pila* pila) {
     }
 }
 
-/**
- * @brief Versione alternativa di PilaToMazzoArray (compatibilita' legacy).
- * @ingroup game_logic
- * @deprecated Usare PilaToMazzoArray().
- */
 static void MettiMazzoInArray(StatoGioco* gioco, Pila* pila) {
     Carta tmp[108];
     int n = 0;
@@ -59,6 +50,7 @@ static void MettiMazzoInArray(StatoGioco* gioco, Pila* pila) {
         Pila_Push(pila, tmp[i]);
     }
 }
+*/
 
 /* ============================================================
  *  INIZIALIZZAZIONE MAZZO
@@ -78,15 +70,15 @@ void InizializzaMazzo(StatoGioco *gioco) {
     mazzo_pila = Pila_Crea();
     scarti_pila = Pila_Crea();
     for (int c = ROSSO; c <= BLU; c++) {
-        gioco->mazzo[indice++] = (Carta){c, NUM_0, {0}, {0}, 0};
+        gioco->mazzo[indice++] = (Carta){c, NUM_0, {0,0,0,0}, {0,0}, 0};
         for (int t = NUM_1; t <= PESCA_DUE; t++) {
-            gioco->mazzo[indice++] = (Carta){c, t, {0}, {0}, 0};
-            gioco->mazzo[indice++] = (Carta){c, t, {0}, {0}, 0};
+            gioco->mazzo[indice++] = (Carta){c, t, {0,0,0,0}, {0,0}, 0};
+            gioco->mazzo[indice++] = (Carta){c, t, {0,0,0,0}, {0,0}, 0};
         }
     }
     for (int i = 0; i < 4; i++) {
-        gioco->mazzo[indice++] = (Carta){NERO, CAMBIO_COLORE, {0}, {0}, 0};
-        gioco->mazzo[indice++] = (Carta){NERO, PESCA_QUATTRO, {0}, {0}, 0};
+        gioco->mazzo[indice++] = (Carta){NERO, CAMBIO_COLORE, {0,0,0,0}, {0,0}, 0};
+        gioco->mazzo[indice++] = (Carta){NERO, PESCA_QUATTRO, {0,0,0,0}, {0,0}, 0};
     }
     gioco->num_carte_mazzo = indice;
     gioco->num_carte_scarti = 0;
@@ -154,15 +146,8 @@ void Pesca(StatoGioco *gioco, int id_giocatore, int quantita) {
         if (gioco->num_carte_mazzo > 0) {
             Giocatore *g = &gioco->giocatori[id_giocatore];
             if (!g->mano) g->mano = CreaLista();
-            Carta pescata_da_pila;
-            if (Pila_Pop(mazzo_pila, &pescata_da_pila) &&
-                pescata_da_pila.tipo == gioco->mazzo[gioco->num_carte_mazzo - 1].tipo) {
-                gioco->num_carte_mazzo--;
-                InsertInCoda(g->mano, gioco->mazzo[gioco->num_carte_mazzo]);
-            } else {
-                gioco->num_carte_mazzo--;
-                InsertInCoda(g->mano, gioco->mazzo[gioco->num_carte_mazzo]);
-            }
+            gioco->num_carte_mazzo--;
+            InsertInCoda(g->mano, gioco->mazzo[gioco->num_carte_mazzo]);
             g->num_carte_mano = g->mano->lunghezza;
         }
     }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['decisionebot_0',['DecisioneBot',['../group__bot__ai__azioni.html#ga9ba63d9ab706e1b3df0ee26eac06dd19',1,'bot_ai.h']]]
+  ['faseapplicazione_0',['FaseApplicazione',['../data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4',1,'data_structures.h']]]
 ];

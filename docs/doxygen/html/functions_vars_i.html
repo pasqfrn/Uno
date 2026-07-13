@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Campi dei dati - Variabili</title>
+<title>UNO - Gioco di Carte: Campi dei dati - Variabili</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,22 +117,18 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_vars
 
 <div class="contents">
 <div class="textblock">&#160;</div><br/>
-<div class="qindex"><a class="qindex" href="functions_vars.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_x.html#index_x">X</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_y.html#index_y">Y</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_z.html#index_z">Z</a></div>
+<div class="qindex"><a class="qindex" href="functions_vars.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_f.html#index_f">F</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_k.html#index_k">K</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_u.html#index_u">U</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="functions_vars_w.html#index_w">W</a></div>
 
 
 <h3 class="doxsection"><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>id&#160;:&#160;<a class="el" href="struct_render_texture.html#afff7311503809d95f59b28a1458f8481">RenderTexture</a>, <a class="el" href="struct_shader.html#af3eee7628d291077cfa66dcc83df83a2">Shader</a>, <a class="el" href="struct_texture.html#aed42161a5c00b6020c85833401da6da6">Texture</a></li>
-<li>id_carta_in_trascinamento&#160;:&#160;<a class="el" href="struct_stato_gioco.html#a03439e6c9077fa496b326a68b1793619">StatoGioco</a></li>
-<li>idleTime&#160;:&#160;<a class="el" href="struct_game_session.html#a9088938158952033e865dd94aba1bfbe">GameSession</a></li>
-<li>image&#160;:&#160;<a class="el" href="struct_glyph_info.html#a0a8a4bef3704cb993031bdc6af527cf7">GlyphInfo</a></li>
-<li>in_scelta_colore&#160;:&#160;<a class="el" href="struct_stato_gioco.html#aeb67d15003bf5a99247679660daf8eb4">StatoGioco</a></li>
-<li>indices&#160;:&#160;<a class="el" href="struct_mesh.html#a89fd56bfc17e9ce12e1829c113231d11">Mesh</a>, <a class="el" href="structrl_vertex_buffer.html#a43f24384fd977ce40ab36d7d39537d40">rlVertexBuffer</a></li>
-<li>info&#160;:&#160;<a class="el" href="struct_giocatore.html#a97a5b3f0e45d9683593e48f6db7a0601">Giocatore</a></li>
-<li>interpupillaryDistance&#160;:&#160;<a class="el" href="struct_vr_device_info.html#a77b059fa8caea38dd7690c53f34042c9">VrDeviceInfo</a></li>
-<li>is_bot&#160;:&#160;<a class="el" href="struct_classifica_record.html#ac0567a89feacf4cc7ee009563dc4bd2c">ClassificaRecord</a>, <a class="el" href="struct_giocatore.html#af56fe97526640596e0355d93bba7ae40">Giocatore</a>, <a class="el" href="struct_session_player.html#af53c71074b17b3e19d048c9954408655">SessionPlayer</a></li>
-<li>is_connected&#160;:&#160;<a class="el" href="struct_session_player.html#a1550d8e967e52dae51afb25037593b51">SessionPlayer</a></li>
+<li>id_carta_in_trascinamento&#160;:&#160;<a class="el" href="structStatoGioco.html#a03439e6c9077fa496b326a68b1793619">StatoGioco</a></li>
+<li>idleTime&#160;:&#160;<a class="el" href="structGameSession.html#a9088938158952033e865dd94aba1bfbe">GameSession</a></li>
+<li>in_scelta_colore&#160;:&#160;<a class="el" href="structStatoGioco.html#aeb67d15003bf5a99247679660daf8eb4">StatoGioco</a></li>
+<li>info&#160;:&#160;<a class="el" href="structGiocatore.html#a97a5b3f0e45d9683593e48f6db7a0601">Giocatore</a></li>
+<li>is_bot&#160;:&#160;<a class="el" href="structClassificaRecord.html#ac0567a89feacf4cc7ee009563dc4bd2c">ClassificaRecord</a>, <a class="el" href="structGiocatore.html#af56fe97526640596e0355d93bba7ae40">Giocatore</a>, <a class="el" href="structSessionPlayer.html#af53c71074b17b3e19d048c9954408655">SessionPlayer</a></li>
+<li>is_connected&#160;:&#160;<a class="el" href="structSessionPlayer.html#a1550d8e967e52dae51afb25037593b51">SessionPlayer</a></li>
 <li>is_ready&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gad4d1f6a7b22f4c2f2e5a244718194383">PacketPlayerReady</a></li>
-<li>isTrascinata&#160;:&#160;<a class="el" href="struct_carta.html#a54af4043346725181d409aa88c41243b">Carta</a></li>
+<li>isTrascinata&#160;:&#160;<a class="el" href="structCarta.html#a54af4043346725181d409aa88c41243b">Carta</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -123,7 +136,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_vars
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

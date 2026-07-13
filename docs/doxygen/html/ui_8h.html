@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file lib/ui.h</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file ui.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -115,20 +132,20 @@ Funzioni</h2></td></tr>
 <tr class="memdesc:a8b6843013da01feaa0c418592c2fdbe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carica tutte le texture delle carte e lo sfondo da file PNG.  <br /></td></tr>
 <tr class="memitem:ac8993e016550851622a8f275d4c4cf1c" id="r_ac8993e016550851622a8f275d4c4cf1c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac8993e016550851622a8f275d4c4cf1c">ScaricaTextureReali</a> (void)</td></tr>
 <tr class="memdesc:ac8993e016550851622a8f275d4c4cf1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera dalla RAM tutte le texture caricate.  <br /></td></tr>
-<tr class="memitem:a0c51f7d6a3bf4a1debe77da34839f18c" id="r_a0c51f7d6a3bf4a1debe77da34839f18c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0c51f7d6a3bf4a1debe77da34839f18c">DisegnaCartaRealistica</a> (<a class="el" href="struct_carta.html">Carta</a> *c, <a class="el" href="struct_rectangle.html">Rectangle</a> r, int coperta)</td></tr>
+<tr class="memitem:a0c51f7d6a3bf4a1debe77da34839f18c" id="r_a0c51f7d6a3bf4a1debe77da34839f18c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0c51f7d6a3bf4a1debe77da34839f18c">DisegnaCartaRealistica</a> (<a class="el" href="structCarta.html">Carta</a> *c, Rectangle r, int coperta)</td></tr>
 <tr class="memdesc:a0c51f7d6a3bf4a1debe77da34839f18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna una carta UNO con texture realistica e ombra.  <br /></td></tr>
-<tr class="memitem:a93cf3d6c0a2a0ce832f80d2ac7dcad30" id="r_a93cf3d6c0a2a0ce832f80d2ac7dcad30"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a93cf3d6c0a2a0ce832f80d2ac7dcad30">DisegnaBottoneMenuAnimato</a> (<a class="el" href="struct_rectangle.html">Rectangle</a> rect, const char *testo)</td></tr>
+<tr class="memitem:a93cf3d6c0a2a0ce832f80d2ac7dcad30" id="r_a93cf3d6c0a2a0ce832f80d2ac7dcad30"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a93cf3d6c0a2a0ce832f80d2ac7dcad30">DisegnaBottoneMenuAnimato</a> (Rectangle rect, const char *testo)</td></tr>
 <tr class="memdesc:a93cf3d6c0a2a0ce832f80d2ac7dcad30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna un bottone animato per il menu con effetto hover/press.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variabili</h2></td></tr>
-<tr class="memitem:ga8ac64cad02704cae0cb4af6f96d92767" id="r_ga8ac64cad02704cae0cb4af6f96d92767"><td class="memItemLeft"><a class="el" href="raylib_8h.html#a0f74897272c4257b58656025d91a16ed">Texture2D</a>&#160;</td><td class="memItemRight"><a class="el" href="group__ui__texture.html#ga8ac64cad02704cae0cb4af6f96d92767">textureCarte</a> [5][15]</td></tr>
+<tr class="memitem:ga8ac64cad02704cae0cb4af6f96d92767" id="r_ga8ac64cad02704cae0cb4af6f96d92767"><td class="memItemLeft">Texture2D&#160;</td><td class="memItemRight"><a class="el" href="group__ui__texture.html#ga8ac64cad02704cae0cb4af6f96d92767">textureCarte</a> [5][15]</td></tr>
 <tr class="memdesc:ga8ac64cad02704cae0cb4af6f96d92767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache globale delle texture delle carte UNO: textureCarte[colore][tipo].  <br /></td></tr>
-<tr class="memitem:ga876b5c791744657fa724c81445ce9e8b" id="r_ga876b5c791744657fa724c81445ce9e8b"><td class="memItemLeft"><a class="el" href="raylib_8h.html#a0f74897272c4257b58656025d91a16ed">Texture2D</a>&#160;</td><td class="memItemRight"><a class="el" href="group__ui__texture.html#ga876b5c791744657fa724c81445ce9e8b">textureDorso</a></td></tr>
-<tr class="memdesc:ga876b5c791744657fa724c81445ce9e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_texture.html">Texture</a> del dorso delle carte (per carte coperte).  <br /></td></tr>
-<tr class="memitem:gaf27071339f699f36aff91ba414cd50d8" id="r_gaf27071339f699f36aff91ba414cd50d8"><td class="memItemLeft"><a class="el" href="raylib_8h.html#a0f74897272c4257b58656025d91a16ed">Texture2D</a>&#160;</td><td class="memItemRight"><a class="el" href="group__ui__texture.html#gaf27071339f699f36aff91ba414cd50d8">textureSfondo</a></td></tr>
-<tr class="memdesc:gaf27071339f699f36aff91ba414cd50d8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_texture.html">Texture</a> dello sfondo del gioco.  <br /></td></tr>
-<tr class="memitem:ga82e1b2777891ad1a9b469a6e02915d3a" id="r_ga82e1b2777891ad1a9b469a6e02915d3a"><td class="memItemLeft">const <a class="el" href="struct_color.html">Color</a>&#160;</td><td class="memItemRight"><a class="el" href="group__ui__texture.html#ga82e1b2777891ad1a9b469a6e02915d3a">coloriRaylib</a> []</td></tr>
+<tr class="memitem:ga876b5c791744657fa724c81445ce9e8b" id="r_ga876b5c791744657fa724c81445ce9e8b"><td class="memItemLeft">Texture2D&#160;</td><td class="memItemRight"><a class="el" href="group__ui__texture.html#ga876b5c791744657fa724c81445ce9e8b">textureDorso</a></td></tr>
+<tr class="memdesc:ga876b5c791744657fa724c81445ce9e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture del dorso delle carte (per carte coperte).  <br /></td></tr>
+<tr class="memitem:gaf27071339f699f36aff91ba414cd50d8" id="r_gaf27071339f699f36aff91ba414cd50d8"><td class="memItemLeft">Texture2D&#160;</td><td class="memItemRight"><a class="el" href="group__ui__texture.html#gaf27071339f699f36aff91ba414cd50d8">textureSfondo</a></td></tr>
+<tr class="memdesc:gaf27071339f699f36aff91ba414cd50d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture dello sfondo del gioco.  <br /></td></tr>
+<tr class="memitem:ga82e1b2777891ad1a9b469a6e02915d3a" id="r_ga82e1b2777891ad1a9b469a6e02915d3a"><td class="memItemLeft">const Color&#160;</td><td class="memItemRight"><a class="el" href="group__ui__texture.html#ga82e1b2777891ad1a9b469a6e02915d3a">coloriRaylib</a> []</td></tr>
 <tr class="memdesc:ga82e1b2777891ad1a9b469a6e02915d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Colori Raylib associati ai colori UNO.  <br /></td></tr>
 <tr class="memitem:ga3ad028ed1f516f621880dbf04b68201c" id="r_ga3ad028ed1f516f621880dbf04b68201c"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="group__ui__texture.html#ga3ad028ed1f516f621880dbf04b68201c">nomiColori</a> []</td></tr>
 <tr class="memdesc:ga3ad028ed1f516f621880dbf04b68201c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nomi descrittivi dei colori UNO.  <br /></td></tr>
@@ -153,10 +170,10 @@ Variabili</h2></td></tr>
 
 <p>Carica tutte le texture delle carte e lo sfondo da file PNG. </p>
 <dl class="section pre"><dt>Precondizione</dt><dd>Asset cartelle esistenti con PNG corretti. </dd></dl>
-<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_texture.html">Texture</a> caricate in RAM e filtri bilineari applicati.</dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Texture caricate in RAM e filtri bilineari applicati.</dd></dl>
 <p>Carica textureCarte per tutti i colori e tipi, textureDorso e textureSfondo. Applica filtro bilineare per scaling di qualita'.</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>Cartelle assets/card/cards_assets/ e assets/altro/ esistono con i PNG richiesti. </dd></dl>
-<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_texture.html">Texture</a> globali caricate in RAM; filtri bilineari applicati. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Texture globali caricate in RAM; filtri bilineari applicati. </dd></dl>
 
 </div>
 </div>
@@ -169,7 +186,7 @@ Variabili</h2></td></tr>
         <tr>
           <td class="memname">int DisegnaBottoneMenuAnimato </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_rectangle.html">Rectangle</a></td>          <td class="paramname"><span class="paramname"><em>rect</em></span>, </td>
+          <td class="paramtype">Rectangle</td>          <td class="paramname"><span class="paramname"><em>rect</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -213,12 +230,12 @@ Variabili</h2></td></tr>
         <tr>
           <td class="memname">void DisegnaCartaRealistica </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_carta.html">Carta</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structCarta.html">Carta</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_rectangle.html">Rectangle</a></td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
+          <td class="paramtype">Rectangle</td>          <td class="paramname"><span class="paramname"><em>r</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -230,7 +247,7 @@ Variabili</h2></td></tr>
 
 <p>Disegna una carta UNO con texture realistica e ombra. </p>
 <dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; r dimensioni valide. </dd></dl>
-<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a> disegnata a schermo. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a> disegnata a schermo. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>Puntatore alla carta da disegnare. </td></tr>
@@ -241,7 +258,7 @@ Variabili</h2></td></tr>
 </dl>
 <p>Se coperta=1 disegna il dorso, altrimenti la texture corrispondente a colore/tipo. Applica ombra dinamica e bordo luminoso se trascinata.</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>c != NULL; r.width &gt; 0 &amp;&amp; r.height &gt; 0. </dd></dl>
-<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a> renderizzata a schermo con ombra e bordo se applicabile. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a> renderizzata a schermo con ombra e bordo se applicabile. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>Puntatore alla carta da disegnare. </td></tr>
@@ -269,10 +286,10 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Libera dalla RAM tutte le texture caricate. </p>
-<dl class="section pre"><dt>Precondizione</dt><dd><a class="el" href="struct_texture.html">Texture</a> caricate in precedenza. </dd></dl>
+<dl class="section pre"><dt>Precondizione</dt><dd>Texture caricate in precedenza. </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>Risorse grafiche rilasciate.</dd></dl>
 <p>Deve essere chiamata alla chiusura del gioco per evitare memory leak.</p>
-<dl class="section pre"><dt>Precondizione</dt><dd><a class="el" href="struct_texture.html">Texture</a> caricate in precedenza con CaricaTextureReali. </dd></dl>
+<dl class="section pre"><dt>Precondizione</dt><dd>Texture caricate in precedenza con CaricaTextureReali. </dd></dl>
 <dl class="section post"><dt>Postcondizione</dt><dd>Risorse grafiche rilasciate dalla RAM. </dd></dl>
 
 </div>
@@ -290,8 +307,8 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="ui_8h.html">ui.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="ui_8h.html">ui.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

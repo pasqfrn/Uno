@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Admin Draw</title>
+<title>UNO - Gioco di Carte: Admin Draw</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -108,11 +125,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__admin__
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-files" class="groupheader"><a id="files" name="files"></a>
 File</h2></td></tr>
-<tr class="memitem:src_2Fscreens_2Fauth_2Fadmin_5Fdraw_2Ec" id="r_src_2Fscreens_2Fauth_2Fadmin_5Fdraw_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="admin__draw_8c.html">src/screens/auth/admin_draw.c</a></td></tr>
+<tr class="memitem:screens_2Fauth_2Fadmin_5Fdraw_2Ec" id="r_screens_2Fauth_2Fadmin_5Fdraw_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="admin__draw_8c.html">screens/auth/admin_draw.c</a></td></tr>
 <tr class="memdesc:admin__draw_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rendering pannello admin e modifica utenti. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
+<tr class="memitem:ga1c21703414125fcb00604886d1d0a3da" id="r_ga1c21703414125fcb00604886d1d0a3da"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#ga1c21703414125fcb00604886d1d0a3da">UtenteEliminato</a> (const char *username)</td></tr>
+<tr class="memdesc:ga1c21703414125fcb00604886d1d0a3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un utente e' in deletedUsers[] (pending deletion).  <br /></td></tr>
+<tr class="memitem:gaf067037328f26f3a328feed57d413013" id="r_gaf067037328f26f3a328feed57d413013"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#gaf067037328f26f3a328feed57d413013">UtenteLoggato</a> (const char *username)</td></tr>
+<tr class="memdesc:gaf067037328f26f3a328feed57d413013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un utente e' loggato (locale o client TCP connesso).  <br /></td></tr>
 <tr class="memitem:ga49f97a468b2963be59ba4516897af8bb" id="r_ga49f97a468b2963be59ba4516897af8bb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga49f97a468b2963be59ba4516897af8bb">DisegnaAdminPanel</a> (<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase)</td></tr>
 <tr class="memdesc:ga49f97a468b2963be59ba4516897af8bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna il pannello admin con lista utenti scrollabile.  <br /></td></tr>
 <tr class="memitem:ga6ea0391819fa399e3541716951ebf5e7" id="r_ga6ea0391819fa399e3541716951ebf5e7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6ea0391819fa399e3541716951ebf5e7">DisegnaAdminModificaUtente</a> (<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase)</td></tr>
@@ -195,6 +216,76 @@ Funzioni</h2></td></tr>
 
 </div>
 </div>
+<a id="ga1c21703414125fcb00604886d1d0a3da" name="ga1c21703414125fcb00604886d1d0a3da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1c21703414125fcb00604886d1d0a3da">&#9670;&#160;</a></span>UtenteEliminato()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UtenteEliminato </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica se un utente e' in deletedUsers[] (pending deletion). </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>username != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se eliminato, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf067037328f26f3a328feed57d413013" name="gaf067037328f26f3a328feed57d413013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf067037328f26f3a328feed57d413013">&#9670;&#160;</a></span>UtenteLoggato()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UtenteLoggato </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica se un utente e' loggato (locale o client TCP connesso). </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>username != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se loggato/connesso, 0 altrimenti. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -208,7 +299,7 @@ Funzioni</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

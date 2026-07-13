@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Elementi globali</title>
+<title>UNO - Gioco di Carte: Elementi globali</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,148 +117,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_vars.h
 
 <div class="contents">
 <div class="textblock">&#160;</div><br/>
-<div class="qindex"><a class="qindex" href="#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="#index_u">U</a></div>
+<div class="qindex"><a class="qindex" href="globals_vars.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_h.html#index_h">H</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_j.html#index_j">J</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_n.html#index_n">N</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="globals_vars_u.html#index_u">U</a></div>
 
 
 <h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
 <li>admin_scroll_reset&#160;:&#160;<a class="el" href="admin__draw_8c.html#a65bd7a3a024eeecda356b3898743189e">admin_draw.c</a>, <a class="el" href="auth__update_8c.html#a65bd7a3a024eeecda356b3898743189e">auth_update.c</a></li>
-<li>areaTavoloCentro&#160;:&#160;<a class="el" href="gameplay__draw_8c.html#a95d4008478c2502c125a4aebe7ce23d8">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#a95d4008478c2502c125a4aebe7ce23d8">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#a95d4008478c2502c125a4aebe7ce23d8">gameplay_update.c</a>, <a class="el" href="gameplay__shared_8h.html#a95d4008478c2502c125a4aebe7ce23d8">gameplay_shared.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_b" name="index_b"></a>- b -</h3><ul>
-<li>botTimer&#160;:&#160;<a class="el" href="gameplay__draw_8c.html#a18a9f5f86df9a58978f182d8fd52df03">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#a18a9f5f86df9a58978f182d8fd52df03">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#a18a9f5f86df9a58978f182d8fd52df03">gameplay_update.c</a>, <a class="el" href="gameplay__shared_8h.html#a18a9f5f86df9a58978f182d8fd52df03">gameplay_shared.h</a></li>
-<li>broadcastAddr&#160;:&#160;<a class="el" href="lan__broadcast_8c.html#a3a57e935a86c9a15dba005b214923a52">lan_broadcast.c</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>campo_focusato&#160;:&#160;<a class="el" href="group__auth__impl.html#ga2cf3aff3d88a04ea9b72ef90df54142c">auth.c</a>, <a class="el" href="group__auth__impl.html#ga2cf3aff3d88a04ea9b72ef90df54142c">auth.h</a></li>
-<li>client_play_again_attesa&#160;:&#160;<a class="el" href="end__screen_8c.html#a3e01e33a3f56bfa733e56e52296ca1fa">end_screen.c</a></li>
-<li>clientSockets&#160;:&#160;<a class="el" href="admin__draw_8c.html#acf235198fdda36e8980bbf0ead99f61f">admin_draw.c</a>, <a class="el" href="group__network__packet__strutture.html#gae1406de9f7c29f2553e952e0d5a0532c">network.c</a>, <a class="el" href="network__send_8c.html#acf235198fdda36e8980bbf0ead99f61f">network_send.c</a>, <a class="el" href="group__network__packet__strutture.html#gae1406de9f7c29f2553e952e0d5a0532c">network.h</a></li>
-<li>coda_turni&#160;:&#160;<a class="el" href="game__logic_8c.html#ad1902a2e7f88106585a3606741e4ba34">game_logic.c</a>, <a class="el" href="game__logic_8h.html#ad1902a2e7f88106585a3606741e4ba34">game_logic.h</a></li>
-<li>cognomeCount&#160;:&#160;<a class="el" href="group__auth__impl.html#ga880fe550552161100d934bf21de27f90">auth.c</a>, <a class="el" href="auth_8h.html#a880fe550552161100d934bf21de27f90">auth.h</a></li>
-<li>coloriRaylib&#160;:&#160;<a class="el" href="group__ui__texture.html#ga82e1b2777891ad1a9b469a6e02915d3a">ui.c</a>, <a class="el" href="group__ui__texture.html#ga82e1b2777891ad1a9b469a6e02915d3a">ui.h</a></li>
-<li>connectedClientUsernames&#160;:&#160;<a class="el" href="admin__draw_8c.html#a80ac1ee1e5dc6a14be8c487f06ab9192">admin_draw.c</a>, <a class="el" href="group__network__packet__strutture.html#ga80ac1ee1e5dc6a14be8c487f06ab9192">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga80ac1ee1e5dc6a14be8c487f06ab9192">network.h</a></li>
-<li>current_session_id&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga5cad9e8eeb56c51e52badb34a5910fbe">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga5cad9e8eeb56c51e52badb34a5910fbe">network.h</a></li>
-<li>currentRole&#160;:&#160;<a class="el" href="auth__update_8c.html#a16acec73ed8b5b9262d15211bedb6479">auth_update.c</a>, <a class="el" href="group__network__packet__strutture.html#ga16acec73ed8b5b9262d15211bedb6479">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga16acec73ed8b5b9262d15211bedb6479">network.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_d" name="index_d"></a>- d -</h3><ul>
-<li>dbUtenti&#160;:&#160;<a class="el" href="group__auth__impl.html#gabbde975af8fe0d5e3c20e0fd862186b6">auth.c</a>, <a class="el" href="group__auth__impl.html#gabbde975af8fe0d5e3c20e0fd862186b6">auth.h</a></li>
-<li>deletedUsers&#160;:&#160;<a class="el" href="admin__draw_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f">admin_draw.c</a>, <a class="el" href="lan__broadcast_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f">lan_broadcast.c</a>, <a class="el" href="lan__sync_8h.html#aa8b1b6c8ce6cf65c18ad02977e47f98f">lan_sync.h</a></li>
-<li>dentroSalvaDB&#160;:&#160;<a class="el" href="lan__broadcast_8c.html#a35d530456749dea612236ad880c703d5">lan_broadcast.c</a>, <a class="el" href="lan__sync_8h.html#a35d530456749dea612236ad880c703d5">lan_sync.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_e" name="index_e"></a>- e -</h3><ul>
-<li>emailCount&#160;:&#160;<a class="el" href="group__auth__impl.html#ga3876b1cc4b483062056d9cf261ec4654">auth.c</a>, <a class="el" href="group__auth__impl.html#ga3876b1cc4b483062056d9cf261ec4654">auth.h</a></li>
-<li>errore_password&#160;:&#160;<a class="el" href="group__auth__impl.html#ga1e9668bc833c732fa8a038ec007c4ee9">auth.c</a>, <a class="el" href="group__auth__impl.html#ga1e9668bc833c732fa8a038ec007c4ee9">auth.h</a></li>
-<li>errore_recupero&#160;:&#160;<a class="el" href="admin__draw_8c.html#a7d41f73b4aaf323dd4a42e616750f1a3">admin_draw.c</a>, <a class="el" href="auth__draw_8c.html#a7d41f73b4aaf323dd4a42e616750f1a3">auth_draw.c</a>, <a class="el" href="auth__screen_8c.html#a7d41f73b4aaf323dd4a42e616750f1a3">auth_screen.c</a>, <a class="el" href="auth__update_8c.html#a7d41f73b4aaf323dd4a42e616750f1a3">auth_update.c</a>, <a class="el" href="auth__shared_8h.html#a7d41f73b4aaf323dd4a42e616750f1a3">auth_shared.h</a></li>
-<li>errore_registrazione_email&#160;:&#160;<a class="el" href="group__auth__impl.html#gab2b3b778484eb9c5f529be0c2f9c10d3">auth.c</a>, <a class="el" href="group__auth__impl.html#gab2b3b778484eb9c5f529be0c2f9c10d3">auth.h</a></li>
-<li>errore_registrazione_pass&#160;:&#160;<a class="el" href="group__auth__impl.html#gae7b050dfa0f4d9bfdfb41c1746d8e055">auth.c</a>, <a class="el" href="auth_8h.html#ae7b050dfa0f4d9bfdfb41c1746d8e055">auth.h</a></li>
-<li>errore_registrazione_username&#160;:&#160;<a class="el" href="group__auth__impl.html#gab25b9978d929d16da0918ad72bed9812">auth.c</a>, <a class="el" href="auth_8h.html#ab25b9978d929d16da0918ad72bed9812">auth.h</a></li>
-<li>esc_consumato&#160;:&#160;<a class="el" href="main_8c.html#a108288d745ff0ba8f835f169d0e9b1c7">main.c</a>, <a class="el" href="admin__draw_8c.html#a108288d745ff0ba8f835f169d0e9b1c7">admin_draw.c</a>, <a class="el" href="auth__draw_8c.html#a108288d745ff0ba8f835f169d0e9b1c7">auth_draw.c</a>, <a class="el" href="auth__screen_8c.html#a108288d745ff0ba8f835f169d0e9b1c7">auth_screen.c</a>, <a class="el" href="gameplay__draw_8c.html#a108288d745ff0ba8f835f169d0e9b1c7">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#a108288d745ff0ba8f835f169d0e9b1c7">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#a108288d745ff0ba8f835f169d0e9b1c7">gameplay_update.c</a>, <a class="el" href="menu__screen_8c.html#a108288d745ff0ba8f835f169d0e9b1c7">menu_screen.c</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_h" name="index_h"></a>- h -</h3><ul>
-<li>host_in_prelobby&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gae06ac14e3f4d5998b855e2ffbc411341">network.c</a>, <a class="el" href="group__network__packet__strutture.html#gae06ac14e3f4d5998b855e2ffbc411341">network.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>id_temp_login&#160;:&#160;<a class="el" href="group__auth__impl.html#ga5e67fb6826c236d3ff5d0ec98cd9c582">auth.c</a>, <a class="el" href="auth_8h.html#a5e67fb6826c236d3ff5d0ec98cd9c582">auth.h</a></li>
-<li>id_utente_corrente&#160;:&#160;<a class="el" href="group__auth__impl.html#ga9ecbbe659dbada66e149c73cefb83815">auth.c</a>, <a class="el" href="group__auth__impl.html#ga9ecbbe659dbada66e149c73cefb83815">auth.h</a></li>
-<li>inputChat&#160;:&#160;<a class="el" href="chat__render_8c.html#a20d7f38f3172dfe2ed4c5819e84c78ed">chat_render.c</a>, <a class="el" href="gameplay__draw_8c.html#a20d7f38f3172dfe2ed4c5819e84c78ed">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#a20d7f38f3172dfe2ed4c5819e84c78ed">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#a20d7f38f3172dfe2ed4c5819e84c78ed">gameplay_update.c</a>, <a class="el" href="gameplay__chat_8h.html#a47807e52ded0ff6f35a6aa8a5e956b73">gameplay_chat.h</a>, <a class="el" href="gameplay__shared_8h.html#a20d7f38f3172dfe2ed4c5819e84c78ed">gameplay_shared.h</a></li>
-<li>inputCognome&#160;:&#160;<a class="el" href="group__auth__impl.html#gabdb70a410ac6fd790650381b7fb858b1">auth.c</a>, <a class="el" href="auth_8h.html#abdb70a410ac6fd790650381b7fb858b1">auth.h</a></li>
-<li>inputEmail&#160;:&#160;<a class="el" href="group__auth__impl.html#ga80d354a96271494c85654ea411ddac01">auth.c</a>, <a class="el" href="group__auth__impl.html#ga80d354a96271494c85654ea411ddac01">auth.h</a></li>
-<li>inputNome&#160;:&#160;<a class="el" href="group__auth__impl.html#ga2b0e8ee2101796cab35e2f6d2f932993">auth.c</a>, <a class="el" href="auth_8h.html#a2b0e8ee2101796cab35e2f6d2f932993">auth.h</a></li>
-<li>inputPassword&#160;:&#160;<a class="el" href="group__auth__impl.html#ga716f9307558976d3a4c67840b2ceb8ac">auth.c</a>, <a class="el" href="auth_8h.html#a716f9307558976d3a4c67840b2ceb8ac">auth.h</a></li>
-<li>inputPin&#160;:&#160;<a class="el" href="group__auth__impl.html#gafb61cbc7b14899011261458eb60e240a">auth.c</a>, <a class="el" href="auth_8h.html#afb61cbc7b14899011261458eb60e240a">auth.h</a></li>
-<li>inputUsername&#160;:&#160;<a class="el" href="group__auth__impl.html#ga726a429817c84dacd48cce82b3c91003">auth.c</a>, <a class="el" href="group__auth__impl.html#ga726a429817c84dacd48cce82b3c91003">auth.h</a></li>
-<li>isConnected&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gaa358768cbc9b8ed27055d5b41726d79a">network.c</a>, <a class="el" href="group__network__packet__strutture.html#gaa358768cbc9b8ed27055d5b41726d79a">network.h</a></li>
-<li>isTyping&#160;:&#160;<a class="el" href="chat__render_8c.html#a5c0b78531197553de40e19f2afd95ff4">chat_render.c</a>, <a class="el" href="gameplay__draw_8c.html#a5c0b78531197553de40e19f2afd95ff4">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#a5c0b78531197553de40e19f2afd95ff4">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#a5c0b78531197553de40e19f2afd95ff4">gameplay_update.c</a>, <a class="el" href="gameplay__chat_8h.html#a5c0b78531197553de40e19f2afd95ff4">gameplay_chat.h</a>, <a class="el" href="gameplay__shared_8h.html#a5c0b78531197553de40e19f2afd95ff4">gameplay_shared.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_j" name="index_j"></a>- j -</h3><ul>
-<li>join_rejected&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga0936e5fbf6f65df58464ed83a3272430">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga0936e5fbf6f65df58464ed83a3272430">network.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_l" name="index_l"></a>- l -</h3><ul>
-<li>LanSaveChunkPacket&#160;:&#160;<a class="el" href="lan__protocol_8h.html#a5f5183faad8f417a84fda8b24a245a5e">lan_protocol.h</a></li>
-<li>lanSocket&#160;:&#160;<a class="el" href="lan__broadcast_8c.html#a352ca6eff6deccbae445480052cf9bdc">lan_broadcast.c</a></li>
-<li>local_player_id&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga3437dc7e27766145ab5c8d9a605083cd">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga3437dc7e27766145ab5c8d9a605083cd">network.h</a></li>
-<li>localSocket&#160;:&#160;<a class="el" href="network_8c.html#a0a755f1937d6aeb27a26504504141fec">network.c</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
-<li>mazzo_pila&#160;:&#160;<a class="el" href="game__logic_8c.html#afefe37ecc9aba9febda10fedc4dfa743">game_logic.c</a>, <a class="el" href="game__logic_8h.html#afefe37ecc9aba9febda10fedc4dfa743">game_logic.h</a></li>
-<li>mostra_popup_uscita_auth&#160;:&#160;<a class="el" href="admin__draw_8c.html#ae71cbf05374b49c2a9136899bd39b04b">admin_draw.c</a>, <a class="el" href="auth__draw_8c.html#ae71cbf05374b49c2a9136899bd39b04b">auth_draw.c</a>, <a class="el" href="auth__screen_8c.html#ae71cbf05374b49c2a9136899bd39b04b">auth_screen.c</a>, <a class="el" href="auth__update_8c.html#ae71cbf05374b49c2a9136899bd39b04b">auth_update.c</a>, <a class="el" href="auth__shared_8h.html#ae71cbf05374b49c2a9136899bd39b04b">auth_shared.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_n" name="index_n"></a>- n -</h3><ul>
-<li>network_client_joined&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga64831cef2cdeba3a0f16d745b3ecf4fc">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga64831cef2cdeba3a0f16d745b3ecf4fc">network.h</a></li>
-<li>network_game_initialized&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga7fbc791dd298a446c201d280dd8c1c3d">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga7fbc791dd298a446c201d280dd8c1c3d">network.h</a></li>
-<li>network_pending&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga011bfc7156351cec76e4a4b1e38c3169">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga011bfc7156351cec76e4a4b1e38c3169">network.h</a></li>
-<li>network_start_game_flag&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga73bc5aa44ad9b3c3ca01c28252b93a56">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga73bc5aa44ad9b3c3ca01c28252b93a56">network.h</a></li>
-<li>nomeCount&#160;:&#160;<a class="el" href="group__auth__impl.html#ga8576d027f30608a7448b5e4a6887f2e2">auth.c</a>, <a class="el" href="auth_8h.html#a8576d027f30608a7448b5e4a6887f2e2">auth.h</a></li>
-<li>nomiColori&#160;:&#160;<a class="el" href="group__ui__texture.html#ga3ad028ed1f516f621880dbf04b68201c">ui.c</a>, <a class="el" href="group__ui__texture.html#ga3ad028ed1f516f621880dbf04b68201c">ui.h</a></li>
-<li>numConnectedClients&#160;:&#160;<a class="el" href="network_8c.html#a2fccc7a9f7850b47e98e98c272d40370">network.c</a></li>
-<li>numDeletedUsers&#160;:&#160;<a class="el" href="admin__draw_8c.html#a83d2b69124592dbd8092ed4214b3f35e">admin_draw.c</a>, <a class="el" href="lan__broadcast_8c.html#a83d2b69124592dbd8092ed4214b3f35e">lan_broadcast.c</a>, <a class="el" href="lan__sync_8h.html#a83d2b69124592dbd8092ed4214b3f35e">lan_sync.h</a></li>
-<li>nuovo_utente&#160;:&#160;<a class="el" href="auth__screen_8c.html#abc565e2ba6cc88b20dded8d5345e869e">auth_screen.c</a>, <a class="el" href="auth_8h.html#abc565e2ba6cc88b20dded8d5345e869e">auth.h</a>, <a class="el" href="auth__shared_8h.html#abc565e2ba6cc88b20dded8d5345e869e">auth_shared.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>offsetMouse&#160;:&#160;<a class="el" href="gameplay__draw_8c.html#ad8b3a8467b3594717ccba6dd579808a7">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#ad8b3a8467b3594717ccba6dd579808a7">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#ad8b3a8467b3594717ccba6dd579808a7">gameplay_update.c</a>, <a class="el" href="gameplay__shared_8h.html#ad8b3a8467b3594717ccba6dd579808a7">gameplay_shared.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>passCount&#160;:&#160;<a class="el" href="group__auth__impl.html#ga415b2b418d3a90a6e1da72992e7577aa">auth.c</a>, <a class="el" href="auth_8h.html#a415b2b418d3a90a6e1da72992e7577aa">auth.h</a></li>
-<li>pending_move_index&#160;:&#160;<a class="el" href="gameplay__draw_8c.html#a93efbaccb6b2b71185696da5e7d319a4">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#a93efbaccb6b2b71185696da5e7d319a4">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#a93efbaccb6b2b71185696da5e7d319a4">gameplay_update.c</a>, <a class="el" href="gameplay__shared_8h.html#a93efbaccb6b2b71185696da5e7d319a4">gameplay_shared.h</a></li>
-<li>pinCount&#160;:&#160;<a class="el" href="group__auth__impl.html#ga5058e2763f324b4146cfa8af36168478">auth.c</a>, <a class="el" href="auth_8h.html#a5058e2763f324b4146cfa8af36168478">auth.h</a></li>
-<li>player_id&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gae801f06b6cb8328022fb0756915d0b54">network.c</a>, <a class="el" href="group__network__packet__strutture.html#gae801f06b6cb8328022fb0756915d0b54">network.h</a></li>
-<li>popup_uscita_attivo&#160;:&#160;<a class="el" href="chat__render_8c.html#a0841fa17b3362cfad64d784cf9a0b5e3">chat_render.c</a>, <a class="el" href="gameplay__draw_8c.html#a0841fa17b3362cfad64d784cf9a0b5e3">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#a0841fa17b3362cfad64d784cf9a0b5e3">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#a0841fa17b3362cfad64d784cf9a0b5e3">gameplay_update.c</a>, <a class="el" href="gameplay__shared_8h.html#a0841fa17b3362cfad64d784cf9a0b5e3">gameplay_shared.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_r" name="index_r"></a>- r -</h3><ul>
-<li>recPassword&#160;:&#160;<a class="el" href="admin__draw_8c.html#a1d9b0cdaeafdd3ec4a2bbfa622f5b013">admin_draw.c</a>, <a class="el" href="auth__draw_8c.html#a1d9b0cdaeafdd3ec4a2bbfa622f5b013">auth_draw.c</a>, <a class="el" href="auth__screen_8c.html#a1d9b0cdaeafdd3ec4a2bbfa622f5b013">auth_screen.c</a>, <a class="el" href="auth__update_8c.html#a1d9b0cdaeafdd3ec4a2bbfa622f5b013">auth_update.c</a>, <a class="el" href="auth__shared_8h.html#a1d9b0cdaeafdd3ec4a2bbfa622f5b013">auth_shared.h</a></li>
-<li>recupero_completato&#160;:&#160;<a class="el" href="admin__draw_8c.html#a6809f1d9991efcbc14616f46ea893c16">admin_draw.c</a>, <a class="el" href="auth__draw_8c.html#a6809f1d9991efcbc14616f46ea893c16">auth_draw.c</a>, <a class="el" href="auth__screen_8c.html#a6809f1d9991efcbc14616f46ea893c16">auth_screen.c</a>, <a class="el" href="auth__update_8c.html#a6809f1d9991efcbc14616f46ea893c16">auth_update.c</a>, <a class="el" href="auth__shared_8h.html#a6809f1d9991efcbc14616f46ea893c16">auth_shared.h</a></li>
-<li>recUsername&#160;:&#160;<a class="el" href="admin__draw_8c.html#a7a0e39594508daffab34dcba41448e96">admin_draw.c</a>, <a class="el" href="auth__draw_8c.html#a7a0e39594508daffab34dcba41448e96">auth_draw.c</a>, <a class="el" href="auth__screen_8c.html#a7a0e39594508daffab34dcba41448e96">auth_screen.c</a>, <a class="el" href="auth__update_8c.html#a7a0e39594508daffab34dcba41448e96">auth_update.c</a>, <a class="el" href="auth__shared_8h.html#a7a0e39594508daffab34dcba41448e96">auth_shared.h</a></li>
-<li>recvs&#160;:&#160;<a class="el" href="lan__save__helpers_8c.html#a9ca04c95e094afdec5e6ed9beaf7c47b">lan_save_helpers.c</a></li>
-<li>reject_message&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gac04d7d998bff797c954bba3776ba0c55">network.c</a>, <a class="el" href="group__network__packet__strutture.html#gac04d7d998bff797c954bba3776ba0c55">network.h</a></li>
-<li>remoteSocket&#160;:&#160;<a class="el" href="network_8c.html#a4fdb1b96f709fc5cdd1d013c1703e484">network.c</a>, <a class="el" href="network__send_8c.html#a4fdb1b96f709fc5cdd1d013c1703e484">network_send.c</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>scarti_pila&#160;:&#160;<a class="el" href="game__logic_8c.html#ae43a4528acce4bced75b0d843415956f">game_logic.c</a>, <a class="el" href="game__logic_8h.html#ae43a4528acce4bced75b0d843415956f">game_logic.h</a></li>
-<li>serverAddr&#160;:&#160;<a class="el" href="network_8c.html#a2e58fa3f4fdc2b17320549ea0d1462f1">network.c</a></li>
-<li>serverManager&#160;:&#160;<a class="el" href="server__manager_8c.html#ab5c207ae2247c6972e361d9c19dbd477">server_manager.c</a>, <a class="el" href="server__manager_8h.html#ab5c207ae2247c6972e361d9c19dbd477">server_manager.h</a></li>
-<li>session_id&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#ga3ceeb52643564997e64ac776a8f0fc9a">network.c</a>, <a class="el" href="group__network__packet__strutture.html#ga3ceeb52643564997e64ac776a8f0fc9a">network.h</a></li>
-<li>submit_richiesto&#160;:&#160;<a class="el" href="input__field_8c.html#ab9dd35db58fce3c897b9a9e5a8ebc8a7">input_field.c</a>, <a class="el" href="input__field_8h.html#ab9dd35db58fce3c897b9a9e5a8ebc8a7">input_field.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>textureCarte&#160;:&#160;<a class="el" href="group__ui__texture.html#ga8ac64cad02704cae0cb4af6f96d92767">ui.c</a>, <a class="el" href="group__ui__texture.html#ga8ac64cad02704cae0cb4af6f96d92767">ui.h</a></li>
-<li>textureDorso&#160;:&#160;<a class="el" href="group__ui__texture.html#ga876b5c791744657fa724c81445ce9e8b">ui.c</a>, <a class="el" href="group__ui__texture.html#ga876b5c791744657fa724c81445ce9e8b">ui.h</a></li>
-<li>textureSfondo&#160;:&#160;<a class="el" href="group__ui__texture.html#gaf27071339f699f36aff91ba414cd50d8">ui.c</a>, <a class="el" href="group__ui__texture.html#gaf27071339f699f36aff91ba414cd50d8">ui.h</a></li>
-</ul>
-
-
-<h3 class="doxsection"><a id="index_u" name="index_u"></a>- u -</h3><ul>
-<li>udpDiscoverySocket&#160;:&#160;<a class="el" href="network_8c.html#a87557f4936706eb20d02388efbfd01a5">network.c</a></li>
-<li>usernameCount&#160;:&#160;<a class="el" href="group__auth__impl.html#gabd5ade42baf19a2a2ffa715960842dfd">auth.c</a>, <a class="el" href="group__auth__impl.html#gabd5ade42baf19a2a2ffa715960842dfd">auth.h</a></li>
-<li>utente_modifica_admin&#160;:&#160;<a class="el" href="admin__draw_8c.html#a95046ad749acf7f370a5864feea4a2db">admin_draw.c</a>, <a class="el" href="auth__draw_8c.html#a95046ad749acf7f370a5864feea4a2db">auth_draw.c</a>, <a class="el" href="auth__screen_8c.html#a95046ad749acf7f370a5864feea4a2db">auth_screen.c</a>, <a class="el" href="auth__update_8c.html#a95046ad749acf7f370a5864feea4a2db">auth_update.c</a>, <a class="el" href="auth__shared_8h.html#a95046ad749acf7f370a5864feea4a2db">auth_shared.h</a></li>
+<li>areaTavoloCentro&#160;:&#160;<a class="el" href="gameplay__shared_8h.html#a95d4008478c2502c125a4aebe7ce23d8">gameplay_shared.h</a>, <a class="el" href="gameplay__draw_8c.html#a95d4008478c2502c125a4aebe7ce23d8">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#a95d4008478c2502c125a4aebe7ce23d8">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#a95d4008478c2502c125a4aebe7ce23d8">gameplay_update.c</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -249,7 +130,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_vars.h
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

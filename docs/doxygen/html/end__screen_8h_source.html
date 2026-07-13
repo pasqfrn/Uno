@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno:  File sorgente lib/screens/game/end_screen.h</title>
+<title>UNO - Gioco di Carte:  File sorgente screens/game/end_screen.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -107,32 +124,34 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('end__screen_8h
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define END_SCREEN_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">../../data_structures.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="raylib_8h.html">raylib.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> <a class="code hl_function" href="end__screen_8h.html#a0e745641fe838ddef9bdaf29f6c2f464">CalcolaClassifica</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a>* gioco, <a class="code hl_struct" href="struct_classifica_record.html">ClassificaRecord</a> classifica[4], <span class="keywordtype">int</span>* num_in_classifica);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">void</span> <a class="code hl_function" href="end__screen_8h.html#a8459192b484f1fa0580d03a8d65f54ae">EsportaStatisticheTxt</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a>* gioco, <span class="keyword">const</span> <span class="keywordtype">char</span>* esito);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> <a class="code hl_function" href="end__screen_8h.html#aa3e4add05eb49239e5e9a0d01220c301">DisegnaFinePartita</a>(<a class="code hl_struct" href="struct_stato_gioco.html">StatoGioco</a>* gioco, <a class="code hl_enumeration" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a>* fase, <a class="code hl_struct" href="struct_vector2.html">Vector2</a> mousePos);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
-<div class="ttc" id="adata__structures_8h_html_a2820e5c9a40f05bb9d572ea8b0d4e3f4"><div class="ttname"><a href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a></div><div class="ttdeci">FaseApplicazione</div><div class="ttdoc">Enum che rappresenta tutte le fasi dello stato macchina dell&#39;applicazione.</div><div class="ttdef"><b>Definition</b> data_structures.h:363</div></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">../../player.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="game__state_8h.html">../../game_state.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> <a class="code hl_function" href="end__screen_8h.html#a0e745641fe838ddef9bdaf29f6c2f464">CalcolaClassifica</a>(<a class="code hl_struct" href="structStatoGioco.html">StatoGioco</a>* gioco, <a class="code hl_struct" href="structClassificaRecord.html">ClassificaRecord</a> classifica[4], <span class="keywordtype">int</span>* num_in_classifica);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">void</span> <a class="code hl_function" href="end__screen_8h.html#a8459192b484f1fa0580d03a8d65f54ae">EsportaStatisticheTxt</a>(<a class="code hl_struct" href="structStatoGioco.html">StatoGioco</a>* gioco, <span class="keyword">const</span> <span class="keywordtype">char</span>* esito);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">void</span> <a class="code hl_function" href="end__screen_8h.html#aa3e4add05eb49239e5e9a0d01220c301">DisegnaFinePartita</a>(<a class="code hl_struct" href="structStatoGioco.html">StatoGioco</a>* gioco, <a class="code hl_enumeration" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a>* fase, Vector2 mousePos);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header centrale del progetto UNO - Tipi di dato condivisi.</div></div>
+<div class="ttc" id="adata__structures_8h_html_a2820e5c9a40f05bb9d572ea8b0d4e3f4"><div class="ttname"><a href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a></div><div class="ttdeci">FaseApplicazione</div><div class="ttdoc">Enum che rappresenta tutte le fasi dello stato macchina dell&#39;applicazione.</div><div class="ttdef"><b>Definition</b> data_structures.h:190</div></div>
 <div class="ttc" id="aend__screen_8h_html_a0e745641fe838ddef9bdaf29f6c2f464"><div class="ttname"><a href="end__screen_8h.html#a0e745641fe838ddef9bdaf29f6c2f464">CalcolaClassifica</a></div><div class="ttdeci">void CalcolaClassifica(StatoGioco *gioco, ClassificaRecord classifica[4], int *num_in_classifica)</div><div class="ttdoc">Calcola e ordina la classifica finale dei giocatori.</div><div class="ttdef"><b>Definition</b> end_screen.c:82</div></div>
 <div class="ttc" id="aend__screen_8h_html_a8459192b484f1fa0580d03a8d65f54ae"><div class="ttname"><a href="end__screen_8h.html#a8459192b484f1fa0580d03a8d65f54ae">EsportaStatisticheTxt</a></div><div class="ttdeci">void EsportaStatisticheTxt(StatoGioco *gioco, const char *esito)</div><div class="ttdoc">Esporta le statistiche di fine partita su file .txt.</div><div class="ttdef"><b>Definition</b> end_screen.c:125</div></div>
 <div class="ttc" id="aend__screen_8h_html_aa3e4add05eb49239e5e9a0d01220c301"><div class="ttname"><a href="end__screen_8h.html#aa3e4add05eb49239e5e9a0d01220c301">DisegnaFinePartita</a></div><div class="ttdeci">void DisegnaFinePartita(StatoGioco *gioco, FaseApplicazione *fase, Vector2 mousePos)</div><div class="ttdoc">Disegna la schermata di fine partita con classifica.</div><div class="ttdef"><b>Definition</b> end_screen.c:178</div></div>
-<div class="ttc" id="araylib_8h_html"><div class="ttname"><a href="raylib_8h.html">raylib.h</a></div></div>
-<div class="ttc" id="astruct_classifica_record_html"><div class="ttname"><a href="struct_classifica_record.html">ClassificaRecord</a></div><div class="ttdoc">Record per la classifica visualizzata a fine partita.</div><div class="ttdef"><b>Definition</b> data_structures.h:346</div></div>
-<div class="ttc" id="astruct_stato_gioco_html"><div class="ttname"><a href="struct_stato_gioco.html">StatoGioco</a></div><div class="ttdoc">Stato completo di una partita in corso.</div><div class="ttdef"><b>Definition</b> data_structures.h:216</div></div>
-<div class="ttc" id="astruct_vector2_html"><div class="ttname"><a href="struct_vector2.html">Vector2</a></div><div class="ttdef"><b>Definition</b> raylib.h:214</div></div>
+<div class="ttc" id="agame__state_8h_html"><div class="ttname"><a href="game__state_8h.html">game_state.h</a></div><div class="ttdoc">Modulo StatoGioco - Stato completo della partita in corso.</div></div>
+<div class="ttc" id="aplayer_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div><div class="ttdoc">Modulo Giocatore - Entità di flusso/stato per la partita.</div></div>
+<div class="ttc" id="astructClassificaRecord_html"><div class="ttname"><a href="structClassificaRecord.html">ClassificaRecord</a></div><div class="ttdoc">Record per la classifica visualizzata a fine partita.</div><div class="ttdef"><b>Definition</b> data_structures.h:173</div></div>
+<div class="ttc" id="astructStatoGioco_html"><div class="ttname"><a href="structStatoGioco.html">StatoGioco</a></div><div class="ttdoc">Stato completo di una partita in corso.</div><div class="ttdef"><b>Definition</b> game_state.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_299aa870bb746bafe99131a774bd9579.html">screens</a></li><li class="navelem"><a href="dir_8b30b7613ff4b415a3a13adb868f1637.html">game</a></li><li class="navelem"><a href="end__screen_8h.html">end_screen.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_299aa870bb746bafe99131a774bd9579.html">screens</a></li><li class="navelem"><a href="dir_8b30b7613ff4b415a3a13adb868f1637.html">game</a></li><li class="navelem"><a href="end__screen_8h.html">end_screen.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

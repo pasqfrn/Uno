@@ -20,10 +20,12 @@ Questo progetto implementa una versione completa del gioco UNO, rispettando rigo
 ## Tecnologie
 
 - **Linguaggio**: C (standard C11)
-- **IDE**: Code::Blocks
+- **IDE**: Code::Blocks o Visual Studio Code
 - **GUI e Input**: Raylib
 - **Networking**: Socket TCP/IP
 - **Persistenza**: File ad accesso diretto (.dat) e file sequenziali
+- **Testing**: 171 test unitari per ADT e logica di gioco
+- **Documentazione**: Doxygen
 
 ## Struttura del progetto
 
@@ -36,7 +38,7 @@ Uno/
 │   ├── game_logic.c         # Regole di UNO, validazione mosse, effetti carte
 │   ├── list.c               # Implementazione lista doppiamente concatenata
 │   ├── ui.c                 # Rendering e gestione interfaccia Raylib
-│   └── data_structures/     # Strutture dati specializzate per il gioco
+│   └── data_structures/     # Implementazione ADT specializzati
 ├── lib/
 │   ├── auth.h               # Header modulo autenticazione
 │   ├── auth_validation.h    # Header modulo validazione
@@ -44,21 +46,27 @@ Uno/
 │   ├── game_logic.h         # Header modulo logica di gioco
 │   ├── list.h               # Header lista concatenata
 │   ├── ui.h                 # Header interfaccia grafica
+│   ├── player.h             # Header modulo Giocatore
+│   ├── game_state.h         # Header modulo StatoGioco
 │   ├── socket/              # Gestione connessioni di rete
 │   ├── screens/             # Schermate dell'applicazione
-│   ├── game/                # Entità di gioco specializzate
-│   └── raylib/              # Libreria grafica
+│   └── game/                # Entità di gioco specializzate
+├── tests/                   # Test unitari
+│   ├── test_adt.c           # Suite di test (171 test)
+│   └── stubs/               # Stub Raylib per compilazione test senza dipendenze
+├── scripts/                 # Script di automazione
+│   └── compile_and_test.bat # Compila gioco + test, genera documentazione Doxygen
+├── docs/
+│   ├── Documentazione CdS.pdf  # Documentazione progettuale completa
+│   └── doxygen/html/           # Configurazione e documentazione Doxygen
 ├── data/
 │   ├── users/               # Database utenti
 │   └── games/               # Salvataggi partite
 ├── assets/
 │   ├── card/                # Texture carte
 │   └── altro/               # Risorse grafiche varie
-├── docs/
-│   └── Documentazione CdS.pdf  # Documentazione progettuale completa
 ├── bin/                     # Eseguibili compilati
-├── obj/                     # File oggetto
-└── build/                   # File di build
+└── obj/                     # File oggetto
 ```
 
 ## Architettura
@@ -70,12 +78,13 @@ Uno/
 - **Giocatore**: informazioni utente, flag bot, stato lobby, numero carte in mano
 - **StatoGioco**: stato completo della partita (mazzi, giocatori, turno corrente, notifiche)
 
-### Strutture dati dinamiche
+### Strutture dati dinamiche (ADT)
 
 - **Lista doppiamente concatenata**: mano del giocatore
 - **Pila (Stack)**: mazzo di pesca e mazzo degli scarti
 - **Coda (Queue)**: gestione turni di gioco
 - **Albero BST**: caricamento utenti in RAM per ricerca logaritmica
+- **Buffer circolare**: storico chat FIFO
 
 ### Moduli funzionali
 
@@ -88,11 +97,48 @@ Uno/
 | `ui` | Disegno carte realistiche, bottoni animati, gestione textures |
 | `socket` | Connessioni host/client, sincronizzazione stato multigiocatore |
 
+## Test unitari
+
+Il progetto include una suite completa di **171 test unitari** che verificano il corretto funzionamento degli ADT e la logica di gioco.
+
+### Esecuzione dei test
+
+Con Visual Studio Code:
+- **Ctrl+Shift+B**: compila gioco + test, esegue suite completa
+- **Ctrl+Shift+P** → `Tasks: Run Task` → `▶ Esegui solo i TEST (senza ricompilare)`
+
+Da linea di comando:
+
+```bash
+# Compilazione ed esecuzione completa
+scripts\compile_and_test.bat
+
+# Solo compilazione test
+gcc -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs tests/test_adt.c src/data_structures/*.c src/list.c src/game_logic.c src/game/deck.c -o tests/test_adt.exe -lm
+
+# Solo esecuzione (se già compilato)
+tests\test_adt.exe
+```
+
+### Risultati
+
+| Modulo | Test | Note |
+|--------|------|------|
+| **Lista doppiamente concatenata** | 44 | Inserimenti, rimozioni, accesso, chiamate NULL |
+| **Pila** | 26 | Push, Pop, Top, svuota, distruggi, chiamate NULL |
+| **Coda** | 34 | Enqueue, dequeue, front, rear, inverti verso, ricerca, chiamate NULL |
+| **BST** | 28 | Inserimento, ricerca case-insensitive, duplicati, rimozione, inordine |
+| **Chat** | 17 | Buffer circolare, overflow, formattazione, chiamate NULL |
+| **MossaValida** | 10 | Match colore, tipo, jolly, mosse non valide |
+| **Giocatore** | 6 | Nome vuoto, SetNome, NomeBot, chiamate NULL |
+
+**Totale**: 🟢 171/171 test passati
+
 ## Requisiti di sistema
 
 - **Sistema operativo**: Windows 10/11
-- **Compilatore**: GCC (testato con MinGW)
-- **IDE**: Code::Blocks (consigliato) o compilazione da linea di comando
+- **Compilatore**: GCC (testato con MinGW / MSYS2)
+- **IDE**: Code::Blocks o Visual Studio Code con C/C++ Extension Pack
 - **Librerie**: Raylib (inclusa in `lib/raylib/`)
 
 ## Compilazione
@@ -100,7 +146,7 @@ Uno/
 ### Prerequisiti
 
 Assicurarsi di avere installato:
-- Code::Blocks con supporto C
+- Code::Blocks con supporto C oppure Visual Studio Code
 - MinGW GCC con supporto C11
 
 ### Procedura
@@ -127,6 +173,18 @@ Dopo la compilazione, eseguire:
 
 ```bash
 bin/Uno.exe
+```
+
+## Documentazione
+
+La documentazione Doxygen completa è disponibile in:
+
+- `docs/doxygen/html/index.html` (aprila nel browser)
+
+Per rigenerarla:
+
+```bash
+doxygen docs/Doxyfile
 ```
 
 ## Utilizzo
@@ -176,10 +234,11 @@ Il progetto è stato progettato per rispettare i vincoli didattici:
 
 ## Licenza
 
-Progetto didattico - Eventuale licenza da definire.
+Caso di studio - Eventuale licenza da definire.
 
 ## Note
 
-- La documentazione progettuale completa è disponibile in  `docs/doxygen/html/index.html` 
+- La documentazione progettuale completa è disponibile in  `docs/doxygen/html/index.html`
 - Nel branch corrente sono presenti funzionalità di gestione avanzata del database (marcature per eliminazione, ricostruzione BST, cifratura)
 - Le texture delle carte sono caricate dinamicamente dalla cartella `assets/card/`
+- La suite di test è automatizzabile tramite `scripts/compile_and_test.bat` per compilazione, test e generazione documentazione Doxygen

@@ -9,6 +9,7 @@
 #define DATA_STRUCTURES_QUEUE_H
 
 #include "../data_structures.h"
+#include "../player.h"
 
 /**
  * @addtogroup queue_nodi Nodi Coda

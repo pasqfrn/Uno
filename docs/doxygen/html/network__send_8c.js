@@ -24,6 +24,6 @@ var network__send_8c =
     [ "SendPlayerReady", "group__network__packet__strutture.html#ga981d40762c9af84bf5f4d5d24a024c04", null ],
     [ "SendStartGame", "network__send_8c.html#a0554cb970fa4a11e12b77295592a1f4a", null ],
     [ "SendStatsSync", "group__network__packet__strutture.html#ga36fc11ee8fde125894663e2c2ca2aa32", null ],
-    [ "clientSockets", "network__send_8c.html#acf235198fdda36e8980bbf0ead99f61f", null ],
+    [ "clientSockets", "group__network__packet__strutture.html#gae1406de9f7c29f2553e952e0d5a0532c", null ],
     [ "remoteSocket", "network__send_8c.html#a4fdb1b96f709fc5cdd1d013c1703e484", null ]
 ];

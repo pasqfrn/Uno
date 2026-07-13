@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno:  File sorgente lib/data_structures/bst.h</title>
+<title>UNO - Gioco di Carte:  File sorgente data_structures/bst.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -109,32 +126,32 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('bst_8h_source.
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">../data_structures.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_nodo_albero.html">   19</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_nodo_albero.html#ae44a3fe7638a711069168b12fc806ffe">   20</a></span>    <a class="code hl_struct" href="struct_utente.html">Utente</a> <a class="code hl_variable" href="struct_nodo_albero.html#ae44a3fe7638a711069168b12fc806ffe">utente</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_nodo_albero.html#a0f9a56f2a6b5da3024cca46728aa3c5b">   21</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* <a class="code hl_variable" href="struct_nodo_albero.html#a0f9a56f2a6b5da3024cca46728aa3c5b">left</a>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_nodo_albero.html#a72e9dc43c50fdee535e13487304bd1cf">   22</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* <a class="code hl_variable" href="struct_nodo_albero.html#a72e9dc43c50fdee535e13487304bd1cf">right</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">   23</a></span>} <a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structNodoAlbero.html">   19</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structNodoAlbero.html#ae44a3fe7638a711069168b12fc806ffe">   20</a></span>    <a class="code hl_struct" href="structUtente.html">Utente</a> <a class="code hl_variable" href="structNodoAlbero.html#ae44a3fe7638a711069168b12fc806ffe">utente</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structNodoAlbero.html#a0f9a56f2a6b5da3024cca46728aa3c5b">   21</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* <a class="code hl_variable" href="structNodoAlbero.html#a0f9a56f2a6b5da3024cca46728aa3c5b">left</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structNodoAlbero.html#a72e9dc43c50fdee535e13487304bd1cf">   22</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* <a class="code hl_variable" href="structNodoAlbero.html#a72e9dc43c50fdee535e13487304bd1cf">right</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>} <a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>;</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">   24</a></span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* <a class="code hl_function" href="group__bst__operazioni.html#ga62e40793a2003872c369acb82e6af431">BST_CreaNodo</a>(<a class="code hl_struct" href="struct_utente.html">Utente</a> u);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* <a class="code hl_function" href="group__bst__operazioni.html#ga62e40793a2003872c369acb82e6af431">BST_CreaNodo</a>(<a class="code hl_struct" href="structUtente.html">Utente</a> u);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* <a class="code hl_function" href="group__bst__operazioni.html#gacacb3b4a6ddbd736f5b58735895adfd9">BST_Inserisci</a>(<a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* radice, <a class="code hl_struct" href="struct_utente.html">Utente</a> u, <span class="keywordtype">int</span>* duplicato);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* <a class="code hl_function" href="group__bst__operazioni.html#gacacb3b4a6ddbd736f5b58735895adfd9">BST_Inserisci</a>(<a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* radice, <a class="code hl_struct" href="structUtente.html">Utente</a> u, <span class="keywordtype">int</span>* duplicato);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* <a class="code hl_function" href="group__bst__operazioni.html#ga79a477b261bbda20446e0f5df2faae46">BST_RicercaEmail</a>(<a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* radice, <span class="keyword">const</span> <span class="keywordtype">char</span>* email);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* <a class="code hl_function" href="group__bst__operazioni.html#ga79a477b261bbda20446e0f5df2faae46">BST_RicercaEmail</a>(<a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* radice, <span class="keyword">const</span> <span class="keywordtype">char</span>* email);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* <a class="code hl_function" href="group__bst__operazioni.html#ga225db238626a3343a76ff1db348bdc76">BST_RimuoviEmail</a>(<a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* radice, <span class="keyword">const</span> <span class="keywordtype">char</span>* email);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* <a class="code hl_function" href="group__bst__operazioni.html#ga225db238626a3343a76ff1db348bdc76">BST_RimuoviEmail</a>(<a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* radice, <span class="keyword">const</span> <span class="keywordtype">char</span>* email);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__bst__operazioni.html#ga9316a904ece8260cbe1018b94d2888a0">BST_Distruggi</a>(<a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* radice);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__bst__operazioni.html#ga9316a904ece8260cbe1018b94d2888a0">BST_Distruggi</a>(<a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* radice);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__bst__operazioni.html#ga192fed6e7b936d4348b504e1069e3e03">BST_Inordina</a>(<a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* radice, <a class="code hl_struct" href="struct_utente.html">Utente</a>* out, <span class="keywordtype">int</span> max);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__bst__operazioni.html#ga192fed6e7b936d4348b504e1069e3e03">BST_Inordina</a>(<a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* radice, <a class="code hl_struct" href="structUtente.html">Utente</a>* out, <span class="keywordtype">int</span> max);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__bst__operazioni.html#ga5635ff2d752c8c11d78e1d00915e2a1e">BST_Altezza</a>(<a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* radice);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__bst__operazioni.html#ga5635ff2d752c8c11d78e1d00915e2a1e">BST_Altezza</a>(<a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* radice);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__bst__operazioni.html#ga6f4d3c31a29be5dff40bfe065fe08ce1">BST_ContaNodi</a>(<a class="code hl_struct" href="struct_nodo_albero.html">NodoAlbero</a>* radice);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__bst__operazioni.html#ga6f4d3c31a29be5dff40bfe065fe08ce1">BST_ContaNodi</a>(<a class="code hl_struct" href="structNodoAlbero.html">NodoAlbero</a>* radice);</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#endif </span><span class="comment">// DATA_STRUCTURES_BST_H</span></div>
-<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header centrale del progetto UNO - Tipi di dato condivisi.</div></div>
 <div class="ttc" id="agroup__bst__operazioni_html_ga192fed6e7b936d4348b504e1069e3e03"><div class="ttname"><a href="group__bst__operazioni.html#ga192fed6e7b936d4348b504e1069e3e03">BST_Inordina</a></div><div class="ttdeci">int BST_Inordina(NodoAlbero *radice, Utente *out, int max)</div><div class="ttdoc">Visita in-order e copia i puntatori agli Utenti in un array.</div><div class="ttdef"><b>Definition</b> bst.c:161</div></div>
 <div class="ttc" id="agroup__bst__operazioni_html_ga225db238626a3343a76ff1db348bdc76"><div class="ttname"><a href="group__bst__operazioni.html#ga225db238626a3343a76ff1db348bdc76">BST_RimuoviEmail</a></div><div class="ttdeci">NodoAlbero * BST_RimuoviEmail(NodoAlbero *radice, const char *email)</div><div class="ttdoc">Rimuove il nodo con l&#39;email specificata.</div><div class="ttdef"><b>Definition</b> bst.c:103</div></div>
 <div class="ttc" id="agroup__bst__operazioni_html_ga5635ff2d752c8c11d78e1d00915e2a1e"><div class="ttname"><a href="group__bst__operazioni.html#ga5635ff2d752c8c11d78e1d00915e2a1e">BST_Altezza</a></div><div class="ttdeci">int BST_Altezza(NodoAlbero *radice)</div><div class="ttdoc">Restituisce l&#39;altezza dell&#39;albero.</div><div class="ttdef"><b>Definition</b> bst.c:173</div></div>
@@ -143,19 +160,19 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('bst_8h_source.
 <div class="ttc" id="agroup__bst__operazioni_html_ga79a477b261bbda20446e0f5df2faae46"><div class="ttname"><a href="group__bst__operazioni.html#ga79a477b261bbda20446e0f5df2faae46">BST_RicercaEmail</a></div><div class="ttdeci">NodoAlbero * BST_RicercaEmail(NodoAlbero *radice, const char *email)</div><div class="ttdoc">Ricerca un utente per email.</div><div class="ttdef"><b>Definition</b> bst.c:78</div></div>
 <div class="ttc" id="agroup__bst__operazioni_html_ga9316a904ece8260cbe1018b94d2888a0"><div class="ttname"><a href="group__bst__operazioni.html#ga9316a904ece8260cbe1018b94d2888a0">BST_Distruggi</a></div><div class="ttdeci">void BST_Distruggi(NodoAlbero *radice)</div><div class="ttdoc">Libera ricorsivamente tutta la memoria dell&#39;albero.</div><div class="ttdef"><b>Definition</b> bst.c:135</div></div>
 <div class="ttc" id="agroup__bst__operazioni_html_gacacb3b4a6ddbd736f5b58735895adfd9"><div class="ttname"><a href="group__bst__operazioni.html#gacacb3b4a6ddbd736f5b58735895adfd9">BST_Inserisci</a></div><div class="ttdeci">NodoAlbero * BST_Inserisci(NodoAlbero *radice, Utente u, int *duplicato)</div><div class="ttdoc">Inserisce un utente nell&#39;albero.</div><div class="ttdef"><b>Definition</b> bst.c:56</div></div>
-<div class="ttc" id="astruct_nodo_albero_html"><div class="ttname"><a href="struct_nodo_albero.html">NodoAlbero</a></div><div class="ttdoc">Nodo dell&#39;albero BST: contiene un Utente e puntatori ai figli.</div><div class="ttdef"><b>Definition</b> bst.h:19</div></div>
-<div class="ttc" id="astruct_nodo_albero_html_a0f9a56f2a6b5da3024cca46728aa3c5b"><div class="ttname"><a href="struct_nodo_albero.html#a0f9a56f2a6b5da3024cca46728aa3c5b">NodoAlbero::left</a></div><div class="ttdeci">struct NodoAlbero * left</div><div class="ttdef"><b>Definition</b> bst.h:21</div></div>
-<div class="ttc" id="astruct_nodo_albero_html_a72e9dc43c50fdee535e13487304bd1cf"><div class="ttname"><a href="struct_nodo_albero.html#a72e9dc43c50fdee535e13487304bd1cf">NodoAlbero::right</a></div><div class="ttdeci">struct NodoAlbero * right</div><div class="ttdef"><b>Definition</b> bst.h:22</div></div>
-<div class="ttc" id="astruct_nodo_albero_html_ae44a3fe7638a711069168b12fc806ffe"><div class="ttname"><a href="struct_nodo_albero.html#ae44a3fe7638a711069168b12fc806ffe">NodoAlbero::utente</a></div><div class="ttdeci">Utente utente</div><div class="ttdef"><b>Definition</b> bst.h:20</div></div>
-<div class="ttc" id="astruct_utente_html"><div class="ttname"><a href="struct_utente.html">Utente</a></div><div class="ttdoc">Rappresenta un utente registrato nel sistema.</div><div class="ttdef"><b>Definition</b> data_structures.h:119</div></div>
+<div class="ttc" id="astructNodoAlbero_html"><div class="ttname"><a href="structNodoAlbero.html">NodoAlbero</a></div><div class="ttdoc">Nodo dell&#39;albero BST: contiene un Utente e puntatori ai figli.</div><div class="ttdef"><b>Definition</b> bst.h:19</div></div>
+<div class="ttc" id="astructNodoAlbero_html_a0f9a56f2a6b5da3024cca46728aa3c5b"><div class="ttname"><a href="structNodoAlbero.html#a0f9a56f2a6b5da3024cca46728aa3c5b">NodoAlbero::left</a></div><div class="ttdeci">struct NodoAlbero * left</div><div class="ttdef"><b>Definition</b> bst.h:21</div></div>
+<div class="ttc" id="astructNodoAlbero_html_a72e9dc43c50fdee535e13487304bd1cf"><div class="ttname"><a href="structNodoAlbero.html#a72e9dc43c50fdee535e13487304bd1cf">NodoAlbero::right</a></div><div class="ttdeci">struct NodoAlbero * right</div><div class="ttdef"><b>Definition</b> bst.h:22</div></div>
+<div class="ttc" id="astructNodoAlbero_html_ae44a3fe7638a711069168b12fc806ffe"><div class="ttname"><a href="structNodoAlbero.html#ae44a3fe7638a711069168b12fc806ffe">NodoAlbero::utente</a></div><div class="ttdeci">Utente utente</div><div class="ttdef"><b>Definition</b> bst.h:20</div></div>
+<div class="ttc" id="astructUtente_html"><div class="ttname"><a href="structUtente.html">Utente</a></div><div class="ttdoc">Rappresenta un utente registrato nel sistema.</div><div class="ttdef"><b>Definition</b> data_structures.h:84</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e1211c1ba4cadc9e94fe0fdad0038fad.html">data_structures</a></li><li class="navelem"><a href="bst_8h.html">bst.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_e1211c1ba4cadc9e94fe0fdad0038fad.html">data_structures</a></li><li class="navelem"><a href="bst_8h.html">bst.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

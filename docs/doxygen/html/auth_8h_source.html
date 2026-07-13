@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno:  File sorgente lib/auth.h</title>
+<title>UNO - Gioco di Carte:  File sorgente auth.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -108,14 +125,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('auth_8h_source
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define AUTH_H</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">data_structures.h</a>&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">extern</span> <a class="code hl_struct" href="struct_database_utenti.html">DatabaseUtenti</a> <a class="code hl_variable" href="group__auth__impl.html#gabbde975af8fe0d5e3c20e0fd862186b6">dbUtenti</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="auth_8h.html#abc565e2ba6cc88b20dded8d5345e869e">   20</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#ga9ecbbe659dbada66e149c73cefb83815">id_utente_corrente</a>, <a class="code hl_variable" href="auth__screen_8c.html#abc565e2ba6cc88b20dded8d5345e869e">nuovo_utente</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="auth_8h.html#abdb70a410ac6fd790650381b7fb858b1">   21</a></span><span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="group__auth__impl.html#ga80d354a96271494c85654ea411ddac01">inputEmail</a>[100], <a class="code hl_variable" href="group__auth__impl.html#ga2b0e8ee2101796cab35e2f6d2f932993">inputNome</a>[30], <a class="code hl_variable" href="group__auth__impl.html#gabdb70a410ac6fd790650381b7fb858b1">inputCognome</a>[30];</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="auth_8h.html#a716f9307558976d3a4c67840b2ceb8ac">   22</a></span><span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="group__auth__impl.html#ga726a429817c84dacd48cce82b3c91003">inputUsername</a>[30], <a class="code hl_variable" href="group__auth__impl.html#ga716f9307558976d3a4c67840b2ceb8ac">inputPassword</a>[30], <a class="code hl_variable" href="group__auth__impl.html#gafb61cbc7b14899011261458eb60e240a">inputPin</a>[7];</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="auth_8h.html#a880fe550552161100d934bf21de27f90">   23</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#ga3876b1cc4b483062056d9cf261ec4654">emailCount</a>, <a class="code hl_variable" href="group__auth__impl.html#ga8576d027f30608a7448b5e4a6887f2e2">nomeCount</a>, <a class="code hl_variable" href="group__auth__impl.html#ga880fe550552161100d934bf21de27f90">cognomeCount</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="auth_8h.html#a5e67fb6826c236d3ff5d0ec98cd9c582">   24</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#gabd5ade42baf19a2a2ffa715960842dfd">usernameCount</a>, <a class="code hl_variable" href="group__auth__impl.html#ga415b2b418d3a90a6e1da72992e7577aa">passCount</a>, <a class="code hl_variable" href="group__auth__impl.html#ga5058e2763f324b4146cfa8af36168478">pinCount</a>, <a class="code hl_variable" href="group__auth__impl.html#ga5e67fb6826c236d3ff5d0ec98cd9c582">id_temp_login</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="auth_8h.html#ae7b050dfa0f4d9bfdfb41c1746d8e055">   25</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#ga1e9668bc833c732fa8a038ec007c4ee9">errore_password</a>, <a class="code hl_variable" href="group__auth__impl.html#gae7b050dfa0f4d9bfdfb41c1746d8e055">errore_registrazione_pass</a>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="auth_8h.html#ab25b9978d929d16da0918ad72bed9812">   26</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#gab2b3b778484eb9c5f529be0c2f9c10d3">errore_registrazione_email</a>, <a class="code hl_variable" href="group__auth__impl.html#gab25b9978d929d16da0918ad72bed9812">errore_registrazione_username</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">extern</span> <a class="code hl_struct" href="structDatabaseUtenti.html">DatabaseUtenti</a> <a class="code hl_variable" href="group__auth__impl.html#gabbde975af8fe0d5e3c20e0fd862186b6">dbUtenti</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="auth_8h.html#abc565e2ba6cc88b20dded8d5345e869e">   20</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#ga9ecbbe659dbada66e149c73cefb83815">id_utente_corrente</a>, <a class="code hl_variable" href="auth_8h.html#abc565e2ba6cc88b20dded8d5345e869e">nuovo_utente</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="auth_8h.html#abdb70a410ac6fd790650381b7fb858b1">   21</a></span><span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="group__auth__impl.html#ga80d354a96271494c85654ea411ddac01">inputEmail</a>[100], <a class="code hl_variable" href="auth_8h.html#a2b0e8ee2101796cab35e2f6d2f932993">inputNome</a>[30], <a class="code hl_variable" href="auth_8h.html#abdb70a410ac6fd790650381b7fb858b1">inputCognome</a>[30];</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="auth_8h.html#a716f9307558976d3a4c67840b2ceb8ac">   22</a></span><span class="keyword">extern</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="group__auth__impl.html#ga726a429817c84dacd48cce82b3c91003">inputUsername</a>[30], <a class="code hl_variable" href="auth_8h.html#a716f9307558976d3a4c67840b2ceb8ac">inputPassword</a>[30], <a class="code hl_variable" href="auth_8h.html#afb61cbc7b14899011261458eb60e240a">inputPin</a>[7];</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="auth_8h.html#a880fe550552161100d934bf21de27f90">   23</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#ga3876b1cc4b483062056d9cf261ec4654">emailCount</a>, <a class="code hl_variable" href="auth_8h.html#a8576d027f30608a7448b5e4a6887f2e2">nomeCount</a>, <a class="code hl_variable" href="auth_8h.html#a880fe550552161100d934bf21de27f90">cognomeCount</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="auth_8h.html#a5e67fb6826c236d3ff5d0ec98cd9c582">   24</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#gabd5ade42baf19a2a2ffa715960842dfd">usernameCount</a>, <a class="code hl_variable" href="auth_8h.html#a415b2b418d3a90a6e1da72992e7577aa">passCount</a>, <a class="code hl_variable" href="auth_8h.html#a5058e2763f324b4146cfa8af36168478">pinCount</a>, <a class="code hl_variable" href="auth_8h.html#a5e67fb6826c236d3ff5d0ec98cd9c582">id_temp_login</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="auth_8h.html#ae7b050dfa0f4d9bfdfb41c1746d8e055">   25</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#ga1e9668bc833c732fa8a038ec007c4ee9">errore_password</a>, <a class="code hl_variable" href="auth_8h.html#ae7b050dfa0f4d9bfdfb41c1746d8e055">errore_registrazione_pass</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="auth_8h.html#ab25b9978d929d16da0918ad72bed9812">   26</a></span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#gab2b3b778484eb9c5f529be0c2f9c10d3">errore_registrazione_email</a>, <a class="code hl_variable" href="auth_8h.html#ab25b9978d929d16da0918ad72bed9812">errore_registrazione_username</a>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="group__auth__impl.html#ga2cf3aff3d88a04ea9b72ef90df54142c">campo_focusato</a>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="group__lazy__deletion.html#ga0c703432e3edf6feb94fed2223922714">   35</a></span><span class="preprocessor">#define MAX_PENDING_DELETIONS 64</span><span class="preprocessor"></span></div>
@@ -135,28 +152,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('auth_8h_source
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__database__api.html#ga4b6f9cad580a7fa31e55093db0e732ce">AuthBST_ContaNodi</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="ttc" id="aauth__screen_8c_html_abc565e2ba6cc88b20dded8d5345e869e"><div class="ttname"><a href="auth__screen_8c.html#abc565e2ba6cc88b20dded8d5345e869e">nuovo_utente</a></div><div class="ttdeci">int nuovo_utente</div><div class="ttdoc">Flag: 1 se un nuovo utente e&#39; stato appena registrato (mostra &quot;Benvenuto&quot;).</div><div class="ttdef"><b>Definition</b> auth_screen.c:39</div></div>
-<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
+<div class="ttc" id="aauth_8h_html_a2b0e8ee2101796cab35e2f6d2f932993"><div class="ttname"><a href="auth_8h.html#a2b0e8ee2101796cab35e2f6d2f932993">inputNome</a></div><div class="ttdeci">char inputNome[30]</div><div class="ttdef"><b>Definition</b> auth.h:21</div></div>
+<div class="ttc" id="aauth_8h_html_a415b2b418d3a90a6e1da72992e7577aa"><div class="ttname"><a href="auth_8h.html#a415b2b418d3a90a6e1da72992e7577aa">passCount</a></div><div class="ttdeci">int passCount</div><div class="ttdef"><b>Definition</b> auth.h:24</div></div>
+<div class="ttc" id="aauth_8h_html_a5058e2763f324b4146cfa8af36168478"><div class="ttname"><a href="auth_8h.html#a5058e2763f324b4146cfa8af36168478">pinCount</a></div><div class="ttdeci">int pinCount</div><div class="ttdef"><b>Definition</b> auth.h:24</div></div>
+<div class="ttc" id="aauth_8h_html_a5e67fb6826c236d3ff5d0ec98cd9c582"><div class="ttname"><a href="auth_8h.html#a5e67fb6826c236d3ff5d0ec98cd9c582">id_temp_login</a></div><div class="ttdeci">int id_temp_login</div><div class="ttdef"><b>Definition</b> auth.h:24</div></div>
+<div class="ttc" id="aauth_8h_html_a716f9307558976d3a4c67840b2ceb8ac"><div class="ttname"><a href="auth_8h.html#a716f9307558976d3a4c67840b2ceb8ac">inputPassword</a></div><div class="ttdeci">char inputPassword[30]</div><div class="ttdef"><b>Definition</b> auth.h:22</div></div>
+<div class="ttc" id="aauth_8h_html_a8576d027f30608a7448b5e4a6887f2e2"><div class="ttname"><a href="auth_8h.html#a8576d027f30608a7448b5e4a6887f2e2">nomeCount</a></div><div class="ttdeci">int nomeCount</div><div class="ttdef"><b>Definition</b> auth.h:23</div></div>
+<div class="ttc" id="aauth_8h_html_a880fe550552161100d934bf21de27f90"><div class="ttname"><a href="auth_8h.html#a880fe550552161100d934bf21de27f90">cognomeCount</a></div><div class="ttdeci">int cognomeCount</div><div class="ttdef"><b>Definition</b> auth.h:23</div></div>
+<div class="ttc" id="aauth_8h_html_ab25b9978d929d16da0918ad72bed9812"><div class="ttname"><a href="auth_8h.html#ab25b9978d929d16da0918ad72bed9812">errore_registrazione_username</a></div><div class="ttdeci">int errore_registrazione_username</div><div class="ttdef"><b>Definition</b> auth.h:26</div></div>
+<div class="ttc" id="aauth_8h_html_abc565e2ba6cc88b20dded8d5345e869e"><div class="ttname"><a href="auth_8h.html#abc565e2ba6cc88b20dded8d5345e869e">nuovo_utente</a></div><div class="ttdeci">int nuovo_utente</div><div class="ttdoc">Flag nuovo utente (submit).</div><div class="ttdef"><b>Definition</b> auth.h:20</div></div>
+<div class="ttc" id="aauth_8h_html_abdb70a410ac6fd790650381b7fb858b1"><div class="ttname"><a href="auth_8h.html#abdb70a410ac6fd790650381b7fb858b1">inputCognome</a></div><div class="ttdeci">char inputCognome[30]</div><div class="ttdef"><b>Definition</b> auth.h:21</div></div>
+<div class="ttc" id="aauth_8h_html_ae7b050dfa0f4d9bfdfb41c1746d8e055"><div class="ttname"><a href="auth_8h.html#ae7b050dfa0f4d9bfdfb41c1746d8e055">errore_registrazione_pass</a></div><div class="ttdeci">int errore_registrazione_pass</div><div class="ttdef"><b>Definition</b> auth.h:25</div></div>
+<div class="ttc" id="aauth_8h_html_afb61cbc7b14899011261458eb60e240a"><div class="ttname"><a href="auth_8h.html#afb61cbc7b14899011261458eb60e240a">inputPin</a></div><div class="ttdeci">char inputPin[7]</div><div class="ttdef"><b>Definition</b> auth.h:22</div></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header centrale del progetto UNO - Tipi di dato condivisi.</div></div>
 <div class="ttc" id="agroup__auth__impl_html_ga1e9668bc833c732fa8a038ec007c4ee9"><div class="ttname"><a href="group__auth__impl.html#ga1e9668bc833c732fa8a038ec007c4ee9">errore_password</a></div><div class="ttdeci">int errore_password</div><div class="ttdef"><b>Definition</b> auth.c:49</div></div>
-<div class="ttc" id="agroup__auth__impl_html_ga2b0e8ee2101796cab35e2f6d2f932993"><div class="ttname"><a href="group__auth__impl.html#ga2b0e8ee2101796cab35e2f6d2f932993">inputNome</a></div><div class="ttdeci">char inputNome[30]</div><div class="ttdef"><b>Definition</b> auth.c:38</div></div>
 <div class="ttc" id="agroup__auth__impl_html_ga2cf3aff3d88a04ea9b72ef90df54142c"><div class="ttname"><a href="group__auth__impl.html#ga2cf3aff3d88a04ea9b72ef90df54142c">campo_focusato</a></div><div class="ttdeci">int campo_focusato</div><div class="ttdef"><b>Definition</b> auth.c:53</div></div>
 <div class="ttc" id="agroup__auth__impl_html_ga3876b1cc4b483062056d9cf261ec4654"><div class="ttname"><a href="group__auth__impl.html#ga3876b1cc4b483062056d9cf261ec4654">emailCount</a></div><div class="ttdeci">int emailCount</div><div class="ttdef"><b>Definition</b> auth.c:37</div></div>
-<div class="ttc" id="agroup__auth__impl_html_ga415b2b418d3a90a6e1da72992e7577aa"><div class="ttname"><a href="group__auth__impl.html#ga415b2b418d3a90a6e1da72992e7577aa">passCount</a></div><div class="ttdeci">int passCount</div><div class="ttdef"><b>Definition</b> auth.c:45</div></div>
-<div class="ttc" id="agroup__auth__impl_html_ga5058e2763f324b4146cfa8af36168478"><div class="ttname"><a href="group__auth__impl.html#ga5058e2763f324b4146cfa8af36168478">pinCount</a></div><div class="ttdeci">int pinCount</div><div class="ttdef"><b>Definition</b> auth.c:47</div></div>
-<div class="ttc" id="agroup__auth__impl_html_ga5e67fb6826c236d3ff5d0ec98cd9c582"><div class="ttname"><a href="group__auth__impl.html#ga5e67fb6826c236d3ff5d0ec98cd9c582">id_temp_login</a></div><div class="ttdeci">int id_temp_login</div><div class="ttdef"><b>Definition</b> auth.c:48</div></div>
-<div class="ttc" id="agroup__auth__impl_html_ga716f9307558976d3a4c67840b2ceb8ac"><div class="ttname"><a href="group__auth__impl.html#ga716f9307558976d3a4c67840b2ceb8ac">inputPassword</a></div><div class="ttdeci">char inputPassword[30]</div><div class="ttdef"><b>Definition</b> auth.c:44</div></div>
 <div class="ttc" id="agroup__auth__impl_html_ga726a429817c84dacd48cce82b3c91003"><div class="ttname"><a href="group__auth__impl.html#ga726a429817c84dacd48cce82b3c91003">inputUsername</a></div><div class="ttdeci">char inputUsername[30]</div><div class="ttdef"><b>Definition</b> auth.c:42</div></div>
 <div class="ttc" id="agroup__auth__impl_html_ga80d354a96271494c85654ea411ddac01"><div class="ttname"><a href="group__auth__impl.html#ga80d354a96271494c85654ea411ddac01">inputEmail</a></div><div class="ttdeci">char inputEmail[100]</div><div class="ttdef"><b>Definition</b> auth.c:36</div></div>
-<div class="ttc" id="agroup__auth__impl_html_ga8576d027f30608a7448b5e4a6887f2e2"><div class="ttname"><a href="group__auth__impl.html#ga8576d027f30608a7448b5e4a6887f2e2">nomeCount</a></div><div class="ttdeci">int nomeCount</div><div class="ttdef"><b>Definition</b> auth.c:39</div></div>
-<div class="ttc" id="agroup__auth__impl_html_ga880fe550552161100d934bf21de27f90"><div class="ttname"><a href="group__auth__impl.html#ga880fe550552161100d934bf21de27f90">cognomeCount</a></div><div class="ttdeci">int cognomeCount</div><div class="ttdef"><b>Definition</b> auth.c:41</div></div>
 <div class="ttc" id="agroup__auth__impl_html_ga9ecbbe659dbada66e149c73cefb83815"><div class="ttname"><a href="group__auth__impl.html#ga9ecbbe659dbada66e149c73cefb83815">id_utente_corrente</a></div><div class="ttdeci">int id_utente_corrente</div><div class="ttdoc">Indice dell&#39;utente correntemente loggato (-1 se nessuno).</div><div class="ttdef"><b>Definition</b> auth.c:34</div></div>
-<div class="ttc" id="agroup__auth__impl_html_gab25b9978d929d16da0918ad72bed9812"><div class="ttname"><a href="group__auth__impl.html#gab25b9978d929d16da0918ad72bed9812">errore_registrazione_username</a></div><div class="ttdeci">int errore_registrazione_username</div><div class="ttdef"><b>Definition</b> auth.c:52</div></div>
 <div class="ttc" id="agroup__auth__impl_html_gab2b3b778484eb9c5f529be0c2f9c10d3"><div class="ttname"><a href="group__auth__impl.html#gab2b3b778484eb9c5f529be0c2f9c10d3">errore_registrazione_email</a></div><div class="ttdeci">int errore_registrazione_email</div><div class="ttdef"><b>Definition</b> auth.c:51</div></div>
 <div class="ttc" id="agroup__auth__impl_html_gabbde975af8fe0d5e3c20e0fd862186b6"><div class="ttname"><a href="group__auth__impl.html#gabbde975af8fe0d5e3c20e0fd862186b6">dbUtenti</a></div><div class="ttdeci">DatabaseUtenti dbUtenti</div><div class="ttdoc">Database utenti globale in memoria (allocazione dinamica).</div><div class="ttdef"><b>Definition</b> auth.c:32</div></div>
 <div class="ttc" id="agroup__auth__impl_html_gabd5ade42baf19a2a2ffa715960842dfd"><div class="ttname"><a href="group__auth__impl.html#gabd5ade42baf19a2a2ffa715960842dfd">usernameCount</a></div><div class="ttdeci">int usernameCount</div><div class="ttdef"><b>Definition</b> auth.c:43</div></div>
-<div class="ttc" id="agroup__auth__impl_html_gabdb70a410ac6fd790650381b7fb858b1"><div class="ttname"><a href="group__auth__impl.html#gabdb70a410ac6fd790650381b7fb858b1">inputCognome</a></div><div class="ttdeci">char inputCognome[30]</div><div class="ttdef"><b>Definition</b> auth.c:40</div></div>
-<div class="ttc" id="agroup__auth__impl_html_gae7b050dfa0f4d9bfdfb41c1746d8e055"><div class="ttname"><a href="group__auth__impl.html#gae7b050dfa0f4d9bfdfb41c1746d8e055">errore_registrazione_pass</a></div><div class="ttdeci">int errore_registrazione_pass</div><div class="ttdef"><b>Definition</b> auth.c:50</div></div>
-<div class="ttc" id="agroup__auth__impl_html_gafb61cbc7b14899011261458eb60e240a"><div class="ttname"><a href="group__auth__impl.html#gafb61cbc7b14899011261458eb60e240a">inputPin</a></div><div class="ttdeci">char inputPin[7]</div><div class="ttdef"><b>Definition</b> auth.c:46</div></div>
 <div class="ttc" id="agroup__database__api_html_ga4b6f9cad580a7fa31e55093db0e732ce"><div class="ttname"><a href="group__database__api.html#ga4b6f9cad580a7fa31e55093db0e732ce">AuthBST_ContaNodi</a></div><div class="ttdeci">int AuthBST_ContaNodi(void)</div><div class="ttdoc">Restituisce il numero di nodi nel BST.</div><div class="ttdef"><b>Definition</b> auth.c:319</div></div>
 <div class="ttc" id="agroup__database__api_html_ga780f5d85ee36704ef8c39e58d6d24ba3"><div class="ttname"><a href="group__database__api.html#ga780f5d85ee36704ef8c39e58d6d24ba3">CaricaDB</a></div><div class="ttdeci">void CaricaDB(void)</div><div class="ttdoc">Carica il database da file binario.</div><div class="ttdef"><b>Definition</b> auth.c:224</div></div>
 <div class="ttc" id="agroup__database__api_html_ga8477b8acaa3d9d97cdb06846bdaff9c0"><div class="ttname"><a href="group__database__api.html#ga8477b8acaa3d9d97cdb06846bdaff9c0">Auth_RimuoviUtente</a></div><div class="ttdeci">void Auth_RimuoviUtente(const char *email)</div><div class="ttdoc">Rimuove un utente da database e BST.</div><div class="ttdef"><b>Definition</b> auth.c:284</div></div>
@@ -169,15 +186,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('auth_8h_source
 <div class="ttc" id="agroup__lazy__deletion_html_ga76017eead600b6ea252edb0e00c8758b"><div class="ttname"><a href="group__lazy__deletion.html#ga76017eead600b6ea252edb0e00c8758b">Auth_ProcessPendingDeletions</a></div><div class="ttdeci">void Auth_ProcessPendingDeletions(const char *email)</div><div class="ttdoc">Processa le eliminazioni pendenti per un utente.</div><div class="ttdef"><b>Definition</b> auth.c:88</div></div>
 <div class="ttc" id="agroup__lazy__deletion_html_gaa103fe9f0b4ddf468b2d7ee6f6b28bba"><div class="ttname"><a href="group__lazy__deletion.html#gaa103fe9f0b4ddf468b2d7ee6f6b28bba">Auth_MarkForDeletion</a></div><div class="ttdeci">int Auth_MarkForDeletion(const char *email)</div><div class="ttdoc">Marca un utente per eliminazione differita.</div><div class="ttdef"><b>Definition</b> auth.c:68</div></div>
 <div class="ttc" id="agroup__lazy__deletion_html_gae8af680dcc7f7dcc3b73cff9ce19d89c"><div class="ttname"><a href="group__lazy__deletion.html#gae8af680dcc7f7dcc3b73cff9ce19d89c">Auth_IsMarkedForDeletion</a></div><div class="ttdeci">int Auth_IsMarkedForDeletion(const char *email)</div><div class="ttdoc">Verifica se un utente e&#39; marcato per eliminazione.</div><div class="ttdef"><b>Definition</b> auth.c:80</div></div>
-<div class="ttc" id="astruct_database_utenti_html"><div class="ttname"><a href="struct_database_utenti.html">DatabaseUtenti</a></div><div class="ttdoc">Database degli utenti in memoria (allocazione DINAMICA).</div><div class="ttdef"><b>Definition</b> data_structures.h:314</div></div>
+<div class="ttc" id="astructDatabaseUtenti_html"><div class="ttname"><a href="structDatabaseUtenti.html">DatabaseUtenti</a></div><div class="ttdoc">Database degli utenti in memoria (allocazione DINAMICA).</div><div class="ttdef"><b>Definition</b> data_structures.h:141</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="auth_8h.html">auth.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="auth_8h.html">auth.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

@@ -1,6 +1,5 @@
 var bot__ai_8h =
 [
-    [ "NodoDecisione", "group__bot__ai__nodo.html#ga228ca8a87c36c2c3878d045afbcbf1d2", null ],
     [ "DecisioneBot", "group__bot__ai__azioni.html#ga9ba63d9ab706e1b3df0ee26eac06dd19", [
       [ "AZIONE_GIOCA_JOLLY_PIU4", "group__bot__ai__azioni.html#gga9ba63d9ab706e1b3df0ee26eac06dd19a77eca1d4e00c7c0c5284d427caec7d10", null ],
       [ "AZIONE_GIOCA_PIU2", "group__bot__ai__azioni.html#gga9ba63d9ab706e1b3df0ee26eac06dd19a40121e9df9c41f784877f36287d1d4ef", null ],

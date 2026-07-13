@@ -10,6 +10,8 @@
 #define PACKET_HANDLER_ADMIN_H
 
 #include "../../data_structures.h"
+#include "../../player.h"
+#include "../../game_state.h"
 #include "../../socket/network/network.h"
 
 /**

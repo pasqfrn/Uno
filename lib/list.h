@@ -17,8 +17,7 @@
 #define LIST_H
 
 #include "data_structures.h"
-
-/* Le definizioni di NodoCarta e ListaCarte sono in data_structures.h */
+#include "data_structures/list.h"  /* NodoCarta, ListaCarte */
 
 /* ============================================================
  *  FUNZIONI DI BASE PER LA LISTA

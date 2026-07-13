@@ -1,79 +1,79 @@
 var group__network__packet__strutture =
 [
-    [ "PacketMove", "struct_packet_move.html", [
+    [ "PacketMove", "structPacketMove.html", [
       [ "card_index", "group__network__packet__strutture.html#ga26fb77aeafc9420f593477868c2e67e9", null ],
       [ "colore_scelto", "group__network__packet__strutture.html#ga2fd6703e904f8518191e4de979f69189", null ],
       [ "player_id", "group__network__packet__strutture.html#ga48dff0aed0d8c66bd700afea6aad9b38", null ]
     ] ],
-    [ "PacketDraw", "struct_packet_draw.html", [
+    [ "PacketDraw", "structPacketDraw.html", [
       [ "count", "group__network__packet__strutture.html#gaf95b16aff38590d53d8f52227a73bfa3", null ],
       [ "player_id", "group__network__packet__strutture.html#ga7d75ebf8c21ea768951f8e26dbd16884", null ]
     ] ],
-    [ "PacketGameState", "struct_packet_game_state.html", [
+    [ "PacketGameState", "structPacketGameState.html", [
       [ "stato_gioco", "group__network__packet__strutture.html#ga20f3500f9a6688a3d4c16b56f76ac007", null ]
     ] ],
-    [ "PacketColorChoice", "struct_packet_color_choice.html", [
+    [ "PacketColorChoice", "structPacketColorChoice.html", [
       [ "colore", "group__network__packet__strutture.html#ga82c3f2c0248a3b52fb91dc65edbe78d3", null ],
       [ "player_id", "group__network__packet__strutture.html#gae9866ba217c36a39ba4073858855caa6", null ]
     ] ],
-    [ "PacketChat", "struct_packet_chat.html", [
+    [ "PacketChat", "structPacketChat.html", [
       [ "message", "group__network__packet__strutture.html#gaf43ad9dadb972307b3c58edc0c45198b", null ],
       [ "player_id", "group__network__packet__strutture.html#ga60f45f1c8c69bb485dedd5040b62b2b7", null ]
     ] ],
-    [ "PacketJoinGame", "struct_packet_join_game.html", [
+    [ "PacketJoinGame", "structPacketJoinGame.html", [
       [ "nome", "group__network__packet__strutture.html#gaaa1d3eeeb44c69e71bd1afd6be1ee3e7", null ]
     ] ],
-    [ "PacketJoinRejected", "struct_packet_join_rejected.html", [
+    [ "PacketJoinRejected", "structPacketJoinRejected.html", [
       [ "motivo", "group__network__packet__strutture.html#gaa001f2ef2a04583f55f8aed0afb6753b", null ]
     ] ],
-    [ "PacketPlayerHand", "struct_packet_player_hand.html", [
+    [ "PacketPlayerHand", "structPacketPlayerHand.html", [
       [ "carte", "group__network__packet__strutture.html#ga9b8ad66e75056db4f244268e512e2050", null ],
       [ "num_carte", "group__network__packet__strutture.html#ga027930ddbd1fdca4574393b25c6729b4", null ],
       [ "player_id", "group__network__packet__strutture.html#gaca097944b71b7a8406b93e4b3ed2db4f", null ]
     ] ],
-    [ "PacketCreateSession", "struct_packet_create_session.html", [
+    [ "PacketCreateSession", "structPacketCreateSession.html", [
       [ "host_name", "group__network__packet__strutture.html#ga8409bc6d5b36268bdacb03e5ce7e9780", null ],
       [ "num_players", "group__network__packet__strutture.html#gab6419268cbf6e2c93cb228256f7effb0", null ],
       [ "session_id", "group__network__packet__strutture.html#ga0b43b7c02501c9cd6bfefeae2f0d5ad6", null ]
     ] ],
-    [ "PacketJoinSession", "struct_packet_join_session.html", [
+    [ "PacketJoinSession", "structPacketJoinSession.html", [
       [ "player_name", "group__network__packet__strutture.html#ga6912d90f8d9510ad4cf57b0fcab88420", null ],
       [ "session_id", "group__network__packet__strutture.html#ga98298829b528d7a7a0e6bafb5d39c46e", null ]
     ] ],
-    [ "PacketSessionList", "struct_packet_session_list.html", [
+    [ "PacketSessionList", "structPacketSessionList.html", [
       [ "session_count", "group__network__packet__strutture.html#ga528efbe1f2a92c5853dccc8ed2c67e93", null ],
       [ "sessions", "group__network__packet__strutture.html#gaf70a7913010e764d81f58e2ca1b96ff1", null ]
     ] ],
-    [ "PacketSessionState", "struct_packet_session_state.html", [
+    [ "PacketSessionState", "structPacketSessionState.html", [
       [ "game_started", "group__network__packet__strutture.html#ga596b1cabfc224d016498711229f02d4b", null ],
       [ "num_players", "group__network__packet__strutture.html#ga71586935479cf2643e01bbfa671b7273", null ],
       [ "player_names", "group__network__packet__strutture.html#ga0def821662805847be2754df1a8d20e8", null ],
       [ "player_ready", "group__network__packet__strutture.html#ga6085b0d4fafdb89b59b149d6968b4b69", null ],
       [ "session_id", "group__network__packet__strutture.html#ga8874b2989efd13fdfbe481350cc963db", null ]
     ] ],
-    [ "PacketPlayerReady", "struct_packet_player_ready.html", [
+    [ "PacketPlayerReady", "structPacketPlayerReady.html", [
       [ "is_ready", "group__network__packet__strutture.html#gad4d1f6a7b22f4c2f2e5a244718194383", null ],
       [ "player_id", "group__network__packet__strutture.html#gad64175c30986eb4c8a88b0c49817bdbc", null ],
       [ "want_play_again", "group__network__packet__strutture.html#ga8da9cba434f640515d782706341ebc04", null ]
     ] ],
-    [ "PacketGameFinished", "struct_packet_game_finished.html", [
+    [ "PacketGameFinished", "structPacketGameFinished.html", [
       [ "winner_name", "group__network__packet__strutture.html#ga1ff4264371887f1373f376828d6a7c3f", null ],
       [ "winning_player_id", "group__network__packet__strutture.html#ga2802060d7734564283278ffb5148e4a0", null ]
     ] ],
-    [ "PacketPlayAgain", "struct_packet_play_again.html", [
+    [ "PacketPlayAgain", "structPacketPlayAgain.html", [
       [ "play_again", "group__network__packet__strutture.html#ga454d43cfb2e2f467f504863d363ca274", null ],
       [ "player_id", "group__network__packet__strutture.html#gafb6a63ee6a6c7a4499d44aaebaf475e2", null ],
       [ "player_name", "group__network__packet__strutture.html#gad0e5cb99e6d44afb1297610a71ff0839", null ],
       [ "timestamp", "group__network__packet__strutture.html#ga9f34dff657b264545e7f38767a4e2f9b", null ]
     ] ],
-    [ "PacketHeartbeat", "struct_packet_heartbeat.html", [
+    [ "PacketHeartbeat", "structPacketHeartbeat.html", [
       [ "player_id", "group__network__packet__strutture.html#ga0e2259a91f1626c4c9f20d490768de33", null ],
       [ "timestamp", "group__network__packet__strutture.html#ga3a36376352934fafde900b15b51bf29d", null ]
     ] ],
-    [ "PacketHostReturnLobby", "struct_packet_host_return_lobby.html", [
+    [ "PacketHostReturnLobby", "structPacketHostReturnLobby.html", [
       [ "host_ready", "group__network__packet__strutture.html#ga21afc5dc63a86a4ff6a055486fad6441", null ]
     ] ],
-    [ "AdminUserSyncData", "struct_admin_user_sync_data.html", [
+    [ "AdminUserSyncData", "structAdminUserSyncData.html", [
       [ "cognome", "group__network__packet__strutture.html#ga406392fbcc5b9a327521a12b68f9d378", null ],
       [ "email", "group__network__packet__strutture.html#gabafab5e79d5298dbbe81ce0cd201902d", null ],
       [ "nome", "group__network__packet__strutture.html#gac81f1b89327c6f3a128761e702db16cc", null ],
@@ -84,17 +84,17 @@ var group__network__packet__strutture =
       [ "vittorie_bot", "group__network__packet__strutture.html#ga4eee1d90a8f2a55a4966d22f532c7b5e", null ],
       [ "vittorie_giocatore", "group__network__packet__strutture.html#ga4541673e51582113e53ab1d31d626c35", null ]
     ] ],
-    [ "AdminUserAction", "struct_admin_user_action.html", [
+    [ "AdminUserAction", "structAdminUserAction.html", [
       [ "action", "group__network__packet__strutture.html#ga3d07f0b9de209d0f402a844b8efa2a8b", null ],
       [ "target_id", "group__network__packet__strutture.html#gaba3e8369946d0bcbe4912985202712dd", null ],
       [ "user", "group__network__packet__strutture.html#gaa6cfd2ff64ab1d9d1a36d96e5438a4c7", null ]
     ] ],
-    [ "AdminDBSyncPacket", "struct_admin_d_b_sync_packet.html", [
+    [ "AdminDBSyncPacket", "structAdminDBSyncPacket.html", [
       [ "total_users", "group__network__packet__strutture.html#gac6a474ddf16d9f20937f0edf4b45ba06", null ],
       [ "user", "group__network__packet__strutture.html#gaa990cfef6a092ea75e646d4666758175", null ],
       [ "user_index", "group__network__packet__strutture.html#ga3f8f3d3fd45f75d501e186908fc26ad1", null ]
     ] ],
-    [ "StatsSyncPacket", "struct_stats_sync_packet.html", [
+    [ "StatsSyncPacket", "structStatsSyncPacket.html", [
       [ "durata_ultima_partita", "group__network__packet__strutture.html#ga757032a40e11dad5f12d2c2f6afd0cc8", null ],
       [ "esito_ultima", "group__network__packet__strutture.html#ga2a09d71c4e7daed0a74edd976d9597cb", null ],
       [ "modalita_ultima", "group__network__packet__strutture.html#ga2efc2fc797cb131c559f930e646b21ef", null ],
@@ -106,13 +106,13 @@ var group__network__packet__strutture =
       [ "vittorie_bot", "group__network__packet__strutture.html#ga60b4c234ff6dd8561d9f264fb37b68cf", null ],
       [ "vittorie_giocatore", "group__network__packet__strutture.html#gad656264fcdf2079c7252dfc7a497dce4", null ]
     ] ],
-    [ "NetPacket", "struct_net_packet.html", [
+    [ "NetPacket", "structNetPacket.html", [
       [ "admin_action", "group__network__packet__strutture.html#ga73a0ded76fc6e6d72987c55bb16e2adf", null ],
       [ "admin_db_packet", "group__network__packet__strutture.html#ga740b8f9c2a02ecfa8de301efa16a6087", null ],
       [ "chat", "group__network__packet__strutture.html#gaee3e8eefd8701d9bd41cd426cfe941ec", null ],
       [ "color_choice", "group__network__packet__strutture.html#ga5a7420a732e939ca23615c9b7b686b49", null ],
       [ "create_session", "group__network__packet__strutture.html#gae9d31a94b42b77f7f74d93d09cd3dae0", null ],
-      [ "data", "group__network__packet__strutture.html#ga6d1829320713144288aa563464cfbf41", null ],
+      [ "data", "group__network__packet__strutture.html#gabd413eca14a55ac809b409658c0998a3", null ],
       [ "draw", "group__network__packet__strutture.html#gab4d8deeb5c19963d6e1d692ce5b01776", null ],
       [ "game_finished", "group__network__packet__strutture.html#ga2f05176c025e583a0b0ff862d3723c75", null ],
       [ "game_state", "group__network__packet__strutture.html#gae1da5a64d081035f4af93792ff771050", null ],
@@ -182,58 +182,58 @@ var group__network__packet__strutture =
     [ "ShiftNetworkSockets", "group__network__packet__strutture.html#ga76a4e1704f09ea2ce18348e9add659d4", null ],
     [ "UpdateNetwork", "group__network__packet__strutture.html#ga6b2d507a3b3bf210f28c0eedacd885a4", null ],
     [ "AdminUserAction::action", "group__network__packet__strutture.html#ga3d07f0b9de209d0f402a844b8efa2a8b", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::admin_action", "group__network__packet__strutture.html#ga0a43ca38274c6e7a8529c3dd9ed77091", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::admin_action", "group__network__packet__strutture.html#ga9ab160acff8a130384701d3731c0729b", null ],
     [ "NetPacket::admin_action", "group__network__packet__strutture.html#ga73a0ded76fc6e6d72987c55bb16e2adf", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::admin_db_packet", "group__network__packet__strutture.html#ga682a96f866794284e226ab4b853fedae", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::admin_db_packet", "group__network__packet__strutture.html#gac54f29e65060622fa6b68eca99d0f3f4", null ],
     [ "NetPacket::admin_db_packet", "group__network__packet__strutture.html#ga740b8f9c2a02ecfa8de301efa16a6087", null ],
     [ "PacketMove::card_index", "group__network__packet__strutture.html#ga26fb77aeafc9420f593477868c2e67e9", null ],
     [ "PacketPlayerHand::carte", "group__network__packet__strutture.html#ga9b8ad66e75056db4f244268e512e2050", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::chat", "group__network__packet__strutture.html#gabf2048c359de3eb2d8f90a63358ea33c", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::chat", "group__network__packet__strutture.html#ga1736929bde9fa4e39aabaafe4e295530", null ],
     [ "NetPacket::chat", "group__network__packet__strutture.html#gaee3e8eefd8701d9bd41cd426cfe941ec", null ],
     [ "clientSockets", "group__network__packet__strutture.html#gae1406de9f7c29f2553e952e0d5a0532c", null ],
     [ "AdminUserSyncData::cognome", "group__network__packet__strutture.html#ga406392fbcc5b9a327521a12b68f9d378", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::color_choice", "group__network__packet__strutture.html#ga32df771a08a39231e11c8dfd5bdf83e0", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::color_choice", "group__network__packet__strutture.html#gaf982b063fcf3adc8ce91a824f0366551", null ],
     [ "NetPacket::color_choice", "group__network__packet__strutture.html#ga5a7420a732e939ca23615c9b7b686b49", null ],
     [ "PacketColorChoice::colore", "group__network__packet__strutture.html#ga82c3f2c0248a3b52fb91dc65edbe78d3", null ],
     [ "PacketMove::colore_scelto", "group__network__packet__strutture.html#ga2fd6703e904f8518191e4de979f69189", null ],
     [ "connectedClientUsernames", "group__network__packet__strutture.html#ga80ac1ee1e5dc6a14be8c487f06ab9192", null ],
     [ "PacketDraw::count", "group__network__packet__strutture.html#gaf95b16aff38590d53d8f52227a73bfa3", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::create_session", "group__network__packet__strutture.html#ga314222760ce29bd0dfaaf64c86e6216f", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::create_session", "group__network__packet__strutture.html#ga4956e74b07eeeb2d28f106da55bd4670", null ],
     [ "NetPacket::create_session", "group__network__packet__strutture.html#gae9d31a94b42b77f7f74d93d09cd3dae0", null ],
     [ "current_session_id", "group__network__packet__strutture.html#ga5cad9e8eeb56c51e52badb34a5910fbe", null ],
     [ "currentRole", "group__network__packet__strutture.html#ga16acec73ed8b5b9262d15211bedb6479", null ],
-    [ "NetPacket::data", "group__network__packet__strutture.html#ga6d1829320713144288aa563464cfbf41", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::draw", "group__network__packet__strutture.html#ga9334aa06f6610990b64dc1f418c97339", null ],
+    [ "NetPacket::data", "group__network__packet__strutture.html#gabd413eca14a55ac809b409658c0998a3", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::draw", "group__network__packet__strutture.html#gad77d0da74a0ac44c5e121fac0873d28e", null ],
     [ "NetPacket::draw", "group__network__packet__strutture.html#gab4d8deeb5c19963d6e1d692ce5b01776", null ],
     [ "StatsSyncPacket::durata_ultima_partita", "group__network__packet__strutture.html#ga757032a40e11dad5f12d2c2f6afd0cc8", null ],
     [ "AdminUserSyncData::email", "group__network__packet__strutture.html#gabafab5e79d5298dbbe81ce0cd201902d", null ],
     [ "StatsSyncPacket::esito_ultima", "group__network__packet__strutture.html#ga2a09d71c4e7daed0a74edd976d9597cb", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::game_finished", "group__network__packet__strutture.html#gaa4ba951ba12c61b3cc6ace81e706b32b", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::game_finished", "group__network__packet__strutture.html#gaf83928a94828d821a3de5ba7e4c4f8b7", null ],
     [ "NetPacket::game_finished", "group__network__packet__strutture.html#ga2f05176c025e583a0b0ff862d3723c75", null ],
     [ "PacketSessionState::game_started", "group__network__packet__strutture.html#ga596b1cabfc224d016498711229f02d4b", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::game_state", "group__network__packet__strutture.html#ga17a833a0ed338f4f8bda0f67969bfe05", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::game_state", "group__network__packet__strutture.html#gaf1b57c2e2a654944903ee2f7c7c243d8", null ],
     [ "NetPacket::game_state", "group__network__packet__strutture.html#gae1da5a64d081035f4af93792ff771050", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::heartbeat", "group__network__packet__strutture.html#gad19d3935c177c2bf5cb284c7d413ebde", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::heartbeat", "group__network__packet__strutture.html#gaad12c7f01d3ea124dcbafeaf321d102c", null ],
     [ "NetPacket::heartbeat", "group__network__packet__strutture.html#ga180be1c20dcb535e60e3803941b5d07f", null ],
     [ "host_in_prelobby", "group__network__packet__strutture.html#gae06ac14e3f4d5998b855e2ffbc411341", null ],
     [ "PacketCreateSession::host_name", "group__network__packet__strutture.html#ga8409bc6d5b36268bdacb03e5ce7e9780", null ],
     [ "PacketHostReturnLobby::host_ready", "group__network__packet__strutture.html#ga21afc5dc63a86a4ff6a055486fad6441", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::host_return_lobby", "group__network__packet__strutture.html#ga1cc64144d2ea3170bb1f2cf5440e185d", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::host_return_lobby", "group__network__packet__strutture.html#ga4e89db9e4eaff3d692d970dbf724b034", null ],
     [ "NetPacket::host_return_lobby", "group__network__packet__strutture.html#ga5bb950cf458b01e517c357691bb6e416", null ],
     [ "PacketPlayerReady::is_ready", "group__network__packet__strutture.html#gad4d1f6a7b22f4c2f2e5a244718194383", null ],
     [ "isConnected", "group__network__packet__strutture.html#gaa358768cbc9b8ed27055d5b41726d79a", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::join_game", "group__network__packet__strutture.html#ga64d4c0f84b1529829b89eab858897b1f", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::join_game", "group__network__packet__strutture.html#gadcca68bf94ab7ed6e0a43cc5e9b56dc8", null ],
     [ "NetPacket::join_game", "group__network__packet__strutture.html#ga49d7d44bd4df64c5ba30b1c04bfafa02", null ],
     [ "join_rejected", "group__network__packet__strutture.html#ga0936e5fbf6f65df58464ed83a3272430", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::join_rejected", "group__network__packet__strutture.html#gae555ea6e8bab49b93446614e49f21874", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::join_rejected", "group__network__packet__strutture.html#ga9c20cd475e2b0164fda464fc012dac26", null ],
     [ "NetPacket::join_rejected", "group__network__packet__strutture.html#ga57e287d2946e56eba5a2d2ec0b01c40d", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::join_session", "group__network__packet__strutture.html#gaa9c03f3f99a3e717bdaf5a04a230c7bc", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::join_session", "group__network__packet__strutture.html#ga122618ab2971d55a8479d4862582fff7", null ],
     [ "NetPacket::join_session", "group__network__packet__strutture.html#gacc8d068dd0266c0c8c9b20e37583a585", null ],
     [ "local_player_id", "group__network__packet__strutture.html#ga3437dc7e27766145ab5c8d9a605083cd", null ],
     [ "PacketChat::message", "group__network__packet__strutture.html#gaf43ad9dadb972307b3c58edc0c45198b", null ],
     [ "StatsSyncPacket::modalita_ultima", "group__network__packet__strutture.html#ga2efc2fc797cb131c559f930e646b21ef", null ],
     [ "PacketJoinRejected::motivo", "group__network__packet__strutture.html#gaa001f2ef2a04583f55f8aed0afb6753b", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::move", "group__network__packet__strutture.html#gab72d1fd0a869874805c1aeabfbad97a4", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::move", "group__network__packet__strutture.html#ga483be99b1558255963583262c27b2fe4", null ],
     [ "NetPacket::move", "group__network__packet__strutture.html#ga132cc701b1cebecfb8f8992565f6bcc6", null ],
     [ "network_client_joined", "group__network__packet__strutture.html#ga64831cef2cdeba3a0f16d745b3ecf4fc", null ],
     [ "network_game_initialized", "group__network__packet__strutture.html#ga7fbc791dd298a446c201d280dd8c1c3d", null ],
@@ -248,10 +248,10 @@ var group__network__packet__strutture =
     [ "StatsSyncPacket::partite_giocate", "group__network__packet__strutture.html#gabcb39d60ae8573ad6547aa17daf77872", null ],
     [ "AdminUserSyncData::password", "group__network__packet__strutture.html#ga1b78f9830a1a67d47bc8825c8f73d801", null ],
     [ "AdminUserSyncData::pin_recupero", "group__network__packet__strutture.html#ga02026535119c49cc438aaf35e09b14c4", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::play_again", "group__network__packet__strutture.html#ga5214bcde5a96baab2032d034c07a280d", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::play_again", "group__network__packet__strutture.html#ga8c9c99a117949c9b338d2bc40434d729", null ],
     [ "NetPacket::play_again", "group__network__packet__strutture.html#gaa00db0a05b0d2dcb217cd435b8c84ede", null ],
     [ "PacketPlayAgain::play_again", "group__network__packet__strutture.html#ga454d43cfb2e2f467f504863d363ca274", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::player_hand", "group__network__packet__strutture.html#ga6f55f2df7e1f3157fe34cb757b1d7e56", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::player_hand", "group__network__packet__strutture.html#ga1598a95de734a3cfce604e8ddc81a22d", null ],
     [ "NetPacket::player_hand", "group__network__packet__strutture.html#gafae35b798ce130ffa2a4db68d44ebb40", null ],
     [ "PacketChat::player_id", "group__network__packet__strutture.html#ga60f45f1c8c69bb485dedd5040b62b2b7", null ],
     [ "PacketColorChoice::player_id", "group__network__packet__strutture.html#gae9866ba217c36a39ba4073858855caa6", null ],
@@ -265,11 +265,11 @@ var group__network__packet__strutture =
     [ "PacketJoinSession::player_name", "group__network__packet__strutture.html#ga6912d90f8d9510ad4cf57b0fcab88420", null ],
     [ "PacketPlayAgain::player_name", "group__network__packet__strutture.html#gad0e5cb99e6d44afb1297610a71ff0839", null ],
     [ "PacketSessionState::player_names", "group__network__packet__strutture.html#ga0def821662805847be2754df1a8d20e8", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::player_ready", "group__network__packet__strutture.html#ga8df08272219148fca0f5615923e84675", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::player_ready", "group__network__packet__strutture.html#ga56a0c16c88756059097377668c51770a", null ],
     [ "NetPacket::player_ready", "group__network__packet__strutture.html#gacb05063e5d95dfe6ca677bc01d137d91", null ],
     [ "PacketSessionState::player_ready", "group__network__packet__strutture.html#ga6085b0d4fafdb89b59b149d6968b4b69", null ],
     [ "StatsSyncPacket::posizione_ultima", "group__network__packet__strutture.html#gad5ea8e8bdf83a475ded43b43b7613670", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::raw", "group__network__packet__strutture.html#ga5f514b76caf042b0eeb9755d7c8ebe03", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::raw", "group__network__packet__strutture.html#gaae551ffc1b3cbf4e926c8c31e0f35fad", null ],
     [ "NetPacket::raw", "group__network__packet__strutture.html#ga27a03e277b8bf17777c34d7d7c39a8ac", null ],
     [ "reject_message", "group__network__packet__strutture.html#gac04d7d998bff797c954bba3776ba0c55", null ],
     [ "NetPacket::sender_id", "group__network__packet__strutture.html#ga171e8b116595940c618270d21fe9787b", null ],
@@ -278,13 +278,13 @@ var group__network__packet__strutture =
     [ "PacketJoinSession::session_id", "group__network__packet__strutture.html#ga98298829b528d7a7a0e6bafb5d39c46e", null ],
     [ "PacketSessionState::session_id", "group__network__packet__strutture.html#ga8874b2989efd13fdfbe481350cc963db", null ],
     [ "session_id", "group__network__packet__strutture.html#ga3ceeb52643564997e64ac776a8f0fc9a", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::session_list", "group__network__packet__strutture.html#ga64f59a011eada605cdf9be9bfd6b12f6", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::session_list", "group__network__packet__strutture.html#ga87b8d8a37620ff152436443405557b76", null ],
     [ "NetPacket::session_list", "group__network__packet__strutture.html#gaf2b36da7b084e54a381de21e667ecf01", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::session_state", "group__network__packet__strutture.html#ga6f23b5915de11f5d58e4ebcbe9c92772", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::session_state", "group__network__packet__strutture.html#gab4ea6b430b8d76b85335290c33eb2da7", null ],
     [ "NetPacket::session_state", "group__network__packet__strutture.html#ga4640495cc1b36655b7a0a8850d422384", null ],
     [ "PacketSessionList::sessions", "group__network__packet__strutture.html#gaf70a7913010e764d81f58e2ca1b96ff1", null ],
     [ "PacketGameState::stato_gioco", "group__network__packet__strutture.html#ga20f3500f9a6688a3d4c16b56f76ac007", null ],
-    [ "NetPacket::@364004132016125344270105023134055377271367132123::stats_sync", "group__network__packet__strutture.html#ga20b8068a242a74f11ed928e9afd6423b", null ],
+    [ "NetPacket::@360223311017150174205023035217356011367126334367::stats_sync", "group__network__packet__strutture.html#ga0a33d6a7563db242bd0532ffe7901606", null ],
     [ "NetPacket::stats_sync", "group__network__packet__strutture.html#ga85e03ec5f7b0d5f8c9304564241a29ee", null ],
     [ "StatsSyncPacket::storico_count", "group__network__packet__strutture.html#ga0072a9f95163dfc459a5f0343416eec4", null ],
     [ "StatsSyncPacket::storico_partite", "group__network__packet__strutture.html#ga0534e53e5caf2dd07dcf142cd6faa332", null ],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno:  File sorgente lib/data_structures/stack.h</title>
+<title>UNO - Gioco di Carte:  File sorgente data_structures/stack.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -109,39 +126,39 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('stack_8h_sourc
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">../data_structures.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_nodo_pila.html">   19</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_nodo_pila.html">NodoPila</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_nodo_pila.html#a9a3ab07f77c9fbd965a6a3765e87f56f">   20</a></span>    <a class="code hl_struct" href="struct_carta.html">Carta</a> <a class="code hl_variable" href="struct_nodo_pila.html#a9a3ab07f77c9fbd965a6a3765e87f56f">carta</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_nodo_pila.html#a7ee7a0a49a5e8429f500c5ec48387431">   21</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_nodo_pila.html">NodoPila</a>* <a class="code hl_variable" href="struct_nodo_pila.html#a7ee7a0a49a5e8429f500c5ec48387431">next</a>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="group__stack__nodi.html#ga8330fe274cc05faa43085fe3a259d046">   22</a></span>} <a class="code hl_struct" href="struct_nodo_pila.html">NodoPila</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structNodoPila.html">   19</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structNodoPila.html">NodoPila</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structNodoPila.html#a9a3ab07f77c9fbd965a6a3765e87f56f">   20</a></span>    <a class="code hl_struct" href="structCarta.html">Carta</a> <a class="code hl_variable" href="structNodoPila.html#a9a3ab07f77c9fbd965a6a3765e87f56f">carta</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structNodoPila.html#a7ee7a0a49a5e8429f500c5ec48387431">   21</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoPila.html">NodoPila</a>* <a class="code hl_variable" href="structNodoPila.html#a7ee7a0a49a5e8429f500c5ec48387431">next</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>} <a class="code hl_struct" href="structNodoPila.html">NodoPila</a>;</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="group__stack__nodi.html#ga8330fe274cc05faa43085fe3a259d046">   23</a></span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
 <div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="struct_pila.html">   31</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_pila.html">Pila</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_pila.html#a0ef95d21bf923dec210fb22f1a8cd0f3">   32</a></span>    <a class="code hl_struct" href="struct_nodo_pila.html">NodoPila</a>* <a class="code hl_variable" href="struct_pila.html#a0ef95d21bf923dec210fb22f1a8cd0f3">top</a>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="struct_pila.html#aea0497c41c8431db25e46b8ad2ce6d57">   33</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_pila.html#aea0497c41c8431db25e46b8ad2ce6d57">size</a>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">   34</a></span>} <a class="code hl_struct" href="struct_pila.html">Pila</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structPila.html">   31</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structPila.html">Pila</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structPila.html#a0ef95d21bf923dec210fb22f1a8cd0f3">   32</a></span>    <a class="code hl_struct" href="structNodoPila.html">NodoPila</a>* <a class="code hl_variable" href="structPila.html#a0ef95d21bf923dec210fb22f1a8cd0f3">top</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structPila.html#aea0497c41c8431db25e46b8ad2ce6d57">   33</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structPila.html#aea0497c41c8431db25e46b8ad2ce6d57">size</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>} <a class="code hl_struct" href="structPila.html">Pila</a>;</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">   35</a></span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><a class="code hl_struct" href="struct_pila.html">Pila</a>* <a class="code hl_function" href="group__stack__api.html#gae2580d2cd99d4bbccf2d97f0e7505986">Pila_Crea</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><a class="code hl_struct" href="structPila.html">Pila</a>* <a class="code hl_function" href="group__stack__api.html#gae2580d2cd99d4bbccf2d97f0e7505986">Pila_Crea</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__stack__api.html#ga263f40cb0178a91e84a55530b759de12">Pila_Distruggi</a>(<a class="code hl_struct" href="struct_pila.html">Pila</a>* p);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__stack__api.html#ga263f40cb0178a91e84a55530b759de12">Pila_Distruggi</a>(<a class="code hl_struct" href="structPila.html">Pila</a>* p);</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#gab82fab8722fd6967c4eb8df559bd54a0">Pila_Push</a>(<a class="code hl_struct" href="struct_pila.html">Pila</a>* p, <a class="code hl_struct" href="struct_carta.html">Carta</a> c);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#gab82fab8722fd6967c4eb8df559bd54a0">Pila_Push</a>(<a class="code hl_struct" href="structPila.html">Pila</a>* p, <a class="code hl_struct" href="structCarta.html">Carta</a> c);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#ga5bdd368203194d752ff33dbb1cac1c63">Pila_Pop</a>(<a class="code hl_struct" href="struct_pila.html">Pila</a>* p, <a class="code hl_struct" href="struct_carta.html">Carta</a>* out);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#ga5bdd368203194d752ff33dbb1cac1c63">Pila_Pop</a>(<a class="code hl_struct" href="structPila.html">Pila</a>* p, <a class="code hl_struct" href="structCarta.html">Carta</a>* out);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#gac59443252a5933aafadbe3a44baaac7b">Pila_Top</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_pila.html">Pila</a>* p, <a class="code hl_struct" href="struct_carta.html">Carta</a>* out);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#gac59443252a5933aafadbe3a44baaac7b">Pila_Top</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structPila.html">Pila</a>* p, <a class="code hl_struct" href="structCarta.html">Carta</a>* out);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#ga70ddd166cfe7b417c89adcd326423cf7">Pila_Vuota</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_pila.html">Pila</a>* p);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#ga70ddd166cfe7b417c89adcd326423cf7">Pila_Vuota</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structPila.html">Pila</a>* p);</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#ga10a5907e144119205466751dc42045b3">Pila_Dimensione</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_pila.html">Pila</a>* p);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keywordtype">int</span> <a class="code hl_function" href="group__stack__api.html#ga10a5907e144119205466751dc42045b3">Pila_Dimensione</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structPila.html">Pila</a>* p);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__stack__api.html#ga0e02cb5e94d45aafbf07b62fcea1061f">Pila_Svuota</a>(<a class="code hl_struct" href="struct_pila.html">Pila</a>* p);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keywordtype">void</span> <a class="code hl_function" href="group__stack__api.html#ga0e02cb5e94d45aafbf07b62fcea1061f">Pila_Svuota</a>(<a class="code hl_struct" href="structPila.html">Pila</a>* p);</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif </span><span class="comment">// DATA_STRUCTURES_STACK_H</span></div>
-<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header principale del progetto UNO - Definizione di tutti i tipi di dato.</div></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header centrale del progetto UNO - Tipi di dato condivisi.</div></div>
 <div class="ttc" id="agroup__stack__api_html_ga0e02cb5e94d45aafbf07b62fcea1061f"><div class="ttname"><a href="group__stack__api.html#ga0e02cb5e94d45aafbf07b62fcea1061f">Pila_Svuota</a></div><div class="ttdeci">void Pila_Svuota(Pila *p)</div><div class="ttdoc">Svuota la pila lasciando la struttura allocata.</div><div class="ttdef"><b>Definition</b> stack.c:124</div></div>
 <div class="ttc" id="agroup__stack__api_html_ga10a5907e144119205466751dc42045b3"><div class="ttname"><a href="group__stack__api.html#ga10a5907e144119205466751dc42045b3">Pila_Dimensione</a></div><div class="ttdeci">int Pila_Dimensione(const Pila *p)</div><div class="ttdoc">Restituisce la dimensione corrente della pila.</div><div class="ttdef"><b>Definition</b> stack.c:113</div></div>
 <div class="ttc" id="agroup__stack__api_html_ga263f40cb0178a91e84a55530b759de12"><div class="ttname"><a href="group__stack__api.html#ga263f40cb0178a91e84a55530b759de12">Pila_Distruggi</a></div><div class="ttdeci">void Pila_Distruggi(Pila *p)</div><div class="ttdoc">Distruttore: libera tutti i nodi e la struttura Pila.</div><div class="ttdef"><b>Definition</b> stack.c:38</div></div>
@@ -150,21 +167,21 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('stack_8h_sourc
 <div class="ttc" id="agroup__stack__api_html_gab82fab8722fd6967c4eb8df559bd54a0"><div class="ttname"><a href="group__stack__api.html#gab82fab8722fd6967c4eb8df559bd54a0">Pila_Push</a></div><div class="ttdeci">int Pila_Push(Pila *p, Carta c)</div><div class="ttdoc">Inserisce una carta in cima alla pila.</div><div class="ttdef"><b>Definition</b> stack.c:53</div></div>
 <div class="ttc" id="agroup__stack__api_html_gac59443252a5933aafadbe3a44baaac7b"><div class="ttname"><a href="group__stack__api.html#gac59443252a5933aafadbe3a44baaac7b">Pila_Top</a></div><div class="ttdeci">int Pila_Top(const Pila *p, Carta *out)</div><div class="ttdoc">Restituisce la carta in cima SENZA rimuoverla.</div><div class="ttdef"><b>Definition</b> stack.c:91</div></div>
 <div class="ttc" id="agroup__stack__api_html_gae2580d2cd99d4bbccf2d97f0e7505986"><div class="ttname"><a href="group__stack__api.html#gae2580d2cd99d4bbccf2d97f0e7505986">Pila_Crea</a></div><div class="ttdeci">Pila * Pila_Crea(void)</div><div class="ttdoc">Crea una pila vuota.</div><div class="ttdef"><b>Definition</b> stack.c:23</div></div>
-<div class="ttc" id="astruct_carta_html"><div class="ttname"><a href="struct_carta.html">Carta</a></div><div class="ttdoc">Rappresenta una singola carta UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:66</div></div>
-<div class="ttc" id="astruct_nodo_pila_html"><div class="ttname"><a href="struct_nodo_pila.html">NodoPila</a></div><div class="ttdoc">Nodo della pila: contiene una carta e puntatore al next.</div><div class="ttdef"><b>Definition</b> stack.h:19</div></div>
-<div class="ttc" id="astruct_nodo_pila_html_a7ee7a0a49a5e8429f500c5ec48387431"><div class="ttname"><a href="struct_nodo_pila.html#a7ee7a0a49a5e8429f500c5ec48387431">NodoPila::next</a></div><div class="ttdeci">struct NodoPila * next</div><div class="ttdef"><b>Definition</b> stack.h:21</div></div>
-<div class="ttc" id="astruct_nodo_pila_html_a9a3ab07f77c9fbd965a6a3765e87f56f"><div class="ttname"><a href="struct_nodo_pila.html#a9a3ab07f77c9fbd965a6a3765e87f56f">NodoPila::carta</a></div><div class="ttdeci">Carta carta</div><div class="ttdef"><b>Definition</b> stack.h:20</div></div>
-<div class="ttc" id="astruct_pila_html"><div class="ttname"><a href="struct_pila.html">Pila</a></div><div class="ttdoc">Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.</div><div class="ttdef"><b>Definition</b> stack.h:31</div></div>
-<div class="ttc" id="astruct_pila_html_a0ef95d21bf923dec210fb22f1a8cd0f3"><div class="ttname"><a href="struct_pila.html#a0ef95d21bf923dec210fb22f1a8cd0f3">Pila::top</a></div><div class="ttdeci">NodoPila * top</div><div class="ttdef"><b>Definition</b> stack.h:32</div></div>
-<div class="ttc" id="astruct_pila_html_aea0497c41c8431db25e46b8ad2ce6d57"><div class="ttname"><a href="struct_pila.html#aea0497c41c8431db25e46b8ad2ce6d57">Pila::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition</b> stack.h:33</div></div>
+<div class="ttc" id="astructCarta_html"><div class="ttname"><a href="structCarta.html">Carta</a></div><div class="ttdoc">Rappresenta una singola carta UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:65</div></div>
+<div class="ttc" id="astructNodoPila_html"><div class="ttname"><a href="structNodoPila.html">NodoPila</a></div><div class="ttdoc">Nodo della pila: contiene una carta e puntatore al next.</div><div class="ttdef"><b>Definition</b> stack.h:19</div></div>
+<div class="ttc" id="astructNodoPila_html_a7ee7a0a49a5e8429f500c5ec48387431"><div class="ttname"><a href="structNodoPila.html#a7ee7a0a49a5e8429f500c5ec48387431">NodoPila::next</a></div><div class="ttdeci">struct NodoPila * next</div><div class="ttdef"><b>Definition</b> stack.h:21</div></div>
+<div class="ttc" id="astructNodoPila_html_a9a3ab07f77c9fbd965a6a3765e87f56f"><div class="ttname"><a href="structNodoPila.html#a9a3ab07f77c9fbd965a6a3765e87f56f">NodoPila::carta</a></div><div class="ttdeci">Carta carta</div><div class="ttdef"><b>Definition</b> stack.h:20</div></div>
+<div class="ttc" id="astructPila_html"><div class="ttname"><a href="structPila.html">Pila</a></div><div class="ttdoc">Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.</div><div class="ttdef"><b>Definition</b> stack.h:31</div></div>
+<div class="ttc" id="astructPila_html_a0ef95d21bf923dec210fb22f1a8cd0f3"><div class="ttname"><a href="structPila.html#a0ef95d21bf923dec210fb22f1a8cd0f3">Pila::top</a></div><div class="ttdeci">NodoPila * top</div><div class="ttdef"><b>Definition</b> stack.h:32</div></div>
+<div class="ttc" id="astructPila_html_aea0497c41c8431db25e46b8ad2ce6d57"><div class="ttname"><a href="structPila.html#aea0497c41c8431db25e46b8ad2ce6d57">Pila::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition</b> stack.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_e1211c1ba4cadc9e94fe0fdad0038fad.html">data_structures</a></li><li class="navelem"><a href="stack_8h.html">stack.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_e1211c1ba4cadc9e94fe0fdad0038fad.html">data_structures</a></li><li class="navelem"><a href="stack_8h.html">stack.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

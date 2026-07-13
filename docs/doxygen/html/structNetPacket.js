@@ -1,0 +1,27 @@
+var structNetPacket =
+[
+    [ "admin_action", "group__network__packet__strutture.html#ga73a0ded76fc6e6d72987c55bb16e2adf", null ],
+    [ "admin_db_packet", "group__network__packet__strutture.html#ga740b8f9c2a02ecfa8de301efa16a6087", null ],
+    [ "chat", "group__network__packet__strutture.html#gaee3e8eefd8701d9bd41cd426cfe941ec", null ],
+    [ "color_choice", "group__network__packet__strutture.html#ga5a7420a732e939ca23615c9b7b686b49", null ],
+    [ "create_session", "group__network__packet__strutture.html#gae9d31a94b42b77f7f74d93d09cd3dae0", null ],
+    [ "data", "group__network__packet__strutture.html#gabd413eca14a55ac809b409658c0998a3", null ],
+    [ "draw", "group__network__packet__strutture.html#gab4d8deeb5c19963d6e1d692ce5b01776", null ],
+    [ "game_finished", "group__network__packet__strutture.html#ga2f05176c025e583a0b0ff862d3723c75", null ],
+    [ "game_state", "group__network__packet__strutture.html#gae1da5a64d081035f4af93792ff771050", null ],
+    [ "heartbeat", "group__network__packet__strutture.html#ga180be1c20dcb535e60e3803941b5d07f", null ],
+    [ "host_return_lobby", "group__network__packet__strutture.html#ga5bb950cf458b01e517c357691bb6e416", null ],
+    [ "join_game", "group__network__packet__strutture.html#ga49d7d44bd4df64c5ba30b1c04bfafa02", null ],
+    [ "join_rejected", "group__network__packet__strutture.html#ga57e287d2946e56eba5a2d2ec0b01c40d", null ],
+    [ "join_session", "group__network__packet__strutture.html#gacc8d068dd0266c0c8c9b20e37583a585", null ],
+    [ "move", "group__network__packet__strutture.html#ga132cc701b1cebecfb8f8992565f6bcc6", null ],
+    [ "play_again", "group__network__packet__strutture.html#gaa00db0a05b0d2dcb217cd435b8c84ede", null ],
+    [ "player_hand", "group__network__packet__strutture.html#gafae35b798ce130ffa2a4db68d44ebb40", null ],
+    [ "player_ready", "group__network__packet__strutture.html#gacb05063e5d95dfe6ca677bc01d137d91", null ],
+    [ "raw", "group__network__packet__strutture.html#ga27a03e277b8bf17777c34d7d7c39a8ac", null ],
+    [ "sender_id", "group__network__packet__strutture.html#ga171e8b116595940c618270d21fe9787b", null ],
+    [ "session_list", "group__network__packet__strutture.html#gaf2b36da7b084e54a381de21e667ecf01", null ],
+    [ "session_state", "group__network__packet__strutture.html#ga4640495cc1b36655b7a0a8850d422384", null ],
+    [ "stats_sync", "group__network__packet__strutture.html#ga85e03ec5f7b0d5f8c9304564241a29ee", null ],
+    [ "type", "group__network__packet__strutture.html#ga3bf9ba4b94cb8068a261bd07e01b0fc0", null ]
+];

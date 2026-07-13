@@ -8,6 +8,8 @@
 #define MENU_SCREEN_H
 
 #include "../../data_structures.h"
+#include "../../player.h"
+#include "../../game_state.h"
 
 /**
  * @brief Disegna il menu principale e gestisce la navigazione.

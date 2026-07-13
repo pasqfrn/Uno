@@ -9,6 +9,8 @@
 #define GAMEPLAY_UPDATE_H
 
 #include "../../data_structures.h"
+#include "../../player.h"
+#include "../../game_state.h"
 #include "raylib.h"
 
 /**

@@ -1,22 +1,4 @@
 var searchData=
 [
-  ['packetchat_0',['PacketChat',['../struct_packet_chat.html',1,'']]],
-  ['packetcolorchoice_1',['PacketColorChoice',['../struct_packet_color_choice.html',1,'']]],
-  ['packetcreatesession_2',['PacketCreateSession',['../struct_packet_create_session.html',1,'']]],
-  ['packetdraw_3',['PacketDraw',['../struct_packet_draw.html',1,'']]],
-  ['packetgamefinished_4',['PacketGameFinished',['../struct_packet_game_finished.html',1,'']]],
-  ['packetgamestate_5',['PacketGameState',['../struct_packet_game_state.html',1,'']]],
-  ['packetheartbeat_6',['PacketHeartbeat',['../struct_packet_heartbeat.html',1,'']]],
-  ['packethostreturnlobby_7',['PacketHostReturnLobby',['../struct_packet_host_return_lobby.html',1,'']]],
-  ['packetjoingame_8',['PacketJoinGame',['../struct_packet_join_game.html',1,'']]],
-  ['packetjoinrejected_9',['PacketJoinRejected',['../struct_packet_join_rejected.html',1,'']]],
-  ['packetjoinsession_10',['PacketJoinSession',['../struct_packet_join_session.html',1,'']]],
-  ['packetmove_11',['PacketMove',['../struct_packet_move.html',1,'']]],
-  ['packetplayagain_12',['PacketPlayAgain',['../struct_packet_play_again.html',1,'']]],
-  ['packetplayerhand_13',['PacketPlayerHand',['../struct_packet_player_hand.html',1,'']]],
-  ['packetplayerready_14',['PacketPlayerReady',['../struct_packet_player_ready.html',1,'']]],
-  ['packetsessionlist_15',['PacketSessionList',['../struct_packet_session_list.html',1,'']]],
-  ['packetsessionstate_16',['PacketSessionState',['../struct_packet_session_state.html',1,'']]],
-  ['partitaregistrata_17',['PartitaRegistrata',['../struct_partita_registrata.html',1,'']]],
-  ['pila_18',['Pila',['../struct_pila.html',1,'']]]
+  ['utente_0',['Utente',['../structUtente.html',1,'']]]
 ];

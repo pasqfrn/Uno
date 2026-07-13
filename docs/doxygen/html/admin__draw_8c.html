@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file src/screens/auth/admin_draw.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file screens/auth/admin_draw.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -106,7 +123,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('admin__draw_8c
 <p>Rendering pannello admin e modifica utenti.  
 <a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;raylib.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="auth__shared_8h_source.html">../../../lib/screens/auth/auth_shared.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="auth__draw_8h_source.html">../../../lib/screens/auth/auth_draw.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="input__field_8h_source.html">../../../lib/screens/auth/input_field.h</a>&quot;</code><br />
@@ -126,6 +143,10 @@ Definizioni</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
+<tr class="memitem:ga1c21703414125fcb00604886d1d0a3da" id="r_ga1c21703414125fcb00604886d1d0a3da"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="group__admin__draw.html#ga1c21703414125fcb00604886d1d0a3da">UtenteEliminato</a> (const char *username)</td></tr>
+<tr class="memdesc:ga1c21703414125fcb00604886d1d0a3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un utente e' in deletedUsers[] (pending deletion).  <br /></td></tr>
+<tr class="memitem:gaf067037328f26f3a328feed57d413013" id="r_gaf067037328f26f3a328feed57d413013"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="group__admin__draw.html#gaf067037328f26f3a328feed57d413013">UtenteLoggato</a> (const char *username)</td></tr>
+<tr class="memdesc:gaf067037328f26f3a328feed57d413013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un utente e' loggato (locale o client TCP connesso).  <br /></td></tr>
 <tr class="memitem:ga49f97a468b2963be59ba4516897af8bb" id="r_ga49f97a468b2963be59ba4516897af8bb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__admin__draw.html#ga49f97a468b2963be59ba4516897af8bb">DisegnaAdminPanel</a> (<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase)</td></tr>
 <tr class="memdesc:ga49f97a468b2963be59ba4516897af8bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna il pannello admin con lista utenti scrollabile.  <br /></td></tr>
 <tr class="memitem:ga6ea0391819fa399e3541716951ebf5e7" id="r_ga6ea0391819fa399e3541716951ebf5e7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__admin__draw.html#ga6ea0391819fa399e3541716951ebf5e7">DisegnaAdminModificaUtente</a> (<a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase)</td></tr>
@@ -150,9 +171,9 @@ Variabili</h2></td></tr>
 <tr class="memdesc:aa8b1b6c8ce6cf65c18ad02977e47f98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache degli utenti eliminati (per non riaggiungerli da remoto).  <br /></td></tr>
 <tr class="memitem:a83d2b69124592dbd8092ed4214b3f35e" id="r_a83d2b69124592dbd8092ed4214b3f35e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a83d2b69124592dbd8092ed4214b3f35e">numDeletedUsers</a></td></tr>
 <tr class="memdesc:a83d2b69124592dbd8092ed4214b3f35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero di utenti nella cache delle eliminazioni.  <br /></td></tr>
-<tr class="memitem:a80ac1ee1e5dc6a14be8c487f06ab9192" id="r_a80ac1ee1e5dc6a14be8c487f06ab9192"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#a80ac1ee1e5dc6a14be8c487f06ab9192">connectedClientUsernames</a> [4][30]</td></tr>
-<tr class="memdesc:a80ac1ee1e5dc6a14be8c487f06ab9192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Username dei client TCP connessi all'host (per admin panel).  <br /></td></tr>
-<tr class="memitem:acf235198fdda36e8980bbf0ead99f61f" id="r_acf235198fdda36e8980bbf0ead99f61f"><td class="memItemLeft"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>&#160;</td><td class="memItemRight"><a class="el" href="#acf235198fdda36e8980bbf0ead99f61f">clientSockets</a> [4]</td></tr>
+<tr class="memitem:ga80ac1ee1e5dc6a14be8c487f06ab9192" id="r_ga80ac1ee1e5dc6a14be8c487f06ab9192"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#ga80ac1ee1e5dc6a14be8c487f06ab9192">connectedClientUsernames</a> [4][30]</td></tr>
+<tr class="memdesc:ga80ac1ee1e5dc6a14be8c487f06ab9192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Username dei client TCP connessi all'host (per admin panel).  <br /></td></tr>
+<tr class="memitem:gae1406de9f7c29f2553e952e0d5a0532c" id="r_gae1406de9f7c29f2553e952e0d5a0532c"><td class="memItemLeft"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>&#160;</td><td class="memItemRight"><a class="el" href="group__network__packet__strutture.html#gae1406de9f7c29f2553e952e0d5a0532c">clientSockets</a> [4]</td></tr>
 <tr class="memitem:a65bd7a3a024eeecda356b3898743189e" id="r_a65bd7a3a024eeecda356b3898743189e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a65bd7a3a024eeecda356b3898743189e">admin_scroll_reset</a> = 0</td></tr>
 <tr class="memdesc:a65bd7a3a024eeecda356b3898743189e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag per resettare lo scroll del pannello admin.  <br /></td></tr>
 </table>
@@ -209,53 +230,6 @@ Variabili</h2></td></tr>
 
 </div>
 </div>
-<a id="acf235198fdda36e8980bbf0ead99f61f" name="acf235198fdda36e8980bbf0ead99f61f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf235198fdda36e8980bbf0ead99f61f">&#9670;&#160;</a></span>clientSockets</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a> clientSockets[4]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a80ac1ee1e5dc6a14be8c487f06ab9192" name="a80ac1ee1e5dc6a14be8c487f06ab9192"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80ac1ee1e5dc6a14be8c487f06ab9192">&#9670;&#160;</a></span>connectedClientUsernames</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">char connectedClientUsernames[4][30]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Username dei client TCP connessi all'host (per admin panel). </p>
-<p>NOTA: Indice 0 corrisponde allo slot 1 del client. </p>
-
-</div>
-</div>
 <a id="aa8b1b6c8ce6cf65c18ad02977e47f98f" name="aa8b1b6c8ce6cf65c18ad02977e47f98f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8b1b6c8ce6cf65c18ad02977e47f98f">&#9670;&#160;</a></span>deletedUsers</h2>
 
@@ -276,6 +250,8 @@ Variabili</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Cache degli utenti eliminati (per non riaggiungerli da remoto). </p>
+<p>Buffer di username eliminati (per compatibilita' screens).</p>
 <p>Cache degli utenti eliminati (per non riaggiungerli da remoto). </p>
 
 </div>
@@ -300,6 +276,8 @@ Variabili</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Flag errore recupero password: 0 = nessun errore, 1 = email obbligatoria, 2 = PIN obbligatorio, 3 = email non valida (manca ), 4 = email o PIN errati. </p>
+<p>Flag errore recupero password.</p>
 <p>Flag errore recupero password: 0 = nessun errore, 1 = email obbligatoria, 2 = PIN obbligatorio, 3 = email non valida (manca ), 4 = email o PIN errati. </p>
 
 </div>
@@ -347,6 +325,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Flag: 1 se il popup di conferma uscita e' visibile nella schermata auth. </p>
+<p>Flag mostra popup uscita nelle schermate auth.</p>
+<p>Flag: 1 se il popup di conferma uscita e' visibile nella schermata auth. </p>
 
 </div>
 </div>
@@ -370,6 +350,8 @@ Variabili</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Numero di utenti nella cache delle eliminazioni. </p>
+<p>Contatore utenti eliminati.</p>
 <p>Numero di utenti nella cache delle eliminazioni. </p>
 
 </div>
@@ -395,6 +377,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Buffer per la password di recupero (usato nel flusso recupero credenziali). </p>
+<p>Buffer password di recupero.</p>
+<p>Buffer per la password di recupero (usato nel flusso recupero credenziali). </p>
 
 </div>
 </div>
@@ -418,6 +402,8 @@ Variabili</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stato recupero password: 0 = in attesa di inserimento email/PIN, 2 = PIN verificato, in attesa nuova password, 3 = password reimpostata con successo. </p>
+<p>Flag recupero password completato.</p>
 <p>Stato recupero password: 0 = in attesa di inserimento email/PIN, 2 = PIN verificato, in attesa nuova password, 3 = password reimpostata con successo. </p>
 
 </div>
@@ -443,6 +429,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Buffer per lo username di recupero (usato nel flusso recupero credenziali). </p>
+<p>Buffer username di recupero.</p>
+<p>Buffer per lo username di recupero (usato nel flusso recupero credenziali). </p>
 
 </div>
 </div>
@@ -467,7 +455,9 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Indice dell'utente in modifica nel pannello admin (-1 = nessuno). </p>
-<p>Se == dbUtenti.num_utenti, indica che si sta CREANDO un nuovo utente (valore sentinella). </p>
+<p>Flag modifica admin in corso.</p>
+<p>Se == dbUtenti.num_utenti, indica che si sta CREANDO un nuovo utente (valore sentinella).</p>
+<p>Indice dell'utente in modifica nel pannello admin (-1 = nessuno). </p>
 
 </div>
 </div>
@@ -484,8 +474,8 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_8790123cd27986151acde1ce1c3bab17.html">screens</a></li><li class="navelem"><a href="dir_a4a06e4766a213248381a7e786f6d909.html">auth</a></li><li class="navelem"><a href="admin__draw_8c.html">admin_draw.c</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_8790123cd27986151acde1ce1c3bab17.html">screens</a></li><li class="navelem"><a href="dir_a4a06e4766a213248381a7e786f6d909.html">auth</a></li><li class="navelem"><a href="admin__draw_8c.html">admin_draw.c</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

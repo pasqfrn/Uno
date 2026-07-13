@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Tipi di Dato e Strutture</title>
+<title>UNO - Gioco di Carte: Tipi di Dato Condivisi</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -99,14 +116,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__data__s
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Tipi di Dato e Strutture </div></div>
+  <div class="headertitle"><div class="title">Tipi di Dato Condivisi </div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Definizione centralizzata di tutti i tipi di dato, enumerazioni, strutture e typedef del progetto UNO.  
+<p>Definizione dei tipi di dato fondamentali e condivisi del progetto UNO.  
 </p>
-<div class="textblock"><p>Definizione centralizzata di tutti i tipi di dato, enumerazioni, strutture e typedef del progetto UNO. </p>
-<p>Questo header costituisce il dominio applicativo: contiene entità come <a class="el" href="struct_carta.html" title="Rappresenta una singola carta UNO.">Carta</a>, <a class="el" href="struct_utente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a>, <a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>, <a class="el" href="struct_stato_gioco.html" title="Stato completo di una partita in corso.">StatoGioco</a> e le strutture dati per liste, pile, code e database dinamico. Viene incluso dalla maggior parte dei moduli.</p>
+<div class="textblock"><p>Definizione dei tipi di dato fondamentali e condivisi del progetto UNO. </p>
+<p>Contiene solo i tipi base (<a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a>, <a class="el" href="data__structures_8h.html#a030035d63f7ea5baefdfe9a53844d27c" title="Colori disponibili per le carte UNO.">Colore</a>, <a class="el" href="data__structures_8h.html#ae6987de74ad65e6ea8b577c57f950d6d" title="Tipi di carta UNO.">TipoCarta</a>, <a class="el" href="structUtente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a>, ecc.) che sono utilizzati da MOLTI moduli. Le strutture dati specifiche degli ADT (<a class="el" href="structNodoCarta.html" title="Nodo per la lista doppiamente concatenata della mano del giocatore.">NodoCarta</a>, <a class="el" href="structListaCarte.html" title="Struttura container per la lista di carte (mano del giocatore).">ListaCarte</a>, <a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>, <a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a>) sono state spostate nei rispettivi header dei moduli per migliorare l'incapsulamento.</p>
 <p>Riferimento: Documentazione CdS - "Strutture dati e tipi (dati strutturati)"</p>
 <p>NOTA: Il database utenti e' ora allocato DINAMICAMENTE (malloc/realloc) per garantire scalabilita'. La capacita' iniziale e' DB_CAPACITA_INIZIALE. </p>
 </div></div><!-- contents -->
@@ -122,7 +139,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__data__s
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

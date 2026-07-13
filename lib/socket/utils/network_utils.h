@@ -9,6 +9,8 @@
 #define NETWORK_UTILS_H
 
 #include "../../data_structures.h"
+#include "../../player.h"
+#include "../../game_state.h"
 #ifdef _WIN32
     #define NOGDI
     #define NOUSER

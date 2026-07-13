@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file lib/screens/auth/auth_shared.h</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file screens/auth/auth_shared.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -105,14 +122,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('auth__shared_8
 
 <p>Stato condiviso tra i moduli delle schermate di autenticazione.  
 <a href="#details">Continua...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;raylib.h&quot;</code><br />
 </div>
 <p><a href="auth__shared_8h_source.html">Vai al codice sorgente di questo file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Strutture dati</h2></td></tr>
-<tr class="memitem:CampoInput" id="r_CampoInput"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_campo_input.html">CampoInput</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struttura per la gestione dei campi di input (area + ID).  <a href="struct_campo_input.html#details">Continua...</a><br /></td></tr>
+<tr class="memitem:CampoInput" id="r_CampoInput"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structCampoInput.html">CampoInput</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struttura per la gestione dei campi di input (area + ID).  <a href="structCampoInput.html#details">Continua...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variabili</h2></td></tr>
@@ -155,7 +172,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Flag errore recupero password. </p>
-<p>Flag errore recupero password: 0 = nessun errore, 1 = email obbligatoria, 2 = PIN obbligatorio, 3 = email non valida (manca ), 4 = email o PIN errati. </p>
+<p>Flag errore recupero password: 0 = nessun errore, 1 = email obbligatoria, 2 = PIN obbligatorio, 3 = email non valida (manca ), 4 = email o PIN errati.</p>
+<p>Flag errore recupero password. </p>
 
 </div>
 </div>
@@ -180,7 +198,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Flag mostra popup uscita nelle schermate auth. </p>
-<p>Flag: 1 se il popup di conferma uscita e' visibile nella schermata auth. </p>
+<p>Flag: 1 se il popup di conferma uscita e' visibile nella schermata auth.</p>
+<p>Flag mostra popup uscita nelle schermate auth. </p>
 
 </div>
 </div>
@@ -204,8 +223,6 @@ Variabili</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Flag nuovo utente (submit). </p>
-<p>Flag: 1 se un nuovo utente e' stato appena registrato (mostra "Benvenuto").</p>
 <p>Flag nuovo utente (submit). </p>
 
 </div>
@@ -231,7 +248,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Buffer password di recupero. </p>
-<p>Buffer per la password di recupero (usato nel flusso recupero credenziali). </p>
+<p>Buffer per la password di recupero (usato nel flusso recupero credenziali).</p>
+<p>Buffer password di recupero. </p>
 
 </div>
 </div>
@@ -256,7 +274,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Flag recupero password completato. </p>
-<p>Stato recupero password: 0 = in attesa di inserimento email/PIN, 2 = PIN verificato, in attesa nuova password, 3 = password reimpostata con successo. </p>
+<p>Stato recupero password: 0 = in attesa di inserimento email/PIN, 2 = PIN verificato, in attesa nuova password, 3 = password reimpostata con successo.</p>
+<p>Flag recupero password completato. </p>
 
 </div>
 </div>
@@ -281,7 +300,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Buffer username di recupero. </p>
-<p>Buffer per lo username di recupero (usato nel flusso recupero credenziali). </p>
+<p>Buffer per lo username di recupero (usato nel flusso recupero credenziali).</p>
+<p>Buffer username di recupero. </p>
 
 </div>
 </div>
@@ -307,6 +327,7 @@ Variabili</h2></td></tr>
 
 <p>Flag modifica admin in corso. </p>
 <p>Indice dell'utente in modifica nel pannello admin (-1 = nessuno).</p>
+<p>Flag modifica admin in corso.</p>
 <p>Se == dbUtenti.num_utenti, indica che si sta CREANDO un nuovo utente (valore sentinella). </p>
 
 </div>
@@ -324,8 +345,8 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="dir_299aa870bb746bafe99131a774bd9579.html">screens</a></li><li class="navelem"><a href="dir_921984c8c8809702688c1d3bb88c92fc.html">auth</a></li><li class="navelem"><a href="auth__shared_8h.html">auth_shared.h</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_299aa870bb746bafe99131a774bd9579.html">screens</a></li><li class="navelem"><a href="dir_921984c8c8809702688c1d3bb88c92fc.html">auth</a></li><li class="navelem"><a href="auth__shared_8h.html">auth_shared.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

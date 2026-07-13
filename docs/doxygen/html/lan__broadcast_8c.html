@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file src/socket/lan/lan_broadcast.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file socket/lan/lan_broadcast.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -118,6 +135,16 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__broadcast
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
+<tr class="memitem:afc84fc196a6b2e1aaa9a22e88589a2f5" id="r_afc84fc196a6b2e1aaa9a22e88589a2f5"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#afc84fc196a6b2e1aaa9a22e88589a2f5">AggiungiPendingDeletion</a> (const char *username)</td></tr>
+<tr class="memdesc:afc84fc196a6b2e1aaa9a22e88589a2f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un utente alla lista delle pending deletions.  <br /></td></tr>
+<tr class="memitem:ae60e38482415a1686e2e396c5833477a" id="r_ae60e38482415a1686e2e396c5833477a"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#ae60e38482415a1686e2e396c5833477a">IsPendingDeletion</a> (const char *username)</td></tr>
+<tr class="memdesc:ae60e38482415a1686e2e396c5833477a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un utente e' nelle pending deletions.  <br /></td></tr>
+<tr class="memitem:a4dd7a4537b1d26bd0548aeaf68d91daf" id="r_a4dd7a4537b1d26bd0548aeaf68d91daf"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a4dd7a4537b1d26bd0548aeaf68d91daf">RimuoviPendingDeletion</a> (const char *username)</td></tr>
+<tr class="memdesc:a4dd7a4537b1d26bd0548aeaf68d91daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un utente da pending deletions (dopo conferma disconnessione).  <br /></td></tr>
+<tr class="memitem:a1dd332c43b0bb24c97702a450c5fa19d" id="r_a1dd332c43b0bb24c97702a450c5fa19d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1dd332c43b0bb24c97702a450c5fa19d">ConfermaPendingDeletions</a> (void)</td></tr>
+<tr class="memdesc:a1dd332c43b0bb24c97702a450c5fa19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conferma tutte le pending deletions e le promuove a deletedUsers.  <br /></td></tr>
+<tr class="memitem:ac9cfe5a94772d9d0f1ebfcabcb91279c" id="r_ac9cfe5a94772d9d0f1ebfcabcb91279c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac9cfe5a94772d9d0f1ebfcabcb91279c">CalcolaSubnetBroadcast</a> (void)</td></tr>
+<tr class="memdesc:ac9cfe5a94772d9d0f1ebfcabcb91279c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola l'indirizzo broadcast della subnet locale.  <br /></td></tr>
 <tr class="memitem:a88d0b5ae2f24ad06c318deb550373b1e" id="r_a88d0b5ae2f24ad06c318deb550373b1e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a88d0b5ae2f24ad06c318deb550373b1e">LAN_Init</a> (void)</td></tr>
 <tr class="memdesc:a88d0b5ae2f24ad06c318deb550373b1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza il modulo LAN (socket UDP, thread di ascolto).  <br /></td></tr>
 <tr class="memitem:aa5723e8d507407a08a3bac33e39ee03f" id="r_aa5723e8d507407a08a3bac33e39ee03f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa5723e8d507407a08a3bac33e39ee03f">LAN_Close</a> (void)</td></tr>
@@ -140,14 +167,28 @@ Funzioni</h2></td></tr>
 Variabili</h2></td></tr>
 <tr class="memitem:a352ca6eff6deccbae445480052cf9bdc" id="r_a352ca6eff6deccbae445480052cf9bdc"><td class="memItemLeft"><a class="el" href="socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>&#160;</td><td class="memItemRight"><a class="el" href="#a352ca6eff6deccbae445480052cf9bdc">lanSocket</a> = <a class="el" href="socket__compat_8h.html#a26769957ec1a2beaf223f33b66ee64ab">INVALID_SOCKET</a></td></tr>
 <tr class="memdesc:a352ca6eff6deccbae445480052cf9bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Socket UDP per broadcast LAN.  <br /></td></tr>
+<tr class="memitem:a6d0aa9313d240718c068dd13d497982a" id="r_a6d0aa9313d240718c068dd13d497982a"><td class="memItemLeft">static float&#160;</td><td class="memItemRight"><a class="el" href="#a6d0aa9313d240718c068dd13d497982a">lanTimer</a> = 0.0f</td></tr>
+<tr class="memdesc:a6d0aa9313d240718c068dd13d497982a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer per broadcast periodico database (LAN_SYNC_INTERVAL).  <br /></td></tr>
+<tr class="memitem:a0c3757abe33337404b9ecc9e90b20e06" id="r_a0c3757abe33337404b9ecc9e90b20e06"><td class="memItemLeft">static float&#160;</td><td class="memItemRight"><a class="el" href="#a0c3757abe33337404b9ecc9e90b20e06">lanSaveTimer</a> = 0.0f</td></tr>
+<tr class="memdesc:a0c3757abe33337404b9ecc9e90b20e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer per broadcast periodico salvataggi (LAN_SYNC_INTERVAL).  <br /></td></tr>
+<tr class="memitem:ae78e972ef5455de3eed809237828f2be" id="r_ae78e972ef5455de3eed809237828f2be"><td class="memItemLeft">static char&#160;</td><td class="memItemRight"><a class="el" href="#ae78e972ef5455de3eed809237828f2be">lanRecvBuf</a> [65536]</td></tr>
+<tr class="memdesc:ae78e972ef5455de3eed809237828f2be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer di ricezione pacchetti LAN (max 65536 bytes).  <br /></td></tr>
 <tr class="memitem:a3a57e935a86c9a15dba005b214923a52" id="r_a3a57e935a86c9a15dba005b214923a52"><td class="memItemLeft">struct sockaddr_in&#160;</td><td class="memItemRight"><a class="el" href="#a3a57e935a86c9a15dba005b214923a52">broadcastAddr</a></td></tr>
 <tr class="memdesc:a3a57e935a86c9a15dba005b214923a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indirizzo broadcast per la subnet locale.  <br /></td></tr>
+<tr class="memitem:a5b75aa5f36ca26e12342c4dc57075c8e" id="r_a5b75aa5f36ca26e12342c4dc57075c8e"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a5b75aa5f36ca26e12342c4dc57075c8e">lanInizializzato</a> = 0</td></tr>
+<tr class="memdesc:a5b75aa5f36ca26e12342c4dc57075c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag: 1 se il modulo LAN e' stato inizializzato.  <br /></td></tr>
+<tr class="memitem:adb8cfa9e8699a60b732bc7abd0f6c442" id="r_adb8cfa9e8699a60b732bc7abd0f6c442"><td class="memItemLeft">static char&#160;</td><td class="memItemRight"><a class="el" href="#adb8cfa9e8699a60b732bc7abd0f6c442">localHostname</a> [64] = &quot;&quot;</td></tr>
+<tr class="memdesc:adb8cfa9e8699a60b732bc7abd0f6c442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hostname del dispositivo locale.  <br /></td></tr>
 <tr class="memitem:a35d530456749dea612236ad880c703d5" id="r_a35d530456749dea612236ad880c703d5"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a35d530456749dea612236ad880c703d5">dentroSalvaDB</a> = 0</td></tr>
-<tr class="memdesc:a35d530456749dea612236ad880c703d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag: 1 se siamo all'interno di una chiamata a <a class="el" href="group__lazy__deletion__impl.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario (data/users/users.dat).">SalvaDB()</a> (per evitare ricorsione LAN).  <br /></td></tr>
+<tr class="memdesc:a35d530456749dea612236ad880c703d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag: 1 se siamo all'interno di una chiamata a <a class="el" href="group__database__api.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario con cifratura XOR.">SalvaDB()</a> (per evitare ricorsione LAN).  <br /></td></tr>
 <tr class="memitem:a83d2b69124592dbd8092ed4214b3f35e" id="r_a83d2b69124592dbd8092ed4214b3f35e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a83d2b69124592dbd8092ed4214b3f35e">numDeletedUsers</a> = 0</td></tr>
 <tr class="memdesc:a83d2b69124592dbd8092ed4214b3f35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero di utenti nella cache delle eliminazioni.  <br /></td></tr>
 <tr class="memitem:aa8b1b6c8ce6cf65c18ad02977e47f98f" id="r_aa8b1b6c8ce6cf65c18ad02977e47f98f"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#aa8b1b6c8ce6cf65c18ad02977e47f98f">deletedUsers</a> [512][30] = {{0}}</td></tr>
 <tr class="memdesc:aa8b1b6c8ce6cf65c18ad02977e47f98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache degli utenti eliminati (per non riaggiungerli da remoto).  <br /></td></tr>
+<tr class="memitem:a67eb720694ab7d997347a60d0ed659e2" id="r_a67eb720694ab7d997347a60d0ed659e2"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a67eb720694ab7d997347a60d0ed659e2">numPendingDeletions</a> = 0</td></tr>
+<tr class="memdesc:a67eb720694ab7d997347a60d0ed659e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero massimo di eliminazioni pendenti.  <br /></td></tr>
+<tr class="memitem:a630cbe6895f3642b9a20122adc345eb6" id="r_a630cbe6895f3642b9a20122adc345eb6"><td class="memItemLeft">static char&#160;</td><td class="memItemRight"><a class="el" href="#a630cbe6895f3642b9a20122adc345eb6">pendingDeletions</a> [<a class="el" href="group__lazy__deletion.html#ga0c703432e3edf6feb94fed2223922714">MAX_PENDING_DELETIONS</a>][30] = {{0}}</td></tr>
+<tr class="memdesc:a630cbe6895f3642b9a20122adc345eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lista utenti in attesa di conferma eliminazione.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
 <div class="textblock"><p>Gestione broadcast LAN: inizializzazione, chiusura e smistamento pacchetti. </p>
@@ -172,6 +213,129 @@ Variabili</h2></td></tr>
 </ul>
 <p>Gestione eliminazione salvataggi: usa il nuovo formato save_user{ID}_slot_{N}.dat, con fallback al vecchio save_slot_N.dat per compatibilita' con salvataggi esistenti. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="afc84fc196a6b2e1aaa9a22e88589a2f5" name="afc84fc196a6b2e1aaa9a22e88589a2f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc84fc196a6b2e1aaa9a22e88589a2f5">&#9670;&#160;</a></span>AggiungiPendingDeletion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AggiungiPendingDeletion </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Aggiunge un utente alla lista delle pending deletions. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username dell'utente eliminato da admin. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac9cfe5a94772d9d0f1ebfcabcb91279c" name="ac9cfe5a94772d9d0f1ebfcabcb91279c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9cfe5a94772d9d0f1ebfcabcb91279c">&#9670;&#160;</a></span>CalcolaSubnetBroadcast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CalcolaSubnetBroadcast </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calcola l'indirizzo broadcast della subnet locale. </p>
+<p>Ottiene l'IP locale, estrae i primi 3 ottetti e costruisce l'indirizzo broadcast (es. 192.168.1.255). Fallback: 255.255.255.255. </p>
+
+</div>
+</div>
+<a id="a1dd332c43b0bb24c97702a450c5fa19d" name="a1dd332c43b0bb24c97702a450c5fa19d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd332c43b0bb24c97702a450c5fa19d">&#9670;&#160;</a></span>ConfermaPendingDeletions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConfermaPendingDeletions </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Conferma tutte le pending deletions e le promuove a deletedUsers. </p>
+<p>Chiamato quando un utente conferma la disconnessione. </p>
+
+</div>
+</div>
+<a id="ae60e38482415a1686e2e396c5833477a" name="ae60e38482415a1686e2e396c5833477a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60e38482415a1686e2e396c5833477a">&#9670;&#160;</a></span>IsPendingDeletion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int IsPendingDeletion </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica se un utente e' nelle pending deletions. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username da verificare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se e' pending, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
 <a id="a75f095ec4db72f1eaaf97fb8ae78b304" name="a75f095ec4db72f1eaaf97fb8ae78b304"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75f095ec4db72f1eaaf97fb8ae78b304">&#9670;&#160;</a></span>LAN_BroadcastDeleteSave()</h2>
 
@@ -266,7 +430,7 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Broadcasta un pacchetto di sincronizzazione completa delle statistiche. </p>
-<p>Invia a tutti i dispositivi LAN il pacchetto <a class="el" href="struct_stats_sync_packet.html" title="StatsSyncPacket - Sincronizzazione live statistiche dopo una partita.">StatsSyncPacket</a> contenente contatori e storico partite recenti.</p>
+<p>Invia a tutti i dispositivi LAN il pacchetto <a class="el" href="structStatsSyncPacket.html" title="StatsSyncPacket - Sincronizzazione live statistiche dopo una partita.">StatsSyncPacket</a> contenente contatori e storico partite recenti.</p>
 <p>BUG FIX 5: Garantisce che i profili utente siano sincronizzati tra dispositivi dopo ogni partita, preservando lo storico partite (non solo i contatori).</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>LAN inizializzata; username != NULL. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
@@ -398,6 +562,39 @@ Variabili</h2></td></tr>
 
 </div>
 </div>
+<a id="a4dd7a4537b1d26bd0548aeaf68d91daf" name="a4dd7a4537b1d26bd0548aeaf68d91daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dd7a4537b1d26bd0548aeaf68d91daf">&#9670;&#160;</a></span>RimuoviPendingDeletion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RimuoviPendingDeletion </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rimuove un utente da pending deletions (dopo conferma disconnessione). </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>Username da rimuovere da pending. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
 <a id="a3a57e935a86c9a15dba005b214923a52" name="a3a57e935a86c9a15dba005b214923a52"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a57e935a86c9a15dba005b214923a52">&#9670;&#160;</a></span>broadcastAddr</h2>
@@ -428,6 +625,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cache degli utenti eliminati (per non riaggiungerli da remoto). </p>
+<p>Buffer di username eliminati (per compatibilita' screens).</p>
+<p>Cache degli utenti eliminati (per non riaggiungerli da remoto). </p>
 
 </div>
 </div>
@@ -443,9 +642,81 @@ Variabili</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Flag: 1 se siamo all'interno di una chiamata a <a class="el" href="group__lazy__deletion__impl.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario (data/users/users.dat).">SalvaDB()</a> (per evitare ricorsione LAN). </p>
+<p>Flag: 1 se siamo all'interno di una chiamata a <a class="el" href="group__database__api.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario con cifratura XOR.">SalvaDB()</a> (per evitare ricorsione LAN). </p>
 <p>Flag per evitare broadcast ricorsivi durante SalvaDB.</p>
-<p>Flag: 1 se siamo all'interno di una chiamata a <a class="el" href="group__lazy__deletion__impl.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario (data/users/users.dat).">SalvaDB()</a> (per evitare ricorsione LAN). </p>
+<p>Flag: 1 se siamo all'interno di una chiamata a <a class="el" href="group__database__api.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario con cifratura XOR.">SalvaDB()</a> (per evitare ricorsione LAN). </p>
+
+</div>
+</div>
+<a id="a5b75aa5f36ca26e12342c4dc57075c8e" name="a5b75aa5f36ca26e12342c4dc57075c8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b75aa5f36ca26e12342c4dc57075c8e">&#9670;&#160;</a></span>lanInizializzato</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lanInizializzato = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag: 1 se il modulo LAN e' stato inizializzato. </p>
+
+</div>
+</div>
+<a id="ae78e972ef5455de3eed809237828f2be" name="ae78e972ef5455de3eed809237828f2be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae78e972ef5455de3eed809237828f2be">&#9670;&#160;</a></span>lanRecvBuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char lanRecvBuf[65536]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer di ricezione pacchetti LAN (max 65536 bytes). </p>
+
+</div>
+</div>
+<a id="a0c3757abe33337404b9ecc9e90b20e06" name="a0c3757abe33337404b9ecc9e90b20e06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c3757abe33337404b9ecc9e90b20e06">&#9670;&#160;</a></span>lanSaveTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float lanSaveTimer = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Timer per broadcast periodico salvataggi (LAN_SYNC_INTERVAL). </p>
 
 </div>
 </div>
@@ -465,6 +736,54 @@ Variabili</h2></td></tr>
 
 </div>
 </div>
+<a id="a6d0aa9313d240718c068dd13d497982a" name="a6d0aa9313d240718c068dd13d497982a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d0aa9313d240718c068dd13d497982a">&#9670;&#160;</a></span>lanTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float lanTimer = 0.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Timer per broadcast periodico database (LAN_SYNC_INTERVAL). </p>
+
+</div>
+</div>
+<a id="adb8cfa9e8699a60b732bc7abd0f6c442" name="adb8cfa9e8699a60b732bc7abd0f6c442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb8cfa9e8699a60b732bc7abd0f6c442">&#9670;&#160;</a></span>localHostname</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char localHostname[64] = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hostname del dispositivo locale. </p>
+
+</div>
+</div>
 <a id="a83d2b69124592dbd8092ed4214b3f35e" name="a83d2b69124592dbd8092ed4214b3f35e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83d2b69124592dbd8092ed4214b3f35e">&#9670;&#160;</a></span>numDeletedUsers</h2>
 
@@ -478,6 +797,57 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Numero di utenti nella cache delle eliminazioni. </p>
+<p>Contatore utenti eliminati.</p>
+<p>Numero di utenti nella cache delle eliminazioni. </p>
+
+</div>
+</div>
+<a id="a67eb720694ab7d997347a60d0ed659e2" name="a67eb720694ab7d997347a60d0ed659e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67eb720694ab7d997347a60d0ed659e2">&#9670;&#160;</a></span>numPendingDeletions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int numPendingDeletions = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Numero massimo di eliminazioni pendenti. </p>
+<p>Numero di eliminazioni pendenti (attesa conferma client). </p>
+
+</div>
+</div>
+<a id="a630cbe6895f3642b9a20122adc345eb6" name="a630cbe6895f3642b9a20122adc345eb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630cbe6895f3642b9a20122adc345eb6">&#9670;&#160;</a></span>pendingDeletions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char pendingDeletions[<a class="el" href="group__lazy__deletion.html#ga0c703432e3edf6feb94fed2223922714">MAX_PENDING_DELETIONS</a>][30] = {{0}}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lista utenti in attesa di conferma eliminazione. </p>
 
 </div>
 </div>
@@ -494,8 +864,8 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_4a9058f586c45bd4458c3b7f033b4dec.html">lan</a></li><li class="navelem"><a href="lan__broadcast_8c.html">lan_broadcast.c</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_4a9058f586c45bd4458c3b7f033b4dec.html">lan</a></li><li class="navelem"><a href="lan__broadcast_8c.html">lan_broadcast.c</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

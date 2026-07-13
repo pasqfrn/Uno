@@ -1,19 +1,15 @@
 var searchData=
 [
-  ['data_0',['data',['../struct_temp_save.html#ace573d722188c408466389a6cabe382a',1,'TempSave::data'],['../struct_image.html#a2d9eabf3628b454331420e4b377538b9',1,'Image::data'],['../struct_wave.html#a2458d3fdb31625bb0a3d1e885ef8755c',1,'Wave::data'],['../group__network__packet__strutture.html#ga6d1829320713144288aa563464cfbf41',1,'NetPacket::data']]],
-  ['data_5fsalvataggio_1',['data_salvataggio',['../struct_stato_gioco.html#a7b1d2fdd92ac7429cc9d00be4dc7e237',1,'StatoGioco::data_salvataggio'],['../struct_lan_delete_save_packet.html#a331280cc36d5bf830957edf2cc56588d',1,'LanDeleteSavePacket::data_salvataggio']]],
+  ['data_0',['data',['../group__network__packet__strutture.html#gabd413eca14a55ac809b409658c0998a3',1,'NetPacket::data'],['../structTempSave.html#ace573d722188c408466389a6cabe382a',1,'TempSave::data']]],
+  ['data_5fsalvataggio_1',['data_salvataggio',['../structStatoGioco.html#a7b1d2fdd92ac7429cc9d00be4dc7e237',1,'StatoGioco::data_salvataggio'],['../structLanDeleteSavePacket.html#a331280cc36d5bf830957edf2cc56588d',1,'LanDeleteSavePacket::data_salvataggio']]],
   ['dbutenti_2',['dbUtenti',['../group__auth__impl.html#gabbde975af8fe0d5e3c20e0fd862186b6',1,'dbUtenti:&#160;auth.c'],['../group__auth__impl.html#gabbde975af8fe0d5e3c20e0fd862186b6',1,'dbUtenti:&#160;auth.c']]],
-  ['deletedusers_3',['deletedUsers',['../admin__draw_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f',1,'deletedUsers:&#160;lan_broadcast.c'],['../lan__broadcast_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f',1,'deletedUsers:&#160;lan_broadcast.c'],['../lan__sync_8h.html#aa8b1b6c8ce6cf65c18ad02977e47f98f',1,'deletedUsers:&#160;lan_broadcast.c']]],
-  ['dentrosalvadb_4',['dentroSalvaDB',['../lan__broadcast_8c.html#a35d530456749dea612236ad880c703d5',1,'dentroSalvaDB:&#160;lan_broadcast.c'],['../lan__sync_8h.html#a35d530456749dea612236ad880c703d5',1,'dentroSalvaDB:&#160;lan_broadcast.c']]],
-  ['depth_5',['depth',['../struct_render_texture.html#a320d3a52083a1cbba054b5125626d2a8',1,'RenderTexture']]],
-  ['deve_5fchiamare_5funo_6',['deve_chiamare_uno',['../struct_stato_gioco.html#a7893a4cbfd40913396a71c865f75e105',1,'StatoGioco']]],
-  ['direction_7',['direction',['../struct_ray.html#ac502377212f9b63774baf8a3f984d639',1,'Ray']]],
-  ['direzione_8',['direzione',['../struct_stato_gioco.html#acceb5d9f4390a7a89d73962eaeb100aa',1,'StatoGioco']]],
-  ['distance_9',['distance',['../struct_ray_collision.html#a637f3d21f2012edf6efd4f2426b7617b',1,'RayCollision']]],
-  ['draw_10',['draw',['../group__network__packet__strutture.html#gab4d8deeb5c19963d6e1d692ce5b01776',1,'NetPacket::draw'],['../group__network__packet__strutture.html#ga9334aa06f6610990b64dc1f418c97339',1,'NetPacket::@364004132016125344270105023134055377271367132123::draw']]],
-  ['drawcounter_11',['drawCounter',['../structrl_render_batch.html#a831c3d22c02bad04248c36269499a1af',1,'rlRenderBatch']]],
-  ['draws_12',['draws',['../structrl_render_batch.html#ad4026f85ed0817dc9acfbd1fa63a24bc',1,'rlRenderBatch']]],
-  ['durata_5fpartita_13',['durata_partita',['../struct_stato_gioco.html#a6fd1ed705d6ebec5dc51363b3fbe7adb',1,'StatoGioco']]],
-  ['durata_5fsecondi_14',['durata_secondi',['../struct_partita_registrata.html#a8586dc245db3869622726b5aac060bf8',1,'PartitaRegistrata']]],
-  ['durata_5fultima_5fpartita_15',['durata_ultima_partita',['../group__network__packet__strutture.html#ga757032a40e11dad5f12d2c2f6afd0cc8',1,'StatsSyncPacket']]]
+  ['deletedusers_3',['deletedUsers',['../lan__sync_8h.html#aa8b1b6c8ce6cf65c18ad02977e47f98f',1,'deletedUsers:&#160;lan_broadcast.c'],['../admin__draw_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f',1,'deletedUsers:&#160;lan_broadcast.c'],['../lan__broadcast_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f',1,'deletedUsers:&#160;lan_broadcast.c']]],
+  ['dentrosalvadb_4',['dentroSalvaDB',['../lan__sync_8h.html#a35d530456749dea612236ad880c703d5',1,'dentroSalvaDB:&#160;lan_broadcast.c'],['../lan__broadcast_8c.html#a35d530456749dea612236ad880c703d5',1,'dentroSalvaDB:&#160;lan_broadcast.c']]],
+  ['deve_5fchiamare_5funo_5',['deve_chiamare_uno',['../structStatoGioco.html#a7893a4cbfd40913396a71c865f75e105',1,'StatoGioco']]],
+  ['direct_5fmultiplayer_5fcode_6',['direct_multiplayer_code',['../network_8c.html#ab0e775d3294aeb480e4229dfa1c47eee',1,'network.c']]],
+  ['direzione_7',['direzione',['../structStatoGioco.html#acceb5d9f4390a7a89d73962eaeb100aa',1,'StatoGioco']]],
+  ['draw_8',['draw',['../group__network__packet__strutture.html#gab4d8deeb5c19963d6e1d692ce5b01776',1,'NetPacket::draw'],['../group__network__packet__strutture.html#gad77d0da74a0ac44c5e121fac0873d28e',1,'NetPacket::@360223311017150174205023035217356011367126334367::draw']]],
+  ['durata_5fpartita_9',['durata_partita',['../structStatoGioco.html#a6fd1ed705d6ebec5dc51363b3fbe7adb',1,'StatoGioco']]],
+  ['durata_5fsecondi_10',['durata_secondi',['../structPartitaRegistrata.html#a8586dc245db3869622726b5aac060bf8',1,'PartitaRegistrata']]],
+  ['durata_5fultima_5fpartita_11',['durata_ultima_partita',['../group__network__packet__strutture.html#ga757032a40e11dad5f12d2c2f6afd0cc8',1,'StatsSyncPacket']]]
 ];

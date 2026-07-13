@@ -9,6 +9,9 @@
 #define SERVER_MANAGER_H
 
 #include "../../data_structures.h"
+#include "../../player.h"
+#include "../../game_state.h"
+#include "../../data_structures/list.h"
 
 /** @brief Numero massimo di sessioni di gioco contemporanee. */
 #define MAX_GAME_SESSIONS 10

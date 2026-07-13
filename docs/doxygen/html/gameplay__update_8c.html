@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file src/screens/game/gameplay_update.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file screens/game/gameplay_update.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -108,7 +125,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('gameplay__upda
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;raylib.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="gameplay__shared_8h_source.html">../../../lib/screens/game/gameplay_shared.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gameplay__update_8h_source.html">../../../lib/screens/game/gameplay_update.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="end__screen_8h_source.html">../../../lib/screens/game/end_screen.h</a>&quot;</code><br />
@@ -127,18 +144,18 @@ Definizioni</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr class="memitem:a7d64b93db2fd98a57cb14198c3803ac6" id="r_a7d64b93db2fd98a57cb14198c3803ac6"><td class="memItemLeft"><a class="el" href="struct_vector2.html">Vector2</a>&#160;</td><td class="memItemRight"><a class="el" href="#a7d64b93db2fd98a57cb14198c3803ac6">OttieniPosizioneGiocatore</a> (int index_giocatore, int mio_id, int num_giocatori)</td></tr>
+<tr class="memitem:a7d64b93db2fd98a57cb14198c3803ac6" id="r_a7d64b93db2fd98a57cb14198c3803ac6"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#a7d64b93db2fd98a57cb14198c3803ac6">OttieniPosizioneGiocatore</a> (int index_giocatore, int mio_id, int num_giocatori)</td></tr>
 <tr class="memdesc:a7d64b93db2fd98a57cb14198c3803ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola la posizione schermo di un giocatore in base al suo indice.  <br /></td></tr>
-<tr class="memitem:ab87ee38deb5da11d345dce53a9d9c4a3" id="r_ab87ee38deb5da11d345dce53a9d9c4a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab87ee38deb5da11d345dce53a9d9c4a3">AggiornaGameplay</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase, <a class="el" href="struct_vector2.html">Vector2</a> mousePos, float dt)</td></tr>
+<tr class="memitem:ab87ee38deb5da11d345dce53a9d9c4a3" id="r_ab87ee38deb5da11d345dce53a9d9c4a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab87ee38deb5da11d345dce53a9d9c4a3">AggiornaGameplay</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco, <a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase, Vector2 mousePos, float dt)</td></tr>
 <tr class="memdesc:ab87ee38deb5da11d345dce53a9d9c4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna lo stato del gioco durante il gameplay.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variabili</h2></td></tr>
 <tr class="memitem:a18a9f5f86df9a58978f182d8fd52df03" id="r_a18a9f5f86df9a58978f182d8fd52df03"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a18a9f5f86df9a58978f182d8fd52df03">botTimer</a></td></tr>
 <tr class="memdesc:a18a9f5f86df9a58978f182d8fd52df03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer per il ritardo delle mosse dei bot (in secondi).  <br /></td></tr>
-<tr class="memitem:ad8b3a8467b3594717ccba6dd579808a7" id="r_ad8b3a8467b3594717ccba6dd579808a7"><td class="memItemLeft"><a class="el" href="struct_vector2.html">Vector2</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad8b3a8467b3594717ccba6dd579808a7">offsetMouse</a></td></tr>
+<tr class="memitem:ad8b3a8467b3594717ccba6dd579808a7" id="r_ad8b3a8467b3594717ccba6dd579808a7"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#ad8b3a8467b3594717ccba6dd579808a7">offsetMouse</a></td></tr>
 <tr class="memdesc:ad8b3a8467b3594717ccba6dd579808a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset del mouse per il trascinamento delle carte (differenza tra posizione mouse e angolo superiore sinistro della carta).  <br /></td></tr>
-<tr class="memitem:a95d4008478c2502c125a4aebe7ce23d8" id="r_a95d4008478c2502c125a4aebe7ce23d8"><td class="memItemLeft"><a class="el" href="struct_rectangle.html">Rectangle</a>&#160;</td><td class="memItemRight"><a class="el" href="#a95d4008478c2502c125a4aebe7ce23d8">areaTavoloCentro</a></td></tr>
+<tr class="memitem:a95d4008478c2502c125a4aebe7ce23d8" id="r_a95d4008478c2502c125a4aebe7ce23d8"><td class="memItemLeft">Rectangle&#160;</td><td class="memItemRight"><a class="el" href="#a95d4008478c2502c125a4aebe7ce23d8">areaTavoloCentro</a></td></tr>
 <tr class="memdesc:a95d4008478c2502c125a4aebe7ce23d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Area del tavolo centrale per il drop delle carte (centro schermo).  <br /></td></tr>
 <tr class="memitem:a93efbaccb6b2b71185696da5e7d319a4" id="r_a93efbaccb6b2b71185696da5e7d319a4"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a93efbaccb6b2b71185696da5e7d319a4">pending_move_index</a></td></tr>
 <tr class="memdesc:a93efbaccb6b2b71185696da5e7d319a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indice della mossa in sospeso (per scelta colore dopo jolly).  <br /></td></tr>
@@ -193,7 +210,7 @@ Variabili</h2></td></tr>
         <tr>
           <td class="memname">void AggiornaGameplay </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_stato_gioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structStatoGioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -203,7 +220,7 @@ Variabili</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_vector2.html">Vector2</a></td>          <td class="paramname"><span class="paramname"><em>mousePos</em></span>, </td>
+          <td class="paramtype">Vector2</td>          <td class="paramname"><span class="paramname"><em>mousePos</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -255,7 +272,7 @@ Variabili</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_vector2.html">Vector2</a> OttieniPosizioneGiocatore </td>
+          <td class="memname">Vector2 OttieniPosizioneGiocatore </td>
           <td>(</td>
           <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index_giocatore</em></span>, </td>
         </tr>
@@ -275,7 +292,7 @@ Variabili</h2></td></tr>
 <p>Calcola la posizione schermo di un giocatore in base al suo indice. </p>
 <p>Calcola la posizione a schermo di un giocatore in base all'indice.</p>
 <p>Posizioni:</p><ul>
-<li><a class="el" href="struct_giocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> umano (index == mio_id): in basso al centro</li>
+<li><a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> umano (index == mio_id): in basso al centro</li>
 <li>2 giocatori: avversario in alto al centro</li>
 <li>3 giocatori: avversari a sinistra e destra</li>
 <li>4 giocatori: avversari a sinistra, in alto e a destra</li>
@@ -288,7 +305,7 @@ Variabili</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Restituisce</dt><dd><a class="el" href="struct_vector2.html">Vector2</a> con coordinate schermo (centro della mano del giocatore).</dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Vector2 con coordinate schermo (centro della mano del giocatore).</dd></dl>
 <p>Calcola la posizione schermo di un giocatore in base al suo indice.</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>num_giocatori &gt; 0; index_giocatore &lt; num_giocatori. </dd></dl>
 <dl class="section return"><dt>Restituisce</dt><dd>posizione (x, y) del giocatore sullo schermo. </dd></dl>
@@ -314,7 +331,7 @@ Variabili</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_rectangle.html">Rectangle</a> areaTavoloCentro</td>
+          <td class="memname">Rectangle areaTavoloCentro</td>
         </tr>
       </table>
   </td>
@@ -395,6 +412,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Buffer per il messaggio chat in digitazione. </p>
+<p>Buffer per input chat.</p>
+<p>Buffer per il messaggio chat in digitazione. </p>
 
 </div>
 </div>
@@ -419,6 +438,8 @@ Variabili</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Flag: 1 se l'utente sta digitando nella chat. </p>
+<p>Flag stato digitazione (1 se l'utente sta scrivendo).</p>
+<p>Flag: 1 se l'utente sta digitando nella chat. </p>
 
 </div>
 </div>
@@ -432,7 +453,7 @@ Variabili</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_vector2.html">Vector2</a> offsetMouse</td>
+          <td class="memname">Vector2 offsetMouse</td>
         </tr>
       </table>
   </td>
@@ -508,8 +529,8 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_8790123cd27986151acde1ce1c3bab17.html">screens</a></li><li class="navelem"><a href="dir_9baab45634982f8b3d0134cb623803a1.html">game</a></li><li class="navelem"><a href="gameplay__update_8c.html">gameplay_update.c</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_8790123cd27986151acde1ce1c3bab17.html">screens</a></li><li class="navelem"><a href="dir_9baab45634982f8b3d0134cb623803a1.html">game</a></li><li class="navelem"><a href="gameplay__update_8c.html">gameplay_update.c</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

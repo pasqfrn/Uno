@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file src/screens/multiplayer/multiplayer_screen.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file screens/multiplayer/multiplayer_screen.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -108,7 +125,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('multiplayer__s
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="raylib_8h_source.html">raylib.h</a>&quot;</code><br />
+<code>#include &quot;raylib.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="multiplayer__screen_8h_source.html">../../../lib/screens/multiplayer/multiplayer_screen.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="network_8h_source.html">../../../lib/socket/network/network.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="network__send_8h_source.html">../../../lib/socket/network/network_send.h</a>&quot;</code><br />
@@ -127,8 +144,25 @@ Definizioni</h2></td></tr>
 Funzioni</h2></td></tr>
 <tr class="memitem:ga1ca7877dda220b7eca83451c50dc0ac1" id="r_ga1ca7877dda220b7eca83451c50dc0ac1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__multiplayer__screen.html#ga1ca7877dda220b7eca83451c50dc0ac1">ResetMultiplayerError</a> (void)</td></tr>
 <tr class="memdesc:ga1ca7877dda220b7eca83451c50dc0ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetta l'errore di caricamento multiplayer.  <br /></td></tr>
-<tr class="memitem:ga8229566194e375f13f21c7f18d03bcba" id="r_ga8229566194e375f13f21c7f18d03bcba"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__multiplayer__screen.html#ga8229566194e375f13f21c7f18d03bcba">DisegnaMultiplayer</a> (<a class="el" href="struct_stato_gioco.html">StatoGioco</a> *gioco, <a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase, float *network_countdown, int *network_countdown_active)</td></tr>
+<tr class="memitem:ga8229566194e375f13f21c7f18d03bcba" id="r_ga8229566194e375f13f21c7f18d03bcba"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__multiplayer__screen.html#ga8229566194e375f13f21c7f18d03bcba">DisegnaMultiplayer</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco, <a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase, float *network_countdown, int *network_countdown_active)</td></tr>
 <tr class="memdesc:ga8229566194e375f13f21c7f18d03bcba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disegna la schermata di selezione multiplayer.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variabili</h2></td></tr>
+<tr class="memitem:a54fe220812ba519839c0eba6acaea020" id="r_a54fe220812ba519839c0eba6acaea020"><td class="memItemLeft">static char&#160;</td><td class="memItemRight"><a class="el" href="#a54fe220812ba519839c0eba6acaea020">inputCode</a> [9] = &quot;&quot;</td></tr>
+<tr class="memdesc:a54fe220812ba519839c0eba6acaea020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer per il codice stanza (8 caratteri hex + terminatore).  <br /></td></tr>
+<tr class="memitem:aea56313e3bca44bd7a61293fffd595d7" id="r_aea56313e3bca44bd7a61293fffd595d7"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#aea56313e3bca44bd7a61293fffd595d7">codeLetterCount</a> = 0</td></tr>
+<tr class="memdesc:aea56313e3bca44bd7a61293fffd595d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contatore caratteri inseriti nel codice stanza.  <br /></td></tr>
+<tr class="memitem:a158eb3289164a3e6a88e6365c6b87181" id="r_a158eb3289164a3e6a88e6365c6b87181"><td class="memItemLeft">static char&#160;</td><td class="memItemRight"><a class="el" href="#a158eb3289164a3e6a88e6365c6b87181">localIP</a> [32] = &quot;127.0.0.1&quot;</td></tr>
+<tr class="memdesc:a158eb3289164a3e6a88e6365c6b87181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer per l'IP locale del dispositivo (es.  <br /></td></tr>
+<tr class="memitem:af580e0958558ae678fb59ccb031e3223" id="r_af580e0958558ae678fb59ccb031e3223"><td class="memItemLeft">static char&#160;</td><td class="memItemRight"><a class="el" href="#af580e0958558ae678fb59ccb031e3223">roomCode</a> [9] = &quot;ERRORE&quot;</td></tr>
+<tr class="memdesc:af580e0958558ae678fb59ccb031e3223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codice stanza generato dall'IP locale (8 char hex).  <br /></td></tr>
+<tr class="memitem:a96e8d5daaea05b4f00f78a2dbf3a8859" id="r_a96e8d5daaea05b4f00f78a2dbf3a8859"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a96e8d5daaea05b4f00f78a2dbf3a8859">gamePort</a> = 27015</td></tr>
+<tr class="memdesc:a96e8d5daaea05b4f00f78a2dbf3a8859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Porta TCP per le connessioni multiplayer.  <br /></td></tr>
+<tr class="memitem:a3d26fbd91392a0f5b39b742d2ce44b2f" id="r_a3d26fbd91392a0f5b39b742d2ce44b2f"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a3d26fbd91392a0f5b39b742d2ce44b2f">mostraErroreCaricamento</a> = 0</td></tr>
+<tr class="memdesc:a3d26fbd91392a0f5b39b742d2ce44b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag errore caricamento: 0 = nessun errore, 1 = errore connessione, 2 = codice stanza non valido.  <br /></td></tr>
+<tr class="memitem:a0af9fed79599b52f1f0804c4c5fecec6" id="r_a0af9fed79599b52f1f0804c4c5fecec6"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a0af9fed79599b52f1f0804c4c5fecec6">ip_inizializzato</a> = 0</td></tr>
+<tr class="memdesc:a0af9fed79599b52f1f0804c4c5fecec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag: 1 se l'IP locale e' stato gia' inizializzato.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
 <div class="textblock"><p>Schermata di selezione multiplayer (host/client). </p>
@@ -164,6 +198,176 @@ Funzioni</h2></td></tr>
 
 </div>
 </div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="aea56313e3bca44bd7a61293fffd595d7" name="aea56313e3bca44bd7a61293fffd595d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea56313e3bca44bd7a61293fffd595d7">&#9670;&#160;</a></span>codeLetterCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int codeLetterCount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contatore caratteri inseriti nel codice stanza. </p>
+
+</div>
+</div>
+<a id="a96e8d5daaea05b4f00f78a2dbf3a8859" name="a96e8d5daaea05b4f00f78a2dbf3a8859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96e8d5daaea05b4f00f78a2dbf3a8859">&#9670;&#160;</a></span>gamePort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gamePort = 27015</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Porta TCP per le connessioni multiplayer. </p>
+
+</div>
+</div>
+<a id="a54fe220812ba519839c0eba6acaea020" name="a54fe220812ba519839c0eba6acaea020"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54fe220812ba519839c0eba6acaea020">&#9670;&#160;</a></span>inputCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char inputCode[9] = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer per il codice stanza (8 caratteri hex + terminatore). </p>
+
+</div>
+</div>
+<a id="a0af9fed79599b52f1f0804c4c5fecec6" name="a0af9fed79599b52f1f0804c4c5fecec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af9fed79599b52f1f0804c4c5fecec6">&#9670;&#160;</a></span>ip_inizializzato</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ip_inizializzato = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag: 1 se l'IP locale e' stato gia' inizializzato. </p>
+
+</div>
+</div>
+<a id="a158eb3289164a3e6a88e6365c6b87181" name="a158eb3289164a3e6a88e6365c6b87181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158eb3289164a3e6a88e6365c6b87181">&#9670;&#160;</a></span>localIP</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char localIP[32] = &quot;127.0.0.1&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Buffer per l'IP locale del dispositivo (es. </p>
+<p>"192.168.1.100"). </p>
+
+</div>
+</div>
+<a id="a3d26fbd91392a0f5b39b742d2ce44b2f" name="a3d26fbd91392a0f5b39b742d2ce44b2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d26fbd91392a0f5b39b742d2ce44b2f">&#9670;&#160;</a></span>mostraErroreCaricamento</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mostraErroreCaricamento = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag errore caricamento: 0 = nessun errore, 1 = errore connessione, 2 = codice stanza non valido. </p>
+
+</div>
+</div>
+<a id="af580e0958558ae678fb59ccb031e3223" name="af580e0958558ae678fb59ccb031e3223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af580e0958558ae678fb59ccb031e3223">&#9670;&#160;</a></span>roomCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char roomCode[9] = &quot;ERRORE&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Codice stanza generato dall'IP locale (8 char hex). </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -177,8 +381,8 @@ Funzioni</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_8790123cd27986151acde1ce1c3bab17.html">screens</a></li><li class="navelem"><a href="dir_4d5758d0de027b72c7c3da4ccb70efae.html">multiplayer</a></li><li class="navelem"><a href="multiplayer__screen_8c.html">multiplayer_screen.c</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_8790123cd27986151acde1ce1c3bab17.html">screens</a></li><li class="navelem"><a href="dir_4d5758d0de027b72c7c3da4ccb70efae.html">multiplayer</a></li><li class="navelem"><a href="multiplayer__screen_8c.html">multiplayer_screen.c</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

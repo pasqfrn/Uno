@@ -24,8 +24,8 @@
 */
 var NAVTREE =
 [
-  [ "Uno", "index.html", [
-    [ "UNO - Gioco Multiplayer di Carte", "index.html", null ],
+  [ "UNO - Gioco di Carte", "index.html", [
+    [ "UNO - Il Gioco di Carte", "index.html", "index" ],
     [ "Topics", "topics.html", "topics" ],
     [ "Strutture dati", "annotated.html", [
       [ "Strutture dati", "annotated.html", "annotated_dup" ],
@@ -40,11 +40,11 @@ var NAVTREE =
       [ "Elementi globali", "globals.html", [
         [ "Tutto", "globals.html", "globals_dup" ],
         [ "Funzioni", "globals_func.html", "globals_func" ],
-        [ "Variabili", "globals_vars.html", null ],
+        [ "Variabili", "globals_vars.html", "globals_vars" ],
         [ "Ridefinizioni di tipo (typedef)", "globals_type.html", null ],
         [ "Tipi enumerati (enum)", "globals_enum.html", null ],
-        [ "Valori del tipo enumerato", "globals_eval.html", "globals_eval" ],
-        [ "Definizioni", "globals_defs.html", "globals_defs" ]
+        [ "Valori del tipo enumerato", "globals_eval.html", null ],
+        [ "Definizioni", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -53,18 +53,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "admin__draw_8c.html",
-"gameplay__shared_8h.html#ad8b3a8467b3594717ccba6dd579808a7",
-"group__main.html",
-"group__queue__api.html#gafe5e85ee83772d0ce66f79eb6fb070d7",
-"raylib_8h.html#a04c5c34bd701165eade98623d1cc0020",
-"raylib_8h.html#a4bd46a0cfc46683581fd81e4e06bf735",
-"raylib_8h.html#a8da2670ded840f125a6effc93b0c09b4",
-"raylib_8h.html#ac219e314a2a825e55716a753c1db52ee",
-"raymath_8h.html#a1227fe190d75c25b8e52dd8e84b9a4a6",
-"rlgl_8h.html#a48afd904684fe44b683dbb7cf4145121",
-"rlgl_8h.html#ada225b8313802f9927d1327759ca0fb7",
-"struct_lan_stats_sync_packet.html#a6de2c30367d462a8298368f147cfb2bf",
-"struct_vector3.html#aa8c9461eb24bd2c364258078811a3e9d"
+"gameplay__shared_8h.html#a20d7f38f3172dfe2ed4c5819e84c78ed",
+"group__multiplayer__screen.html#ga8229566194e375f13f21c7f18d03bcba",
+"group__server__manager__api.html#ga16fd52dac20f4320260b28846fbddd9e",
+"queue_8h.html",
+"structStatoGioco.html#a7893a4cbfd40913396a71c865f75e105"
 ];
 
 const SYNCONMSG = 'cliccare per disabilitare la sincronizzazione del pannello';

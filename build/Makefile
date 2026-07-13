@@ -8,6 +8,7 @@
 #
 # Utilizzo:
 #   make              - Compila l'eseguibile 'uno'
+#   make test         - Compila ed esegue i test unitari
 #   make clean        - Rimuove file oggetto ed eseguibile
 #   make setup-raylib - Mostra istruzioni per Raylib bundle
 #
@@ -114,12 +115,11 @@ TARGET = uno
 #   - all:      Compila l'eseguibile 'uno' (target di default)
 #   - $(TARGET): Linka tutti gli oggetti nell'eseguibile finale
 #   - clean:    Rimuove tutti i file oggetto e l'eseguibile
+#   - test:     Compila ed esegue i test unitari ADT
 #   - setup-raylib: Mostra istruzioni per configurare Raylib bundle
-#
-# @var TARGET Nome dell'eseguibile prodotto ('uno')
 # ============================================================================
 # @brief Target non-file - non corrispondono a file effettivi
-.PHONY: all clean setup-raylib
+.PHONY: all clean setup-raylib test
 
 # @brief Target di default - compila l'eseguibile
 all: $(TARGET)
@@ -128,9 +128,68 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) $(OBJS) -o $@ $(LDFLAGS)
 
-# @brief Rimuove tutti i file intermedi e l'eseguibile
+# ============================================================================
+# @brief TEST UNITARI ADT
+# @details Compila ed esegue i 171 test per verificare il corretto
+#          funzionamento di tutti gli ADT (Lista, Pila, Coda, BST, Chat)
+#          e della logica di gioco (MossaValida).
+#          Usa Itests/stubs/ per lo stub di Raylib.
+# @var TEST_OBJ_DIR Directory dove risiedono i file .o dei test
+# @var TEST_OBJS   Lista dei file oggetto necessari
+# @var TEST_TARGET Nome dell'eseguibile di test
+# ============================================================================
+TEST_OBJ_DIR = tests/obj
+TEST_OBJS = \
+	$(TEST_OBJ_DIR)/stack_test.o \
+	$(TEST_OBJ_DIR)/queue_test.o \
+	$(TEST_OBJ_DIR)/list_data_test.o \
+	$(TEST_OBJ_DIR)/bst_test.o \
+	$(TEST_OBJ_DIR)/chat_test.o \
+	$(TEST_OBJ_DIR)/list_std_test.o \
+	$(TEST_OBJ_DIR)/game_logic_test.o \
+	$(TEST_OBJ_DIR)/deck_test.o
+
+TEST_TARGET = tests/test_adt
+
+# @brief Target per compilare ed eseguire i test
+test: $(TEST_TARGET)
+	./$(TEST_TARGET)
+
+# @brief Linka i file oggetto dei moduli con il main di test
+$(TEST_TARGET): tests/test_adt.c $(TEST_OBJS)
+	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs tests/test_adt.c $(TEST_OBJS) -o $@ -lm
+
+# Regole per compilare ogni modulo nei test (con stub Raylib)
+$(TEST_OBJ_DIR)/stack_test.o: src/data_structures/stack.c
+	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
+
+$(TEST_OBJ_DIR)/queue_test.o: src/data_structures/queue.c
+	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
+
+$(TEST_OBJ_DIR)/list_data_test.o: src/data_structures/list.c
+	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
+
+$(TEST_OBJ_DIR)/bst_test.o: src/data_structures/bst.c
+	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
+
+$(TEST_OBJ_DIR)/chat_test.o: src/data_structures/chat.c
+	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
+
+$(TEST_OBJ_DIR)/list_std_test.o: src/list.c
+	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
+
+$(TEST_OBJ_DIR)/game_logic_test.o: src/game_logic.c
+	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
+
+$(TEST_OBJ_DIR)/deck_test.o: src/game/deck.c
+	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
+
+# ============================================================================
+# @brief Pulizia
+# @details Rimuove tutti i .o, l'eseguibile principale e quello di test
+# ============================================================================
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET) $(TEST_OBJS) $(TEST_TARGET)
 
 # @brief Mostra le istruzioni per scaricare e configurare Raylib
 setup-raylib:

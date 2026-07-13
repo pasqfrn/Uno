@@ -9,6 +9,8 @@
 #define GAMEPLAY_ANIMATION_H
 
 #include "../../data_structures.h"
+#include "../../player.h"
+#include "../../game_state.h"
 
 /**
  * @brief Aggiorna lo stato delle animazioni in corso.

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Riferimenti per il file src/socket/lan/lan_db_sync.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file socket/lan/lan_db_sync.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -117,8 +134,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__db__sync_
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
+<tr class="memitem:ae43f5a8599e65762fb71093148b2e9ae" id="r_ae43f5a8599e65762fb71093148b2e9ae"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#ae43f5a8599e65762fb71093148b2e9ae">UtenteDiverso</a> (const <a class="el" href="structStatistiche.html">Statistiche</a> *l, const <a class="el" href="structLanCompactUser.html">LanCompactUser</a> *r)</td></tr>
+<tr class="memdesc:ae43f5a8599e65762fb71093148b2e9ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confronta un record <a class="el" href="structStatistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> locale con un <a class="el" href="structLanCompactUser.html">LanCompactUser</a> remoto.  <br /></td></tr>
+<tr class="memitem:abf84ade58dda42103ab79f713b80bbc8" id="r_abf84ade58dda42103ab79f713b80bbc8"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#abf84ade58dda42103ab79f713b80bbc8">AggiornaStatistiche</a> (<a class="el" href="structStatistiche.html">Statistiche</a> *l, const <a class="el" href="structLanCompactUser.html">LanCompactUser</a> *r)</td></tr>
+<tr class="memdesc:abf84ade58dda42103ab79f713b80bbc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia tutti i campi da <a class="el" href="structLanCompactUser.html">LanCompactUser</a> a <a class="el" href="structStatistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> locale.  <br /></td></tr>
 <tr class="memitem:a4ac5aeca9a0bc4c628f3c377b007a990" id="r_a4ac5aeca9a0bc4c628f3c377b007a990"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a4ac5aeca9a0bc4c628f3c377b007a990">LAN_EmailEsiste</a> (const char *email)</td></tr>
 <tr class="memdesc:a4ac5aeca9a0bc4c628f3c377b007a990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se una email esiste gia' nel DB locale o remoto (LAN).  <br /></td></tr>
+<tr class="memitem:a33243ecb7da2a719c0dc892219d51335" id="r_a33243ecb7da2a719c0dc892219d51335"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a33243ecb7da2a719c0dc892219d51335">DeserializzaEMerge</a> (const char *buf, int bytes, int payload_offset)</td></tr>
+<tr class="memdesc:a33243ecb7da2a719c0dc892219d51335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserializza un pacchetto DB LAN e merge con il database locale.  <br /></td></tr>
 <tr class="memitem:a3f8f65e7d6582283510158e54c4928fe" id="r_a3f8f65e7d6582283510158e54c4928fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3f8f65e7d6582283510158e54c4928fe">SerializzaDB</a> (char *buf, int buf_size)</td></tr>
 <tr class="memdesc:a3f8f65e7d6582283510158e54c4928fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializza il database utenti in un buffer per broadcast UDP.  <br /></td></tr>
 <tr class="memitem:afb110e20ad8f620b196145ddcb970c21" id="r_afb110e20ad8f620b196145ddcb970c21"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afb110e20ad8f620b196145ddcb970c21">LAN_ProcessDBPacket</a> (const char *buf, int bytes, int offset)</td></tr>
@@ -135,12 +158,12 @@ Funzioni</h2></td></tr>
 <li>Aggiornamento automatico admin panel su tutti i dispositivi LAN</li>
 <li>Sincronizzazione storico partite completo</li>
 </ul>
-<dl class="section note"><dt>Nota</dt><dd>Utilizza <a class="el" href="struct_lan_compact_user.html">LanCompactUser</a> (struttura compatta) per ridurre dimensione pacchetti UDP. Lo storico_partite[] trasmesso e' limitato alle ultime STORICO_SYNC_COUNT partite per mantenere la dimensione ragionevole.</dd></dl>
+<dl class="section note"><dt>Nota</dt><dd>Utilizza <a class="el" href="structLanCompactUser.html">LanCompactUser</a> (struttura compatta) per ridurre dimensione pacchetti UDP. Lo storico_partite[] trasmesso e' limitato alle ultime STORICO_SYNC_COUNT partite per mantenere la dimensione ragionevole.</dd></dl>
 <p>ADT utilizzato:</p><ul>
-<li><a class="el" href="struct_database_utenti.html" title="Database degli utenti in memoria (allocazione DINAMICA).">DatabaseUtenti</a> (dbUtenti, array dinamico allocato)</li>
-<li><a class="el" href="struct_lan_compact_user.html">LanCompactUser</a> (formato compatto per trasmissione)</li>
+<li><a class="el" href="structDatabaseUtenti.html" title="Database degli utenti in memoria (allocazione DINAMICA).">DatabaseUtenti</a> (dbUtenti, array dinamico allocato)</li>
+<li><a class="el" href="structLanCompactUser.html">LanCompactUser</a> (formato compatto per trasmissione)</li>
 </ul>
-<p>Protocollo pacchetto: [<a class="el" href="struct_lan_packet_header.html" title="Header comune a tutti i pacchetti database LAN.">LanPacketHeader</a> (magic=LAN_PACKET_DB + length)] [int num_utenti] [<a class="el" href="struct_lan_compact_user.html">LanCompactUser</a> x N]</p>
+<p>Protocollo pacchetto: [<a class="el" href="structLanPacketHeader.html" title="Header comune a tutti i pacchetti database LAN.">LanPacketHeader</a> (magic=LAN_PACKET_DB + length)] [int num_utenti] [<a class="el" href="structLanCompactUser.html">LanCompactUser</a> x N]</p>
 <p>Strategia merge (DeserializzaEMerge):</p><ol type="1">
 <li>Rimuove utenti locali non presenti nel pacchetto remoto (eccetto utente loggato e utenti in deletedUsers)</li>
 <li>Per ogni utente remoto: aggiorna se modificato, inserisce se nuovo</li>
@@ -151,7 +174,7 @@ Funzioni</h2></td></tr>
 <p>La deduplica usa una chiave composta (durata, esito, modalita, posizione) per evitare falsi positivi quando piu' giocatori hanno partite con caratteristiche simili.</p>
 <p>File correlati:</p><ul>
 <li><a class="el" href="lan__sync_8h.html" title="Sincronizzazione LAN del database utenti via UDP broadcast.">lan_sync.h</a> : API pubblica (LAN_Init, LAN_Update, LAN_ProcessDBPacket)</li>
-<li><a class="el" href="lan__protocol_8h.html" title="Protocollo UDP per sincronizzazione LAN.">lan_protocol.h</a> : definizioni protocollo (<a class="el" href="struct_lan_packet_header.html" title="Header comune a tutti i pacchetti database LAN.">LanPacketHeader</a>, <a class="el" href="struct_lan_compact_user.html">LanCompactUser</a>)</li>
+<li><a class="el" href="lan__protocol_8h.html" title="Protocollo UDP per sincronizzazione LAN.">lan_protocol.h</a> : definizioni protocollo (<a class="el" href="structLanPacketHeader.html" title="Header comune a tutti i pacchetti database LAN.">LanPacketHeader</a>, <a class="el" href="structLanCompactUser.html">LanCompactUser</a>)</li>
 <li><a class="el" href="network_8h.html" title="Modulo di rete multiplayer TCP/UDP per partite e sincronizzazione.">network.h</a> : currentRole, BroadcastAdminDB</li>
 <li><a class="el" href="auth_8h.html" title="Modulo di autenticazione e gestione database utenti.">auth.h</a> : dbUtenti, DB_Alloca, SalvaDB</li>
 <li><a class="el" href="network__send_8c.html" title="Funzioni di invio pacchetti per il multiplayer online.">network_send.c</a> : BroadcastAdminDB</li>
@@ -160,6 +183,102 @@ Funzioni</h2></td></tr>
 <dl class="section version"><dt>Versione</dt><dd>9.1.3 </dd></dl>
 <dl class="section date"><dt>Data</dt><dd>2026-07-01 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="abf84ade58dda42103ab79f713b80bbc8" name="abf84ade58dda42103ab79f713b80bbc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf84ade58dda42103ab79f713b80bbc8">&#9670;&#160;</a></span>AggiornaStatistiche()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AggiornaStatistiche </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structStatistiche.html">Statistiche</a> *</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structLanCompactUser.html">LanCompactUser</a> *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copia tutti i campi da <a class="el" href="structLanCompactUser.html">LanCompactUser</a> a <a class="el" href="structStatistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> locale. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>Record <a class="el" href="structStatistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> di destinazione. </td></tr>
+    <tr><td class="paramname">r</td><td>Record <a class="el" href="structLanCompactUser.html">LanCompactUser</a> di origine.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Logica di merge semplificata:</p><ol type="1">
+<li>Copia i campi anagrafici (nome, cognome, username, password, pin)</li>
+<li>Se il remoto ha contatori PIU' ALTI di quelli locali (crescita monotona), COPIA i contatori senza aggiungere storico. Questo significa che le partite "mancanti" sono gia' incluse nel conteggio del remoto.</li>
+<li>Se i contatori sono UGUALI ma c'e' storico da mergiare (partite con dettagli diversi dal locale), aggiungi solo le partite NUOVE (deduplica per chiave). Questo NON incrementa partite_giocate perche' la partita era gia' contata.</li>
+<li>Lo storico_count del pacchetto remoto indica quante partite storiche sono state inviate (max STORICO_SYNC_COUNT = ultime 10). partite_giocate e' il contatore TOTALE separato dallo storico.</li>
+</ol>
+<p>Regole fondamentali:</p><ul>
+<li>Non aggiungere MAI partite_giocate++ quando si copia dallo storico.</li>
+<li>Le partite storiche sono GIA' conteggiate in partite_giocate del remoto.</li>
+<li>Se locale ha partite_giocate = remoto.partite_giocate, significa che locale ha gia' tutti i conti a posto. Lo storico serve SOLO per avere i dettagli.</li>
+</ul>
+<p>Copia tutti i campi da <a class="el" href="structLanCompactUser.html">LanCompactUser</a> a <a class="el" href="structStatistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> locale. </p><dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>Record <a class="el" href="structStatistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> di destinazione. </td></tr>
+    <tr><td class="paramname">r</td><td>Record <a class="el" href="structLanCompactUser.html">LanCompactUser</a> di origine.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Copia TUTTI i campi anagrafici inclusa l'email (mancante nella versione precedente). I contatori numerici vengono aggiornati con crescita monotona: se il remoto ha contatori piu' alti, vengono copiati. Lo storico partite viene mergiato con deduplica.</p>
+<p>BUG 1 FIX: Aggiunta copia del campo email che mancava, impedendo la sincronizzazione delle modifiche all'email fatte dall'admin. BUG 1 FIX: I contatori numerici vengono ora copiati con crescita monotona (se remoto &gt; locale), invece di essere ignorati con (void). </p>
+
+</div>
+</div>
+<a id="a33243ecb7da2a719c0dc892219d51335" name="a33243ecb7da2a719c0dc892219d51335"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33243ecb7da2a719c0dc892219d51335">&#9670;&#160;</a></span>DeserializzaEMerge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeserializzaEMerge </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bytes</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>payload_offset</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deserializza un pacchetto DB LAN e merge con il database locale. </p>
+<p>Strategia conservativa: gli utenti vengono SOLO aggiunti o aggiornati, mai rimossi automaticamente. Questo evita la perdita di dati quando un pacchetto LAN arriva durante una partita. L'unico caso di rimozione e' quando l'admin elimina esplicitamente un utente.</p>
+<p>Ottimizzazione: <a class="el" href="group__database__api.html#gae268c79271c4ee59ba3a082ebd80e0a9" title="Salva il database su file binario con cifratura XOR.">SalvaDB()</a> e <a class="el" href="group__database__api.html#ga92a8b147f7f309caeaba6776d16a4204" title="Ricostruisce il BST parallelo a partire dall&#39;array dbUtenti.">AuthBST_Ricostruisci()</a> vengono chiamati SOLO se ci sono state modifiche (dbMod == 1). Questo evita broadcast ricorsivi infiniti. </p>
+
+</div>
+</div>
 <a id="a4ac5aeca9a0bc4c628f3c377b007a990" name="a4ac5aeca9a0bc4c628f3c377b007a990"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ac5aeca9a0bc4c628f3c377b007a990">&#9670;&#160;</a></span>LAN_EmailEsiste()</h2>
 
@@ -222,7 +341,7 @@ Funzioni</h2></td></tr>
 
 <p>Entry point pubblico per processare un pacchetto DB LAN ricevuto. </p>
 <p>Processa un pacchetto DB ricevuto (merge utenti).</p>
-<p>Chiamato da <a class="el" href="lan__broadcast_8c.html#ab0b625c0463cad457894bf91847319c5" title="Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout).">LAN_Update()</a> in <a class="el" href="lan__broadcast_8c.html" title="Gestione broadcast LAN: inizializzazione, chiusura e smistamento pacchetti.">lan_broadcast.c</a>.</p>
+<p>Chiamato da <a class="el" href="lan__sync_8h.html#ab0b625c0463cad457894bf91847319c5" title="Aggiorna lo stato LAN (gestione ricezione pacchetti, timeout).">LAN_Update()</a> in <a class="el" href="lan__broadcast_8c.html" title="Gestione broadcast LAN: inizializzazione, chiusura e smistamento pacchetti.">lan_broadcast.c</a>.</p>
 <p>Entry point pubblico per processare un pacchetto DB LAN ricevuto.</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>buf contiene un JSON valido. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
@@ -299,7 +418,7 @@ Funzioni</h2></td></tr>
 
 <p>Serializza il database utenti in un buffer per broadcast UDP. </p>
 <p>Serializza il database utenti in un buffer JSON.</p>
-<p>Formato: header + int(num_utenti) + <a class="el" href="struct_lan_compact_user.html">LanCompactUser</a>[N].</p>
+<p>Formato: header + int(num_utenti) + <a class="el" href="structLanCompactUser.html">LanCompactUser</a>[N].</p>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
     <tr><td class="paramname">buf</td><td>Buffer di destinazione. </td></tr>
@@ -322,6 +441,42 @@ Funzioni</h2></td></tr>
 
 </div>
 </div>
+<a id="ae43f5a8599e65762fb71093148b2e9ae" name="ae43f5a8599e65762fb71093148b2e9ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae43f5a8599e65762fb71093148b2e9ae">&#9670;&#160;</a></span>UtenteDiverso()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int UtenteDiverso </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structStatistiche.html">Statistiche</a> *</td>          <td class="paramname"><span class="paramname"><em>l</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structLanCompactUser.html">LanCompactUser</a> *</td>          <td class="paramname"><span class="paramname"><em>r</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Confronta un record <a class="el" href="structStatistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> locale con un <a class="el" href="structLanCompactUser.html">LanCompactUser</a> remoto. </p>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se sono diversi (serve aggiornamento), 0 se identici.</dd></dl>
+<p>Controlla SOLO i campi anagrafici e contatori numerici, NON lo storico partite. Lo storico partite viene mergiato separatamente in <a class="el" href="#abf84ade58dda42103ab79f713b80bbc8" title="Copia tutti i campi da LanCompactUser a Statistiche locale.">AggiornaStatistiche()</a> con attenzione a NON causare double counting.</p>
+<p>Confronta un record <a class="el" href="structStatistiche.html" title="Statistiche complete di un utente registrato.">Statistiche</a> locale con un <a class="el" href="structLanCompactUser.html">LanCompactUser</a> remoto. </p><dl class="section return"><dt>Restituisce</dt><dd>1 se sono diversi (serve aggiornamento), 0 se identici.</dd></dl>
+<p>Controlla TUTTI i campi anagrafici, contatori e email. L'email mancava nella versione precedente: questo impediva la sincronizzazione delle modifiche all'email da parte dell'admin.</p>
+<p>BUG 1 FIX: Aggiunto strcmp(l-&gt;email, r-&gt;email) per rilevare modifiche all'email fatte dall'admin e sincronizzarle su LAN. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
@@ -335,8 +490,8 @@ Funzioni</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_4a9058f586c45bd4458c3b7f033b4dec.html">lan</a></li><li class="navelem"><a href="lan__db__sync_8c.html">lan_db_sync.c</a></li>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="navelem"><a href="dir_9ad1227260954e346101f3844f0abb3d.html">socket</a></li><li class="navelem"><a href="dir_4a9058f586c45bd4458c3b7f033b4dec.html">lan</a></li><li class="navelem"><a href="lan__db__sync_8c.html">lan_db_sync.c</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>

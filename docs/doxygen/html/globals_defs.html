@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Uno: Elementi globali</title>
+<title>UNO - Gioco di Carte: Elementi globali</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -16,12 +16,9 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-document.addEventListener('DOMContentLoaded', init_search);
-</script>
 <script type="module">
 import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-const theme = 'dark';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
 mermaid.initialize({ startOnLoad: true, theme: theme });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -33,22 +30,10 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Uno
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
    </div>
-   <div id="projectbrief">Gioco multiplayer di carte UNO</div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
   </td>
-    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -61,6 +46,38 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -100,11 +117,109 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_defs.h
 
 <div class="contents">
 <div class="textblock">&#160;</div><br/>
-<div class="qindex"><a class="qindex" href="globals_defs.html#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_b.html#index_b">B</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_c.html#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_d.html#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_e.html#index_e">E</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_g.html#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_i.html#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_l.html#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_m.html#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_o.html#index_o">O</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_p.html#index_p">P</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_r.html#index_r">R</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_s.html#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_t.html#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_v.html#index_v">V</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_w.html#index_w">W</a><div class="alphasepar"></div><a class="qindex" href="globals_defs_y.html#index_y">Y</a></div>
+<div class="qindex"><a class="qindex" href="#index_a">A</a><div class="alphasepar"></div><a class="qindex" href="#index_c">C</a><div class="alphasepar"></div><a class="qindex" href="#index_d">D</a><div class="alphasepar"></div><a class="qindex" href="#index_g">G</a><div class="alphasepar"></div><a class="qindex" href="#index_i">I</a><div class="alphasepar"></div><a class="qindex" href="#index_l">L</a><div class="alphasepar"></div><a class="qindex" href="#index_m">M</a><div class="alphasepar"></div><a class="qindex" href="#index_s">S</a><div class="alphasepar"></div><a class="qindex" href="#index_t">T</a><div class="alphasepar"></div><a class="qindex" href="#index_w">W</a></div>
 
 
 <h3 class="doxsection"><a id="index_a" name="index_a"></a>- a -</h3><ul>
 <li>ALTEZZA&#160;:&#160;<a class="el" href="admin__draw_8c.html#a737f1e0014465787871b62d0e61129d8">admin_draw.c</a>, <a class="el" href="auth__draw_8c.html#a737f1e0014465787871b62d0e61129d8">auth_draw.c</a>, <a class="el" href="auth__screen_8c.html#a737f1e0014465787871b62d0e61129d8">auth_screen.c</a>, <a class="el" href="chat__render_8c.html#a737f1e0014465787871b62d0e61129d8">chat_render.c</a>, <a class="el" href="end__screen_8c.html#a737f1e0014465787871b62d0e61129d8">end_screen.c</a>, <a class="el" href="gameplay__draw_8c.html#a737f1e0014465787871b62d0e61129d8">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#a737f1e0014465787871b62d0e61129d8">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#a737f1e0014465787871b62d0e61129d8">gameplay_update.c</a>, <a class="el" href="menu__screen_8c.html#a737f1e0014465787871b62d0e61129d8">menu_screen.c</a>, <a class="el" href="stats__screen_8c.html#a737f1e0014465787871b62d0e61129d8">stats_screen.c</a>, <a class="el" href="multiplayer__lobby_8c.html#a737f1e0014465787871b62d0e61129d8">multiplayer_lobby.c</a>, <a class="el" href="multiplayer__screen_8c.html#a737f1e0014465787871b62d0e61129d8">multiplayer_screen.c</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_c" name="index_c"></a>- c -</h3><ul>
+<li>CHAT_STORICO_MAX&#160;:&#160;<a class="el" href="chat_8h.html#ac211a3e2c6d5bc08bd548806b2f525e9">chat.h</a></li>
+<li>closesocket&#160;:&#160;<a class="el" href="socket__compat_8h.html#aa14fa587d16f7b336fc999be98588f04">socket_compat.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_d" name="index_d"></a>- d -</h3><ul>
+<li>DB_CAPACITA_INIZIALE&#160;:&#160;<a class="el" href="data__structures_8h.html#a79bdb013fafcecab59a3a66c537144ed">data_structures.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>GIOCATORE_NOME_BUF&#160;:&#160;<a class="el" href="player_8h.html#ad122d7c5cf74ad68b85d6f22321a1f14">player.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_i" name="index_i"></a>- i -</h3><ul>
+<li>INVALID_SOCKET&#160;:&#160;<a class="el" href="socket__compat_8h.html#a26769957ec1a2beaf223f33b66ee64ab">socket_compat.h</a></li>
+<li>ioctlsocket&#160;:&#160;<a class="el" href="socket__compat_8h.html#a585fd35ffa0c128b282b88bbb03fb7f1">socket_compat.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_l" name="index_l"></a>- l -</h3><ul>
+<li>LAN_PACKET_DB&#160;:&#160;<a class="el" href="lan__protocol_8h.html#af209f894092f0198fedf3793b1b08e78">lan_protocol.h</a></li>
+<li>LAN_PACKET_DEL_SAVE&#160;:&#160;<a class="el" href="lan__protocol_8h.html#adfd1cd8824de1aadfbf6ab88dd5e6403">lan_protocol.h</a></li>
+<li>LAN_PACKET_DEL_USER&#160;:&#160;<a class="el" href="lan__protocol_8h.html#a7ad00aea5b79d92f29677091873e0ac6">lan_protocol.h</a></li>
+<li>LAN_PACKET_SAVE&#160;:&#160;<a class="el" href="lan__protocol_8h.html#afea9f0c9285ce89f0ee243ad34ce4880">lan_protocol.h</a></li>
+<li>LAN_PACKET_STATS_SYNC&#160;:&#160;<a class="el" href="lan__protocol_8h.html#ab2be085f840e4ca5ca4f0734c1116c5d">lan_protocol.h</a></li>
+<li>LAN_SAVE_PATH_BUF&#160;:&#160;<a class="el" href="lan__save__sync_8c.html#a60e6f3f21fe1c47c07282c8e8c2e75da">lan_save_sync.c</a></li>
+<li>LAN_SYNC_INTERVAL&#160;:&#160;<a class="el" href="lan__sync_8h.html#a8983866c48fd15e74690a796df115a73">lan_sync.h</a></li>
+<li>LAN_SYNC_PORT&#160;:&#160;<a class="el" href="lan__sync_8h.html#ac994a8ec1622c6847ed9098bed849d10">lan_sync.h</a></li>
+<li>LARGHEZZA&#160;:&#160;<a class="el" href="admin__draw_8c.html#accf70613e15dd3bcc231017b8f814c80">admin_draw.c</a>, <a class="el" href="auth__draw_8c.html#accf70613e15dd3bcc231017b8f814c80">auth_draw.c</a>, <a class="el" href="auth__screen_8c.html#accf70613e15dd3bcc231017b8f814c80">auth_screen.c</a>, <a class="el" href="chat__render_8c.html#accf70613e15dd3bcc231017b8f814c80">chat_render.c</a>, <a class="el" href="end__screen_8c.html#accf70613e15dd3bcc231017b8f814c80">end_screen.c</a>, <a class="el" href="gameplay__draw_8c.html#accf70613e15dd3bcc231017b8f814c80">gameplay_draw.c</a>, <a class="el" href="gameplay__screen_8c.html#accf70613e15dd3bcc231017b8f814c80">gameplay_screen.c</a>, <a class="el" href="gameplay__update_8c.html#accf70613e15dd3bcc231017b8f814c80">gameplay_update.c</a>, <a class="el" href="menu__screen_8c.html#accf70613e15dd3bcc231017b8f814c80">menu_screen.c</a>, <a class="el" href="stats__screen_8c.html#accf70613e15dd3bcc231017b8f814c80">stats_screen.c</a>, <a class="el" href="multiplayer__lobby_8c.html#accf70613e15dd3bcc231017b8f814c80">multiplayer_lobby.c</a>, <a class="el" href="multiplayer__screen_8c.html#accf70613e15dd3bcc231017b8f814c80">multiplayer_screen.c</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_m" name="index_m"></a>- m -</h3><ul>
+<li>MAX_CONNECTIONS&#160;:&#160;<a class="el" href="server__manager_8h.html#a053b7859476cc9867ec62c49e68d3fa1">server_manager.h</a></li>
+<li>MAX_GAME_SESSIONS&#160;:&#160;<a class="el" href="server__manager_8h.html#a59177ab48229893d0eb334aecb316840">server_manager.h</a></li>
+<li>MAX_PARTITE_STORICO&#160;:&#160;<a class="el" href="data__structures_8h.html#a5026ff5f759c4fa9a23782d0303b2ef8">data_structures.h</a></li>
+<li>MAX_PENDING_DELETIONS&#160;:&#160;<a class="el" href="group__lazy__deletion.html#ga0c703432e3edf6feb94fed2223922714">auth.h</a></li>
+<li>MAX_PLAYERS_PER_SESSION&#160;:&#160;<a class="el" href="server__manager_8h.html#aedc8c1a22b7965c1e61fc1f065c287ee">server_manager.h</a></li>
+<li>MAX_RECV&#160;:&#160;<a class="el" href="lan__protocol_8h.html#ae2c377a9138eb6905d9e09edf7c70f95">lan_protocol.h</a>, <a class="el" href="lan__save__helpers_8c.html#ae2c377a9138eb6905d9e09edf7c70f95">lan_save_helpers.c</a>, <a class="el" href="lan__save__sync_8c.html#ae2c377a9138eb6905d9e09edf7c70f95">lan_save_sync.c</a></li>
+<li>MAX_SERVER_CLIENTS&#160;:&#160;<a class="el" href="group__network__packet__strutture.html#gac7e4a6221f79e37a20003c8c18e4ae62">network.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
+<li>SAVE_CHUNK_SIZE&#160;:&#160;<a class="el" href="lan__protocol_8h.html#af67105a8fc2f258530cc7d7e66768701">lan_protocol.h</a></li>
+<li>SOCKET_ERROR&#160;:&#160;<a class="el" href="socket__compat_8h.html#a633b0396ff93d336a088412a190a5072">socket_compat.h</a></li>
+<li>STORICO_SYNC_COUNT&#160;:&#160;<a class="el" href="lan__protocol_8h.html#a9805d8d568aa10ad776d8b121a8367e4">lan_protocol.h</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_t" name="index_t"></a>- t -</h3><ul>
+<li>TEST&#160;:&#160;<a class="el" href="test__adt_8c.html#a28541d132dc6fcf5cad12b319f02e519">test_adt.c</a></li>
+</ul>
+
+
+<h3 class="doxsection"><a id="index_w" name="index_w"></a>- w -</h3><ul>
+<li>WSACleanup&#160;:&#160;<a class="el" href="socket__compat_8h.html#a1bd38876e67a93ddcc85203cd536e386">socket_compat.h</a></li>
+<li>WSAEADDRINUSE&#160;:&#160;<a class="el" href="socket__compat_8h.html#ae57d56be40e06a6148c41bb9c1f66eb6">socket_compat.h</a></li>
+<li>WSAEADDRNOTAVAIL&#160;:&#160;<a class="el" href="socket__compat_8h.html#a0664bb62661e5a0d7017743d1c8899b0">socket_compat.h</a></li>
+<li>WSAEAFNOSUPPORT&#160;:&#160;<a class="el" href="socket__compat_8h.html#accab904eab969ba460482f7b216d8e4a">socket_compat.h</a></li>
+<li>WSAEALREADY&#160;:&#160;<a class="el" href="socket__compat_8h.html#a10fefe81d89fa6e5e5d9a2aca151fe70">socket_compat.h</a></li>
+<li>WSAECONNABORTED&#160;:&#160;<a class="el" href="socket__compat_8h.html#a58983a46554177bc15e6dd1f07b5bbcd">socket_compat.h</a></li>
+<li>WSAECONNRESET&#160;:&#160;<a class="el" href="socket__compat_8h.html#a990acc876290fc28437b4cce88c897a8">socket_compat.h</a></li>
+<li>WSAEDESTADDRREQ&#160;:&#160;<a class="el" href="socket__compat_8h.html#aa32637595795cf89e8bc672eab87d71c">socket_compat.h</a></li>
+<li>WSAEINPROGRESS&#160;:&#160;<a class="el" href="socket__compat_8h.html#ada8711ffab59910a2732cfa4b7c24e29">socket_compat.h</a></li>
+<li>WSAEISCONN&#160;:&#160;<a class="el" href="socket__compat_8h.html#a02d38f38d44ac5fde8b172aae530e907">socket_compat.h</a></li>
+<li>WSAELOOP&#160;:&#160;<a class="el" href="socket__compat_8h.html#aeae42c03262b07ea40695aa2fceab786">socket_compat.h</a></li>
+<li>WSAEMSGSIZE&#160;:&#160;<a class="el" href="socket__compat_8h.html#a7ce1c171e08d68442124bf6189f8aec5">socket_compat.h</a></li>
+<li>WSAENAMETOOLONG&#160;:&#160;<a class="el" href="socket__compat_8h.html#ad69a69a4bc69ef32a0a07780b44c5124">socket_compat.h</a></li>
+<li>WSAENETDOWN&#160;:&#160;<a class="el" href="socket__compat_8h.html#a5b8ddcc1be12ea54b5551fb5ba30fc9b">socket_compat.h</a></li>
+<li>WSAENETRESET&#160;:&#160;<a class="el" href="socket__compat_8h.html#adc97e19de9d3aaedbdbd8d52b97690c6">socket_compat.h</a></li>
+<li>WSAENETUNREACH&#160;:&#160;<a class="el" href="socket__compat_8h.html#abd497002cfec955f53c60de6fee75912">socket_compat.h</a></li>
+<li>WSAENOBUFS&#160;:&#160;<a class="el" href="socket__compat_8h.html#a693b53dff1d56541049ee9c3ac0b7639">socket_compat.h</a></li>
+<li>WSAENOPROTOOPT&#160;:&#160;<a class="el" href="socket__compat_8h.html#abc18e3bf8aacd57e9800ef948e6eaf2d">socket_compat.h</a></li>
+<li>WSAENOTCONN&#160;:&#160;<a class="el" href="socket__compat_8h.html#ad4f4949f636b6a79e3b98467afbc2b16">socket_compat.h</a></li>
+<li>WSAENOTEMPTY&#160;:&#160;<a class="el" href="socket__compat_8h.html#adade5f32a712a03d5ec72bebb62bbeb1">socket_compat.h</a></li>
+<li>WSAENOTSOCK&#160;:&#160;<a class="el" href="socket__compat_8h.html#a56af87338d51ad86415f2e23cae43376">socket_compat.h</a></li>
+<li>WSAEOPNOTSUPP&#160;:&#160;<a class="el" href="socket__compat_8h.html#a08d701b20755a84a441236b3d034409c">socket_compat.h</a></li>
+<li>WSAEPFNOSUPPORT&#160;:&#160;<a class="el" href="socket__compat_8h.html#aaee0e2f91e47cb7538c53fa5751480ad">socket_compat.h</a></li>
+<li>WSAEPROTONOSUPPORT&#160;:&#160;<a class="el" href="socket__compat_8h.html#a714a854c3eff59bb837e20e22690c1f9">socket_compat.h</a></li>
+<li>WSAEPROTOTYPE&#160;:&#160;<a class="el" href="socket__compat_8h.html#a9f41f53a0c0cc2876d8e5c08a5983d0f">socket_compat.h</a></li>
+<li>WSAESHUTDOWN&#160;:&#160;<a class="el" href="socket__compat_8h.html#abb35d5d45f770d42720be16dd57d8cd4">socket_compat.h</a></li>
+<li>WSAESOCKTNOSUPPORT&#160;:&#160;<a class="el" href="socket__compat_8h.html#acae672fff50e092f8248baca30920e37">socket_compat.h</a></li>
+<li>WSAETIMEDOUT&#160;:&#160;<a class="el" href="socket__compat_8h.html#a6fd2c6cf96844312d7eddfd1f95b3625">socket_compat.h</a></li>
+<li>WSAETOOMANYREFS&#160;:&#160;<a class="el" href="socket__compat_8h.html#ae36c2e2a3211cb7fc62ac8d72033c628">socket_compat.h</a></li>
+<li>WSAEWOULDBLOCK&#160;:&#160;<a class="el" href="socket__compat_8h.html#a4ba23242bee4784b72a0a170e2f975a0">socket_compat.h</a></li>
+<li>WSAGetLastError&#160;:&#160;<a class="el" href="socket__compat_8h.html#a6d24fe3ab2906c21c373505ca244f90b">socket_compat.h</a></li>
+<li>WSAHOST_NOT_FOUND&#160;:&#160;<a class="el" href="socket__compat_8h.html#a603c6033d4f3969e96c6ad580502fdb1">socket_compat.h</a></li>
+<li>WSANO_RECOVERY&#160;:&#160;<a class="el" href="socket__compat_8h.html#afe4fd360a2fe7cdf0c042c0dffcfc802">socket_compat.h</a></li>
+<li>WSANOTINITIALISED&#160;:&#160;<a class="el" href="socket__compat_8h.html#a25b517a4390903e6fa0f945e80a3394c">socket_compat.h</a></li>
+<li>WSAStartup&#160;:&#160;<a class="el" href="socket__compat_8h.html#aae02aeaae446b2c945835677193c1a10">socket_compat.h</a></li>
+<li>WSATRY_AGAIN&#160;:&#160;<a class="el" href="socket__compat_8h.html#a599d174763197c716eb6ec996b7d282a">socket_compat.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -112,7 +227,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('globals_defs.h
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>
 </body>
