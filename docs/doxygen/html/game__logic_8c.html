@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UNO - Gioco di Carte: Riferimenti per il file game_logic.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file game/game_logic.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -127,14 +127,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('game__logic_8c
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../lib/game_logic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="auth_8h_source.html">../lib/auth.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="list_8h_source.html">../lib/list.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../lib/data_structures.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="stack_8h_source.html">../lib/data_structures/stack.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="queue_8h_source.html">../lib/data_structures/queue.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="network_8h_source.html">../lib/socket/network/network.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../lib/game/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../lib/auth/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">../../lib/data_structures/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stack_8h_source.html">../../lib/data_structures/stack.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="queue_8h_source.html">../../lib/data_structures/queue.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="network_8h_source.html">../../lib/socket/network/network.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
@@ -144,14 +144,32 @@ Funzioni</h2></td></tr>
 <tr class="memdesc:a588fc681a6842fa5688ec1331484fe1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applica l'effetto di una carta giocata allo stato di gioco.  <br /></td></tr>
 <tr class="memitem:ab202f15176056f42ac78bd55f0ef400e" id="r_ab202f15176056f42ac78bd55f0ef400e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab202f15176056f42ac78bd55f0ef400e">MostraNotifica</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco, const char *msg)</td></tr>
 <tr class="memdesc:ab202f15176056f42ac78bd55f0ef400e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra una notifica temporanea a schermo.  <br /></td></tr>
+<tr class="memitem:ga5b80840cad8c556675934f9c1a262ec6" id="r_ga5b80840cad8c556675934f9c1a262ec6"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga5b80840cad8c556675934f9c1a262ec6">GameLogic_SincronizzaCodaTurni</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:ga5b80840cad8c556675934f9c1a262ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Ri)costruisce la coda dei turni ADT a partire dall'array dei giocatori.  <br /></td></tr>
+<tr class="memitem:gac46cd3c30887a669638d4cbad9641b71" id="r_gac46cd3c30887a669638d4cbad9641b71"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#gac46cd3c30887a669638d4cbad9641b71">GameLogic_AvanzamentoTurno</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco, int passi)</td></tr>
+<tr class="memdesc:gac46cd3c30887a669638d4cbad9641b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avanza il turno di <span class="tt">passi</span> posizioni usando l'ADT <a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4" title="Coda dei turni (tipo opaco: rappresentazione interna nascosta).">CodaTurni</a>.  <br /></td></tr>
+<tr class="memitem:ga120972c4e7ab6a70408802e175d07318" id="r_ga120972c4e7ab6a70408802e175d07318"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga120972c4e7ab6a70408802e175d07318">GameLogic_PreparaManoSalvataggio</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ga120972c4e7ab6a70408802e175d07318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia la mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) di un giocatore nel backup flat.  <br /></td></tr>
+<tr class="memitem:ga363d01ae034c9f3f2440ca7fff156702" id="r_ga363d01ae034c9f3f2440ca7fff156702"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga363d01ae034c9f3f2440ca7fff156702">GameLogic_RicostruisciMano</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ga363d01ae034c9f3f2440ca7fff156702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricostruisce la mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) di un giocatore dal backup flat.  <br /></td></tr>
+<tr class="memitem:gaebb5130eb09addd69dc196e322d1ded5" id="r_gaebb5130eb09addd69dc196e322d1ded5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#gaebb5130eb09addd69dc196e322d1ded5">GameLogic_MettiPrimaInFondo</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:gaebb5130eb09addd69dc196e322d1ded5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sposta la prima carta della mano in fondo (ordine visivo dopo una pescata).  <br /></td></tr>
+<tr class="memitem:ga9b7a9eac1c64712f4e3c777f53bad319" id="r_ga9b7a9eac1c64712f4e3c777f53bad319"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga9b7a9eac1c64712f4e3c777f53bad319">GameLogic_ImpostaCarta</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice, <a class="el" href="structCarta.html">Carta</a> c)</td></tr>
+<tr class="memdesc:ga9b7a9eac1c64712f4e3c777f53bad319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sostituisce per valore la carta all'indice nella mano del giocatore.  <br /></td></tr>
+<tr class="memitem:ga85cd3bb8c86fca5fbc8f585cc0dcb909" id="r_ga85cd3bb8c86fca5fbc8f585cc0dcb909"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga85cd3bb8c86fca5fbc8f585cc0dcb909">GameLogic_CopiaMano</a> (const <a class="el" href="structGiocatore.html">Giocatore</a> *g, <a class="el" href="structCarta.html">Carta</a> *out, int max)</td></tr>
+<tr class="memdesc:ga85cd3bb8c86fca5fbc8f585cc0dcb909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia le carte della mano di un giocatore in un array esterno.  <br /></td></tr>
+<tr class="memitem:ga4003b82cd350fe5560b89691d60764b9" id="r_ga4003b82cd350fe5560b89691d60764b9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga4003b82cd350fe5560b89691d60764b9">GameLogic_DistruggiMano</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ga4003b82cd350fe5560b89691d60764b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distrugge la mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) di un giocatore.  <br /></td></tr>
+<tr class="memitem:ga650da61eb399d8d1f9a56cf13a0a498b" id="r_ga650da61eb399d8d1f9a56cf13a0a498b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga650da61eb399d8d1f9a56cf13a0a498b">GameLogic_GetLunghezzaMano</a> (const <a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ga650da61eb399d8d1f9a56cf13a0a498b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di carte della mano usando l'API ADT.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variabili</h2></td></tr>
-<tr class="memitem:afefe37ecc9aba9febda10fedc4dfa743" id="r_afefe37ecc9aba9febda10fedc4dfa743"><td class="memItemLeft"><a class="el" href="structPila.html">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="#afefe37ecc9aba9febda10fedc4dfa743">mazzo_pila</a> = NULL</td></tr>
-<tr class="memdesc:afefe37ecc9aba9febda10fedc4dfa743"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale del mazzo di pesca.  <br /></td></tr>
-<tr class="memitem:ae43a4528acce4bced75b0d843415956f" id="r_ae43a4528acce4bced75b0d843415956f"><td class="memItemLeft"><a class="el" href="structPila.html">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ae43a4528acce4bced75b0d843415956f">scarti_pila</a> = NULL</td></tr>
-<tr class="memdesc:ae43a4528acce4bced75b0d843415956f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale degli scarti.  <br /></td></tr>
-<tr class="memitem:ad1902a2e7f88106585a3606741e4ba34" id="r_ad1902a2e7f88106585a3606741e4ba34"><td class="memItemLeft"><a class="el" href="structCodaTurni.html">CodaTurni</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad1902a2e7f88106585a3606741e4ba34">coda_turni</a> = NULL</td></tr>
+<tr class="memitem:afefe37ecc9aba9febda10fedc4dfa743" id="r_afefe37ecc9aba9febda10fedc4dfa743"><td class="memItemLeft"><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="#afefe37ecc9aba9febda10fedc4dfa743">mazzo_pila</a> = NULL</td></tr>
+<tr class="memdesc:afefe37ecc9aba9febda10fedc4dfa743"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a> globale del mazzo di pesca.  <br /></td></tr>
+<tr class="memitem:ae43a4528acce4bced75b0d843415956f" id="r_ae43a4528acce4bced75b0d843415956f"><td class="memItemLeft"><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ae43a4528acce4bced75b0d843415956f">scarti_pila</a> = NULL</td></tr>
+<tr class="memdesc:ae43a4528acce4bced75b0d843415956f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a> globale degli scarti.  <br /></td></tr>
+<tr class="memitem:ad1902a2e7f88106585a3606741e4ba34" id="r_ad1902a2e7f88106585a3606741e4ba34"><td class="memItemLeft"><a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4">CodaTurni</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ad1902a2e7f88106585a3606741e4ba34">coda_turni</a> = NULL</td></tr>
 <tr class="memdesc:ad1902a2e7f88106585a3606741e4ba34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coda globale dei turni.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
@@ -321,7 +339,7 @@ Variabili</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structCodaTurni.html">CodaTurni</a>* coda_turni = NULL</td>
+          <td class="memname"><a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4">CodaTurni</a>* coda_turni = NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -337,14 +355,14 @@ Variabili</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structPila.html">Pila</a>* mazzo_pila = NULL</td>
+          <td class="memname"><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a>* mazzo_pila = NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale del mazzo di pesca. </p>
+<p><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a> globale del mazzo di pesca. </p>
 <p>ADT globali del gioco: pila mazzo pesca, pila scarti, coda turni.</p>
-<p><a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale del mazzo di pesca. </p>
+<p><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a> globale del mazzo di pesca. </p>
 
 </div>
 </div>
@@ -355,12 +373,12 @@ Variabili</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structPila.html">Pila</a>* scarti_pila = NULL</td>
+          <td class="memname"><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a>* scarti_pila = NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> globale degli scarti. </p>
+<p><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a> globale degli scarti. </p>
 
 </div>
 </div>
@@ -377,7 +395,7 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="game__logic_8c.html">game_logic.c</a></li>
+    <li class="navelem"><a href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li><li class="navelem"><a href="game__logic_8c.html">game_logic.c</a></li>
     <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

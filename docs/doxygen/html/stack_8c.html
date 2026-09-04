@@ -120,34 +120,35 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('stack_8c.html'
 </div><!--header-->
 <div class="contents">
 
-<p>Implementazione <a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> (Stack LIFO) per mazzo di pesca e scarti.  
+<p>Implementazione <a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a> (Stack LIFO) per mazzo di pesca e scarti.  
 <a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures/data_structures.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="stack_8h_source.html">../../lib/data_structures/stack.h</a>&quot;</code><br />
+<code>#include &quot;../../lib/data_structures/private/stack_private.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr class="memitem:gae2580d2cd99d4bbccf2d97f0e7505986" id="r_gae2580d2cd99d4bbccf2d97f0e7505986"><td class="memItemLeft"><a class="el" href="structPila.html">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#gae2580d2cd99d4bbccf2d97f0e7505986">Pila_Crea</a> (void)</td></tr>
+<tr class="memitem:gae2580d2cd99d4bbccf2d97f0e7505986" id="r_gae2580d2cd99d4bbccf2d97f0e7505986"><td class="memItemLeft"><a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#gae2580d2cd99d4bbccf2d97f0e7505986">Pila_Crea</a> (void)</td></tr>
 <tr class="memdesc:gae2580d2cd99d4bbccf2d97f0e7505986"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una pila vuota.  <br /></td></tr>
-<tr class="memitem:ga263f40cb0178a91e84a55530b759de12" id="r_ga263f40cb0178a91e84a55530b759de12"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga263f40cb0178a91e84a55530b759de12">Pila_Distruggi</a> (<a class="el" href="structPila.html">Pila</a> *p)</td></tr>
+<tr class="memitem:ga263f40cb0178a91e84a55530b759de12" id="r_ga263f40cb0178a91e84a55530b759de12"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga263f40cb0178a91e84a55530b759de12">Pila_Distruggi</a> (<a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *p)</td></tr>
 <tr class="memdesc:ga263f40cb0178a91e84a55530b759de12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distrugge la pila e libera la memoria.  <br /></td></tr>
-<tr class="memitem:gab82fab8722fd6967c4eb8df559bd54a0" id="r_gab82fab8722fd6967c4eb8df559bd54a0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#gab82fab8722fd6967c4eb8df559bd54a0">Pila_Push</a> (<a class="el" href="structPila.html">Pila</a> *p, <a class="el" href="structCarta.html">Carta</a> c)</td></tr>
+<tr class="memitem:gab82fab8722fd6967c4eb8df559bd54a0" id="r_gab82fab8722fd6967c4eb8df559bd54a0"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#gab82fab8722fd6967c4eb8df559bd54a0">Pila_Push</a> (<a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *p, <a class="el" href="structCarta.html">Carta</a> c)</td></tr>
 <tr class="memdesc:gab82fab8722fd6967c4eb8df559bd54a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce una carta in cima alla pila.  <br /></td></tr>
-<tr class="memitem:ga5bdd368203194d752ff33dbb1cac1c63" id="r_ga5bdd368203194d752ff33dbb1cac1c63"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga5bdd368203194d752ff33dbb1cac1c63">Pila_Pop</a> (<a class="el" href="structPila.html">Pila</a> *p, <a class="el" href="structCarta.html">Carta</a> *out)</td></tr>
+<tr class="memitem:ga5bdd368203194d752ff33dbb1cac1c63" id="r_ga5bdd368203194d752ff33dbb1cac1c63"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga5bdd368203194d752ff33dbb1cac1c63">Pila_Pop</a> (<a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *p, <a class="el" href="structCarta.html">Carta</a> *out)</td></tr>
 <tr class="memdesc:ga5bdd368203194d752ff33dbb1cac1c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove la carta in cima.  <br /></td></tr>
-<tr class="memitem:gac59443252a5933aafadbe3a44baaac7b" id="r_gac59443252a5933aafadbe3a44baaac7b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#gac59443252a5933aafadbe3a44baaac7b">Pila_Top</a> (const <a class="el" href="structPila.html">Pila</a> *p, <a class="el" href="structCarta.html">Carta</a> *out)</td></tr>
+<tr class="memitem:gac59443252a5933aafadbe3a44baaac7b" id="r_gac59443252a5933aafadbe3a44baaac7b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#gac59443252a5933aafadbe3a44baaac7b">Pila_Top</a> (const <a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *p, <a class="el" href="structCarta.html">Carta</a> *out)</td></tr>
 <tr class="memdesc:gac59443252a5933aafadbe3a44baaac7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce la carta in cima (senza rimuovere).  <br /></td></tr>
-<tr class="memitem:ga70ddd166cfe7b417c89adcd326423cf7" id="r_ga70ddd166cfe7b417c89adcd326423cf7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga70ddd166cfe7b417c89adcd326423cf7">Pila_Vuota</a> (const <a class="el" href="structPila.html">Pila</a> *p)</td></tr>
+<tr class="memitem:ga70ddd166cfe7b417c89adcd326423cf7" id="r_ga70ddd166cfe7b417c89adcd326423cf7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga70ddd166cfe7b417c89adcd326423cf7">Pila_Vuota</a> (const <a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *p)</td></tr>
 <tr class="memdesc:ga70ddd166cfe7b417c89adcd326423cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se la pila e' vuota.  <br /></td></tr>
-<tr class="memitem:ga10a5907e144119205466751dc42045b3" id="r_ga10a5907e144119205466751dc42045b3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga10a5907e144119205466751dc42045b3">Pila_Dimensione</a> (const <a class="el" href="structPila.html">Pila</a> *p)</td></tr>
+<tr class="memitem:ga10a5907e144119205466751dc42045b3" id="r_ga10a5907e144119205466751dc42045b3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga10a5907e144119205466751dc42045b3">Pila_Dimensione</a> (const <a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *p)</td></tr>
 <tr class="memdesc:ga10a5907e144119205466751dc42045b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce la dimensione della pila.  <br /></td></tr>
-<tr class="memitem:ga0e02cb5e94d45aafbf07b62fcea1061f" id="r_ga0e02cb5e94d45aafbf07b62fcea1061f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga0e02cb5e94d45aafbf07b62fcea1061f">Pila_Svuota</a> (<a class="el" href="structPila.html">Pila</a> *p)</td></tr>
+<tr class="memitem:ga0e02cb5e94d45aafbf07b62fcea1061f" id="r_ga0e02cb5e94d45aafbf07b62fcea1061f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__stack.html#ga0e02cb5e94d45aafbf07b62fcea1061f">Pila_Svuota</a> (<a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6">Pila</a> *p)</td></tr>
 <tr class="memdesc:ga0e02cb5e94d45aafbf07b62fcea1061f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Svuota la pila (libera nodi, mantiene struttura).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Implementazione <a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> (Stack LIFO) per mazzo di pesca e scarti. </p>
-<p>ADT: <a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a> LIFO per mazzo di pesca e pila scarti. Operazioni: crea, push, pop, top, svuota, distruggi. </p>
+<div class="textblock"><p>Implementazione <a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a> (Stack LIFO) per mazzo di pesca e scarti. </p>
+<p>ADT: <a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a> LIFO per mazzo di pesca e pila scarti. Operazioni: crea, push, pop, top, svuota, distruggi. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

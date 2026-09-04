@@ -23,8 +23,8 @@
 #include "../../../lib/socket/lan/lan_sync.h"
 #include "../../../lib/socket/utils/network_utils.h"
 #include "../../../lib/socket/server/server_manager.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/auth.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/auth/auth.h"
 #include "../../../lib/screens/game/end_screen.h"
 #include "raylib.h"
 
@@ -300,6 +300,7 @@ int ConnettiTramiteCodiceStanza(const char* codice, int portaBase) {
  * @param num_players Numero totale giocatori (dopo rimozione).
  */
 void ShiftNetworkSockets(int removed_index, int num_players) {
+    (void)num_players;  /* il numero massimo e' fissato da MAX_SERVER_CLIENTS */
     if (currentRole != NET_HOST) return;
     // Numero massimo di iterazioni: sposta tutti gli elementi DOPO removed_index
     // di una posizione indietro, usando MAX_SERVER_CLIENTS per sicurezza

@@ -9,7 +9,7 @@
 #define NETWORK_SEND_H
 
 #include "network.h"
-#include "../../game_state.h"
+#include "../../game/game_state.h"
 
 /**
  * @brief Invia pacchetto di inizio partita a tutti i client.

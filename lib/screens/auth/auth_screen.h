@@ -8,7 +8,7 @@
 #ifndef AUTH_SCREEN_H
 #define AUTH_SCREEN_H
 
-#include "../../data_structures.h"
+#include "../../data_structures/data_structures.h"
 #include "auth_shared.h"
 #include "auth_update.h"
 #include "auth_draw.h"

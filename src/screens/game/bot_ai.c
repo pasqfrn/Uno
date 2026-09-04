@@ -10,8 +10,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../../../lib/screens/game/bot_ai.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/list.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/data_structures/list.h"
 
 // ============================================================
 //  ALBERO DECISIONALE PER IA BOT - Implementazione

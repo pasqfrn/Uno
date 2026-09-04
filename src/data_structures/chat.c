@@ -10,25 +10,39 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "../../lib/data_structures.h"
+#include "../../lib/data_structures/data_structures.h"
 #include "../../lib/data_structures/chat.h"
+#include "../../lib/data_structures/private/chat_private.h"
 
 /* ============================================================
  *  IMPLEMENTAZIONE ADT CHAT
  * ============================================================ */
 
 /**
- * @brief Crea uno storico chat vuoto.
+ * @brief Crea uno storico chat vuoto (allocazione dinamica).
  * @ingroup chat
- * @pre c != NULL.
- * @post count=0, head=0, buffer azzerato.
- * @param c Puntatore a ChatStorico.
+ * @post Storico allocato e inizializzato (count=0, head=0), o NULL se out-of-memory.
+ * @return Puntatore a ChatStorico, o NULL.
  */
-void Chat_Crea(ChatStorico* c) {
-    if (!c) return;
+ChatStorico* Chat_Crea(void) {
+    ChatStorico* c = (ChatStorico*)malloc(sizeof(ChatStorico));
+    if (!c) return NULL;
     c->count = 0;
     c->head  = 0;
     memset(c->buffer, 0, sizeof(c->buffer));
+    return c;
+}
+
+/**
+ * @brief Distrugge uno storico chat liberandone la memoria.
+ * @ingroup chat
+ * @pre c != NULL.
+ * @post Memoria dello storico liberata.
+ * @param c Puntatore a ChatStorico.
+ */
+void Chat_Distruggi(ChatStorico* c) {
+    if (!c) return;
+    free(c);
 }
 
 /**

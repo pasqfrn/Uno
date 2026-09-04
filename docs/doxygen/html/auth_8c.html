@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UNO - Gioco di Carte: Riferimenti per il file auth.c</title>
+<title>UNO - Gioco di Carte: Riferimenti per il file auth/auth.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -125,14 +125,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('auth_8c.html',
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="auth_8h_source.html">../lib/auth.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="auth__validation_8h_source.html">../lib/auth_validation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../lib/data_structures.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="bst_8h_source.html">../lib/data_structures/bst.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../lib/game_logic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="menu_2string__utils_8h_source.html">../lib/screens/menu/string_utils.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="fs_8h_source.html">../lib/fs/fs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../lib/auth/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth__validation_8h_source.html">../../lib/auth/auth_validation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bst_8h_source.html">../../lib/data_structures/bst.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../lib/game/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="menu_2string__utils_8h_source.html">../../lib/screens/menu/string_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="fs_8h_source.html">../../lib/fs/fs.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
@@ -189,7 +189,7 @@ Variabili</h2></td></tr>
 <tr class="memitem:gab2b3b778484eb9c5f529be0c2f9c10d3" id="r_gab2b3b778484eb9c5f529be0c2f9c10d3"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__auth__impl.html#gab2b3b778484eb9c5f529be0c2f9c10d3">errore_registrazione_email</a> = 0</td></tr>
 <tr class="memitem:gab25b9978d929d16da0918ad72bed9812" id="r_gab25b9978d929d16da0918ad72bed9812"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__auth__impl.html#gab25b9978d929d16da0918ad72bed9812">errore_registrazione_username</a> = 0</td></tr>
 <tr class="memitem:ga2cf3aff3d88a04ea9b72ef90df54142c" id="r_ga2cf3aff3d88a04ea9b72ef90df54142c"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__auth__impl.html#ga2cf3aff3d88a04ea9b72ef90df54142c">campo_focusato</a> = 0</td></tr>
-<tr class="memitem:gad1120987e1738e9f3b30315606f87feb" id="r_gad1120987e1738e9f3b30315606f87feb"><td class="memItemLeft">static <a class="el" href="structNodoAlbero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__auth__impl.html#gad1120987e1738e9f3b30315606f87feb">utenti_bst</a> = NULL</td></tr>
+<tr class="memitem:gad1120987e1738e9f3b30315606f87feb" id="r_gad1120987e1738e9f3b30315606f87feb"><td class="memItemLeft">static <a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__auth__impl.html#gad1120987e1738e9f3b30315606f87feb">utenti_bst</a> = NULL</td></tr>
 <tr class="memdesc:gad1120987e1738e9f3b30315606f87feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">BST parallelo per ricerca O(log n) per email.  <br /></td></tr>
 <tr class="memitem:ga9deec7665a3a96ce86dc66a64847700c" id="r_ga9deec7665a3a96ce86dc66a64847700c"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="group__lazy__deletion__impl.html#ga9deec7665a3a96ce86dc66a64847700c">num_pending_deletions_auth</a> = 0</td></tr>
 <tr class="memdesc:ga9deec7665a3a96ce86dc66a64847700c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero di eliminazioni pendenti correnti.  <br /></td></tr>
@@ -213,7 +213,7 @@ Variabili</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="auth_8c.html">auth.c</a></li>
+    <li class="navelem"><a href="dir_ecb37285c0bc658c97bb749f37c59e79.html">auth</a></li><li class="navelem"><a href="auth_8c.html">auth.c</a></li>
     <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

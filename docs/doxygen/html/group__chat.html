@@ -120,31 +120,34 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__chat.ht
 </div><!--header-->
 <div class="contents">
 
-<p>Fornisce l'ADT <a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a> (cronologia circolare FIFO) per memorizzare e formattare i messaggi della chat di gioco.  
+<p>Fornisce l'ADT <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a> (cronologia circolare FIFO) per memorizzare e formattare i messaggi della chat di gioco.  
 <a href="#details">Continua...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-files" class="groupheader"><a id="files" name="files"></a>
 File</h2></td></tr>
 <tr class="memitem:data_5Fstructures_2Fchat_2Ec" id="r_data_5Fstructures_2Fchat_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="chat_8c.html">data_structures/chat.c</a></td></tr>
-<tr class="memdesc:chat_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementazione ADT <a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a> per la chat di gioco. <br /></td></tr>
+<tr class="memdesc:chat_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementazione ADT <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a> per la chat di gioco. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr class="memitem:ga5742cf207ce2ffec75d4b46ecdd330df" id="r_ga5742cf207ce2ffec75d4b46ecdd330df"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga5742cf207ce2ffec75d4b46ecdd330df">Chat_Crea</a> (<a class="el" href="structChatStorico.html">ChatStorico</a> *c)</td></tr>
-<tr class="memdesc:ga5742cf207ce2ffec75d4b46ecdd330df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea uno storico chat vuoto.  <br /></td></tr>
-<tr class="memitem:ga45a2d902c345306574b0fbabe549d92c" id="r_ga45a2d902c345306574b0fbabe549d92c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga45a2d902c345306574b0fbabe549d92c">Chat_Aggiungi</a> (<a class="el" href="structChatStorico.html">ChatStorico</a> *c, const char *mittente, const char *testo)</td></tr>
+<tr class="memitem:gaeb4f8f3e919aca6a567cb43fa4315554" id="r_gaeb4f8f3e919aca6a567cb43fa4315554"><td class="memItemLeft"><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *&#160;</td><td class="memItemRight"><a class="el" href="#gaeb4f8f3e919aca6a567cb43fa4315554">Chat_Crea</a> (void)</td></tr>
+<tr class="memdesc:gaeb4f8f3e919aca6a567cb43fa4315554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea uno storico chat vuoto (allocazione dinamica).  <br /></td></tr>
+<tr class="memitem:gac536bb9acf2db79bdeb44124ed00c008" id="r_gac536bb9acf2db79bdeb44124ed00c008"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gac536bb9acf2db79bdeb44124ed00c008">Chat_Distruggi</a> (<a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *c)</td></tr>
+<tr class="memdesc:gac536bb9acf2db79bdeb44124ed00c008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distrugge uno storico chat liberandone la memoria.  <br /></td></tr>
+<tr class="memitem:ga45a2d902c345306574b0fbabe549d92c" id="r_ga45a2d902c345306574b0fbabe549d92c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga45a2d902c345306574b0fbabe549d92c">Chat_Aggiungi</a> (<a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *c, const char *mittente, const char *testo)</td></tr>
 <tr class="memdesc:ga45a2d902c345306574b0fbabe549d92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un messaggio in coda (FIFO).  <br /></td></tr>
 <tr class="memitem:gac08be014c8c4eeb26931b5c64091df90" id="r_gac08be014c8c4eeb26931b5c64091df90"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gac08be014c8c4eeb26931b5c64091df90">Chat_OraCorrente</a> (char *out, size_t out_size)</td></tr>
 <tr class="memdesc:gac08be014c8c4eeb26931b5c64091df90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera timestamp "HH:MM".  <br /></td></tr>
-<tr class="memitem:gae1848e211b111491db167b98c47922d5" id="r_gae1848e211b111491db167b98c47922d5"><td class="memItemLeft">const <a class="el" href="structMessaggioChat.html">MessaggioChat</a> *&#160;</td><td class="memItemRight"><a class="el" href="#gae1848e211b111491db167b98c47922d5">Chat_Ottieni</a> (const <a class="el" href="structChatStorico.html">ChatStorico</a> *c, int i)</td></tr>
+<tr class="memitem:gae1848e211b111491db167b98c47922d5" id="r_gae1848e211b111491db167b98c47922d5"><td class="memItemLeft">const <a class="el" href="structMessaggioChat.html">MessaggioChat</a> *&#160;</td><td class="memItemRight"><a class="el" href="#gae1848e211b111491db167b98c47922d5">Chat_Ottieni</a> (const <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *c, int i)</td></tr>
 <tr class="memdesc:gae1848e211b111491db167b98c47922d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ottiene messaggio per indice (0 = piu' vecchio).  <br /></td></tr>
-<tr class="memitem:ga28daec16e4d8d5e35ed61e2410b0975c" id="r_ga28daec16e4d8d5e35ed61e2410b0975c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga28daec16e4d8d5e35ed61e2410b0975c">Chat_Svuota</a> (<a class="el" href="structChatStorico.html">ChatStorico</a> *c)</td></tr>
+<tr class="memitem:ga28daec16e4d8d5e35ed61e2410b0975c" id="r_ga28daec16e4d8d5e35ed61e2410b0975c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga28daec16e4d8d5e35ed61e2410b0975c">Chat_Svuota</a> (<a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *c)</td></tr>
 <tr class="memdesc:ga28daec16e4d8d5e35ed61e2410b0975c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Svuota la cronologia chat.  <br /></td></tr>
 <tr class="memitem:gacd2c9941c4a7d8770c1981797586e025" id="r_gacd2c9941c4a7d8770c1981797586e025"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gacd2c9941c4a7d8770c1981797586e025">Chat_FormattaRiga</a> (const <a class="el" href="structMessaggioChat.html">MessaggioChat</a> *m, char *out, size_t out_size)</td></tr>
 <tr class="memdesc:gacd2c9941c4a7d8770c1981797586e025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatta messaggio in riga "HH:MM @Mittente: testo".  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Fornisce l'ADT <a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a> (cronologia circolare FIFO) per memorizzare e formattare i messaggi della chat di gioco. </p>
+<div class="textblock"><p>Fornisce l'ADT <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a> (cronologia circolare FIFO) per memorizzare e formattare i messaggi della chat di gioco. </p>
+<p>PRINCIPIO DI INFORMATION HIDING: Il tipo <span class="tt"><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a></span> e' dichiarato come tipo OPACO: la sua rappresentazione interna e' definita esclusivamente nel modulo di implementazione (<a class="el" href="chat_8c.html" title="Implementazione ADT ChatStorico per la chat di gioco.">src/data_structures/chat.c</a>). Gli utilizzatori interagiscono solo tramite l'API pubblica di questo header.</p>
 <p>La struttura <a class="el" href="structMessaggioChat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a> è definita in <span class="tt"><a class="el" href="data__structures_8h.html" title="Header centrale del progetto UNO - Tipi di dato condivisi.">data_structures.h</a></span>. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
 <a id="ga45a2d902c345306574b0fbabe549d92c" name="ga45a2d902c345306574b0fbabe549d92c"></a>
@@ -156,7 +159,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">void Chat_Aggiungi </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structChatStorico.html">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -176,7 +179,7 @@ Funzioni</h2></td></tr>
 <dl class="section post"><dt>Postcondizione</dt><dd>Messaggio aggiunto; count aggiornato; head ruotato se pieno. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td><a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+    <tr><td class="paramname">c</td><td><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a>. </td></tr>
     <tr><td class="paramname">mittente</td><td>Mittente. </td></tr>
     <tr><td class="paramname">testo</td><td>Testo.</td></tr>
   </table>
@@ -187,7 +190,7 @@ Funzioni</h2></td></tr>
 <dl class="section post"><dt>Postcondizione</dt><dd>count aggiornato; head avanzato se pieno. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a>. </td></tr>
     <tr><td class="paramname">mittente</td><td>Username del mittente. </td></tr>
     <tr><td class="paramname">testo</td><td>Testo del messaggio. </td></tr>
   </table>
@@ -196,35 +199,48 @@ Funzioni</h2></td></tr>
 
 </div>
 </div>
-<a id="ga5742cf207ce2ffec75d4b46ecdd330df" name="ga5742cf207ce2ffec75d4b46ecdd330df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5742cf207ce2ffec75d4b46ecdd330df">&#9670;&#160;</a></span>Chat_Crea()</h2>
+<a id="gaeb4f8f3e919aca6a567cb43fa4315554" name="gaeb4f8f3e919aca6a567cb43fa4315554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeb4f8f3e919aca6a567cb43fa4315554">&#9670;&#160;</a></span>Chat_Crea()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Chat_Crea </td>
+          <td class="memname"><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> * Chat_Crea </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structChatStorico.html">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Crea uno storico chat vuoto. </p>
+<p>Crea uno storico chat vuoto (allocazione dinamica). </p>
+<dl class="section post"><dt>Postcondizione</dt><dd>Storico allocato e inizializzato (count=0, head=0), o NULL se out-of-memory. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Puntatore a <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a>, o NULL. </dd></dl>
+
+</div>
+</div>
+<a id="gac536bb9acf2db79bdeb44124ed00c008" name="gac536bb9acf2db79bdeb44124ed00c008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac536bb9acf2db79bdeb44124ed00c008">&#9670;&#160;</a></span>Chat_Distruggi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Chat_Distruggi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Distrugge uno storico chat liberandone la memoria. </p>
 <dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
-<dl class="section post"><dt>Postcondizione</dt><dd>count=0, head=0, buffer azzerato. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>Memoria dello storico liberata. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section pre"><dt>Precondizione</dt><dd>c != NULL. </dd></dl>
-<dl class="section post"><dt>Postcondizione</dt><dd>Storico inizializzato (count=0, head=0). </dd></dl>
-<dl class="params"><dt>Parametri</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a> da inizializzare. </td></tr>
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -334,7 +350,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">const <a class="el" href="structMessaggioChat.html">MessaggioChat</a> * Chat_Ottieni </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structChatStorico.html">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -350,7 +366,7 @@ Funzioni</h2></td></tr>
 <dl class="section return"><dt>Restituisce</dt><dd>Puntatore a <a class="el" href="structMessaggioChat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a>, o NULL. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td><a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+    <tr><td class="paramname">c</td><td><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a>. </td></tr>
     <tr><td class="paramname">i</td><td>Indice.</td></tr>
   </table>
   </dd>
@@ -361,7 +377,7 @@ Funzioni</h2></td></tr>
 <dl class="section return"><dt>Restituisce</dt><dd>Puntatore a <a class="el" href="structMessaggioChat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a>, o NULL se indice non valido. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a>. </td></tr>
     <tr><td class="paramname">i</td><td>Indice del messaggio (0-based). </td></tr>
   </table>
   </dd>
@@ -378,7 +394,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">void Chat_Svuota </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structChatStorico.html">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -389,7 +405,7 @@ Funzioni</h2></td></tr>
 <dl class="section post"><dt>Postcondizione</dt><dd>count=0, head=0. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td><a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>.</td></tr>
+    <tr><td class="paramname">c</td><td><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -397,7 +413,7 @@ Funzioni</h2></td></tr>
 <dl class="section post"><dt>Postcondizione</dt><dd>count=0, head=0. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
-    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="structChatStorico.html" title="Cronologia circolare (FIFO) di messaggi.">ChatStorico</a>. </td></tr>
+    <tr><td class="paramname">c</td><td>Puntatore a <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a>. </td></tr>
   </table>
   </dd>
 </dl>

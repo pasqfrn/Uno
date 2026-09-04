@@ -16,8 +16,8 @@
 #ifndef LAN_SYNC_H
 #define LAN_SYNC_H
 
-#include "../../data_structures.h"
-#include "../../auth.h"
+#include "../../data_structures/data_structures.h"
+#include "../../auth/auth.h"
 #include "lan_protocol.h"
 
 /** @brief Flag per evitare broadcast ricorsivi durante SalvaDB. */

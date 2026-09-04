@@ -8,9 +8,9 @@
 #ifndef MULTIPLAYER_LOBBY_H
 #define MULTIPLAYER_LOBBY_H
 
-#include "../../data_structures.h"
-#include "../../player.h"
-#include "../../game_state.h"
+#include "../../data_structures/data_structures.h"
+#include "../../game/player.h"
+#include "../../game/game_state.h"
 #include "../../socket/server/server_manager.h"
 #include "raylib.h"
 

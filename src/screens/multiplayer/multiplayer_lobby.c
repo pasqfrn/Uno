@@ -22,10 +22,10 @@
 #include "../../../lib/socket/network/network.h"
 #include "../../../lib/socket/network/network_send.h"
 #include "../../../lib/socket/server/server_manager.h"
-#include "../../../lib/ui.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/list.h"
-#include "../../../lib/auth.h"
+#include "../../../lib/screens/ui.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/data_structures/list.h"
+#include "../../../lib/auth/auth.h"
 #include "../../../lib/screens/menu/string_utils.h"
 
 #define LARGHEZZA 1280
@@ -140,6 +140,7 @@ static void PulisciBotSostituti(StatoGioco* gioco) {
  * @param gioco Stato di gioco.
  */
 void DisegnaWaitingRoom(GameSession* session, FaseApplicazione* fase, StatoGioco* gioco) {
+    (void)session;  /* parametro mantenuto per uniformita' API (lo stato e' in gioco) */
     if (!gioco) return;
     
     // TL-01: Controlla PRIMA se l'host ha chiuso la stanza (CloseNetwork setta NET_OFFLINE,
@@ -190,7 +191,7 @@ void DisegnaWaitingRoom(GameSession* session, FaseApplicazione* fase, StatoGioco
          * Questo evita la "partita fantasma" (mano vuota) ma permette
          * la riconnessione quando la mano e' gia' stata ricevuta. */
         if (local_player_id >= 0 && local_player_id < gioco->num_giocatori) {
-            if (gioco->giocatori[local_player_id].mano && gioco->giocatori[local_player_id].mano->lunghezza > 0) {
+            if (GameLogic_GetLunghezzaMano(&gioco->giocatori[local_player_id]) > 0) {
                 host_in_prelobby = 0;  // Reset: riconnessione diretta in partita
                 *fase = FASE_GIOCO;
                 return;

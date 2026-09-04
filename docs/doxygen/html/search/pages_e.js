@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unitari_0',['Test unitari',['../index.html#autotoc_md9',1,'']]],
-  ['uno_20il_20gioco_20di_20carte_1',['UNO - Il Gioco di Carte',['../index.html',1,'']]],
-  ['utilizzo_2',['Utilizzo',['../index.html#autotoc_md18',1,'']]]
+  ['tecnologie_0',['Tecnologie',['../index.html#autotoc_md3',1,'']]],
+  ['test_1',['Esecuzione dei test',['../index.html#autotoc_md10',1,'']]],
+  ['test_20unitari_2',['Test unitari',['../index.html#autotoc_md9',1,'']]]
 ];

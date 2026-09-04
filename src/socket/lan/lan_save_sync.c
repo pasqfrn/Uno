@@ -28,8 +28,8 @@
 
 #include "../../../lib/socket/lan/lan_sync.h"
 #include "../../../lib/socket/lan/lan_protocol.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/game_logic.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/game/game_logic.h"
 #include "../../../lib/fs/fs.h"
 
 #define MAX_RECV 10
@@ -50,43 +50,6 @@ static SaveReceiver recvs[MAX_RECV];
 static void GetSlotPath(char* buffer, size_t bufsize, int slot) {
     snprintf(buffer, bufsize, "data/games/save_user%d_slot_%d.dat",
              id_utente_corrente, slot);
-}
-
-/**
- * @brief Costruisce il path del file di salvataggio per un utente specifico
- *        con un dato ID utente (usato per ricezione salvataggi da LAN).
- * @param buffer Buffer di destinazione.
- * @param bufsize Dimensione del buffer.
- * @param uid ID dell'utente nel database.
- * @param slot Indice dello slot (1-100).
- */
-static void GetSlotPathForUser(char* buffer, size_t bufsize, int uid, int slot) {
-    snprintf(buffer, bufsize, "data/games/save_user%d_slot_%d.dat", uid, slot);
-}
-
-/**
- * @brief Costruisce il path del file di salvataggio per username
- *        (ricerca l'ID utente nel database).
- * @param buffer Buffer di destinazione.
- * @param bufsize Dimensione del buffer.
- * @param username Username del proprietario del salvataggio.
- * @param slot Indice dello slot (1-100).
- * @return 1 se trovato, 0 altrimenti.
- */
-static int GetSlotPathForUsername(char* buffer, size_t bufsize, const char* username, int slot) {
-    int uid = -1;
-    for (int i = 0; i < dbUtenti.num_utenti; i++) {
-        if (strcmp(dbUtenti.lista[i].username, username) == 0) {
-            uid = i;
-            break;
-        }
-    }
-    if (uid < 0) {
-        snprintf(buffer, bufsize, "data/games/save_user_%s_slot_%d.dat", username, slot);
-        return 0;
-    }
-    GetSlotPathForUser(buffer, bufsize, uid, slot);
-    return 1;
 }
 
 /**

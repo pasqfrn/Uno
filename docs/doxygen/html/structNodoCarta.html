@@ -120,10 +120,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structNodoCart
 </div><!--header-->
 <div class="contents">
 
-<p>Nodo per la lista doppiamente concatenata della mano del giocatore.  
+<p>Nodo della lista doppiamente concatenata (rappresentazione interna).  
  <a href="#details">Continua...</a></p>
 
-<p><code>#include &lt;<a class="el" href="data__structures_2list_8h_source.html">list.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="list__private_8h_source.html">list_private.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Campi</h2></td></tr>
@@ -132,8 +132,9 @@ Campi</h2></td></tr>
 <tr class="memitem:a79d379018c2987198cab3d3e198b6d67" id="r_a79d379018c2987198cab3d3e198b6d67"><td class="memItemLeft">struct <a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a79d379018c2987198cab3d3e198b6d67">prev</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Nodo per la lista doppiamente concatenata della mano del giocatore. </p>
-<p>Ogni nodo contiene una carta e due puntatori: uno al nodo successivo (forward link) e uno al nodo precedente (backward link). Questo permette inserimenti ed eliminazioni efficienti in qualsiasi posizione. </p>
+<div class="textblock"><p>Nodo della lista doppiamente concatenata (rappresentazione interna). </p>
+<p>Nodo della lista (tipo opaco: rappresentazione interna nascosta).</p>
+<p>Ogni nodo contiene una carta e due puntatori: uno al nodo successivo (prossimo) e uno al nodo precedente (prev). Questo permette inserimenti/eliminazioni O(1) in qualsiasi posizione. </p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentazione dei campi</h2>
 <a id="aeebf8d75d3ea1e1c167344b5c4d98e4e" name="aeebf8d75d3ea1e1c167344b5c4d98e4e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeebf8d75d3ea1e1c167344b5c4d98e4e">&#9670;&#160;</a></span>carta</h2>
@@ -178,7 +179,7 @@ Campi</h2></td></tr>
 </div>
 </div>
 <hr/>La documentazione per questa struct è stata generata a partire dal seguente file:<ul>
-<li>data_structures/<a class="el" href="data__structures_2list_8h_source.html">list.h</a></li>
+<li>data_structures/<a class="el" href="list__private_8h_source.html">list_private.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

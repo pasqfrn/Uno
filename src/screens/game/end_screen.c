@@ -39,10 +39,10 @@
 #include "raylib.h"
 
 #include "../../../lib/screens/game/end_screen.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/ui.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/list.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/screens/ui.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/data_structures/list.h"
 #include "../../../lib/socket/network/network.h"
 #include "../../../lib/socket/network/network_send.h"
 #include "../../../lib/socket/lan/lan_sync.h"
@@ -176,6 +176,7 @@ void EsportaStatisticheTxt(StatoGioco* gioco, const char* esito) {
  * @param mousePos Posizione corrente del mouse.
  */
 void DisegnaFinePartita(StatoGioco* gioco, FaseApplicazione* fase, Vector2 mousePos) {
+    (void)mousePos;  /* parametro mantenuto per uniformita' API (non usato nel rendering) */
     if (!gioco || !fase) return;
 
     DrawRectangle(0, 0, LARGHEZZA, ALTEZZA, Fade(BLACK, 0.85f));

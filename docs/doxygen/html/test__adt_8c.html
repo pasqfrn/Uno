@@ -120,27 +120,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('test__adt_8c.h
 </div><!--header-->
 <div class="contents">
 
-<p>Test unitari per le strutture dati ADT e la logica di gioco UNO.  
+<p>Test unitari per gli ADT e la logica di dominio UNO.  
 <a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
 <code>#include &quot;stubs/raylib.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../lib/data_structures.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="data__structures_2list_8h_source.html">../lib/data_structures/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../lib/data_structures/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">../lib/data_structures/list.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="stack_8h_source.html">../lib/data_structures/stack.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="queue_8h_source.html">../lib/data_structures/queue.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bst_8h_source.html">../lib/data_structures/bst.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="chat_8h_source.html">../lib/data_structures/chat.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="list_8h_source.html">../lib/list.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="player_8h_source.html">../lib/player.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="game__state_8h_source.html">../lib/game_state.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="player_8h_source.html">../lib/game/player.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__state_8h_source.html">../lib/game/game_state.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../lib/game/game_logic.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Definizioni</h2></td></tr>
-<tr class="memitem:a28541d132dc6fcf5cad12b319f02e519" id="r_a28541d132dc6fcf5cad12b319f02e519"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a28541d132dc6fcf5cad12b319f02e519">TEST</a>(nome,  expr)</td></tr>
+<tr class="memitem:a0d698157f53c290f4d30fe7288e06751" id="r_a0d698157f53c290f4d30fe7288e06751"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0d698157f53c290f4d30fe7288e06751">TEST</a>(cond)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
@@ -150,20 +149,24 @@ Funzioni</h2></td></tr>
 <tr class="memitem:acc6e7732c7d93e15bc11f8da2817186c" id="r_acc6e7732c7d93e15bc11f8da2817186c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acc6e7732c7d93e15bc11f8da2817186c">test_coda</a> (void)</td></tr>
 <tr class="memitem:a36afba827c86cbc0214a21b17bdb5d21" id="r_a36afba827c86cbc0214a21b17bdb5d21"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a36afba827c86cbc0214a21b17bdb5d21">test_bst</a> (void)</td></tr>
 <tr class="memitem:ada70adddd582c5a30ce08a477baf050b" id="r_ada70adddd582c5a30ce08a477baf050b"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ada70adddd582c5a30ce08a477baf050b">test_chat</a> (void)</td></tr>
-<tr class="memitem:ae47a593c2df2cc837a5a11ec4304823a" id="r_ae47a593c2df2cc837a5a11ec4304823a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae47a593c2df2cc837a5a11ec4304823a">test_game_logic</a> (void)</td></tr>
+<tr class="memitem:a23209ed969aba0bc304377836d53d995" id="r_a23209ed969aba0bc304377836d53d995"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a23209ed969aba0bc304377836d53d995">test_dominio_mazzo</a> (void)</td></tr>
+<tr class="memitem:af123e286527b4be3ee71b7e421acf398" id="r_af123e286527b4be3ee71b7e421acf398"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af123e286527b4be3ee71b7e421acf398">test_dominio_mano</a> (void)</td></tr>
+<tr class="memitem:a0df569dc4dc6272319cf9f16eb3354c7" id="r_a0df569dc4dc6272319cf9f16eb3354c7"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0df569dc4dc6272319cf9f16eb3354c7">test_dominio_turni</a> (void)</td></tr>
+<tr class="memitem:a2c54e713dfe0c9553ed0514e4369aaaa" id="r_a2c54e713dfe0c9553ed0514e4369aaaa"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a2c54e713dfe0c9553ed0514e4369aaaa">test_dominio_regole</a> (void)</td></tr>
 <tr class="memitem:aca096a4d6f68d76dbf34366f08c2de66" id="r_aca096a4d6f68d76dbf34366f08c2de66"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aca096a4d6f68d76dbf34366f08c2de66">test_giocatore</a> (void)</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variabili</h2></td></tr>
-<tr class="memitem:a840869b7a68653c11721fe79e3142aa8" id="r_a840869b7a68653c11721fe79e3142aa8"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a840869b7a68653c11721fe79e3142aa8">test_passati</a> = 0</td></tr>
 <tr class="memitem:a8687eac29eada80b70662897b0fa396f" id="r_a8687eac29eada80b70662897b0fa396f"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a8687eac29eada80b70662897b0fa396f">test_totali</a> = 0</td></tr>
+<tr class="memitem:a840869b7a68653c11721fe79e3142aa8" id="r_a840869b7a68653c11721fe79e3142aa8"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a840869b7a68653c11721fe79e3142aa8">test_passati</a> = 0</td></tr>
+<tr class="memitem:a108288d745ff0ba8f835f169d0e9b1c7" id="r_a108288d745ff0ba8f835f169d0e9b1c7"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a108288d745ff0ba8f835f169d0e9b1c7">esc_consumato</a> = 0</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Test unitari per le strutture dati ADT e la logica di gioco UNO. </p>
+<div class="textblock"><p>Test unitari per gli ADT e la logica di dominio UNO. </p>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
-<a id="a28541d132dc6fcf5cad12b319f02e519" name="a28541d132dc6fcf5cad12b319f02e519"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28541d132dc6fcf5cad12b319f02e519">&#9670;&#160;</a></span>TEST</h2>
+<a id="a0d698157f53c290f4d30fe7288e06751" name="a0d698157f53c290f4d30fe7288e06751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d698157f53c290f4d30fe7288e06751">&#9670;&#160;</a></span>TEST</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,26 +174,23 @@ Variabili</h2></td></tr>
         <tr>
           <td class="memname">#define TEST</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>nome</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cond</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>expr</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Valore:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> { \</div>
 <div class="line">    <a class="code hl_variable" href="#a8687eac29eada80b70662897b0fa396f">test_totali</a>++; \</div>
-<div class="line">    if (!(expr)) { \</div>
-<div class="line">        printf(<span class="stringliteral">&quot;  [FAIL] %s (riga %d)\n&quot;</span>, nome, __LINE__); \</div>
-<div class="line">    } <span class="keywordflow">else</span> { \</div>
-<div class="line">        printf(<span class="stringliteral">&quot;  [OK]   %s\n&quot;</span>, nome); \</div>
+<div class="line">    if ((cond)) { \</div>
 <div class="line">        <a class="code hl_variable" href="#a840869b7a68653c11721fe79e3142aa8">test_passati</a>++; \</div>
+<div class="line">        printf(<span class="stringliteral">&quot;  [OK]   %s\n&quot;</span>, #cond); \</div>
+<div class="line">    } <span class="keywordflow">else</span> { \</div>
+<div class="line">        printf(<span class="stringliteral">&quot;  [FAIL] %s (riga %d)\n&quot;</span>, #cond, __LINE__); \</div>
+<div class="line">        assert(cond); \</div>
 <div class="line">    } \</div>
-<div class="line">} <span class="keywordflow">while</span>(0)</div>
-<div class="ttc" id="atest__adt_8c_html_a840869b7a68653c11721fe79e3142aa8"><div class="ttname"><a href="#a840869b7a68653c11721fe79e3142aa8">test_passati</a></div><div class="ttdeci">static int test_passati</div><div class="ttdef"><b>Definition</b> test_adt.c:41</div></div>
-<div class="ttc" id="atest__adt_8c_html_a8687eac29eada80b70662897b0fa396f"><div class="ttname"><a href="#a8687eac29eada80b70662897b0fa396f">test_totali</a></div><div class="ttdeci">static int test_totali</div><div class="ttdef"><b>Definition</b> test_adt.c:42</div></div>
+<div class="line">} <span class="keywordflow">while</span> (0)</div>
+<div class="ttc" id="atest__adt_8c_html_a840869b7a68653c11721fe79e3142aa8"><div class="ttname"><a href="#a840869b7a68653c11721fe79e3142aa8">test_passati</a></div><div class="ttdeci">static int test_passati</div><div class="ttdef"><b>Definition</b> test_adt.c:52</div></div>
+<div class="ttc" id="atest__adt_8c_html_a8687eac29eada80b70662897b0fa396f"><div class="ttname"><a href="#a8687eac29eada80b70662897b0fa396f">test_totali</a></div><div class="ttdeci">static int test_totali</div><div class="ttdef"><b>Definition</b> test_adt.c:51</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -316,8 +316,8 @@ Variabili</h2></td></tr>
 
 </div>
 </div>
-<a id="ae47a593c2df2cc837a5a11ec4304823a" name="ae47a593c2df2cc837a5a11ec4304823a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae47a593c2df2cc837a5a11ec4304823a">&#9670;&#160;</a></span>test_game_logic()</h2>
+<a id="af123e286527b4be3ee71b7e421acf398" name="af123e286527b4be3ee71b7e421acf398"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af123e286527b4be3ee71b7e421acf398">&#9670;&#160;</a></span>test_dominio_mano()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,7 +326,82 @@ Variabili</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void test_game_logic </td>
+          <td class="memname">void test_dominio_mano </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23209ed969aba0bc304377836d53d995" name="a23209ed969aba0bc304377836d53d995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23209ed969aba0bc304377836d53d995">&#9670;&#160;</a></span>test_dominio_mazzo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_dominio_mazzo </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c54e713dfe0c9553ed0514e4369aaaa" name="a2c54e713dfe0c9553ed0514e4369aaaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c54e713dfe0c9553ed0514e4369aaaa">&#9670;&#160;</a></span>test_dominio_regole()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_dominio_regole </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0df569dc4dc6272319cf9f16eb3354c7" name="a0df569dc4dc6272319cf9f16eb3354c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0df569dc4dc6272319cf9f16eb3354c7">&#9670;&#160;</a></span>test_dominio_turni()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void test_dominio_turni </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -417,6 +492,20 @@ Variabili</h2></td></tr>
 </div>
 </div>
 <a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentazione delle variabili</h2>
+<a id="a108288d745ff0ba8f835f169d0e9b1c7" name="a108288d745ff0ba8f835f169d0e9b1c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108288d745ff0ba8f835f169d0e9b1c7">&#9670;&#160;</a></span>esc_consumato</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int esc_consumato = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a840869b7a68653c11721fe79e3142aa8" name="a840869b7a68653c11721fe79e3142aa8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a840869b7a68653c11721fe79e3142aa8">&#9670;&#160;</a></span>test_passati</h2>
 

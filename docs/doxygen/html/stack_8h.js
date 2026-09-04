@@ -1,5 +1,7 @@
 var stack_8h =
 [
+    [ "NodoPila", "group__stack__nodi.html#ga8330fe274cc05faa43085fe3a259d046", null ],
+    [ "Pila", "group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6", null ],
     [ "Pila_Crea", "group__stack__api.html#gae2580d2cd99d4bbccf2d97f0e7505986", null ],
     [ "Pila_Dimensione", "group__stack__api.html#ga10a5907e144119205466751dc42045b3", null ],
     [ "Pila_Distruggi", "group__stack__api.html#ga263f40cb0178a91e84a55530b759de12", null ],

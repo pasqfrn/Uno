@@ -8,7 +8,7 @@
 #define STATE_SYNC_H
 
 #include "network.h"
-#include "../../game_logic.h"
+#include "../../game/game_logic.h"
 
 /**
  * @brief Sincronizza lo stato di gioco locale con quello remoto.

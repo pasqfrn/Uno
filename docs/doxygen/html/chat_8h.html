@@ -122,31 +122,33 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('chat_8h.html',
 
 <p>ADT per la gestione della cronologia chat multiplayer.  
 <a href="#details">Continua...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="data__structures_8h_source.html">../data_structures.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="data__structures_8h_source.html">data_structures.h</a>&quot;</code><br />
 </div>
 <p><a href="chat_8h_source.html">Vai al codice sorgente di questo file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Strutture dati</h2></td></tr>
-<tr class="memitem:ChatStorico" id="r_ChatStorico"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structChatStorico.html">ChatStorico</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cronologia circolare (FIFO) di messaggi.  <a href="structChatStorico.html#details">Continua...</a><br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Definizioni</h2></td></tr>
 <tr class="memitem:ac211a3e2c6d5bc08bd548806b2f525e9" id="r_ac211a3e2c6d5bc08bd548806b2f525e9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ac211a3e2c6d5bc08bd548806b2f525e9">CHAT_STORICO_MAX</a>&#160;&#160;&#160;15</td></tr>
 <tr class="memdesc:ac211a3e2c6d5bc08bd548806b2f525e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numero massimo di messaggi nella cronologia chat.  <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Ridefinizioni di tipo (typedef)</h2></td></tr>
+<tr class="memitem:ga03bd3dd656357d11e91e548bc258d4ed" id="r_ga03bd3dd656357d11e91e548bc258d4ed"><td class="memItemLeft">typedef struct <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a>&#160;</td><td class="memItemRight"><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a></td></tr>
+<tr class="memdesc:ga03bd3dd656357d11e91e548bc258d4ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cronologia circolare (FIFO) di messaggi (tipo opaco).  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr class="memitem:ga5742cf207ce2ffec75d4b46ecdd330df" id="r_ga5742cf207ce2ffec75d4b46ecdd330df"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#ga5742cf207ce2ffec75d4b46ecdd330df">Chat_Crea</a> (<a class="el" href="structChatStorico.html">ChatStorico</a> *c)</td></tr>
-<tr class="memdesc:ga5742cf207ce2ffec75d4b46ecdd330df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea uno storico chat vuoto.  <br /></td></tr>
-<tr class="memitem:ga45a2d902c345306574b0fbabe549d92c" id="r_ga45a2d902c345306574b0fbabe549d92c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#ga45a2d902c345306574b0fbabe549d92c">Chat_Aggiungi</a> (<a class="el" href="structChatStorico.html">ChatStorico</a> *c, const char *mittente, const char *testo)</td></tr>
+<tr class="memitem:gaeb4f8f3e919aca6a567cb43fa4315554" id="r_gaeb4f8f3e919aca6a567cb43fa4315554"><td class="memItemLeft"><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#gaeb4f8f3e919aca6a567cb43fa4315554">Chat_Crea</a> (void)</td></tr>
+<tr class="memdesc:gaeb4f8f3e919aca6a567cb43fa4315554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea uno storico chat vuoto (allocazione dinamica).  <br /></td></tr>
+<tr class="memitem:gac536bb9acf2db79bdeb44124ed00c008" id="r_gac536bb9acf2db79bdeb44124ed00c008"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#gac536bb9acf2db79bdeb44124ed00c008">Chat_Distruggi</a> (<a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *c)</td></tr>
+<tr class="memdesc:gac536bb9acf2db79bdeb44124ed00c008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distrugge uno storico chat liberandone la memoria.  <br /></td></tr>
+<tr class="memitem:ga45a2d902c345306574b0fbabe549d92c" id="r_ga45a2d902c345306574b0fbabe549d92c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#ga45a2d902c345306574b0fbabe549d92c">Chat_Aggiungi</a> (<a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *c, const char *mittente, const char *testo)</td></tr>
 <tr class="memdesc:ga45a2d902c345306574b0fbabe549d92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un messaggio in coda (FIFO).  <br /></td></tr>
 <tr class="memitem:gac08be014c8c4eeb26931b5c64091df90" id="r_gac08be014c8c4eeb26931b5c64091df90"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#gac08be014c8c4eeb26931b5c64091df90">Chat_OraCorrente</a> (char *out, size_t out_size)</td></tr>
 <tr class="memdesc:gac08be014c8c4eeb26931b5c64091df90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera un timestamp "HH:MM" nel buffer fornito.  <br /></td></tr>
-<tr class="memitem:gae1848e211b111491db167b98c47922d5" id="r_gae1848e211b111491db167b98c47922d5"><td class="memItemLeft">const <a class="el" href="structMessaggioChat.html">MessaggioChat</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#gae1848e211b111491db167b98c47922d5">Chat_Ottieni</a> (const <a class="el" href="structChatStorico.html">ChatStorico</a> *c, int i)</td></tr>
+<tr class="memitem:gae1848e211b111491db167b98c47922d5" id="r_gae1848e211b111491db167b98c47922d5"><td class="memItemLeft">const <a class="el" href="structMessaggioChat.html">MessaggioChat</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#gae1848e211b111491db167b98c47922d5">Chat_Ottieni</a> (const <a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *c, int i)</td></tr>
 <tr class="memdesc:gae1848e211b111491db167b98c47922d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il messaggio in posizione i della cronologia.  <br /></td></tr>
-<tr class="memitem:ga28daec16e4d8d5e35ed61e2410b0975c" id="r_ga28daec16e4d8d5e35ed61e2410b0975c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#ga28daec16e4d8d5e35ed61e2410b0975c">Chat_Svuota</a> (<a class="el" href="structChatStorico.html">ChatStorico</a> *c)</td></tr>
+<tr class="memitem:ga28daec16e4d8d5e35ed61e2410b0975c" id="r_ga28daec16e4d8d5e35ed61e2410b0975c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#ga28daec16e4d8d5e35ed61e2410b0975c">Chat_Svuota</a> (<a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed">ChatStorico</a> *c)</td></tr>
 <tr class="memdesc:ga28daec16e4d8d5e35ed61e2410b0975c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Svuota la cronologia chat.  <br /></td></tr>
 <tr class="memitem:gacd2c9941c4a7d8770c1981797586e025" id="r_gacd2c9941c4a7d8770c1981797586e025"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__chat__api.html#gacd2c9941c4a7d8770c1981797586e025">Chat_FormattaRiga</a> (const <a class="el" href="structMessaggioChat.html">MessaggioChat</a> *m, char *out, size_t out_size)</td></tr>
 <tr class="memdesc:gacd2c9941c4a7d8770c1981797586e025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formatta un <a class="el" href="structMessaggioChat.html" title="Singolo messaggio nella chat multiplayer.">MessaggioChat</a> in una riga "HH:MM @Mittente: testo".  <br /></td></tr>

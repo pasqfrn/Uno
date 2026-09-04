@@ -4,6 +4,7 @@ var group__bst__operazioni =
     [ "BST_ContaNodi", "group__bst__operazioni.html#ga6f4d3c31a29be5dff40bfe065fe08ce1", null ],
     [ "BST_CreaNodo", "group__bst__operazioni.html#ga62e40793a2003872c369acb82e6af431", null ],
     [ "BST_Distruggi", "group__bst__operazioni.html#ga9316a904ece8260cbe1018b94d2888a0", null ],
+    [ "BST_GetEmail", "group__bst__operazioni.html#ga23ef7d7478d476ba4fcc03b0654bb1be", null ],
     [ "BST_Inordina", "group__bst__operazioni.html#ga192fed6e7b936d4348b504e1069e3e03", null ],
     [ "BST_Inserisci", "group__bst__operazioni.html#gacacb3b4a6ddbd736f5b58735895adfd9", null ],
     [ "BST_RicercaEmail", "group__bst__operazioni.html#ga79a477b261bbda20446e0f5df2faae46", null ],

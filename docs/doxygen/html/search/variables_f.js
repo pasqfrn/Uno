@@ -21,7 +21,5 @@ var searchData=
   ['posizione_18',['posizione',['../structPartitaRegistrata.html#a5fdaa75d7f3fb26e701da9e04fbe7bdb',1,'PartitaRegistrata::posizione'],['../structClassificaRecord.html#a66203cea3f610966b073a091c7f9dfff',1,'ClassificaRecord::posizione']]],
   ['posizione_5fultima_19',['posizione_ultima',['../group__network__packet__strutture.html#gad5ea8e8bdf83a475ded43b43b7613670',1,'StatsSyncPacket']]],
   ['posoriginale_20',['posOriginale',['../structCarta.html#af2ba5c3d53a4af20c84bfa8e87a11003',1,'Carta']]],
-  ['prev_21',['prev',['../structNodoCarta.html#a79d379018c2987198cab3d3e198b6d67',1,'NodoCarta::prev'],['../structNodoCoda.html#a598e00f9d4a4d91061737683582ca45f',1,'NodoCoda::prev']]],
-  ['priorita_22',['priorita',['../structNodoDecisione.html#a919f84c8c6feb0423135bdc90f234071',1,'NodoDecisione']]],
-  ['prossimo_23',['prossimo',['../structNodoCarta.html#a38a4756098b91f388f6b762034cea50b',1,'NodoCarta']]]
+  ['priorita_21',['priorita',['../structNodoDecisione.html#a919f84c8c6feb0423135bdc90f234071',1,'NodoDecisione']]]
 ];

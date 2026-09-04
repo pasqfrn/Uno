@@ -16,9 +16,9 @@
 #ifndef BOT_AI_H
 #define BOT_AI_H
 
-#include "../../data_structures.h"
-#include "../../player.h"
-#include "../../game_state.h"
+#include "../../data_structures/data_structures.h"
+#include "../../game/player.h"
+#include "../../game/game_state.h"
 
 /**
  * @addtogroup bot_ai_azioni Azioni Bot

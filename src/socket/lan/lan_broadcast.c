@@ -35,8 +35,8 @@
 #include "../../../lib/socket/lan/lan_protocol.h"
 #include "../../../lib/socket/network/network.h"
 #include "../../../lib/socket/network/network_send.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/data_structures.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/data_structures/data_structures.h"
 
 /* ============================================================
  *  VARIABILI GLOBALI MODULO LAN
@@ -95,25 +95,6 @@ static int IsPendingDeletion(const char* username) {
         if (strcmp(pendingDeletions[i], username) == 0) return 1;
     }
     return 0;
-}
-
-/**
- * @brief Rimuove un utente da pending deletions (dopo conferma disconnessione).
- * @param username Username da rimuovere da pending.
- */
-static void RimuoviPendingDeletion(const char* username) {
-    if (!username || !username[0]) return;
-    for (int i = 0; i < numPendingDeletions; i++) {
-        if (strcmp(pendingDeletions[i], username) == 0) {
-            for (int j = i; j < numPendingDeletions - 1; j++) {
-                memset(pendingDeletions[j], 0, 30);
-                strncpy(pendingDeletions[j], pendingDeletions[j+1], 29);
-            }
-            numPendingDeletions--;
-            memset(pendingDeletions[numPendingDeletions], 0, 30);
-            break;
-        }
-    }
 }
 
 /**

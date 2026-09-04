@@ -25,8 +25,8 @@
 
 #include "../../../lib/socket/network/network_send.h"
 #include "../../../lib/socket/network/network.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/auth.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/auth/auth.h"
 
 extern SOCKET remoteSocket;
 extern SOCKET clientSockets[4];
@@ -104,11 +104,9 @@ void SendPlayerHand(int target_socket, int data_player_id, StatoGioco* gioco) {
     NetPacket packet = {0};
     packet.type = PACKET_PLAYER_HAND;
     packet.data.player_hand.player_id = data_player_id;
-    int count = 0;
-    if (gioco->giocatori[data_player_id].mano) {
-        NodoCarta* n = gioco->giocatori[data_player_id].mano->testa;
-        while(n && count < 108) { packet.data.player_hand.carte[count++] = n->carta; n = n->prossimo; }
-    }
+    /* Copia la mano tramite l'API pubblica dell'ADT ListaCarte (information hiding) */
+    int count = GameLogic_CopiaMano(&gioco->giocatori[data_player_id],
+                                    packet.data.player_hand.carte, 108);
     packet.data.player_hand.num_carte = count;
 
     if (currentRole == NET_CLIENT && remoteSocket != INVALID_SOCKET) {

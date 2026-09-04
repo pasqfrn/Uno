@@ -120,11 +120,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__tests.h
 </div><!--header-->
 <div class="contents">
 
-<p>Modulo di testing per verificare il corretto funzionamento degli ADT (Lista, <a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a>, Coda, BST, Chat) e della logica di gioco (MossaValida).  
+<p>Modulo di testing con ASSERT (assert.h) per verificare il corretto funzionamento degli ADT (Lista, <a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a>, Coda, BST, Chat) e delle funzionalita' di dominio (mazzo di pesca, gestione mano, avanzamento turni, validazione mosse).  
 </p>
-<div class="textblock"><p>Modulo di testing per verificare il corretto funzionamento degli ADT (Lista, <a class="el" href="structPila.html" title="Pila LIFO: top punta all&#39;ultimo inserito, size è la cardinalità.">Pila</a>, Coda, BST, Chat) e della logica di gioco (MossaValida). </p>
-<p>Questo modulo costituisce la "programmazione difensiva" richiesta: ogni funzione pubblica degli ADT viene testata con input validi e input al limite (NULL, vuoti, fuori range) per garantire robustezza.</p>
-<p>Compilazione ed esecuzione: tests/test_adt.exe </p>
+<div class="textblock"><p>Modulo di testing con ASSERT (assert.h) per verificare il corretto funzionamento degli ADT (Lista, <a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a>, Coda, BST, Chat) e delle funzionalita' di dominio (mazzo di pesca, gestione mano, avanzamento turni, validazione mosse). </p>
+<p>PRINCIPI:</p><ul>
+<li>I test interagiscono con gli ADT SOLO tramite l'API pubblica (information hiding): mai accesso diretto alla rappresentazione interna dei tipi opachi.</li>
+<li>Ogni test usa assert(): in caso di fallimento il programma si interrompe segnalando la riga esatta (programmazione difensiva e testing rigorosi).</li>
+<li>I test di dominio verificano funzionalita' reali del gioco (mazzo/pesca, mano, turni tramite <a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4" title="Coda dei turni (tipo opaco: rappresentazione interna nascosta).">CodaTurni</a>, validazione mosse).</li>
+</ul>
+<p>Compilazione ed esecuzione: gcc -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs <a class="el" href="test__adt_8c.html" title="Test unitari per gli ADT e la logica di dominio UNO.">tests/test_adt.c</a> \ <a class="el" href="stack_8c.html" title="Implementazione Pila (Stack LIFO) per mazzo di pesca e scarti.">src/data_structures/stack.c</a> <a class="el" href="queue_8c.html" title="Implementazione Coda (Queue) bidirezionale per i turni di gioco.">src/data_structures/queue.c</a> \ <a class="el" href="list_8c.html" title="Implementazione lista doppiamente concatenata (funzioni specifiche).">src/data_structures/list.c</a> <a class="el" href="bst_8c.html" title="Implementazione Albero Binario di Ricerca (BST) per ricerca utenti.">src/data_structures/bst.c</a> <a class="el" href="chat_8c.html" title="Implementazione ADT ChatStorico per la chat di gioco.">src/data_structures/chat.c</a> \ <a class="el" href="game__logic_8c.html" title="Implementazione logica di gioco UNO: regole, effetti carte, validazione mosse e gestione ADT.">src/game/game_logic.c</a> <a class="el" href="deck_8c.html" title="Gestione mazzo di pesca, scarti e pesca carte.">src/game/deck.c</a> -o tests/test_adt.exe -lm </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

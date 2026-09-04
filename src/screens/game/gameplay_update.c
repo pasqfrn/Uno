@@ -19,12 +19,12 @@
 #include "../../../lib/screens/game/gameplay_update.h"
 #include "../../../lib/screens/game/end_screen.h"
 #include "../../../lib/screens/menu/string_utils.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/ui.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/screens/ui.h"
 #include "../../../lib/socket/network/network.h"
 #include "../../../lib/socket/network/network_send.h"
 #include "../../../lib/socket/lan/lan_sync.h"
-#include "../../../lib/auth.h"
+#include "../../../lib/auth/auth.h"
 
 #define LARGHEZZA 1280
 #define ALTEZZA 720
@@ -90,6 +90,7 @@ Vector2 OttieniPosizioneGiocatore(int index_giocatore, int mio_id, int num_gioca
  * @param dt Delta time dall'ultimo frame (per animazioni e timer).
  */
 void AggiornaGameplay(StatoGioco* gioco, FaseApplicazione* fase, Vector2 mousePos, float dt) {
+    (void)fase;  /* parametro mantenuto per uniformita' API (la fase cambia solo via gioco) */
     SetExitKey(0);
     int mio_id = (currentRole == NET_CLIENT) ? local_player_id : 0;
 
@@ -122,16 +123,10 @@ void AggiornaGameplay(StatoGioco* gioco, FaseApplicazione* fase, Vector2 mousePo
                     gioco->anim_pesca_count = 0;
                     Giocatore* p = &gioco->giocatori[gioco->autore_animazione];
                     for (int k = 0; k < drawCount; k++) {
-                        if (p->mano && p->mano->lunghezza > 1) {
-                            NodoCarta* prima = p->mano->testa;
-                            p->mano->testa = prima->prossimo;
-                            prima->prossimo = NULL;
-                            p->mano->coda->prossimo = prima;
-                            p->mano->coda = prima;
-                        }
+                        GameLogic_MettiPrimaInFondo(p);
                     }
                     MostraNotifica(gioco, TextFormat("%s ha pescato.", Giocatore_Nome(&gioco->giocatori[gioco->autore_animazione])));
-                    gioco->turno_corrente = (gioco->turno_corrente + gioco->direzione + gioco->num_giocatori) % gioco->num_giocatori;
+                    GameLogic_AvanzamentoTurno(gioco, 1);
                     botTimer = 0.0f;
                     if (currentRole == NET_HOST) BroadcastGameState(gioco);
                 } else {
@@ -144,7 +139,21 @@ void AggiornaGameplay(StatoGioco* gioco, FaseApplicazione* fase, Vector2 mousePo
                         int autore = gioco->autore_animazione;
                         ApplicaEffetto(gioco, gioco->anim_carta, gioco->colore_attivo);
                         if (GetLunghezzaMano(&gioco->giocatori[autore]) == 0) {
-                            gioco->gioco_finito = 1;
+                                                                                    gioco->gioco_finito = 1;
+                            /* BUG-FIX FINALE: una partita CARICATA da salvataggio
+                             * viene rimossa dalla bacheca al termine, perche' e'
+                             * stata completata. Lo slot di origine e' tracciato
+                             * in forma nascosta da save_manager (variabile statica),
+                             * impostato da CaricaPartitaDaSlot().
+                             * -1 (o 0) = partita nuova/online: niente cancellazione.
+                             * Solo host (offline) cancella: il client non possiede
+                             * il file di salvataggio locale. */
+                            {
+                                int slot = OttieniSlotCaricato();
+                                if (slot > 0 && currentRole != NET_CLIENT) {
+                                    EliminaSalvataggio(slot);
+                                }
+                            }
                             sprintf(gioco->messaggio, "HA VINTO %s!", Giocatore_Nome(&gioco->giocatori[autore]));
                             if (!gioco->statistiche_gia_salvate && currentRole != NET_CLIENT) {
                                 Statistiche* utente = &dbUtenti.lista[id_utente_corrente];
@@ -225,13 +234,7 @@ void AggiornaGameplay(StatoGioco* gioco, FaseApplicazione* fase, Vector2 mousePo
                     Pesca(gioco, player_to_penalize, 2);
                     Giocatore* p = &gioco->giocatori[player_to_penalize];
                     for (int k = 0; k < 2; k++) {
-                        if (p->mano && p->mano->lunghezza > 1) {
-                            NodoCarta* prima = p->mano->testa;
-                            p->mano->testa = prima->prossimo;
-                            prima->prossimo = NULL;
-                            p->mano->coda->prossimo = prima;
-                            p->mano->coda = prima;
-                        }
+                        GameLogic_MettiPrimaInFondo(p);
                     }
                     gioco->deve_chiamare_uno = 0;
                     MostraNotifica(gioco, TextFormat("Penalita! %s non ha gridato UNO!", Giocatore_Nome(&gioco->giocatori[player_to_penalize])));
@@ -304,51 +307,60 @@ void AggiornaGameplay(StatoGioco* gioco, FaseApplicazione* fase, Vector2 mousePo
                 /* Inizio trascinamento carta */
                 int len = GetLunghezzaMano(&gioco->giocatori[mio_id]);
                 for (int i = len - 1; i >= 0; i--) {
-                    NodoCarta* n = GetNodoCartaGiocatore(&gioco->giocatori[mio_id], i);
-                    if (n && CheckCollisionPointRec(mousePos, n->carta.area) && gioco->turno_corrente == mio_id) {
-                        n->carta.isTrascinata = 1;
-                        offsetMouse = (Vector2){ mousePos.x - n->carta.area.x, mousePos.y - n->carta.area.y };
-                        gioco->id_carta_in_trascinamento = i; gioco->nodo_carta_trascinata = n; break;
+                    Carta c = GetCartaGiocatore(&gioco->giocatori[mio_id], i);
+                    if (CheckCollisionPointRec(mousePos, c.area) && gioco->turno_corrente == mio_id) {
+                        c.isTrascinata = 1;
+                        offsetMouse = (Vector2){ mousePos.x - c.area.x, mousePos.y - c.area.y };
+                        GameLogic_ImpostaCarta(&gioco->giocatori[mio_id], i, c);
+                        gioco->id_carta_in_trascinamento = i; break;
                     }
                 }
             }
             /* Trascinamento in corso */
-            if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && gioco->id_carta_in_trascinamento != -1 && gioco->nodo_carta_trascinata) {
-                gioco->nodo_carta_trascinata->carta.area.x = mousePos.x - offsetMouse.x;
-                gioco->nodo_carta_trascinata->carta.area.y = mousePos.y - offsetMouse.y;
+            if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && gioco->id_carta_in_trascinamento != -1) {
+                int idx = gioco->id_carta_in_trascinamento;
+                Carta c = GetCartaGiocatore(&gioco->giocatori[mio_id], idx);
+                if (c.area.width > 0) {
+                    c.area.x = mousePos.x - offsetMouse.x;
+                    c.area.y = mousePos.y - offsetMouse.y;
+                    GameLogic_ImpostaCarta(&gioco->giocatori[mio_id], idx, c);
+                }
             }
             /* Rilascio carta */
             if (!network_pending && IsMouseButtonReleased(MOUSE_BUTTON_LEFT) && gioco->id_carta_in_trascinamento != -1) {
-                if (gioco->nodo_carta_trascinata) {
-                    gioco->nodo_carta_trascinata->carta.isTrascinata = 0;
-                    if (CheckCollisionRecs(gioco->nodo_carta_trascinata->carta.area, areaTavoloCentro) && MossaValida(gioco, gioco->nodo_carta_trascinata->carta)) {
-                        Carta scartata = gioco->nodo_carta_trascinata->carta;
+                int idx = gioco->id_carta_in_trascinamento;
+                Carta scartata = GetCartaGiocatore(&gioco->giocatori[mio_id], idx);
+                if (scartata.area.width > 0) {
+                    scartata.isTrascinata = 0;
+                    GameLogic_ImpostaCarta(&gioco->giocatori[mio_id], idx, scartata);
+                    if (CheckCollisionRecs(scartata.area, areaTavoloCentro) && MossaValida(gioco, scartata)) {
                         if (currentRole == NET_CLIENT) {
                             if (scartata.colore == NERO) {
                                 gioco->in_scelta_colore = 1;
                                 gioco->carta_pendente = scartata;
-                                pending_move_index = gioco->id_carta_in_trascinamento;
+                                pending_move_index = idx;
                             } else {
-                                SendMove(gioco->id_carta_in_trascinamento, scartata.colore);
+                                SendMove(idx, scartata.colore);
                             }
                         } else {
                             gioco->anim_attiva = 1; gioco->anim_carta = scartata;
                             gioco->tipo_animazione = 0;
-                            gioco->anim_start = (Vector2){ gioco->nodo_carta_trascinata->carta.area.x, gioco->nodo_carta_trascinata->carta.area.y };
+                            gioco->anim_start = (Vector2){ scartata.area.x, scartata.area.y };
                             gioco->anim_end = (Vector2){ LARGHEZZA/2.0f + 25, ALTEZZA/2.0f - 80 };
                             gioco->anim_t = 0.0f;
                             gioco->autore_animazione = mio_id;
-                            RimuoviCartaGiocatore(&gioco->giocatori[mio_id], gioco->id_carta_in_trascinamento);
+                            RimuoviCartaGiocatore(&gioco->giocatori[mio_id], idx);
                             if (scartata.colore == NERO) gioco->carta_pendente = scartata;
                             BroadcastGameState(gioco);
                         }
                     } else {
                         /* Riporta carta alla posizione originale */
-                        gioco->nodo_carta_trascinata->carta.area.x = gioco->nodo_carta_trascinata->carta.posOriginale.x;
-                        gioco->nodo_carta_trascinata->carta.area.y = gioco->nodo_carta_trascinata->carta.posOriginale.y;
+                        scartata.area.x = scartata.posOriginale.x;
+                        scartata.area.y = scartata.posOriginale.y;
+                        GameLogic_ImpostaCarta(&gioco->giocatori[mio_id], idx, scartata);
                     }
                 }
-                gioco->id_carta_in_trascinamento = -1; gioco->nodo_carta_trascinata = NULL;
+                gioco->id_carta_in_trascinamento = -1;
             }
         }
     }

@@ -22,11 +22,11 @@
 #include "../../../lib/screens/game/gameplay_shared.h"
 #include "../../../lib/screens/game/gameplay_draw.h"
 #include "../../../lib/screens/menu/string_utils.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/ui.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/screens/ui.h"
 #include "../../../lib/socket/network/network.h"
 #include "../../../lib/socket/network/network_send.h"
-#include "../../../lib/auth.h"
+#include "../../../lib/auth/auth.h"
 
 #define LARGHEZZA 1280
 #define ALTEZZA 720
@@ -215,7 +215,13 @@ void DisegnaPannelloChat(StatoGioco* gioco, int mio_id, Vector2 mousePos) {
                     }
                 }
                 char fullMsg[128];
-                sprintf(fullMsg, "%s: %s", Giocatore_Nome(&gioco->giocatori[mio_id]), inputChat);
+                /* Program. difensiva: limita la lunghezza del messaggio a quanto
+                 * realmente disponibile nel buffer, evitando troncamenti a meta'
+                 * carattere e il falso positivo -Wformat-truncation di GCC. */
+                int spazio_restante = (int)sizeof(fullMsg) - 2 - (int)strlen(Giocatore_Nome(&gioco->giocatori[mio_id]));
+                if (spazio_restante < 0) spazio_restante = 0;
+                snprintf(fullMsg, sizeof(fullMsg), "%s: %.*s",
+                         Giocatore_Nome(&gioco->giocatori[mio_id]), spazio_restante, inputChat);
                 if (currentRole == NET_CLIENT) { SendChat(fullMsg); }
                 else {
                     if (currentRole == NET_HOST) { BroadcastChat(fullMsg); }

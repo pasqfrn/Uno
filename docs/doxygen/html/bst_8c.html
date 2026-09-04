@@ -124,8 +124,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('bst_8c.html','
 <a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures/data_structures.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bst_8h_source.html">../../lib/data_structures/bst.h</a>&quot;</code><br />
+<code>#include &quot;../../lib/data_structures/private/bst_private.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
@@ -133,26 +134,28 @@ Funzioni</h2></td></tr>
 <tr class="memdesc:a1dcfac19e858621e8a394307cd9a6eb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confronto case-insensitive: a &lt; b.  <br /></td></tr>
 <tr class="memitem:afaa49a65d6316e8be8cd21f6338cee0b" id="r_afaa49a65d6316e8be8cd21f6338cee0b"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#afaa49a65d6316e8be8cd21f6338cee0b">email_eq</a> (const char *a, const char *b)</td></tr>
 <tr class="memdesc:afaa49a65d6316e8be8cd21f6338cee0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Confronto case-insensitive: a == b.  <br /></td></tr>
-<tr class="memitem:ga62e40793a2003872c369acb82e6af431" id="r_ga62e40793a2003872c369acb82e6af431"><td class="memItemLeft"><a class="el" href="structNodoAlbero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga62e40793a2003872c369acb82e6af431">BST_CreaNodo</a> (<a class="el" href="structUtente.html">Utente</a> u)</td></tr>
+<tr class="memitem:ga62e40793a2003872c369acb82e6af431" id="r_ga62e40793a2003872c369acb82e6af431"><td class="memItemLeft"><a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga62e40793a2003872c369acb82e6af431">BST_CreaNodo</a> (<a class="el" href="structUtente.html">Utente</a> u)</td></tr>
 <tr class="memdesc:ga62e40793a2003872c369acb82e6af431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea un nuovo nodo BST.  <br /></td></tr>
-<tr class="memitem:gacacb3b4a6ddbd736f5b58735895adfd9" id="r_gacacb3b4a6ddbd736f5b58735895adfd9"><td class="memItemLeft"><a class="el" href="structNodoAlbero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#gacacb3b4a6ddbd736f5b58735895adfd9">BST_Inserisci</a> (<a class="el" href="structNodoAlbero.html">NodoAlbero</a> *radice, <a class="el" href="structUtente.html">Utente</a> u, int *duplicato)</td></tr>
+<tr class="memitem:gacacb3b4a6ddbd736f5b58735895adfd9" id="r_gacacb3b4a6ddbd736f5b58735895adfd9"><td class="memItemLeft"><a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#gacacb3b4a6ddbd736f5b58735895adfd9">BST_Inserisci</a> (<a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *radice, <a class="el" href="structUtente.html">Utente</a> u, int *duplicato)</td></tr>
 <tr class="memdesc:gacacb3b4a6ddbd736f5b58735895adfd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserisce un utente nell'albero.  <br /></td></tr>
-<tr class="memitem:ga79a477b261bbda20446e0f5df2faae46" id="r_ga79a477b261bbda20446e0f5df2faae46"><td class="memItemLeft"><a class="el" href="structNodoAlbero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga79a477b261bbda20446e0f5df2faae46">BST_RicercaEmail</a> (<a class="el" href="structNodoAlbero.html">NodoAlbero</a> *radice, const char *email)</td></tr>
+<tr class="memitem:ga79a477b261bbda20446e0f5df2faae46" id="r_ga79a477b261bbda20446e0f5df2faae46"><td class="memItemLeft"><a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga79a477b261bbda20446e0f5df2faae46">BST_RicercaEmail</a> (<a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *radice, const char *email)</td></tr>
 <tr class="memdesc:ga79a477b261bbda20446e0f5df2faae46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricerca un utente per email.  <br /></td></tr>
-<tr class="memitem:a9b2ae7af7292fb053e7cf76bf6370a95" id="r_a9b2ae7af7292fb053e7cf76bf6370a95"><td class="memItemLeft">static <a class="el" href="structNodoAlbero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a9b2ae7af7292fb053e7cf76bf6370a95">BST_Minimo</a> (<a class="el" href="structNodoAlbero.html">NodoAlbero</a> *n)</td></tr>
+<tr class="memitem:a9b2ae7af7292fb053e7cf76bf6370a95" id="r_a9b2ae7af7292fb053e7cf76bf6370a95"><td class="memItemLeft">static <a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a9b2ae7af7292fb053e7cf76bf6370a95">BST_Minimo</a> (<a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *n)</td></tr>
 <tr class="memdesc:a9b2ae7af7292fb053e7cf76bf6370a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trova il nodo con email minima (piu' a sinistra).  <br /></td></tr>
-<tr class="memitem:ga225db238626a3343a76ff1db348bdc76" id="r_ga225db238626a3343a76ff1db348bdc76"><td class="memItemLeft"><a class="el" href="structNodoAlbero.html">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga225db238626a3343a76ff1db348bdc76">BST_RimuoviEmail</a> (<a class="el" href="structNodoAlbero.html">NodoAlbero</a> *radice, const char *email)</td></tr>
+<tr class="memitem:ga225db238626a3343a76ff1db348bdc76" id="r_ga225db238626a3343a76ff1db348bdc76"><td class="memItemLeft"><a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga225db238626a3343a76ff1db348bdc76">BST_RimuoviEmail</a> (<a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *radice, const char *email)</td></tr>
 <tr class="memdesc:ga225db238626a3343a76ff1db348bdc76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove il nodo con l'email specificata.  <br /></td></tr>
-<tr class="memitem:ga9316a904ece8260cbe1018b94d2888a0" id="r_ga9316a904ece8260cbe1018b94d2888a0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga9316a904ece8260cbe1018b94d2888a0">BST_Distruggi</a> (<a class="el" href="structNodoAlbero.html">NodoAlbero</a> *radice)</td></tr>
+<tr class="memitem:ga9316a904ece8260cbe1018b94d2888a0" id="r_ga9316a904ece8260cbe1018b94d2888a0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga9316a904ece8260cbe1018b94d2888a0">BST_Distruggi</a> (<a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *radice)</td></tr>
 <tr class="memdesc:ga9316a904ece8260cbe1018b94d2888a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distrugge ricorsivamente l'albero.  <br /></td></tr>
-<tr class="memitem:ace5970a089ca5b27bc708fcb40dce1c6" id="r_ace5970a089ca5b27bc708fcb40dce1c6"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ace5970a089ca5b27bc708fcb40dce1c6">BST_InordinaRec</a> (<a class="el" href="structNodoAlbero.html">NodoAlbero</a> *n, <a class="el" href="structUtente.html">Utente</a> *out, int max, int *idx)</td></tr>
+<tr class="memitem:ace5970a089ca5b27bc708fcb40dce1c6" id="r_ace5970a089ca5b27bc708fcb40dce1c6"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ace5970a089ca5b27bc708fcb40dce1c6">BST_InordinaRec</a> (<a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *n, <a class="el" href="structUtente.html">Utente</a> *out, int max, int *idx)</td></tr>
 <tr class="memdesc:ace5970a089ca5b27bc708fcb40dce1c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visita in-order ricorsiva (helper).  <br /></td></tr>
-<tr class="memitem:ga192fed6e7b936d4348b504e1069e3e03" id="r_ga192fed6e7b936d4348b504e1069e3e03"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga192fed6e7b936d4348b504e1069e3e03">BST_Inordina</a> (<a class="el" href="structNodoAlbero.html">NodoAlbero</a> *radice, <a class="el" href="structUtente.html">Utente</a> *out, int max)</td></tr>
+<tr class="memitem:ga192fed6e7b936d4348b504e1069e3e03" id="r_ga192fed6e7b936d4348b504e1069e3e03"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga192fed6e7b936d4348b504e1069e3e03">BST_Inordina</a> (<a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *radice, <a class="el" href="structUtente.html">Utente</a> *out, int max)</td></tr>
 <tr class="memdesc:ga192fed6e7b936d4348b504e1069e3e03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visita in-order: copia utenti in array ordinato.  <br /></td></tr>
-<tr class="memitem:ga5635ff2d752c8c11d78e1d00915e2a1e" id="r_ga5635ff2d752c8c11d78e1d00915e2a1e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga5635ff2d752c8c11d78e1d00915e2a1e">BST_Altezza</a> (<a class="el" href="structNodoAlbero.html">NodoAlbero</a> *radice)</td></tr>
+<tr class="memitem:ga5635ff2d752c8c11d78e1d00915e2a1e" id="r_ga5635ff2d752c8c11d78e1d00915e2a1e"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga5635ff2d752c8c11d78e1d00915e2a1e">BST_Altezza</a> (<a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *radice)</td></tr>
 <tr class="memdesc:ga5635ff2d752c8c11d78e1d00915e2a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce l'altezza dell'albero.  <br /></td></tr>
-<tr class="memitem:ga6f4d3c31a29be5dff40bfe065fe08ce1" id="r_ga6f4d3c31a29be5dff40bfe065fe08ce1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga6f4d3c31a29be5dff40bfe065fe08ce1">BST_ContaNodi</a> (<a class="el" href="structNodoAlbero.html">NodoAlbero</a> *radice)</td></tr>
+<tr class="memitem:ga6f4d3c31a29be5dff40bfe065fe08ce1" id="r_ga6f4d3c31a29be5dff40bfe065fe08ce1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga6f4d3c31a29be5dff40bfe065fe08ce1">BST_ContaNodi</a> (<a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *radice)</td></tr>
 <tr class="memdesc:ga6f4d3c31a29be5dff40bfe065fe08ce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di nodi.  <br /></td></tr>
+<tr class="memitem:ga23ef7d7478d476ba4fcc03b0654bb1be" id="r_ga23ef7d7478d476ba4fcc03b0654bb1be"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="group__bst.html#ga23ef7d7478d476ba4fcc03b0654bb1be">BST_GetEmail</a> (const <a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *nodo)</td></tr>
+<tr class="memdesc:ga23ef7d7478d476ba4fcc03b0654bb1be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce l'email dell'utente contenuto nel nodo (accessor).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
 <div class="textblock"><p>Implementazione Albero Binario di Ricerca (BST) per ricerca utenti. </p>
@@ -170,7 +173,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">void BST_InordinaRec </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structNodoAlbero.html">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>n</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -209,9 +212,9 @@ Funzioni</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structNodoAlbero.html">NodoAlbero</a> * BST_Minimo </td>
+          <td class="memname"><a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> * BST_Minimo </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structNodoAlbero.html">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__bst__nodi.html#ga9774705f78f091c0ffa84bbfc0108be0">NodoAlbero</a> *</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

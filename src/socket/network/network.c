@@ -46,9 +46,9 @@
 #include "../../../lib/socket/network/network_send.h"
 #include "../../../lib/socket/network/packet_handler.h"
 #include "../../../lib/socket/server/server_manager.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/list.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/data_structures/list.h"
 
 #include "raylib.h"
 

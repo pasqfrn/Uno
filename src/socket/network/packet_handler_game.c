@@ -46,10 +46,10 @@
 #include "../../../lib/socket/network/network_send.h"
 #include "../../../lib/socket/network/state_sync.h"
 #include "../../../lib/socket/server/server_manager.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/ui.h"
-#include "../../../lib/list.h"
-#include "../../../lib/auth.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/screens/ui.h"
+#include "../../../lib/data_structures/list.h"
+#include "../../../lib/auth/auth.h"
 #include "../../../lib/screens/game/gameplay_screen.h"
 #include "../../../lib/screens/game/end_screen.h"
 #include "../../../lib/screens/menu/string_utils.h"
@@ -67,6 +67,7 @@
  * @param vincitore_id ID del giocatore vincitore (client remoto).
  */
 static void SalvaStatisticheHostVincitaClient(StatoGioco* gioco, int vincitore_id) {
+    (void)vincitore_id;  /* parametro informativo/documentale: la vittoria e' gia' in gioco */
     if (!gioco || gioco->statistiche_gia_salvate) return;
     gioco->statistiche_gia_salvate = 1;
     Statistiche* utente = &dbUtenti.lista[id_utente_corrente];
@@ -342,8 +343,7 @@ void HandleGamePacket(NetPacket* packet, StatoGioco* gioco) {
                     // Se la mano del giocatore locale è già arrivata prima del
                     // game state, abilita comunque il passaggio diretto in partita.
                     if (local_player_id >= 0 && local_player_id < gioco->num_giocatori &&
-                        gioco->giocatori[local_player_id].mano &&
-                        gioco->giocatori[local_player_id].mano->lunghezza > 0) {
+                        GameLogic_GetLunghezzaMano(&gioco->giocatori[local_player_id]) > 0) {
                         network_start_game_flag = 1;
                     }
                 }
@@ -408,33 +408,17 @@ void HandleGamePacket(NetPacket* packet, StatoGioco* gioco) {
                     }
                 }
                 
+                /* Ricostruisce la mano del giocatore usando l'API dell'ADT ListaCarte
+                 * (nessun accesso alla rappresentazione interna della lista). */
                 if (gioco->giocatori[pid].mano) {
-                    while (gioco->giocatori[pid].mano->testa) {
-                        NodoCarta* temp = gioco->giocatori[pid].mano->testa;
-                        gioco->giocatori[pid].mano->testa = temp->prossimo;
-                        free(temp);
-                    }
-                    gioco->giocatori[pid].mano->lunghezza = 0;
-                    gioco->giocatori[pid].mano->coda = NULL;
-                } else {
-                    gioco->giocatori[pid].mano = CreaLista();
+                    EliminaLista(gioco->giocatori[pid].mano);
+                    gioco->giocatori[pid].mano = NULL;
                 }
-                
-                gioco->giocatori[pid].mano->lunghezza = 0;
+                gioco->giocatori[pid].mano = CreaLista();
                 for(int c=0; c < packet->data.player_hand.num_carte; c++) {
-                    NodoCarta* nuovo = (NodoCarta*)malloc(sizeof(NodoCarta));
-                    nuovo->carta = packet->data.player_hand.carte[c];
-                    nuovo->prossimo = NULL;
-                    if (!gioco->giocatori[pid].mano->testa) {
-                        gioco->giocatori[pid].mano->testa = nuovo;
-                        gioco->giocatori[pid].mano->coda = nuovo;
-                    } else {
-                        gioco->giocatori[pid].mano->coda->prossimo = nuovo;
-                        gioco->giocatori[pid].mano->coda = nuovo;
-                    }
-                    gioco->giocatori[pid].mano->lunghezza++;
+                    InsertInCoda(gioco->giocatori[pid].mano, packet->data.player_hand.carte[c]);
                 }
-                gioco->giocatori[pid].num_carte_mano = gioco->giocatori[pid].mano->lunghezza;
+                gioco->giocatori[pid].num_carte_mano = Lista_Lunghezza(gioco->giocatori[pid].mano);
             }
             break;
         case PACKET_CHAT:
@@ -584,18 +568,14 @@ void HandleGamePacket(NetPacket* packet, StatoGioco* gioco) {
                 /* Esegui la pescata */
                 Pesca(gioco, pid, packet->data.draw.count);
                 Giocatore* p = &gioco->giocatori[pid];
-                /* Sposta le carte pescate in fondo alla mano (ordine visivo) */
+                /* Sposta le carte pescate in fondo alla mano (ordine visivo)
+                 * tramite la funzione di dominio basata sull'ADT ListaCarte. */
                 for (int k = 0; k < packet->data.draw.count; k++) {
-                    if (p->mano && p->mano->lunghezza > 1) {
-                        NodoCarta* prima = p->mano->testa;
-                        p->mano->testa = prima->prossimo;
-                        prima->prossimo = NULL;
-                        p->mano->coda->prossimo = prima;
-                        p->mano->coda = prima;
-                    }
+                    GameLogic_MettiPrimaInFondo(p);
                 }
-                /* Cambia turno */
-                gioco->turno_corrente = (gioco->turno_corrente + gioco->direzione + gioco->num_giocatori) % gioco->num_giocatori;
+                /* Cambia turno: avanzamento gestito dalla funzione di dominio
+                 * che mantiene sincronizzata la CodaTurni (ADT). */
+                GameLogic_AvanzamentoTurno(gioco, 1);
                 
                 /* Avvia animazione di pescata */
                 gioco->anim_attiva = 1;

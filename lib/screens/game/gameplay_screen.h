@@ -8,7 +8,7 @@
 #ifndef GAMEPLAY_SCREEN_H
 #define GAMEPLAY_SCREEN_H
 
-#include "../../data_structures.h"
+#include "../../data_structures/data_structures.h"
 #include "raylib.h"
 #include "gameplay_shared.h"
 #include "gameplay_update.h"

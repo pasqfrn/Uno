@@ -11,7 +11,7 @@ var searchData=
   ['session_5fstate_8',['session_state',['../group__network__packet__strutture.html#ga4640495cc1b36655b7a0a8850d422384',1,'NetPacket::session_state'],['../group__network__packet__strutture.html#gab4ea6b430b8d76b85335290c33eb2da7',1,'NetPacket::@360223311017150174205023035217356011367126334367::session_state']]],
   ['sessions_9',['sessions',['../group__network__packet__strutture.html#gaf70a7913010e764d81f58e2ca1b96ff1',1,'PacketSessionList::sessions'],['../structServerManager.html#a4306718f5b0dd6e1a8b501ced2561024',1,'ServerManager::sessions']]],
   ['si_10',['si',['../structNodoDecisione.html#a10372b892ba7605a559ae459b549a563',1,'NodoDecisione']]],
-  ['size_11',['size',['../structCodaTurni.html#a76a608c06fd3d799ab5e84813ef07e45',1,'CodaTurni::size'],['../structPila.html#aea0497c41c8431db25e46b8ad2ce6d57',1,'Pila::size']]],
+  ['slot_5fcaricato_5fattivo_11',['slot_caricato_attivo',['../save__manager_8c.html#aa4ba9607c7f5eaecc9f10de4aa534e10',1,'save_manager.c']]],
   ['slot_5fsalvataggio_12',['slot_salvataggio',['../structStatoGioco.html#a98fd0157d290ee7f5f77a90b612c9254',1,'StatoGioco']]],
   ['socket_5fid_13',['socket_id',['../structGiocatore.html#a28bb66e168b98599388e7d222ddb3b13',1,'Giocatore']]],
   ['sottomenu_5fsalvataggi_14',['sottomenu_salvataggi',['../menu__screen_8c.html#ad0dd69da6bf9b5e0cb9c1d729d37d483',1,'menu_screen.c']]],

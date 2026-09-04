@@ -9,7 +9,7 @@
 #define LAN_PROTOCOL_H
 
 #include <stdint.h>
-#include "../../data_structures.h"
+#include "../../data_structures/data_structures.h"
 
 /** @brief Magic number per pacchetti database utenti. */
 #define LAN_PACKET_DB        0x4C414E01

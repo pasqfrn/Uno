@@ -15,10 +15,10 @@
 #include <time.h>
 #include <stdint.h>
 
-#include "../../lib/game_logic.h"
-#include "../../lib/data_structures.h"
+#include "../../lib/game/game_logic.h"
+#include "../../lib/data_structures/data_structures.h"
 #include "../../lib/data_structures/stack.h"
-#include "../../lib/list.h"
+#include "../../lib/data_structures/list.h"
 
 /* ============================================================
  *  FUNZIONI STATICHE (commentate per warning - unused)
@@ -148,7 +148,7 @@ void Pesca(StatoGioco *gioco, int id_giocatore, int quantita) {
             if (!g->mano) g->mano = CreaLista();
             gioco->num_carte_mazzo--;
             InsertInCoda(g->mano, gioco->mazzo[gioco->num_carte_mazzo]);
-            g->num_carte_mano = g->mano->lunghezza;
+            g->num_carte_mano = Lista_Lunghezza(g->mano);
         }
     }
 }
@@ -167,25 +167,13 @@ void Pesca(StatoGioco *gioco, int id_giocatore, int quantita) {
 int GetLunghezzaMano(Giocatore *g) {
     if (!g) return 0;
     if (!g->mano) return g->num_carte_mano;
-    int len = g->mano->lunghezza;
+    int len = Lista_Lunghezza(g->mano);
     if (len > 0) g->num_carte_mano = len;
     return len > 0 ? len : g->num_carte_mano;
 }
 
 /**
- * @brief Restituisce il nodo carta per indice.
- * @ingroup game_logic
- * @pre g != NULL; indice valido.
- * @return NodoCarta, o NULL.
- * @param g Giocatore.
- * @param indice Indice (0-based).
- */
-NodoCarta* GetNodoCartaGiocatore(Giocatore *g, int indice) {
-    return (g && g->mano) ? GetAt(g->mano, indice) : NULL;
-}
-
-/**
- * @brief Restituisce una carta dalla mano per indice.
+ * @brief Restituisce una carta dalla mano per indice (PER VALORE).
  * @ingroup game_logic
  * @pre g != NULL; indice valido.
  * @return Carta, o carta vuota.
@@ -193,8 +181,7 @@ NodoCarta* GetNodoCartaGiocatore(Giocatore *g, int indice) {
  * @param indice Indice (0-based).
  */
 Carta GetCartaGiocatore(Giocatore *g, int indice) {
-    NodoCarta *n = GetNodoCartaGiocatore(g, indice);
-    return n ? n->carta : (Carta){0};
+    return (g && g->mano) ? Lista_GetCarta(g->mano, indice) : (Carta){0};
 }
 
 /**
@@ -208,6 +195,6 @@ Carta GetCartaGiocatore(Giocatore *g, int indice) {
 void RimuoviCartaGiocatore(Giocatore *g, int indice) {
     if (g && g->mano) {
         RemoveAt(g->mano, indice);
-        g->num_carte_mano = g->mano->lunghezza;
+        g->num_carte_mano = Lista_Lunghezza(g->mano);
     }
 }

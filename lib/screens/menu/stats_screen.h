@@ -8,7 +8,7 @@
 #ifndef STATS_SCREEN_H
 #define STATS_SCREEN_H
 
-#include "../../data_structures.h"
+#include "../../data_structures/data_structures.h"
 
 /**
  * @brief Disegna la schermata delle statistiche.

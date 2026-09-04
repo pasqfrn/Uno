@@ -4,23 +4,30 @@
  * @defgroup bst BST (Albero Binario Ricerca)
  * @brief Implementa un BST con chiave email per ricerca, inserimento e cancellazione
  * in O(log n) medio degli utenti nel database.
+ *
+ * PRINCIPIO DI INFORMATION HIDING:
+ * Il tipo `NodoAlbero` e' dichiarato come tipo OPACO: la sua rappresentazione
+ * interna e' definita esclusivamente nel modulo di implementazione
+ * (src/data_structures/bst.c). Gli utilizzatori interagiscono solo tramite
+ * le funzioni pubbliche di questo header.
  */
 #ifndef DATA_STRUCTURES_BST_H
 #define DATA_STRUCTURES_BST_H
 
-#include "../data_structures.h"
+#include "data_structures.h"
 
 /**
  * @addtogroup bst_nodi Nodi BST
- * @brief Struttura nodo dell'albero binario di ricerca.
+ * @brief Tipo opaco del nodo dell'albero binario di ricerca.
  * @{
  */
-/** @brief Nodo dell'albero BST: contiene un Utente e puntatori ai figli. */
-typedef struct NodoAlbero {
-    Utente utente;
-    struct NodoAlbero* left;
-    struct NodoAlbero* right;
-} NodoAlbero;
+/**
+ * @brief Nodo dell'albero BST (tipo opaco: rappresentazione interna nascosta).
+ *
+ * Contiene un Utente (chiave = email) e i puntatori ai figli; la struttura
+ * completa e' definita solo nel modulo di implementazione.
+ */
+typedef struct NodoAlbero NodoAlbero;
 /** @} */
 
 /**
@@ -100,6 +107,18 @@ int BST_Altezza(NodoAlbero* radice);
  * @return Numero di nodi.
  */
 int BST_ContaNodi(NodoAlbero* radice);
+
+/**
+ * @brief Restituisce l'email dell'utente contenuto nel nodo (accessor).
+ *
+ * Accessor informativo che preserva l'information hiding: evita che gli
+ * utilizzatori dereferenzino il NodoAlbero opaco.
+ *
+ * @pre nodo != NULL.
+ * @return Puntatore alla stringa email memorizzata nel nodo, o NULL.
+ * @param nodo Nodo dell'albero.
+ */
+const char* BST_GetEmail(const NodoAlbero* nodo);
 /** @} */
 
 #endif // DATA_STRUCTURES_BST_H

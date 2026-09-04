@@ -8,7 +8,7 @@
 #ifndef AUTH_UPDATE_H
 #define AUTH_UPDATE_H
 
-#include "../../data_structures.h"
+#include "../../data_structures/data_structures.h"
 
 /**
  * @brief Gestisce l'input e la logica delle schermate auth.

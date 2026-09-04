@@ -7,7 +7,7 @@ var index =
     [ "Struttura del progetto", "index.html#autotoc_md4", null ],
     [ "Architettura", "index.html#autotoc_md5", [
       [ "Strutture dati principali", "index.html#autotoc_md6", null ],
-      [ "Strutture dati dinamiche (ADT)", "index.html#autotoc_md7", null ],
+      [ "Strutture dati dinamiche (ADT opachi)", "index.html#autotoc_md7", null ],
       [ "Moduli funzionali", "index.html#autotoc_md8", null ]
     ] ],
     [ "Test unitari", "index.html#autotoc_md9", [

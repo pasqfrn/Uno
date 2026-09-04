@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UNO - Gioco di Carte:  File sorgente data_structures/queue_private.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('queue__private_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">queue_private.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="queue__private_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef DATA_STRUCTURES_QUEUE_PRIVATE_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define DATA_STRUCTURES_QUEUE_PRIVATE_H</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">../../lib/data_structures/data_structures.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">../../lib/game/player.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structNodoCoda.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structNodoCoda.html">NodoCoda</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structNodoCoda.html#a3a5fda8e4c9c7753cbc05be748bfb0b7">   23</a></span>    <a class="code hl_struct" href="structGiocatore.html">Giocatore</a> <a class="code hl_variable" href="structNodoCoda.html#a3a5fda8e4c9c7753cbc05be748bfb0b7">giocatore</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structNodoCoda.html#ac340d601bc10d3dce628dab3fc3bd9ae">   24</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCoda.html">NodoCoda</a>* <a class="code hl_variable" href="structNodoCoda.html#ac340d601bc10d3dce628dab3fc3bd9ae">next</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structNodoCoda.html#a598e00f9d4a4d91061737683582ca45f">   25</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCoda.html">NodoCoda</a>* <a class="code hl_variable" href="structNodoCoda.html#a598e00f9d4a4d91061737683582ca45f">prev</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structCodaTurni.html">   35</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structCodaTurni.html">CodaTurni</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structCodaTurni.html#aa38c7b53b83f134a8cd14c238e28699b">   36</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCoda.html">NodoCoda</a>* <a class="code hl_variable" href="structCodaTurni.html#aa38c7b53b83f134a8cd14c238e28699b">front</a>;     <span class="comment">/* Primo giocatore della coda */</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structCodaTurni.html#addf2c5c09fc3e1b171754684acf03f6e">   37</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCoda.html">NodoCoda</a>* <a class="code hl_variable" href="structCodaTurni.html#addf2c5c09fc3e1b171754684acf03f6e">rear</a>;      <span class="comment">/* Ultimo giocatore della coda */</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structCodaTurni.html#a76a608c06fd3d799ab5e84813ef07e45">   38</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structCodaTurni.html#a76a608c06fd3d799ab5e84813ef07e45">size</a>;                   <span class="comment">/* Numero di giocatori in coda */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structCodaTurni.html#a23507dfeef9e7db73f023d828f2149c9">   39</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structCodaTurni.html#a23507dfeef9e7db73f023d828f2149c9">verso</a>;                  <span class="comment">/* +1 = orario, -1 = antiorario */</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif </span><span class="comment">/* DATA_STRUCTURES_QUEUE_PRIVATE_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header centrale del progetto UNO - Tipi di dato condivisi.</div></div>
+<div class="ttc" id="aplayer_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div><div class="ttdoc">Modulo Giocatore - Entità di flusso/stato per la partita.</div></div>
+<div class="ttc" id="astructCodaTurni_html"><div class="ttname"><a href="structCodaTurni.html">CodaTurni</a></div><div class="ttdoc">Coda dei turni (rappresentazione interna).</div><div class="ttdef"><b>Definition</b> queue_private.h:35</div></div>
+<div class="ttc" id="astructCodaTurni_html_a23507dfeef9e7db73f023d828f2149c9"><div class="ttname"><a href="structCodaTurni.html#a23507dfeef9e7db73f023d828f2149c9">CodaTurni::verso</a></div><div class="ttdeci">int verso</div><div class="ttdef"><b>Definition</b> queue_private.h:39</div></div>
+<div class="ttc" id="astructCodaTurni_html_a76a608c06fd3d799ab5e84813ef07e45"><div class="ttname"><a href="structCodaTurni.html#a76a608c06fd3d799ab5e84813ef07e45">CodaTurni::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition</b> queue_private.h:38</div></div>
+<div class="ttc" id="astructCodaTurni_html_aa38c7b53b83f134a8cd14c238e28699b"><div class="ttname"><a href="structCodaTurni.html#aa38c7b53b83f134a8cd14c238e28699b">CodaTurni::front</a></div><div class="ttdeci">struct NodoCoda * front</div><div class="ttdef"><b>Definition</b> queue_private.h:36</div></div>
+<div class="ttc" id="astructCodaTurni_html_addf2c5c09fc3e1b171754684acf03f6e"><div class="ttname"><a href="structCodaTurni.html#addf2c5c09fc3e1b171754684acf03f6e">CodaTurni::rear</a></div><div class="ttdeci">struct NodoCoda * rear</div><div class="ttdef"><b>Definition</b> queue_private.h:37</div></div>
+<div class="ttc" id="astructGiocatore_html"><div class="ttname"><a href="structGiocatore.html">Giocatore</a></div><div class="ttdoc">Rappresenta un giocatore nella partita (umano o bot).</div><div class="ttdef"><b>Definition</b> player.h:36</div></div>
+<div class="ttc" id="astructNodoCoda_html"><div class="ttname"><a href="structNodoCoda.html">NodoCoda</a></div><div class="ttdoc">Nodo della coda dei turni (rappresentazione interna).</div><div class="ttdef"><b>Definition</b> queue_private.h:22</div></div>
+<div class="ttc" id="astructNodoCoda_html_a3a5fda8e4c9c7753cbc05be748bfb0b7"><div class="ttname"><a href="structNodoCoda.html#a3a5fda8e4c9c7753cbc05be748bfb0b7">NodoCoda::giocatore</a></div><div class="ttdeci">Giocatore giocatore</div><div class="ttdef"><b>Definition</b> queue_private.h:23</div></div>
+<div class="ttc" id="astructNodoCoda_html_a598e00f9d4a4d91061737683582ca45f"><div class="ttname"><a href="structNodoCoda.html#a598e00f9d4a4d91061737683582ca45f">NodoCoda::prev</a></div><div class="ttdeci">struct NodoCoda * prev</div><div class="ttdef"><b>Definition</b> queue_private.h:25</div></div>
+<div class="ttc" id="astructNodoCoda_html_ac340d601bc10d3dce628dab3fc3bd9ae"><div class="ttname"><a href="structNodoCoda.html#ac340d601bc10d3dce628dab3fc3bd9ae">NodoCoda::next</a></div><div class="ttdeci">struct NodoCoda * next</div><div class="ttdef"><b>Definition</b> queue_private.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_e0e4df1b297a9f377abb7b27124b1ce7.html">data_structures</a></li><li class="navelem"><a href="queue__private_8h.html">queue_private.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

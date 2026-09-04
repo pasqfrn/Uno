@@ -8,7 +8,7 @@
 #define PACKET_HANDLER_H
 
 #include "network.h"
-#include "../../game_logic.h"
+#include "../../game/game_logic.h"
 #include "packet_handler_game.h"
 #include "packet_handler_admin.h"
 

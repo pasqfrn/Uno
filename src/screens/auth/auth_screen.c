@@ -21,8 +21,8 @@
 #include "../../../lib/screens/auth/auth_draw.h"
 #include "../../../lib/screens/auth/input_field.h"
 #include "../../../lib/screens/menu/string_utils.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/ui.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/screens/ui.h"
 
 #define LARGHEZZA 1280
 #define ALTEZZA 720

@@ -63,8 +63,8 @@
 #include "../../../lib/socket/lan/lan_protocol.h"
 #include "../../../lib/socket/network/network.h"
 #include "../../../lib/socket/network/network_send.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/data_structures.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/data_structures/data_structures.h"
 
 /**
  * @brief Confronta un record Statistiche locale con un LanCompactUser remoto.

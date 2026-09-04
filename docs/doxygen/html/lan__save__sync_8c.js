@@ -4,8 +4,6 @@ var lan__save__sync_8c =
     [ "MAX_RECV", "lan__save__sync_8c.html#ae2c377a9138eb6905d9e09edf7c70f95", null ],
     [ "CompattaSavesUtenteCorrente", "lan__save__sync_8c.html#a38ae2de109b22ba34b6ebc58870676fd", null ],
     [ "GetSlotPath", "lan__save__sync_8c.html#a81acd816d2435869c41138e77a3708bc", null ],
-    [ "GetSlotPathForUser", "lan__save__sync_8c.html#aa91901537470150bb4ec700688a5d97a", null ],
-    [ "GetSlotPathForUsername", "lan__save__sync_8c.html#ad48587fee80f643a55d05512f4869b23", null ],
     [ "InviaSalvataggioChunked", "lan__save__sync_8c.html#a58a3d2df9ba55c01eeeac2ed1199175c", null ],
     [ "LAN_BroadcastSavesNow", "lan__save__sync_8c.html#a54bcee66d466e24ce98a66159c9b0d5a", null ],
     [ "LAN_ProcessSaveChunk", "lan__save__sync_8c.html#a27e09f286eb4eba5a8589e9818346a2d", null ],

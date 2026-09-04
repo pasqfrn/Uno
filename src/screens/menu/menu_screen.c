@@ -16,9 +16,9 @@
 #include <string.h>
 #include "raylib.h"
 #include "../../../lib/screens/menu/menu_screen.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/ui.h"
-#include "../../../lib/game_logic.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/screens/ui.h"
+#include "../../../lib/game/game_logic.h"
 #include "../../../lib/socket/network/network.h"
 
 #define LARGHEZZA 1280

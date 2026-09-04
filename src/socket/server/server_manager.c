@@ -34,8 +34,8 @@
 
 #include "raylib.h"
 #include "../../../lib/socket/server/server_manager.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/list.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/data_structures/list.h"
 
 ServerManager serverManager = {0};
 

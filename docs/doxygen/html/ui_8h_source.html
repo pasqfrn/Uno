@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.17.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UNO - Gioco di Carte:  File sorgente ui.h</title>
+<title>UNO - Gioco di Carte:  File sorgente screens/ui.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ui_8h_source.h
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef UI_H</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define UI_H</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">data_structures.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">../data_structures/data_structures.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">extern</span> Texture2D <a class="code hl_variable" href="group__ui__texture.html#ga8ac64cad02704cae0cb4af6f96d92767">textureCarte</a>[5][15];</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">extern</span> Texture2D <a class="code hl_variable" href="group__ui__texture.html#ga876b5c791744657fa724c81445ce9e8b">textureDorso</a>;</div>
@@ -149,17 +149,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('ui_8h_source.h
 <div class="ttc" id="agroup__ui__texture_html_ga8ac64cad02704cae0cb4af6f96d92767"><div class="ttname"><a href="group__ui__texture.html#ga8ac64cad02704cae0cb4af6f96d92767">textureCarte</a></div><div class="ttdeci">Texture2D textureCarte[5][15]</div><div class="ttdoc">Cache globale delle texture delle carte UNO: textureCarte[colore][tipo].</div><div class="ttdef"><b>Definition</b> ui.c:24</div></div>
 <div class="ttc" id="agroup__ui__texture_html_gaf27071339f699f36aff91ba414cd50d8"><div class="ttname"><a href="group__ui__texture.html#gaf27071339f699f36aff91ba414cd50d8">textureSfondo</a></div><div class="ttdeci">Texture2D textureSfondo</div><div class="ttdoc">Texture dello sfondo del gioco.</div><div class="ttdef"><b>Definition</b> ui.c:28</div></div>
 <div class="ttc" id="astructCarta_html"><div class="ttname"><a href="structCarta.html">Carta</a></div><div class="ttdoc">Rappresenta una singola carta UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:65</div></div>
-<div class="ttc" id="aui_8h_html_a0c51f7d6a3bf4a1debe77da34839f18c"><div class="ttname"><a href="ui_8h.html#a0c51f7d6a3bf4a1debe77da34839f18c">DisegnaCartaRealistica</a></div><div class="ttdeci">void DisegnaCartaRealistica(Carta *c, Rectangle r, int coperta)</div><div class="ttdoc">Disegna una carta UNO con texture realistica e ombra.</div><div class="ttdef"><b>Definition</b> ui.c:118</div></div>
+<div class="ttc" id="aui_8h_html_a0c51f7d6a3bf4a1debe77da34839f18c"><div class="ttname"><a href="ui_8h.html#a0c51f7d6a3bf4a1debe77da34839f18c">DisegnaCartaRealistica</a></div><div class="ttdeci">void DisegnaCartaRealistica(Carta *c, Rectangle r, int coperta)</div><div class="ttdoc">Disegna una carta UNO con texture realistica e ombra.</div><div class="ttdef"><b>Definition</b> ui.c:117</div></div>
 <div class="ttc" id="aui_8h_html_a8b6843013da01feaa0c418592c2fdbe3"><div class="ttname"><a href="ui_8h.html#a8b6843013da01feaa0c418592c2fdbe3">CaricaTextureReali</a></div><div class="ttdeci">void CaricaTextureReali(void)</div><div class="ttdoc">Carica tutte le texture delle carte e lo sfondo da file PNG.</div><div class="ttdef"><b>Definition</b> ui.c:55</div></div>
-<div class="ttc" id="aui_8h_html_a93cf3d6c0a2a0ce832f80d2ac7dcad30"><div class="ttname"><a href="ui_8h.html#a93cf3d6c0a2a0ce832f80d2ac7dcad30">DisegnaBottoneMenuAnimato</a></div><div class="ttdeci">int DisegnaBottoneMenuAnimato(Rectangle rect, const char *testo)</div><div class="ttdoc">Disegna un bottone animato per il menu con effetto hover/press.</div><div class="ttdef"><b>Definition</b> ui.c:150</div></div>
-<div class="ttc" id="aui_8h_html_ac8993e016550851622a8f275d4c4cf1c"><div class="ttname"><a href="ui_8h.html#ac8993e016550851622a8f275d4c4cf1c">ScaricaTextureReali</a></div><div class="ttdeci">void ScaricaTextureReali(void)</div><div class="ttdoc">Libera dalla RAM tutte le texture caricate.</div><div class="ttdef"><b>Definition</b> ui.c:96</div></div>
+<div class="ttc" id="aui_8h_html_a93cf3d6c0a2a0ce832f80d2ac7dcad30"><div class="ttname"><a href="ui_8h.html#a93cf3d6c0a2a0ce832f80d2ac7dcad30">DisegnaBottoneMenuAnimato</a></div><div class="ttdeci">int DisegnaBottoneMenuAnimato(Rectangle rect, const char *testo)</div><div class="ttdoc">Disegna un bottone animato per il menu con effetto hover/press.</div><div class="ttdef"><b>Definition</b> ui.c:149</div></div>
+<div class="ttc" id="aui_8h_html_ac8993e016550851622a8f275d4c4cf1c"><div class="ttname"><a href="ui_8h.html#ac8993e016550851622a8f275d4c4cf1c">ScaricaTextureReali</a></div><div class="ttdeci">void ScaricaTextureReali(void)</div><div class="ttdoc">Libera dalla RAM tutte le texture caricate.</div><div class="ttdef"><b>Definition</b> ui.c:95</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="ui_8h.html">ui.h</a></li>
+    <li class="navelem"><a href="dir_299aa870bb746bafe99131a774bd9579.html">screens</a></li><li class="navelem"><a href="ui_8h.html">ui.h</a></li>
     <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
   </ul>
 </div>

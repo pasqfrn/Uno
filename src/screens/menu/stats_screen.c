@@ -18,8 +18,8 @@
 #include <stdlib.h>
 #include "raylib.h"
 #include "../../../lib/screens/menu/stats_screen.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/ui.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/screens/ui.h"
 
 #define LARGHEZZA 1280
 #define ALTEZZA 720

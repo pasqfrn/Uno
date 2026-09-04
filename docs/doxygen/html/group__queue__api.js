@@ -11,5 +11,7 @@ var group__queue__api =
     [ "Coda_InvertiVerso", "group__queue__api.html#gac73bc0051abe5c075e61b613ca8217ec", null ],
     [ "Coda_ProxNodo", "group__queue__api.html#gaa3e062ece5c53fa71fe3f38a40af9f8b", null ],
     [ "Coda_Rear", "group__queue__api.html#ga4f1de642a8dfccfbc0bd40a390446a1a", null ],
+    [ "Coda_Ruota", "group__queue__api.html#ga016f703b9c31da986c214787f11335a1", null ],
+    [ "Coda_VerificaConsistenza", "group__queue__api.html#gab150a9ebd0d18cc80c7fc24415106308", null ],
     [ "Coda_Vuota", "group__queue__api.html#gafe5e85ee83772d0ce66f79eb6fb070d7", null ]
 ];

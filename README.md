@@ -15,6 +15,7 @@ Questo progetto implementa una versione completa del gioco UNO, rispettando rigo
 - **Intelligenza artificiale**: avversari bot con comportamento strategico
 - **Chat di gioco**: comunicazione tra giocatori durante le partite
 - **Salvataggi**: salvataggio/caricamento partite con slot multipli
+- **Salvataggi coerenti**: ogni partita occupa **un solo slot** — quando una partita già salvata (anche dopo essere stata ricaricata) viene salvata di nuovo, il suo file viene **sovrascritto** con lo stato attuale invece di crearne uno nuovo; alla conclusione della partita il salvataggio viene rimosso dalla bacheca
 - **Classifica**: piazzamento e tempi delle partite registrati
 
 ## Tecnologie
@@ -24,37 +25,40 @@ Questo progetto implementa una versione completa del gioco UNO, rispettando rigo
 - **GUI e Input**: Raylib
 - **Networking**: Socket TCP/IP
 - **Persistenza**: File ad accesso diretto (.dat) e file sequenziali
-- **Testing**: 171 test unitari per ADT e logica di gioco
+- **Testing**: 149 test unitari con `assert()` per ADT e logica di dominio
 - **Documentazione**: Doxygen
 
 ## Struttura del progetto
 
 ```
 Uno/
-├── src/
-│   ├── main.c               # Entry point e ciclo di vita dell'applicazione
-│   ├── auth.c               # Gestione registrazione, login e BST utenti
-│   ├── auth_validation.c    # Validazione email, password, username
-│   ├── game_logic.c         # Regole di UNO, validazione mosse, effetti carte
-│   ├── list.c               # Implementazione lista doppiamente concatenata
-│   ├── ui.c                 # Rendering e gestione interfaccia Raylib
-│   └── data_structures/     # Implementazione ADT specializzati
-├── lib/
-│   ├── auth.h               # Header modulo autenticazione
-│   ├── auth_validation.h    # Header modulo validazione
-│   ├── data_structures.h    # Tipi fondamentali (Carta, Utente, Giocatore, etc.)
-│   ├── game_logic.h         # Header modulo logica di gioco
-│   ├── list.h               # Header lista concatenata
-│   ├── ui.h                 # Header interfaccia grafica
-│   ├── player.h             # Header modulo Giocatore
-│   ├── game_state.h         # Header modulo StatoGioco
-│   ├── socket/              # Gestione connessioni di rete
-│   ├── screens/             # Schermate dell'applicazione
-│   └── game/                # Entità di gioco specializzate
-├── tests/                   # Test unitari
-│   ├── test_adt.c           # Suite di test (171 test)
-│   └── stubs/               # Stub Raylib per compilazione test senza dipendenze
-├── scripts/                 # Script di automazione
+├── src/                       # Implementazioni (*.c) — un modulo = una cartella
+│   ├── core/                  # Entry point dell'applicazione
+│   │   └── main.c             # Entry point e ciclo di vita dell'applicazione
+│   ├── auth/                  # Modulo autenticazione
+│   │   ├── auth.c             # Gestione registrazione, login e BST utenti
+│   │   └── auth_validation.c  # Validazione email, password, username
+│   ├── game/                  # Modulo gioco
+│   │   ├── game_logic.c       # Regole di UNO, validazione mosse, effetti carte
+│   │   ├── deck.c             # Mazzo, pesca, scarti
+│   │   ├── game_flow.c        # Flusso di partita
+│   │   └── save_manager.c     # Salvataggio/caricamento partite
+│   ├── data_structures/       # Implementazione ADT (solo file *.c)
+│   ├── screens/               # Schermate (auth, game, menu, multiplayer) + ui.c
+│   └── socket/                # Implementazione rete (network, lan, server, utils)
+├── lib/                       # Interfacce pubbliche (*.h) — un modulo = una cartella
+│   ├── auth/                  # Header modulo autenticazione (auth.h, auth_validation.h)
+│   ├── game/                  # Header gioco (game_logic.h, game_state.h, player.h)
+│   ├── data_structures/       # Header pubblici ADT (solo tipi opachi + API)
+│   │   └── private/           # Rappresentazioni interne degli ADT (*_private.h)
+│   ├── screens/               # Header schermate (+ ui.h, string_utils)
+│   ├── socket/                # Header rete (network, lan, server, utils)
+│   ├── fs/                    # Header utility filesystem
+│   └── raylib/                # Libreria grafica (venduta inclusa)
+├── tests/                     # Test unitari
+│   ├── test_adt.c             # Suite di test (149 test, solo API pubblica + assert)
+│   └── stubs/                 # Stub Raylib per compilazione test senza dipendenze
+├── scripts/                   # Script di automazione
 │   └── compile_and_test.bat # Compila gioco + test, genera documentazione Doxygen
 ├── docs/
 │   ├── Documentazione CdS.pdf  # Documentazione progettuale completa
@@ -64,7 +68,7 @@ Uno/
 │   └── games/               # Salvataggi partite
 ├── assets/
 │   ├── card/                # Texture carte
-│   └── altro/               # Risorse grafiche varie
+│   └── img/                 # Risorse grafiche varie (sfondo, ecc.)
 ├── bin/                     # Eseguibili compilati
 └── obj/                     # File oggetto
 ```
@@ -78,13 +82,26 @@ Uno/
 - **Giocatore**: informazioni utente, flag bot, stato lobby, numero carte in mano
 - **StatoGioco**: stato completo della partita (mazzi, giocatori, turno corrente, notifiche)
 
-### Strutture dati dinamiche (ADT)
+### Strutture dati dinamiche (ADT opachi)
 
-- **Lista doppiamente concatenata**: mano del giocatore
-- **Pila (Stack)**: mazzo di pesca e mazzo degli scarti
-- **Coda (Queue)**: gestione turni di gioco
-- **Albero BST**: caricamento utenti in RAM per ricerca logaritmica
-- **Buffer circolare**: storico chat FIFO
+Tutti gli ADT sono realizzati con **information hiding completo** (tipo opaco):
+l'header pubblico dichiara solo `typedef struct X X;`, mentre la rappresentazione
+interna (`NodoCarta`, `NodoCoda`, `NodoPila`, `NodoAlbero`, `ChatStorico`, ecc.)
+è definita esclusivamente nell'header privato `*_private.h`, incluso solo dai
+moduli di implementazione in `src/`. Nessun utilizzatore può accedere ai campi
+interni: l'accesso avviene solo tramite le funzioni dell'API pubblica.
+
+| ADT | Header pubblico | Header privato (rappresentazione) | Uso nel dominio |
+|-----|-----------------|-----------------------------------|-----------------|
+| **ListaCarte** (lista doppiamente concatenata) | `lib/data_structures/list.h` | `lib/data_structures/private/list_private.h` | Mano dei giocatori (gestita da `game_logic`/`deck`) |
+| **Pila** (stack LIFO) | `lib/data_structures/stack.h` | `lib/data_structures/private/stack_private.h` | Mazzo di pesca e pila degli scarti |
+| **CodaTurni** (coda FIFO) | `lib/data_structures/queue.h` | `lib/data_structures/private/queue_private.h` | Avanzamento turni di gioco (`game_logic`) |
+| **Albero BST** | `lib/data_structures/bst.h` | `lib/data_structures/private/bst_private.h` | Autenticazione: utenti in RAM, ricerca per email |
+| **ChatStorico** (buffer circolare FIFO) | `lib/data_structures/chat.h` | `lib/data_structures/private/chat_private.h` | Cronologia messaggi chat |
+
+Nota: `StatoGioco` (in `lib/game_state.h`) referenzia le carte in trascinamento
+tramite **indice** (`id_carta_in_trascinamento`), mai tramite puntatori a nodi
+interni degli ADT: la rappresentazione resta così nascosta a tutti gli utilizzatori.
 
 ### Moduli funzionali
 
@@ -99,7 +116,10 @@ Uno/
 
 ## Test unitari
 
-Il progetto include una suite completa di **171 test unitari** che verificano il corretto funzionamento degli ADT e la logica di gioco.
+Il progetto include una suite completa di **149 test unitari**, scritti con
+`assert()` della libreria standard (`<assert.h>`) e basati **solo sull'API
+pubblica** degli ADT (nessun accesso alla rappresentazione interna), che
+verificano il corretto funzionamento degli ADT e delle funzionalità di dominio.
 
 ### Esecuzione dei test
 
@@ -114,7 +134,7 @@ Da linea di comando:
 scripts\compile_and_test.bat
 
 # Solo compilazione test
-gcc -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs tests/test_adt.c src/data_structures/*.c src/list.c src/game_logic.c src/game/deck.c -o tests/test_adt.exe -lm
+gcc -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs tests/test_adt.c src/data_structures/*.c src/game/game_logic.c src/game/deck.c -o tests/test_adt.exe -lm
 
 # Solo esecuzione (se già compilato)
 tests\test_adt.exe
@@ -124,15 +144,18 @@ tests\test_adt.exe
 
 | Modulo | Test | Note |
 |--------|------|------|
-| **Lista doppiamente concatenata** | 44 | Inserimenti, rimozioni, accesso, chiamate NULL |
-| **Pila** | 26 | Push, Pop, Top, svuota, distruggi, chiamate NULL |
-| **Coda** | 34 | Enqueue, dequeue, front, rear, inverti verso, ricerca, chiamate NULL |
-| **BST** | 28 | Inserimento, ricerca case-insensitive, duplicati, rimozione, inordine |
-| **Chat** | 17 | Buffer circolare, overflow, formattazione, chiamate NULL |
-| **MossaValida** | 10 | Match colore, tipo, jolly, mosse non valide |
-| **Giocatore** | 6 | Nome vuoto, SetNome, NomeBot, chiamate NULL |
+| **Lista doppiamente concatenata (ADT)** | 28 | Inserimenti, rimozioni, accesso per indice, chiamate NULL |
+| **Pila (ADT)** | 14 | Push, Pop, Top, svuota, chiamate NULL |
+| **Coda (ADT)** | 26 | Enqueue, dequeue, front, rear, rotazione turni, copia per indice |
+| **BST (ADT)** | 16 | Inserimento, ricerca per email, duplicati, rimozione, inordine |
+| **Chat (ADT)** | 9 | Buffer circolare, overflow, formattazione, chiamate NULL |
+| **Dominio: mazzo e pesca** | 8 | InizializzaMazzo (108 carte), Pesca, ricostruzione mano |
+| **Dominio: gestione mano** | 21 | Aggiunta/rimozione carte, salvataggio/ricostruzione mano (ADT ListaCarte) |
+| **Dominio: avanzamento turni** | 12 | Sincronizzazione CodaTurni con StatoGioco, direzione, effetti Salta |
+| **Dominio: regole di gioco** | 10 | MossaValida (colore/tipo/jolly), CambioGiro, +2 |
+| **Giocatore (difensivo)** | 5 | Nome vuoto, SetNome, NomeBot, chiamate NULL |
 
-**Totale**: 🟢 171/171 test passati
+**Totale**: 🟢 149/149 test passati
 
 ## Requisiti di sistema
 
@@ -158,13 +181,12 @@ Assicurarsi di avere installato:
 In alternativa, da linea di comando (nella cartella del progetto):
 
 ```bash
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/main.c -o obj/main.o
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/auth.c -o obj/auth.o
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/auth_validation.c -o obj/auth_validation.o
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/game_logic.c -o obj/game_logic.o
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/list.c -o obj/list.o
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/ui.c -o obj/ui.o
-gcc obj/main.o obj/auth.o obj/auth_validation.o obj/game_logic.o obj/list.o obj/ui.o -Llib/raylib -lraylib -o bin/Uno
+gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/core/main.c -o obj/main.o
+gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/auth/auth.c -o obj/auth.o
+gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/auth/auth_validation.c -o obj/auth_validation.o
+gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/game/game_logic.c -o obj/game_logic.o
+gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/screens/ui.c -o obj/ui.o
+gcc obj/main.o obj/auth.o obj/auth_validation.o obj/game_logic.o obj/ui.o -Llib/raylib -lraylib -o bin/Uno
 ```
 
 ## Esecuzione

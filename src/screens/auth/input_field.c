@@ -15,8 +15,8 @@
 #include <string.h>
 #include "raylib.h"
 #include "../../../lib/screens/auth/input_field.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/ui.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/screens/ui.h"
 
 /** @brief Flag globale per richiedere il submit del form. */
 int submit_richiesto = 0;

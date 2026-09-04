@@ -7,8 +7,9 @@
  * Operazioni: crea, push, pop, top, svuota, distruggi.
  */
 #include <stdlib.h>
-#include "../../lib/data_structures.h"
+#include "../../lib/data_structures/data_structures.h"
 #include "../../lib/data_structures/stack.h"
+#include "../../lib/data_structures/private/stack_private.h"
 
 /* ============================================================
  *  IMPLEMENTAZIONE PILA

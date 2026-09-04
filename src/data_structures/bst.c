@@ -9,8 +9,9 @@
  */
 #include <stdlib.h>
 #include <string.h>
-#include "../../lib/data_structures.h"
+#include "../../lib/data_structures/data_structures.h"
 #include "../../lib/data_structures/bst.h"
+#include "../../lib/data_structures/private/bst_private.h"
 
 /* ============================================================
  *  ALBERO BINARIO DI RICERCA - Implementazione
@@ -186,4 +187,15 @@ int BST_Altezza(NodoAlbero* radice) {
 int BST_ContaNodi(NodoAlbero* radice) {
     if (!radice) return 0;
     return 1 + BST_ContaNodi(radice->left) + BST_ContaNodi(radice->right);
+}
+
+/**
+ * @brief Restituisce l'email dell'utente contenuto nel nodo (accessor).
+ * @ingroup bst
+ * @pre nodo != NULL.
+ * @return Puntatore alla stringa email, o NULL.
+ * @param nodo Nodo dell'albero.
+ */
+const char* BST_GetEmail(const NodoAlbero* nodo) {
+    return nodo ? nodo->utente.email : NULL;
 }

@@ -10,12 +10,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../lib/game_logic.h"
-#include "../../lib/data_structures.h"
+#include "../../lib/game/game_logic.h"
+#include "../../lib/data_structures/data_structures.h"
 #include "../../lib/data_structures/stack.h"
 #include "../../lib/data_structures/queue.h"
-#include "../../lib/list.h"
-#include "../../lib/auth.h"
+#include "../../lib/data_structures/list.h"
+#include "../../lib/auth/auth.h"
 
 /**
  * @brief Ricostruisce TUTTE le strutture ADT statiche dopo il caricamento da file.
@@ -32,7 +32,6 @@
 void RicostruisciStatoADT(StatoGioco *gioco) {
     if (mazzo_pila) { Pila_Distruggi(mazzo_pila); mazzo_pila = NULL; }
     if (scarti_pila) { Pila_Distruggi(scarti_pila); scarti_pila = NULL; }
-    if (coda_turni) { Coda_Distruggi(coda_turni); coda_turni = NULL; }
     mazzo_pila = Pila_Crea();
     scarti_pila = Pila_Crea();
     for (int i = 0; i < gioco->num_carte_mazzo; i++) {
@@ -41,23 +40,16 @@ void RicostruisciStatoADT(StatoGioco *gioco) {
     for (int i = 0; i < gioco->num_carte_scarti; i++) {
         Pila_Push(scarti_pila, gioco->scarti[i]);
     }
-    coda_turni = Coda_Crea();
+    /* Ricrea la coda dei turni (funzionalita' di dominio basata sull'ADT CodaTurni) */
+    GameLogic_SincronizzaCodaTurni(gioco);
+    /* Ricrea la mano di ogni giocatore (funzionalita' di dominio basata sull'ADT ListaCarte) */
     for (int i = 0; i < gioco->num_giocatori; i++) {
-        Coda_Enqueue(coda_turni, gioco->giocatori[i]);
-    }
-    for (int i = 0; i < gioco->num_giocatori; i++) {
-        Giocatore *g = &gioco->giocatori[i];
-        g->mano = CreaLista();
-        for (int j = 0; j < g->num_carte_backup; j++) {
-            InsertInCoda(g->mano, g->mano_backup[j]);
-        }
-        g->num_carte_mano = g->mano->lunghezza;
+        GameLogic_RicostruisciMano(&gioco->giocatori[i]);
     }
     gioco->anim_attiva = 0;
     gioco->anim_t = 0;
     gioco->in_scelta_colore = 0;
     gioco->id_carta_in_trascinamento = -1;
-    gioco->nodo_carta_trascinata = NULL;
     gioco->deve_chiamare_uno = 0;
     gioco->timer_uno = 0;
 }
@@ -104,12 +96,17 @@ void NuovaPartita(StatoGioco *gioco, int num_avversari) {
     if (scarti_pila) Pila_Svuota(scarti_pila);
     else scarti_pila = Pila_Crea();
     Pila_Push(scarti_pila, gioco->scarti[0]);
-    if (coda_turni) Coda_Distruggi(coda_turni);
-    coda_turni = Coda_Crea();
-    for (int i = 0; i < gioco->num_giocatori; i++) {
-        Coda_Enqueue(coda_turni, gioco->giocatori[i]);
-    }
-    gioco->slot_salvataggio = 1;
+    /* Inizializza la coda dei turni tramite la funzione di dominio sull'ADT CodaTurni */
+    GameLogic_SincronizzaCodaTurni(gioco);
+        /* Partita nuova: nessuno slot di salvataggio di origine.
+     * Lo slot_salvataggio = 0 segnala "partita non caricata da file",
+     * così la fine partita non eliminera' alcun salvataggio.
+     * (slot_salvataggio > 0 solo per partite CARICATE dalla bacheca.) */
+    gioco->slot_salvataggio = 0;
+    /* Azzera anche il tracciamento interno dello slot di origine (save_manager):
+     * una partita NUOVA non deve mai far eliminare, alla propria conclusione,
+     * un salvataggio caricato in precedenza e magari lasciato a meta'. */
+    RegistraSlotCaricato(-1);
     while (1) {
         char percorso[70];
         snprintf(percorso, sizeof(percorso), "data/games/save_user%d_slot_%d.dat",
@@ -131,10 +128,7 @@ void NuovaPartita(StatoGioco *gioco, int num_avversari) {
  */
 void EliminaPartita(StatoGioco *gioco) {
     for (int i = 0; i < gioco->num_giocatori; i++) {
-        if (gioco->giocatori[i].mano) {
-            EliminaLista(gioco->giocatori[i].mano);
-            gioco->giocatori[i].mano = NULL;
-        }
+        GameLogic_DistruggiMano(&gioco->giocatori[i]);
     }
     if (mazzo_pila) { Pila_Distruggi(mazzo_pila); mazzo_pila = NULL; }
     if (scarti_pila) { Pila_Distruggi(scarti_pila); scarti_pila = NULL; }

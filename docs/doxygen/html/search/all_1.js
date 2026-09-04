@@ -13,7 +13,7 @@ var searchData=
   ['admindbsyncpacket_10',['AdminDBSyncPacket',['../structAdminDBSyncPacket.html',1,'']]],
   ['adminuseraction_11',['AdminUserAction',['../structAdminUserAction.html',1,'']]],
   ['adminusersyncdata_12',['AdminUserSyncData',['../structAdminUserSyncData.html',1,'']]],
-  ['adt_13',['Strutture dati dinamiche (ADT)',['../index.html#autotoc_md7',1,'']]],
+  ['adt_20opachi_13',['Strutture dati dinamiche (ADT opachi)',['../index.html#autotoc_md7',1,'']]],
   ['aggiornaanimazioni_14',['AggiornaAnimazioni',['../gameplay__animation_8h.html#af744d2952272ae276b215ab237284686',1,'gameplay_animation.h']]],
   ['aggiornaauth_15',['AggiornaAuth',['../auth__update_8h.html#a63cd56c684cf39398eda9013a4ab4b32',1,'AggiornaAuth(FaseApplicazione *fase):&#160;auth_update.c'],['../auth__update_8c.html#a63cd56c684cf39398eda9013a4ab4b32',1,'AggiornaAuth(FaseApplicazione *fase):&#160;auth_update.c']]],
   ['aggiornachat_16',['AggiornaChat',['../gameplay__chat_8h.html#a128885540259cd9e820ae58bd839077b',1,'gameplay_chat.h']]],

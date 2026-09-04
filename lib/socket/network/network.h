@@ -8,9 +8,9 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
-#include "../../data_structures.h"
-#include "../../player.h"
-#include "../../game_state.h"
+#include "../../data_structures/data_structures.h"
+#include "../../game/player.h"
+#include "../../game/game_state.h"
 #include "../lan/lan_protocol.h" /* Per STORICO_SYNC_COUNT usato in StatsSyncPacket */
 
 #ifdef _WIN32

@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__save__syn
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="lan__sync_8h_source.html">../../../lib/socket/lan/lan_sync.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="lan__protocol_8h_source.html">../../../lib/socket/lan/lan_protocol.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../../lib/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../../lib/game/game_logic.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="fs_8h_source.html">../../../lib/fs/fs.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
@@ -141,10 +141,6 @@ Definizioni</h2></td></tr>
 Funzioni</h2></td></tr>
 <tr class="memitem:a81acd816d2435869c41138e77a3708bc" id="r_a81acd816d2435869c41138e77a3708bc"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a81acd816d2435869c41138e77a3708bc">GetSlotPath</a> (char *buffer, size_t bufsize, int slot)</td></tr>
 <tr class="memdesc:a81acd816d2435869c41138e77a3708bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruisce il path del file di salvataggio nel formato "data/games/save_user{ID}_slot_{N}.dat" (coerente con <a class="el" href="save__manager_8c.html" title="Gestione salvataggi partite su file binario.">save_manager.c</a>).  <br /></td></tr>
-<tr class="memitem:aa91901537470150bb4ec700688a5d97a" id="r_aa91901537470150bb4ec700688a5d97a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa91901537470150bb4ec700688a5d97a">GetSlotPathForUser</a> (char *buffer, size_t bufsize, int uid, int slot)</td></tr>
-<tr class="memdesc:aa91901537470150bb4ec700688a5d97a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente (usato per ricezione salvataggi da LAN).  <br /></td></tr>
-<tr class="memitem:ad48587fee80f643a55d05512f4869b23" id="r_ad48587fee80f643a55d05512f4869b23"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#ad48587fee80f643a55d05512f4869b23">GetSlotPathForUsername</a> (char *buffer, size_t bufsize, const char *username, int slot)</td></tr>
-<tr class="memdesc:ad48587fee80f643a55d05512f4869b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Costruisce il path del file di salvataggio per username (ricerca l'ID utente nel database).  <br /></td></tr>
 <tr class="memitem:a2084cf7fb44e75b9e929c83e8fb898bc" id="r_a2084cf7fb44e75b9e929c83e8fb898bc"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a2084cf7fb44e75b9e929c83e8fb898bc">TrovaRecv</a> (const char *owner, const char *data)</td></tr>
 <tr class="memdesc:a2084cf7fb44e75b9e929c83e8fb898bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cerca o alloca un ricevitore per owner/data.  <br /></td></tr>
 <tr class="memitem:a58a3d2df9ba55c01eeeac2ed1199175c" id="r_a58a3d2df9ba55c01eeeac2ed1199175c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a58a3d2df9ba55c01eeeac2ed1199175c">InviaSalvataggioChunked</a> (const char *filepath, const char *owner, const char *data, int slot, int num_g)</td></tr>
@@ -283,107 +279,6 @@ Variabili</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="aa91901537470150bb4ec700688a5d97a" name="aa91901537470150bb4ec700688a5d97a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa91901537470150bb4ec700688a5d97a">&#9670;&#160;</a></span>GetSlotPathForUser()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GetSlotPathForUser </td>
-          <td>(</td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>bufsize</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>uid</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slot</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Costruisce il path del file di salvataggio per un utente specifico con un dato ID utente (usato per ricezione salvataggi da LAN). </p>
-<dl class="params"><dt>Parametri</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buffer</td><td>Buffer di destinazione. </td></tr>
-    <tr><td class="paramname">bufsize</td><td>Dimensione del buffer. </td></tr>
-    <tr><td class="paramname">uid</td><td>ID dell'utente nel database. </td></tr>
-    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad48587fee80f643a55d05512f4869b23" name="ad48587fee80f643a55d05512f4869b23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad48587fee80f643a55d05512f4869b23">&#9670;&#160;</a></span>GetSlotPathForUsername()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GetSlotPathForUsername </td>
-          <td>(</td>
-          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>bufsize</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slot</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Costruisce il path del file di salvataggio per username (ricerca l'ID utente nel database). </p>
-<dl class="params"><dt>Parametri</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">buffer</td><td>Buffer di destinazione. </td></tr>
-    <tr><td class="paramname">bufsize</td><td>Dimensione del buffer. </td></tr>
-    <tr><td class="paramname">username</td><td>Username del proprietario del salvataggio. </td></tr>
-    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Restituisce</dt><dd>1 se trovato, 0 altrimenti. </dd></dl>
 
 </div>
 </div>

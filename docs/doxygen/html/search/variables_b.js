@@ -7,12 +7,10 @@ var searchData=
   ['lansocket_4',['lanSocket',['../lan__broadcast_8c.html#a352ca6eff6deccbae445480052cf9bdc',1,'lan_broadcast.c']]],
   ['lantimer_5',['lanTimer',['../lan__broadcast_8c.html#a6d0aa9313d240718c068dd13d497982a',1,'lan_broadcast.c']]],
   ['lastheartbeat_6',['lastHeartbeat',['../structSessionPlayer.html#a1394d006e6525ca68fdc517cc0242050',1,'SessionPlayer']]],
-  ['left_7',['left',['../structNodoAlbero.html#a0f9a56f2a6b5da3024cca46728aa3c5b',1,'NodoAlbero']]],
-  ['length_8',['length',['../structLanPacketHeader.html#a8939bb9e1a5eab219299b2916cf41e23',1,'LanPacketHeader']]],
-  ['lista_9',['lista',['../structDatabaseUtenti.html#a1e6283b0977951b6856b4a28cb134d30',1,'DatabaseUtenti']]],
-  ['local_5fplayer_5fid_10',['local_player_id',['../group__network__packet__strutture.html#ga3437dc7e27766145ab5c8d9a605083cd',1,'local_player_id:&#160;network.c'],['../group__network__packet__strutture.html#ga3437dc7e27766145ab5c8d9a605083cd',1,'local_player_id:&#160;network.c']]],
-  ['localhostname_11',['localHostname',['../lan__broadcast_8c.html#adb8cfa9e8699a60b732bc7abd0f6c442',1,'lan_broadcast.c']]],
-  ['localip_12',['localIP',['../multiplayer__screen_8c.html#a158eb3289164a3e6a88e6365c6b87181',1,'multiplayer_screen.c']]],
-  ['localsocket_13',['localSocket',['../network_8c.html#a0a755f1937d6aeb27a26504504141fec',1,'network.c']]],
-  ['lunghezza_14',['lunghezza',['../structListaCarte.html#ab4710d62e8351a06557c98ed3820ea9b',1,'ListaCarte']]]
+  ['length_7',['length',['../structLanPacketHeader.html#a8939bb9e1a5eab219299b2916cf41e23',1,'LanPacketHeader']]],
+  ['lista_8',['lista',['../structDatabaseUtenti.html#a1e6283b0977951b6856b4a28cb134d30',1,'DatabaseUtenti']]],
+  ['local_5fplayer_5fid_9',['local_player_id',['../group__network__packet__strutture.html#ga3437dc7e27766145ab5c8d9a605083cd',1,'local_player_id:&#160;network.c'],['../group__network__packet__strutture.html#ga3437dc7e27766145ab5c8d9a605083cd',1,'local_player_id:&#160;network.c']]],
+  ['localhostname_10',['localHostname',['../lan__broadcast_8c.html#adb8cfa9e8699a60b732bc7abd0f6c442',1,'lan_broadcast.c']]],
+  ['localip_11',['localIP',['../multiplayer__screen_8c.html#a158eb3289164a3e6a88e6365c6b87181',1,'multiplayer_screen.c']]],
+  ['localsocket_12',['localSocket',['../network_8c.html#a0a755f1937d6aeb27a26504504141fec',1,'network.c']]]
 ];

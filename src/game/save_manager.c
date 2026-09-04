@@ -12,8 +12,8 @@
 #include <string.h>
 #include <time.h>
 
-#include "../../lib/game_logic.h"
-#include "../../lib/auth.h"
+#include "../../lib/game/game_logic.h"
+#include "../../lib/auth/auth.h"
 #include "../../lib/socket/lan/lan_sync.h"
 #include "../../lib/socket/network/network.h"
 #include "../../lib/fs/fs.h"
@@ -26,6 +26,14 @@
 
 /** @brief Struttura temporanea per ordinamento salvataggi (usata in CompattaSalvataggiUtente). */
 typedef struct { char percorso[70]; char data[30]; } TempSave;
+
+/* ==================================================================\
+ *  TRACCIAMENTO SLOT DI PARTITA CARICATA (Information Hiding)
+ *  Memorizza lo slot da cui la partita in corso e' stata caricata,
+ *  in modo da eliminarlo automaticamente alla fine (partita conclusa).
+ *  -1 = partita nuova / online (nessun salvataggio di origine).
+ * ================================================================== */
+static int slot_caricato_attivo = -1;
 
 /**
  * @brief Costruisce il path completo del file di salvataggio per l'utente
@@ -69,35 +77,19 @@ static int ConfrontaDate(const char* a, const char* b) {
     return 0;
 }
 
-/**
- * @brief Conta quanti salvataggi appartengono all'utente corrente.
- * @return Numero di file .dat con proprietario = utente corrente.
- */
-static int ContaSlotUtente(void) {
-    if (id_utente_corrente < 0 || id_utente_corrente >= dbUtenti.num_utenti) return 0;
-    const char* currentUser = dbUtenti.lista[id_utente_corrente].username;
-    int count = 0;
-    for (int i = 1; i <= 100; i++) {
-        char percorso[70];
-        GetSlotPath(percorso, sizeof(percorso), i);
-        FILE* f = fopen(percorso, "rb");
-        if (!f) continue;
-        StatoGioco temp;
-        size_t r = fread(&temp, sizeof(StatoGioco), 1, f);
-        fclose(f);
-        if (r != 1 || temp.giocatori[0].nome[0] == '\0') continue;
-        if (strcmp(temp.giocatori[0].nome, currentUser) == 0) count++;
-    }
-    return count;
-}
 
 /**
  * @brief Salva lo stato corrente della partita su file binario.
  *
  * Procedura:
  *   1. Compatta i salvataggi esistenti dell'utente
- *   2. Genera il timestamp corrente
- *   3. Trova il primo slot libero
+ *   2. Determina lo slot di destinazione: se questa partita ha GIÀ un
+ *      salvataggio su disco (stesso proprietario e stesso timestamp),
+ *      SOVRASCRIVE quello slot con lo stato attuale; altrimenti usa il
+ *      primo slot libero (o il più vecchio se tutti pieni). In questo
+ *      modo il flusso crea->salva->carica->salva di nuovo NON crea mai
+ *      file duplicati: ogni partita ha UN SOLO salvataggio.
+ *   3. Genera il timestamp corrente
  *   4. Serializza le mani su array di backup
  *   5. Scrive lo StatoGioco su file .dat
  *   6. Ricostruisce gli ADT
@@ -117,39 +109,55 @@ void SalvaPartita(StatoGioco *gioco) {
      * coerente degli slot realmente occupati. */
     CompattaSalvataggiUtente();
 
-    /* BUG 1 FIX: Genera il timestamp SEMPRE prima di qualsiasi altra operazione
-     * che potrebbe usare data_salvataggio. Questo timestamp viene usato come
-     * chiave primaria per la deduplicazione dei salvataggi durante la
-     * sincronizzazione LAN (LAN_BroadcastSavesNow -> InviaSalvataggioChunked).
-     * Se il timestamp e' vuoto o inconsistente, la sincronizzazione LAN fallisce
-     * e i salvataggi non vengono propagati correttamente tra i dispositivi. */
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
-    gioco->data_salvataggio[0] = '\0'; /* Pulisce prima di scrivere per evitare residui */
-    sprintf(gioco->data_salvataggio, "%02d/%02d/%d %02d:%02d:%02d",
-            tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900,
-            tm.tm_hour, tm.tm_min, tm.tm_sec);
-    gioco->data_salvataggio[sizeof(gioco->data_salvataggio) - 1] = '\0'; /* Terminatore sicuro */
+    /* ============================================================
+     * 1) DETERMINAZIONE SLOT DI DESTINAZIONE
+     * ============================================================
+     * REQUISITO DOCENTE: crea -> salva -> carica -> salva di nuovo
+     * deve SOVRASCRIVERE lo slot originale con lo stato ATTUALE,
+     * senza creare ogni volta nuovi file di salvataggio.
+     *
+     * Il salvataggio di QUESTA partita viene riconosciuto confrontando
+     * proprietario (nome giocatore 0) e timestamp dell'ultimo salvataggio
+     * (gioco->data_salvataggio: ancora quello PRECEDENTE, verrà aggiornato
+     * più sotto prima della scrittura). Se il suo file esiste, lo
+     * sovrascriviamo. Solo se la partita non ha ancora un salvataggio su
+     * disco si usa il primo slot libero (o il più vecchio se 100/100 pieni). */
+    int slot_destinazione = -1;
 
-    {
-        int sovrascrivi = -1;
+    if (gioco->data_salvataggio[0] != '\0') {
+        for (int i = 1; i <= 100 && slot_destinazione == -1; i++) {
+            char p[70];
+            GetSlotPath(p, sizeof(p), i);
+            FILE* f = fopen(p, "rb");
+            if (!f) continue;
+            StatoGioco es;
+            size_t r = fread(&es, sizeof(StatoGioco), 1, f);
+            fclose(f);
+            if (r != 1 || es.giocatori[0].nome[0] == '\0') continue;
+            if (strcmp(es.giocatori[0].nome, gioco->giocatori[0].nome) == 0 &&
+                strcmp(es.data_salvataggio, gioco->data_salvataggio) == 0) {
+                slot_destinazione = i;   /* SOVRASCRITTURA stesso slot */
+            }
+        }
+    }
+
+    if (slot_destinazione == -1) {
+        /* Prima volta che questa partita viene salvata (o file non più presente). */
         int slot_trovato = 0;
         for (int i = 1; i <= 100; i++) {
             char p[70];
             GetSlotPath(p, sizeof(p), i);
             FILE* f = fopen(p, "rb");
             if (!f) { slot_trovato = i; break; }
-            StatoGioco es; size_t r = fread(&es, sizeof(StatoGioco), 1, f); fclose(f);
+            StatoGioco es;
+            size_t r = fread(&es, sizeof(StatoGioco), 1, f);
+            fclose(f);
             if (r != 1 || es.giocatori[0].nome[0] == '\0') { slot_trovato = i; break; }
-            if (strcmp(es.giocatori[0].nome, gioco->giocatori[0].nome) == 0 &&
-                strcmp(es.data_salvataggio, gioco->data_salvataggio) == 0) {
-                sovrascrivi = i; break;
-            }
         }
-        if (sovrascrivi != -1) gioco->slot_salvataggio = sovrascrivi;
-        else if (slot_trovato) gioco->slot_salvataggio = slot_trovato;
-        else {
-            /* Tutti gli slot sono pieni: sovrascrivi il salvataggio più vecchio */
+        if (slot_trovato) {
+            slot_destinazione = slot_trovato;
+        } else {
+            /* Tutti gli slot dell'utente sono pieni: sovrascrivi il più vecchio. */
             int slot_piu_vecchio = -1;
             char data_piu_vecchia[30] = "";
             for (int s = 1; s <= 100; s++) {
@@ -162,30 +170,36 @@ void SalvaPartita(StatoGioco *gioco) {
                 fclose(fc);
                 if (r != 1 || es.giocatori[0].nome[0] == '\0') continue;
                 if (strcmp(es.giocatori[0].nome, gioco->giocatori[0].nome) != 0) continue;
-                if (slot_piu_vecchio == -1 || ConfrontaDate(es.data_salvataggio, data_piu_vecchia) < 0) {
+                if (slot_piu_vecchio == -1 ||
+                    ConfrontaDate(es.data_salvataggio, data_piu_vecchia) < 0) {
                     slot_piu_vecchio = s;
                     strncpy(data_piu_vecchia, es.data_salvataggio, sizeof(data_piu_vecchia) - 1);
                 }
             }
-            if (slot_piu_vecchio != -1) gioco->slot_salvataggio = slot_piu_vecchio;
-            else return; /* Nessun salvataggio dell'utente: impossibile */
+            if (slot_piu_vecchio != -1) slot_destinazione = slot_piu_vecchio;
         }
     }
+    if (slot_destinazione == -1) return; /* Nessuno slot utilizzabile: nessun salvataggio. */
+    gioco->slot_salvataggio = slot_destinazione;
+
+    /* BUG 1 FIX: genera il timestamp ORA, subito prima della scrittura.
+     * Deve avvenire DOPO la scelta dello slot perché quest'ultima deve
+     * confrontare il timestamp PRECEDENTE (chiave per riconoscere il file
+     * della partita in corso). Il timestamp corrente è poi usato come chiave
+     * primaria di deduplicazione durante la sincronizzazione LAN. */
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    gioco->data_salvataggio[0] = '\0'; /* Pulisce prima di scrivere per evitare residui */
+    char timestamp[80];  /* buffer largo: evita il falso positivo -Wformat-truncation di GCC */
+    snprintf(timestamp, sizeof(timestamp), "%02d/%02d/%d %02d:%02d:%02d",
+            tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900,
+            tm.tm_hour, tm.tm_min, tm.tm_sec);
+    strncpy(gioco->data_salvataggio, timestamp, sizeof(gioco->data_salvataggio) - 1);
+    gioco->data_salvataggio[sizeof(gioco->data_salvataggio) - 1] = '\0'; /* Terminatore sicuro */
 
     for (int i = 0; i < gioco->num_giocatori; i++) {
-        Giocatore *g = &gioco->giocatori[i];
-        g->num_carte_backup = 0;
-        if (g->mano) {
-            NodoCarta *n = g->mano->testa;
-            int idx = 0;
-            while (n && idx < 108) {
-                g->mano_backup[idx++] = n->carta;
-                n = n->prossimo;
-            }
-            g->num_carte_backup = idx;
-        }
+        GameLogic_PreparaManoSalvataggio(&gioco->giocatori[i]);
     }
-    gioco->nodo_carta_trascinata = NULL;
     gioco->id_carta_in_trascinamento = -1;
     for (int i = 0; i < gioco->num_giocatori; i++) {
         gioco->giocatori[i].mano = NULL;
@@ -205,8 +219,45 @@ void SalvaPartita(StatoGioco *gioco) {
     FILE *f = fopen(percorso, "wb");
     if (f) { fwrite(gioco, sizeof(StatoGioco), 1, f); fclose(f); }
 
+    /* Registra lo slot in cui vive il salvataggio della partita corrente:
+     * consente alla fine partita di eliminarlo automaticamente dalla bacheca
+     * (gameplay_update.c usa OttieniSlotCaricato + EliminaSalvataggio).
+     * Vale sia per partite caricate (slot di origine) sia per partite nuove
+     * salvate durante il gioco: nessun salvataggio orfano in bacheca. */
+    RegistraSlotCaricato(gioco->slot_salvataggio);
+
     RicostruisciStatoADT(gioco);
     LAN_BroadcastSavesNow();
+}
+
+/**
+ * @brief Registra lo slot del salvataggio della partita in corso.
+ * @ingroup save_manager
+ *
+ * Tracciamento in memoria (NON persistito: non modifica il formato dei file
+ * di salvataggio). Viene impostato:
+ *   - allo slot caricato dalla bacheca, dentro CaricaPartitaDaSlot();
+ *   - allo slot appena scritto, dopo ogni SalvaPartita() (sovrascrittura).
+ * Consente di rimuovere automaticamente dalla bacheca quel salvataggio
+ * quando la partita termina (OttieniSlotCaricato + EliminaSalvataggio).
+ *
+ * @post slot memorizzato come slot attivo (o -1 per "nessun salvataggio").
+ * @param slot Indice dello slot (1-100), oppure -1 quando si inizia una
+ *             partita nuova / online (nessun salvataggio di origine).
+ */
+void RegistraSlotCaricato(int slot) {
+    slot_caricato_attivo = slot;
+}
+
+/**
+ * @brief Restituisce lo slot del salvataggio della partita in corso.
+ * @ingroup save_manager
+ * @return Slot registrato con RegistraSlotCaricato(), oppure -1 se la partita
+ *         corrente NON ha un salvataggio su disco (nuova/online mai salvata,
+ *         oppure tracciamento azzerato all'avvio di una partita nuova).
+ */
+int OttieniSlotCaricato(void) {
+    return slot_caricato_attivo;
 }
 
 /**
@@ -232,7 +283,7 @@ int CaricaPartitaDaSlot(StatoGioco *gioco, int slot) {
     if (f) {
         fread(gioco, sizeof(StatoGioco), 1, f);
         fclose(f);
-        gioco->nodo_carta_trascinata = NULL;
+        RegistraSlotCaricato(slot);  /* traccia l'origine del caricamento */
         gioco->id_carta_in_trascinamento = -1;
         for (int i = 0; i < gioco->num_giocatori; i++) {
             gioco->giocatori[i].mano = NULL;
@@ -362,7 +413,11 @@ void EliminaSalvataggio(int slot) {
             strncpy(data_salvataggio, tmp.data_salvataggio, sizeof(data_salvataggio)-1);
         }
     }
-    remove(percorso);
+        remove(percorso);
+    /* Se sto eliminando lo slot della partita in corso, resetta il tracciamento */
+    if (slot == OttieniSlotCaricato()) {
+        RegistraSlotCaricato(-1);
+    }
     CompattaSalvataggiUtente();
     if (owner_username[0] && data_salvataggio[0]) {
         LAN_BroadcastDeleteSave(owner_username, data_salvataggio);
@@ -431,5 +486,6 @@ void EliminaTuttiSalvataggiUtente(const char* username) {
  * @param bufsize Dimensione del buffer.
  */
 void GetSaveFilePath(int user_index, int slot, char* buffer, size_t bufsize) {
+    (void)user_index;  /* parametro mantenuto per compatibilita' con game_logic.h */
     GetSlotPath(buffer, bufsize, slot);
 }

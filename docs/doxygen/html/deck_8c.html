@@ -127,10 +127,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('deck_8c.html',
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../lib/game_logic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game__logic_8h_source.html">../../lib/game/game_logic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../lib/data_structures/data_structures.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="stack_8h_source.html">../../lib/data_structures/stack.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="list_8h_source.html">../../lib/list.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="list_8h_source.html">../../lib/data_structures/list.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
@@ -142,10 +142,8 @@ Funzioni</h2></td></tr>
 <tr class="memdesc:gad1b01bee170bfe43e167097d8fa75b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fa pescare un numero di carte a un giocatore.  <br /></td></tr>
 <tr class="memitem:ga171821f60641393ff220f91b26e0325f" id="r_ga171821f60641393ff220f91b26e0325f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga171821f60641393ff220f91b26e0325f">GetLunghezzaMano</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
 <tr class="memdesc:ga171821f60641393ff220f91b26e0325f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di carte nella mano di un giocatore.  <br /></td></tr>
-<tr class="memitem:ga5a26039c72d695715eb46d1dbe0f91ff" id="r_ga5a26039c72d695715eb46d1dbe0f91ff"><td class="memItemLeft"><a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga5a26039c72d695715eb46d1dbe0f91ff">GetNodoCartaGiocatore</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice)</td></tr>
-<tr class="memdesc:ga5a26039c72d695715eb46d1dbe0f91ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nodo carta per indice.  <br /></td></tr>
 <tr class="memitem:ga911f218567f81d8d4d6eec5c1c12b543" id="r_ga911f218567f81d8d4d6eec5c1c12b543"><td class="memItemLeft"><a class="el" href="structCarta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#ga911f218567f81d8d4d6eec5c1c12b543">GetCartaGiocatore</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice)</td></tr>
-<tr class="memdesc:ga911f218567f81d8d4d6eec5c1c12b543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una carta dalla mano per indice.  <br /></td></tr>
+<tr class="memdesc:ga911f218567f81d8d4d6eec5c1c12b543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una carta dalla mano per indice (PER VALORE).  <br /></td></tr>
 <tr class="memitem:gac60c0e57c8c2a799f008d302bbaaa5fd" id="r_gac60c0e57c8c2a799f008d302bbaaa5fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__game__logic.html#gac60c0e57c8c2a799f008d302bbaaa5fd">RimuoviCartaGiocatore</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice)</td></tr>
 <tr class="memdesc:gac60c0e57c8c2a799f008d302bbaaa5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove una carta dalla mano per indice.  <br /></td></tr>
 </table>

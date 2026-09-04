@@ -20,9 +20,9 @@
 #include "../../../lib/socket/network/network_send.h"
 #include "../../../lib/socket/network/network.h"
 #include "../../../lib/socket/lan/lan_sync.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/ui.h"
-#include "../../../lib/game_logic.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/screens/ui.h"
+#include "../../../lib/game/game_logic.h"
 #include "../../../lib/data_structures/bst.h"
 
 #define LARGHEZZA 1280

@@ -53,11 +53,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "admin__draw_8c.html",
-"gameplay__shared_8h.html#a20d7f38f3172dfe2ed4c5819e84c78ed",
-"group__multiplayer__screen.html#ga8229566194e375f13f21c7f18d03bcba",
-"group__server__manager__api.html#ga16fd52dac20f4320260b28846fbddd9e",
-"queue_8h.html",
-"structStatoGioco.html#a7893a4cbfd40913396a71c865f75e105"
+"globals_e.html",
+"group__multiplayer__screen.html",
+"group__queue__nodi.html",
+"pages.html",
+"structUtente.html#a5386484fba15cc3d430200eb9a59f537"
 ];
 
 const SYNCONMSG = 'cliccare per disabilitare la sincronizzazione del pannello';

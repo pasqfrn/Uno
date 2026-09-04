@@ -56,8 +56,8 @@
 
 #include "../../../lib/socket/network/state_sync.h"
 #include "../../../lib/socket/network/network.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/auth.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/auth/auth.h"
 #include "../../../lib/screens/game/gameplay_screen.h"
 #include "../../../lib/screens/game/end_screen.h"
 #include "../../../lib/socket/lan/lan_sync.h"
@@ -286,6 +286,5 @@ void SyncGameStateFromNetwork(StatoGioco* local, const StatoGioco* remote) {
      * ================================================================ */
     if (currentRole == NET_CLIENT) {
         local->id_carta_in_trascinamento = -1;
-        local->nodo_carta_trascinata = NULL;
     }
 }

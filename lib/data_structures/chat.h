@@ -5,34 +5,34 @@
  * @brief Fornisce l'ADT ChatStorico (cronologia circolare FIFO) per
  * memorizzare e formattare i messaggi della chat di gioco.
  *
+ * PRINCIPIO DI INFORMATION HIDING:
+ * Il tipo `ChatStorico` e' dichiarato come tipo OPACO: la sua rappresentazione
+ * interna e' definita esclusivamente nel modulo di implementazione
+ * (src/data_structures/chat.c). Gli utilizzatori interagiscono solo tramite
+ * l'API pubblica di questo header.
+ *
  * La struttura MessaggioChat è definita in `data_structures.h`.
  */
 #ifndef DATA_STRUCTURES_CHAT_H
 #define DATA_STRUCTURES_CHAT_H
 
-#include "../data_structures.h"
+#include "data_structures.h"
 
 /** @brief Numero massimo di messaggi nella cronologia chat. */
 #define CHAT_STORICO_MAX 15
 
 /**
  * @addtogroup chat_storico Storico Chat
- * @brief Struttura per la cronologia circolare dei messaggi chat.
+ * @brief Tipo opaco della cronologia circolare dei messaggi chat.
  * @{
  */
 /**
- * @brief Cronologia circolare (FIFO) di messaggi.
+ * @brief Cronologia circolare (FIFO) di messaggi (tipo opaco).
  *
- * Quando si supera la capacità, il messaggio più vecchio viene sovrascritto.
+ * La rappresentazione interna e' nascosta agli utilizzatori; l'accesso
+ * avviene tramite le funzioni Chat_Crea/Chat_Aggiungi/Chat_Ottieni.
  */
-typedef struct {
-    /** @brief Buffer circolare di messaggi. */
-    MessaggioChat buffer[CHAT_STORICO_MAX];
-    /** @brief Numero di messaggi attualmente memorizzati (<= CHAT_STORICO_MAX). */
-    int count;
-    /** @brief Indice del messaggio più vecchio nella FIFO. */
-    int head;
-} ChatStorico;
+typedef struct ChatStorico ChatStorico;
 /** @} */
 
 /**
@@ -41,12 +41,19 @@ typedef struct {
  * @{
  */
 /**
- * @brief Crea uno storico chat vuoto.
- * @pre c != NULL.
- * @post Storico inizializzato (count=0, head=0).
- * @param c Puntatore a ChatStorico da inizializzare.
+ * @brief Crea uno storico chat vuoto (allocazione dinamica).
+ * @post Storico allocato e inizializzato (count=0, head=0), o NULL se out-of-memory.
+ * @return Puntatore a ChatStorico, o NULL.
  */
-void Chat_Crea(ChatStorico* c);
+ChatStorico* Chat_Crea(void);
+
+/**
+ * @brief Distrugge uno storico chat liberandone la memoria.
+ * @pre c != NULL.
+ * @post Memoria dello storico liberata.
+ * @param c Puntatore a ChatStorico.
+ */
+void Chat_Distruggi(ChatStorico* c);
 
 /**
  * @brief Aggiunge un messaggio in coda (FIFO).

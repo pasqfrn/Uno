@@ -4,24 +4,26 @@
  * @defgroup queue Queue (Coda)
  * @brief Implementa una coda doppiamente concatenata (deque) per gestire
  * i turni di gioco con supporto al Cambio Giro (inversione verso O(1)).
+ *
+ * PRINCIPIO DI INFORMATION HIDING:
+ * I tipi `NodoCoda` e `CodaTurni` sono dichiarati come tipi OPACHI: la
+ * loro rappresentazione interna e' definita esclusivamente nel modulo di
+ * implementazione (src/data_structures/queue.c). Gli utilizzatori
+ * interagiscono solo tramite l'API pubblica di questo header.
  */
 #ifndef DATA_STRUCTURES_QUEUE_H
 #define DATA_STRUCTURES_QUEUE_H
 
-#include "../data_structures.h"
-#include "../player.h"
+#include "data_structures.h"
+#include "../game/player.h"
 
 /**
  * @addtogroup queue_nodi Nodi Coda
- * @brief Struttura nodo per la coda dei turni.
+ * @brief Tipo opaco del nodo della coda dei turni.
  * @{
  */
-/** @brief Nodo della coda: contiene un Giocatore e puntatori next/prev. */
-typedef struct NodoCoda {
-    Giocatore giocatore;
-    struct NodoCoda* next;
-    struct NodoCoda* prev;
-} NodoCoda;
+/** @brief Nodo della coda (tipo opaco: rappresentazione interna nascosta). */
+typedef struct NodoCoda NodoCoda;
 /** @} */
 
 /**
@@ -30,17 +32,13 @@ typedef struct NodoCoda {
  * @{
  */
 /**
- * @brief Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.
+ * @brief Coda dei turni (tipo opaco: rappresentazione interna nascosta).
  *
- * `front` è l'inizio della coda (prossimo turno), `rear` è la fine.
- * `verso` memorizza la direzione (+1 orario, -1 antiorario) per Cambio Giro.
+ * Rappresenta l'ordine dei turni dei giocatori. I nodi interni (NodoCoda)
+ * sono allocati/gestiti esclusivamente dalle funzioni di questo ADT.
+ * Gli utilizzatori interagiscono solo tramite l'API pubblica.
  */
-typedef struct CodaTurni {
-    NodoCoda* front;
-    NodoCoda* rear;
-    int size;
-    int verso;   /**< +1 orario, -1 antiorario (modificato da carta Cambio Giro) */
-} CodaTurni;
+typedef struct CodaTurni CodaTurni;
 /** @} */
 
 /**
@@ -68,7 +66,7 @@ void Coda_Distruggi(CodaTurni* c);
  * @pre c != NULL.
  * @post Giocatore aggiunto in coda; size incrementato.
  * @param c Puntatore a CodaTurni.
- * @param g Giocatore da inserire.
+ * @param g Giocatore da inserire (copiato per valore).
  * @return 1 se successo, 0 altrimenti.
  */
 int Coda_Enqueue(CodaTurni* c, Giocatore g);
@@ -116,6 +114,19 @@ int Coda_Rear(const CodaTurni* c, Giocatore* out);
 NodoCoda* Coda_ProxNodo(const CodaTurni* c, NodoCoda* n);
 
 /**
+ * @brief Verifica che la coda sia consistente (debug/difensiva).
+ *
+ * Controlla che tutti i puntatori next/prev siano coerenti e che
+ * size corrisponda al numero di nodi raggiungibili da front.
+ *
+ * @pre c != NULL.
+ * @post Restituisce 1 se valida, 0 se inconsistente.
+ * @param c Puntatore a CodaTurni.
+ * @return 1 se valida, 0 altrimenti.
+ */
+int Coda_VerificaConsistenza(const CodaTurni* c);
+
+/**
  * @brief Verifica se la coda è vuota.
  * @pre c != NULL.
  * @return 1 se vuota, 0 altrimenti.
@@ -143,8 +154,23 @@ int Coda_Dimensione(const CodaTurni* c);
 void Coda_InvertiVerso(CodaTurni* c);
 
 /**
+ * @brief Ruota la coda di una posizione nella direzione corrente.
+ *
+ * Equivale alle operazioni Dequeue + Enqueue ma in O(1): il giocatore
+ * in testa viene spostato in coda (verso orario) oppure il giocatore
+ * in coda viene portato in testa (verso antiorario). Usata dal dominio
+ * per far avanzare il turno senza ricostruire la coda.
+ *
+ * @pre c != NULL; coda non vuota.
+ * @post La coda risulta ruotata di una posizione nel verso corrente.
+ * @param c Puntatore a CodaTurni.
+ */
+void Coda_Ruota(CodaTurni* c);
+
+/**
  * @brief Cerca il nodo all'indice specificato (0 = front).
  * @pre c != NULL; indice nel range [0, size-1].
+ * @post Nessuna modifica allo stato.
  * @return Puntatore a NodoCoda, o NULL se fuori range.
  * @param c Puntatore a CodaTurni.
  * @param indice Indice del nodo (0-based).

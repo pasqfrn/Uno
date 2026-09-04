@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['socket_0',['SOCKET',['../socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831',1,'socket_compat.h']]]
+  ['listacarte_0',['ListaCarte',['../list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f',1,'list.h']]]
 ];

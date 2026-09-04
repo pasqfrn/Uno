@@ -63,7 +63,7 @@ endif
 # ============================================================================
 # @brief File sorgente raggruppati per modulo
 # @details Ogni variabile elenca i file .c di un sottosistema:
-#   - SRCS_CORE: main, auth, game_logic, list, ui
+#   - SRCS_CORE: main, auth, game_logic, ui
 #   - SRCS_DATA: strutture dati (BST, chat, list, queue, stack)
 #   - SRCS_GAME: logica di gioco (deck, game_flow, save_manager)
 #   - SRCS_SCREENS_AUTH: schermate autenticazione
@@ -76,7 +76,7 @@ endif
 #   - SRCS_SOCKET_UTILS: utility di rete
 #   - SRCS_MENU: utility stringhe
 # ============================================================================
-SRCS_CORE = src/main.c src/auth.c src/auth_validation.c src/game_logic.c src/list.c src/ui.c
+SRCS_CORE = src/core/main.c src/auth/auth.c src/auth/auth_validation.c src/game/game_logic.c src/screens/ui.c
 SRCS_DATA = src/data_structures/bst.c src/data_structures/chat.c src/data_structures/list.c src/data_structures/queue.c src/data_structures/stack.c
 SRCS_GAME = src/game/deck.c src/game/game_flow.c src/game/save_manager.c
 SRCS_SCREENS_AUTH = src/screens/auth/input_field.c src/screens/auth/auth_screen.c src/screens/auth/auth_update.c src/screens/auth/auth_draw.c src/screens/auth/admin_draw.c
@@ -130,7 +130,7 @@ $(TARGET): $(OBJS)
 
 # ============================================================================
 # @brief TEST UNITARI ADT
-# @details Compila ed esegue i 171 test per verificare il corretto
+# @details Compila ed esegue i 149 test per verificare il corretto
 #          funzionamento di tutti gli ADT (Lista, Pila, Coda, BST, Chat)
 #          e della logica di gioco (MossaValida).
 #          Usa Itests/stubs/ per lo stub di Raylib.
@@ -145,7 +145,6 @@ TEST_OBJS = \
 	$(TEST_OBJ_DIR)/list_data_test.o \
 	$(TEST_OBJ_DIR)/bst_test.o \
 	$(TEST_OBJ_DIR)/chat_test.o \
-	$(TEST_OBJ_DIR)/list_std_test.o \
 	$(TEST_OBJ_DIR)/game_logic_test.o \
 	$(TEST_OBJ_DIR)/deck_test.o
 
@@ -175,10 +174,7 @@ $(TEST_OBJ_DIR)/bst_test.o: src/data_structures/bst.c
 $(TEST_OBJ_DIR)/chat_test.o: src/data_structures/chat.c
 	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
 
-$(TEST_OBJ_DIR)/list_std_test.o: src/list.c
-	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
-
-$(TEST_OBJ_DIR)/game_logic_test.o: src/game_logic.c
+$(TEST_OBJ_DIR)/game_logic_test.o: src/game/game_logic.c
 	$(CC) -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs -c $< -o $@
 
 $(TEST_OBJ_DIR)/deck_test.o: src/game/deck.c

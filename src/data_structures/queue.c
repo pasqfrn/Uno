@@ -8,8 +8,9 @@
  * ricerca per indice, copia per indice.
  */
 #include <stdlib.h>
-#include "../../lib/data_structures.h"
+#include "../../lib/data_structures/data_structures.h"
 #include "../../lib/data_structures/queue.h"
+#include "../../lib/data_structures/private/queue_private.h"
 
 /* ============================================================
  *  IMPLEMENTAZIONE CODA TURNI
@@ -162,16 +163,45 @@ int Coda_Dimensione(const CodaTurni* c) {
  * @brief Inverte il verso di scorrimento (carta Cambio Giro).
  * @ingroup queue
  * @pre c != NULL.
- * @post verso invertito; front/rear scambiati.
+ * @post verso invertito; il giocatore corrente (front) NON cambia.
  * @param c CodaTurni.
  */
 void Coda_InvertiVerso(CodaTurni* c) {
     if (!c) return;
     c->verso = -c->verso;
-    // Per mantenere la circolarità corretta scambiamo front/rear
-    NodoCoda* tmp = c->front;
-    c->front = c->rear;
-    c->rear = tmp;
+}
+
+/**
+ * @brief Ruota la coda di una posizione nella direzione corrente.
+ * @ingroup queue
+ * @pre c != NULL; coda non vuota.
+ * @post La coda risulta ruotata di una posizione nel verso corrente:
+ *       - orario:     il front va in coda;
+ *       - antiorario: il rear va in testa.
+ * @param c CodaTurni.
+ */
+void Coda_Ruota(CodaTurni* c) {
+    if (!c || !c->front || c->size <= 1) return;
+
+    if (c->verso == 1) {
+        /* Orario: il front va in coda. */
+        NodoCoda* n = c->front;
+        c->front = n->next;
+        c->front->prev = NULL;
+        c->rear->next = n;
+        n->prev = c->rear;
+        n->next = NULL;
+        c->rear = n;
+    } else {
+        /* Antiorario: il rear va in testa. */
+        NodoCoda* n = c->rear;
+        c->rear = n->prev;
+        c->rear->next = NULL;
+        n->prev = NULL;
+        n->next = c->front;
+        c->front->prev = n;
+        c->front = n;
+    }
 }
 
 /**

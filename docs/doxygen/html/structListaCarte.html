@@ -120,29 +120,31 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structListaCar
 </div><!--header-->
 <div class="contents">
 
-<p>Struttura container per la lista di carte (mano del giocatore).  
+<p>Container della lista di carte (rappresentazione interna).  
  <a href="#details">Continua...</a></p>
 
-<p><code>#include &lt;<a class="el" href="data__structures_2list_8h_source.html">list.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="list__private_8h_source.html">list_private.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Campi</h2></td></tr>
-<tr class="memitem:a2af0aa0daab6080813b843eaa6feaff4" id="r_a2af0aa0daab6080813b843eaa6feaff4"><td class="memItemLeft"><a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a2af0aa0daab6080813b843eaa6feaff4">testa</a></td></tr>
-<tr class="memitem:af15cb66c2fd993a220e65b5602711d36" id="r_af15cb66c2fd993a220e65b5602711d36"><td class="memItemLeft"><a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="#af15cb66c2fd993a220e65b5602711d36">coda</a></td></tr>
+<tr class="memitem:a7c28407d78d5615b72083bfa26cd050a" id="r_a7c28407d78d5615b72083bfa26cd050a"><td class="memItemLeft">struct <a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a7c28407d78d5615b72083bfa26cd050a">testa</a></td></tr>
+<tr class="memitem:a8b340d2b824031299a0ff2ff29bab516" id="r_a8b340d2b824031299a0ff2ff29bab516"><td class="memItemLeft">struct <a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a8b340d2b824031299a0ff2ff29bab516">coda</a></td></tr>
 <tr class="memitem:ab4710d62e8351a06557c98ed3820ea9b" id="r_ab4710d62e8351a06557c98ed3820ea9b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ab4710d62e8351a06557c98ed3820ea9b">lunghezza</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Struttura container per la lista di carte (mano del giocatore). </p>
-<p>Mantiene i puntatori a testa e coda per operazioni O(1) e la lunghezza corrente per contare rapidamente le carte in mano. </p>
+<div class="textblock"><p>Container della lista di carte (rappresentazione interna). </p>
+<p>Lista di carte (tipo opaco: rappresentazione interna nascosta).</p>
+<p>Mantiene i puntatori a testa e coda per operazioni O(1) e la lunghezza corrente per contare rapidamente le carte in mano.</p>
+<p>La lista doppiamente concatenata mantiene puntatori a testa e coda per operazioni O(1) e la lunghezza corrente per contare rapidamente le carte in mano. Gli utilizzatori accedono ai dati solo tramite l'API pubblica. </p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentazione dei campi</h2>
-<a id="af15cb66c2fd993a220e65b5602711d36" name="af15cb66c2fd993a220e65b5602711d36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af15cb66c2fd993a220e65b5602711d36">&#9670;&#160;</a></span>coda</h2>
+<a id="a8b340d2b824031299a0ff2ff29bab516" name="a8b340d2b824031299a0ff2ff29bab516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b340d2b824031299a0ff2ff29bab516">&#9670;&#160;</a></span>coda</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structNodoCarta.html">NodoCarta</a>* ListaCarte::coda</td>
+          <td class="memname">struct <a class="el" href="structNodoCarta.html">NodoCarta</a>* ListaCarte::coda</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -163,14 +165,14 @@ Campi</h2></td></tr>
 
 </div>
 </div>
-<a id="a2af0aa0daab6080813b843eaa6feaff4" name="a2af0aa0daab6080813b843eaa6feaff4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2af0aa0daab6080813b843eaa6feaff4">&#9670;&#160;</a></span>testa</h2>
+<a id="a7c28407d78d5615b72083bfa26cd050a" name="a7c28407d78d5615b72083bfa26cd050a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c28407d78d5615b72083bfa26cd050a">&#9670;&#160;</a></span>testa</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structNodoCarta.html">NodoCarta</a>* ListaCarte::testa</td>
+          <td class="memname">struct <a class="el" href="structNodoCarta.html">NodoCarta</a>* ListaCarte::testa</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -178,7 +180,7 @@ Campi</h2></td></tr>
 </div>
 </div>
 <hr/>La documentazione per questa struct è stata generata a partire dal seguente file:<ul>
-<li>data_structures/<a class="el" href="data__structures_2list_8h_source.html">list.h</a></li>
+<li>data_structures/<a class="el" href="list__private_8h_source.html">list_private.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

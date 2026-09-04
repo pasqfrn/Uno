@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>UNO - Gioco di Carte:  File sorgente data_structures/list_private.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">UNO - Gioco di Carte<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Implementazione del gioco UNO in C con Raylib</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('list__private_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">list_private.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="list__private_8h.html">Vai alla documentazione di questo file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef DATA_STRUCTURES_LIST_PRIVATE_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define DATA_STRUCTURES_LIST_PRIVATE_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="data__structures_8h.html">../../lib/data_structures/data_structures.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *  NODO CARTA - Lista DOPPIAMENTE concatenata</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * ============================================================ */</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structNodoCarta.html">   30</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structNodoCarta.html#aeebf8d75d3ea1e1c167344b5c4d98e4e">   31</a></span>    <a class="code hl_struct" href="structCarta.html">Carta</a> <a class="code hl_variable" href="structNodoCarta.html#aeebf8d75d3ea1e1c167344b5c4d98e4e">carta</a>;                    <span class="comment">/* La carta contenuta nel nodo */</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structNodoCarta.html#a38a4756098b91f388f6b762034cea50b">   32</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_variable" href="structNodoCarta.html#a38a4756098b91f388f6b762034cea50b">prossimo</a>;     <span class="comment">/* Puntatore al nodo successivo (next) */</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structNodoCarta.html#a79d379018c2987198cab3d3e198b6d67">   33</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_variable" href="structNodoCarta.html#a79d379018c2987198cab3d3e198b6d67">prev</a>;         <span class="comment">/* Puntatore al nodo precedente (prev) */</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/* ============================================================</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> *  LISTA CARTE - Container</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> * ============================================================ */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structListaCarte.html">   46</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structListaCarte.html">ListaCarte</a> {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structListaCarte.html#a7c28407d78d5615b72083bfa26cd050a">   47</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_variable" href="structListaCarte.html#a7c28407d78d5615b72083bfa26cd050a">testa</a>;        <span class="comment">/* Primo nodo della lista */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structListaCarte.html#a8b340d2b824031299a0ff2ff29bab516">   48</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structNodoCarta.html">NodoCarta</a>* <a class="code hl_variable" href="structListaCarte.html#a8b340d2b824031299a0ff2ff29bab516">coda</a>;         <span class="comment">/* Ultimo nodo della lista */</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structListaCarte.html#ab4710d62e8351a06557c98ed3820ea9b">   49</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structListaCarte.html#ab4710d62e8351a06557c98ed3820ea9b">lunghezza</a>;                  <span class="comment">/* Numero totale di carte nella lista */</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">/* DATA_STRUCTURES_LIST_PRIVATE_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="adata__structures_8h_html"><div class="ttname"><a href="data__structures_8h.html">data_structures.h</a></div><div class="ttdoc">Header centrale del progetto UNO - Tipi di dato condivisi.</div></div>
+<div class="ttc" id="astructCarta_html"><div class="ttname"><a href="structCarta.html">Carta</a></div><div class="ttdoc">Rappresenta una singola carta UNO.</div><div class="ttdef"><b>Definition</b> data_structures.h:65</div></div>
+<div class="ttc" id="astructListaCarte_html"><div class="ttname"><a href="structListaCarte.html">ListaCarte</a></div><div class="ttdoc">Container della lista di carte (rappresentazione interna).</div><div class="ttdef"><b>Definition</b> list_private.h:46</div></div>
+<div class="ttc" id="astructListaCarte_html_a7c28407d78d5615b72083bfa26cd050a"><div class="ttname"><a href="structListaCarte.html#a7c28407d78d5615b72083bfa26cd050a">ListaCarte::testa</a></div><div class="ttdeci">struct NodoCarta * testa</div><div class="ttdef"><b>Definition</b> list_private.h:47</div></div>
+<div class="ttc" id="astructListaCarte_html_a8b340d2b824031299a0ff2ff29bab516"><div class="ttname"><a href="structListaCarte.html#a8b340d2b824031299a0ff2ff29bab516">ListaCarte::coda</a></div><div class="ttdeci">struct NodoCarta * coda</div><div class="ttdef"><b>Definition</b> list_private.h:48</div></div>
+<div class="ttc" id="astructListaCarte_html_ab4710d62e8351a06557c98ed3820ea9b"><div class="ttname"><a href="structListaCarte.html#ab4710d62e8351a06557c98ed3820ea9b">ListaCarte::lunghezza</a></div><div class="ttdeci">int lunghezza</div><div class="ttdef"><b>Definition</b> list_private.h:49</div></div>
+<div class="ttc" id="astructNodoCarta_html"><div class="ttname"><a href="structNodoCarta.html">NodoCarta</a></div><div class="ttdoc">Nodo della lista doppiamente concatenata (rappresentazione interna).</div><div class="ttdef"><b>Definition</b> list_private.h:30</div></div>
+<div class="ttc" id="astructNodoCarta_html_a38a4756098b91f388f6b762034cea50b"><div class="ttname"><a href="structNodoCarta.html#a38a4756098b91f388f6b762034cea50b">NodoCarta::prossimo</a></div><div class="ttdeci">struct NodoCarta * prossimo</div><div class="ttdef"><b>Definition</b> list_private.h:32</div></div>
+<div class="ttc" id="astructNodoCarta_html_a79d379018c2987198cab3d3e198b6d67"><div class="ttname"><a href="structNodoCarta.html#a79d379018c2987198cab3d3e198b6d67">NodoCarta::prev</a></div><div class="ttdeci">struct NodoCarta * prev</div><div class="ttdef"><b>Definition</b> list_private.h:33</div></div>
+<div class="ttc" id="astructNodoCarta_html_aeebf8d75d3ea1e1c167344b5c4d98e4e"><div class="ttname"><a href="structNodoCarta.html#aeebf8d75d3ea1e1c167344b5c4d98e4e">NodoCarta::carta</a></div><div class="ttdeci">Carta carta</div><div class="ttdef"><b>Definition</b> list_private.h:31</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_e0e4df1b297a9f377abb7b27124b1ce7.html">data_structures</a></li><li class="navelem"><a href="list__private_8h.html">list_private.h</a></li>
+    <li class="footer">Generato <span class="timestamp"></span> per UNO - Gioco di Carte da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

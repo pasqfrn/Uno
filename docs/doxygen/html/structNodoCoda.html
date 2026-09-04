@@ -116,14 +116,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structNodoCoda
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Riferimenti per la struct NodoCoda<div class="ingroups"><a class="el" href="group__queue__nodi.html">Nodi Coda</a></div></div></div>
+  <div class="headertitle"><div class="title">Riferimenti per la struct NodoCoda</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Nodo della coda: contiene un <a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> e puntatori next/prev.  
+<p>Nodo della coda dei turni (rappresentazione interna).  
  <a href="#details">Continua...</a></p>
 
-<p><code>#include &lt;<a class="el" href="queue_8h_source.html">queue.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="queue__private_8h_source.html">queue_private.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Campi</h2></td></tr>
@@ -132,7 +132,9 @@ Campi</h2></td></tr>
 <tr class="memitem:a598e00f9d4a4d91061737683582ca45f" id="r_a598e00f9d4a4d91061737683582ca45f"><td class="memItemLeft">struct <a class="el" href="structNodoCoda.html">NodoCoda</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a598e00f9d4a4d91061737683582ca45f">prev</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Nodo della coda: contiene un <a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> e puntatori next/prev. </p>
+<div class="textblock"><p>Nodo della coda dei turni (rappresentazione interna). </p>
+<p>Nodo della coda (tipo opaco: rappresentazione interna nascosta).</p>
+<p>Contiene un <a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> e i puntatori next/prev per la doppia concatenazione. </p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentazione dei campi</h2>
 <a id="a3a5fda8e4c9c7753cbc05be748bfb0b7" name="a3a5fda8e4c9c7753cbc05be748bfb0b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a5fda8e4c9c7753cbc05be748bfb0b7">&#9670;&#160;</a></span>giocatore</h2>
@@ -177,7 +179,7 @@ Campi</h2></td></tr>
 </div>
 </div>
 <hr/>La documentazione per questa struct è stata generata a partire dal seguente file:<ul>
-<li>data_structures/<a class="el" href="queue_8h_source.html">queue.h</a></li>
+<li>data_structures/<a class="el" href="queue__private_8h_source.html">queue_private.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

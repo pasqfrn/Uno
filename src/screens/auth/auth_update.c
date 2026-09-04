@@ -20,13 +20,13 @@
 #include "../../../lib/screens/auth/auth_shared.h"
 #include "../../../lib/screens/auth/auth_update.h"
 #include "../../../lib/screens/auth/input_field.h"
-#include "../../../lib/auth_validation.h"
+#include "../../../lib/auth/auth_validation.h"
 #include "../../../lib/socket/network/network_send.h"
 #include "../../../lib/socket/lan/lan_sync.h"
 #include "../../../lib/screens/menu/string_utils.h"
-#include "../../../lib/auth.h"
+#include "../../../lib/auth/auth.h"
 #include "../../../lib/data_structures/bst.h"
-#include "../../../lib/ui.h"
+#include "../../../lib/screens/ui.h"
 
 /* Variabili di stato definite in auth_screen.c */
 extern char recPassword[30];

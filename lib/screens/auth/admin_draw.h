@@ -8,7 +8,7 @@
 #ifndef ADMIN_DRAW_H
 #define ADMIN_DRAW_H
 
-#include "../../data_structures.h"
+#include "../../data_structures/data_structures.h"
 
 /**
  * @brief Disegna il pannello admin con la lista utenti.

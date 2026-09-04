@@ -116,14 +116,14 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structNodoPila
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Riferimenti per la struct NodoPila<div class="ingroups"><a class="el" href="group__stack__nodi.html">Nodi Pila</a></div></div></div>
+  <div class="headertitle"><div class="title">Riferimenti per la struct NodoPila</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Nodo della pila: contiene una carta e puntatore al next.  
+<p>Nodo della pila LIFO (rappresentazione interna).  
  <a href="#details">Continua...</a></p>
 
-<p><code>#include &lt;<a class="el" href="stack_8h_source.html">stack.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="stack__private_8h_source.html">stack_private.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Campi</h2></td></tr>
@@ -131,7 +131,9 @@ Campi</h2></td></tr>
 <tr class="memitem:a7ee7a0a49a5e8429f500c5ec48387431" id="r_a7ee7a0a49a5e8429f500c5ec48387431"><td class="memItemLeft">struct <a class="el" href="structNodoPila.html">NodoPila</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a7ee7a0a49a5e8429f500c5ec48387431">next</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Nodo della pila: contiene una carta e puntatore al next. </p>
+<div class="textblock"><p>Nodo della pila LIFO (rappresentazione interna). </p>
+<p>Nodo della pila (tipo opaco: rappresentazione interna nascosta).</p>
+<p>Contiene una carta e il puntatore al nodo sottostante. </p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentazione dei campi</h2>
 <a id="a9a3ab07f77c9fbd965a6a3765e87f56f" name="a9a3ab07f77c9fbd965a6a3765e87f56f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9a3ab07f77c9fbd965a6a3765e87f56f">&#9670;&#160;</a></span>carta</h2>
@@ -162,7 +164,7 @@ Campi</h2></td></tr>
 </div>
 </div>
 <hr/>La documentazione per questa struct è stata generata a partire dal seguente file:<ul>
-<li>data_structures/<a class="el" href="stack_8h_source.html">stack.h</a></li>
+<li>data_structures/<a class="el" href="stack__private_8h_source.html">stack_private.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

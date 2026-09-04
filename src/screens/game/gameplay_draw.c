@@ -30,14 +30,14 @@
 #include "../../../lib/screens/game/gameplay_shared.h"
 #include "../../../lib/screens/game/gameplay_draw.h"
 #include "../../../lib/screens/menu/string_utils.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/ui.h"
-#include "../../../lib/list.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/screens/ui.h"
+#include "../../../lib/data_structures/list.h"
 #include "../../../lib/socket/network/network.h"
 #include "../../../lib/socket/network/network_send.h"
 #include "../../../lib/screens/game/end_screen.h"
 #include "../../../lib/socket/lan/lan_sync.h"
-#include "../../../lib/auth.h"
+#include "../../../lib/auth/auth.h"
 
 #define LARGHEZZA 1280
 #define ALTEZZA 720
@@ -146,31 +146,36 @@ void DisegnaGameplay(StatoGioco* gioco, FaseApplicazione* fase, Vector2 mousePos
     int cardW = 85, cardH = 130, gap = 45;
     int startX = (LARGHEZZA - (numCarte * gap + (cardW - gap))) / 2;
 
+    /* Legge la mano in una snapshot tramite l'API pubblica dell'ADT ListaCarte
+     * (nessun accesso alla rappresentazione interna della lista). */
+    Carta carte_mano[108];
+    int nCarte = GameLogic_CopiaMano(&gioco->giocatori[mio_id], carte_mano, 108);
+
     int hovered_idx = -1;
-    NodoCarta* c_check = gioco->giocatori[mio_id].mano ? gioco->giocatori[mio_id].mano->testa : NULL;
-    for (int i = 0; c_check != NULL; i++, c_check = c_check->prossimo) {
-        if (!c_check->carta.isTrascinata) {
+    for (int i = 0; i < nCarte; i++) {
+        if (!carte_mano[i].isTrascinata) {
             Rectangle r_check = { startX + (i * gap), ALTEZZA - 170, (float)cardW, (float)cardH };
             if (CheckCollisionPointRec(mousePos, r_check)) hovered_idx = i;
         }
     }
 
-    NodoCarta* c = gioco->giocatori[mio_id].mano ? gioco->giocatori[mio_id].mano->testa : NULL;
-    int idx = 0;
-    while(c) {
-        if (!c->carta.isTrascinata) {
-            Rectangle r = { startX + (idx * gap), ALTEZZA - 170, (float)cardW, (float)cardH };
-            c->carta.area = r;
-            if (idx == hovered_idx) r.y -= 20;
-            DisegnaCartaRealistica(&c->carta, r, 0);
+    for (int i = 0; i < nCarte; i++) {
+        if (!carte_mano[i].isTrascinata) {
+            Rectangle r = { startX + (i * gap), ALTEZZA - 170, (float)cardW, (float)cardH };
+            carte_mano[i].area = r;
+            if (i == hovered_idx) r.y -= 20;
+            /* Aggiorna l'area nel container ADT (accessor, information hiding) */
+            GameLogic_ImpostaCarta(&gioco->giocatori[mio_id], i, carte_mano[i]);
+            DisegnaCartaRealistica(&carte_mano[i], r, 0);
         }
-        c = c->prossimo;
-        idx++;
     }
 
     /* Carta in trascinamento */
-    if (gioco->id_carta_in_trascinamento != -1 && gioco->nodo_carta_trascinata) {
-        DisegnaCartaRealistica(&gioco->nodo_carta_trascinata->carta, gioco->nodo_carta_trascinata->carta.area, 0);
+    if (gioco->id_carta_in_trascinamento != -1) {
+        Carta trascinata = GetCartaGiocatore(&gioco->giocatori[mio_id], gioco->id_carta_in_trascinamento);
+        if (trascinata.area.width > 0) {
+            DisegnaCartaRealistica(&trascinata, trascinata.area, 0);
+        }
     }
 
     /* Scelta colore (carta nera) */

@@ -116,49 +116,50 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('structCodaTurn
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Riferimenti per la struct CodaTurni<div class="ingroups"><a class="el" href="group__queue__struttura.html">Struttura Coda</a></div></div></div>
+  <div class="headertitle"><div class="title">Riferimenti per la struct CodaTurni</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Coda dei turni: coda doppiamente concatenata con direzione di scorrimento.  
+<p>Coda dei turni (rappresentazione interna).  
  <a href="#details">Continua...</a></p>
 
-<p><code>#include &lt;<a class="el" href="queue_8h_source.html">queue.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="queue__private_8h_source.html">queue_private.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Campi</h2></td></tr>
-<tr class="memitem:adb61df3ce7e539cc49dd100b5faa8a8b" id="r_adb61df3ce7e539cc49dd100b5faa8a8b"><td class="memItemLeft"><a class="el" href="structNodoCoda.html">NodoCoda</a> *&#160;</td><td class="memItemRight"><a class="el" href="#adb61df3ce7e539cc49dd100b5faa8a8b">front</a></td></tr>
-<tr class="memitem:aa572728f086322efaa9a368f00b17a4d" id="r_aa572728f086322efaa9a368f00b17a4d"><td class="memItemLeft"><a class="el" href="structNodoCoda.html">NodoCoda</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aa572728f086322efaa9a368f00b17a4d">rear</a></td></tr>
+<tr class="memitem:aa38c7b53b83f134a8cd14c238e28699b" id="r_aa38c7b53b83f134a8cd14c238e28699b"><td class="memItemLeft">struct <a class="el" href="structNodoCoda.html">NodoCoda</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aa38c7b53b83f134a8cd14c238e28699b">front</a></td></tr>
+<tr class="memitem:addf2c5c09fc3e1b171754684acf03f6e" id="r_addf2c5c09fc3e1b171754684acf03f6e"><td class="memItemLeft">struct <a class="el" href="structNodoCoda.html">NodoCoda</a> *&#160;</td><td class="memItemRight"><a class="el" href="#addf2c5c09fc3e1b171754684acf03f6e">rear</a></td></tr>
 <tr class="memitem:a76a608c06fd3d799ab5e84813ef07e45" id="r_a76a608c06fd3d799ab5e84813ef07e45"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a76a608c06fd3d799ab5e84813ef07e45">size</a></td></tr>
 <tr class="memitem:a23507dfeef9e7db73f023d828f2149c9" id="r_a23507dfeef9e7db73f023d828f2149c9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a23507dfeef9e7db73f023d828f2149c9">verso</a></td></tr>
-<tr class="memdesc:a23507dfeef9e7db73f023d828f2149c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">+1 orario, -1 antiorario (modificato da carta Cambio Giro)  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Coda dei turni: coda doppiamente concatenata con direzione di scorrimento. </p>
-<p><span class="tt"><a class="el" href="#adb61df3ce7e539cc49dd100b5faa8a8b">front</a></span> è l'inizio della coda (prossimo turno), <span class="tt"><a class="el" href="#aa572728f086322efaa9a368f00b17a4d">rear</a></span> è la fine. <span class="tt"><a class="el" href="#a23507dfeef9e7db73f023d828f2149c9" title="+1 orario, -1 antiorario (modificato da carta Cambio Giro)">verso</a></span> memorizza la direzione (+1 orario, -1 antiorario) per Cambio Giro. </p>
+<div class="textblock"><p>Coda dei turni (rappresentazione interna). </p>
+<p>Coda dei turni (tipo opaco: rappresentazione interna nascosta).</p>
+<p>Coda doppiamente concatenata con direzione di scorrimento per il Cambio Giro. <span class="tt"><a class="el" href="#a23507dfeef9e7db73f023d828f2149c9">verso</a></span> vale +1 (orario) o -1 (antiorario); front/rear vengono scambiati da Coda_InvertiVerso per mantenere la circolarita'.</p>
+<p>Rappresenta l'ordine dei turni dei giocatori. I nodi interni (<a class="el" href="structNodoCoda.html" title="Nodo della coda dei turni (rappresentazione interna).">NodoCoda</a>) sono allocati/gestiti esclusivamente dalle funzioni di questo ADT. Gli utilizzatori interagiscono solo tramite l'API pubblica. </p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentazione dei campi</h2>
-<a id="adb61df3ce7e539cc49dd100b5faa8a8b" name="adb61df3ce7e539cc49dd100b5faa8a8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb61df3ce7e539cc49dd100b5faa8a8b">&#9670;&#160;</a></span>front</h2>
+<a id="aa38c7b53b83f134a8cd14c238e28699b" name="aa38c7b53b83f134a8cd14c238e28699b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38c7b53b83f134a8cd14c238e28699b">&#9670;&#160;</a></span>front</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structNodoCoda.html">NodoCoda</a>* CodaTurni::front</td>
+          <td class="memname">struct <a class="el" href="structNodoCoda.html">NodoCoda</a>* CodaTurni::front</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aa572728f086322efaa9a368f00b17a4d" name="aa572728f086322efaa9a368f00b17a4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa572728f086322efaa9a368f00b17a4d">&#9670;&#160;</a></span>rear</h2>
+<a id="addf2c5c09fc3e1b171754684acf03f6e" name="addf2c5c09fc3e1b171754684acf03f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addf2c5c09fc3e1b171754684acf03f6e">&#9670;&#160;</a></span>rear</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structNodoCoda.html">NodoCoda</a>* CodaTurni::rear</td>
+          <td class="memname">struct <a class="el" href="structNodoCoda.html">NodoCoda</a>* CodaTurni::rear</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -191,12 +192,10 @@ Campi</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>+1 orario, -1 antiorario (modificato da carta Cambio Giro) </p>
-
 </div>
 </div>
 <hr/>La documentazione per questa struct è stata generata a partire dal seguente file:<ul>
-<li>data_structures/<a class="el" href="queue_8h_source.html">queue.h</a></li>
+<li>data_structures/<a class="el" href="queue__private_8h_source.html">queue_private.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

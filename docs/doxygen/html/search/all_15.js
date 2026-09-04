@@ -15,14 +15,13 @@ var searchData=
   ['username_12',['username',['../structUtente.html#a73a466191d8b4bd5d219006221f345de',1,'Utente::username'],['../structStatistiche.html#a7f6e2544c74da107cdd3c3cf0873a076',1,'Statistiche::username'],['../structLanCompactUser.html#a0640784887828508c60234c6a50cad26',1,'LanCompactUser::username'],['../structLanStatsSyncPacket.html#a6de2c30367d462a8298368f147cfb2bf',1,'LanStatsSyncPacket::username'],['../group__network__packet__strutture.html#gadfa347ab441903e6a5d51933d5ef0069',1,'AdminUserSyncData::username'],['../group__network__packet__strutture.html#gadabe23799491f084a28d537187fedbdf',1,'StatsSyncPacket::username']]],
   ['usernamecount_13',['usernameCount',['../group__auth__impl.html#gabd5ade42baf19a2a2ffa715960842dfd',1,'usernameCount:&#160;auth.c'],['../group__auth__impl.html#gabd5ade42baf19a2a2ffa715960842dfd',1,'usernameCount:&#160;auth.c']]],
   ['utente_14',['Utente',['../group__ui.html',1,'Rendering e Interfaccia Utente'],['../structUtente.html',1,'Utente']]],
-  ['utente_15',['utente',['../structNodoAlbero.html#ae44a3fe7638a711069168b12fc806ffe',1,'NodoAlbero']]],
-  ['utente_20lan_16',['Dati Utente LAN',['../group__lan__protocol__user.html',1,'']]],
-  ['utente_5fmodifica_5fadmin_17',['utente_modifica_admin',['../auth__shared_8h.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c'],['../admin__draw_8c.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c'],['../auth__draw_8c.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c'],['../auth__screen_8c.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c'],['../auth__update_8c.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c']]],
-  ['utentediverso_18',['UtenteDiverso',['../lan__db__sync_8c.html#ae43f5a8599e65762fb71093148b2e9ae',1,'lan_db_sync.c']]],
-  ['utenteeliminato_19',['UtenteEliminato',['../group__admin__draw.html#ga1c21703414125fcb00604886d1d0a3da',1,'admin_draw.c']]],
-  ['utenteloggato_20',['UtenteLoggato',['../group__admin__draw.html#gaf067037328f26f3a328feed57d413013',1,'admin_draw.c']]],
-  ['utenti_21',['Autenticazione e Database Utenti',['../group__auth.html',1,'']]],
-  ['utenti_5fbst_22',['utenti_bst',['../group__auth__impl.html#gad1120987e1738e9f3b30315606f87feb',1,'auth.c']]],
-  ['utilizzo_23',['Utilizzo',['../index.html#autotoc_md18',1,'']]],
-  ['utils_24',['Utils',['../group__network__utils.html',1,'Network Utils'],['../group__string__utils.html',1,'String Utils']]]
+  ['utente_20lan_15',['Dati Utente LAN',['../group__lan__protocol__user.html',1,'']]],
+  ['utente_5fmodifica_5fadmin_16',['utente_modifica_admin',['../auth__shared_8h.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c'],['../admin__draw_8c.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c'],['../auth__draw_8c.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c'],['../auth__screen_8c.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c'],['../auth__update_8c.html#a95046ad749acf7f370a5864feea4a2db',1,'utente_modifica_admin:&#160;auth_screen.c']]],
+  ['utentediverso_17',['UtenteDiverso',['../lan__db__sync_8c.html#ae43f5a8599e65762fb71093148b2e9ae',1,'lan_db_sync.c']]],
+  ['utenteeliminato_18',['UtenteEliminato',['../group__admin__draw.html#ga1c21703414125fcb00604886d1d0a3da',1,'admin_draw.c']]],
+  ['utenteloggato_19',['UtenteLoggato',['../group__admin__draw.html#gaf067037328f26f3a328feed57d413013',1,'admin_draw.c']]],
+  ['utenti_20',['Autenticazione e Database Utenti',['../group__auth.html',1,'']]],
+  ['utenti_5fbst_21',['utenti_bst',['../group__auth__impl.html#gad1120987e1738e9f3b30315606f87feb',1,'auth.c']]],
+  ['utilizzo_22',['Utilizzo',['../index.html#autotoc_md18',1,'']]],
+  ['utils_23',['Utils',['../group__network__utils.html',1,'Network Utils'],['../group__string__utils.html',1,'String Utils']]]
 ];

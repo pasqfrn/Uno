@@ -11,5 +11,6 @@ var queue_8c =
     [ "Coda_InvertiVerso", "group__queue.html#gac73bc0051abe5c075e61b613ca8217ec", null ],
     [ "Coda_ProxNodo", "group__queue.html#gaa3e062ece5c53fa71fe3f38a40af9f8b", null ],
     [ "Coda_Rear", "group__queue.html#ga4f1de642a8dfccfbc0bd40a390446a1a", null ],
+    [ "Coda_Ruota", "group__queue.html#ga016f703b9c31da986c214787f11335a1", null ],
     [ "Coda_Vuota", "group__queue.html#gafe5e85ee83772d0ce66f79eb6fb070d7", null ]
 ];

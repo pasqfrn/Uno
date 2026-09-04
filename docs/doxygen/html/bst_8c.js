@@ -4,6 +4,7 @@ var bst_8c =
     [ "BST_ContaNodi", "group__bst.html#ga6f4d3c31a29be5dff40bfe065fe08ce1", null ],
     [ "BST_CreaNodo", "group__bst.html#ga62e40793a2003872c369acb82e6af431", null ],
     [ "BST_Distruggi", "group__bst.html#ga9316a904ece8260cbe1018b94d2888a0", null ],
+    [ "BST_GetEmail", "group__bst.html#ga23ef7d7478d476ba4fcc03b0654bb1be", null ],
     [ "BST_Inordina", "group__bst.html#ga192fed6e7b936d4348b504e1069e3e03", null ],
     [ "BST_InordinaRec", "bst_8c.html#ace5970a089ca5b27bc708fcb40dce1c6", null ],
     [ "BST_Inserisci", "group__bst.html#gacacb3b4a6ddbd736f5b58735895adfd9", null ],

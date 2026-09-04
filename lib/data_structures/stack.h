@@ -4,22 +4,25 @@
  * @defgroup stack Stack (Pila)
  * @brief Implementa una pila LIFO (Last In, First Out) basata su nodi
  * collegati, utilizzata per il mazzo di pesca e gli scarti UNO.
+ *
+ * PRINCIPIO DI INFORMATION HIDING:
+ * I tipi `NodoPila` e `Pila` sono dichiarati come tipi OPACHI: la loro
+ * rappresentazione interna e' definita esclusivamente nel modulo di
+ * implementazione (src/data_structures/stack.c). Gli utilizzatori
+ * interagiscono solo tramite l'API pubblica di questo header.
  */
 #ifndef DATA_STRUCTURES_STACK_H
 #define DATA_STRUCTURES_STACK_H
 
-#include "../data_structures.h"
+#include "data_structures.h"
 
 /**
  * @addtogroup stack_nodi Nodi Pila
- * @brief Struttura nodo per la pila LIFO.
+ * @brief Tipo opaco del nodo della pila LIFO.
  * @{
  */
-/** @brief Nodo della pila: contiene una carta e puntatore al next. */
-typedef struct NodoPila {
-    Carta carta;
-    struct NodoPila* next;
-} NodoPila;
+/** @brief Nodo della pila (tipo opaco: rappresentazione interna nascosta). */
+typedef struct NodoPila NodoPila;
 /** @} */
 
 /**
@@ -27,11 +30,13 @@ typedef struct NodoPila {
  * @brief Container della pila LIFO.
  * @{
  */
-/** @brief Pila LIFO: top punta all'ultimo inserito, size è la cardinalità. */
-typedef struct Pila {
-    NodoPila* top;
-    int size;
-} Pila;
+/**
+ * @brief Pila LIFO (tipo opaco: rappresentazione interna nascosta).
+ *
+ * Gestisce le carte del mazzo di pesca e della pila scarti.
+ * Gli utilizzatori interagiscono solo tramite l'API pubblica.
+ */
+typedef struct Pila Pila;
 /** @} */
 
 /**

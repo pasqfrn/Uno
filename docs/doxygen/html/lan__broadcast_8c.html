@@ -130,8 +130,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('lan__broadcast
 <code>#include &quot;<a class="el" href="lan__protocol_8h_source.html">../../../lib/socket/lan/lan_protocol.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="network_8h_source.html">../../../lib/socket/network/network.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="network__send_8h_source.html">../../../lib/socket/network/network_send.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../../lib/data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="auth_8h_source.html">../../../lib/auth/auth.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">../../../lib/data_structures/data_structures.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
@@ -139,8 +139,6 @@ Funzioni</h2></td></tr>
 <tr class="memdesc:afc84fc196a6b2e1aaa9a22e88589a2f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiunge un utente alla lista delle pending deletions.  <br /></td></tr>
 <tr class="memitem:ae60e38482415a1686e2e396c5833477a" id="r_ae60e38482415a1686e2e396c5833477a"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#ae60e38482415a1686e2e396c5833477a">IsPendingDeletion</a> (const char *username)</td></tr>
 <tr class="memdesc:ae60e38482415a1686e2e396c5833477a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se un utente e' nelle pending deletions.  <br /></td></tr>
-<tr class="memitem:a4dd7a4537b1d26bd0548aeaf68d91daf" id="r_a4dd7a4537b1d26bd0548aeaf68d91daf"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a4dd7a4537b1d26bd0548aeaf68d91daf">RimuoviPendingDeletion</a> (const char *username)</td></tr>
-<tr class="memdesc:a4dd7a4537b1d26bd0548aeaf68d91daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove un utente da pending deletions (dopo conferma disconnessione).  <br /></td></tr>
 <tr class="memitem:a1dd332c43b0bb24c97702a450c5fa19d" id="r_a1dd332c43b0bb24c97702a450c5fa19d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1dd332c43b0bb24c97702a450c5fa19d">ConfermaPendingDeletions</a> (void)</td></tr>
 <tr class="memdesc:a1dd332c43b0bb24c97702a450c5fa19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conferma tutte le pending deletions e le promuove a deletedUsers.  <br /></td></tr>
 <tr class="memitem:ac9cfe5a94772d9d0f1ebfcabcb91279c" id="r_ac9cfe5a94772d9d0f1ebfcabcb91279c"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac9cfe5a94772d9d0f1ebfcabcb91279c">CalcolaSubnetBroadcast</a> (void)</td></tr>
@@ -559,39 +557,6 @@ Variabili</h2></td></tr>
 <li>Se i contatori sono UGUALI e lo storico e' gia' presente, non fare nulla.</li>
 </ol>
 <p>Ricezione notifica di eliminazione salvataggio. Cerca il file nel nuovo formato save_user{ID}_slot_{N}.dat, con fallback al vecchio formato save_slot_N.dat per retrocompatibilita'.</p>
-
-</div>
-</div>
-<a id="a4dd7a4537b1d26bd0548aeaf68d91daf" name="a4dd7a4537b1d26bd0548aeaf68d91daf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dd7a4537b1d26bd0548aeaf68d91daf">&#9670;&#160;</a></span>RimuoviPendingDeletion()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RimuoviPendingDeletion </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Rimuove un utente da pending deletions (dopo conferma disconnessione). </p>
-<dl class="params"><dt>Parametri</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">username</td><td>Username da rimuovere da pending. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

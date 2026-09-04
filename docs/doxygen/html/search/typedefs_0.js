@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nodomano_0',['NodoMano',['../data__structures_2list_8h.html#a4c21bead0a069a63c668c59b159c829c',1,'list.h']]]
+  ['chatstorico_0',['ChatStorico',['../group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed',1,'chat.h']]],
+  ['codaturni_1',['CodaTurni',['../group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4',1,'queue.h']]]
 ];

@@ -17,6 +17,5 @@ var searchData=
   ['packetplayerready_14',['PacketPlayerReady',['../structPacketPlayerReady.html',1,'']]],
   ['packetsessionlist_15',['PacketSessionList',['../structPacketSessionList.html',1,'']]],
   ['packetsessionstate_16',['PacketSessionState',['../structPacketSessionState.html',1,'']]],
-  ['partitaregistrata_17',['PartitaRegistrata',['../structPartitaRegistrata.html',1,'']]],
-  ['pila_18',['Pila',['../structPila.html',1,'']]]
+  ['partitaregistrata_17',['PartitaRegistrata',['../structPartitaRegistrata.html',1,'']]]
 ];

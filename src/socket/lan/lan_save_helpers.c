@@ -21,7 +21,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "../../../lib/auth.h"
+#include "../../../lib/auth/auth.h"
 #include "../../../lib/socket/lan/lan_protocol.h"
 
 /* ==================================================================

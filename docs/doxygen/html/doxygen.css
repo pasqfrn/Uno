@@ -2537,7 +2537,7 @@ details[open]>summary::before {
 }
 
 html {
---timestamp: 'Lun 13 Lug 2026 18:02:26';
+--timestamp: 'Ven 4 Set 2026 16:04:10';
 }
 span.timestamp { content: ' '; }
 span.timestamp:before { content: var(--timestamp); }

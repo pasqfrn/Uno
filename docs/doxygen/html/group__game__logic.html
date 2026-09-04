@@ -129,13 +129,17 @@ File</h2></td></tr>
 <tr class="memdesc:deck_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestione mazzo di pesca, scarti e pesca carte. <br /></td></tr>
 <tr class="memitem:game_2Fgame_5Fflow_2Ec" id="r_game_2Fgame_5Fflow_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="game__flow_8c.html">game/game_flow.c</a></td></tr>
 <tr class="memdesc:game__flow_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestione flusso di gioco: inizializzazione, fine partita, ricostruzione ADT. <br /></td></tr>
+<tr class="memitem:game_2Fgame_5Flogic_2Ec" id="r_game_2Fgame_5Flogic_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="game__logic_8c.html">game/game_logic.c</a></td></tr>
+<tr class="memdesc:game__logic_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementazione logica di gioco UNO: regole, effetti carte, validazione mosse e gestione ADT. <br /></td></tr>
 <tr class="memitem:game_2Fsave_5Fmanager_2Ec" id="r_game_2Fsave_5Fmanager_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="save__manager_8c.html">game/save_manager.c</a></td></tr>
 <tr class="memdesc:save__manager_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestione salvataggi partite su file binario. <br /></td></tr>
-<tr class="memitem:game_5Flogic_2Ec" id="r_game_5Flogic_2Ec"><td class="memItemLeft">file &#160;</td><td class="memItemRight"><a class="el" href="game__logic_8c.html">game_logic.c</a></td></tr>
-<tr class="memdesc:game__logic_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementazione logica di gioco UNO: regole, effetti carte, validazione mosse e gestione ADT. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
+<tr class="memitem:gab402f0dcf01af8e69da6a33fc721bdd7" id="r_gab402f0dcf01af8e69da6a33fc721bdd7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gab402f0dcf01af8e69da6a33fc721bdd7">RegistraSlotCaricato</a> (int slot)</td></tr>
+<tr class="memdesc:gab402f0dcf01af8e69da6a33fc721bdd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registra lo slot di salvataggio da cui e' stata caricata la partita in corso.  <br /></td></tr>
+<tr class="memitem:gaacda5cce9ce10b1265921f846a0dd647" id="r_gaacda5cce9ce10b1265921f846a0dd647"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gaacda5cce9ce10b1265921f846a0dd647">OttieniSlotCaricato</a> (void)</td></tr>
+<tr class="memdesc:gaacda5cce9ce10b1265921f846a0dd647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce lo slot di salvataggio da cui e' stata caricata la partita.  <br /></td></tr>
 <tr class="memitem:ga2be362fe392971bbe8008aa9266cf539" id="r_ga2be362fe392971bbe8008aa9266cf539"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga2be362fe392971bbe8008aa9266cf539">InizializzaMazzo</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco)</td></tr>
 <tr class="memdesc:ga2be362fe392971bbe8008aa9266cf539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inizializza il mazzo di 108 carte UNO standard e le mescola (Fisher-Yates).  <br /></td></tr>
 <tr class="memitem:ga6fc614aadf58fe03606063067a2ad233" id="r_ga6fc614aadf58fe03606063067a2ad233"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6fc614aadf58fe03606063067a2ad233">RimescolaScartiNelMazzo</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco)</td></tr>
@@ -144,16 +148,387 @@ Funzioni</h2></td></tr>
 <tr class="memdesc:gad1b01bee170bfe43e167097d8fa75b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fa pescare un numero di carte a un giocatore.  <br /></td></tr>
 <tr class="memitem:ga171821f60641393ff220f91b26e0325f" id="r_ga171821f60641393ff220f91b26e0325f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga171821f60641393ff220f91b26e0325f">GetLunghezzaMano</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
 <tr class="memdesc:ga171821f60641393ff220f91b26e0325f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di carte nella mano di un giocatore.  <br /></td></tr>
-<tr class="memitem:ga5a26039c72d695715eb46d1dbe0f91ff" id="r_ga5a26039c72d695715eb46d1dbe0f91ff"><td class="memItemLeft"><a class="el" href="structNodoCarta.html">NodoCarta</a> *&#160;</td><td class="memItemRight"><a class="el" href="#ga5a26039c72d695715eb46d1dbe0f91ff">GetNodoCartaGiocatore</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice)</td></tr>
-<tr class="memdesc:ga5a26039c72d695715eb46d1dbe0f91ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nodo carta per indice.  <br /></td></tr>
 <tr class="memitem:ga911f218567f81d8d4d6eec5c1c12b543" id="r_ga911f218567f81d8d4d6eec5c1c12b543"><td class="memItemLeft"><a class="el" href="structCarta.html">Carta</a>&#160;</td><td class="memItemRight"><a class="el" href="#ga911f218567f81d8d4d6eec5c1c12b543">GetCartaGiocatore</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice)</td></tr>
-<tr class="memdesc:ga911f218567f81d8d4d6eec5c1c12b543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una carta dalla mano per indice.  <br /></td></tr>
+<tr class="memdesc:ga911f218567f81d8d4d6eec5c1c12b543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce una carta dalla mano per indice (PER VALORE).  <br /></td></tr>
 <tr class="memitem:gac60c0e57c8c2a799f008d302bbaaa5fd" id="r_gac60c0e57c8c2a799f008d302bbaaa5fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gac60c0e57c8c2a799f008d302bbaaa5fd">RimuoviCartaGiocatore</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice)</td></tr>
 <tr class="memdesc:gac60c0e57c8c2a799f008d302bbaaa5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rimuove una carta dalla mano per indice.  <br /></td></tr>
+<tr class="memitem:ga5b80840cad8c556675934f9c1a262ec6" id="r_ga5b80840cad8c556675934f9c1a262ec6"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga5b80840cad8c556675934f9c1a262ec6">GameLogic_SincronizzaCodaTurni</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco)</td></tr>
+<tr class="memdesc:ga5b80840cad8c556675934f9c1a262ec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Ri)costruisce la coda dei turni ADT a partire dall'array dei giocatori.  <br /></td></tr>
+<tr class="memitem:gac46cd3c30887a669638d4cbad9641b71" id="r_gac46cd3c30887a669638d4cbad9641b71"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gac46cd3c30887a669638d4cbad9641b71">GameLogic_AvanzamentoTurno</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco, int passi)</td></tr>
+<tr class="memdesc:gac46cd3c30887a669638d4cbad9641b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avanza il turno di <span class="tt">passi</span> posizioni usando l'ADT <a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4" title="Coda dei turni (tipo opaco: rappresentazione interna nascosta).">CodaTurni</a>.  <br /></td></tr>
+<tr class="memitem:ga120972c4e7ab6a70408802e175d07318" id="r_ga120972c4e7ab6a70408802e175d07318"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga120972c4e7ab6a70408802e175d07318">GameLogic_PreparaManoSalvataggio</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ga120972c4e7ab6a70408802e175d07318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia la mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) di un giocatore nel backup flat.  <br /></td></tr>
+<tr class="memitem:ga363d01ae034c9f3f2440ca7fff156702" id="r_ga363d01ae034c9f3f2440ca7fff156702"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga363d01ae034c9f3f2440ca7fff156702">GameLogic_RicostruisciMano</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ga363d01ae034c9f3f2440ca7fff156702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ricostruisce la mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) di un giocatore dal backup flat.  <br /></td></tr>
+<tr class="memitem:gaebb5130eb09addd69dc196e322d1ded5" id="r_gaebb5130eb09addd69dc196e322d1ded5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaebb5130eb09addd69dc196e322d1ded5">GameLogic_MettiPrimaInFondo</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:gaebb5130eb09addd69dc196e322d1ded5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sposta la prima carta della mano in fondo (ordine visivo dopo una pescata).  <br /></td></tr>
+<tr class="memitem:ga9b7a9eac1c64712f4e3c777f53bad319" id="r_ga9b7a9eac1c64712f4e3c777f53bad319"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga9b7a9eac1c64712f4e3c777f53bad319">GameLogic_ImpostaCarta</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, int indice, <a class="el" href="structCarta.html">Carta</a> c)</td></tr>
+<tr class="memdesc:ga9b7a9eac1c64712f4e3c777f53bad319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sostituisce per valore la carta all'indice nella mano del giocatore.  <br /></td></tr>
+<tr class="memitem:ga85cd3bb8c86fca5fbc8f585cc0dcb909" id="r_ga85cd3bb8c86fca5fbc8f585cc0dcb909"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga85cd3bb8c86fca5fbc8f585cc0dcb909">GameLogic_CopiaMano</a> (const <a class="el" href="structGiocatore.html">Giocatore</a> *g, <a class="el" href="structCarta.html">Carta</a> *out, int max)</td></tr>
+<tr class="memdesc:ga85cd3bb8c86fca5fbc8f585cc0dcb909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copia le carte della mano di un giocatore in un array esterno.  <br /></td></tr>
+<tr class="memitem:ga4003b82cd350fe5560b89691d60764b9" id="r_ga4003b82cd350fe5560b89691d60764b9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga4003b82cd350fe5560b89691d60764b9">GameLogic_DistruggiMano</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ga4003b82cd350fe5560b89691d60764b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distrugge la mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) di un giocatore.  <br /></td></tr>
+<tr class="memitem:ga650da61eb399d8d1f9a56cf13a0a498b" id="r_ga650da61eb399d8d1f9a56cf13a0a498b"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ga650da61eb399d8d1f9a56cf13a0a498b">GameLogic_GetLunghezzaMano</a> (const <a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ga650da61eb399d8d1f9a56cf13a0a498b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di carte della mano usando l'API ADT.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
 <div class="textblock"><p>Gestisce le regole del gioco UNO, validazione mosse, effetti carte, salvataggio/caricamento partite e manipolazione ADT (mazzo, scarti, mani). </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
+<a id="gac46cd3c30887a669638d4cbad9641b71" name="gac46cd3c30887a669638d4cbad9641b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac46cd3c30887a669638d4cbad9641b71">&#9670;&#160;</a></span>GameLogic_AvanzamentoTurno()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameLogic_AvanzamentoTurno </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structStatoGioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>passi</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Avanza il turno di <span class="tt">passi</span> posizioni usando l'ADT <a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4" title="Coda dei turni (tipo opaco: rappresentazione interna nascosta).">CodaTurni</a>. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; passi &gt; 0; num_giocatori &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>turno_corrente avanzato di passi; coda_turni ruotata di conseguenza. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+    <tr><td class="paramname">passi</td><td>Numero di posizioni da avanzare (1 = turno successivo).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Funzionalita' di dominio: fa avanzare il turno corrente ruotando l'ADT <a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4" title="Coda dei turni (tipo opaco: rappresentazione interna nascosta).">CodaTurni</a> (Coda_Ruota) in base a <span class="tt">direzione</span> e aggiorna turno_corrente nello <a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a>.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL; passi &gt; 0; num_giocatori &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>turno_corrente avanzato di passi; coda_turni ruotata di conseguenza. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+    <tr><td class="paramname">passi</td><td>Numero di posizioni da avanzare (1 = turno successivo). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga85cd3bb8c86fca5fbc8f585cc0dcb909" name="ga85cd3bb8c86fca5fbc8f585cc0dcb909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85cd3bb8c86fca5fbc8f585cc0dcb909">&#9670;&#160;</a></span>GameLogic_CopiaMano()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameLogic_CopiaMano </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCarta.html">Carta</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copia le carte della mano di un giocatore in un array esterno. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; out != NULL; max &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>out popolato con le carte della mano (max o meno). </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+    <tr><td class="paramname">out</td><td>Array di destinazione. </td></tr>
+    <tr><td class="paramname">max</td><td>Dimensione massima dell'array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di carte copiate.</dd></dl>
+<p>Funzionalita' di dominio: ritorna una snapshot della mano tramite l'API pubblica dell'ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a> (nessun accesso alla rappresentazione).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; out != NULL; max &gt; 0. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>out popolato con le carte della mano (max o meno). </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+    <tr><td class="paramname">out</td><td>Array di destinazione. </td></tr>
+    <tr><td class="paramname">max</td><td>Dimensione massima dell'array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di carte copiate. </dd></dl>
+
+</div>
+</div>
+<a id="ga4003b82cd350fe5560b89691d60764b9" name="ga4003b82cd350fe5560b89691d60764b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4003b82cd350fe5560b89691d60764b9">&#9670;&#160;</a></span>GameLogic_DistruggiMano()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameLogic_DistruggiMano </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Distrugge la mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) di un giocatore. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>g-&gt;mano == NULL; num_carte_mano = 0. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Funzionalita' di dominio: dealloca la lista collegata della mano e resetta i campi correlati.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>g-&gt;mano == NULL; num_carte_mano = 0. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga650da61eb399d8d1f9a56cf13a0a498b" name="ga650da61eb399d8d1f9a56cf13a0a498b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga650da61eb399d8d1f9a56cf13a0a498b">&#9670;&#160;</a></span>GameLogic_GetLunghezzaMano()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameLogic_GetLunghezzaMano </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il numero di carte della mano usando l'API ADT. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL. </dd></dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di carte in mano (0 se mano nulla o vuota). </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9b7a9eac1c64712f4e3c777f53bad319" name="ga9b7a9eac1c64712f4e3c777f53bad319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b7a9eac1c64712f4e3c777f53bad319">&#9670;&#160;</a></span>GameLogic_ImpostaCarta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameLogic_ImpostaCarta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>indice</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCarta.html">Carta</a></td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sostituisce per valore la carta all'indice nella mano del giocatore. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; indice valido. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a> all'indice aggiornata con la copia fornita. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+    <tr><td class="paramname">indice</td><td>Indice della carta (0-based). </td></tr>
+    <tr><td class="paramname">c</td><td>Nuova carta da impostare.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Funzionalita' di dominio: consente di aggiornare i campi di una carta (area di rendering, posizione) durante il trascinamento senza esporre i nodi interni dell'ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; indice valido. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd><a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a> all'indice aggiornata con la copia fornita. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+    <tr><td class="paramname">indice</td><td>Indice della carta (0-based). </td></tr>
+    <tr><td class="paramname">c</td><td>Nuova carta da impostare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaebb5130eb09addd69dc196e322d1ded5" name="gaebb5130eb09addd69dc196e322d1ded5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaebb5130eb09addd69dc196e322d1ded5">&#9670;&#160;</a></span>GameLogic_MettiPrimaInFondo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameLogic_MettiPrimaInFondo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sposta la prima carta della mano in fondo (ordine visivo dopo una pescata). </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>La prima carta della mano e' ora l'ultima. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Funzionalita' di dominio basata sull'ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a> (rotazione O(1)).</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>La prima carta della mano e' ora l'ultima. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga120972c4e7ab6a70408802e175d07318" name="ga120972c4e7ab6a70408802e175d07318"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga120972c4e7ab6a70408802e175d07318">&#9670;&#160;</a></span>GameLogic_PreparaManoSalvataggio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameLogic_PreparaManoSalvataggio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copia la mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) di un giocatore nel backup flat. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>mano_backup[] e num_carte_backup aggiornati con la mano corrente. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di carte copiate nel backup (0 se mano nulla).</dd></dl>
+<p>Funzionalita' di dominio: prepara la serializzazione su file della mano. La mano viene letta tramite l'API pubblica della lista e copiata in mano_backup[], senza esporre i nodi interni.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>mano_backup[] e num_carte_backup aggiornati con la mano corrente. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>Numero di carte copiate nel backup (0 se mano nulla). </dd></dl>
+
+</div>
+</div>
+<a id="ga363d01ae034c9f3f2440ca7fff156702" name="ga363d01ae034c9f3f2440ca7fff156702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga363d01ae034c9f3f2440ca7fff156702">&#9670;&#160;</a></span>GameLogic_RicostruisciMano()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameLogic_RicostruisciMano </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ricostruisce la mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) di un giocatore dal backup flat. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; mano_backup valido. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>g-&gt;mano allocata e popolata con mano_backup[]. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se la mano e' stata ricostruita, 0 altrimenti.</dd></dl>
+<p>Funzionalita' di dominio: dopo CaricaPartita ri-crea la lista collegata della mano a partire da mano_backup[].</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; mano_backup valido. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>g-&gt;mano allocata e popolata con mano_backup[]. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se la mano e' stata ricostruita, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
+<a id="ga5b80840cad8c556675934f9c1a262ec6" name="ga5b80840cad8c556675934f9c1a262ec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b80840cad8c556675934f9c1a262ec6">&#9670;&#160;</a></span>GameLogic_SincronizzaCodaTurni()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GameLogic_SincronizzaCodaTurni </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structStatoGioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(Ri)costruisce la coda dei turni ADT a partire dall'array dei giocatori. </p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>coda_turni ricreata con i giocatori di gioco-&gt;giocatori[]. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se la coda e' stata ricreata con successo, 0 altrimenti.</dd></dl>
+<p>Funzionalita' di dominio: sincronizza l'ADT <a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4" title="Coda dei turni (tipo opaco: rappresentazione interna nascosta).">CodaTurni</a> con lo <a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a>. Usata alla creazione di una nuova partita e dopo il caricamento da file.</p>
+<dl class="section pre"><dt>Precondizione</dt><dd>gioco != NULL. </dd></dl>
+<dl class="section post"><dt>Postcondizione</dt><dd>coda_turni ricreata con i giocatori di gioco-&gt;giocatori[]. </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Restituisce</dt><dd>1 se la coda e' stata ricreata con successo, 0 altrimenti. </dd></dl>
+
+</div>
+</div>
 <a id="ga911f218567f81d8d4d6eec5c1c12b543" name="ga911f218567f81d8d4d6eec5c1c12b543"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga911f218567f81d8d4d6eec5c1c12b543">&#9670;&#160;</a></span>GetCartaGiocatore()</h2>
 
@@ -173,7 +548,7 @@ Funzioni</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Restituisce una carta dalla mano per indice. </p>
+<p>Restituisce una carta dalla mano per indice (PER VALORE). </p>
 <p>Restituisce una carta dalla mano di un giocatore per indice.</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; indice valido. </dd></dl>
 <dl class="section return"><dt>Restituisce</dt><dd><a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a>, o carta vuota. </dd></dl>
@@ -184,7 +559,7 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Restituisce una carta dalla mano per indice.</p>
+<p>Restituisce una carta dalla mano per indice (PER VALORE).</p>
 <dl class="section pre"><dt>Precondizione</dt><dd>giocatore != NULL; indice &lt; lunghezza mano. </dd></dl>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
@@ -232,49 +607,6 @@ Funzioni</h2></td></tr>
 
 </div>
 </div>
-<a id="ga5a26039c72d695715eb46d1dbe0f91ff" name="ga5a26039c72d695715eb46d1dbe0f91ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5a26039c72d695715eb46d1dbe0f91ff">&#9670;&#160;</a></span>GetNodoCartaGiocatore()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structNodoCarta.html">NodoCarta</a> * GetNodoCartaGiocatore </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>giocatore</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>indice</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Restituisce il nodo carta per indice. </p>
-<p>Restituisce il puntatore al nodo di una carta per indice.</p>
-<dl class="section pre"><dt>Precondizione</dt><dd>g != NULL; indice valido. </dd></dl>
-<dl class="section return"><dt>Restituisce</dt><dd><a class="el" href="structNodoCarta.html" title="Nodo per la lista doppiamente concatenata della mano del giocatore.">NodoCarta</a>, o NULL. </dd></dl>
-<dl class="params"><dt>Parametri</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">g</td><td><a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a>. </td></tr>
-    <tr><td class="paramname">indice</td><td>Indice (0-based).</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Restituisce il nodo carta per indice.</p>
-<dl class="section pre"><dt>Precondizione</dt><dd>giocatore != NULL; indice &lt; lunghezza mano. </dd></dl>
-<dl class="params"><dt>Parametri</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">giocatore</td><td>Puntatore al giocatore. </td></tr>
-    <tr><td class="paramname">indice</td><td>Indice del nodo nella lista (0-based). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Restituisce</dt><dd>Puntatore al <a class="el" href="structNodoCarta.html" title="Nodo per la lista doppiamente concatenata della mano del giocatore.">NodoCarta</a> all'indice specificato. </dd></dl>
-
-</div>
-</div>
 <a id="ga2be362fe392971bbe8008aa9266cf539" name="ga2be362fe392971bbe8008aa9266cf539"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga2be362fe392971bbe8008aa9266cf539">&#9670;&#160;</a></span>InizializzaMazzo()</h2>
 
@@ -310,6 +642,29 @@ Funzioni</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="gaacda5cce9ce10b1265921f846a0dd647" name="gaacda5cce9ce10b1265921f846a0dd647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaacda5cce9ce10b1265921f846a0dd647">&#9670;&#160;</a></span>OttieniSlotCaricato()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OttieniSlotCaricato </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce lo slot di salvataggio da cui e' stata caricata la partita. </p>
+<p>Restituisce lo slot del salvataggio della partita in corso.</p>
+<dl class="section return"><dt>Restituisce</dt><dd>Slot registrato con <a class="el" href="#gab402f0dcf01af8e69da6a33fc721bdd7" title="Registra lo slot di salvataggio da cui e&#39; stata caricata la partita in corso.">RegistraSlotCaricato()</a>, oppure -1 se la partita non proviene da un caricamento (nuova partita / online).</dd></dl>
+<p>Restituisce lo slot di salvataggio da cui e' stata caricata la partita.</p>
+<dl class="section return"><dt>Restituisce</dt><dd>Slot registrato con <a class="el" href="#gab402f0dcf01af8e69da6a33fc721bdd7" title="Registra lo slot di salvataggio da cui e&#39; stata caricata la partita in corso.">RegistraSlotCaricato()</a>, oppure -1 se la partita corrente NON ha un salvataggio su disco (nuova/online mai salvata, oppure tracciamento azzerato all'avvio di una partita nuova). </dd></dl>
 
 </div>
 </div>
@@ -358,6 +713,45 @@ Funzioni</h2></td></tr>
     <tr><td class="paramname">gioco</td><td>Puntatore allo stato di gioco. </td></tr>
     <tr><td class="paramname">id_giocatore</td><td>Indice del giocatore che pesca. </td></tr>
     <tr><td class="paramname">quantita</td><td>Numero di carte da pescare. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab402f0dcf01af8e69da6a33fc721bdd7" name="gab402f0dcf01af8e69da6a33fc721bdd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab402f0dcf01af8e69da6a33fc721bdd7">&#9670;&#160;</a></span>RegistraSlotCaricato()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RegistraSlotCaricato </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>slot</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registra lo slot di salvataggio da cui e' stata caricata la partita in corso. </p>
+<p>Registra lo slot del salvataggio della partita in corso.</p>
+<p>Tracciamento in memoria interna al modulo (variabile statica). Non modifica il formato dei file: serve a sapere, alla fine della partita, SE e QUale cancellare dalla bacheca. -1 = partita nuova/online (nessun salvataggio di origine).</p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot</td><td>Indice dello slot caricato (1-100), oppure -1.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Registra lo slot di salvataggio da cui e' stata caricata la partita in corso.</p>
+<p>Tracciamento in memoria (NON persistito: non modifica il formato dei file di salvataggio). Viene impostato:</p><ul>
+<li>allo slot caricato dalla bacheca, dentro <a class="el" href="game__logic_8h.html#a1f3105448b986dc3c5fd8ef93e948fdf" title="Carica una partita da un file di salvataggio.">CaricaPartitaDaSlot()</a>;</li>
+<li>allo slot appena scritto, dopo ogni <a class="el" href="game__logic_8h.html#ab6d8a480978f155fe71df7ce72d2d67e" title="Salva lo stato corrente della partita su file.">SalvaPartita()</a> (sovrascrittura). Consente di rimuovere automaticamente dalla bacheca quel salvataggio quando la partita termina (OttieniSlotCaricato + EliminaSalvataggio).</li>
+</ul>
+<dl class="section post"><dt>Postcondizione</dt><dd>slot memorizzato come slot attivo (o -1 per "nessun salvataggio"). </dd></dl>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">slot</td><td>Indice dello slot (1-100), oppure -1 quando si inizia una partita nuova / online (nessun salvataggio di origine). </td></tr>
   </table>
   </dd>
 </dl>

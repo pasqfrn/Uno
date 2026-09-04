@@ -24,7 +24,6 @@ var structStatoGioco =
     [ "mazzo", "structStatoGioco.html#a67281efcd0e938ffbe135f1812a6abe3", null ],
     [ "messaggio", "structStatoGioco.html#aeff81de05b55c2247deb3b3665d4de9d", null ],
     [ "modalita", "structStatoGioco.html#a753e93c4f222fb894447df926ec85209", null ],
-    [ "nodo_carta_trascinata", "structStatoGioco.html#a6beedf5acfde19afffa91dcbff8dcf65", null ],
     [ "notifica", "structStatoGioco.html#a4cce055221d6d802a3e7cb9f22e4260a", null ],
     [ "num_carte_mazzo", "structStatoGioco.html#a88ef8d87de962aa187c874b95a787da1", null ],
     [ "num_carte_scarti", "structStatoGioco.html#a407cd9244913d7524fb090b77a989780", null ],

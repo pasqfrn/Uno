@@ -13,7 +13,6 @@ var lan__broadcast_8c =
     [ "LAN_GetUtentiCount", "lan__broadcast_8c.html#ad742056d7d001bc371900404f780fdb5", null ],
     [ "LAN_Init", "lan__broadcast_8c.html#a88d0b5ae2f24ad06c318deb550373b1e", null ],
     [ "LAN_Update", "lan__broadcast_8c.html#ab0b625c0463cad457894bf91847319c5", null ],
-    [ "RimuoviPendingDeletion", "lan__broadcast_8c.html#a4dd7a4537b1d26bd0548aeaf68d91daf", null ],
     [ "broadcastAddr", "lan__broadcast_8c.html#a3a57e935a86c9a15dba005b214923a52", null ],
     [ "deletedUsers", "lan__broadcast_8c.html#aa8b1b6c8ce6cf65c18ad02977e47f98f", null ],
     [ "dentroSalvaDB", "lan__broadcast_8c.html#a35d530456749dea612236ad880c703d5", null ],

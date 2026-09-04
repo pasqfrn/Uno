@@ -20,10 +20,10 @@
 #include "../../../lib/screens/multiplayer/multiplayer_screen.h"
 #include "../../../lib/socket/network/network.h"
 #include "../../../lib/socket/network/network_send.h"
-#include "../../../lib/ui.h"
-#include "../../../lib/auth.h"
-#include "../../../lib/game_logic.h"
-#include "../../../lib/list.h"
+#include "../../../lib/screens/ui.h"
+#include "../../../lib/auth/auth.h"
+#include "../../../lib/game/game_logic.h"
+#include "../../../lib/data_structures/list.h"
 #include "../../../lib/screens/multiplayer/multiplayer_lobby.h"
 
 #define LARGHEZZA 1280
@@ -80,6 +80,8 @@ void ResetMultiplayerError(void) { mostraErroreCaricamento = 0; }
  * @param network_countdown_active Puntatore a flag countdown attivo.
  */
 void DisegnaMultiplayer(StatoGioco* gioco, FaseApplicazione* fase, float* network_countdown, int* network_countdown_active) {
+    (void)network_countdown;       /* parametri mantenuti per uniformita' API */
+    (void)network_countdown_active;
     if (!ip_inizializzato) {
         if (GetLocalIPAddress(localIP, sizeof(localIP))) {
             IpToCode(localIP, roomCode);
@@ -105,6 +107,9 @@ void DisegnaMultiplayer(StatoGioco* gioco, FaseApplicazione* fase, float* networ
                 gioco->gioco_finito = 0;
                 gioco->id_carta_in_trascinamento = -1;
                 gioco->slot_salvataggio = 0;
+                /* Partita online nuova: nessuno slot di origine da eliminare
+                 * alla conclusione (vedi RegistraSlotCaricato/OttieniSlotCaricato). */
+                RegistraSlotCaricato(-1);
                 strcpy(gioco->giocatori[0].nome, dbUtenti.lista[id_utente_corrente].username);
                 gioco->giocatori[0].is_bot = 0;
                 gioco->giocatori[0].stato_pronto = 1;
@@ -168,6 +173,8 @@ void DisegnaMultiplayer(StatoGioco* gioco, FaseApplicazione* fase, float* networ
                     gioco->gioco_finito = 0;
                     gioco->id_carta_in_trascinamento = -1;
                     gioco->slot_salvataggio = 0;
+                    /* Partita online nuova (client): nessuno slot di origine. */
+                    RegistraSlotCaricato(-1);
                     strcpy(gioco->giocatori[0].nome, dbUtenti.lista[id_utente_corrente].username);
                     gioco->giocatori[0].is_bot = 0;
                     gioco->giocatori[0].stato_pronto = 1;
