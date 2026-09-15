@@ -11,6 +11,7 @@
 #include "../../data_structures/data_structures.h"
 #include "../../game/player.h"
 #include "../../game/game_state.h"
+#include "../../game/private/game_state_private.h"
 #include "../lan/lan_protocol.h" /* Per STORICO_SYNC_COUNT usato in StatsSyncPacket */
 
 #ifdef _WIN32

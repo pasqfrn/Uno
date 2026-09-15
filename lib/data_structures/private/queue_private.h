@@ -12,7 +12,7 @@
 #define DATA_STRUCTURES_QUEUE_PRIVATE_H
 
 #include "../data_structures.h"
-#include "../../game/player.h"
+#include "../../game/private/player_private.h"
 
 /**
  * @brief Nodo della coda dei turni (rappresentazione interna).

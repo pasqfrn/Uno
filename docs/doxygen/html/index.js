@@ -17,19 +17,21 @@ var index =
     [ "Requisiti di sistema", "index.html#autotoc_md12", null ],
     [ "Compilazione", "index.html#autotoc_md13", [
       [ "Prerequisiti", "index.html#autotoc_md14", null ],
-      [ "Procedura", "index.html#autotoc_md15", null ]
+      [ "Procedura", "index.html#autotoc_md15", [
+        [ "Target di Code::Blocks", "index.html#autotoc_md16", null ]
+      ] ]
     ] ],
-    [ "Esecuzione", "index.html#autotoc_md16", null ],
-    [ "Documentazione", "index.html#autotoc_md17", null ],
-    [ "Utilizzo", "index.html#autotoc_md18", [
-      [ "Flusso dell'applicazione", "index.html#autotoc_md19", null ],
-      [ "Controlli durante il gioco", "index.html#autotoc_md20", null ],
-      [ "Funzionalità avanzate sviluppate", "index.html#autotoc_md21", null ]
+    [ "Esecuzione", "index.html#autotoc_md17", null ],
+    [ "Documentazione", "index.html#autotoc_md18", null ],
+    [ "Utilizzo", "index.html#autotoc_md19", [
+      [ "Flusso dell'applicazione", "index.html#autotoc_md20", null ],
+      [ "Controlli durante il gioco", "index.html#autotoc_md21", null ],
+      [ "Funzionalità avanzate sviluppate", "index.html#autotoc_md22", null ]
     ] ],
-    [ "Progettazione e design", "index.html#autotoc_md22", [
-      [ "Scelte progettuali", "index.html#autotoc_md23", null ]
+    [ "Progettazione e design", "index.html#autotoc_md23", [
+      [ "Scelte progettuali", "index.html#autotoc_md24", null ]
     ] ],
-    [ "Autori", "index.html#autotoc_md24", null ],
-    [ "Licenza", "index.html#autotoc_md25", null ],
-    [ "Note", "index.html#autotoc_md26", null ]
+    [ "Autori", "index.html#autotoc_md25", null ],
+    [ "Licenza", "index.html#autotoc_md26", null ],
+    [ "Note", "index.html#autotoc_md27", null ]
 ];

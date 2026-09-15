@@ -22,6 +22,6 @@ var searchData=
   ['utenteloggato_19',['UtenteLoggato',['../group__admin__draw.html#gaf067037328f26f3a328feed57d413013',1,'admin_draw.c']]],
   ['utenti_20',['Autenticazione e Database Utenti',['../group__auth.html',1,'']]],
   ['utenti_5fbst_21',['utenti_bst',['../group__auth__impl.html#gad1120987e1738e9f3b30315606f87feb',1,'auth.c']]],
-  ['utilizzo_22',['Utilizzo',['../index.html#autotoc_md18',1,'']]],
+  ['utilizzo_22',['Utilizzo',['../index.html#autotoc_md19',1,'']]],
   ['utils_23',['Utils',['../group__network__utils.html',1,'Network Utils'],['../group__string__utils.html',1,'String Utils']]]
 ];

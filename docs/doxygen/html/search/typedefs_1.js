@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['listacarte_0',['ListaCarte',['../list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f',1,'list.h']]]
+  ['giocatore_0',['Giocatore',['../player_8h.html#ae452fa2260469b6d0d91fd76b2a0cfe1',1,'player.h']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['socket_0',['SOCKET',['../socket__compat_8h.html#a8dc8083897335125630f1af5dafd5831',1,'socket_compat.h']]]
+  ['pila_0',['Pila',['../group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6',1,'stack.h']]]
 ];

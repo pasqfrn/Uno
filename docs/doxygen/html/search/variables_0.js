@@ -4,16 +4,8 @@ var searchData=
   ['admin_5faction_1',['admin_action',['../group__network__packet__strutture.html#ga73a0ded76fc6e6d72987c55bb16e2adf',1,'NetPacket::admin_action'],['../group__network__packet__strutture.html#ga9ab160acff8a130384701d3731c0729b',1,'NetPacket::@360223311017150174205023035217356011367126334367::admin_action']]],
   ['admin_5fdb_5fpacket_2',['admin_db_packet',['../group__network__packet__strutture.html#ga740b8f9c2a02ecfa8de301efa16a6087',1,'NetPacket::admin_db_packet'],['../group__network__packet__strutture.html#gac54f29e65060622fa6b68eca99d0f3f4',1,'NetPacket::@360223311017150174205023035217356011367126334367::admin_db_packet']]],
   ['admin_5fscroll_5freset_3',['admin_scroll_reset',['../admin__draw_8c.html#a65bd7a3a024eeecda356b3898743189e',1,'admin_scroll_reset:&#160;admin_draw.c'],['../auth__update_8c.html#a65bd7a3a024eeecda356b3898743189e',1,'admin_scroll_reset:&#160;admin_draw.c']]],
-  ['anim_5fattiva_4',['anim_attiva',['../structStatoGioco.html#a00d3dedc6f537629b77b442bd2443ff9',1,'StatoGioco']]],
-  ['anim_5fcarta_5',['anim_carta',['../structStatoGioco.html#a6b04e0d2301980012941acd88b45e2e1',1,'StatoGioco']]],
-  ['anim_5fend_6',['anim_end',['../structStatoGioco.html#a90bae182b30c7b621624dc3af746ee80',1,'StatoGioco']]],
-  ['anim_5fgia_5fapplicata_7',['anim_gia_applicata',['../structStatoGioco.html#aa2828dc9d8268df45ffb15eaa61fda5e',1,'StatoGioco']]],
-  ['anim_5fpesca_5fcount_8',['anim_pesca_count',['../structStatoGioco.html#a6df6ba1c119c0b940ab582e0b5288553',1,'StatoGioco']]],
-  ['anim_5fstart_9',['anim_start',['../structStatoGioco.html#a10f72a052336fefa168cd2c5948026eb',1,'StatoGioco']]],
-  ['anim_5ft_10',['anim_t',['../structStatoGioco.html#a819b745b3c098cea5a3f846ea68fe4c2',1,'StatoGioco']]],
-  ['area_11',['area',['../structCarta.html#a321de95c83b77542773e361c0fc42c61',1,'Carta::area'],['../structCampoInput.html#a95e3e3063046535111a9bac69d4013fa',1,'CampoInput::area']]],
-  ['areatavolocentro_12',['areaTavoloCentro',['../gameplay__shared_8h.html#a95d4008478c2502c125a4aebe7ce23d8',1,'areaTavoloCentro:&#160;gameplay_screen.c'],['../gameplay__draw_8c.html#a95d4008478c2502c125a4aebe7ce23d8',1,'areaTavoloCentro:&#160;gameplay_screen.c'],['../gameplay__screen_8c.html#a95d4008478c2502c125a4aebe7ce23d8',1,'areaTavoloCentro:&#160;gameplay_screen.c'],['../gameplay__update_8c.html#a95d4008478c2502c125a4aebe7ce23d8',1,'areaTavoloCentro:&#160;gameplay_screen.c']]],
-  ['attivo_13',['attivo',['../structSaveReceiver.html#aff60c992771baa4929b1ae3a6e029676',1,'SaveReceiver']]],
-  ['autore_5fanimazione_14',['autore_animazione',['../structStatoGioco.html#aebcae6307fff59f7a86f8f25ca42e5c3',1,'StatoGioco']]],
-  ['azione_15',['azione',['../structNodoDecisione.html#a8966a2627568f86323190a8f0b2e3def',1,'NodoDecisione']]]
+  ['area_4',['area',['../structCarta.html#a321de95c83b77542773e361c0fc42c61',1,'Carta::area'],['../structCampoInput.html#a95e3e3063046535111a9bac69d4013fa',1,'CampoInput::area']]],
+  ['areatavolocentro_5',['areaTavoloCentro',['../gameplay__shared_8h.html#a95d4008478c2502c125a4aebe7ce23d8',1,'areaTavoloCentro:&#160;gameplay_screen.c'],['../gameplay__draw_8c.html#a95d4008478c2502c125a4aebe7ce23d8',1,'areaTavoloCentro:&#160;gameplay_screen.c'],['../gameplay__screen_8c.html#a95d4008478c2502c125a4aebe7ce23d8',1,'areaTavoloCentro:&#160;gameplay_screen.c'],['../gameplay__update_8c.html#a95d4008478c2502c125a4aebe7ce23d8',1,'areaTavoloCentro:&#160;gameplay_screen.c']]],
+  ['attivo_6',['attivo',['../structSaveReceiver.html#aff60c992771baa4929b1ae3a6e029676',1,'SaveReceiver']]],
+  ['azione_7',['azione',['../structNodoDecisione.html#a8966a2627568f86323190a8f0b2e3def',1,'NodoDecisione']]]
 ];

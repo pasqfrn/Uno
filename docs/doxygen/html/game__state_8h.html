@@ -119,22 +119,44 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('game__state_8h
   <div class="headertitle"><div class="title">Riferimenti per il file game_state.h</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Modulo <a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a> - Stato completo della partita in corso.  
-<a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="data__structures_8h_source.html">../data_structures/data_structures.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="player_8h_source.html">player.h</a>&quot;</code><br />
 </div>
 <p><a href="game__state_8h_source.html">Vai al codice sorgente di questo file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Strutture dati</h2></td></tr>
-<tr class="memitem:StatoGioco" id="r_StatoGioco"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structStatoGioco.html">StatoGioco</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stato completo di una partita in corso.  <a href="structStatoGioco.html#details">Continua...</a><br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Ridefinizioni di tipo (typedef)</h2></td></tr>
+<tr class="memitem:ad103089d7982e85c16b0a50eff85dd53" id="r_ad103089d7982e85c16b0a50eff85dd53"><td class="memItemLeft">typedef struct <a class="el" href="#ad103089d7982e85c16b0a50eff85dd53">StatoGioco</a>&#160;</td><td class="memItemRight"><a class="el" href="#ad103089d7982e85c16b0a50eff85dd53">StatoGioco</a></td></tr>
+<tr class="memdesc:ad103089d7982e85c16b0a50eff85dd53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stato completo di una partita in corso (tipo opaco).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Modulo <a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a> - Stato completo della partita in corso. </p>
-</div></div><!-- contents -->
+<div class="textblock"><p>Modulo <a class="el" href="#ad103089d7982e85c16b0a50eff85dd53" title="Stato completo di una partita in corso (tipo opaco).">StatoGioco</a> - ADT Stato di gioco (tipo opaco). </p>
+</div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentazione delle ridefinizioni di tipo (typedef)</h2>
+<a id="ad103089d7982e85c16b0a50eff85dd53" name="ad103089d7982e85c16b0a50eff85dd53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad103089d7982e85c16b0a50eff85dd53">&#9670;&#160;</a></span>StatoGioco</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="#ad103089d7982e85c16b0a50eff85dd53">StatoGioco</a> <a class="el" href="#ad103089d7982e85c16b0a50eff85dd53">StatoGioco</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stato completo di una partita in corso (tipo opaco). </p>
+<p><br  />
+</p>
+<p>La rappresentazione interna è definita esclusivamente in <br  />
+ <span class="tt">lib/game/game_state_private.h</span>. Gli utilizzatori NON devono <br  />
+ mai accedere direttamente ai campi della struct. <br  />
+</p>
+<p>Per manipolare lo stato si usano le funzioni di dominio in <br  />
+ <span class="tt"><a class="el" href="game__logic_8h.html" title="Modulo di logica di gioco UNO.">lib/game/game_logic.h</a></span>. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>

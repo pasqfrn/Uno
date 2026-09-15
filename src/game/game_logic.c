@@ -14,13 +14,10 @@
 #include <time.h>
 #include <stdint.h>
 #include "../../lib/game/game_logic.h"
-#include "../../lib/auth/auth.h"
 #include "../../lib/data_structures/list.h"
 #include "../../lib/data_structures/data_structures.h"
 #include "../../lib/data_structures/stack.h"
 #include "../../lib/data_structures/queue.h"
-#include "../../lib/socket/network/network.h"
-#include "../../lib/socket/lan/lan_sync.h"
 
 /** @brief Pila globale del mazzo di pesca. */
 Pila* mazzo_pila = NULL;
@@ -65,6 +62,7 @@ int MossaValida(StatoGioco *gioco, Carta c) {
  * @param colore_scelto Colore scelto dal giocatore (per jolly).
  */
 void ApplicaEffetto(StatoGioco *gioco, Carta c, Colore colore_scelto) {
+    char msg[128];
     gioco->colore_attivo = (c.colore == NERO) ? colore_scelto : c.colore;
     int prossimo = (gioco->turno_corrente + gioco->direzione + gioco->num_giocatori) % gioco->num_giocatori;
 
@@ -79,17 +77,20 @@ void ApplicaEffetto(StatoGioco *gioco, Carta c, Colore colore_scelto) {
     }
     else if (c.tipo == SALTA) {
         GameLogic_AvanzamentoTurno(gioco, 2);
-        MostraNotifica(gioco, TextFormat("%s salta il turno!", Giocatore_Nome(&gioco->giocatori[prossimo])));
+        snprintf(msg, sizeof(msg), "%s salta il turno!", Giocatore_Nome(&gioco->giocatori[prossimo]));
+        MostraNotifica(gioco, msg);
     }
     else if (c.tipo == PESCA_DUE) {
         Pesca(gioco, prossimo, 2);
         GameLogic_AvanzamentoTurno(gioco, 2);
-        MostraNotifica(gioco, TextFormat("%s subisce +2!", Giocatore_Nome(&gioco->giocatori[prossimo])));
+        snprintf(msg, sizeof(msg), "%s subisce +2!", Giocatore_Nome(&gioco->giocatori[prossimo]));
+        MostraNotifica(gioco, msg);
     }
     else if (c.tipo == PESCA_QUATTRO) {
         Pesca(gioco, prossimo, 4);
         GameLogic_AvanzamentoTurno(gioco, 2);
-        MostraNotifica(gioco, TextFormat("%s subisce +4!", Giocatore_Nome(&gioco->giocatori[prossimo])));
+        snprintf(msg, sizeof(msg), "%s subisce +4!", Giocatore_Nome(&gioco->giocatori[prossimo]));
+        MostraNotifica(gioco, msg);
     }
     else if (c.tipo == CAMBIO_COLORE) {
         GameLogic_AvanzamentoTurno(gioco, 1);

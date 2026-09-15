@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Uno" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/uno" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Uno" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/uno" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -28,15 +28,23 @@
 				</Linker>
 			</Target>
 			<Target title="Test">
-				<Option output="Test" prefix_auto="1" extension_auto="1" />
-				<Option object_output=".objs/test" />
+				<Option output="tests/test_adt" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Test/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Itests/stubs" />
+				</Compiler>
+				<Linker>
+					<Add option="-lm" />
+				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add directory="lib/raylib/include" />
+			<Add directory="lib" />
+			<Add directory="src" />
 		</Compiler>
 		<Linker>
 			<Add option="-lraylib" />
@@ -48,961 +56,3865 @@
 			<Add library="lib/raylib/lib/libraylibdll.a" />
 			<Add directory="lib/raylib/lib" />
 		</Linker>
-		<Unit filename=".vscode/c_cpp_properties.json" />
-		<Unit filename=".vscode/settings.json" />
-		<Unit filename=".vscode/tasks.json" />
-		<Unit filename="README.md" />
-		<Unit filename="assets/card/card_generator.py" />
-		<Unit filename="assets/card/cards_assets/blu_0.png" />
-		<Unit filename="assets/card/cards_assets/blu_1.png" />
-		<Unit filename="assets/card/cards_assets/blu_2.png" />
-		<Unit filename="assets/card/cards_assets/blu_3.png" />
-		<Unit filename="assets/card/cards_assets/blu_4.png" />
-		<Unit filename="assets/card/cards_assets/blu_5.png" />
-		<Unit filename="assets/card/cards_assets/blu_6.png" />
-		<Unit filename="assets/card/cards_assets/blu_7.png" />
-		<Unit filename="assets/card/cards_assets/blu_8.png" />
-		<Unit filename="assets/card/cards_assets/blu_9.png" />
-		<Unit filename="assets/card/cards_assets/blu_inverti.png" />
-		<Unit filename="assets/card/cards_assets/blu_piu2.png" />
-		<Unit filename="assets/card/cards_assets/blu_salta.png" />
-		<Unit filename="assets/card/cards_assets/dorso.png" />
-		<Unit filename="assets/card/cards_assets/giallo_0.png" />
-		<Unit filename="assets/card/cards_assets/giallo_1.png" />
-		<Unit filename="assets/card/cards_assets/giallo_2.png" />
-		<Unit filename="assets/card/cards_assets/giallo_3.png" />
-		<Unit filename="assets/card/cards_assets/giallo_4.png" />
-		<Unit filename="assets/card/cards_assets/giallo_5.png" />
-		<Unit filename="assets/card/cards_assets/giallo_6.png" />
-		<Unit filename="assets/card/cards_assets/giallo_7.png" />
-		<Unit filename="assets/card/cards_assets/giallo_8.png" />
-		<Unit filename="assets/card/cards_assets/giallo_9.png" />
-		<Unit filename="assets/card/cards_assets/giallo_inverti.png" />
-		<Unit filename="assets/card/cards_assets/giallo_piu2.png" />
-		<Unit filename="assets/card/cards_assets/giallo_salta.png" />
-		<Unit filename="assets/card/cards_assets/jolly.png" />
-		<Unit filename="assets/card/cards_assets/jolly_piu4.png" />
-		<Unit filename="assets/card/cards_assets/rosso_0.png" />
-		<Unit filename="assets/card/cards_assets/rosso_1.png" />
-		<Unit filename="assets/card/cards_assets/rosso_2.png" />
-		<Unit filename="assets/card/cards_assets/rosso_3.png" />
-		<Unit filename="assets/card/cards_assets/rosso_4.png" />
-		<Unit filename="assets/card/cards_assets/rosso_5.png" />
-		<Unit filename="assets/card/cards_assets/rosso_6.png" />
-		<Unit filename="assets/card/cards_assets/rosso_7.png" />
-		<Unit filename="assets/card/cards_assets/rosso_8.png" />
-		<Unit filename="assets/card/cards_assets/rosso_9.png" />
-		<Unit filename="assets/card/cards_assets/rosso_inverti.png" />
-		<Unit filename="assets/card/cards_assets/rosso_piu2.png" />
-		<Unit filename="assets/card/cards_assets/rosso_salta.png" />
-		<Unit filename="assets/card/cards_assets/verde_0.png" />
-		<Unit filename="assets/card/cards_assets/verde_1.png" />
-		<Unit filename="assets/card/cards_assets/verde_2.png" />
-		<Unit filename="assets/card/cards_assets/verde_3.png" />
-		<Unit filename="assets/card/cards_assets/verde_4.png" />
-		<Unit filename="assets/card/cards_assets/verde_5.png" />
-		<Unit filename="assets/card/cards_assets/verde_6.png" />
-		<Unit filename="assets/card/cards_assets/verde_7.png" />
-		<Unit filename="assets/card/cards_assets/verde_8.png" />
-		<Unit filename="assets/card/cards_assets/verde_9.png" />
-		<Unit filename="assets/card/cards_assets/verde_inverti.png" />
-		<Unit filename="assets/card/cards_assets/verde_piu2.png" />
-		<Unit filename="assets/card/cards_assets/verde_salta.png" />
-		<Unit filename="assets/img/sfondo.png" />
-		<Unit filename="build/Makefile" />
-		<Unit filename="data/users/users.dat" />
-		<Unit filename="docs/Documentazione CdS.pdf" />
-		<Unit filename="docs/doxygen/html/Doxyfile" />
-		<Unit filename="docs/doxygen/html/README_8md.html" />
-		<Unit filename="docs/doxygen/html/admin__draw_8c.html" />
-		<Unit filename="docs/doxygen/html/admin__draw_8c.js" />
-		<Unit filename="docs/doxygen/html/admin__draw_8h.html" />
-		<Unit filename="docs/doxygen/html/admin__draw_8h.js" />
-		<Unit filename="docs/doxygen/html/admin__draw_8h_source.html" />
-		<Unit filename="docs/doxygen/html/annotated.html" />
-		<Unit filename="docs/doxygen/html/annotated_dup.js" />
-		<Unit filename="docs/doxygen/html/auth_8c.html" />
-		<Unit filename="docs/doxygen/html/auth_8c.js" />
-		<Unit filename="docs/doxygen/html/auth_8h.html" />
-		<Unit filename="docs/doxygen/html/auth_8h.js" />
-		<Unit filename="docs/doxygen/html/auth_8h_source.html" />
-		<Unit filename="docs/doxygen/html/auth__draw_8c.html" />
-		<Unit filename="docs/doxygen/html/auth__draw_8c.js" />
-		<Unit filename="docs/doxygen/html/auth__draw_8h.html" />
-		<Unit filename="docs/doxygen/html/auth__draw_8h.js" />
-		<Unit filename="docs/doxygen/html/auth__draw_8h_source.html" />
-		<Unit filename="docs/doxygen/html/auth__screen_8c.html" />
-		<Unit filename="docs/doxygen/html/auth__screen_8c.js" />
-		<Unit filename="docs/doxygen/html/auth__screen_8h.html" />
-		<Unit filename="docs/doxygen/html/auth__screen_8h_source.html" />
-		<Unit filename="docs/doxygen/html/auth__shared_8h.html" />
-		<Unit filename="docs/doxygen/html/auth__shared_8h.js" />
-		<Unit filename="docs/doxygen/html/auth__shared_8h_source.html" />
-		<Unit filename="docs/doxygen/html/auth__update_8c.html" />
-		<Unit filename="docs/doxygen/html/auth__update_8c.js" />
-		<Unit filename="docs/doxygen/html/auth__update_8h.html" />
-		<Unit filename="docs/doxygen/html/auth__update_8h.js" />
-		<Unit filename="docs/doxygen/html/auth__update_8h_source.html" />
-		<Unit filename="docs/doxygen/html/auth__validation_8c.html" />
-		<Unit filename="docs/doxygen/html/auth__validation_8c.js" />
-		<Unit filename="docs/doxygen/html/auth__validation_8h.html" />
-		<Unit filename="docs/doxygen/html/auth__validation_8h.js" />
-		<Unit filename="docs/doxygen/html/auth__validation_8h_source.html" />
-		<Unit filename="docs/doxygen/html/bot__ai_8c.html" />
-		<Unit filename="docs/doxygen/html/bot__ai_8c.js" />
-		<Unit filename="docs/doxygen/html/bot__ai_8h.html" />
-		<Unit filename="docs/doxygen/html/bot__ai_8h.js" />
-		<Unit filename="docs/doxygen/html/bot__ai_8h_source.html" />
-		<Unit filename="docs/doxygen/html/bst_8c.html" />
-		<Unit filename="docs/doxygen/html/bst_8c.js" />
-		<Unit filename="docs/doxygen/html/bst_8h.html" />
-		<Unit filename="docs/doxygen/html/bst_8h.js" />
-		<Unit filename="docs/doxygen/html/bst_8h_source.html" />
-		<Unit filename="docs/doxygen/html/bst__private_8h.html" />
-		<Unit filename="docs/doxygen/html/bst__private_8h.js" />
-		<Unit filename="docs/doxygen/html/bst__private_8h_source.html" />
-		<Unit filename="docs/doxygen/html/chat_8c.html" />
-		<Unit filename="docs/doxygen/html/chat_8c.js" />
-		<Unit filename="docs/doxygen/html/chat_8h.html" />
-		<Unit filename="docs/doxygen/html/chat_8h.js" />
-		<Unit filename="docs/doxygen/html/chat_8h_source.html" />
-		<Unit filename="docs/doxygen/html/chat__private_8h.html" />
-		<Unit filename="docs/doxygen/html/chat__private_8h.js" />
-		<Unit filename="docs/doxygen/html/chat__private_8h_source.html" />
-		<Unit filename="docs/doxygen/html/chat__render_8c.html" />
-		<Unit filename="docs/doxygen/html/chat__render_8c.js" />
-		<Unit filename="docs/doxygen/html/classes.html" />
-		<Unit filename="docs/doxygen/html/clipboard.js" />
-		<Unit filename="docs/doxygen/html/codefolding.js" />
-		<Unit filename="docs/doxygen/html/cookie.js" />
-		<Unit filename="docs/doxygen/html/data__structures_2list_8c.html" />
-		<Unit filename="docs/doxygen/html/data__structures_2list_8c.js" />
-		<Unit filename="docs/doxygen/html/data__structures_2list_8h.html" />
-		<Unit filename="docs/doxygen/html/data__structures_2list_8h.js" />
-		<Unit filename="docs/doxygen/html/data__structures_2list_8h_source.html" />
-		<Unit filename="docs/doxygen/html/data__structures_8h.html" />
-		<Unit filename="docs/doxygen/html/data__structures_8h.js" />
-		<Unit filename="docs/doxygen/html/data__structures_8h_source.html" />
-		<Unit filename="docs/doxygen/html/deck_8c.html" />
-		<Unit filename="docs/doxygen/html/deck_8c.js" />
-		<Unit filename="docs/doxygen/html/dir_1699be727a800b1d059c6f7f2b91d2ee.html" />
-		<Unit filename="docs/doxygen/html/dir_1699be727a800b1d059c6f7f2b91d2ee.js" />
-		<Unit filename="docs/doxygen/html/dir_22fb8090d4c49476ad2b35590561ca72.html" />
-		<Unit filename="docs/doxygen/html/dir_22fb8090d4c49476ad2b35590561ca72.js" />
-		<Unit filename="docs/doxygen/html/dir_299aa870bb746bafe99131a774bd9579.html" />
-		<Unit filename="docs/doxygen/html/dir_299aa870bb746bafe99131a774bd9579.js" />
-		<Unit filename="docs/doxygen/html/dir_3099fb8800c39f9f88796763e1d82049.html" />
-		<Unit filename="docs/doxygen/html/dir_3099fb8800c39f9f88796763e1d82049.js" />
-		<Unit filename="docs/doxygen/html/dir_363d01014ba20f6e7f9ea0ee7c97c8ea.html" />
-		<Unit filename="docs/doxygen/html/dir_363d01014ba20f6e7f9ea0ee7c97c8ea.js" />
-		<Unit filename="docs/doxygen/html/dir_46cc832029cb9288a79568fcf15f16cc.html" />
-		<Unit filename="docs/doxygen/html/dir_46cc832029cb9288a79568fcf15f16cc.js" />
-		<Unit filename="docs/doxygen/html/dir_4a9058f586c45bd4458c3b7f033b4dec.html" />
-		<Unit filename="docs/doxygen/html/dir_4a9058f586c45bd4458c3b7f033b4dec.js" />
-		<Unit filename="docs/doxygen/html/dir_4d5758d0de027b72c7c3da4ccb70efae.html" />
-		<Unit filename="docs/doxygen/html/dir_4d5758d0de027b72c7c3da4ccb70efae.js" />
-		<Unit filename="docs/doxygen/html/dir_59425e443f801f1f2fd8bbe4959a3ccf.html" />
-		<Unit filename="docs/doxygen/html/dir_59425e443f801f1f2fd8bbe4959a3ccf.js" />
-		<Unit filename="docs/doxygen/html/dir_6c2fc416f2a00c9c04fd9d61912cfd28.html" />
-		<Unit filename="docs/doxygen/html/dir_6c2fc416f2a00c9c04fd9d61912cfd28.js" />
-		<Unit filename="docs/doxygen/html/dir_6f407039f0447c6327af64e80e71cee1.html" />
-		<Unit filename="docs/doxygen/html/dir_6f407039f0447c6327af64e80e71cee1.js" />
-		<Unit filename="docs/doxygen/html/dir_858915971c8656b65d461b873c3b3855.html" />
-		<Unit filename="docs/doxygen/html/dir_858915971c8656b65d461b873c3b3855.js" />
-		<Unit filename="docs/doxygen/html/dir_8790123cd27986151acde1ce1c3bab17.html" />
-		<Unit filename="docs/doxygen/html/dir_8790123cd27986151acde1ce1c3bab17.js" />
-		<Unit filename="docs/doxygen/html/dir_8b30b7613ff4b415a3a13adb868f1637.html" />
-		<Unit filename="docs/doxygen/html/dir_8b30b7613ff4b415a3a13adb868f1637.js" />
-		<Unit filename="docs/doxygen/html/dir_921984c8c8809702688c1d3bb88c92fc.html" />
-		<Unit filename="docs/doxygen/html/dir_921984c8c8809702688c1d3bb88c92fc.js" />
-		<Unit filename="docs/doxygen/html/dir_9ad1227260954e346101f3844f0abb3d.html" />
-		<Unit filename="docs/doxygen/html/dir_9ad1227260954e346101f3844f0abb3d.js" />
-		<Unit filename="docs/doxygen/html/dir_9baab45634982f8b3d0134cb623803a1.html" />
-		<Unit filename="docs/doxygen/html/dir_9baab45634982f8b3d0134cb623803a1.js" />
-		<Unit filename="docs/doxygen/html/dir_a4a06e4766a213248381a7e786f6d909.html" />
-		<Unit filename="docs/doxygen/html/dir_a4a06e4766a213248381a7e786f6d909.js" />
-		<Unit filename="docs/doxygen/html/dir_a7341d8a2c2d3d7feb83b70b7bbcf056.html" />
-		<Unit filename="docs/doxygen/html/dir_a7341d8a2c2d3d7feb83b70b7bbcf056.js" />
-		<Unit filename="docs/doxygen/html/dir_aebb8dcc11953d78e620bbef0b9e2183.html" />
-		<Unit filename="docs/doxygen/html/dir_aebb8dcc11953d78e620bbef0b9e2183.js" />
-		<Unit filename="docs/doxygen/html/dir_c92aa75074393c4c3a20e23a24742d88.html" />
-		<Unit filename="docs/doxygen/html/dir_c92aa75074393c4c3a20e23a24742d88.js" />
-		<Unit filename="docs/doxygen/html/dir_e0e4df1b297a9f377abb7b27124b1ce7.html" />
-		<Unit filename="docs/doxygen/html/dir_e0e4df1b297a9f377abb7b27124b1ce7.js" />
-		<Unit filename="docs/doxygen/html/dir_e1211c1ba4cadc9e94fe0fdad0038fad.html" />
-		<Unit filename="docs/doxygen/html/dir_e1211c1ba4cadc9e94fe0fdad0038fad.js" />
-		<Unit filename="docs/doxygen/html/dir_e17dec1d132ad7ed461be9444000b405.html" />
-		<Unit filename="docs/doxygen/html/dir_e17dec1d132ad7ed461be9444000b405.js" />
-		<Unit filename="docs/doxygen/html/dir_e8f7880c728fe5aa75bdd52c24447375.html" />
-		<Unit filename="docs/doxygen/html/dir_e8f7880c728fe5aa75bdd52c24447375.js" />
-		<Unit filename="docs/doxygen/html/dir_eafa113c866c19c3f812b2f973b25251.html" />
-		<Unit filename="docs/doxygen/html/dir_eafa113c866c19c3f812b2f973b25251.js" />
-		<Unit filename="docs/doxygen/html/dir_ecb37285c0bc658c97bb749f37c59e79.html" />
-		<Unit filename="docs/doxygen/html/dir_ecb37285c0bc658c97bb749f37c59e79.js" />
-		<Unit filename="docs/doxygen/html/dir_f0c0e87129cc99adbfb71a619dac0947.html" />
-		<Unit filename="docs/doxygen/html/dir_f0c0e87129cc99adbfb71a619dac0947.js" />
-		<Unit filename="docs/doxygen/html/dir_f65e8c93f474ad2ed0dc776944eef760.html" />
-		<Unit filename="docs/doxygen/html/dir_f65e8c93f474ad2ed0dc776944eef760.js" />
-		<Unit filename="docs/doxygen/html/doxygen.css" />
-		<Unit filename="docs/doxygen/html/doxygen.svg" />
-		<Unit filename="docs/doxygen/html/doxygen_crawl.html" />
-		<Unit filename="docs/doxygen/html/end__screen_8c.html" />
-		<Unit filename="docs/doxygen/html/end__screen_8c.js" />
-		<Unit filename="docs/doxygen/html/end__screen_8h.html" />
-		<Unit filename="docs/doxygen/html/end__screen_8h.js" />
-		<Unit filename="docs/doxygen/html/end__screen_8h_source.html" />
-		<Unit filename="docs/doxygen/html/files.html" />
-		<Unit filename="docs/doxygen/html/files_dup.js" />
-		<Unit filename="docs/doxygen/html/fs_8h.html" />
-		<Unit filename="docs/doxygen/html/fs_8h.js" />
-		<Unit filename="docs/doxygen/html/fs_8h_source.html" />
-		<Unit filename="docs/doxygen/html/functions.html" />
-		<Unit filename="docs/doxygen/html/functions_b.html" />
-		<Unit filename="docs/doxygen/html/functions_c.html" />
-		<Unit filename="docs/doxygen/html/functions_d.html" />
-		<Unit filename="docs/doxygen/html/functions_dup.js" />
-		<Unit filename="docs/doxygen/html/functions_e.html" />
-		<Unit filename="docs/doxygen/html/functions_f.html" />
-		<Unit filename="docs/doxygen/html/functions_g.html" />
-		<Unit filename="docs/doxygen/html/functions_h.html" />
-		<Unit filename="docs/doxygen/html/functions_i.html" />
-		<Unit filename="docs/doxygen/html/functions_j.html" />
-		<Unit filename="docs/doxygen/html/functions_k.html" />
-		<Unit filename="docs/doxygen/html/functions_l.html" />
-		<Unit filename="docs/doxygen/html/functions_m.html" />
-		<Unit filename="docs/doxygen/html/functions_n.html" />
-		<Unit filename="docs/doxygen/html/functions_o.html" />
-		<Unit filename="docs/doxygen/html/functions_p.html" />
-		<Unit filename="docs/doxygen/html/functions_r.html" />
-		<Unit filename="docs/doxygen/html/functions_s.html" />
-		<Unit filename="docs/doxygen/html/functions_t.html" />
-		<Unit filename="docs/doxygen/html/functions_u.html" />
-		<Unit filename="docs/doxygen/html/functions_v.html" />
-		<Unit filename="docs/doxygen/html/functions_vars.html" />
-		<Unit filename="docs/doxygen/html/functions_vars.js" />
-		<Unit filename="docs/doxygen/html/functions_vars_b.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_c.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_d.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_e.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_f.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_g.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_h.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_i.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_j.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_k.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_l.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_m.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_n.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_o.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_p.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_r.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_s.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_t.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_u.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_v.html" />
-		<Unit filename="docs/doxygen/html/functions_vars_w.html" />
-		<Unit filename="docs/doxygen/html/functions_w.html" />
-		<Unit filename="docs/doxygen/html/game__flow_8c.html" />
-		<Unit filename="docs/doxygen/html/game__flow_8c.js" />
-		<Unit filename="docs/doxygen/html/game__logic_8c.html" />
-		<Unit filename="docs/doxygen/html/game__logic_8c.js" />
-		<Unit filename="docs/doxygen/html/game__logic_8h.html" />
-		<Unit filename="docs/doxygen/html/game__logic_8h.js" />
-		<Unit filename="docs/doxygen/html/game__logic_8h_source.html" />
-		<Unit filename="docs/doxygen/html/game__state_8h.html" />
-		<Unit filename="docs/doxygen/html/game__state_8h.js" />
-		<Unit filename="docs/doxygen/html/game__state_8h_source.html" />
-		<Unit filename="docs/doxygen/html/gameplay__animation_8h.html" />
-		<Unit filename="docs/doxygen/html/gameplay__animation_8h.js" />
-		<Unit filename="docs/doxygen/html/gameplay__animation_8h_source.html" />
-		<Unit filename="docs/doxygen/html/gameplay__chat_8h.html" />
-		<Unit filename="docs/doxygen/html/gameplay__chat_8h.js" />
-		<Unit filename="docs/doxygen/html/gameplay__chat_8h_source.html" />
-		<Unit filename="docs/doxygen/html/gameplay__draw_8c.html" />
-		<Unit filename="docs/doxygen/html/gameplay__draw_8c.js" />
-		<Unit filename="docs/doxygen/html/gameplay__draw_8h.html" />
-		<Unit filename="docs/doxygen/html/gameplay__draw_8h.js" />
-		<Unit filename="docs/doxygen/html/gameplay__draw_8h_source.html" />
-		<Unit filename="docs/doxygen/html/gameplay__screen_8c.html" />
-		<Unit filename="docs/doxygen/html/gameplay__screen_8c.js" />
-		<Unit filename="docs/doxygen/html/gameplay__screen_8h.html" />
-		<Unit filename="docs/doxygen/html/gameplay__screen_8h_source.html" />
-		<Unit filename="docs/doxygen/html/gameplay__shared_8h.html" />
-		<Unit filename="docs/doxygen/html/gameplay__shared_8h.js" />
-		<Unit filename="docs/doxygen/html/gameplay__shared_8h_source.html" />
-		<Unit filename="docs/doxygen/html/gameplay__update_8c.html" />
-		<Unit filename="docs/doxygen/html/gameplay__update_8c.js" />
-		<Unit filename="docs/doxygen/html/gameplay__update_8h.html" />
-		<Unit filename="docs/doxygen/html/gameplay__update_8h.js" />
-		<Unit filename="docs/doxygen/html/gameplay__update_8h_source.html" />
-		<Unit filename="docs/doxygen/html/globals.html" />
-		<Unit filename="docs/doxygen/html/globals_a.html" />
-		<Unit filename="docs/doxygen/html/globals_b.html" />
-		<Unit filename="docs/doxygen/html/globals_c.html" />
-		<Unit filename="docs/doxygen/html/globals_d.html" />
-		<Unit filename="docs/doxygen/html/globals_defs.html" />
-		<Unit filename="docs/doxygen/html/globals_dup.js" />
-		<Unit filename="docs/doxygen/html/globals_e.html" />
-		<Unit filename="docs/doxygen/html/globals_enum.html" />
-		<Unit filename="docs/doxygen/html/globals_eval.html" />
-		<Unit filename="docs/doxygen/html/globals_f.html" />
-		<Unit filename="docs/doxygen/html/globals_func.html" />
-		<Unit filename="docs/doxygen/html/globals_func.js" />
-		<Unit filename="docs/doxygen/html/globals_func_a.html" />
-		<Unit filename="docs/doxygen/html/globals_func_b.html" />
-		<Unit filename="docs/doxygen/html/globals_func_c.html" />
-		<Unit filename="docs/doxygen/html/globals_func_d.html" />
-		<Unit filename="docs/doxygen/html/globals_func_e.html" />
-		<Unit filename="docs/doxygen/html/globals_func_f.html" />
-		<Unit filename="docs/doxygen/html/globals_func_g.html" />
-		<Unit filename="docs/doxygen/html/globals_func_h.html" />
-		<Unit filename="docs/doxygen/html/globals_func_i.html" />
-		<Unit filename="docs/doxygen/html/globals_func_j.html" />
-		<Unit filename="docs/doxygen/html/globals_func_l.html" />
-		<Unit filename="docs/doxygen/html/globals_func_m.html" />
-		<Unit filename="docs/doxygen/html/globals_func_n.html" />
-		<Unit filename="docs/doxygen/html/globals_func_o.html" />
-		<Unit filename="docs/doxygen/html/globals_func_p.html" />
-		<Unit filename="docs/doxygen/html/globals_func_r.html" />
-		<Unit filename="docs/doxygen/html/globals_func_s.html" />
-		<Unit filename="docs/doxygen/html/globals_func_t.html" />
-		<Unit filename="docs/doxygen/html/globals_func_u.html" />
-		<Unit filename="docs/doxygen/html/globals_func_w.html" />
-		<Unit filename="docs/doxygen/html/globals_g.html" />
-		<Unit filename="docs/doxygen/html/globals_h.html" />
-		<Unit filename="docs/doxygen/html/globals_i.html" />
-		<Unit filename="docs/doxygen/html/globals_j.html" />
-		<Unit filename="docs/doxygen/html/globals_l.html" />
-		<Unit filename="docs/doxygen/html/globals_m.html" />
-		<Unit filename="docs/doxygen/html/globals_n.html" />
-		<Unit filename="docs/doxygen/html/globals_o.html" />
-		<Unit filename="docs/doxygen/html/globals_p.html" />
-		<Unit filename="docs/doxygen/html/globals_r.html" />
-		<Unit filename="docs/doxygen/html/globals_s.html" />
-		<Unit filename="docs/doxygen/html/globals_t.html" />
-		<Unit filename="docs/doxygen/html/globals_type.html" />
-		<Unit filename="docs/doxygen/html/globals_u.html" />
-		<Unit filename="docs/doxygen/html/globals_v.html" />
-		<Unit filename="docs/doxygen/html/globals_vars.html" />
-		<Unit filename="docs/doxygen/html/globals_vars.js" />
-		<Unit filename="docs/doxygen/html/globals_vars_b.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_c.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_d.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_e.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_g.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_h.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_i.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_j.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_l.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_m.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_n.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_o.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_p.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_r.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_s.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_t.html" />
-		<Unit filename="docs/doxygen/html/globals_vars_u.html" />
-		<Unit filename="docs/doxygen/html/globals_w.html" />
-		<Unit filename="docs/doxygen/html/group__admin__draw.html" />
-		<Unit filename="docs/doxygen/html/group__admin__draw.js" />
-		<Unit filename="docs/doxygen/html/group__auth.html" />
-		<Unit filename="docs/doxygen/html/group__auth.js" />
-		<Unit filename="docs/doxygen/html/group__auth__draw.html" />
-		<Unit filename="docs/doxygen/html/group__auth__draw.js" />
-		<Unit filename="docs/doxygen/html/group__auth__impl.html" />
-		<Unit filename="docs/doxygen/html/group__auth__impl.js" />
-		<Unit filename="docs/doxygen/html/group__auth__screen.html" />
-		<Unit filename="docs/doxygen/html/group__auth__screen.js" />
-		<Unit filename="docs/doxygen/html/group__auth__shared.html" />
-		<Unit filename="docs/doxygen/html/group__auth__update.html" />
-		<Unit filename="docs/doxygen/html/group__auth__update.js" />
-		<Unit filename="docs/doxygen/html/group__auth__validation.html" />
-		<Unit filename="docs/doxygen/html/group__bot__ai.html" />
-		<Unit filename="docs/doxygen/html/group__bot__ai.js" />
-		<Unit filename="docs/doxygen/html/group__bot__ai__api.html" />
-		<Unit filename="docs/doxygen/html/group__bot__ai__api.js" />
-		<Unit filename="docs/doxygen/html/group__bot__ai__azioni.html" />
-		<Unit filename="docs/doxygen/html/group__bot__ai__azioni.js" />
-		<Unit filename="docs/doxygen/html/group__bot__ai__nodo.html" />
-		<Unit filename="docs/doxygen/html/group__bot__ai__nodo.js" />
-		<Unit filename="docs/doxygen/html/group__bst.html" />
-		<Unit filename="docs/doxygen/html/group__bst.js" />
-		<Unit filename="docs/doxygen/html/group__bst__nodi.html" />
-		<Unit filename="docs/doxygen/html/group__bst__nodi.js" />
-		<Unit filename="docs/doxygen/html/group__bst__operazioni.html" />
-		<Unit filename="docs/doxygen/html/group__bst__operazioni.js" />
-		<Unit filename="docs/doxygen/html/group__chat.html" />
-		<Unit filename="docs/doxygen/html/group__chat.js" />
-		<Unit filename="docs/doxygen/html/group__chat__api.html" />
-		<Unit filename="docs/doxygen/html/group__chat__api.js" />
-		<Unit filename="docs/doxygen/html/group__chat__storico.html" />
-		<Unit filename="docs/doxygen/html/group__chat__storico.js" />
-		<Unit filename="docs/doxygen/html/group__data__structures.html" />
-		<Unit filename="docs/doxygen/html/group__database__api.html" />
-		<Unit filename="docs/doxygen/html/group__database__api.js" />
-		<Unit filename="docs/doxygen/html/group__end__screen.html" />
-		<Unit filename="docs/doxygen/html/group__end__screen.js" />
-		<Unit filename="docs/doxygen/html/group__game__logic.html" />
-		<Unit filename="docs/doxygen/html/group__game__logic.js" />
-		<Unit filename="docs/doxygen/html/group__game__state.html" />
-		<Unit filename="docs/doxygen/html/group__gameplay__animation.html" />
-		<Unit filename="docs/doxygen/html/group__gameplay__chat.html" />
-		<Unit filename="docs/doxygen/html/group__gameplay__chat.js" />
-		<Unit filename="docs/doxygen/html/group__gameplay__draw.html" />
-		<Unit filename="docs/doxygen/html/group__gameplay__draw.js" />
-		<Unit filename="docs/doxygen/html/group__gameplay__screen.html" />
-		<Unit filename="docs/doxygen/html/group__gameplay__screen.js" />
-		<Unit filename="docs/doxygen/html/group__gameplay__shared.html" />
-		<Unit filename="docs/doxygen/html/group__gameplay__update.html" />
-		<Unit filename="docs/doxygen/html/group__gameplay__update.js" />
-		<Unit filename="docs/doxygen/html/group__input__field.html" />
-		<Unit filename="docs/doxygen/html/group__input__field.js" />
-		<Unit filename="docs/doxygen/html/group__lan__protocol.html" />
-		<Unit filename="docs/doxygen/html/group__lan__protocol__stats.html" />
-		<Unit filename="docs/doxygen/html/group__lan__protocol__user.html" />
-		<Unit filename="docs/doxygen/html/group__lan__sync.html" />
-		<Unit filename="docs/doxygen/html/group__lazy__deletion.html" />
-		<Unit filename="docs/doxygen/html/group__lazy__deletion.js" />
-		<Unit filename="docs/doxygen/html/group__lazy__deletion__impl.html" />
-		<Unit filename="docs/doxygen/html/group__lazy__deletion__impl.js" />
-		<Unit filename="docs/doxygen/html/group__list.html" />
-		<Unit filename="docs/doxygen/html/group__list.js" />
-		<Unit filename="docs/doxygen/html/group__main.html" />
-		<Unit filename="docs/doxygen/html/group__menu__screen.html" />
-		<Unit filename="docs/doxygen/html/group__menu__screen.js" />
-		<Unit filename="docs/doxygen/html/group__multiplayer__lobby.html" />
-		<Unit filename="docs/doxygen/html/group__multiplayer__lobby.js" />
-		<Unit filename="docs/doxygen/html/group__multiplayer__screen.html" />
-		<Unit filename="docs/doxygen/html/group__multiplayer__screen.js" />
-		<Unit filename="docs/doxygen/html/group__network.html" />
-		<Unit filename="docs/doxygen/html/group__network.js" />
-		<Unit filename="docs/doxygen/html/group__network__packet.html" />
-		<Unit filename="docs/doxygen/html/group__network__packet.js" />
-		<Unit filename="docs/doxygen/html/group__network__packet__strutture.html" />
-		<Unit filename="docs/doxygen/html/group__network__packet__strutture.js" />
-		<Unit filename="docs/doxygen/html/group__network__ruoli.html" />
-		<Unit filename="docs/doxygen/html/group__network__ruoli.js" />
-		<Unit filename="docs/doxygen/html/group__network__send.html" />
-		<Unit filename="docs/doxygen/html/group__network__send__admin.html" />
-		<Unit filename="docs/doxygen/html/group__network__send__admin.js" />
-		<Unit filename="docs/doxygen/html/group__network__utils.html" />
-		<Unit filename="docs/doxygen/html/group__packet__handler.html" />
-		<Unit filename="docs/doxygen/html/group__packet__handler__admin.html" />
-		<Unit filename="docs/doxygen/html/group__packet__handler__game.html" />
-		<Unit filename="docs/doxygen/html/group__player.html" />
-		<Unit filename="docs/doxygen/html/group__queue.html" />
-		<Unit filename="docs/doxygen/html/group__queue.js" />
-		<Unit filename="docs/doxygen/html/group__queue__api.html" />
-		<Unit filename="docs/doxygen/html/group__queue__api.js" />
-		<Unit filename="docs/doxygen/html/group__queue__nodi.html" />
-		<Unit filename="docs/doxygen/html/group__queue__nodi.js" />
-		<Unit filename="docs/doxygen/html/group__queue__struttura.html" />
-		<Unit filename="docs/doxygen/html/group__queue__struttura.js" />
-		<Unit filename="docs/doxygen/html/group__server__manager.html" />
-		<Unit filename="docs/doxygen/html/group__server__manager__api.html" />
-		<Unit filename="docs/doxygen/html/group__server__manager__api.js" />
-		<Unit filename="docs/doxygen/html/group__server__manager__giocatore.html" />
-		<Unit filename="docs/doxygen/html/group__server__manager__giocatore.js" />
-		<Unit filename="docs/doxygen/html/group__server__manager__sessione.html" />
-		<Unit filename="docs/doxygen/html/group__server__manager__sessione.js" />
-		<Unit filename="docs/doxygen/html/group__server__manager__stati.html" />
-		<Unit filename="docs/doxygen/html/group__server__manager__stati.js" />
-		<Unit filename="docs/doxygen/html/group__server__manager__struttura.html" />
-		<Unit filename="docs/doxygen/html/group__server__manager__struttura.js" />
-		<Unit filename="docs/doxygen/html/group__stack.html" />
-		<Unit filename="docs/doxygen/html/group__stack.js" />
-		<Unit filename="docs/doxygen/html/group__stack__api.html" />
-		<Unit filename="docs/doxygen/html/group__stack__api.js" />
-		<Unit filename="docs/doxygen/html/group__stack__nodi.html" />
-		<Unit filename="docs/doxygen/html/group__stack__nodi.js" />
-		<Unit filename="docs/doxygen/html/group__stack__struttura.html" />
-		<Unit filename="docs/doxygen/html/group__stack__struttura.js" />
-		<Unit filename="docs/doxygen/html/group__state__sync.html" />
-		<Unit filename="docs/doxygen/html/group__stats__screen.html" />
-		<Unit filename="docs/doxygen/html/group__string__utils.html" />
-		<Unit filename="docs/doxygen/html/group__string__utils.js" />
-		<Unit filename="docs/doxygen/html/group__tests.html" />
-		<Unit filename="docs/doxygen/html/group__tests__domain.html" />
-		<Unit filename="docs/doxygen/html/group__ui.html" />
-		<Unit filename="docs/doxygen/html/group__ui.js" />
-		<Unit filename="docs/doxygen/html/group__ui__texture.html" />
-		<Unit filename="docs/doxygen/html/group__ui__texture.js" />
-		<Unit filename="docs/doxygen/html/index.html" />
-		<Unit filename="docs/doxygen/html/index.js" />
-		<Unit filename="docs/doxygen/html/input__field_8c.html" />
-		<Unit filename="docs/doxygen/html/input__field_8c.js" />
-		<Unit filename="docs/doxygen/html/input__field_8h.html" />
-		<Unit filename="docs/doxygen/html/input__field_8h.js" />
-		<Unit filename="docs/doxygen/html/input__field_8h_source.html" />
-		<Unit filename="docs/doxygen/html/lan__broadcast_8c.html" />
-		<Unit filename="docs/doxygen/html/lan__broadcast_8c.js" />
-		<Unit filename="docs/doxygen/html/lan__db__sync_8c.html" />
-		<Unit filename="docs/doxygen/html/lan__db__sync_8c.js" />
-		<Unit filename="docs/doxygen/html/lan__protocol_8h.html" />
-		<Unit filename="docs/doxygen/html/lan__protocol_8h.js" />
-		<Unit filename="docs/doxygen/html/lan__protocol_8h_source.html" />
-		<Unit filename="docs/doxygen/html/lan__save__helpers_8c.html" />
-		<Unit filename="docs/doxygen/html/lan__save__helpers_8c.js" />
-		<Unit filename="docs/doxygen/html/lan__save__helpers_8h.html" />
-		<Unit filename="docs/doxygen/html/lan__save__helpers_8h.js" />
-		<Unit filename="docs/doxygen/html/lan__save__helpers_8h_source.html" />
-		<Unit filename="docs/doxygen/html/lan__save__sync_8c.html" />
-		<Unit filename="docs/doxygen/html/lan__save__sync_8c.js" />
-		<Unit filename="docs/doxygen/html/lan__sync_8h.html" />
-		<Unit filename="docs/doxygen/html/lan__sync_8h.js" />
-		<Unit filename="docs/doxygen/html/lan__sync_8h_source.html" />
-		<Unit filename="docs/doxygen/html/list_8c.html" />
-		<Unit filename="docs/doxygen/html/list_8c.js" />
-		<Unit filename="docs/doxygen/html/list_8h.html" />
-		<Unit filename="docs/doxygen/html/list_8h.js" />
-		<Unit filename="docs/doxygen/html/list_8h_source.html" />
-		<Unit filename="docs/doxygen/html/list__private_8h.html" />
-		<Unit filename="docs/doxygen/html/list__private_8h.js" />
-		<Unit filename="docs/doxygen/html/list__private_8h_source.html" />
-		<Unit filename="docs/doxygen/html/main_8c.html" />
-		<Unit filename="docs/doxygen/html/main_8c.js" />
-		<Unit filename="docs/doxygen/html/menu.js" />
-		<Unit filename="docs/doxygen/html/menu_2string__utils_8h.html" />
-		<Unit filename="docs/doxygen/html/menu_2string__utils_8h.js" />
-		<Unit filename="docs/doxygen/html/menu_2string__utils_8h_source.html" />
-		<Unit filename="docs/doxygen/html/menu__screen_8c.html" />
-		<Unit filename="docs/doxygen/html/menu__screen_8c.js" />
-		<Unit filename="docs/doxygen/html/menu__screen_8h.html" />
-		<Unit filename="docs/doxygen/html/menu__screen_8h.js" />
-		<Unit filename="docs/doxygen/html/menu__screen_8h_source.html" />
-		<Unit filename="docs/doxygen/html/menudata.js" />
-		<Unit filename="docs/doxygen/html/multiplayer__lobby_8c.html" />
-		<Unit filename="docs/doxygen/html/multiplayer__lobby_8c.js" />
-		<Unit filename="docs/doxygen/html/multiplayer__lobby_8h.html" />
-		<Unit filename="docs/doxygen/html/multiplayer__lobby_8h.js" />
-		<Unit filename="docs/doxygen/html/multiplayer__lobby_8h_source.html" />
-		<Unit filename="docs/doxygen/html/multiplayer__screen_8c.html" />
-		<Unit filename="docs/doxygen/html/multiplayer__screen_8c.js" />
-		<Unit filename="docs/doxygen/html/multiplayer__screen_8h.html" />
-		<Unit filename="docs/doxygen/html/multiplayer__screen_8h.js" />
-		<Unit filename="docs/doxygen/html/multiplayer__screen_8h_source.html" />
-		<Unit filename="docs/doxygen/html/navtree.css" />
-		<Unit filename="docs/doxygen/html/navtree.js" />
-		<Unit filename="docs/doxygen/html/navtreedata.js" />
-		<Unit filename="docs/doxygen/html/navtreeindex0.js" />
-		<Unit filename="docs/doxygen/html/navtreeindex1.js" />
-		<Unit filename="docs/doxygen/html/navtreeindex2.js" />
-		<Unit filename="docs/doxygen/html/navtreeindex3.js" />
-		<Unit filename="docs/doxygen/html/navtreeindex4.js" />
-		<Unit filename="docs/doxygen/html/navtreeindex5.js" />
-		<Unit filename="docs/doxygen/html/network_8c.html" />
-		<Unit filename="docs/doxygen/html/network_8c.js" />
-		<Unit filename="docs/doxygen/html/network_8h.html" />
-		<Unit filename="docs/doxygen/html/network_8h.js" />
-		<Unit filename="docs/doxygen/html/network_8h_source.html" />
-		<Unit filename="docs/doxygen/html/network__send_8c.html" />
-		<Unit filename="docs/doxygen/html/network__send_8c.js" />
-		<Unit filename="docs/doxygen/html/network__send_8h.html" />
-		<Unit filename="docs/doxygen/html/network__send_8h.js" />
-		<Unit filename="docs/doxygen/html/network__send_8h_source.html" />
-		<Unit filename="docs/doxygen/html/network__utils_8c.html" />
-		<Unit filename="docs/doxygen/html/network__utils_8c.js" />
-		<Unit filename="docs/doxygen/html/network__utils_8h.html" />
-		<Unit filename="docs/doxygen/html/network__utils_8h.js" />
-		<Unit filename="docs/doxygen/html/network__utils_8h_source.html" />
-		<Unit filename="docs/doxygen/html/packet__handler_8c.html" />
-		<Unit filename="docs/doxygen/html/packet__handler_8c.js" />
-		<Unit filename="docs/doxygen/html/packet__handler_8h.html" />
-		<Unit filename="docs/doxygen/html/packet__handler_8h.js" />
-		<Unit filename="docs/doxygen/html/packet__handler_8h_source.html" />
-		<Unit filename="docs/doxygen/html/packet__handler__admin_8c.html" />
-		<Unit filename="docs/doxygen/html/packet__handler__admin_8c.js" />
-		<Unit filename="docs/doxygen/html/packet__handler__admin_8h.html" />
-		<Unit filename="docs/doxygen/html/packet__handler__admin_8h.js" />
-		<Unit filename="docs/doxygen/html/packet__handler__admin_8h_source.html" />
-		<Unit filename="docs/doxygen/html/packet__handler__game_8c.html" />
-		<Unit filename="docs/doxygen/html/packet__handler__game_8c.js" />
-		<Unit filename="docs/doxygen/html/packet__handler__game_8h.html" />
-		<Unit filename="docs/doxygen/html/packet__handler__game_8h.js" />
-		<Unit filename="docs/doxygen/html/packet__handler__game_8h_source.html" />
-		<Unit filename="docs/doxygen/html/player_8h.html" />
-		<Unit filename="docs/doxygen/html/player_8h.js" />
-		<Unit filename="docs/doxygen/html/player_8h_source.html" />
-		<Unit filename="docs/doxygen/html/queue_8c.html" />
-		<Unit filename="docs/doxygen/html/queue_8c.js" />
-		<Unit filename="docs/doxygen/html/queue_8h.html" />
-		<Unit filename="docs/doxygen/html/queue_8h.js" />
-		<Unit filename="docs/doxygen/html/queue_8h_source.html" />
-		<Unit filename="docs/doxygen/html/queue__private_8h.html" />
-		<Unit filename="docs/doxygen/html/queue__private_8h.js" />
-		<Unit filename="docs/doxygen/html/queue__private_8h_source.html" />
-		<Unit filename="docs/doxygen/html/save__manager_8c.html" />
-		<Unit filename="docs/doxygen/html/save__manager_8c.js" />
-		<Unit filename="docs/doxygen/html/search/all_0.js" />
-		<Unit filename="docs/doxygen/html/search/all_1.js" />
-		<Unit filename="docs/doxygen/html/search/all_10.js" />
-		<Unit filename="docs/doxygen/html/search/all_11.js" />
-		<Unit filename="docs/doxygen/html/search/all_12.js" />
-		<Unit filename="docs/doxygen/html/search/all_13.js" />
-		<Unit filename="docs/doxygen/html/search/all_14.js" />
-		<Unit filename="docs/doxygen/html/search/all_15.js" />
-		<Unit filename="docs/doxygen/html/search/all_16.js" />
-		<Unit filename="docs/doxygen/html/search/all_17.js" />
-		<Unit filename="docs/doxygen/html/search/all_2.js" />
-		<Unit filename="docs/doxygen/html/search/all_3.js" />
-		<Unit filename="docs/doxygen/html/search/all_4.js" />
-		<Unit filename="docs/doxygen/html/search/all_5.js" />
-		<Unit filename="docs/doxygen/html/search/all_6.js" />
-		<Unit filename="docs/doxygen/html/search/all_7.js" />
-		<Unit filename="docs/doxygen/html/search/all_8.js" />
-		<Unit filename="docs/doxygen/html/search/all_9.js" />
-		<Unit filename="docs/doxygen/html/search/all_a.js" />
-		<Unit filename="docs/doxygen/html/search/all_b.js" />
-		<Unit filename="docs/doxygen/html/search/all_c.js" />
-		<Unit filename="docs/doxygen/html/search/all_d.js" />
-		<Unit filename="docs/doxygen/html/search/all_e.js" />
-		<Unit filename="docs/doxygen/html/search/all_f.js" />
-		<Unit filename="docs/doxygen/html/search/classes_0.js" />
-		<Unit filename="docs/doxygen/html/search/classes_1.js" />
-		<Unit filename="docs/doxygen/html/search/classes_2.js" />
-		<Unit filename="docs/doxygen/html/search/classes_3.js" />
-		<Unit filename="docs/doxygen/html/search/classes_4.js" />
-		<Unit filename="docs/doxygen/html/search/classes_5.js" />
-		<Unit filename="docs/doxygen/html/search/classes_6.js" />
-		<Unit filename="docs/doxygen/html/search/classes_7.js" />
-		<Unit filename="docs/doxygen/html/search/classes_8.js" />
-		<Unit filename="docs/doxygen/html/search/classes_9.js" />
-		<Unit filename="docs/doxygen/html/search/classes_a.js" />
-		<Unit filename="docs/doxygen/html/search/defines_0.js" />
-		<Unit filename="docs/doxygen/html/search/defines_1.js" />
-		<Unit filename="docs/doxygen/html/search/defines_2.js" />
-		<Unit filename="docs/doxygen/html/search/defines_3.js" />
-		<Unit filename="docs/doxygen/html/search/defines_4.js" />
-		<Unit filename="docs/doxygen/html/search/defines_5.js" />
-		<Unit filename="docs/doxygen/html/search/defines_6.js" />
-		<Unit filename="docs/doxygen/html/search/defines_7.js" />
-		<Unit filename="docs/doxygen/html/search/defines_8.js" />
-		<Unit filename="docs/doxygen/html/search/defines_9.js" />
-		<Unit filename="docs/doxygen/html/search/enums_0.js" />
-		<Unit filename="docs/doxygen/html/search/enums_1.js" />
-		<Unit filename="docs/doxygen/html/search/enums_2.js" />
-		<Unit filename="docs/doxygen/html/search/enums_3.js" />
-		<Unit filename="docs/doxygen/html/search/enums_4.js" />
-		<Unit filename="docs/doxygen/html/search/enums_5.js" />
-		<Unit filename="docs/doxygen/html/search/enums_6.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_0.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_1.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_2.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_3.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_4.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_5.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_6.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_7.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_8.js" />
-		<Unit filename="docs/doxygen/html/search/enumvalues_9.js" />
-		<Unit filename="docs/doxygen/html/search/files_0.js" />
-		<Unit filename="docs/doxygen/html/search/files_1.js" />
-		<Unit filename="docs/doxygen/html/search/files_10.js" />
-		<Unit filename="docs/doxygen/html/search/files_2.js" />
-		<Unit filename="docs/doxygen/html/search/files_3.js" />
-		<Unit filename="docs/doxygen/html/search/files_4.js" />
-		<Unit filename="docs/doxygen/html/search/files_5.js" />
-		<Unit filename="docs/doxygen/html/search/files_6.js" />
-		<Unit filename="docs/doxygen/html/search/files_7.js" />
-		<Unit filename="docs/doxygen/html/search/files_8.js" />
-		<Unit filename="docs/doxygen/html/search/files_9.js" />
-		<Unit filename="docs/doxygen/html/search/files_a.js" />
-		<Unit filename="docs/doxygen/html/search/files_b.js" />
-		<Unit filename="docs/doxygen/html/search/files_c.js" />
-		<Unit filename="docs/doxygen/html/search/files_d.js" />
-		<Unit filename="docs/doxygen/html/search/files_e.js" />
-		<Unit filename="docs/doxygen/html/search/files_f.js" />
-		<Unit filename="docs/doxygen/html/search/functions_0.js" />
-		<Unit filename="docs/doxygen/html/search/functions_1.js" />
-		<Unit filename="docs/doxygen/html/search/functions_10.js" />
-		<Unit filename="docs/doxygen/html/search/functions_11.js" />
-		<Unit filename="docs/doxygen/html/search/functions_12.js" />
-		<Unit filename="docs/doxygen/html/search/functions_13.js" />
-		<Unit filename="docs/doxygen/html/search/functions_14.js" />
-		<Unit filename="docs/doxygen/html/search/functions_2.js" />
-		<Unit filename="docs/doxygen/html/search/functions_3.js" />
-		<Unit filename="docs/doxygen/html/search/functions_4.js" />
-		<Unit filename="docs/doxygen/html/search/functions_5.js" />
-		<Unit filename="docs/doxygen/html/search/functions_6.js" />
-		<Unit filename="docs/doxygen/html/search/functions_7.js" />
-		<Unit filename="docs/doxygen/html/search/functions_8.js" />
-		<Unit filename="docs/doxygen/html/search/functions_9.js" />
-		<Unit filename="docs/doxygen/html/search/functions_a.js" />
-		<Unit filename="docs/doxygen/html/search/functions_b.js" />
-		<Unit filename="docs/doxygen/html/search/functions_c.js" />
-		<Unit filename="docs/doxygen/html/search/functions_d.js" />
-		<Unit filename="docs/doxygen/html/search/functions_e.js" />
-		<Unit filename="docs/doxygen/html/search/functions_f.js" />
-		<Unit filename="docs/doxygen/html/search/groups_0.js" />
-		<Unit filename="docs/doxygen/html/search/groups_1.js" />
-		<Unit filename="docs/doxygen/html/search/groups_10.js" />
-		<Unit filename="docs/doxygen/html/search/groups_11.js" />
-		<Unit filename="docs/doxygen/html/search/groups_12.js" />
-		<Unit filename="docs/doxygen/html/search/groups_13.js" />
-		<Unit filename="docs/doxygen/html/search/groups_2.js" />
-		<Unit filename="docs/doxygen/html/search/groups_3.js" />
-		<Unit filename="docs/doxygen/html/search/groups_4.js" />
-		<Unit filename="docs/doxygen/html/search/groups_5.js" />
-		<Unit filename="docs/doxygen/html/search/groups_6.js" />
-		<Unit filename="docs/doxygen/html/search/groups_7.js" />
-		<Unit filename="docs/doxygen/html/search/groups_8.js" />
-		<Unit filename="docs/doxygen/html/search/groups_9.js" />
-		<Unit filename="docs/doxygen/html/search/groups_a.js" />
-		<Unit filename="docs/doxygen/html/search/groups_b.js" />
-		<Unit filename="docs/doxygen/html/search/groups_c.js" />
-		<Unit filename="docs/doxygen/html/search/groups_d.js" />
-		<Unit filename="docs/doxygen/html/search/groups_e.js" />
-		<Unit filename="docs/doxygen/html/search/groups_f.js" />
-		<Unit filename="docs/doxygen/html/search/pages_0.js" />
-		<Unit filename="docs/doxygen/html/search/pages_1.js" />
-		<Unit filename="docs/doxygen/html/search/pages_2.js" />
-		<Unit filename="docs/doxygen/html/search/pages_3.js" />
-		<Unit filename="docs/doxygen/html/search/pages_4.js" />
-		<Unit filename="docs/doxygen/html/search/pages_5.js" />
-		<Unit filename="docs/doxygen/html/search/pages_6.js" />
-		<Unit filename="docs/doxygen/html/search/pages_7.js" />
-		<Unit filename="docs/doxygen/html/search/pages_8.js" />
-		<Unit filename="docs/doxygen/html/search/pages_9.js" />
-		<Unit filename="docs/doxygen/html/search/pages_a.js" />
-		<Unit filename="docs/doxygen/html/search/pages_b.js" />
-		<Unit filename="docs/doxygen/html/search/pages_c.js" />
-		<Unit filename="docs/doxygen/html/search/pages_d.js" />
-		<Unit filename="docs/doxygen/html/search/pages_e.js" />
-		<Unit filename="docs/doxygen/html/search/pages_f.js" />
-		<Unit filename="docs/doxygen/html/search/search.css" />
-		<Unit filename="docs/doxygen/html/search/search.js" />
-		<Unit filename="docs/doxygen/html/search/searchdata.js" />
-		<Unit filename="docs/doxygen/html/search/typedefs_0.js" />
-		<Unit filename="docs/doxygen/html/search/typedefs_1.js" />
-		<Unit filename="docs/doxygen/html/search/typedefs_2.js" />
-		<Unit filename="docs/doxygen/html/search/typedefs_3.js" />
-		<Unit filename="docs/doxygen/html/search/typedefs_4.js" />
-		<Unit filename="docs/doxygen/html/search/variables_0.js" />
-		<Unit filename="docs/doxygen/html/search/variables_1.js" />
-		<Unit filename="docs/doxygen/html/search/variables_10.js" />
-		<Unit filename="docs/doxygen/html/search/variables_11.js" />
-		<Unit filename="docs/doxygen/html/search/variables_12.js" />
-		<Unit filename="docs/doxygen/html/search/variables_13.js" />
-		<Unit filename="docs/doxygen/html/search/variables_14.js" />
-		<Unit filename="docs/doxygen/html/search/variables_15.js" />
-		<Unit filename="docs/doxygen/html/search/variables_2.js" />
-		<Unit filename="docs/doxygen/html/search/variables_3.js" />
-		<Unit filename="docs/doxygen/html/search/variables_4.js" />
-		<Unit filename="docs/doxygen/html/search/variables_5.js" />
-		<Unit filename="docs/doxygen/html/search/variables_6.js" />
-		<Unit filename="docs/doxygen/html/search/variables_7.js" />
-		<Unit filename="docs/doxygen/html/search/variables_8.js" />
-		<Unit filename="docs/doxygen/html/search/variables_9.js" />
-		<Unit filename="docs/doxygen/html/search/variables_a.js" />
-		<Unit filename="docs/doxygen/html/search/variables_b.js" />
-		<Unit filename="docs/doxygen/html/search/variables_c.js" />
-		<Unit filename="docs/doxygen/html/search/variables_d.js" />
-		<Unit filename="docs/doxygen/html/search/variables_e.js" />
-		<Unit filename="docs/doxygen/html/search/variables_f.js" />
-		<Unit filename="docs/doxygen/html/server__manager_8c.html" />
-		<Unit filename="docs/doxygen/html/server__manager_8c.js" />
-		<Unit filename="docs/doxygen/html/server__manager_8h.html" />
-		<Unit filename="docs/doxygen/html/server__manager_8h.js" />
-		<Unit filename="docs/doxygen/html/server__manager_8h_source.html" />
-		<Unit filename="docs/doxygen/html/socket__compat_8h.html" />
-		<Unit filename="docs/doxygen/html/socket__compat_8h.js" />
-		<Unit filename="docs/doxygen/html/socket__compat_8h_source.html" />
-		<Unit filename="docs/doxygen/html/stack_8c.html" />
-		<Unit filename="docs/doxygen/html/stack_8c.js" />
-		<Unit filename="docs/doxygen/html/stack_8h.html" />
-		<Unit filename="docs/doxygen/html/stack_8h.js" />
-		<Unit filename="docs/doxygen/html/stack_8h_source.html" />
-		<Unit filename="docs/doxygen/html/stack__private_8h.html" />
-		<Unit filename="docs/doxygen/html/stack__private_8h.js" />
-		<Unit filename="docs/doxygen/html/stack__private_8h_source.html" />
-		<Unit filename="docs/doxygen/html/state__sync_8c.html" />
-		<Unit filename="docs/doxygen/html/state__sync_8c.js" />
-		<Unit filename="docs/doxygen/html/state__sync_8h.html" />
-		<Unit filename="docs/doxygen/html/state__sync_8h.js" />
-		<Unit filename="docs/doxygen/html/state__sync_8h_source.html" />
-		<Unit filename="docs/doxygen/html/stats__screen_8c.html" />
-		<Unit filename="docs/doxygen/html/stats__screen_8c.js" />
-		<Unit filename="docs/doxygen/html/stats__screen_8h.html" />
-		<Unit filename="docs/doxygen/html/stats__screen_8h.js" />
-		<Unit filename="docs/doxygen/html/stats__screen_8h_source.html" />
-		<Unit filename="docs/doxygen/html/string__utils_8c.html" />
-		<Unit filename="docs/doxygen/html/string__utils_8c.js" />
-		<Unit filename="docs/doxygen/html/string__utils_8h.html" />
-		<Unit filename="docs/doxygen/html/string__utils_8h.js" />
-		<Unit filename="docs/doxygen/html/string__utils_8h_source.html" />
-		<Unit filename="docs/doxygen/html/structAdminDBSyncPacket.html" />
-		<Unit filename="docs/doxygen/html/structAdminDBSyncPacket.js" />
-		<Unit filename="docs/doxygen/html/structAdminUserAction.html" />
-		<Unit filename="docs/doxygen/html/structAdminUserAction.js" />
-		<Unit filename="docs/doxygen/html/structAdminUserSyncData.html" />
-		<Unit filename="docs/doxygen/html/structAdminUserSyncData.js" />
-		<Unit filename="docs/doxygen/html/structCampoInput.html" />
-		<Unit filename="docs/doxygen/html/structCampoInput.js" />
-		<Unit filename="docs/doxygen/html/structCarta.html" />
-		<Unit filename="docs/doxygen/html/structCarta.js" />
-		<Unit filename="docs/doxygen/html/structChatStorico.html" />
-		<Unit filename="docs/doxygen/html/structChatStorico.js" />
-		<Unit filename="docs/doxygen/html/structClassificaRecord.html" />
-		<Unit filename="docs/doxygen/html/structClassificaRecord.js" />
-		<Unit filename="docs/doxygen/html/structCodaTurni.html" />
-		<Unit filename="docs/doxygen/html/structCodaTurni.js" />
-		<Unit filename="docs/doxygen/html/structDatabaseUtenti.html" />
-		<Unit filename="docs/doxygen/html/structDatabaseUtenti.js" />
-		<Unit filename="docs/doxygen/html/structGameSession.html" />
-		<Unit filename="docs/doxygen/html/structGameSession.js" />
-		<Unit filename="docs/doxygen/html/structGiocatore.html" />
-		<Unit filename="docs/doxygen/html/structGiocatore.js" />
-		<Unit filename="docs/doxygen/html/structLanCompactUser.html" />
-		<Unit filename="docs/doxygen/html/structLanCompactUser.js" />
-		<Unit filename="docs/doxygen/html/structLanDeleteSavePacket.html" />
-		<Unit filename="docs/doxygen/html/structLanDeleteSavePacket.js" />
-		<Unit filename="docs/doxygen/html/structLanPacketHeader.html" />
-		<Unit filename="docs/doxygen/html/structLanPacketHeader.js" />
-		<Unit filename="docs/doxygen/html/structLanStatsSyncPacket.html" />
-		<Unit filename="docs/doxygen/html/structLanStatsSyncPacket.js" />
-		<Unit filename="docs/doxygen/html/structListaCarte.html" />
-		<Unit filename="docs/doxygen/html/structListaCarte.js" />
-		<Unit filename="docs/doxygen/html/structMessaggioChat.html" />
-		<Unit filename="docs/doxygen/html/structMessaggioChat.js" />
-		<Unit filename="docs/doxygen/html/structNetPacket.html" />
-		<Unit filename="docs/doxygen/html/structNetPacket.js" />
-		<Unit filename="docs/doxygen/html/structNodoAlbero.html" />
-		<Unit filename="docs/doxygen/html/structNodoAlbero.js" />
-		<Unit filename="docs/doxygen/html/structNodoCarta.html" />
-		<Unit filename="docs/doxygen/html/structNodoCarta.js" />
-		<Unit filename="docs/doxygen/html/structNodoCoda.html" />
-		<Unit filename="docs/doxygen/html/structNodoCoda.js" />
-		<Unit filename="docs/doxygen/html/structNodoDecisione.html" />
-		<Unit filename="docs/doxygen/html/structNodoDecisione.js" />
-		<Unit filename="docs/doxygen/html/structNodoPila.html" />
-		<Unit filename="docs/doxygen/html/structNodoPila.js" />
-		<Unit filename="docs/doxygen/html/structPacketChat.html" />
-		<Unit filename="docs/doxygen/html/structPacketChat.js" />
-		<Unit filename="docs/doxygen/html/structPacketColorChoice.html" />
-		<Unit filename="docs/doxygen/html/structPacketColorChoice.js" />
-		<Unit filename="docs/doxygen/html/structPacketCreateSession.html" />
-		<Unit filename="docs/doxygen/html/structPacketCreateSession.js" />
-		<Unit filename="docs/doxygen/html/structPacketDraw.html" />
-		<Unit filename="docs/doxygen/html/structPacketDraw.js" />
-		<Unit filename="docs/doxygen/html/structPacketGameFinished.html" />
-		<Unit filename="docs/doxygen/html/structPacketGameFinished.js" />
-		<Unit filename="docs/doxygen/html/structPacketGameState.html" />
-		<Unit filename="docs/doxygen/html/structPacketGameState.js" />
-		<Unit filename="docs/doxygen/html/structPacketHeartbeat.html" />
-		<Unit filename="docs/doxygen/html/structPacketHeartbeat.js" />
-		<Unit filename="docs/doxygen/html/structPacketHostReturnLobby.html" />
-		<Unit filename="docs/doxygen/html/structPacketHostReturnLobby.js" />
-		<Unit filename="docs/doxygen/html/structPacketJoinGame.html" />
-		<Unit filename="docs/doxygen/html/structPacketJoinGame.js" />
-		<Unit filename="docs/doxygen/html/structPacketJoinRejected.html" />
-		<Unit filename="docs/doxygen/html/structPacketJoinRejected.js" />
-		<Unit filename="docs/doxygen/html/structPacketJoinSession.html" />
-		<Unit filename="docs/doxygen/html/structPacketJoinSession.js" />
-		<Unit filename="docs/doxygen/html/structPacketMove.html" />
-		<Unit filename="docs/doxygen/html/structPacketMove.js" />
-		<Unit filename="docs/doxygen/html/structPacketPlayAgain.html" />
-		<Unit filename="docs/doxygen/html/structPacketPlayAgain.js" />
-		<Unit filename="docs/doxygen/html/structPacketPlayerHand.html" />
-		<Unit filename="docs/doxygen/html/structPacketPlayerHand.js" />
-		<Unit filename="docs/doxygen/html/structPacketPlayerReady.html" />
-		<Unit filename="docs/doxygen/html/structPacketPlayerReady.js" />
-		<Unit filename="docs/doxygen/html/structPacketSessionList.html" />
-		<Unit filename="docs/doxygen/html/structPacketSessionList.js" />
-		<Unit filename="docs/doxygen/html/structPacketSessionState.html" />
-		<Unit filename="docs/doxygen/html/structPacketSessionState.js" />
-		<Unit filename="docs/doxygen/html/structPartitaRegistrata.html" />
-		<Unit filename="docs/doxygen/html/structPartitaRegistrata.js" />
-		<Unit filename="docs/doxygen/html/structPila.html" />
-		<Unit filename="docs/doxygen/html/structPila.js" />
-		<Unit filename="docs/doxygen/html/structSaveReceiver.html" />
-		<Unit filename="docs/doxygen/html/structSaveReceiver.js" />
-		<Unit filename="docs/doxygen/html/structServerManager.html" />
-		<Unit filename="docs/doxygen/html/structServerManager.js" />
-		<Unit filename="docs/doxygen/html/structSessionPlayer.html" />
-		<Unit filename="docs/doxygen/html/structSessionPlayer.js" />
-		<Unit filename="docs/doxygen/html/structStatistiche.html" />
-		<Unit filename="docs/doxygen/html/structStatistiche.js" />
-		<Unit filename="docs/doxygen/html/structStatoGioco.html" />
-		<Unit filename="docs/doxygen/html/structStatoGioco.js" />
-		<Unit filename="docs/doxygen/html/structStatsSyncPacket.html" />
-		<Unit filename="docs/doxygen/html/structStatsSyncPacket.js" />
-		<Unit filename="docs/doxygen/html/structTempSave.html" />
-		<Unit filename="docs/doxygen/html/structTempSave.js" />
-		<Unit filename="docs/doxygen/html/structUtente.html" />
-		<Unit filename="docs/doxygen/html/structUtente.js" />
-		<Unit filename="docs/doxygen/html/tabs.css" />
-		<Unit filename="docs/doxygen/html/test__adt_8c.html" />
-		<Unit filename="docs/doxygen/html/test__adt_8c.js" />
-		<Unit filename="docs/doxygen/html/topics.html" />
-		<Unit filename="docs/doxygen/html/topics.js" />
-		<Unit filename="docs/doxygen/html/ui_8c.html" />
-		<Unit filename="docs/doxygen/html/ui_8c.js" />
-		<Unit filename="docs/doxygen/html/ui_8h.html" />
-		<Unit filename="docs/doxygen/html/ui_8h.js" />
-		<Unit filename="docs/doxygen/html/ui_8h_source.html" />
-		<Unit filename="lib/auth/auth.h" />
-		<Unit filename="lib/auth/auth_validation.h" />
-		<Unit filename="lib/data_structures/bst.h" />
-		<Unit filename="lib/data_structures/chat.h" />
-		<Unit filename="lib/data_structures/data_structures.h" />
-		<Unit filename="lib/data_structures/list.h" />
-		<Unit filename="lib/data_structures/private/bst_private.h" />
-		<Unit filename="lib/data_structures/private/chat_private.h" />
-		<Unit filename="lib/data_structures/private/list_private.h" />
-		<Unit filename="lib/data_structures/private/queue_private.h" />
-		<Unit filename="lib/data_structures/private/stack_private.h" />
-		<Unit filename="lib/data_structures/queue.h" />
-		<Unit filename="lib/data_structures/stack.h" />
-		<Unit filename="lib/fs/fs.h" />
-		<Unit filename="lib/game/game_logic.h" />
-		<Unit filename="lib/game/game_state.h" />
-		<Unit filename="lib/game/player.h" />
+		<Unit filename=".vscode/c_cpp_properties.json">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename=".vscode/settings.json">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename=".vscode/tasks.json">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="README.md">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Test.exe">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Uno.depend">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Uno.layout">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/card_generator.py">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_0.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_1.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_2.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_3.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_4.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_5.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_6.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_7.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_8.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_9.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_inverti.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_piu2.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/blu_salta.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/dorso.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_0.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_1.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_2.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_3.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_4.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_5.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_6.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_7.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_8.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_9.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_inverti.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_piu2.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/giallo_salta.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/jolly.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/jolly_piu4.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_0.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_1.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_2.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_3.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_4.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_5.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_6.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_7.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_8.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_9.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_inverti.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_piu2.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/rosso_salta.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_0.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_1.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_2.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_3.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_4.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_5.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_6.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_7.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_8.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_9.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_inverti.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_piu2.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/card/cards_assets/verde_salta.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="assets/img/sfondo.png">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="build/Makefile">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="data/users/users.dat">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/Documentazione CdS.pdf">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/Doxyfile">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/README_8md.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/admin__draw_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/admin__draw_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/admin__draw_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/admin__draw_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/admin__draw_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/annotated.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/annotated_dup.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__draw_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__draw_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__draw_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__draw_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__draw_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__screen_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__screen_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__screen_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__screen_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__shared_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__shared_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__shared_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__update_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__update_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__update_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__update_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__update_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__validation_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__validation_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__validation_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__validation_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/auth__validation_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bot__ai_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bot__ai_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bot__ai_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bot__ai_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bot__ai_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bst_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bst_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bst_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bst_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bst_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bst__private_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bst__private_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/bst__private_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat__private_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat__private_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat__private_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat__render_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/chat__render_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/classes.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/clipboard.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/codefolding.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/cookie.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/data__structures_2list_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/data__structures_2list_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/data__structures_2list_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/data__structures_2list_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/data__structures_2list_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/data__structures_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/data__structures_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/data__structures_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/deck_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/deck_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_1699be727a800b1d059c6f7f2b91d2ee.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_1699be727a800b1d059c6f7f2b91d2ee.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_22fb8090d4c49476ad2b35590561ca72.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_22fb8090d4c49476ad2b35590561ca72.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_299aa870bb746bafe99131a774bd9579.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_299aa870bb746bafe99131a774bd9579.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_3099fb8800c39f9f88796763e1d82049.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_3099fb8800c39f9f88796763e1d82049.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_363d01014ba20f6e7f9ea0ee7c97c8ea.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_363d01014ba20f6e7f9ea0ee7c97c8ea.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_46cc832029cb9288a79568fcf15f16cc.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_46cc832029cb9288a79568fcf15f16cc.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_4a9058f586c45bd4458c3b7f033b4dec.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_4a9058f586c45bd4458c3b7f033b4dec.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_4d5758d0de027b72c7c3da4ccb70efae.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_4d5758d0de027b72c7c3da4ccb70efae.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_59425e443f801f1f2fd8bbe4959a3ccf.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_59425e443f801f1f2fd8bbe4959a3ccf.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_6c2fc416f2a00c9c04fd9d61912cfd28.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_6c2fc416f2a00c9c04fd9d61912cfd28.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_6f407039f0447c6327af64e80e71cee1.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_6f407039f0447c6327af64e80e71cee1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_858915971c8656b65d461b873c3b3855.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_858915971c8656b65d461b873c3b3855.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_8790123cd27986151acde1ce1c3bab17.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_8790123cd27986151acde1ce1c3bab17.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_8b30b7613ff4b415a3a13adb868f1637.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_8b30b7613ff4b415a3a13adb868f1637.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_921984c8c8809702688c1d3bb88c92fc.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_921984c8c8809702688c1d3bb88c92fc.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_9ad1227260954e346101f3844f0abb3d.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_9ad1227260954e346101f3844f0abb3d.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_9baab45634982f8b3d0134cb623803a1.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_9baab45634982f8b3d0134cb623803a1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_a4a06e4766a213248381a7e786f6d909.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_a4a06e4766a213248381a7e786f6d909.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_a7341d8a2c2d3d7feb83b70b7bbcf056.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_a7341d8a2c2d3d7feb83b70b7bbcf056.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_aebb8dcc11953d78e620bbef0b9e2183.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_aebb8dcc11953d78e620bbef0b9e2183.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_c92aa75074393c4c3a20e23a24742d88.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_c92aa75074393c4c3a20e23a24742d88.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_e0e4df1b297a9f377abb7b27124b1ce7.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_e0e4df1b297a9f377abb7b27124b1ce7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_e1211c1ba4cadc9e94fe0fdad0038fad.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_e1211c1ba4cadc9e94fe0fdad0038fad.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_e17dec1d132ad7ed461be9444000b405.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_e17dec1d132ad7ed461be9444000b405.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_e8f7880c728fe5aa75bdd52c24447375.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_e8f7880c728fe5aa75bdd52c24447375.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_eafa113c866c19c3f812b2f973b25251.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_eafa113c866c19c3f812b2f973b25251.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_ecb37285c0bc658c97bb749f37c59e79.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_ecb37285c0bc658c97bb749f37c59e79.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_f0c0e87129cc99adbfb71a619dac0947.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_f0c0e87129cc99adbfb71a619dac0947.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_f65e8c93f474ad2ed0dc776944eef760.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/dir_f65e8c93f474ad2ed0dc776944eef760.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/doxygen.css">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/doxygen.svg">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/doxygen_crawl.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/end__screen_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/end__screen_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/end__screen_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/end__screen_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/end__screen_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/files.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/files_dup.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/fs_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/fs_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/fs_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_b.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_d.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_dup.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_e.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_f.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_g.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_i.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_j.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_k.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_l.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_m.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_n.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_o.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_p.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_r.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_s.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_t.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_u.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_v.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_b.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_d.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_e.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_f.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_g.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_i.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_j.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_k.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_l.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_m.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_n.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_o.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_p.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_r.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_s.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_t.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_u.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_v.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_vars_w.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/functions_w.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__flow_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__flow_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__logic_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__logic_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__logic_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__logic_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__logic_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__state_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__state_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/game__state_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__animation_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__animation_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__animation_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__chat_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__chat_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__chat_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__draw_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__draw_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__draw_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__draw_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__draw_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__screen_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__screen_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__screen_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__screen_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__shared_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__shared_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__shared_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__update_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__update_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__update_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__update_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/gameplay__update_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_a.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_b.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_d.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_defs.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_dup.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_e.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_enum.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_eval.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_f.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_a.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_b.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_d.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_e.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_f.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_g.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_i.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_j.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_l.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_m.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_n.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_o.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_p.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_r.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_s.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_t.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_u.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_func_w.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_g.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_i.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_j.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_l.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_m.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_n.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_o.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_p.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_r.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_s.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_t.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_type.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_u.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_v.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_b.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_d.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_e.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_g.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_i.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_j.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_l.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_m.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_n.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_o.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_p.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_r.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_s.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_t.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_vars_u.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/globals_w.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__admin__draw.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__admin__draw.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__draw.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__draw.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__impl.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__impl.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__screen.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__screen.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__shared.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__update.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__update.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__auth__validation.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bot__ai.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bot__ai.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bot__ai__api.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bot__ai__api.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bot__ai__azioni.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bot__ai__azioni.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bot__ai__nodo.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bot__ai__nodo.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bst.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bst.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bst__nodi.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bst__nodi.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bst__operazioni.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__bst__operazioni.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__chat.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__chat.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__chat__api.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__chat__api.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__chat__storico.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__chat__storico.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__data__structures.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__database__api.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__database__api.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__end__screen.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__end__screen.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__game__logic.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__game__logic.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__game__state.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__animation.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__chat.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__chat.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__draw.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__draw.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__screen.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__screen.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__shared.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__update.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__gameplay__update.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__input__field.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__input__field.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__lan__protocol.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__lan__protocol__stats.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__lan__protocol__user.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__lan__sync.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__lazy__deletion.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__lazy__deletion.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__lazy__deletion__impl.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__lazy__deletion__impl.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__list.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__list.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__main.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__menu__screen.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__menu__screen.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__multiplayer__lobby.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__multiplayer__lobby.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__multiplayer__screen.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__multiplayer__screen.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__packet.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__packet.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__packet__strutture.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__packet__strutture.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__ruoli.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__ruoli.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__send.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__send__admin.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__send__admin.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__network__utils.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__packet__handler.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__packet__handler__admin.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__packet__handler__game.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__player.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__queue.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__queue.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__queue__api.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__queue__api.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__queue__nodi.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__queue__nodi.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__queue__struttura.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__queue__struttura.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__api.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__api.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__giocatore.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__giocatore.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__sessione.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__sessione.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__stati.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__stati.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__struttura.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__server__manager__struttura.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__stack.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__stack.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__stack__api.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__stack__api.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__stack__nodi.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__stack__nodi.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__stack__struttura.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__stack__struttura.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__state__sync.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__stats__screen.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__string__utils.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__string__utils.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__tests.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__tests__domain.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__ui.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__ui.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__ui__texture.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/group__ui__texture.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/index.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/index.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/input__field_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/input__field_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/input__field_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/input__field_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/input__field_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__broadcast_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__broadcast_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__db__sync_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__db__sync_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__protocol_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__protocol_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__protocol_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__save__helpers_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__save__helpers_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__save__helpers_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__save__helpers_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__save__helpers_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__save__sync_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__save__sync_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__sync_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__sync_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/lan__sync_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/list_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/list_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/list_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/list_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/list_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/list__private_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/list__private_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/list__private_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/main_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/main_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menu.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menu_2string__utils_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menu_2string__utils_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menu_2string__utils_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menu__screen_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menu__screen_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menu__screen_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menu__screen_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menu__screen_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/menudata.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__lobby_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__lobby_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__lobby_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__lobby_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__lobby_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__screen_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__screen_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__screen_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__screen_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/multiplayer__screen_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/navtree.css">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/navtree.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/navtreedata.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/navtreeindex0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/navtreeindex1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/navtreeindex2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/navtreeindex3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/navtreeindex4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/navtreeindex5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__send_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__send_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__send_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__send_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__send_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__utils_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__utils_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__utils_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__utils_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/network__utils_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__admin_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__admin_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__admin_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__admin_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__admin_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__game_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__game_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__game_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__game_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/packet__handler__game_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/player_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/player_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/player_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/player_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/player_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/queue_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/queue_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/queue_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/queue_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/queue_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/queue__private_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/queue__private_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/queue__private_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/save__manager_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/save__manager_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_10.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_11.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_12.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_13.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_14.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_15.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_16.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_17.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_8.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_9.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_a.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_b.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_d.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_e.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/all_f.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_8.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_9.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/classes_a.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_8.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/defines_9.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enums_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enums_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enums_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enums_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enums_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enums_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enums_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_8.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/enumvalues_9.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_10.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_8.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_9.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_a.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_b.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_d.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_e.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/files_f.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_10.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_11.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_12.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_13.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_14.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_8.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_9.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_a.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_b.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_d.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_e.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/functions_f.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_10.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_11.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_12.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_13.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_8.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_9.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_a.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_b.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_d.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_e.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/groups_f.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_8.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_9.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_a.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_b.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_d.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_e.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/pages_f.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/search.css">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/search.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/searchdata.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/typedefs_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/typedefs_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/typedefs_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/typedefs_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/typedefs_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/typedefs_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_0.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_1.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_10.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_11.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_12.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_13.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_14.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_15.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_2.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_3.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_4.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_5.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_6.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_7.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_8.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_9.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_a.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_b.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_d.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_e.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/search/variables_f.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/server__manager_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/server__manager_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/server__manager_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/server__manager_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/server__manager_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/socket__compat_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/socket__compat_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/socket__compat_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stack_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stack_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stack_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stack_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stack_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stack__private_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stack__private_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stack__private_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/state__sync_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/state__sync_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/state__sync_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/state__sync_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/state__sync_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stats__screen_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stats__screen_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stats__screen_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stats__screen_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/stats__screen_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/string__utils_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/string__utils_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/string__utils_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/string__utils_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/string__utils_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structAdminDBSyncPacket.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structAdminDBSyncPacket.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structAdminUserAction.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structAdminUserAction.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structAdminUserSyncData.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structAdminUserSyncData.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structCampoInput.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structCampoInput.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structCarta.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structCarta.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structChatStorico.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structChatStorico.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structClassificaRecord.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structClassificaRecord.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structCodaTurni.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structCodaTurni.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structDatabaseUtenti.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structDatabaseUtenti.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structGameSession.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structGameSession.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structGiocatore.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structGiocatore.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structLanCompactUser.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structLanCompactUser.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structLanDeleteSavePacket.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structLanDeleteSavePacket.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structLanPacketHeader.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structLanPacketHeader.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structLanStatsSyncPacket.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structLanStatsSyncPacket.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structListaCarte.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structListaCarte.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structMessaggioChat.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structMessaggioChat.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNetPacket.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNetPacket.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoAlbero.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoAlbero.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoCarta.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoCarta.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoCoda.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoCoda.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoDecisione.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoDecisione.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoPila.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structNodoPila.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketChat.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketChat.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketColorChoice.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketColorChoice.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketCreateSession.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketCreateSession.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketDraw.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketDraw.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketGameFinished.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketGameFinished.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketGameState.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketGameState.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketHeartbeat.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketHeartbeat.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketHostReturnLobby.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketHostReturnLobby.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketJoinGame.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketJoinGame.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketJoinRejected.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketJoinRejected.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketJoinSession.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketJoinSession.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketMove.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketMove.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketPlayAgain.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketPlayAgain.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketPlayerHand.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketPlayerHand.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketPlayerReady.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketPlayerReady.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketSessionList.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketSessionList.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketSessionState.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPacketSessionState.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPartitaRegistrata.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPartitaRegistrata.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPila.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structPila.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structSaveReceiver.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structSaveReceiver.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structServerManager.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structServerManager.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structSessionPlayer.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structSessionPlayer.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structStatistiche.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structStatistiche.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structStatoGioco.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structStatoGioco.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structStatsSyncPacket.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structStatsSyncPacket.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structTempSave.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structTempSave.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structUtente.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/structUtente.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/tabs.css">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/test__adt_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/test__adt_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/topics.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/topics.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/ui_8c.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/ui_8c.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/ui_8h.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/ui_8h.js">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="docs/doxygen/html/ui_8h_source.html">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/auth/auth.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/auth/auth_validation.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/bst.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/chat.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/data_structures.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/list.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/private/bst_private.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/private/chat_private.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/private/list_private.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/private/queue_private.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/private/stack_private.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/queue.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/data_structures/stack.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/fs/fs.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/game/game_logic.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/game/game_state.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/game/player.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/game/private/game_state_private.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/game/private/player_private.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="lib/raylib/CHANGELOG" />
 		<Unit filename="lib/raylib/LICENSE" />
-		<Unit filename="lib/raylib/README.md" />
-		<Unit filename="lib/raylib/include/raylib.h" />
-		<Unit filename="lib/raylib/include/raymath.h" />
-		<Unit filename="lib/raylib/include/rlgl.h" />
-		<Unit filename="lib/raylib/lib/raylib.dll" />
-		<Unit filename="lib/screens/auth/admin_draw.h" />
-		<Unit filename="lib/screens/auth/auth_draw.h" />
-		<Unit filename="lib/screens/auth/auth_screen.h" />
-		<Unit filename="lib/screens/auth/auth_shared.h" />
-		<Unit filename="lib/screens/auth/auth_update.h" />
-		<Unit filename="lib/screens/auth/input_field.h" />
-		<Unit filename="lib/screens/game/bot_ai.h" />
-		<Unit filename="lib/screens/game/end_screen.h" />
-		<Unit filename="lib/screens/game/gameplay_animation.h" />
-		<Unit filename="lib/screens/game/gameplay_chat.h" />
-		<Unit filename="lib/screens/game/gameplay_draw.h" />
-		<Unit filename="lib/screens/game/gameplay_screen.h" />
-		<Unit filename="lib/screens/game/gameplay_shared.h" />
-		<Unit filename="lib/screens/game/gameplay_update.h" />
-		<Unit filename="lib/screens/menu/menu_screen.h" />
-		<Unit filename="lib/screens/menu/stats_screen.h" />
-		<Unit filename="lib/screens/menu/string_utils.h" />
-		<Unit filename="lib/screens/multiplayer/multiplayer_lobby.h" />
-		<Unit filename="lib/screens/multiplayer/multiplayer_screen.h" />
-		<Unit filename="lib/screens/string_utils.h" />
-		<Unit filename="lib/screens/ui.h" />
-		<Unit filename="lib/socket/lan/lan_protocol.h" />
-		<Unit filename="lib/socket/lan/lan_save_helpers.h" />
-		<Unit filename="lib/socket/lan/lan_sync.h" />
-		<Unit filename="lib/socket/network/network.h" />
-		<Unit filename="lib/socket/network/network_send.h" />
-		<Unit filename="lib/socket/network/packet_handler.h" />
-		<Unit filename="lib/socket/network/packet_handler_admin.h" />
-		<Unit filename="lib/socket/network/packet_handler_game.h" />
-		<Unit filename="lib/socket/network/socket_compat.h" />
-		<Unit filename="lib/socket/network/state_sync.h" />
-		<Unit filename="lib/socket/server/server_manager.h" />
-		<Unit filename="lib/socket/utils/network_utils.h" />
-		<Unit filename="scripts/compile_and_test.bat" />
+		<Unit filename="lib/raylib/README.md">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/raylib/Windows/libraylib.a">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/raylib/Windows/libraylibdll.a">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/raylib/Windows/raylib.dll">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/raylib/include/raylib.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/raylib/include/raymath.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/raylib/include/rlgl.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/raylib/lib/libraylib.a">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/raylib/lib/libraylibdll.a">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/raylib/lib/raylib.dll">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/auth/admin_draw.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/auth/auth_draw.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/auth/auth_screen.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/auth/auth_shared.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/auth/auth_update.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/auth/input_field.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/game/bot_ai.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/game/end_screen.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/game/gameplay_animation.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/game/gameplay_chat.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/game/gameplay_draw.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/game/gameplay_screen.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/game/gameplay_shared.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/game/gameplay_update.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/menu/menu_screen.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/menu/stats_screen.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/menu/string_utils.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/multiplayer/multiplayer_lobby.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/multiplayer/multiplayer_screen.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/string_utils.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/screens/ui.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/lan/lan_protocol.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/lan/lan_save_helpers.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/lan/lan_sync.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/network/network.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/network/network_send.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/network/packet_handler.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/network/packet_handler_admin.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/network/packet_handler_game.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/network/socket_compat.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/network/state_sync.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/server/server_manager.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="lib/socket/utils/network_utils.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="scripts/_cb_target_sim.ps1">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="scripts/compile_and_test.bat">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="src/auth/auth.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/auth/auth_validation.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/core/main.c">
 			<Option compilerVar="CC" />
@@ -1029,105 +3941,185 @@
 		</Unit>
 		<Unit filename="src/game/game_flow.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/game/game_logic.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/game/player.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/game/save_manager.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/auth/admin_draw.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/auth/auth_draw.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/auth/auth_screen.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/auth/auth_update.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/auth/input_field.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/game/bot_ai.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/game/chat_render.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/game/end_screen.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/game/gameplay_draw.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/game/gameplay_screen.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/game/gameplay_update.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/menu/menu_screen.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/menu/stats_screen.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/menu/string_utils.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/multiplayer/multiplayer_lobby.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/multiplayer/multiplayer_screen.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/screens/ui.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/lan/lan_broadcast.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/lan/lan_db_sync.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/lan/lan_save_helpers.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/lan/lan_save_sync.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/network/network.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/network/network_send.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/network/packet_handler.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/network/packet_handler_admin.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/network/packet_handler_game.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/network/state_sync.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/server/server_manager.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="src/socket/utils/network_utils.c">
 			<Option compilerVar="CC" />
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
-		<Unit filename="tests/stubs/raylib.h" />
-		<Unit filename="tests/stubs/raylib_stub.h" />
+		<Unit filename="tests/stubs/raylib.h">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="tests/stubs/raylib_stub.h">
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="tests/test_adt.c">
 			<Option compilerVar="CC" />
+			<Option target="Release" />
 			<Option target="Test" />
+		</Unit>
+		<Unit filename="tests/test_adt.exe">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="tests/test_adt_cb.exe">
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="uno.exe">
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Extensions>
 			<DoxyBlocks>

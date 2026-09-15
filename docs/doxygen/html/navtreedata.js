@@ -31,8 +31,8 @@ var NAVTREE =
       [ "Strutture dati", "annotated.html", "annotated_dup" ],
       [ "Indice delle strutture dati", "classes.html", null ],
       [ "Campi dei dati", "functions.html", [
-        [ "Tutto", "functions.html", "functions_dup" ],
-        [ "Variabili", "functions_vars.html", "functions_vars" ]
+        [ "Tutto", "functions.html", null ],
+        [ "Variabili", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "File", "files.html", [
@@ -53,11 +53,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "admin__draw_8c.html",
-"globals_e.html",
-"group__multiplayer__screen.html",
-"group__queue__nodi.html",
-"pages.html",
-"structUtente.html#a5386484fba15cc3d430200eb9a59f537"
+"globals_vars.html",
+"group__network__packet.html#gga0a80a7bc045affcf10846075b88cbca0ac71adcd308057d916ed8fec10e696dfd",
+"group__stack__api.html#ga0e02cb5e94d45aafbf07b62fcea1061f",
+"player_8h.html#aed952b716d72bdb0353944e2ba2f5c57"
 ];
 
 const SYNCONMSG = 'cliccare per disabilitare la sincronizzazione del pannello';

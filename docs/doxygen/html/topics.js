@@ -10,7 +10,6 @@ var topics =
     [ "Stack (Pila)", "group__stack.html", "group__stack" ],
     [ "Logica di Gioco", "group__game__logic.html", "group__game__logic" ],
     [ "Stato Gioco", "group__game__state.html", null ],
-    [ "Giocatore", "group__player.html", null ],
     [ "Admin Draw", "group__admin__draw.html", "group__admin__draw" ],
     [ "Auth Draw", "group__auth__draw.html", "group__auth__draw" ],
     [ "Schermate Auth", "group__auth__screen.html", "group__auth__screen" ],

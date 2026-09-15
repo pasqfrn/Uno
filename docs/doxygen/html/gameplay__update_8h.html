@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('gameplay__upda
 Funzioni</h2></td></tr>
 <tr class="memitem:a7d64b93db2fd98a57cb14198c3803ac6" id="r_a7d64b93db2fd98a57cb14198c3803ac6"><td class="memItemLeft">Vector2&#160;</td><td class="memItemRight"><a class="el" href="#a7d64b93db2fd98a57cb14198c3803ac6">OttieniPosizioneGiocatore</a> (int index_giocatore, int mio_id, int num_giocatori)</td></tr>
 <tr class="memdesc:a7d64b93db2fd98a57cb14198c3803ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcola la posizione a schermo di un giocatore in base all'indice.  <br /></td></tr>
-<tr class="memitem:ab87ee38deb5da11d345dce53a9d9c4a3" id="r_ab87ee38deb5da11d345dce53a9d9c4a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab87ee38deb5da11d345dce53a9d9c4a3">AggiornaGameplay</a> (<a class="el" href="structStatoGioco.html">StatoGioco</a> *gioco, <a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase, Vector2 mousePos, float dt)</td></tr>
+<tr class="memitem:ab87ee38deb5da11d345dce53a9d9c4a3" id="r_ab87ee38deb5da11d345dce53a9d9c4a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab87ee38deb5da11d345dce53a9d9c4a3">AggiornaGameplay</a> (<a class="el" href="game__state_8h.html#ad103089d7982e85c16b0a50eff85dd53">StatoGioco</a> *gioco, <a class="el" href="data__structures_8h.html#a2820e5c9a40f05bb9d572ea8b0d4e3f4">FaseApplicazione</a> *fase, Vector2 mousePos, float dt)</td></tr>
 <tr class="memdesc:ab87ee38deb5da11d345dce53a9d9c4a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aggiorna lo stato del gioco (main update del gameplay).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
@@ -148,7 +148,7 @@ Funzioni</h2></td></tr>
         <tr>
           <td class="memname">void AggiornaGameplay </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structStatoGioco.html">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
+          <td class="paramtype"><a class="el" href="game__state_8h.html#ad103089d7982e85c16b0a50eff85dd53">StatoGioco</a> *</td>          <td class="paramname"><span class="paramname"><em>gioco</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -241,7 +241,7 @@ Funzioni</h2></td></tr>
 </dl>
 <p>Calcola la posizione a schermo di un giocatore in base all'indice.</p>
 <p>Posizioni:</p><ul>
-<li><a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> umano (index == mio_id): in basso al centro</li>
+<li><a class="el" href="player_8h.html#ae452fa2260469b6d0d91fd76b2a0cfe1" title="Rappresenta un giocatore nella partita (umano o bot) - tipo opaco.">Giocatore</a> umano (index == mio_id): in basso al centro</li>
 <li>2 giocatori: avversario in alto al centro</li>
 <li>3 giocatori: avversari a sinistra e destra</li>
 <li>4 giocatori: avversari a sinistra, in alto e a destra</li>

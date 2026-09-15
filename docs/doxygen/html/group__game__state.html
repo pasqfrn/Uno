@@ -119,11 +119,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('group__game__s
   <div class="headertitle"><div class="title">Stato Gioco </div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Definisce la struttura <a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a>, che rappresenta lo stato completo di una partita UNO in corso.  
+<div class="textblock"><p>Definisce l'ADT per lo stato completo di una partita UNO in corso. <br  />
 </p>
-<div class="textblock"><p>Definisce la struttura <a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a>, che rappresenta lo stato completo di una partita UNO in corso. </p>
-<p>Separato da <a class="el" href="data__structures_8h.html" title="Header centrale del progetto UNO - Tipi di dato condivisi.">data_structures.h</a> per migliorare la modularizzazione e l'incapsulamento. </p>
+<p>PRINCIPIO DI INFORMATION HIDING: <br  />
+ Il tipo <span class="tt"><a class="el" href="game__state_8h.html#ad103089d7982e85c16b0a50eff85dd53" title="Stato completo di una partita in corso (tipo opaco).">StatoGioco</a></span> è dichiarato come tipo OPACO: la sua rappresentazione <br  />
+ interna è definita esclusivamente in <span class="tt">lib/game/game_state_private.h</span>. <br  />
+ Gli utilizzatori accedono ai dati solo tramite le funzioni di dominio <br  />
+ in <span class="tt"><a class="el" href="game__logic_8h.html" title="Modulo di logica di gioco UNO.">lib/game/game_logic.h</a></span> e le funzioni di serializzazione. <br  />
+</p>
+<p>FUNZIONALITÀ DI DOMINIO (non meno di 2): <br  />
+</p><ol type="1">
+<li>Gestione mazzo di pesca e pila scarti (tramite ADT <a class="el" href="group__stack__struttura.html#ga6b296460996e4bf880d4dab13fab46a6" title="Pila LIFO (tipo opaco: rappresentazione interna nascosta).">Pila</a>) <br  />
+</li>
+<li>Gestione mano giocatori (tramite ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>) <br  />
+</li>
+<li>Avanzamento turni (tramite ADT <a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4" title="Coda dei turni (tipo opaco: rappresentazione interna nascosta).">CodaTurni</a>) <br  />
+</li>
+<li>Validazione mosse e applicazione effetti carte <br  />
+</li>
+</ol>
+<p>Riferimento: Documentazione CdS - "Gestione stato partita" </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">

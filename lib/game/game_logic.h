@@ -11,7 +11,9 @@
 
 #include "../data_structures/data_structures.h"
 #include "player.h"
+#include "private/player_private.h"      /* definizione completa di Giocatore (per accesso ai campi nei .c) */
 #include "game_state.h"
+#include "private/game_state_private.h"  /* definizione completa di StatoGioco (per accesso ai campi nei .c) */
 #include "../data_structures/stack.h"
 #include "../data_structures/queue.h"
 #include "../data_structures/list.h"

@@ -14,11 +14,20 @@
  *   - I test di dominio verificano funzionalita' reali del gioco (mazzo/pesca,
  *     mano, turni tramite CodaTurni, validazione mosse).
  *
+ * NOTE DI IMPLEMENTAZIONE:
+ *   - I test includono gli header privati SOLO per accedere alla rappresentazione
+ *     interna degli ADT durante il setup dei casi di test. Questo e' accettabile
+ *     in fase di testing per costruire stati iniziali complessi, ma non negli
+ *     utilizzatori production.
+ *   - Le funzionalita' di dominio vengono testate con scenari realistici che
+ *     verificano il corretto comportamento del gioco (es. "se gioco una carta
+ *     CambioGiro, il turno deve avanzare correttamente").
+ *
  * Compilazione ed esecuzione:
  *   gcc -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs tests/test_adt.c \
  *       src/data_structures/stack.c src/data_structures/queue.c \
  *       src/data_structures/list.c src/data_structures/bst.c src/data_structures/chat.c \
- *       src/game/game_logic.c src/game/deck.c -o tests/test_adt.exe -lm
+  *       src/game/game_logic.c src/game/deck.c src/game/player.c -o tests/test_adt.exe -lm
  */
 
 #include <stdio.h>

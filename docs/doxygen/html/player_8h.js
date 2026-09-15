@@ -1,8 +1,23 @@
 var player_8h =
 [
-    [ "Giocatore", "structGiocatore.html", "structGiocatore" ],
-    [ "GIOCATORE_NOME_BUF", "player_8h.html#ad122d7c5cf74ad68b85d6f22321a1f14", null ],
-    [ "Giocatore_Nome", "player_8h.html#a1ea6245c64c4402d8d51fde1b24cf6e8", null ],
-    [ "Giocatore_NomeBot", "player_8h.html#a07c935cf8442613c1c7252d56f22da57", null ],
-    [ "Giocatore_SetNome", "player_8h.html#ad5e787f7c875934a8f07a10cf8f33acb", null ]
+    [ "Giocatore", "player_8h.html#ae452fa2260469b6d0d91fd76b2a0cfe1", null ],
+    [ "Giocatore_EraInPrelobby", "player_8h.html#a23cf81c32ad4ee917133f1bb3aabb80f", null ],
+    [ "Giocatore_FaiBackupMano", "player_8h.html#a3c620676036a04ad4ea8f0d6120e59bd", null ],
+    [ "Giocatore_GetBackupMano", "player_8h.html#a42207ad8d655a4260f62e8c5c314a434", null ],
+    [ "Giocatore_GetMano", "player_8h.html#aea34beb7f394253139b8915a39eb7284", null ],
+    [ "Giocatore_GetNome", "player_8h.html#ad4b7446e73bafb91c3c80dce8c1184b5", null ],
+    [ "Giocatore_GetNomeBot", "player_8h.html#aed952b716d72bdb0353944e2ba2f5c57", null ],
+    [ "Giocatore_GetNumCarte", "player_8h.html#ae05ef87446535db0b7fab25ddb3ba287", null ],
+    [ "Giocatore_GetNumCarteBackup", "player_8h.html#acbb7791b387c34543f9cb7d6d9c87804", null ],
+    [ "Giocatore_GetSocketId", "player_8h.html#a8306d20373f7cf884f466ce50d0b97ea", null ],
+    [ "Giocatore_IsBot", "player_8h.html#ad43ed6595e2d972d0f7fe4fcccc56c5f", null ],
+    [ "Giocatore_IsPronto", "player_8h.html#ae2452d8a362bb5dd471e107596eb06f1", null ],
+    [ "Giocatore_Nome", "player_8h.html#aad443b9f73f708a9405ced88e0ac7b4c", null ],
+    [ "Giocatore_NomeBot", "player_8h.html#aa508b2f2b21331f58cddebdd58a970e7", null ],
+    [ "Giocatore_SetEraInPrelobby", "player_8h.html#a6c7ce7f67cf9c1132ddf84716032465a", null ],
+    [ "Giocatore_SetMano", "player_8h.html#a3320bb093939d117016933b3e70a11d2", null ],
+    [ "Giocatore_SetNome", "player_8h.html#ae87f7f9a5b637ddc4e800e59d8694871", null ],
+    [ "Giocatore_SetNumCarte", "player_8h.html#a5a59856d8656cacc73102ddf0f3c1230", null ],
+    [ "Giocatore_SetPronto", "player_8h.html#a97891d14ee8c7a93b931ee08602f4ca7", null ],
+    [ "Giocatore_SetSocketId", "player_8h.html#acc7441b6a01b01583e618b47f79a8792", null ]
 ];

@@ -159,6 +159,7 @@ Struttura del progetto</h1>
 <div class="line">│   │   └── auth_validation.c  # Validazione email, password, username</div>
 <div class="line">│   ├── game/                  # Modulo gioco</div>
 <div class="line">│   │   ├── game_logic.c       # Regole di UNO, validazione mosse, effetti carte</div>
+<div class="line">│   │   ├── player.c           # Implementazione Giocatore (API + campi)</div>
 <div class="line">│   │   ├── deck.c             # Mazzo, pesca, scarti</div>
 <div class="line">│   │   ├── game_flow.c        # Flusso di partita</div>
 <div class="line">│   │   └── save_manager.c     # Salvataggio/caricamento partite</div>
@@ -168,6 +169,7 @@ Struttura del progetto</h1>
 <div class="line">├── lib/                       # Interfacce pubbliche (*.h) — un modulo = una cartella</div>
 <div class="line">│   ├── auth/                  # Header modulo autenticazione (auth.h, auth_validation.h)</div>
 <div class="line">│   ├── game/                  # Header gioco (game_logic.h, game_state.h, player.h)</div>
+<div class="line">│   │   └── private/           # Rappresentazioni interne (game_state_private.h, player_private.h)</div>
 <div class="line">│   ├── data_structures/       # Header pubblici ADT (solo tipi opachi + API)</div>
 <div class="line">│   │   └── private/           # Rappresentazioni interne degli ADT (*_private.h)</div>
 <div class="line">│   ├── screens/               # Header schermate (+ ui.h, string_utils)</div>
@@ -178,7 +180,7 @@ Struttura del progetto</h1>
 <div class="line">│   ├── test_adt.c             # Suite di test (149 test, solo API pubblica + assert)</div>
 <div class="line">│   └── stubs/                 # Stub Raylib per compilazione test senza dipendenze</div>
 <div class="line">├── scripts/                   # Script di automazione</div>
-<div class="line">│   └── compile_and_test.bat # Compila gioco + test, genera documentazione Doxygen</div>
+<div class="line">│   └── compile_and_test.bat   # Compila gioco (uno.exe) + test, genera Doxygen, esegue test</div>
 <div class="line">├── docs/</div>
 <div class="line">│   ├── Documentazione CdS.pdf  # Documentazione progettuale completa</div>
 <div class="line">│   └── doxygen/html/           # Configurazione e documentazione Doxygen</div>
@@ -188,8 +190,9 @@ Struttura del progetto</h1>
 <div class="line">├── assets/</div>
 <div class="line">│   ├── card/                # Texture carte</div>
 <div class="line">│   └── img/                 # Risorse grafiche varie (sfondo, ecc.)</div>
-<div class="line">├── bin/                     # Eseguibili compilati</div>
-<div class="line">└── obj/                     # File oggetto</div>
+<div class="line">├── uno.exe                    # Eseguibile del gioco (compilato in radice)</div>
+<div class="line">├── bin/                       # Output di Code::Blocks (Debug/uno.exe, Release/uno.exe)</div>
+<div class="line">└── obj/</div>
 </div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Architettura</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
@@ -197,8 +200,8 @@ Strutture dati principali</h2>
 <ul>
 <li><b><a class="el" href="structCarta.html" title="Rappresenta una singola carta UNO.">Carta</a></b>: colore, valore numerico (0-9) e tipo (normale, CambioGiro, Salta, +2, Jolly, Jolly+4)</li>
 <li><b><a class="el" href="structUtente.html" title="Rappresenta un utente registrato nel sistema.">Utente</a></b>: dati anagrafici, credenziali e statistiche associate</li>
-<li><b><a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a></b>: informazioni utente, flag bot, stato lobby, numero carte in mano</li>
-<li><b><a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a></b>: stato completo della partita (mazzi, giocatori, turno corrente, notifiche)</li>
+<li><b><a class="el" href="player_8h.html#ae452fa2260469b6d0d91fd76b2a0cfe1" title="Rappresenta un giocatore nella partita (umano o bot) - tipo opaco.">Giocatore</a></b>: informazioni utente, flag bot, stato lobby, numero carte in mano</li>
+<li><b><a class="el" href="game__state_8h.html#ad103089d7982e85c16b0a50eff85dd53" title="Stato completo di una partita in corso (tipo opaco).">StatoGioco</a></b>: stato completo della partita (mazzi, giocatori, turno corrente, notifiche)</li>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 Strutture dati dinamiche (ADT opachi)</h2>
@@ -217,7 +220,7 @@ Strutture dati dinamiche (ADT opachi)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b><a class="el" href="group__chat__storico.html#ga03bd3dd656357d11e91e548bc258d4ed" title="Cronologia circolare (FIFO) di messaggi (tipo opaco).">ChatStorico</a></b> (buffer circolare FIFO)  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="chat_8h.html" title="ADT per la gestione della cronologia chat multiplayer.">lib/data_structures/chat.h</a></span>  </td><td class="markdownTableBodyNone"><span class="tt">lib/data_structures/private/chat_private.h</span>  </td><td class="markdownTableBodyNone">Cronologia messaggi chat  </td></tr>
 </table>
-<p>Nota: <span class="tt"><a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a></span> (in <span class="tt">lib/game_state.h</span>) referenzia le carte in trascinamento tramite <b>indice</b> (<span class="tt">id_carta_in_trascinamento</span>), mai tramite puntatori a nodi interni degli ADT: la rappresentazione resta così nascosta a tutti gli utilizzatori.</p>
+<p>Nota: <span class="tt"><a class="el" href="game__state_8h.html#ad103089d7982e85c16b0a50eff85dd53" title="Stato completo di una partita in corso (tipo opaco).">StatoGioco</a></span> (in <span class="tt">lib/game_state.h</span>) referenzia le carte in trascinamento tramite <b>indice</b> (<span class="tt">id_carta_in_trascinamento</span>), mai tramite puntatori a nodi interni degli ADT: la rappresentazione resta così nascosta a tutti gli utilizzatori.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
 Moduli funzionali</h2>
 <table class="markdownTable">
@@ -250,7 +253,7 @@ Esecuzione dei test</h2>
 <div class="line">scripts\compile_and_test.bat</div>
 <div class="line"> </div>
 <div class="line"># Solo compilazione test</div>
-<div class="line">gcc -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs tests/test_adt.c src/data_structures/*.c src/game/game_logic.c src/game/deck.c -o tests/test_adt.exe -lm</div>
+<div class="line">gcc -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs tests/test_adt.c src/data_structures/*.c src/game/game_logic.c src/game/deck.c src/game/player.c -o tests/test_adt.exe -lm</div>
 <div class="line"> </div>
 <div class="line"># Solo esecuzione (se già compilato)</div>
 <div class="line">tests\test_adt.exe</div>
@@ -274,11 +277,11 @@ Risultati</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>Dominio: gestione mano</b>  </td><td class="markdownTableBodyNone">21  </td><td class="markdownTableBodyNone">Aggiunta/rimozione carte, salvataggio/ricostruzione mano (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Dominio: avanzamento turni</b>  </td><td class="markdownTableBodyNone">12  </td><td class="markdownTableBodyNone">Sincronizzazione <a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4" title="Coda dei turni (tipo opaco: rappresentazione interna nascosta).">CodaTurni</a> con <a class="el" href="structStatoGioco.html" title="Stato completo di una partita in corso.">StatoGioco</a>, direzione, effetti Salta  </td></tr>
+<td class="markdownTableBodyNone"><b>Dominio: avanzamento turni</b>  </td><td class="markdownTableBodyNone">12  </td><td class="markdownTableBodyNone">Sincronizzazione <a class="el" href="group__queue__struttura.html#ga9763e6eae91e63a57472fb2fc0f027a4" title="Coda dei turni (tipo opaco: rappresentazione interna nascosta).">CodaTurni</a> con <a class="el" href="game__state_8h.html#ad103089d7982e85c16b0a50eff85dd53" title="Stato completo di una partita in corso (tipo opaco).">StatoGioco</a>, direzione, effetti Salta  </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>Dominio: regole di gioco</b>  </td><td class="markdownTableBodyNone">10  </td><td class="markdownTableBodyNone">MossaValida (colore/tipo/jolly), CambioGiro, +2  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b><a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> (difensivo)</b>  </td><td class="markdownTableBodyNone">5  </td><td class="markdownTableBodyNone">Nome vuoto, SetNome, NomeBot, chiamate NULL  </td></tr>
+<td class="markdownTableBodyNone"><b><a class="el" href="player_8h.html#ae452fa2260469b6d0d91fd76b2a0cfe1" title="Rappresenta un giocatore nella partita (umano o bot) - tipo opaco.">Giocatore</a> (difensivo)</b>  </td><td class="markdownTableBodyNone">5  </td><td class="markdownTableBodyNone">Nome vuoto, SetNome, NomeBot, chiamate NULL  </td></tr>
 </table>
 <p><b>Totale</b>: 🟢 149/149 test passati</p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
@@ -301,21 +304,33 @@ Prerequisiti</h2>
 Procedura</h2>
 <ol type="1">
 <li>Aprire il file <span class="tt">Uno.cbp</span> in Code::Blocks.</li>
-<li>Selezionare la configurazione di build <b>Debug</b> o <b>Release</b>.</li>
+<li>Selezionare la configurazione di build desiderata (<b>Debug</b>, <b>Release</b> o <b>Test</b>).</li>
 <li>Premere <b>F9</b> o selezionare <em>Build &gt; Build</em>.</li>
 </ol>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+Target di Code::Blocks</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Target  </th><th class="markdownTableHeadNone">Output  </th><th class="markdownTableHeadNone">Contenuto  </th><th class="markdownTableHeadNone">Linker  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Debug</b>  </td><td class="markdownTableBodyNone"><span class="tt">bin/Debug/uno.exe</span>  </td><td class="markdownTableBodyNone">tutti i moduli in <span class="tt">src/</span>  </td><td class="markdownTableBodyNone"><span class="tt">-lraylib -lopengl32 -lgdi32 -lwinmm -lws2_32</span>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>Release</b>  </td><td class="markdownTableBodyNone"><span class="tt">bin/Release/uno.exe</span>  </td><td class="markdownTableBodyNone">tutti i moduli in <span class="tt">src/</span>  </td><td class="markdownTableBodyNone">come Debug, con <span class="tt">-O2 -s</span>  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Test</b>  </td><td class="markdownTableBodyNone"><span class="tt">tests/test_adt.exe</span>  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="test__adt_8c.html" title="Test unitari per gli ADT e la logica di dominio UNO.">tests/test_adt.c</a></span> + ADT + moduli di dominio  </td><td class="markdownTableBodyNone"><span class="tt">-lm</span> (usa gli stub in <span class="tt">tests/stubs</span>)  </td></tr>
+</table>
+<p>Il target <b>Test</b> include solo le unità dei moduli dati (<span class="tt">data_structures/*.c</span>) e di dominio (<span class="tt"><a class="el" href="game__logic_8c.html" title="Implementazione logica di gioco UNO: regole, effetti carte, validazione mosse e gestione ADT.">game_logic.c</a></span>, <span class="tt"><a class="el" href="deck_8c.html" title="Gestione mazzo di pesca, scarti e pesca carte.">deck.c</a></span>, <span class="tt"><a class="el" href="player_8c.html">player.c</a></span>), usa gli stub Raylib di <span class="tt">tests/stubs</span> per non dipendere dalla libreria grafica e stampa il report dei 149 test.</p>
 <p>In alternativa, da linea di comando (nella cartella del progetto):</p>
-<div class="fragment"><div class="line">gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/core/main.c -o obj/main.o</div>
-<div class="line">gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/auth/auth.c -o obj/auth.o</div>
-<div class="line">gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/auth/auth_validation.c -o obj/auth_validation.o</div>
-<div class="line">gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/game/game_logic.c -o obj/game_logic.o</div>
-<div class="line">gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/screens/ui.c -o obj/ui.o</div>
-<div class="line">gcc obj/main.o obj/auth.o obj/auth_validation.o obj/game_logic.o obj/ui.o -Llib/raylib -lraylib -o bin/Uno</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+<p>Il metodo consigliato è usare lo script di build:</p>
+<div class="fragment"><div class="line">scripts/compile_and_test.bat</div>
+</div><!-- fragment --><p>Questo script compila il gioco (<span class="tt">uno.exe</span>), i test, genera la documentazione Doxygen e li esegue automaticamente.</p>
+<p>Oppure, per compilare solo il gioco:</p>
+<div class="fragment"><div class="line">gcc -g src/core/main.c src/auth/auth.c src/auth/auth_validation.c src/game/game_logic.c src/game/player.c src/screens/ui.c src/data_structures/bst.c src/data_structures/chat.c src/data_structures/list.c src/data_structures/queue.c src/data_structures/stack.c src/screens/auth/auth_screen.c src/screens/auth/auth_update.c src/screens/auth/auth_draw.c src/screens/auth/input_field.c src/screens/game/bot_ai.c src/screens/game/end_screen.c src/screens/game/gameplay_screen.c src/screens/game/gameplay_update.c src/screens/game/gameplay_draw.c src/screens/menu/menu_screen.c src/screens/menu/stats_screen.c src/screens/menu/string_utils.c src/screens/multiplayer/multiplayer_lobby.c src/screens/multiplayer/multiplayer_screen.c src/socket/network/network.c src/socket/network/network_send.c src/socket/network/packet_handler.c src/socket/network/packet_handler_game.c src/socket/network/packet_handler_admin.c src/socket/network/state_sync.c src/socket/server/server_manager.c src/socket/utils/network_utils.c src/game/deck.c src/game/save_manager.c src/game/game_flow.c src/screens/game/chat_render.c src/screens/auth/admin_draw.c src/socket/lan/lan_db_sync.c src/socket/lan/lan_save_sync.c src/socket/lan/lan_broadcast.c -o uno.exe -Ilib -Ilib/raylib/include -Llib/raylib/lib -lraylib -lopengl32 -lgdi32 -lwinmm -lws2_32</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
 Esecuzione</h1>
 <p>Dopo la compilazione, eseguire:</p>
-<div class="fragment"><div class="line">bin/Uno.exe</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+<div class="fragment"><div class="line">uno.exe</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
 Documentazione</h1>
 <p>La documentazione Doxygen completa è disponibile in:</p>
 <ul>
@@ -323,9 +338,9 @@ Documentazione</h1>
 </ul>
 <p>Per rigenerarla:</p>
 <div class="fragment"><div class="line">doxygen docs/Doxyfile</div>
-</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
 Utilizzo</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
 Flusso dell'applicazione</h2>
 <ol type="1">
 <li><b>Autenticazione</b>: schermata iniziale con sign-up o login.</li>
@@ -334,13 +349,13 @@ Flusso dell'applicazione</h2>
 <li><b>Gameplay</b>: gioco vero e proprio con gestione carte, turni e chat.</li>
 <li><b>Fine partita</b>: classifica e salvataggio statistiche.</li>
 </ol>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
 Controlli durante il gioco</h2>
 <ul>
 <li><b>Mouse</b>: selezionare e giocare le carte, navigare nei menu</li>
 <li><b>Tasti rapidi</b>: implementazione di tasti funzione per azioni comuni</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md21"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
 Funzionalità avanzate sviluppate</h2>
 <ul>
 <li>Tasto "UNO!" con check per penalità</li>
@@ -348,7 +363,7 @@ Funzionalità avanzate sviluppate</h2>
 <li>Gestione robusta disconnessioni in rete</li>
 <li>Auto-ricostruzione del mazzo quando finiscono le carte</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 Progettazione e design</h1>
 <p>Il progetto è stato progettato per rispettare i vincoli didattici:</p>
 <ul>
@@ -358,7 +373,7 @@ Progettazione e design</h1>
 <li><b>Robustezza</b>: controlli di validità su ogni input</li>
 <li><b>Persistenza</b>: accesso diretto a file per aggiornamenti efficienti</li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 Scelte progettuali</h2>
 <ul>
 <li><b>Lista doppiamente concatenata</b> per le mani: inserimenti/rimozioni O(1)</li>
@@ -367,16 +382,16 @@ Scelte progettuali</h2>
 <li><b>BST</b> per gli utenti: ricerca O(log n) per email</li>
 <li><b>File ad accesso diretto</b> per il database utenti: aggiornamenti senza riscrittura totale</li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
 Autori</h1>
 <ul>
 <li><b>Alessio Decarolis</b> - Matricola 852865 - <a href="https://github.com/decarolisalessio24-dotcom">https://github.com/decarolisalessio24-dotcom</a></li>
 <li><b>Pasquale Franco</b> - Matricola 852866 - <a href="https://github.com/pasqfrn">https://github.com/pasqfrn</a></li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md25"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
 Licenza</h1>
 <p>Caso di studio - Eventuale licenza da definire.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md27"></a>
 Note</h1>
 <ul>
 <li>La documentazione progettuale completa è disponibile in <span class="tt">docs/doxygen/html/index.html</span></li>

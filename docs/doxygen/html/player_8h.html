@@ -119,136 +119,387 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('player_8h.html
   <div class="headertitle"><div class="title">Riferimenti per il file player.h</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Modulo <a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> - Entità di flusso/stato per la partita.  
-<a href="#details">Continua...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="data__structures_8h_source.html">../data_structures/data_structures.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="list_8h_source.html">../data_structures/list.h</a>&quot;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
 </div>
 <p><a href="player_8h_source.html">Vai al codice sorgente di questo file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Strutture dati</h2></td></tr>
-<tr class="memitem:Giocatore" id="r_Giocatore"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structGiocatore.html">Giocatore</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rappresenta un giocatore nella partita (umano o bot).  <a href="structGiocatore.html#details">Continua...</a><br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
-Definizioni</h2></td></tr>
-<tr class="memitem:ad122d7c5cf74ad68b85d6f22321a1f14" id="r_ad122d7c5cf74ad68b85d6f22321a1f14"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad122d7c5cf74ad68b85d6f22321a1f14">GIOCATORE_NOME_BUF</a>&#160;&#160;&#160;60</td></tr>
-<tr class="memdesc:ad122d7c5cf74ad68b85d6f22321a1f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimensione del buffer per Giocatore_NomeBot.  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Ridefinizioni di tipo (typedef)</h2></td></tr>
+<tr class="memitem:ae452fa2260469b6d0d91fd76b2a0cfe1" id="r_ae452fa2260469b6d0d91fd76b2a0cfe1"><td class="memItemLeft">typedef struct <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a></td></tr>
+<tr class="memdesc:ae452fa2260469b6d0d91fd76b2a0cfe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rappresenta un giocatore nella partita (umano o bot) - tipo opaco.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Funzioni</h2></td></tr>
-<tr class="memitem:a1ea6245c64c4402d8d51fde1b24cf6e8" id="r_a1ea6245c64c4402d8d51fde1b24cf6e8"><td class="memItemLeft">static const char *&#160;</td><td class="memItemRight"><a class="el" href="#a1ea6245c64c4402d8d51fde1b24cf6e8">Giocatore_Nome</a> (const <a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
-<tr class="memdesc:a1ea6245c64c4402d8d51fde1b24cf6e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nome del giocatore (compatta con campo nome[30]).  <br /></td></tr>
-<tr class="memitem:a07c935cf8442613c1c7252d56f22da57" id="r_a07c935cf8442613c1c7252d56f22da57"><td class="memItemLeft">static const char *&#160;</td><td class="memItemRight"><a class="el" href="#a07c935cf8442613c1c7252d56f22da57">Giocatore_NomeBot</a> (const <a class="el" href="structGiocatore.html">Giocatore</a> *g)</td></tr>
-<tr class="memdesc:a07c935cf8442613c1c7252d56f22da57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nome del giocatore con suffisso "(Bot)" se e' un bot.  <br /></td></tr>
-<tr class="memitem:ad5e787f7c875934a8f07a10cf8f33acb" id="r_ad5e787f7c875934a8f07a10cf8f33acb"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ad5e787f7c875934a8f07a10cf8f33acb">Giocatore_SetNome</a> (<a class="el" href="structGiocatore.html">Giocatore</a> *g, const char *nome)</td></tr>
-<tr class="memdesc:ad5e787f7c875934a8f07a10cf8f33acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imposta il nome del giocatore in tutti i campi rilevanti.  <br /></td></tr>
+<tr class="memitem:aad443b9f73f708a9405ced88e0ac7b4c" id="r_aad443b9f73f708a9405ced88e0ac7b4c"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="#aad443b9f73f708a9405ced88e0ac7b4c">Giocatore_Nome</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:aad443b9f73f708a9405ced88e0ac7b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nome del giocatore (o "Sconosciuto" se NULL/empty).  <br /></td></tr>
+<tr class="memitem:ad4b7446e73bafb91c3c80dce8c1184b5" id="r_ad4b7446e73bafb91c3c80dce8c1184b5"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="#ad4b7446e73bafb91c3c80dce8c1184b5">Giocatore_GetNome</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ad4b7446e73bafb91c3c80dce8c1184b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nome del giocatore (alias per compatibilità).  <br /></td></tr>
+<tr class="memitem:ae87f7f9a5b637ddc4e800e59d8694871" id="r_ae87f7f9a5b637ddc4e800e59d8694871"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae87f7f9a5b637ddc4e800e59d8694871">Giocatore_SetNome</a> (<a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g, const char *nome)</td></tr>
+<tr class="memdesc:ae87f7f9a5b637ddc4e800e59d8694871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imposta il nome del giocatore.  <br /></td></tr>
+<tr class="memitem:aa508b2f2b21331f58cddebdd58a970e7" id="r_aa508b2f2b21331f58cddebdd58a970e7"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="#aa508b2f2b21331f58cddebdd58a970e7">Giocatore_NomeBot</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:aa508b2f2b21331f58cddebdd58a970e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nome con suffisso "(Bot)" se è un bot; altrimenti il nome normale.  <br /></td></tr>
+<tr class="memitem:aed952b716d72bdb0353944e2ba2f5c57" id="r_aed952b716d72bdb0353944e2ba2f5c57"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="#aed952b716d72bdb0353944e2ba2f5c57">Giocatore_GetNomeBot</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:aed952b716d72bdb0353944e2ba2f5c57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il nome con suffisso "(Bot)" (alias per compatibilità).  <br /></td></tr>
+<tr class="memitem:ad43ed6595e2d972d0f7fe4fcccc56c5f" id="r_ad43ed6595e2d972d0f7fe4fcccc56c5f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ad43ed6595e2d972d0f7fe4fcccc56c5f">Giocatore_IsBot</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ad43ed6595e2d972d0f7fe4fcccc56c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce se il giocatore è un bot.  <br /></td></tr>
+<tr class="memitem:a97891d14ee8c7a93b931ee08602f4ca7" id="r_a97891d14ee8c7a93b931ee08602f4ca7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a97891d14ee8c7a93b931ee08602f4ca7">Giocatore_SetPronto</a> (<a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g, int pronto)</td></tr>
+<tr class="memdesc:a97891d14ee8c7a93b931ee08602f4ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imposta lo stato di pronto nella lobby.  <br /></td></tr>
+<tr class="memitem:ae2452d8a362bb5dd471e107596eb06f1" id="r_ae2452d8a362bb5dd471e107596eb06f1"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae2452d8a362bb5dd471e107596eb06f1">Giocatore_IsPronto</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ae2452d8a362bb5dd471e107596eb06f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce lo stato di pronto.  <br /></td></tr>
+<tr class="memitem:aea34beb7f394253139b8915a39eb7284" id="r_aea34beb7f394253139b8915a39eb7284"><td class="memItemLeft"><a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f">ListaCarte</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aea34beb7f394253139b8915a39eb7284">Giocatore_GetMano</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:aea34beb7f394253139b8915a39eb7284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce la mano del giocatore (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>).  <br /></td></tr>
+<tr class="memitem:a3320bb093939d117016933b3e70a11d2" id="r_a3320bb093939d117016933b3e70a11d2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3320bb093939d117016933b3e70a11d2">Giocatore_SetMano</a> (<a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g, <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f">ListaCarte</a> *mano)</td></tr>
+<tr class="memdesc:a3320bb093939d117016933b3e70a11d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imposta la mano del giocatore.  <br /></td></tr>
+<tr class="memitem:ae05ef87446535db0b7fab25ddb3ba287" id="r_ae05ef87446535db0b7fab25ddb3ba287"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ae05ef87446535db0b7fab25ddb3ba287">Giocatore_GetNumCarte</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:ae05ef87446535db0b7fab25ddb3ba287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di carte in mano.  <br /></td></tr>
+<tr class="memitem:a5a59856d8656cacc73102ddf0f3c1230" id="r_a5a59856d8656cacc73102ddf0f3c1230"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5a59856d8656cacc73102ddf0f3c1230">Giocatore_SetNumCarte</a> (<a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g, int num)</td></tr>
+<tr class="memdesc:a5a59856d8656cacc73102ddf0f3c1230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imposta il numero di carte in mano.  <br /></td></tr>
+<tr class="memitem:a8306d20373f7cf884f466ce50d0b97ea" id="r_a8306d20373f7cf884f466ce50d0b97ea"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a8306d20373f7cf884f466ce50d0b97ea">Giocatore_GetSocketId</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:a8306d20373f7cf884f466ce50d0b97ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce l'ID socket del giocatore.  <br /></td></tr>
+<tr class="memitem:acc7441b6a01b01583e618b47f79a8792" id="r_acc7441b6a01b01583e618b47f79a8792"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acc7441b6a01b01583e618b47f79a8792">Giocatore_SetSocketId</a> (<a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g, int socket_id)</td></tr>
+<tr class="memdesc:acc7441b6a01b01583e618b47f79a8792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imposta l'ID socket del giocatore.  <br /></td></tr>
+<tr class="memitem:a23cf81c32ad4ee917133f1bb3aabb80f" id="r_a23cf81c32ad4ee917133f1bb3aabb80f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a23cf81c32ad4ee917133f1bb3aabb80f">Giocatore_EraInPrelobby</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:a23cf81c32ad4ee917133f1bb3aabb80f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce se il giocatore era in prelobby.  <br /></td></tr>
+<tr class="memitem:a6c7ce7f67cf9c1132ddf84716032465a" id="r_a6c7ce7f67cf9c1132ddf84716032465a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6c7ce7f67cf9c1132ddf84716032465a">Giocatore_SetEraInPrelobby</a> (<a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g, int era)</td></tr>
+<tr class="memdesc:a6c7ce7f67cf9c1132ddf84716032465a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imposta lo stato di prelobby.  <br /></td></tr>
+<tr class="memitem:a3c620676036a04ad4ea8f0d6120e59bd" id="r_a3c620676036a04ad4ea8f0d6120e59bd"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a3c620676036a04ad4ea8f0d6120e59bd">Giocatore_FaiBackupMano</a> (<a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:a3c620676036a04ad4ea8f0d6120e59bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Esegue la copia di sicurezza (backup) della mano per serializzazione.  <br /></td></tr>
+<tr class="memitem:a42207ad8d655a4260f62e8c5c314a434" id="r_a42207ad8d655a4260f62e8c5c314a434"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a42207ad8d655a4260f62e8c5c314a434">Giocatore_GetBackupMano</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g, <a class="el" href="structCarta.html">Carta</a> *out, int max)</td></tr>
+<tr class="memdesc:a42207ad8d655a4260f62e8c5c314a434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il backup della mano (array di carte).  <br /></td></tr>
+<tr class="memitem:acbb7791b387c34543f9cb7d6d9c87804" id="r_acbb7791b387c34543f9cb7d6d9c87804"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#acbb7791b387c34543f9cb7d6d9c87804">Giocatore_GetNumCarteBackup</a> (const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *g)</td></tr>
+<tr class="memdesc:acbb7791b387c34543f9cb7d6d9c87804"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restituisce il numero di carte nel backup.  <br /></td></tr>
 </table>
-<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descrizione dettagliata</h2>
-<div class="textblock"><p>Modulo <a class="el" href="structGiocatore.html" title="Rappresenta un giocatore nella partita (umano o bot).">Giocatore</a> - Entità di flusso/stato per la partita. </p>
-</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentazione delle definizioni</h2>
-<a id="ad122d7c5cf74ad68b85d6f22321a1f14" name="ad122d7c5cf74ad68b85d6f22321a1f14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad122d7c5cf74ad68b85d6f22321a1f14">&#9670;&#160;</a></span>GIOCATORE_NOME_BUF</h2>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentazione delle ridefinizioni di tipo (typedef)</h2>
+<a id="ae452fa2260469b6d0d91fd76b2a0cfe1" name="ae452fa2260469b6d0d91fd76b2a0cfe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae452fa2260469b6d0d91fd76b2a0cfe1">&#9670;&#160;</a></span>Giocatore</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define GIOCATORE_NOME_BUF&#160;&#160;&#160;60</td>
+          <td class="memname">typedef struct <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Dimensione del buffer per Giocatore_NomeBot. </p>
+<p>Rappresenta un giocatore nella partita (umano o bot) - tipo opaco. </p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentazione delle funzioni</h2>
-<a id="a1ea6245c64c4402d8d51fde1b24cf6e8" name="a1ea6245c64c4402d8d51fde1b24cf6e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ea6245c64c4402d8d51fde1b24cf6e8">&#9670;&#160;</a></span>Giocatore_Nome()</h2>
+<a id="a23cf81c32ad4ee917133f1bb3aabb80f" name="a23cf81c32ad4ee917133f1bb3aabb80f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23cf81c32ad4ee917133f1bb3aabb80f">&#9670;&#160;</a></span>Giocatore_EraInPrelobby()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Giocatore_EraInPrelobby </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce se il giocatore era in prelobby. </p>
+
+</div>
+</div>
+<a id="a3c620676036a04ad4ea8f0d6120e59bd" name="a3c620676036a04ad4ea8f0d6120e59bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c620676036a04ad4ea8f0d6120e59bd">&#9670;&#160;</a></span>Giocatore_FaiBackupMano()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Giocatore_FaiBackupMano </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Esegue la copia di sicurezza (backup) della mano per serializzazione. </p>
+
+</div>
+</div>
+<a id="a42207ad8d655a4260f62e8c5c314a434" name="a42207ad8d655a4260f62e8c5c314a434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42207ad8d655a4260f62e8c5c314a434">&#9670;&#160;</a></span>Giocatore_GetBackupMano()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Giocatore_GetBackupMano </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCarta.html">Carta</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il backup della mano (array di carte). </p>
+
+</div>
+</div>
+<a id="aea34beb7f394253139b8915a39eb7284" name="aea34beb7f394253139b8915a39eb7284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea34beb7f394253139b8915a39eb7284">&#9670;&#160;</a></span>Giocatore_GetMano()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f">ListaCarte</a> * Giocatore_GetMano </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce la mano del giocatore (ADT <a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f" title="Lista di carte (tipo opaco: rappresentazione interna nascosta).">ListaCarte</a>). </p>
+
+</div>
+</div>
+<a id="ad4b7446e73bafb91c3c80dce8c1184b5" name="ad4b7446e73bafb91c3c80dce8c1184b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4b7446e73bafb91c3c80dce8c1184b5">&#9670;&#160;</a></span>Giocatore_GetNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * Giocatore_GetNome </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il nome del giocatore (alias per compatibilità). </p>
+
+</div>
+</div>
+<a id="aed952b716d72bdb0353944e2ba2f5c57" name="aed952b716d72bdb0353944e2ba2f5c57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed952b716d72bdb0353944e2ba2f5c57">&#9670;&#160;</a></span>Giocatore_GetNomeBot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * Giocatore_GetNomeBot </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il nome con suffisso "(Bot)" (alias per compatibilità). </p>
+
+</div>
+</div>
+<a id="ae05ef87446535db0b7fab25ddb3ba287" name="ae05ef87446535db0b7fab25ddb3ba287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05ef87446535db0b7fab25ddb3ba287">&#9670;&#160;</a></span>Giocatore_GetNumCarte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Giocatore_GetNumCarte </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il numero di carte in mano. </p>
+
+</div>
+</div>
+<a id="acbb7791b387c34543f9cb7d6d9c87804" name="acbb7791b387c34543f9cb7d6d9c87804"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb7791b387c34543f9cb7d6d9c87804">&#9670;&#160;</a></span>Giocatore_GetNumCarteBackup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Giocatore_GetNumCarteBackup </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce il numero di carte nel backup. </p>
+
+</div>
+</div>
+<a id="a8306d20373f7cf884f466ce50d0b97ea" name="a8306d20373f7cf884f466ce50d0b97ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8306d20373f7cf884f466ce50d0b97ea">&#9670;&#160;</a></span>Giocatore_GetSocketId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Giocatore_GetSocketId </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce l'ID socket del giocatore. </p>
+
+</div>
+</div>
+<a id="ad43ed6595e2d972d0f7fe4fcccc56c5f" name="ad43ed6595e2d972d0f7fe4fcccc56c5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad43ed6595e2d972d0f7fe4fcccc56c5f">&#9670;&#160;</a></span>Giocatore_IsBot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Giocatore_IsBot </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce se il giocatore è un bot. </p>
+
+</div>
+</div>
+<a id="ae2452d8a362bb5dd471e107596eb06f1" name="ae2452d8a362bb5dd471e107596eb06f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2452d8a362bb5dd471e107596eb06f1">&#9670;&#160;</a></span>Giocatore_IsPronto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Giocatore_IsPronto </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restituisce lo stato di pronto. </p>
+
+</div>
+</div>
+<a id="aad443b9f73f708a9405ced88e0ac7b4c" name="aad443b9f73f708a9405ced88e0ac7b4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad443b9f73f708a9405ced88e0ac7b4c">&#9670;&#160;</a></span>Giocatore_Nome()</h2>
+
+<div class="memitem">
+<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">const char * Giocatore_Nome </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Restituisce il nome del giocatore (compatta con campo nome[30]). </p>
-<dl class="params"><dt>Parametri</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Restituisce</dt><dd>Nome del giocatore, o "Sconosciuto" se vuoto. </dd></dl>
+<p>Restituisce il nome del giocatore (o "Sconosciuto" se NULL/empty). </p>
 
 </div>
 </div>
-<a id="a07c935cf8442613c1c7252d56f22da57" name="a07c935cf8442613c1c7252d56f22da57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07c935cf8442613c1c7252d56f22da57">&#9670;&#160;</a></span>Giocatore_NomeBot()</h2>
+<a id="aa508b2f2b21331f58cddebdd58a970e7" name="aa508b2f2b21331f58cddebdd58a970e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa508b2f2b21331f58cddebdd58a970e7">&#9670;&#160;</a></span>Giocatore_NomeBot()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const char * Giocatore_NomeBot </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Restituisce il nome del giocatore con suffisso "(Bot)" se e' un bot. </p>
-<dl class="params"><dt>Parametri</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Restituisce</dt><dd>Nome formattato (buffer statico, thread-local). </dd></dl>
+<p>Restituisce il nome con suffisso "(Bot)" se è un bot; altrimenti il nome normale. </p>
 
 </div>
 </div>
-<a id="ad5e787f7c875934a8f07a10cf8f33acb" name="ad5e787f7c875934a8f07a10cf8f33acb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5e787f7c875934a8f07a10cf8f33acb">&#9670;&#160;</a></span>Giocatore_SetNome()</h2>
+<a id="a6c7ce7f67cf9c1132ddf84716032465a" name="a6c7ce7f67cf9c1132ddf84716032465a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c7ce7f67cf9c1132ddf84716032465a">&#9670;&#160;</a></span>Giocatore_SetEraInPrelobby()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Giocatore_SetEraInPrelobby </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>era</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imposta lo stato di prelobby. </p>
+
+</div>
+</div>
+<a id="a3320bb093939d117016933b3e70a11d2" name="a3320bb093939d117016933b3e70a11d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3320bb093939d117016933b3e70a11d2">&#9670;&#160;</a></span>Giocatore_SetMano()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Giocatore_SetMano </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="list_8h.html#a28ab3892d7bb94ed34c2929035d85b2f">ListaCarte</a> *</td>          <td class="paramname"><span class="paramname"><em>mano</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imposta la mano del giocatore. </p>
+
+</div>
+</div>
+<a id="ae87f7f9a5b637ddc4e800e59d8694871" name="ae87f7f9a5b637ddc4e800e59d8694871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae87f7f9a5b637ddc4e800e59d8694871">&#9670;&#160;</a></span>Giocatore_SetNome()</h2>
+
+<div class="memitem">
+<div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Giocatore_SetNome </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structGiocatore.html">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -256,22 +507,78 @@ Funzioni</h2></td></tr>
           <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>nome</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Imposta il nome del giocatore in tutti i campi rilevanti. </p>
-<p>Copia il nome in: nome[30], info.nome e info.username.</p>
-<dl class="params"><dt>Parametri</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">g</td><td>Puntatore al giocatore. </td></tr>
-    <tr><td class="paramname">nome</td><td>Nome da impostare. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Imposta il nome del giocatore. </p>
+
+</div>
+</div>
+<a id="a5a59856d8656cacc73102ddf0f3c1230" name="a5a59856d8656cacc73102ddf0f3c1230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a59856d8656cacc73102ddf0f3c1230">&#9670;&#160;</a></span>Giocatore_SetNumCarte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Giocatore_SetNumCarte </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>num</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imposta il numero di carte in mano. </p>
+
+</div>
+</div>
+<a id="a97891d14ee8c7a93b931ee08602f4ca7" name="a97891d14ee8c7a93b931ee08602f4ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97891d14ee8c7a93b931ee08602f4ca7">&#9670;&#160;</a></span>Giocatore_SetPronto()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Giocatore_SetPronto </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pronto</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imposta lo stato di pronto nella lobby. </p>
+
+</div>
+</div>
+<a id="acc7441b6a01b01583e618b47f79a8792" name="acc7441b6a01b01583e618b47f79a8792"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc7441b6a01b01583e618b47f79a8792">&#9670;&#160;</a></span>Giocatore_SetSocketId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Giocatore_SetSocketId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae452fa2260469b6d0d91fd76b2a0cfe1">Giocatore</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>socket_id</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imposta l'ID socket del giocatore. </p>
 
 </div>
 </div>

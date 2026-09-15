@@ -8,14 +8,10 @@ var searchData=
   ['texturedorso_5',['textureDorso',['../group__ui__texture.html#ga876b5c791744657fa724c81445ce9e8b',1,'textureDorso:&#160;ui.c'],['../group__ui__texture.html#ga876b5c791744657fa724c81445ce9e8b',1,'textureDorso:&#160;ui.c']]],
   ['texturesfondo_6',['textureSfondo',['../group__ui__texture.html#gaf27071339f699f36aff91ba414cd50d8',1,'textureSfondo:&#160;ui.c'],['../group__ui__texture.html#gaf27071339f699f36aff91ba414cd50d8',1,'textureSfondo:&#160;ui.c']]],
   ['timer_7',['timer',['../structSaveReceiver.html#af854aaf5f7b756a428a0a83a099c0cb3',1,'SaveReceiver']]],
-  ['timer_5fnotifica_8',['timer_notifica',['../structStatoGioco.html#a89df943210c791c241cd5cfdc6da5661',1,'StatoGioco']]],
-  ['timer_5funo_9',['timer_uno',['../structStatoGioco.html#a69a7cf4db8b6ce8d66750a3e06d403a2',1,'StatoGioco']]],
-  ['timererroreavvio_10',['timerErroreAvvio',['../multiplayer__lobby_8c.html#a966b7f86419f832b43d1d64adb04ec06',1,'multiplayer_lobby.c']]],
-  ['timestamp_11',['timestamp',['../group__network__packet__strutture.html#ga9f34dff657b264545e7f38767a4e2f9b',1,'PacketPlayAgain::timestamp'],['../group__network__packet__strutture.html#ga3a36376352934fafde900b15b51bf29d',1,'PacketHeartbeat::timestamp']]],
-  ['tipo_12',['tipo',['../structCarta.html#ae488767adc6386b868c262ba100b4762',1,'Carta']]],
-  ['tipo_5fanimazione_13',['tipo_animazione',['../structStatoGioco.html#a3bc5fbe76d9d128bcc952ed57d0dca26',1,'StatoGioco']]],
-  ['total_14',['total',['../structSaveReceiver.html#af869a8696ea72cd82bc140267ef2b6ca',1,'SaveReceiver']]],
-  ['total_5fusers_15',['total_users',['../group__network__packet__strutture.html#gac6a474ddf16d9f20937f0edf4b45ba06',1,'AdminDBSyncPacket']]],
-  ['turno_5fcorrente_16',['turno_corrente',['../structStatoGioco.html#a8f1416d2f035e301ec99b2c21a697f47',1,'StatoGioco']]],
-  ['type_17',['type',['../group__network__packet__strutture.html#ga3bf9ba4b94cb8068a261bd07e01b0fc0',1,'NetPacket']]]
+  ['timererroreavvio_8',['timerErroreAvvio',['../multiplayer__lobby_8c.html#a966b7f86419f832b43d1d64adb04ec06',1,'multiplayer_lobby.c']]],
+  ['timestamp_9',['timestamp',['../group__network__packet__strutture.html#ga9f34dff657b264545e7f38767a4e2f9b',1,'PacketPlayAgain::timestamp'],['../group__network__packet__strutture.html#ga3a36376352934fafde900b15b51bf29d',1,'PacketHeartbeat::timestamp']]],
+  ['tipo_10',['tipo',['../structCarta.html#ae488767adc6386b868c262ba100b4762',1,'Carta']]],
+  ['total_11',['total',['../structSaveReceiver.html#af869a8696ea72cd82bc140267ef2b6ca',1,'SaveReceiver']]],
+  ['total_5fusers_12',['total_users',['../group__network__packet__strutture.html#gac6a474ddf16d9f20937f0edf4b45ba06',1,'AdminDBSyncPacket']]],
+  ['type_13',['type',['../group__network__packet__strutture.html#ga3bf9ba4b94cb8068a261bd07e01b0fc0',1,'NetPacket']]]
 ];

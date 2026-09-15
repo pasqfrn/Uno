@@ -46,7 +46,7 @@ var searchData=
   ['lazy_20deletion_43',['Eliminazione Diffusa (Lazy Deletion)',['../group__lazy__deletion.html',1,'']]],
   ['lazy_20deletion_20implementazione_44',['Lazy Deletion Implementazione',['../group__lazy__deletion__impl.html',1,'']]],
   ['length_45',['length',['../structLanPacketHeader.html#a8939bb9e1a5eab219299b2916cf41e23',1,'LanPacketHeader']]],
-  ['licenza_46',['Licenza',['../index.html#autotoc_md25',1,'']]],
+  ['licenza_46',['Licenza',['../index.html#autotoc_md26',1,'']]],
   ['list_2ec_47',['list.c',['../list_8c.html',1,'']]],
   ['list_2eh_48',['list.h',['../list_8h.html',1,'']]],
   ['lista_49',['lista',['../structDatabaseUtenti.html#a1e6283b0977951b6856b4a28cb134d30',1,'DatabaseUtenti']]],

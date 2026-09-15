@@ -40,6 +40,7 @@ Uno/
 │   │   └── auth_validation.c  # Validazione email, password, username
 │   ├── game/                  # Modulo gioco
 │   │   ├── game_logic.c       # Regole di UNO, validazione mosse, effetti carte
+│   │   ├── player.c           # Implementazione Giocatore (API + campi)
 │   │   ├── deck.c             # Mazzo, pesca, scarti
 │   │   ├── game_flow.c        # Flusso di partita
 │   │   └── save_manager.c     # Salvataggio/caricamento partite
@@ -49,6 +50,7 @@ Uno/
 ├── lib/                       # Interfacce pubbliche (*.h) — un modulo = una cartella
 │   ├── auth/                  # Header modulo autenticazione (auth.h, auth_validation.h)
 │   ├── game/                  # Header gioco (game_logic.h, game_state.h, player.h)
+│   │   └── private/           # Rappresentazioni interne (game_state_private.h, player_private.h)
 │   ├── data_structures/       # Header pubblici ADT (solo tipi opachi + API)
 │   │   └── private/           # Rappresentazioni interne degli ADT (*_private.h)
 │   ├── screens/               # Header schermate (+ ui.h, string_utils)
@@ -59,7 +61,7 @@ Uno/
 │   ├── test_adt.c             # Suite di test (149 test, solo API pubblica + assert)
 │   └── stubs/                 # Stub Raylib per compilazione test senza dipendenze
 ├── scripts/                   # Script di automazione
-│   └── compile_and_test.bat # Compila gioco + test, genera documentazione Doxygen
+│   └── compile_and_test.bat   # Compila gioco (uno.exe) + test, genera Doxygen, esegue test
 ├── docs/
 │   ├── Documentazione CdS.pdf  # Documentazione progettuale completa
 │   └── doxygen/html/           # Configurazione e documentazione Doxygen
@@ -69,8 +71,9 @@ Uno/
 ├── assets/
 │   ├── card/                # Texture carte
 │   └── img/                 # Risorse grafiche varie (sfondo, ecc.)
-├── bin/                     # Eseguibili compilati
-└── obj/                     # File oggetto
+├── uno.exe                    # Eseguibile del gioco (compilato in radice)
+├── bin/                       # Output di Code::Blocks (Debug/uno.exe, Release/uno.exe)
+└── obj/
 ```
 
 ## Architettura
@@ -134,7 +137,7 @@ Da linea di comando:
 scripts\compile_and_test.bat
 
 # Solo compilazione test
-gcc -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs tests/test_adt.c src/data_structures/*.c src/game/game_logic.c src/game/deck.c -o tests/test_adt.exe -lm
+gcc -std=c99 -Wall -Wextra -Ilib -Isrc -Itests -Itests/stubs tests/test_adt.c src/data_structures/*.c src/game/game_logic.c src/game/deck.c src/game/player.c -o tests/test_adt.exe -lm
 
 # Solo esecuzione (se già compilato)
 tests\test_adt.exe
@@ -175,18 +178,35 @@ Assicurarsi di avere installato:
 ### Procedura
 
 1. Aprire il file `Uno.cbp` in Code::Blocks.
-2. Selezionare la configurazione di build **Debug** o **Release**.
+2. Selezionare la configurazione di build desiderata (**Debug**, **Release** o **Test**).
 3. Premere **F9** o selezionare *Build > Build*.
+
+#### Target di Code::Blocks
+
+| Target | Output | Contenuto | Linker |
+|--------|--------|-----------|--------|
+| **Debug** | `bin/Debug/uno.exe` | tutti i moduli in `src/` | `-lraylib -lopengl32 -lgdi32 -lwinmm -lws2_32` |
+| **Release** | `bin/Release/uno.exe` | tutti i moduli in `src/` | come Debug, con `-O2 -s` |
+| **Test** | `tests/test_adt.exe` | `tests/test_adt.c` + ADT + moduli di dominio | `-lm` (usa gli stub in `tests/stubs`) |
+
+Il target **Test** include solo le unità dei moduli dati (`data_structures/*.c`) e di
+dominio (`game_logic.c`, `deck.c`, `player.c`), usa gli stub Raylib di `tests/stubs`
+per non dipendere dalla libreria grafica e stampa il report dei 149 test.
 
 In alternativa, da linea di comando (nella cartella del progetto):
 
+Il metodo consigliato è usare lo script di build:
+
 ```bash
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/core/main.c -o obj/main.o
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/auth/auth.c -o obj/auth.o
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/auth/auth_validation.c -o obj/auth_validation.o
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/game/game_logic.c -o obj/game_logic.o
-gcc -std=c11 -Wall -Wextra -Ilib -Isrc -c src/screens/ui.c -o obj/ui.o
-gcc obj/main.o obj/auth.o obj/auth_validation.o obj/game_logic.o obj/ui.o -Llib/raylib -lraylib -o bin/Uno
+scripts/compile_and_test.bat
+```
+
+Questo script compila il gioco (`uno.exe`), i test, genera la documentazione Doxygen e li esegue automaticamente.
+
+Oppure, per compilare solo il gioco:
+
+```bash
+gcc -g src/core/main.c src/auth/auth.c src/auth/auth_validation.c src/game/game_logic.c src/game/player.c src/screens/ui.c src/data_structures/bst.c src/data_structures/chat.c src/data_structures/list.c src/data_structures/queue.c src/data_structures/stack.c src/screens/auth/auth_screen.c src/screens/auth/auth_update.c src/screens/auth/auth_draw.c src/screens/auth/input_field.c src/screens/game/bot_ai.c src/screens/game/end_screen.c src/screens/game/gameplay_screen.c src/screens/game/gameplay_update.c src/screens/game/gameplay_draw.c src/screens/menu/menu_screen.c src/screens/menu/stats_screen.c src/screens/menu/string_utils.c src/screens/multiplayer/multiplayer_lobby.c src/screens/multiplayer/multiplayer_screen.c src/socket/network/network.c src/socket/network/network_send.c src/socket/network/packet_handler.c src/socket/network/packet_handler_game.c src/socket/network/packet_handler_admin.c src/socket/network/state_sync.c src/socket/server/server_manager.c src/socket/utils/network_utils.c src/game/deck.c src/game/save_manager.c src/game/game_flow.c src/screens/game/chat_render.c src/screens/auth/admin_draw.c src/socket/lan/lan_db_sync.c src/socket/lan/lan_save_sync.c src/socket/lan/lan_broadcast.c -o uno.exe -Ilib -Ilib/raylib/include -Llib/raylib/lib -lraylib -lopengl32 -lgdi32 -lwinmm -lws2_32
 ```
 
 ## Esecuzione
@@ -194,7 +214,7 @@ gcc obj/main.o obj/auth.o obj/auth_validation.o obj/game_logic.o obj/ui.o -Llib/
 Dopo la compilazione, eseguire:
 
 ```bash
-bin/Uno.exe
+uno.exe
 ```
 
 ## Documentazione

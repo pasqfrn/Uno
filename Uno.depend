@@ -29,24 +29,24 @@
 1788359082 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\data_structures\bst.h
 	"data_structures.h"
 
-1788367986 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\game\game_logic.h
+1789460466 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\game\game_logic.h
 	"../data_structures/data_structures.h"
 	"player.h"
+	"private/player_private.h"
 	"game_state.h"
+	"private/game_state_private.h"
 	"../data_structures/stack.h"
 	"../data_structures/queue.h"
 	"../data_structures/list.h"
 
-1788359083 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\game\player.h
+1789458952 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\game\player.h
 	"../data_structures/data_structures.h"
 	"../data_structures/list.h"
-	<string.h>
-	<stdio.h>
 
 1788359082 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\data_structures\list.h
 	"data_structures.h"
 
-1788359083 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\game\game_state.h
+1789455952 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\game\game_state.h
 	"../data_structures/data_structures.h"
 	"player.h"
 
@@ -103,10 +103,11 @@
 1788359083 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\screens\ui.h
 	"../data_structures/data_structures.h"
 
-1788359083 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\socket\network\network.h
+1789464392 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\socket\network\network.h
 	"../../data_structures/data_structures.h"
 	"../../game/player.h"
 	"../../game/game_state.h"
+	"../../game/private/game_state_private.h"
 	"../lan/lan_protocol.h"
 	<winsock2.h>
 	<ws2tcpip.h>
@@ -182,10 +183,11 @@
 	"../../socket/server/server_manager.h"
 	"raylib.h"
 
-1788359083 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\socket\server\server_manager.h
+1789464404 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\socket\server\server_manager.h
 	"../../data_structures/data_structures.h"
 	"../../game/player.h"
 	"../../game/game_state.h"
+	"../../game/private/game_state_private.h"
 	"../../data_structures/list.h"
 
 1788361796 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\src\data_structures\bst.c
@@ -230,9 +232,9 @@
 	"../../lib/data_structures/queue.h"
 	"../../lib/data_structures/private/queue_private.h"
 
-1788362841 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\data_structures\private\queue_private.h
+1789460490 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\data_structures\private\queue_private.h
 	"../data_structures.h"
-	"../../game/player.h"
+	"../../game/private/player_private.h"
 
 1788361805 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\src\data_structures\stack.c
 	<stdlib.h>
@@ -254,9 +256,10 @@
 	"../../lib/data_structures/stack.h"
 	"../../lib/data_structures/list.h"
 
-1788371590 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\src\game\game_flow.c
+1789464490 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\src\game\game_flow.c
 	<stdlib.h>
 	<string.h>
+	<stdio.h>
 	"../../lib/game/game_logic.h"
 	"../../lib/data_structures/data_structures.h"
 	"../../lib/data_structures/stack.h"
@@ -264,20 +267,17 @@
 	"../../lib/data_structures/list.h"
 	"../../lib/auth/auth.h"
 
-1788359342 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\src\game\game_logic.c
+1789478667 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\src\game\game_logic.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 	<stdint.h>
 	"../../lib/game/game_logic.h"
-	"../../lib/auth/auth.h"
 	"../../lib/data_structures/list.h"
 	"../../lib/data_structures/data_structures.h"
 	"../../lib/data_structures/stack.h"
 	"../../lib/data_structures/queue.h"
-	"../../lib/socket/network/network.h"
-	"../../lib/socket/lan/lan_sync.h"
 
 1788374331 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\src\game\save_manager.c
 	<stdio.h>
@@ -700,7 +700,7 @@
 	<winsock2.h>
 	<ws2tcpip.h>
 
-1788530113 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\tests\test_adt.c
+1789477048 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\tests\test_adt.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -718,4 +718,18 @@
 	"../lib/game/game_logic.h"
 
 1783945035 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\tests\stubs\raylib.h
+
+1789460563 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\game\private\player_private.h
+	"../../data_structures/data_structures.h"
+	"../../data_structures/list.h"
+
+1789460584 c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\lib\game\private\game_state_private.h
+	"../../data_structures/data_structures.h"
+	"player_private.h"
+
+1789477184 source:c:\users\pasqu\onedrive\documenti\itps - uniba\1° anno\2° semestre\laboratorio di programmazione\uno\src\game\player.c
+	<stdio.h>
+	<string.h>
+	"../../lib/game/player.h"
+	"../../lib/game/private/player_private.h"
 

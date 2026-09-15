@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['giocatore_5fnome_5fbuf_0',['GIOCATORE_NOME_BUF',['../player_8h.html#ad122d7c5cf74ad68b85d6f22321a1f14',1,'player.h']]]
+  ['invalid_5fsocket_0',['INVALID_SOCKET',['../socket__compat_8h.html#a26769957ec1a2beaf223f33b66ee64ab',1,'socket_compat.h']]],
+  ['ioctlsocket_1',['ioctlsocket',['../socket__compat_8h.html#a585fd35ffa0c128b282b88bbb03fb7f1',1,'socket_compat.h']]]
 ];

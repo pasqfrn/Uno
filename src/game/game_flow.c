@@ -9,6 +9,7 @@
  */
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "../../lib/game/game_logic.h"
 #include "../../lib/data_structures/data_structures.h"

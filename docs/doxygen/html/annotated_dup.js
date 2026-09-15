@@ -8,7 +8,6 @@ var annotated_dup =
     [ "ClassificaRecord", "structClassificaRecord.html", "structClassificaRecord" ],
     [ "DatabaseUtenti", "structDatabaseUtenti.html", "structDatabaseUtenti" ],
     [ "GameSession", "structGameSession.html", "structGameSession" ],
-    [ "Giocatore", "structGiocatore.html", "structGiocatore" ],
     [ "LanCompactUser", "structLanCompactUser.html", "structLanCompactUser" ],
     [ "LanDeleteSavePacket", "structLanDeleteSavePacket.html", "structLanDeleteSavePacket" ],
     [ "LanPacketHeader", "structLanPacketHeader.html", "structLanPacketHeader" ],
@@ -38,7 +37,6 @@ var annotated_dup =
     [ "ServerManager", "structServerManager.html", "structServerManager" ],
     [ "SessionPlayer", "structSessionPlayer.html", "structSessionPlayer" ],
     [ "Statistiche", "structStatistiche.html", "structStatistiche" ],
-    [ "StatoGioco", "structStatoGioco.html", "structStatoGioco" ],
     [ "StatsSyncPacket", "structStatsSyncPacket.html", "structStatsSyncPacket" ],
     [ "TempSave", "structTempSave.html", "structTempSave" ],
     [ "Utente", "structUtente.html", "structUtente" ]

@@ -11,6 +11,7 @@
 #include "../../data_structures/data_structures.h"
 #include "../../game/player.h"
 #include "../../game/game_state.h"
+#include "../../game/private/game_state_private.h"
 #include "../../data_structures/list.h"
 
 /** @brief Numero massimo di sessioni di gioco contemporanee. */
